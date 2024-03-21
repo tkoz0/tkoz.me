@@ -1,0 +1,31 @@
+name: update website contents
+on: [push]
+jobs:
+    update-website:
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+        steps:
+        - name: 'configure ssh'
+          run: |
+            mkdir -p ~/.ssh/
+            echo "$SSH_KEY" > ~/.ssh/key
+            chmod 600 ~/.ssh/key
+            echo "$SSH_HKEY" > ~/.ssh/known_hosts
+            cat >> ~/.ssh/config << END
+            Host website
+                Port $SSH_PORT
+                Hostname $SSH_HOST
+                User $SSH_USER
+                IdentityFile ~/.ssh/key
+            END
+          env:
+            SSH_USER: ${{secrets.SSH_USER}}
+            SSH_KEY: ${{secrets.SSH_KEY}}
+            SSH_HKEY: ${{secrets.SSH_HKEY}}
+            SSH_HOST: ${{secrets.SSH_HOST}}
+            SSH_PORT: ${{secrets.SSH_PORT}}
+            WEBSITE_DIR: ${{secrets.WEBSITE_DIR}}
+        - name: 'pull content'
+          run: |
+            ssh website 'cd $WEBSITE_DIR && ./update.sh'
+
