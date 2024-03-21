@@ -1,3 +1,28 @@
+# based on: https://blog.benoitblanchon.fr/github-action-run-ssh-commands/
+
+# 1. choose a user account on the server, here it will be called "github"
+# 2. create a ssh key pair and put the public key in github's authorized_keys
+# 3. create a script only editable by root with the following, adjust the
+#    www-data user accordingly
+
+# #!/bin/bash
+# cd <path to git directory>
+# runuser -u www-data -- git pull
+# runuser -u www-data -- git status
+
+# 4. give permission for github to run it as root by putting the following line
+#    in /etc/sudoers.d/github
+
+# github ALL=(root) NOPASSWD: <path to script>
+
+# 5. configure the secrets on github repo settings for logging into the server
+# $SSH_USER = username, "github" in this example
+# $SSH_KEY = private key, the matching public key was put in authorized_keys
+# $SSH_HKEY = the line from known_hosts for the server to suppress the warning
+# $SSH_HOST = server host/ip
+# $SSH_PORT = server port
+# $SSH_CMD = use "sudo <path to script>" (so github user runs script as root)
+
 name: update website contents
 on: [push]
 jobs:
