@@ -182,7 +182,7 @@
         <td><a href="#mar19">19</a></td>
         <td><a href="#mar20">20</a></td>
         <td><a href="#mar21">21</a></td>
-        <td>22</td>
+        <td><a href="#mar22">22</a></td>
         <td>23</td>
         <td>24</td>
     </tr>
@@ -3356,6 +3356,23 @@ x^4+2x^3-120x^2-290x+407=0
     This gives us a quadratic equation: \(5x^2+20x-2625=5(x+25)(x-21)=0\). So
     we must have \(x=21\), the positive solution. The other solution \(x=-25\)
     works if we allow \(x\) to be negative.
+</p>
+
+<h3 id="mar22">Mar 22</h3>
+
+\[\sum_{i=1}^{1000}i!\mod143\]
+
+<p>
+    Since \(143=11\cdot13\), all terms for \(i\geq13\) are \(\equiv0\mod143\).
+    This reduces the work to computing
+</p>
+
+\[\sum_{i=1}^{12}i!\mod143\]
+
+<p>
+    It requires a little bit of tedious multiplication and division, but work
+    can be reused since if \((n-1)!\equiv a\), then \(n!\equiv an\), reducing
+    modulo \(143\) at each step. The answer is \(22\).
 </p>
 
 <!-- allow scroll past end a bit -->
