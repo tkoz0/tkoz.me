@@ -183,7 +183,7 @@
         <td><a href="#mar20">20</a></td>
         <td><a href="#mar21">21</a></td>
         <td><a href="#mar22">22</a></td>
-        <td>23</td>
+        <td><a href="#mar23">23</a></td>
         <td>24</td>
     </tr>
     <tr>
@@ -3373,6 +3373,48 @@ x^4+2x^3-120x^2-290x+407=0
     It requires a little bit of tedious multiplication and division, but work
     can be reused since if \((n-1)!\equiv a\), then \(n!\equiv an\), reducing
     modulo \(143\) at each step. The answer is \(22\).
+</p>
+
+
+<h3 id="mar23">Mar 23</h3>
+
+\[\left(506+(506+x)^{1\over2}\right)^{1\over2}=x\]
+
+<p>
+    First square both sides twice with a little adjustment.
+</p>
+
+\[\begin{align}& 506+(506+x)^{1\over2}=x^2 \\& (506+x)^{1\over2}=x^2-506 \\&
+506+x=x^4-1012x^2+506^2 \\& x^4-1012x^2-x+505\cdot506=0 \end{align}\]
+
+<p>
+    Then we could tediously factor this polynomial to get
+    \((x-23)(x+22)(x^2+x-505)=0\) which has the solution \(x=23\). We would also
+    have to check for extraneous solutions and find that none of the others are
+    solutions.
+</p>
+
+<p>
+    Alternatively, we can observe that the left side is the function
+    \(f(x)=\sqrt{506+x}\) iterated to \(f(f(x))=x\). Since \(f(x)\) is
+    monotonic, if we choose \(x\) to be a non fixed point, it will not return to
+    \(x\) under iterations of \(f\). To see why,
+</p>
+
+\[f(x)&lt;x \Rightarrow f(f(x))&lt;f(x)&lt;x \]
+
+<p>
+    Since \(f(x)\) is monotonically increasing and \(y&lt;z\) implies
+    \(f(y)&lt;f(z)\). A similar result can be shown for \(f(x)&gt;x\). Thus,
+    we must have the fixed point \(f(x)=x\) which is easier to solve for than
+    the quartic equation above resulting from an algebra mess.
+</p>
+
+\[\sqrt{506+x}=x \Rightarrow 506+x=x^2 \Rightarrow (x+22)(x-23)=0\]
+
+<p>
+    We find \(x=-22\) is an extraneous solution since a square root cannot be
+    negative so the answer is \(x=23\).
 </p>
 
 <!-- allow scroll past end a bit -->
