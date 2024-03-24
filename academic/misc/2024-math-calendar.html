@@ -184,7 +184,7 @@
         <td><a href="#mar21">21</a></td>
         <td><a href="#mar22">22</a></td>
         <td><a href="#mar23">23</a></td>
-        <td>24</td>
+        <td><a href="#mar24">24</a></td>
     </tr>
     <tr>
         <td>25</td>
@@ -3415,6 +3415,28 @@ x^4+2x^3-120x^2-290x+407=0
 <p>
     We find \(x=-22\) is an extraneous solution since a square root cannot be
     negative so the answer is \(x=23\).
+</p>
+
+<h3 id="mar24">Mar 24</h3>
+
+<p>
+    Find the number of \(S\subset\{1,2,3,4,5,6\}\) for which the sum of \(S\)'s
+    elements is divisible by 3.
+</p>
+
+<p>
+    First, split \(S\) into 3 sets by modulo 3:
+    \(S_0=\{3,6\},S_1=\{1,4\},S_2=\{2,5\}\). Now we can choose any of the 4
+    subsets of \(S_0\) and add it to a subset of \(S_1\cup S_2\) and not change
+    its sum modulo 3, so we consider subsets of \(S_1\cup S_2\) which sum to a
+    number divisible by 3 and multiply that result by 4. Now consider 3 cases
+    for how many elements we pick from \(S_1\). If 0, then we cannot use any of
+    \(S_2\) because the sum would be 1 or 2 (mod 3), which is 1 possibility.
+    If 1, then we must use exactly 1 element from \(S_2\), so this is 4
+    possibilities since there are 2 ways to choose 1 element from a set of 2.
+    If 2, then we have to choose both elements in \(S_2\) as well, which is 1
+    possibility. This gives us an answer of \(4(1+4+1)=24\). This total includes
+    the empty set \(\varnothing\) and \(S\) itself.
 </p>
 
 <!-- allow scroll past end a bit -->
