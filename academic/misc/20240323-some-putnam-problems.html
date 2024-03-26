@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20240323</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            // custom macro with no parameters (example: real numbers)
+            R: "\\mathbb{R}",
+            // custom macro with parameters (example: quadratic formula)
+            qf: ["\\frac{-{#2}\\pm\\sqrt{{#2}^2-4{#1}{#3}}}{2{#1}}",3]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Some Putnam Problems</h1>
+
+<p>
+    Here are solutions for some Putnam problems that are in 8th Edition of
+    Calculus of a Single Variable by Larson, Hostetler, and Edwards.
+</p>
+
+<h2>Area in 2D Plane</h2>
+
+<p>
+    Plot and find the area of the region in the 2D plane constrained by
+    \(|x|-|y|\leq1\) and \(|y|\leq1\).
+</p>
+
+<p>
+    The second inequality constrains the area to within a strip in the plane
+    described by \(-1\leq y\leq1\). For the first inequality, we split it up
+    into 4 cases, based on the sign of \(x\) and \(y\). When \(x\geq0\), we
+    have \(|x|=x\) and when \(x&lt;0\) we have \(|x|=-x\). This gives the
+    following inequalities:
+</p>
+
+<table>
+    <tr><th>Quadrant</th><th>Inequality</th></tr>
+    <tr><td>I: \(x\geq0,y\geq0\)</td><td>\(y\geq x-1\)</td></tr>
+    <tr><td>II: \(x&lt;0,y\geq0\)</td><td>\(y\geq-x-1\)</td></tr>
+    <tr><td>III: \(x&lt;0,y&lt;0\)</td><td>\(y\leq x+1\)</td></tr>
+    <tr><td>IV: \(x\geq0,y&lt;0\)</td><td>\(y\leq-x+1\)</td></tr>
+</table>
+
+<p>
+    Next, we plot these in the 2D plane and can find the area geometrically.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -2 6 4" width="300" height="200" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <line x1="-3" x2="3" y1="0" y2="0" />
+        <line x1="0" x2="0" y1="-2" y2="2" />
+        <line x1="-2" x2="-2" y1="-0.1" y2="0.1" />
+        <line x1="-1" x2="-1" y1="-0.1" y2="0.1" />
+        <line x1="1" x2="1" y1="-0.1" y2="0.1" />
+        <line x1="2" x2="2" y1="-0.1" y2="0.1" />
+        <line x1="-0.1" x2="0.1" y1="-1" y2="-1" />
+        <line x1="-0.1" x2="0.1" y1="1" y2="1" />
+    </g>
+    <g stroke="red" stroke-width="0.02" fill="none" stroke-dasharray="0.1">
+        <line x1="-3" x2="3" y1="1" y2="1" />
+        <line x1="-3" x2="3" y1="-1" y2="-1" />
+    </g>
+    <g stroke="blue" stroke-width="0.02" fill="none" stroke-dasharray="0.1">
+        <line x1="1" x2="2" y1="0" y2="-1" />
+        <line x1="-1" x2="-2" y1="0" y2="-1" />
+        <line x1="-1" x2="-2" y1="0" y2="1" />
+        <line x1="1" x2="2" y1="0" y2="1" />
+    </g>
+    <polygon points="1 0 2 -1 -2 -1 -1 0 -2 1 2 1" stroke="none" fill="lightgreen" fill-opacity="0.7" />
+</svg>
+
+<p>
+    The area can be found as the area of 2 trapezoids, a square and 4 triangles,
+    or similar. The total area is 6.
+</p>
+
+<h2>Polynomial Function Composition</h2>
+
+<p>
+    Find all polynomials \(f(x)\) with real coefficients that satisfy
+    \(f(g(x))=g(f(x))\) for all polynomials \(g(x)\) with real coefficients.
+</p>
+
+<p>
+    Let \(g(x)=c\) be a constant polynomial. Then \(g(f(x))=c=f(g(x))=f(c)\).
+    Since this is true for any constant \(c\), we have \(f(c)=c\) for all \(c\).
+    This can be equivalently written as \(f(x)=x\), which is that \(f(x)\) must
+    be the identity function.
+</p>
+
+<h2>Shapes Inscribed in a Circle</h2>
+
+<p>
+    Find the value of \(h\) that makes the area of the rectangle and triangle
+    equal. The radius of the circle is 1.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-1.2 -1.2 2.4 2.4" width="250" height="250" class="img_center">
+    <polygon points="0.98 0.2 0.98 -0.2 0 -1 -0.98 -0.2 -0.98 0.2" stroke="black" stroke-width="0.01" fill="none" />
+    <line x1="0.98" x2="-0.98" y1="-0.2" y2="-0.2" stroke="black" stroke-width="0.01" fill="none" />
+    <circle cx="0" cy="0" r="1" stroke="black" stroke-width="0.01" fill="none" />
+    <g fill="black" font-size="0.01em">
+        <text x="0" y="0.35">b</text>
+        <text x="-0.95" y="0.1">h</text>
+    </g>
+    <line x1="0.525" x2="0.455" y1="-0.635" y2="-0.565" stroke="black" stroke-width="0.01" fill="none" />
+    <line x1="-0.525" x2="-0.455" y1="-0.635" y2="-0.565" stroke="black" stroke-width="0.01" fill="none" />
+</svg>
+
+<p>
+    By using the center and the Pythagorean Theorem,
+</p>
+
+\[1=\left({b\over2}\right)^2+\left({h\over2}\right)^2\]
+
+<p>
+    Then equating the areas of the shapes,
+</p>
+
+\[bh={1\over2}b\left(1-{h\over2}\right)\]
+
+<p>
+    From the shape areas, we find \(h={2\over5}\). Combining this with the
+    Pythagorean formula, we can also find \(b={4\over5}\sqrt{6}\).
+</p>
+
+<h2>Cube Inside a Cone</h2>
+
+<p>
+    A right circular cone has base of radius 1 and height 3. A cube is inscribed
+    in the cone so that one face of the cube is contained in the base of the
+    cone. What is the side length of the cube?
+</p>
+
+<p>
+    A square face of the cube is on the cone base, and its 4 corners not on that
+    face intersect the pointed surface of the cone. The diagram below shows the
+    relevant parts, forming 2 right triangles. Here, we use \(s\) for the side
+    length of the cube and \(t\) for the distance between a corner of the base
+    face of the cube and the edge of the cone base.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3.5 4.2" width="250" height="300" class="img_center">
+    <polygon points="1.75 3.25 1.75 0.25 2.75 3.25" stroke="black" stroke-width="0.01" fill="none" />
+    <line x1="1.75" x2="0.75" y1="0.25" y2="3.25" stroke="black" stroke-width="0.01" fill="none" />
+    <line x1="2.43" x2="2.43" y1="3.25" y2="2.289" stroke="black" stroke-width="0.01" fill="none" />
+    <polygon points="2.43 3.25 1.75 3.75 1.07 3.25 1.75 2.75" stroke="black" stroke-width="0.01" fill="none" />
+    <ellipse cx="1.75" cy="3.25" rx="1" ry="0.6" stroke="black" stroke-width="0.01" fill="none" />
+    <g fill="black" font-size="0.01em">
+        <text x="1.6" y="1.5">3</text>
+        <text x="2.3" y="2.6">s</text>
+        <text x="2.55" y="3.4">t</text>
+        <text x="1.8" y="3.4">s/&Sqrt;2</text>
+        <text x="2.15" y="3.6">s</text>
+    </g>
+</svg>
+
+<p>
+    Using the right triangles ratios, we have \({s\over t}=3\). Then
+    substituting into \(1={s\over\sqrt{2}}+t\),
+</p>
+
+\[\begin{align}&1={s\over\sqrt{2}}+{s\over3}\Rightarrow3\sqrt{2}=3s+\sqrt{2}s
+\Rightarrow s(3+\sqrt{2})=3\sqrt{2}\\&
+\Rightarrow s={3\sqrt{2}\over3+\sqrt{2}}\cdot{3-\sqrt{2}\over3-\sqrt{2}}
+={9\sqrt{2}-6\over7}
+\end{align}\]
+
+<h2>Inequalities with Hyperbolas</h2>
+
+<p>
+    Prove or disprove: if \(x,y\in\mathbb{R}\), \(y\geq0\), and
+    \(y(y+1)\leq(x+1)^2\), then \(y(y-1)\leq x^2\).
+</p>
+
+<p>
+    To get some idea of whether this is true or false, we can rewrite the 2
+    inequalities as the following hyperbolas and plot them.
+</p>
+
+\[\left(y+{1\over2}\right)^2-(x+1)^2\leq{1\over4},\quad
+\left(y-{1\over2}\right)^2-x^2\leq{1\over4}\]
+
+<p>
+    Then to plot these as functions of \(x\), we can write them as:
+</p>
+
+\[\left|y+{1\over2}\right|\leq\sqrt{{1\over4}+(x+1)^2},\quad
+\left|y-{1\over2}\right|\leq\sqrt{{1\over4}+x^2}\]
+
+<p>
+    When we take the negative of the absolute values, we end up with equations
+    that are redundant because \(y\geq0\) is a stronger statement. To see why,
+    consider than both of the square root terms are \(\geq{1\over2}\) and then
+    work out the algebra. So we have to consider points with \(y\geq0\) and ask
+    if \(y\leq-{1\over2}+\sqrt{{1\over4}+(x+1)^2}\) implies
+    \(y\leq{1\over2}+\sqrt{{1\over4}+x^2}\). By plotting these portions of the
+    hyperbolas, it appears that the statement must be true, and it can be
+    proven with a few cases. For some of those proofs, it is easier to work with
+    the inequalities in expanded form from the hyperbola equations, so we will
+    be showing \(y^2+y\leq x^2+2x+1\) implies \(y^2-y\leq x^2\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 4 4" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.02" fill="none">
+        <line x1="-2" x2="2" y1="0" y2="0" stroke="black" stroke-width="0.02" fill="none" />
+        <line x1="0" x2="0" y1="-2" y2="2" stroke="black" stroke-width="0.02" fill="none" />
+        <line x1="1" x2="1" y1="-0.1" y2="0.1" />
+        <line x1="-1" x2="-1" y1="-0.1" y2="0.1" />
+        <line x1="-0.1" x2="0.1" y1="1" y2="1" />
+        <line x1="-0.1" x2="0.1" y1="-1" y2="-1" />
+    </g>
+    <line x1="-2" x2="1.5" y1="1.5" y2="-2" stroke="black" stroke-width="0.02" fill="none" stroke-dasharray="0.1" />
+    <path d="M -2 -0.618 Q -1.694 -0.344 -1.5 -0.207 Q -1.207 -0 -1 -0 Q -0.793 -0 -0.5 -0.207 Q -0.306 -0.344 0 -0.618 Q 0.207 -0.803 0.5 -1.081 Q 0.717 -1.287 1 -1.562 Q 1.224 -1.778 1.5 -2.05 Q 1.728 -2.273 2 -2.541" stroke="red" stroke-width="0.02" fill="none" />
+    <path d="M -2 1.618 Q -1.694 1.344 -1.5 1.207 Q -1.207 1 -1 1 Q -0.793 1 -0.5 1.207 Q -0.306 1.344 0 1.618 Q 0.207 1.803 0.5 2.081 Q 0.717 2.287 1 2.562 Q 1.224 2.778 1.5 3.05 Q 1.728 3.273 2 3.541" stroke="red" stroke-width="0.02" fill="none" />
+    <path d="M -2 -2.562 Q -1.717 -2.287 -1.5 -2.081 Q -1.207 -1.803 -1 -1.618 Q -0.694 -1.344 -0.5 -1.207 Q -0.207 -1 0 -1 Q 0.207 -1 0.5 -1.207 Q 0.694 -1.344 1 -1.618 Q 1.207 -1.803 1.5 -2.081 Q 1.717 -2.287 2 -2.562" stroke="green" stroke-width="0.02" fill="none" />
+    <path d="M -2 1.562 Q -1.717 1.287 -1.5 1.081 Q -1.207 0.803 -1 0.618 Q -0.694 0.344 -0.5 0.207 Q -0.207 -0 0 -0 Q 0.207 -0 0.5 0.207 Q 0.694 0.344 1 0.618 Q 1.207 0.803 1.5 1.081 Q 1.717 1.287 2 1.562" stroke="green" stroke-width="0.02" fill="none" />
+</svg>
+
+<p>
+    Suppose \(x\leq-{1\over2}\). Then we also have \(2x+1\leq\). We can derive
+    \(y^2+y\leq x^2+2x+1\leq x^2\). Now subtract \(2y\) from each side and since
+    \(y\geq0\), we find \(y^2-y\leq x^2-2y\leq x^2\).
+</p>
+
+<p>
+    Next, we need to prove it for \(x&gt;-{1\over2}\). First, with the added
+    constraint that \(2x+1\leq2y\). Subtract \(2y\) from each side in the first
+    inequality so we have \(y^2-y\leq x^2+2x+1-2y\leq x^2\). Since we have
+    \(2x+1-2y\leq0\) from the added constraint.
+</p>
+
+<p>
+    Finally, we have the case where \(x&gt;-{1\over2}\) and \(2x+1&gt;2y\). For
+    this one, it is easier to do things a little differently. We have
+    \(y&lt;{1\over2}+x={1\over2}+\sqrt{x^2}\leq{1\over2}+\sqrt{{1\over4}+x^2}\).
+    So it satisfies the required condition, completing the proof.
+</p>
+
+<h2>A Polynomial Equation</h2>
+
+<p>
+    Find all polynomials \(P(x)\) such that \(P(x^2+1)=(P(x))^2+1\) and
+    \(P(0)=0\).
+</p>
+
+<p>
+    If the constraint \(P(0)=0\) was removed, we would be able to find a family
+    of solutions by starting with \(P(x)=x^2+1\) and using function composition.
+    But that is not what the problem asks for, so we start with \(P(0)=0\).
+    Let \(x_0=0\) and \(x_n=x_{n-1}^2+1\) for \(n\geq1\). Then we can show
+    \(P(x_i)=x_i\) for each \(x_i\). The base case for \(x_0=0\) is true since
+    \(P(0)=0\). Then \(P(x_{n-1}^2+1)=(P(x_{n-1}))^2+1\) which implies
+    \(P(x_n)=x_{n-1}^2+1=x_n\). Therefore, \(P(x_i)=x_i\) for arbitrarily many
+    \(x_i\) so we must have \(P(x)=x\) as the only solution.
+</p>
+
+<h2>Derivative at a Point</h2>
+
+<p>
+    Let \(f(x)=\sum_{i=1}^na_i\sin(ix)\) with each \(a_i\in\mathbb{R}\). Given
+    \(|f(x)|\leq|\sin(x)|\) for all \(x\in\mathbb{R}\), prove that
+    \(\left|\sum_{i=1}^nia_i\right|\leq1\).
+</p>
+
+<p>
+    The derivative is \(f'(x)=\sum_{i=1}^nia_i\cos(ix)\) and
+    \(f'(0)=\sum_{i=1}^nia_i\), so we must show \(|f'(0)|\leq1\). Suppose that
+    \(f'(0)=m\) with \(|m|&gt;1\). Then by the definition of a limit
+    \(\lim_{h\to0}{f(h)\over h}=m\). So we would be able to find arbitrarily
+    small \(h&gt;0\) such that \(\left|{f(h)\over h}\right|&gt;1\), or
+    \(|f(h)|&gt;h\geq\sin(h)=|\sin(h)|\), so by contradiction the proof is
+    complete.
+</p>
+
+<p>
+    We used that for \(h\geq0\), \(\sin(h)\leq h\). It is clearly true when
+    \(h=0\). When \(0&lt;h&lt;1\), we can find \(c\in(0,h)\) so that
+    \(\cos(c)={\sin(h)\over h}\), using the derivative of sine. So we have
+    \(\left|{\sin(h)\over h}\right|\leq1\) since \(|\cos(c)|\leq1\), which lets
+    us conclude \(\sin(h)\leq|\sin(h)|\leq h&lt;1\). Finally, it is clearly
+    true that \(\sin(h)\leq1\leq h\) when \(h\geq1\).
+</p>
+
+<h2>Derivatives of a Rational Function</h2>
+
+<p>
+    Let \(k\in\mathbb{Z}^+\). The \(n\)th derivative of \({1\over x^k-1}\) has
+    the form \({P_n(x)\over(x^k-1)^{n+1}}\) where \(P_n(x)\) is a polynomial.
+    Find \(P_n(1)\).
+</p>
+
+<p>
+    We can begin by evaluating some derivatives to get an idea of what to look
+    for.
+</p>
+
+\[\begin{align}&{d\over dx}(x^k-1)^{-1}=-(x^k-1)^{-2}\cdot kx^{k-1}\\&
+{d^2\over dx^2}(x^k-1)^{-1}=2(x^k-1)^{-3}\cdot(kx^{k-1})^2
+    -(x^k-1)^{-2}\cdot k(k-1)x^{k-2}\\&
+=(x^k-1)^{-3}\left(2(kx^{k-1})^2-(x^k-1)\cdot k(k-1)x^{k-2}\right)
+=(x^k-1)^{-3}P_2(x)
+\end{align}\]
+
+<p>
+    Then the 3rd derivative will look like this. We do not need to fully compute
+    \(P_3(x)\).
+</p>
+
+\[\begin{align}&{d^3\over dx^3}(x^k-1)^{-1}={d\over dx}
+(x^k-1)^{-3}P_2(x)=-3(x^k-1)^{-4}kx^{k-1}P_2(x)
++(x^k-1)^{-3}P_2'(x)\\&
+(x^k-1)^{-4}\left(-3kx^{k-1}P_2(x)+(x^k-1)P_2'(x)\right)=(x^k-1)^{-4}P_3(x)
+\end{align}\]
+
+<p>
+    Since \(x^k-1=0\) when we put in \(x=1\), the value of \(P_2'\) is not
+    needed. We find that \(P_3(1)=-3kP_2(1)\). This suggests the general formula
+    \(P_n(x)=(-1)^nn!k^n\), which we can prove by induction. When \(n=0\), then
+    \(P_0(1)=1\) so the base case is true. Now assume \(P_n(x)=(-1)^nn!k^n\) and
+    compute the derivative.
+</p>
+
+\[\begin{align}&{d^{n+1}\over dx^{n+1}}(x^k-1)^{-1}
+={d\over dx}(x^k-1)^{-(n+1)}P_n(x)\\&
+=-(n+1)(x^k-1)^{-(n+2)}kx^{k-1}P_n(x)+(x^k-1)^{-(n+1)}P_n'(x)\\&
+=(x^k-1)^{-(n+2)}\left(-(n+1)kx^{k-1}P_n(x)+(x^k-1)P_n'(x)\right)
+\end{align}\]
+
+<p>
+    The new polynomial is \(P_{n+1}(x)=-(n+1)kx^{k-1}P_n(x)+(x^k-1)P_n'(x)\) and
+    \(P_{n+1}(1)=-(n+1)kP_n(1)=-(n+1)k\cdot(-1)^nn!k^n=(-1)^{n+1}(n+1)!k^{n+1}\)
+    which completes the proof.
+</p>
+
+</div>
+</body>
+</html>
