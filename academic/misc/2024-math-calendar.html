@@ -188,7 +188,7 @@
     </tr>
     <tr>
         <td><a href="#mar25">25</a></td>
-        <td>26</td>
+        <td><a href="#mar26">26</a></td>
         <td>27</td>
         <td>28</td>
         <td>29</td>
@@ -3498,6 +3498,21 @@ x^4+2x^3-120x^2-290x+407=0
     matches the other way we computed \(z^3\). So we have \(c=d=1\) and find
     that \(z=\sqrt{5}-1\). From this, we get the same
     \(u=y+z=1+(\sqrt{5}-1)=\sqrt{5}\) as before.
+</p>
+
+<h3 id="mar26">Mar 26</h3>
+
+<p>
+    Find the number of ways to make \(\$12.85\) with only dimes and quarters.
+</p>
+
+<p>
+    The number of quarters used must be odd, otherwise the amount remaining
+    could not be created with only dimes. For every odd amount of quarters used,
+    the remaining amount can be created with only dimes. So the smallest number
+    of quarters that can be used is 1, and the largest is \(12\cdot4+3=51\).
+    Counting these gives us a total of 26 possible amounts of quarters to select
+    while creating the rest of the amount in dimes.
 </p>
 
 <!-- allow scroll past end a bit -->
