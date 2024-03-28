@@ -190,7 +190,7 @@
         <td><a href="#mar25">25</a></td>
         <td><a href="#mar26">26</a></td>
         <td><a href="#mar27">27</a></td>
-        <td>28</td>
+        <td><a href="#mar28">28</a></td>
         <td>29</td>
         <td>30</td>
         <td>31</td>
@@ -3523,6 +3523,30 @@ x^4+2x^3-120x^2-290x+407=0
     First, thinking about powers of 3, we can find \(3^4=81\equiv-1\mod41\).
     Then \(3^{123}=(3^4)^{30}\cdot3^3\equiv(-1)^{30}\cdot27\equiv27\mod41\).
 </p>
+
+<h3 id="mar28">Mar 28</h3>
+
+<p>
+    Find the number of positive integers less than 100 that are not divisible by
+    2, 3, or 7.
+</p>
+
+<p>
+    This can be solved with the inclusion-exclusion principle. Start with all
+    positive integers from 1 to 100, then subtract those which are divisible by
+    one of the numbers. Some are taken away 2 or 3 times because they are
+    divisible by more than 1 of those numbers. So next we add back the numbers
+    which are divisible by 2 of them, and finally subtract the ones which are
+    divisible by all 3. This works because the 3 numbers given are all prime,
+    or more generally pairwise coprime.
+</p>
+
+\[\begin{align}&100-\left\lfloor{100\over2}\right\rfloor-\left\lfloor{100\over3}\right\rfloor
+-\left\lfloor{100\over7}\right\rfloor+\left\lfloor{100\over2\cdot3}\right\rfloor
++\left\lfloor{100\over2\cdot7}\right\rfloor+\left\lfloor{100\over3\cdot7}\right\rfloor
+-\left\lfloor{100\over2\cdot3\cdot7}\right\rfloor\\&
+100-50-33-14+16+7+4-2=100-97+27-2=28
+\end{align}\]
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
