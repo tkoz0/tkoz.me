@@ -211,7 +211,7 @@
     <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
     <tr>
         <td><a href="#apr01">01</a></td>
-        <td>02</td>
+        <td><a href="#apr02">02</a></td>
         <td>03</td>
         <td>04</td>
         <td>05</td>
@@ -3603,6 +3603,26 @@ x^4+2x^3-120x^2-290x+407=0
     This is more of a thing with words. The "oddest" prime in a way is 2 because
     it is the only even prime, so half of that is 1.
 </p>
+
+<h3 id="apr02">Apr 02</h3>
+
+\[{\sinh(2\theta)\over\sinh'(\theta)\sinh''(\theta)}\]
+
+<p>
+    This can be solved by using definitions of the hyperbolic functions. The
+    derivatives are \(\sinh'(\theta)=\cosh(\theta)\) and
+    \(\sinh''(\theta)=\sinh(\theta)\). Then using the definitions in terms of
+    \(e^\theta\), we have
+</p>
+
+\[\begin{align}&{\sinh(2\theta)\over\sinh'(\theta)\sinh''(\theta)}
+={\sinh(2\theta)\over\cosh(\theta)\sinh(\theta)}
+={{1\over2}\left(e^{2\theta}-e^{-2\theta}\right)\over
+    {1\over2}\left(e^\theta+e^{-\theta}\right)
+    {1\over2}\left(e^\theta-e^{-\theta}\right)}\\&
+=2{e^{2\theta}-e^{-2\theta}\over(e^\theta+e^{-\theta})(e^\theta-e^{-\theta})}
+=2{e^{2\theta}-e^{-2\theta}\over e^{2\theta}-e^{-2\theta}}=2
+\end{align}\]
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
