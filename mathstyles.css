@@ -6,6 +6,7 @@ Last updated: 2024-02-29
 body {
     background: black;
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #root {
