@@ -214,7 +214,7 @@
         <td><a href="#apr02">02</a></td>
         <td><a href="#apr03">03</a></td>
         <td><a href="#apr04">04</a></td>
-        <td>05</td>
+        <td><a href="#apr05">05</a></td>
         <td>06</td>
         <td>07</td>
     </tr>
@@ -3657,6 +3657,33 @@ x^4+2x^3-120x^2-290x+407=0
     are prime approaches 0 faster than a geometric series, so the summation of
     the probabilities than these numbers are prime is tiny which is a heuristic
     to predict that no more double Mersenne primes exist.
+</p>
+
+<h3 id="apr05">Apr 05</h3>
+
+<p>
+    The largest prime \(p\) such that neither \(p^2-1\) nor \(p^2+1\) are
+    divisible by \(10\).
+</p>
+
+<p>
+    We notice that \(p=2\) would work. All other primes are odd so consider the
+    5 cases of congruency modulo 10.
+</p>
+
+<table>
+    <tr><th>\(\mod10\)</th><th>\(p^2-1\)</th><th>\(p^2+1\)</th></tr>
+    <tr><td>1</td><td style="background:#f77;">0</td><td>2</td></tr>
+    <tr><td>3</td><td>8</td><td style="background:#f77;">0</td></tr>
+    <tr style="background:#7f7;"><td>5</td><td>4</td><td>6</td></tr>
+    <tr><td>7</td><td>8</td><td style="background:#f77;">0</td></tr>
+    <tr><td>9</td><td style="background:#f77;">0</td><td>2</td></tr>
+</table>
+
+<p>
+    From this, we must have \(p\equiv5\mod10\) otherwise either \(p^2-1\) or
+    \(p^2+1\) would be divisible by 10. The only such prime for which this is
+    possible is \(p=5\).
 </p>
 
 <!-- allow scroll past end a bit -->
