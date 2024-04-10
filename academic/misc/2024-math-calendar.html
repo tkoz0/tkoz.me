@@ -220,7 +220,7 @@
     </tr>
     <tr>
         <td><a href="#apr08">08</a></td>
-        <td>09</td>
+        <td><a href="#apr09">09</a></td>
         <td>10</td>
         <td>11</td>
         <td>12</td>
@@ -3708,6 +3708,31 @@ x^4+2x^3-120x^2-290x+407=0
 <h3 id="apr08">Apr 08</h3>
 
 \[{1\times2\times3\times4\times5\over1+2+3+4+5}={120\over15}=8\]
+
+<h3 id="apr09">Apr 09</h3>
+
+\[f(y)=\sum_{i=0}^\infty{y^i\over2^i},\quad S=\int_{-1}^1f(y)dy,\quad x=e^S\]
+
+<p>
+    First rewrite \(f(y)\) in a way that is easier to integrate by using the
+    geometric sum formula.
+</p>
+
+\[f(y)=\sum_{i=0}^\infty\left({y\over2}\right)^i={1\over1-{y\over2}}
+={1\over{2-y\over2}}={2\over2-y}\]
+
+<p>
+    Note that this formula is valid only when \(f(y)\) converges, which is when
+    \(\left|{y\over2}\right|&lt;1\Rightarrow|y|&lt;2\) so the integration bounds
+    are valid. Next we can evaluate the integral by substituting \(z=2-y\).
+</p>
+
+\[S=\int_{y=-1}^{y=1}{2dy\over2-y}=\int_{z=3}^{z=1}{-2dz\over z}
+=2\int_{z=1}^{z=3}{dz\over z}=2\ln|z|\Big|_1^3=2\ln(3)\]
+
+<p>
+    Finally, \(x=e^S=(e^{\ln(3)})^2=3^2=9\).
+</p>
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
