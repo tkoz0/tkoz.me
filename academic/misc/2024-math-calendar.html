@@ -3866,6 +3866,48 @@ x^4+2x^3-120x^2-290x+407=0
     makes sense for this problem).
 </p>
 
+<hr />
+
+<p>
+    An alternative solution is drawing the following isosceles triangles. They
+    are isosceles because 2 of the side lengths are the same. The blue segments
+    are each 1 so those triangles with the blue and orange edges are isosceles.
+    In each of those triangles, the angles next to the orange edge are of equal
+    measure. Using complementary angles, the angles on the other side of each
+    orange edge have equal measure so the triangles formed with the orange, red,
+    and green edges are isosceles. From this, we can replace 2 segments of the
+    perimeter with the green and red edges at the far right. This tells us that
+    the perimeter we are looking for is the perimeter of the 2x2 outer square
+    added to the 2 blue edges of the white/rotated square, so the perimeter is
+    10.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0.5 0.5 3 3" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <path d="M 3 1 h -2 v 2 h 2" />
+        <line x1="2" x2="2" y1="1" y2="3" />
+        <line x1="1" x2="2" y1="2" y2="2" />
+        <rect x="1" y="2.7" width="0.3" height="0.3" />
+        <path d="M 2 2 l 0.866 0.5 l 0.5 -0.866 l -0.866 -0.5 l -0.5 0.866 M 3.216 1.894 l -0.26 -0.15 l 0.15 -0.26" />
+    </g>
+    <path d="M 1 3 v -2 h 2 L 3 1.423 L 2.5 1.134 L 2 2 L 2.866 2.5 L 3 2.268 L 3 3 h -2" stroke="#0cf" stroke-width="0.03" fill="rgba(0,0,0,0.25)" />
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <line x1="0.925" x2="1.075" y1="1.5" y2="1.5" />
+        <line x1="0.925" x2="1.075" y1="2.5" y2="2.5" />
+        <line x1="1.5" x2="1.5" y1="0.925" y2="1.075" />
+        <line x1="2.5" x2="2.5" y1="0.925" y2="1.075" />
+        <line x1="1.5" x2="1.5" y1="2.925" y2="3.075" />
+        <line x1="2.5" x2="2.5" y1="2.925" y2="3.075" />
+        <path d="M 2.471 2.185 l -0.075 0.13 M 3.051 2.029 l 0.13 0.075 M 2.896 1.449 l 0.075 -0.13 M 2.185 1.529 l 0.13 0.075" />
+    </g>
+    <text x="2.25" y="1.9" font-size="0.025em">1</text>
+    <polyline points="2.5 1.134 2 2 2.866 2.5" stroke="blue" stroke-width="0.03" fill="none" />
+    <line x1="2" x2="3" y1="2" y2="2" stroke="blue" stroke-width="0.03" fill="none" />
+    <polyline points="2.866 2.5 3 2 2.5 1.134" stroke="orange" stroke-width="0.03" fill="none" />
+    <polyline points="2.5 1.134 3 1.423 3 2" stroke="red" stroke-width="0.03" fill="none" />
+    <polyline points="2.866 2.5 3 2.268 3 2" stroke="#0f0" stroke-width="0.03" fill="none" />
+</svg>
+
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
 
