@@ -222,7 +222,7 @@
         <td><a href="#apr08">08</a></td>
         <td><a href="#apr09">09</a></td>
         <td><a href="#apr10">10</a></td>
-        <td>11</td>
+        <td><a href="#apr11">11</a></td>
         <td>12</td>
         <td>13</td>
         <td>14</td>
@@ -3907,6 +3907,40 @@ x^4+2x^3-120x^2-290x+407=0
     <polyline points="2.5 1.134 3 1.423 3 2" stroke="red" stroke-width="0.03" fill="none" />
     <polyline points="2.866 2.5 3 2.268 3 2" stroke="#0f0" stroke-width="0.03" fill="none" />
 </svg>
+
+<h3 id="apr11">Apr 11</h3>
+
+\[\text{Round}\left(\int_0^\infty e^{-4t^2\over625}dt\right)\]
+
+<p>
+    This is an integral with \(e^{-t^2}\) like the one that shows up in the
+    normal distribution. We can evaluate this by converting to polar coordinates
+    from squaring the integral and combining them into a double integral because
+    of independent variables.
+</p>
+
+\[\left(\int_0^\infty e^{-4t^2\over625}dt\right)^2
+=\left(\int_0^\infty e^{-4v^2\over625}dv\right)
+\left(\int_0^\infty e^{-4u^2\over625}du\right)
+=\left(\int_0^\infty\int_0^\infty e^{-4(u^2+v^2)\over625}dvdu\right)\]
+
+<p>
+    Next, we convert the area \([0,\infty]\times[0,\infty]\) in rectangular
+    coordinates to \([0,\pi/2]\times[0,\infty]\) in polar coordinates.
+</p>
+
+\[\begin{align}&
+=\int_0^{\pi/2}\int_0^\infty e^{-4r^2\over625}rdrd\theta
+={\pi\over2}\int_0^\infty e^{-4r^2\over625}rdr\\&
+={\pi\over2}{625\over2\cdot4}
+\int_\infty^0e^{-4r^2\over625}d\left({-4r^2\over625}\right)
+={625\pi\over16}e^{-4r^2\over625}\Big|_\infty^0={625\pi\over16}
+\end{align}\]
+
+<p>
+    Now we take the square root and round, finding
+    \({25\over4}\sqrt{\pi}\approx11\).
+</p>
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
