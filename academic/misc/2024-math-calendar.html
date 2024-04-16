@@ -228,8 +228,8 @@
         <td><a href="#apr14">14</a></td>
     </tr>
     <tr>
-        <td>15</td>
-        <td>16</td>
+        <td><a href="#apr15">15</a></td>
+        <td><a href="#apr16">16</a></td>
         <td>17</td>
         <td>18</td>
         <td>19</td>
@@ -3997,6 +3997,42 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     throw. Then \[E(X)={1\over6}(1+2+3+4+5+6)={7\over2}\] because each roll has
     the same probability. Since there are 4 dice, we are looking for
     \(4\cdot E(X)=14\).
+</p>
+
+<h3 id="apr15">Apr 15</h3>
+
+\[\begin{align}&a,b,c,d\ \text{represent distinct non-0 digits}\\&
+\sqrt{abcd}=ad,\quad x=a+d\end{align}\]
+
+<p>
+    Due to the nature of this problem, I will always use \(\cdot\) to explicitly
+    show multiplication, otherwise digits are concatenated. First square each
+    side to find \[abcd=(10\cdot a+d)^2=100\cdot a^2+20\cdot a\cdot d+d^2\]
+    Since \(0&lt;d\leq9\), we have \[100\cdot a^2+20\cdot a\cdot d+d^2 \leq
+    100\cdot a^2+180\cdot a+81\] and we can show \[100\cdot a^2+180\cdot a+81
+    &lt;a000=1000\cdot a\] Subtracting, we have the quadratic inequality
+    \[100\cdot a^2-820\cdot a+81&lt;0\] which can be shown true by finding the
+    zeroes which are \({1\over10},{81\over10}\). This shows that \((ad)^2\)
+    cannot be big enough which \(a&lt;9\). This gives us \(a=9\). Then we need
+    \(d^2\equiv d\mod10\) so the ones digits match. The only possible \(d\) that
+    satisfy this modular equation are \(1,5,6\). By testing each, we find that
+    \(96^2=9216\) so the answer is \(x=a+d=9+6=15\).
+</p>
+
+<h3 id="apr16">Apr 16</h3>
+
+\[8^x+4^{x-8}=4^{x+8}+2^x\]
+
+<p>
+    First rewrite this with exponent base 2 \[2^{3x}+2^{2x-16}=2^{2x+8}+2^x\]
+    Then multiply each side by \(2^{-x}\) which subtracts \(x\) from each
+    exponent \[2^{2x}+2^{x-16}=2^{x+16}+1\] then if we multiply each side by
+    \(2^{16}\), it might look a little nicer \[2^{2x+16}+2^x=2^{x+32}+2^{16}\]
+    Now with some not as analytical thinking, what if the terms corresponded to
+    each other in pairs? If we make \(2^x=2^{16}\), then \(x=16\) works for the
+    other pair of terms. This can be shown to be the only solution but that is
+    kind of hard to do rigorously. By plotting the log of each side, it shows
+    that they have 1 intersection point.
 </p>
 
 <!-- allow scroll past end a bit -->
