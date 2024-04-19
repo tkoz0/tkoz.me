@@ -231,7 +231,7 @@
         <td><a href="#apr15">15</a></td>
         <td><a href="#apr16">16</a></td>
         <td><a href="#apr17">17</a></td>
-        <td>18</td>
+        <td><a href="#apr18">18</a></td>
         <td>19</td>
         <td>20</td>
         <td>21</td>
@@ -4052,6 +4052,21 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     which is 17 (or -2). This allows us to evaluate the answer without a whole
     lot of tedious work. The most tedious part here is computing
     \(9^{128}\mod19\).
+</p>
+
+<h3 id="apr18">Apr 18</h3>
+
+<p>
+    \(y\) is a two-digit decimal number that is not divisible by 10. \(x\) is
+    the sum of the digits of \(99y\).
+</p>
+
+<p>
+    Let \(y=10a+b\) for the digits \(0&lt;a,b\leq9\). Then we can compute
+    \(100y-y\) by subtraction with borrowing. \[\begin{array}{c|c|c|c|c}
+    &&&9&10\\&&b-1&\cancel{10}&\\&a&\cancel{b}&0&0\\
+    -&&&a&b\\\hline&a&b-1&9-a&10-b\end{array}\] Now we just add the 4 digits of
+    the result to get \(a+(b-1)+(9-a)+(10-b)=18\).
 </p>
 
 <!-- allow scroll past end a bit -->
