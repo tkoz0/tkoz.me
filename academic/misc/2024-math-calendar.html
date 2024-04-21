@@ -27,6 +27,12 @@
 
 <h1>Math Calendar 2024</h1>
 
+<p>
+    These problems are from <a href="https://dailyepsilon.com/" target="_blank">
+        <em>Your Daily Epsilon of Math</em></a> which has the problems posted on
+    <a href="https://twitter.com/daily_epsilon?lang=en" target="_blank">Twitter/X</a>.
+</p>
+
 <div id="cal">
 
 <table>
@@ -232,8 +238,8 @@
         <td><a href="#apr16">16</a></td>
         <td><a href="#apr17">17</a></td>
         <td><a href="#apr18">18</a></td>
-        <td>19</td>
-        <td>20</td>
+        <td><a href="#apr19">19</a></td>
+        <td><a href="#apr20">20</a></td>
         <td>21</td>
     </tr>
     <tr>
@@ -4067,6 +4073,36 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     &&&9&10\\&&b-1&\cancel{10}&\\&a&\cancel{b}&0&0\\
     -&&&a&b\\\hline&a&b-1&9-a&10-b\end{array}\] Now we just add the 4 digits of
     the result to get \(a+(b-1)+(9-a)+(10-b)=18\).
+</p>
+
+<h3 id="apr19">Apr 19</h3>
+
+\[1\cdot2+3\cdot4+5=2+12+5=19\]
+
+<h3 id="apr20">Apr 20</h3>
+
+<p>
+    For any function \(f:\mathbb{R}^+\to\mathbb{R}^+\) such that
+    \(\forall x,y:x^2(f(x)+f(y))=(x+y)f(f(x)y)\) find \(f(0.05)\).
+</p>
+
+<p>
+    First substitute \(x=y\) to see what happens. \[2x^2f(x)=2xf(f(x)x)
+    \Rightarrow xf(x)=f(xf(x))\] This shows that all possible values of
+    \(xf(x)\) are fixed points of \(f\). Notice how we have \(x+y\) on one side
+    and \(f(x)+f(y)\) on the other side. We can remove one usage of \(f\) if we
+    make \(x\) and \(y\) fixed points. Make the substitution \(x=tf(t)\) and
+    \(y=sf(s)\) for some \(s,t\). This allows us to divide the \(x+y\) and
+    \(f(x)+f(y)\) parts.
+    \[\begin{align}&t^2f(t)^2(f(tf(t))+f(sf(s)))=(tf(t)+sf(s))f(f(tf(t))sf(s))\\
+    &t^2f(t)^2(tf(t)+sf(s))=(tf(t)+sf(s))f(tf(t)sf(s))\\&t^2f(t)^2=f(tf(t)sf(s))
+    \end{align}\] If instead we substitute \(x=sf(s)\) and \(y=tf(t)\) we get a
+    similar expression. \[s^2f(s)^2=f(tf(t)sf(s))\] Now if we substitute \(s=1\)
+    in both, the right sides are equal so we find \(f(1)^2=t^2f(t)^2
+    \Rightarrow f(1)=tf(t)\) which we can also write as \(f(t)={f(1)\over t}\).
+    All that is left is to find what \(f(1)\) is.
+    \[f(1)=tf(t)=f(tf(t))=f(f(1))={f(1)\over f(1)}=1\]
+    Therefore \(f(t)={1\over t}\) is the only solution and \(f(0.05)=20\).
 </p>
 
 <!-- allow scroll past end a bit -->
