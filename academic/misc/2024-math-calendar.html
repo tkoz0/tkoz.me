@@ -240,7 +240,7 @@
         <td><a href="#apr18">18</a></td>
         <td><a href="#apr19">19</a></td>
         <td><a href="#apr20">20</a></td>
-        <td>21</td>
+        <td><a href="#apr21">21</a></td>
     </tr>
     <tr>
         <td>22</td>
@@ -4103,6 +4103,66 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     All that is left is to find what \(f(1)\) is.
     \[f(1)=tf(t)=f(tf(t))=f(f(1))={f(1)\over f(1)}=1\]
     Therefore \(f(t)={1\over t}\) is the only solution and \(f(0.05)=20\).
+</p>
+
+<h3 id="apr21">Apr 21</h3>
+
+\[\sum_{n=1}^\infty\sum_{m=1}^\infty{12\over mn(m+n+2)}\]
+
+<p>
+    This one is a bit difficult and takes quite a bit of work but once you see
+    how to do it, it is mostly familiar partial fractions and telescoping
+    series. First let's focus on the inner summation, factoring out \(12/n\)
+    \[{12\over n}\sum_{m=1}^\infty{1\over m(m+n+2)}\]
+    then using partial fractions to decompose
+    \[\begin{align}&{A\over m}+{B\over m+n+2}={1\over m(m+n+2)}\\
+    &A(m+n+2)+Bm=1\\&(A+B)m+A(n+2)=1\\
+    &A={1\over n+2},B={-1\over n+2}\end{align}\]
+    Then apply this decomposition to the summation of \(m\)
+    \[\begin{align}&{12\over n}\sum_{m=1}^\infty
+        \left[{1/(n+2)\over m}-{1/(n+2)\over m+n+2}\right]
+    ={12\over n(n+2)}\sum_{m=1}^\infty\left[{1\over m}-{1\over m+n+2}\right]\\
+    &{12\over n(n+2)}\left[
+        \begin{array}
+            {1\over1}&+&{1\over2}&+&\ldots&+&{1\over n+2}&
+                +&{1\over n+3}&+&{1\over n+4}&+&\ldots\\
+            &&&&&&&-&{1\over n+3}&-&{1\over n+4}&-&\ldots\\
+        \end{array}\right]\\&
+    ={12\over n(n+2)}\sum_{m=1}^{n+2}{1\over m}\end{align}\]
+    We still have to sum this over \(n=1\) to \(\infty\). First we can apply
+    partial fraction decomposition to \({12\over n(n+2)}\). It is just like the
+    partial fraction decomposition we already did but replace 12 with 1, remove
+    the \(n\), and change each remaining \(m\) to \(n\). Then combining this
+    with summing over \(n\), we have
+    \[\sum_{n=1}^\infty{12\over n(n+2)}\sum_{m=1}^{n+2}{1\over m}
+    =6\sum_{n=1}^\infty\left[{1\over n}-{1\over n+2}\right]
+        \sum_{m=1}^{n+2}{1\over m}
+    =6\sum_{n=1}^\infty\left[{1\over n}-{1\over n+2}\right]S(n)\]
+    where \(S(n)=\sum_{m=1}^{n+2}{1\over m}\). Now we use telescoping series
+    reasoning on the \(1/n-1/(n+2)\) part
+    \[\begin{align}&6\left[\begin{array}
+        {1\over1}S(1)&+&{1\over2}S(2)&+&{1\over3}S(3)&+&{1\over4}S(4)&+&\ldots\\
+        &&&-&{1\over3}S(1)&-&{1\over4}S(2)&-&\ldots\\
+    \end{array}\right]\\
+    &=6\left[S(1)+{1\over2}S(2)+\sum_{r=3}^\infty{1\over r}
+        \left(S(r)-S(r-2)\right)\right]\\
+    &=6\left[{11\over6}+{1\over2}\cdot{25\over12}
+        +\sum_{r=3}^\infty{1\over r}
+        \left({1\over r+1}+{1\over r+2}\right)\right]\\
+    &=11+{25\over4}+6\sum_{r=3}^\infty{1\over r(r+1)}
+        +6\sum_{r=3}^\infty{1\over r(r+2)}\end{align}\]
+    We are almost to the solution. Next we apply partial fractions to these 2
+    summations which is just like what we did before. Then they are going to be
+    familiar telescoping series.
+    \[\sum_{r=3}^\infty{1\over r(r+1)}
+    =\sum_{r=3}^\infty\left({1\over r}-{1\over r+1}\right)
+    ={1\over3}\]
+    \[\sum_{r=3}^\infty{1\over r(r+2)}
+    ={1\over2}\sum_{r=3}^\infty\left({1\over r}-{1\over r+2}\right)
+    ={1\over2}\left({1\over3}+{1\over4}\right)={7\over24}\]
+    Then we use these to finalize our answer.
+    \[11+{25\over4}+6{1\over3}+6{7\over24}={69\over4}+6{5\over8}
+    ={69\over4}+{15\over4}={84\over4}=21\]
 </p>
 
 <!-- allow scroll past end a bit -->
