@@ -248,7 +248,7 @@
         <td><a href="#apr24">24</a></td>
         <td><a href="#apr25">25</a></td>
         <td><a href="#apr26">26</a></td>
-        <td>27</td>
+        <td><a href="#apr27">27</a></td>
         <td>28</td>
     </tr>
     <tr>
@@ -4393,6 +4393,27 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     ={52\over\pi}{\pi\over2}=26\end{align}\]
     The integral found after substituting \(u\) is also a familiar integral for
     inverse trigonometric functions so it can be solved with that formula.
+</p>
+
+<h3 id="apr27">Apr 27</h3>
+
+\[\text{Round}\left(\lim_{n\to\infty}{10n\over(10n!)^{1\over n}}\right)\]
+
+<p>
+    Here, we can use Stirling's approximation which is
+    \[n!\sim\sqrt{2\pi n}\left(n\over e\right)^n\] which means the ratios of
+    these 2 approaches 1 as \(n\to\infty\).
+    \[\begin{align}&\lim_{n\to\infty}{10n\over(10n!)^{1/n}}
+        =\lim_{n\to\infty}{10n\over10^{1/n}(n!)^{1/n}}
+        =\lim_{n\to\infty}{10n\over10^{1/n}(\sqrt{2\pi n})^{1/n}({n\over e})}\\
+    &=\lim_{n\to\infty}{10e\over10^{1/n}(\sqrt{2\pi})^{1/n}(\sqrt{n})^{1/n}}
+    \end{align}\] Since \(10\) and \(\sqrt{2\pi}\) are constants,
+    \(10^{1/n}\to1\) and \((\sqrt{2\pi})^{1/n}\to1\) as \(n\to\infty\). We need
+    to focus on the remaining part which is
+    \[\lim_{n\to\infty}(\sqrt{n})^{1/n}=\lim_{n\to\infty}n^{1\over2n}
+    =\lim_{n\to\infty}e^{\ln(n)\over2n}=e^{\lim_{n\to\infty}{\ln(n)\over2n}}
+    =e^0=1\] So everything in the denominator is 1, which makes the limit equal
+    to \(10e\). The closest integer is 27.
 </p>
 
 <!-- allow scroll past end a bit -->
