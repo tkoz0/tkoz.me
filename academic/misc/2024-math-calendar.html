@@ -246,8 +246,8 @@
         <td><a href="#apr22">22</a></td>
         <td><a href="#apr23">23</a></td>
         <td><a href="#apr24">24</a></td>
-        <td>25</td>
-        <td>26</td>
+        <td><a href="#apr25">25</a></td>
+        <td><a href="#apr26">26</a></td>
         <td>27</td>
         <td>28</td>
     </tr>
@@ -4216,6 +4216,183 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     Now the summations are the same except for the indexes. Notice how
     subtracting leaves us with only the \(n=1\) term which is \(1/3\). The
     answer is \(8(1/3)^{-1}=8\cdot3=24\).
+</p>
+
+<h3 id="apr25">Apr 25</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+</svg>
+
+<p>
+    There are a few ways to solve this problem. First I will present the first
+    way I tried which gives a tough system of equations to solve. Draw the 2
+    right triangles shown below.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+    <polygon points="8 22 13 22 13 3.34" stroke="red" stroke-width="0.2" fill="none" />
+    <polygon points="8 22 18 12 19.83 15.17" stroke="green" stroke-width="0.2" fill="none" />
+    <text x="4" y="8" fill="red" font-size="0.1em">t</text>
+    <text x="10" y="23.5" fill="red" font-size="0.1em">r</text>
+</svg>
+
+<p>
+    The side length of the gray square is \(\sqrt{75}=5\sqrt{3}\). The diagonal
+    of the big square is \(t\sqrt{2}\). For the red right triangle, we have the
+    equation \[r^2+(2r+5\sqrt{3})^2=(t\sqrt{2})^2\] and for the green one
+    \[t^2+(t-\sqrt{r^2+75})^2=(2r\sqrt{2})^2\] This system is difficult to
+    solve, but plotting it in a graphing calculator shows there is a single
+    solution. Next we will see easier methods for finding the answer.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+    <rect x="1.17" y="3.34" width="18.66" height="18.66" stroke="orange" stroke-width="0.2" fill="none" />
+    <text x="1.5" y="6.5" fill="orange" font-size="0.1em">b</text>
+    <text x="5" y="5" fill="orange" font-size="0.1em">a</text>
+    <polygon points="13 12 18 12 13 3.34" stroke="black" stroke-width="0.2" fill="rgba(255,255,0,0.5)" />
+    <polygon points="1.17 10.17 13 10.17 13 17" stroke="red" stroke-width="0.2" fill="none" />
+</svg>
+
+<p>
+    Here, we draw in orange a square around the big square, which is like the
+    one used in a proof of the Pythagorean theorem. Using the bottom orange edge
+    and the vertical line shared by the 3 smaller squares, we find
+    \[a+b=2b+r=2r+5\sqrt{3}\] where \(r=\sqrt{x}\). Next we draw the red right
+    triangle which also has legs of lengths \(a,b\) like the right triangles on
+    the outside with the orange legs. So we can see that
+    \[b={r+5\sqrt{3}\over2}\] Then \[a=r+b={3r+5\sqrt{3}\over2}\]
+    Now we use similar triangles. The yellow shaded triangle is similar to one
+    of the right triangles with legs \(a,b\) so
+    \[\begin{align}
+    &{a\over b}={5\sqrt{3}\over r}={3r+5\sqrt{3}\over r+5\sqrt{3}}\\
+    &5r\sqrt{3}+75=3r^2+5r\sqrt{3}\\&3r^2=75\Rightarrow r=5\Rightarrow x=r^2=25
+    \end{align}\]
+</p>
+
+<p>
+    An alternative solution uses the sum of angles for tangent. See the 2 angles
+    in the diagram below.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+    <polygon points="8 22 13 22 13 3.34" stroke="green" stroke-width="0.2" fill="none" />
+    <polygon points="13 3.34 18 12 13 12" stroke="red" stroke-width="0.2" fill="none" />
+    <text x="13.5" y="7" fill="red" font-size="0.1em">&alpha;</text>
+    <text x="11.8" y="9" fill="green" font-size="0.1em">&beta;</text>
+</svg>
+
+<p>
+    We can find \[\tan(\alpha)={r\over5\sqrt{3}},
+    \qquad\tan(\beta)={r\over2r+5\sqrt{3}}\] Observe that \(\alpha+\beta=\pi/4\)
+    so \(\tan(\alpha+\beta)=\tan(\pi/4)=1\) Using a trigonometric identity,
+    \[\begin{align}&\tan(\alpha+\beta)={\tan(\alpha)+\tan(\beta)
+        \over1-\tan(\alpha)\tan(\beta)}={{r\over5\sqrt{3}}+{r\over2r+5\sqrt{3}}
+        \over1-{r\over5\sqrt{3}}{r\over2r+5\sqrt{3}}}=1\\
+    &1-{r\over5\sqrt{3}}{r\over2r+5\sqrt{3}}
+        ={r\over5\sqrt{3}}+{r\over2r+5\sqrt{3}}\\
+    &5\sqrt{3}(2r+5\sqrt{3})-r^2=r(2r+5\sqrt{3})+5r\sqrt{3}\\
+    &10r\sqrt{3}+75-r^2=2r^2+10r\sqrt{3}\\
+    &3r^2=75\Rightarrow r=5\Rightarrow x=r^2=25\end{align}\]
+</p>
+
+<h3 id="apr26">Apr 26</h3>
+
+\[\int_0^\infty{52dt\over\pi(t+1)\sqrt{t^2+2t}}\]
+
+<p>
+    First to simplify it, let \(u=t+1\) and notice how we can use this to
+    complete the square inside the square root and simplify.
+    \[{52\over\pi}\int_{u=1}^{u\to\infty}{du\over u\sqrt{u^2-1}}\]
+    This looks like a good integral to use trigonometric substitution with. The
+    identity \(\tan^2(\theta)+1=\sec^2(\theta)\) tells us what we should pick to
+    simplify the square root part, which is \(u=\sec(\theta)\). This
+    substitution changes the domain to \([0,\pi/2)\) because \(\sec(0)=1\) and
+    \(\lim_{\theta\to\pi/2^-}\sec(\theta)=\infty\).
+    \[\begin{align}&{52\over\pi}\int_{\theta=0}^{\theta\to\pi/2^-}
+        {\sec(\theta)\tan(\theta)d\theta\over
+        \sec(\theta)\sqrt{\sec^2(\theta)-1}}
+    ={52\over\pi}\int_{\theta=0}^{\theta\to\pi/2^-}
+        {\sec(\theta)\tan(\theta)d\theta\over\sec(\theta)\tan(\theta)}\\
+    &={52\over\pi}\int_{\theta=0}^{\theta=\pi/2}d\theta
+    ={52\over\pi}{\pi\over2}=26\end{align}\]
+    The integral found after substituting \(u\) is also a familiar integral for
+    inverse trigonometric functions so it can be solved with that formula.
 </p>
 
 <!-- allow scroll past end a bit -->
