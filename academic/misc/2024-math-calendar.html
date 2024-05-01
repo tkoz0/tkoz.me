@@ -252,8 +252,8 @@
         <td><a href="#apr28">28</a></td>
     </tr>
     <tr>
-        <td>29</td>
-        <td>30</td>
+        <td><a href="#apr29">29</a></td>
+        <td><a href="#apr30">30</a></td>
         <td></td>
         <td></td>
         <td></td>
@@ -4424,6 +4424,81 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     First use the geometric series summation to evaluate that the summation is
     equal to \(2^{501}-2\). Then by efficient modular exponentiation, we have
     \(2^{501}\mod223=30\) so subtract 2 and the answer is \(28\).
+</p>
+
+<h3 id="apr29">Apr 29</h3>
+
+<p>
+    Find the sum of the solutions to \(x^2+3x+16\equiv0\mod32\).
+</p>
+
+<p>
+    We can solve this with Hensel's lifting lemma. The modulus is \(32=2^5\)
+    which only has 1 prime, so we do not need to use the Chinese remainder
+    theorem. First, we find solutions \(x^2+3x+16\equiv0\mod2\) and then lift
+    the solutions \(\mod4,8,16,32\). Both \(x\equiv0\) and \(x\equiv1\) are
+    solutions so we have to lift these 2 solutions with the lemma. Let
+    \(f(x)=x^2+3x+16\) and \(f'(x)=2x+3\).
+</p>
+
+<p>
+    By Hensel's lemma, if \(f(a_k)\equiv0\mod p^k\) for some prime \(p\) and
+    integer \(k\), and \(f'(a_k)\not\equiv0\mod p\), then
+    \[a_{k+1}\equiv a_k-f(a_k)(f'(a_1))^{-1}\mod p^{k+1}\]
+    is a lifted solution, \(f(a_{k+1})\equiv0\mod p^{k+1}\). First we lift the
+    \(x\equiv0\) solution. We have \(a_1=0\) and \(f'(a_1)=3\). The table below
+    summarizes the steps which does involve a few tedious calculations.
+</p>
+
+<table>
+    <tr><th>\(k\)</th><th>\(a_k\)</th><th>\(f(a_k)\)</th><th>\(3^{-1}\)</th><th>\(a_{k+1}\)</th></tr>
+    <tr><td>\(1\)</td><td>\(0\)</td><td>\(16\equiv0\mod4\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod4\)</td></tr>
+    <tr><td>\(2\)</td><td>\(0\)</td><td>\(16\equiv0\mod8\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod8\)</td></tr>
+    <tr><td>\(3\)</td><td>\(0\)</td><td>\(16\equiv0\mod16\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod16\)</td></tr>
+    <tr><td>\(4\)</td><td>\(0\)</td><td>\(16\equiv16\mod32\)</td><td>\(11\)</td><td>\(0-16\cdot11\equiv16\mod32\)</td></tr>
+</table>
+
+<p>
+    Then we lift the \(x\equiv1\) solution. We have \(a_1=1\) and \(f'(a_1)=5\).
+    Below is a similar table.
+</p>
+
+<table>
+    <tr><th>\(k\)</th><th>\(a_k\)</th><th>\(f(a_k)\)</th><th>\(5^{-1}\)</th><th>\(a_{k+1}\)</th></tr>
+    <tr><td>\(1\)</td><td>\(1\)</td><td>\(20\equiv0\mod4\)</td><td>Not needed</td><td>\(1-20\cdot5^{-1}\equiv1\mod4\)</td></tr>
+    <tr><td>\(2\)</td><td>\(1\)</td><td>\(20\equiv4\mod8\)</td><td>\(5\mod8\)</td><td>\(1-20\cdot5^{-1}\equiv5\mod8\)</td></tr>
+    <tr><td>\(3\)</td><td>\(5\)</td><td>\(56\equiv8\mod16\)</td><td>\(13\mod16\)</td><td>\(5-56\cdot5^{-1}\equiv13\mod16\)</td></tr>
+    <tr><td>\(4\)</td><td>\(13\)</td><td>\(224\equiv0\mod32\)</td><td>Not needed</td><td>\(13-224\cdot5^{-1}\equiv13\mod32\)</td></tr>
+</table>
+
+<p>
+    So the solutions add to \(16+13=29\).
+</p>
+
+<h3 id="apr30">Apr 30</h3>
+
+\[\log_2\left(\sum_{k=0}^{10}3{30\choose3k}-2\right)\]
+
+<p>
+    The tricky part for this one is evaluating the summation. Consider the
+    binomial expansion \[(1+x)^{30}=\sum_{j=0}^{30}{30\choose j}x^j\]
+    When \(x=1\), then the terms for \(j=0,3,6,\ldots,30\) match what we are
+    looking for. So what we need is choices of \(x\) so we can add/subtract to
+    cancel the terms when \(j\) is not divisible by 3. It turns out that the
+    cube roots of unity are a good choice. We would evaluate the sum
+    \[(1+1)^{30}+(1+e^{2i\pi/3})^{30}+(1+e^{-2i\pi/3})^{30}
+    =\sum_{j=0}^{30}{30\choose j}(1+e^{2i\pi j/3}+e^{-2i\pi j/3})\]
+    On the right, the imaginary parts cancel so we have
+    \[1+e^{2i\pi j/3}+e^{-2i\pi j/3}=1+2\cos\left({2\pi j\over3}\right)=
+    \begin{cases}3&j\equiv0\mod3\\0&\text{otherwise}\\\end{cases}\]
+    This is exactly the summation we are looking for. On the left, we have
+    \[1+e^{2i\pi/3}=1+{-1\over2}+{\sqrt{3}\over2}i={1\over2}+{\sqrt{3}\over2}i
+    =e^{\pi i/3}\] and \[1+e^{-2i\pi/3}=1+{-1\over2}+{-\sqrt{3}\over2}i
+    ={1\over2}+{-\sqrt{3}\over2}i=e^{-\pi i/3}\]
+    Then the left side is \[2^{30}+(e^{\pi i/3})^{30}+(e^{-\pi i/3})^{30}
+    =2^{30}+e^{10\pi i}+e^{-10\pi i}=2^{30}+2\] Now putting this together, we
+    have \[\log_2\left(\sum_{k=0}^{10}3{30\choose3k}-2\right)=\log_2(2^{30}+2-2)
+    =\log_2(2^{30})=30\]
 </p>
 
 <!-- allow scroll past end a bit -->
