@@ -303,9 +303,9 @@
     </tr>
     <tr>
         <td><a href="#may20">20</a></td>
-        <td>21</td>
-        <td>22</td>
-        <td>23</td>
+        <td><a href="#may21">21</a></td>
+        <td><a href="#may22">22</a></td>
+        <td><a href="#may23">23</a></td>
         <td>24</td>
         <td>25</td>
         <td>26</td>
@@ -4764,6 +4764,55 @@ How many numbers under 66 are relatively prime to 66?
 This can be solved with Euler's totient function once we know the prime
 factorization. Since \(66=2\cdot3\cdot11\), \(\phi(66)=66\cdot{1\over2}
 \cdot{2\over3}\cdot{10\over11}=20\).
+</p>
+
+<h3 id="may21">May 21</h3>
+
+\[\sum_{n=-10}^{n=10}{2\over1+10^n}\]
+
+<p>
+Split take out the \(n=0\) term. Then combine terms \(i\) and \(-i\). Next is
+some algebra.
+\[\begin{align}&1+\sum_{n=1}^{10}\left({2\over1+10^n}+{2\over1+10^{-n}}\right)
+=1+\sum_{n=1}^{10}{2(1+10^{-n})+2(1+10^n)\over(1+10^n)(1+10^{-n})}\\
+&=1+\sum_{n=1}^{10}{4+2\cdot10^n+2\cdot10^{-n}\over1+10^n+10^{-n}+1}
+=1+\sum_{n=1}^{10}2=21\end{align}\]
+</p>
+
+<h3 id="may22">May 22</h3>
+
+\[n\in\mathbb{N},\quad{n^3+5\over n^2+7}\in\mathbb{N},\quad x=10+7n-n^2\]
+
+<p>
+First we can split up the fraction into 2 parts.
+\[{n^3+5\over n^2+7}={(n^3+7n)+(5-7n)\over n^2+7}=n+{5-7n\over n^2+7}\]
+Since \(n\) is an integer, focus on the new fraction, which cannot be 0.
+We must have \[|5-7n|\geq n^2+7\] otherwise the answer would be between -1
+and 1, and it cannot be 0. First suppose \(5-7n\geq0\). Then we have
+\[5-7n\geq n^2+7 \Rightarrow n^2+7n+2\leq0\] which is always false.
+Alternatively we can see that \(5-7n&lt;0\) for all \(n\in\mathbb{N}\) so this
+case was not necessary. Now suppose \(5-7n&lt;0\). Then
+\[7n-5\geq n^2+7\Rightarrow n^2-7n+12\leq0\Rightarrow(n-3)(n-4)\leq0\]
+which is clearly true when \(n=3,4\). If \(n&lt;3\) or \(n&gt;5\) then
+\((n-3)(n-4)&gt;0\), so the only \(n\) that work are \(n=3,4\). We can verify
+\[{3^3+5\over3^2+7}={27+5\over9+7}={32\over16}=2\quad\text{and}\quad
+{4^3+5\over4^2+7}={64+5\over16+7}={69\over23}=3\] are both integers. Then
+\[x=10+7\cdot3-3^2=10+21-9=22=10+7\cdot4-4^2=10+28-16=22\] so we have the same
+value \(x=22\) for each \(n=3,4\).
+</p>
+
+<h3 id="may23">May 23</h3>
+
+<p>
+Find the number of proper factors of \(4004\).
+</p>
+
+<p>
+The number of factors can be computed from the prime factorization. With trial
+division or other means, we find \(4004=2^2\cdot7\cdot11\cdot13\). The number of
+factors can be computed from the exponents on the prime factors so it would be
+\((2+1)(1+1)(1+1)(1+1)=3\cdot2^3=24\). But since we are only interested in
+counting proper factors, we exclude \(4004\) itself, so the total is 23.
 </p>
 
 <!-- allow scroll past end a bit -->
