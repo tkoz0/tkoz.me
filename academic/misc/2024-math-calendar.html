@@ -311,7 +311,7 @@
         <td><a href="#may26">26</a></td>
     </tr>
     <tr>
-        <td>27</td>
+        <td><a href="#may27">27</a></td>
         <td>28</td>
         <td>29</td>
         <td>30</td>
@@ -4883,6 +4883,27 @@ counting how many times its factors 2 and 5 divide \(111!\). For 2, it is
 =22+4=26\] Therefore 10 can divide \(111!\) up to 26 times because each divide
 by 10 takes away a 2 and a 5, and we run out of 5's first. Therefore, there are
 26 trailing zeroes.
+</p>
+
+<h3 id="may27">May 27</h3>
+
+<p>
+\(f\) is a function such that \(\forall x,y\in\mathbb{R}: f(xy)=f(x)/y\).
+If \(f(10)=81\), find \(f(30)\).
+</p>
+
+<p>
+The easiest way is to use the given information. Let \(x=10,y=3\). Then we have
+\[f(xy)=f(10\cdot3)=f(10)/3=81/3=27\]
+Alternatively, we can find out what the function \(f(x)\) is. First see what
+happens when differentiating each side by \(x\) and then by \(y\).
+\[f'(xy)y=f'(x)/y,\quad f'(xy)x=-f(x)/y^2\]
+Then from this, we find
+\[f'(xy)y^2=f'(x)=-f(x)/x\Rightarrow{f'(x)\over f(x)}={-1\over x}\]
+Then by integrating and solving,
+\[\ln|f(x)|=\int{-dx\over x}=-\ln|x|+C\Rightarrow f(x)=e^Ce^{-\ln|x|}
+=C'x^{-1}\] then with the given \(f(10)=81\), we find \(C'=810\). So
+\(f(x)=810/x\) and \(f(30)=810/30=27\).
 </p>
 
 <!-- allow scroll past end a bit -->
