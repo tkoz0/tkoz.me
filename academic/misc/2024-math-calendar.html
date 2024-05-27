@@ -308,7 +308,7 @@
         <td><a href="#may23">23</a></td>
         <td><a href="#may24">24</a></td>
         <td><a href="#may25">25</a></td>
-        <td>26</td>
+        <td><a href="#may26">26</a></td>
     </tr>
     <tr>
         <td>27</td>
@@ -4864,6 +4864,25 @@ From the 2nd equation, \(\sqrt{y}=16-\sqrt{x}\Rightarrow y=256-32\sqrt{x}+x\).
 Substitute this into the first equation and we get
 \(256-32\sqrt{x}=96\Rightarrow-32\sqrt{x}=-160
 \Rightarrow\sqrt{x}=5\Rightarrow x=25\). We can also find \(y=121\).
+</p>
+
+<h3 id="may26">May 26</h3>
+
+<p>
+Find the number of trailing zeroes in \(111!\).
+</p>
+
+<p>
+This would be counting how many times 10 divides \(111!\). We can do this by
+counting how many times its factors 2 and 5 divide \(111!\). For 2, it is
+\[\left\lfloor{111\over2}\right\rfloor+\left\lfloor{111\over4}\right\rfloor
++\left\lfloor{111\over8}\right\rfloor+\left\lfloor{111\over16}\right\rfloor
++\left\lfloor{111\over32}\right\rfloor+\left\lfloor{111\over64}\right\rfloor
+=55+27+13+6+3+1=105\] and for 5, it is
+\[\left\lfloor{111\over5}\right\rfloor+\left\lfloor{111\over25}\right\rfloor
+=22+4=26\] Therefore 10 can divide \(111!\) up to 26 times because each divide
+by 10 takes away a 2 and a 5, and we run out of 5's first. Therefore, there are
+26 trailing zeroes.
 </p>
 
 <!-- allow scroll past end a bit -->
