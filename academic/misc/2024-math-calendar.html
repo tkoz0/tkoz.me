@@ -343,8 +343,8 @@
         <td><a href="#jun02">02</a></td>
     </tr>
     <tr>
-        <td>03</td>
-        <td>04</td>
+        <td><a href="#jun03">03</a></td>
+        <td><a href="#jun04">04</a></td>
         <td>05</td>
         <td>06</td>
         <td>07</td>
@@ -4965,6 +4965,39 @@ so the values of \(x\) are solutions to \(x^3+3x-14=0\). By the rational root
 theorem, we can find \(x=2\) is a solution. Then it factors to
 \((x-2)(x^2+2x+7)=0\). The only real solution is \(x=2\). The other solutions
 are \(x=-1\pm\sqrt{-6}\).
+</p>
+
+<h3 id="jun03">Jun 03</h3>
+
+<p>
+Find the minimum vertical distance between the graphs of \(3+\sin(x)\) and
+\(\cos(x)-\sqrt{2}\).
+</p>
+
+<p>
+Let \(f(x)=3+\sin(x)\) and \(g(x)=\cos(x)-\sqrt{2}\). The goal is to maximize
+\(|f(x)-g(x)|\). This will occur when \(f(x)-g(x)\) is at a maximum or minimum.
+The derivative is \({d\over dx}(f(x)-g(x))=\cos(x)+\sin(x)\). This is 0 when
+\(x=-\pi/4\) or \(x=3\pi/4\). Testing these to points, we find \(f(x)-g(x)\) to
+be \(3-2\sqrt{2}\) and 3. The absolute value is maximized at 3.
+</p>
+
+<h3 id="jun04">Jun 04</h3>
+
+<p>
+What is the maximum number of lattice points that can be contained within a
+circle of radius 1?
+</p>
+
+<p>
+If the boundary is allowed, then we would have 5 as the answer by using the
+standard unit circle, so we assume the boundary is not allowed and the lattice
+points must be strictly inside the circle. It is possible to have 4 points, such
+as the circle \((x-1/2)^2+(y-1/2)^2=1^2\). In any other arrangement of 5
+adjacent lattice points, if there are 3 in a straight line along a grid axis,
+then the length is 2 so it cannot fit on the circle diameter. If there are not 3
+in such a straight line, then they form a "zig zag" which also cannot fit in the
+unit circle.
 </p>
 
 <!-- allow scroll past end a bit -->
