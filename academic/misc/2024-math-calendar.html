@@ -349,7 +349,7 @@
         <td><a href="#jun06">06</a></td>
         <td><a href="#jun07">07</a></td>
         <td><a href="#jun08">08</a></td>
-        <td>09</td>
+        <td><a href="#jun09">09</a></td>
     </tr>
     <tr>
         <td>10</td>
@@ -5094,6 +5094,28 @@ triangle.
 For a polygon with \(n\) sides, its angles sum to \(180(n-2)\) degrees. A
 triangle has 3 sides and a decagon has 10 sides so the ratio is:
 \[{180(10-2)\over180(3-2)}={8\over1}=8\]
+</p>
+
+<h3 id="jun09">Jun 09</h3>
+
+<p>
+Find the volume of a regular tetrahedron with side length \(3\sqrt{2}\).
+</p>
+
+<p>
+Let \(s=3\sqrt{2}\). Since this is a pyramid, we can find the area of the base
+and the height. The base has side length \(s\) and a medians divides it into 2
+30-60-90 triangles. From here, its height is \(h=s\sqrt{3}/2\) and the area is
+\[B={1\over2}sh={1\over2}s{s\sqrt{3}\over2}={s^2\sqrt{3}\over4}
+={9\sqrt{3}\over2}\]
+Next we need the height of the tetrahedron. From the base triangle, drawing 3
+medians divides it into 6 30-60-90 triangles. From this, we can find that the
+centroid is distance \(d={s\over2\sqrt{3}}\) from the midpoint of a side. Now,
+we use the pythagorean theorem to find the height of the tetrahedron.
+\[H^2=h^2-d^2={3s^2\over4}-{s^2\over12}={2s^2\over3}
+\Rightarrow H={s\sqrt{2}\over\sqrt{3}}=6\over\sqrt{3}=2\sqrt{3}\]
+Then we use \(B\) and \(H\) in the volume of a pyramid formula.
+\[V={1\over3}BH={1\over3}{9\sqrt{3}\over2}{2\sqrt{3}}=9\]
 </p>
 
 <!-- allow scroll past end a bit -->
