@@ -1,0 +1,297 @@
+﻿Benchmark Validation File - DO NOT MODIFY! If you do, it will fail validation.
+
+Validation Version:    1.3
+
+Program:               y-cruncher v0.7.10 Build 9513
+Tuning:                11-SNB ~ Hina
+
+User:                  None Specified - You can edit this in "Username.txt".
+
+Operating System:      Linux 5.15.0-73-generic x86_64
+
+Processor(s):
+    Name:              Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz
+    Logical Cores:     48
+    Physical Cores:    24
+    Sockets:           2
+    NUMA Nodes:        2
+    Base Frequency:    2,699,961,696 Hz
+
+Motherboard:
+    Manufacturer:      Dell Inc.
+    Model:             0C4Y3R
+    Version:           A02
+    Serial Number:     Suppressed - Personally identifiable information is opt-in only.
+
+Memory:
+    Usable Memory:     540,976,164,864 ( 504 GiB)
+    Total Memory:      Unable to Detect
+
+Constant:              Pi
+Algorithm:             Chudnovsky (1988)
+Decimal Digits:        1,000,000,000,050
+Hexadecimal Digits:    830,482,023,764
+Computation Mode:      Swap Mode
+Threading Mode:        Push Pool  ->  48 / ?  (randomization on)
+Working Memory:        514,722,327,744 ( 479 GiB)
+Total Memory:          515,396,075,520 ( 480 GiB)
+
+Logical Largest Checkpoint:    1,445,538,213,984 (1.31 TiB)
+Logical Peak Disk Usage:       5,269,578,321,952 (4.79 TiB)
+Logical Disk Bytes Read:       143,632,647,556,252 ( 131 TiB)
+Logical Disk Bytes Written:    123,662,101,317,692 ( 112 TiB)
+
+Configuration Dump:
+{
+    Constant : {
+        Constant : "pi"
+        Algorithm : "chudnovsky"
+    }
+    ComputeSize : {
+        DecimalDigits : 1000000000050
+        EnableHexDigits : "true"
+    }
+    Output : {
+        Framework : "ycd"
+        Path : ""
+        DigitsPerFile : 0
+        RawIO : "true"
+    }
+    OutputVerify : "true"
+    Mode : "swap"
+    Parallelism : {
+        TaskDecomposition : 48
+        Framework : "pushpool"
+        WorkerThreads : 0
+        Randomization : "true"
+        MaxSequentialDispatch : 64
+    }
+    Allocator : {
+        Allocator : "interleave"
+        Hashed : "true"
+        mbind : "false"
+        LockedPages : "attempt"
+        Nodes : [0 1]
+    }
+    Memory : 515396075520
+    Checkpointing : {
+        Enabled : "true"
+        PostCheckpointCommand : ""
+    }
+    FarMemoryTuning : {
+        BytesPerSeek : 4194304
+        ParallelAccess : "none"
+    }
+    FarMemoryConfig : {
+        Framework : "disk-raid0"
+        InterleaveWidth : 262144
+        BufferPerLane : 67108864
+        Checksums : "true"
+        RawIO : "true"
+        Lanes : [
+            {   //  Lane 0
+                Path : "/mnt/y0"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 1
+                Path : "/mnt/y1"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 2
+                Path : "/mnt/y2"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 3
+                Path : "/mnt/y3"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 4
+                Path : "/mnt/y4"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 5
+                Path : "/mnt/y5"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 6
+                Path : "/mnt/y6"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 7
+                Path : "/mnt/y7"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+        ]
+    }
+}
+
+Start Date:            Fri Jun  9 22:07:05 2023
+End Date:              Wed Jun 14 08:23:26 2023
+
+Total Computation Time:    364112.560 seconds
+Start-to-End Wall Time:    382580.694 seconds
+
+CPU Utilization:           2173.10 %  +  2.09 % kernel overhead
+Multi-core Efficiency:     45.27 %  +  0.04 % kernel overhead
+
+Last Decimal Digits:
+2976735807 0882130902 2460461146 5810642210 6680122702  :  1,000,000,000,000
+4463806240 5498434388 8389727963 8894287067 3227443014  :  1,000,000,000,050
+
+Last Hexadecimal Digits:
+5bddfdac20 e474d2e0ed 2b0a9771e8 f150fe0af9 acbcda8c7a  :  830,482,023,750
+1e85b5a944 e5af
+
+SHA256-dec(1,000,000,000,051 - 1,000,000,000,150): 87ab7c949b75403cf292ff8f4f38d87558ccb8f603ae51d2fe579159f7fa07d6
+
+Dec Counts: {99999485138,99999945665,100000480062,99999787812,100000357867,99999671009,99999807507,99999818728,100000791478,99999854784}
+Hex Counts: {51904997432,51905218629,51904908124,51905472633,51904993764,51905183066,51905186132,51904949302,51905407232,51905179421,51905317525,51905094906,51905210210,51904951268,51904899766,51905054354}
+
+Dec Hash: Floor(|x| * 10^dec) mod (2^61 - 1) = 74308292230626397
+Hex Hash: Floor(|x| * 16^hex) mod (2^61 - 1) = 629024640867154459
+
+Spot Check:                 Good through 1,000,000,000,000
+Timer Sanity Check:         Passed
+Frequency Sanity Check:     Disabled in this version of y-cruncher
+Reference Clock:            TSC
+Reference Clock 0:          0
+Reference Clock 1:          111,599,648
+Reference Clock 2:          7,991,433
+Is Debugger Present:        Unknown
+Is Contiguous:              Yes
+ECC Recovered Errors:       0
+Colors:                     Yes
+
+Event Log:
+Fri Jun  9 22:07:05 2023	0.339	Working Memory
+Fri Jun  9 22:10:55 2023	230.578	Working Memory:  479 GiB  (locked, spread: ?)
+Fri Jun  9 22:10:55 2023	230.578	Twiddle Tables
+Fri Jun  9 22:10:56 2023	230.685	Twiddle Tables:  131 MiB  (locked, spread: ?)
+Fri Jun  9 22:10:56 2023	230.685	I/O Buffers
+Fri Jun  9 22:10:56 2023	230.811	I/O Buffers:  512 MiB  (locked, spread: ?)
+Fri Jun  9 22:10:56 2023	230.812	Begin Computation
+Fri Jun  9 22:10:56 2023	230.812	Series CommonP2B3...  70,513,669,364 terms  (Expansion Factor = 3.334)
+Fri Jun  9 22:10:56 2023	230.812	Series: A ( 41 ) 0.000%
+Fri Jun  9 22:10:56 2023	230.937	Series: A ( 40 ) 0.000%
+Fri Jun  9 22:10:56 2023	231.674	Series: A ( 39 ) 0.002%
+Fri Jun  9 22:10:57 2023	232.526	Series: A ( 38 ) 0.004%
+Fri Jun  9 22:10:58 2023	233.438	Series: E ( 37 ) 0.006%
+Fri Jun  9 22:10:59 2023	234.361	Series: E ( 36 ) 0.007%
+Fri Jun  9 22:11:00 2023	235.575	Series: E ( 35 ) 0.010%
+Fri Jun  9 22:11:02 2023	237.144	Series: E ( 34 ) 0.012%
+Fri Jun  9 22:11:04 2023	239.266	Series: E ( 33 ) 0.016%
+Fri Jun  9 22:11:07 2023	242.005	Series: E ( 32 ) 0.021%
+Fri Jun  9 22:11:11 2023	245.843	Series: E ( 31 ) 0.027%
+Fri Jun  9 22:11:16 2023	251.300	Series: E ( 30 ) 0.034%
+Fri Jun  9 22:11:24 2023	258.711	Series: E ( 29 ) 0.044%
+Fri Jun  9 22:11:33 2023	268.326	Series: E ( 28 ) 0.057%
+Fri Jun  9 22:11:46 2023	281.469	Series: E ( 27 ) 0.074%
+Fri Jun  9 22:12:03 2023	297.683	Series: E ( 26 ) 0.095%
+Fri Jun  9 22:12:25 2023	319.910	Series: E ( 25 ) 0.123%
+Fri Jun  9 22:12:55 2023	350.077	Series: E ( 24 ) 0.159%
+Fri Jun  9 22:13:35 2023	390.531	Series: E ( 23 ) 0.206%
+Fri Jun  9 22:14:33 2023	448.047	Series: E ( 22 ) 0.266%
+Fri Jun  9 22:15:46 2023	520.792	Series: E ( 21 ) 0.343%
+Fri Jun  9 22:17:28 2023	623.214	Series: E ( 20 ) 0.444%
+Fri Jun  9 22:19:39 2023	754.100	Series: E ( 19 ) 0.573%
+Fri Jun  9 22:22:36 2023	930.894	Series: E ( 18 ) 0.741%
+Fri Jun  9 22:26:24 2023	1159.598	Series: E ( 17 ) 0.957%
+Fri Jun  9 22:31:33 2023	1467.715	Series: E ( 16 ) 1.236%
+Fri Jun  9 22:38:59 2023	1913.944	Series: E ( 15 ) 1.597%
+Fri Jun  9 22:48:10 2023	2465.017	Series: E ( 14 ) 2.064%
+Fri Jun  9 23:00:11 2023	3185.792	Series: E ( 13 ) 2.666%
+Fri Jun  9 23:16:50 2023	4185.414	Series: E ( 12 ) 3.445%
+Fri Jun  9 23:39:46 2023	5561.600	Series: E ( 11 ) 4.452%
+Sat Jun 10 00:09:05 2023	7320.646	Series: E ( 10 ) 5.753%
+Sat Jun 10 00:48:09 2023	9663.955	Series: E ( 9 ) 7.436%
+Sat Jun 10 01:42:40 2023	12934.877	Series: S ( 8 ) 9.611%
+Sat Jun 10 02:55:39 2023	17313.827	Series: S ( 7 ) 12.426%
+Sat Jun 10 04:38:15 2023	23469.738	Series: S ( 6 ) 16.068%
+Sat Jun 10 07:07:07 2023	32401.906	Series: S ( 5 ) 20.784%
+Sat Jun 10 11:06:10 2023	46745.075	Series: S ( 4 ) 26.895%
+Sat Jun 10 16:59:51 2023	67966.156	Series: S ( 3 ) 34.825%
+Sun Jun 11 00:40:50 2023	95625.103	Series: S ( 2 ) 45.131%
+Sun Jun 11 12:24:34 2023	137849.026	Series: S ( 1 ) 58.570%
+Mon Jun 12 05:28:09 2023	199263.788	Series: S ( 0 ) 76.202%
+Tue Jun 13 02:39:28 2023	275543.308	Finishing Series
+Tue Jun 13 03:16:02 2023	277737.409	Large Division
+Tue Jun 13 10:48:37 2023	304892.001	InvSqrt(10005)...
+Tue Jun 13 15:47:36 2023	322830.905	Large Multiply
+Tue Jun 13 19:04:59 2023	334673.745	Verify Large Multiply
+Tue Jun 13 19:26:09 2023	335943.989	Writing Hexadecimal Digits
+Tue Jun 13 20:03:02 2023	338157.429	Base Converting
+Wed Jun 14 03:56:22 2023	366556.806	Writing Decimal Digits
+Wed Jun 14 04:33:39 2023	368794.590	Verifying Base Conversion
+Wed Jun 14 08:11:54 2023	381888.964	Verifying Binary Output
+Wed Jun 14 08:17:21 2023	382216.133	Verifying Decimal Output
+Wed Jun 14 08:20:30 2023	382404.937	Verifying Hexadecimal Output
+Wed Jun 14 08:23:26 2023	382580.694	End Computation
+
+----
+
+Checksum0: 538377ef5ff2679a6fe0e9bb6c9d6385e8f8488a40287bbd30a6c4b12497fac82961185a4077fdd098bb7c02eb524cffb3fa59ab40406b45f24f8c5738364bef
+Checksum1: 0942ba1a5ff5f4b4cc528461ea6b643eec413feff79e9a8e859927c25f9a49f1b19f29bd52e4fc4bd9645814f5c9c259068ba3e9c525bad0ab7e362fcdacaec1

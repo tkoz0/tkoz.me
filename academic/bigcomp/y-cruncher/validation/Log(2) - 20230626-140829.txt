@@ -1,0 +1,388 @@
+﻿Benchmark Validation File - DO NOT MODIFY! If you do, it will fail validation.
+
+Validation Version:    1.3
+
+Program:               y-cruncher v0.7.10 Build 9513
+Tuning:                11-SNB ~ Hina
+
+User:                  None Specified - You can edit this in "Username.txt".
+
+Operating System:      Linux 5.15.0-73-generic x86_64
+
+Processor(s):
+    Name:              Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz
+    Logical Cores:     48
+    Physical Cores:    24
+    Sockets:           2
+    NUMA Nodes:        2
+    Base Frequency:    2,699,955,488 Hz
+
+Motherboard:
+    Manufacturer:      Dell Inc.
+    Model:             0C4Y3R
+    Version:           A02
+    Serial Number:     Suppressed - Personally identifiable information is opt-in only.
+
+Memory:
+    Usable Memory:     540,976,164,864 ( 504 GiB)
+    Total Memory:      Unable to Detect
+
+Constant:              Log(2)
+Algorithm:             Primary Machin-like Formula (3 terms)
+Decimal Digits:        1,000,000,000,050
+Hexadecimal Digits:    830,482,023,764
+Computation Mode:      Swap Mode
+Threading Mode:        Push Pool  ->  48 / ?  (randomization on)
+Working Memory:        514,722,327,744 ( 479 GiB)
+Total Memory:          515,396,075,520 ( 480 GiB)
+
+Logical Largest Checkpoint:    1,763,257,041,064 (1.60 TiB)
+Logical Peak Disk Usage:       5,634,144,853,912 (5.12 TiB)
+Logical Disk Bytes Read:       332,154,409,424,876 ( 302 TiB)
+Logical Disk Bytes Written:    291,101,758,194,716 ( 265 TiB)
+
+Configuration Dump:
+{
+    Constant : {
+        Constant : "log"
+        Argument : 2
+        Algorithm : "machin-primary"
+    }
+    ComputeSize : {
+        DecimalDigits : 1000000000050
+        EnableHexDigits : "true"
+    }
+    Output : {
+        Framework : "ycd"
+        Path : ""
+        DigitsPerFile : 0
+        RawIO : "true"
+    }
+    OutputVerify : "true"
+    Mode : "swap"
+    Parallelism : {
+        TaskDecomposition : 48
+        Framework : "pushpool"
+        WorkerThreads : 0
+        Randomization : "true"
+        MaxSequentialDispatch : 64
+    }
+    Allocator : {
+        Allocator : "interleave"
+        Hashed : "true"
+        mbind : "false"
+        LockedPages : "attempt"
+        Nodes : [0 1]
+    }
+    Memory : 515396075520
+    Checkpointing : {
+        Enabled : "true"
+        PostCheckpointCommand : ""
+    }
+    FarMemoryTuning : {
+        BytesPerSeek : 4194304
+        ParallelAccess : "none"
+    }
+    FarMemoryConfig : {
+        Framework : "disk-raid0"
+        InterleaveWidth : 262144
+        BufferPerLane : 67108864
+        Checksums : "true"
+        RawIO : "true"
+        Lanes : [
+            {   //  Lane 0
+                Path : "/mnt/y0"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 1
+                Path : "/mnt/y1"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 2
+                Path : "/mnt/y2"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 3
+                Path : "/mnt/y3"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 4
+                Path : "/mnt/y4"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 5
+                Path : "/mnt/y5"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 6
+                Path : "/mnt/y6"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 7
+                Path : "/mnt/y7"
+                BufferAllocator : {
+                    Allocator : "interleave"
+                    Hashed : "true"
+                    mbind : "false"
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+        ]
+    }
+}
+
+Start Date:            Wed Jun 14 09:20:34 2023
+End Date:              Mon Jun 26 14:07:42 2023
+
+Total Computation Time:    1035293.377 seconds
+Start-to-End Wall Time:    1054028.227 seconds
+
+CPU Utilization:           2348.05 %  +  2.38 % kernel overhead
+Multi-core Efficiency:     48.92 %  +  0.05 % kernel overhead
+
+Last Decimal Digits:
+4109983528 3595607854 3233168884 9393282830 5820034479  :  1,000,000,000,000
+8409665114 1411280839 1787225919 9554690188 4997630221  :  1,000,000,000,050
+
+Last Hexadecimal Digits:
+c413121105 bd68fcebda a92aaa68d5 7c032ad93e 6737f60769  :  830,482,023,750
+fac332183e 8455
+
+SHA256-dec(1,000,000,000,051 - 1,000,000,000,150): 4136036a3f9568cf46958330d8f2de292e2f319c9c109da58d84b1bb0b714644
+
+Dec Counts: {99999928452,100000059319,99999703213,100000025946,99999808900,100000108497,100000027890,100000321139,99999883799,100000132895}
+Hex Counts: {51905200192,51905257422,51905287594,51905107299,51905058905,51905228435,51904790450,51905348890,51904999387,51905484330,51905156718,51905067135,51904560508,51904971048,51905142147,51905363304}
+
+Dec Hash: Floor(|x| * 10^dec) mod (2^61 - 1) = 1621707385117354730
+Hex Hash: Floor(|x| * 16^hex) mod (2^61 - 1) = 23715969597210282
+
+Spot Check:                 Good through 1,000,000,000,000
+Timer Sanity Check:         Passed
+Frequency Sanity Check:     Disabled in this version of y-cruncher
+Reference Clock:            TSC
+Reference Clock 0:          0
+Reference Clock 1:          129,234,509
+Reference Clock 2:          8,884,235
+Is Debugger Present:        Unknown
+Is Contiguous:              Yes
+ECC Recovered Errors:       0
+Colors:                     Yes
+
+Event Log:
+Wed Jun 14 09:20:34 2023	0.318	Working Memory
+Wed Jun 14 09:26:23 2023	349.675	Working Memory:  479 GiB  (locked, spread: ?)
+Wed Jun 14 09:26:23 2023	349.677	Twiddle Tables
+Wed Jun 14 09:26:23 2023	349.806	Twiddle Tables:  131 MiB  (locked, spread: ?)
+Wed Jun 14 09:26:23 2023	349.806	I/O Buffers
+Wed Jun 14 09:26:24 2023	349.970	I/O Buffers:  512 MiB  (locked, spread: ?)
+Wed Jun 14 09:26:24 2023	349.970	Begin Computation
+Wed Jun 14 09:26:24 2023	349.970	18 ArcCoth( 26 ):
+Wed Jun 14 09:26:24 2023	349.970	Series CommonP2B3...  353,363,546,260 terms  (Expansion Factor = 5.034)
+Wed Jun 14 09:26:24 2023	349.970	Series: A ( 60 ) 0.000%
+Wed Jun 14 09:26:24 2023	349.976	Series: A ( 59 ) 0.000%
+Wed Jun 14 09:26:24 2023	350.693	Series: A ( 58 ) 0.001%
+Wed Jun 14 09:26:25 2023	351.602	Series: A ( 57 ) 0.002%
+Wed Jun 14 09:26:26 2023	352.608	Series: A ( 56 ) 0.004%
+Wed Jun 14 09:26:27 2023	353.670	Series: A ( 55 ) 0.005%
+Wed Jun 14 09:26:28 2023	354.778	Series: E ( 54 ) 0.006%
+Wed Jun 14 09:26:30 2023	355.921	Series: E ( 53 ) 0.007%
+Wed Jun 14 09:26:31 2023	357.278	Series: E ( 52 ) 0.008%
+Wed Jun 14 09:26:32 2023	358.879	Series: E ( 51 ) 0.010%
+Wed Jun 14 09:26:34 2023	360.726	Series: E ( 50 ) 0.012%
+Wed Jun 14 09:26:37 2023	363.102	Series: E ( 49 ) 0.014%
+Wed Jun 14 09:26:40 2023	366.136	Series: E ( 48 ) 0.017%
+Wed Jun 14 09:26:43 2023	369.908	Series: E ( 47 ) 0.020%
+Wed Jun 14 09:26:48 2023	374.377	Series: E ( 46 ) 0.024%
+Wed Jun 14 09:26:53 2023	379.694	Series: E ( 45 ) 0.029%
+Wed Jun 14 09:27:00 2023	386.889	Series: E ( 44 ) 0.034%
+Wed Jun 14 09:27:09 2023	395.233	Series: E ( 43 ) 0.041%
+Wed Jun 14 09:27:19 2023	405.513	Series: E ( 42 ) 0.049%
+Wed Jun 14 09:27:31 2023	417.469	Series: E ( 41 ) 0.058%
+Wed Jun 14 09:27:46 2023	432.879	Series: E ( 40 ) 0.069%
+Wed Jun 14 09:28:05 2023	451.024	Series: E ( 39 ) 0.083%
+Wed Jun 14 09:28:28 2023	473.953	Series: E ( 38 ) 0.099%
+Wed Jun 14 09:28:54 2023	500.027	Series: E ( 37 ) 0.118%
+Wed Jun 14 09:29:27 2023	533.008	Series: E ( 36 ) 0.140%
+Wed Jun 14 09:30:07 2023	573.535	Series: E ( 35 ) 0.168%
+Wed Jun 14 09:30:59 2023	625.351	Series: E ( 34 ) 0.200%
+Wed Jun 14 09:32:03 2023	688.933	Series: E ( 33 ) 0.238%
+Wed Jun 14 09:33:14 2023	760.598	Series: E ( 32 ) 0.284%
+Wed Jun 14 09:34:41 2023	847.018	Series: E ( 31 ) 0.339%
+Wed Jun 14 09:36:32 2023	958.548	Series: E ( 30 ) 0.405%
+Wed Jun 14 09:38:53 2023	1099.378	Series: E ( 29 ) 0.483%
+Wed Jun 14 09:41:37 2023	1263.308	Series: E ( 28 ) 0.576%
+Wed Jun 14 09:45:01 2023	1467.097	Series: E ( 27 ) 0.687%
+Wed Jun 14 09:48:59 2023	1705.079	Series: E ( 26 ) 0.819%
+Wed Jun 14 09:53:54 2023	2000.147	Series: E ( 25 ) 0.977%
+Wed Jun 14 09:59:49 2023	2355.063	Series: E ( 24 ) 1.166%
+Wed Jun 14 10:07:40 2023	2826.748	Series: E ( 23 ) 1.390%
+Wed Jun 14 10:17:26 2023	3412.861	Series: E ( 22 ) 1.659%
+Wed Jun 14 10:29:22 2023	4127.984	Series: E ( 21 ) 1.978%
+Wed Jun 14 10:43:43 2023	4989.762	Series: E ( 20 ) 2.360%
+Wed Jun 14 11:02:03 2023	6088.949	Series: E ( 19 ) 2.815%
+Wed Jun 14 11:24:09 2023	7415.542	Series: E ( 18 ) 3.359%
+Wed Jun 14 11:51:15 2023	9041.002	Series: E ( 17 ) 4.007%
+Wed Jun 14 12:22:36 2023	10922.051	Series: E ( 16 ) 4.780%
+Wed Jun 14 13:01:51 2023	13277.569	Series: E ( 15 ) 5.704%
+Wed Jun 14 13:46:07 2023	15933.868	Series: E ( 14 ) 6.805%
+Wed Jun 14 14:43:59 2023	19405.851	Series: S ( 13 ) 8.120%
+Wed Jun 14 15:54:24 2023	23630.074	Series: S ( 12 ) 9.690%
+Wed Jun 14 17:22:38 2023	28924.758	Series: S ( 11 ) 11.564%
+Wed Jun 14 19:11:21 2023	35447.715	Series: S ( 10 ) 13.803%
+Wed Jun 14 21:35:52 2023	44117.985	Series: S ( 9 ) 16.477%
+Thu Jun 15 00:19:40 2023	53945.956	Series: S ( 8 ) 19.672%
+Thu Jun 15 04:32:07 2023	69093.251	Series: S ( 7 ) 23.492%
+Thu Jun 15 10:06:14 2023	89140.279	Series: S ( 6 ) 28.061%
+Thu Jun 15 17:38:04 2023	116250.202	Series: S ( 5 ) 33.530%
+Fri Jun 16 01:54:58 2023	146064.862	Series: S ( 4 ) 40.084%
+Fri Jun 16 13:36:43 2023	188169.325	Series: S ( 3 ) 47.946%
+Sat Jun 17 03:38:57 2023	238703.594	Series: S ( 2 ) 57.400%
+Sat Jun 17 23:16:11 2023	309337.652	Series: S ( 1 ) 68.803%
+Sun Jun 18 23:15:46 2023	395712.878	Series: S ( 0 ) 82.653%
+Tue Jun 20 04:26:42 2023	500768.070	Finishing Series
+Tue Jun 20 05:03:51 2023	502997.833	Large Division
+Tue Jun 20 12:43:57 2023	530603.099	-2 ArcCoth( 4801 ):
+Tue Jun 20 12:43:57 2023	530603.099	Series CommonP2B3...  135,820,415,013 terms  (Expansion Factor = 2.494)
+Tue Jun 20 12:43:57 2023	530603.099	Series: A ( 31 ) 0.000%
+Tue Jun 20 12:43:57 2023	530603.665	Series: A ( 30 ) 0.002%
+Tue Jun 20 12:43:58 2023	530604.612	Series: E ( 29 ) 0.004%
+Tue Jun 20 12:43:59 2023	530605.646	Series: E ( 28 ) 0.007%
+Tue Jun 20 12:44:00 2023	530606.854	Series: E ( 27 ) 0.009%
+Tue Jun 20 12:44:02 2023	530608.498	Series: E ( 26 ) 0.013%
+Tue Jun 20 12:44:05 2023	530611.086	Series: E ( 25 ) 0.018%
+Tue Jun 20 12:44:08 2023	530614.648	Series: E ( 24 ) 0.025%
+Tue Jun 20 12:44:14 2023	530620.391	Series: E ( 23 ) 0.035%
+Tue Jun 20 12:44:22 2023	530628.118	Series: E ( 22 ) 0.048%
+Tue Jun 20 12:44:32 2023	530638.755	Series: E ( 21 ) 0.067%
+Tue Jun 20 12:44:49 2023	530655.308	Series: E ( 20 ) 0.094%
+Tue Jun 20 12:45:12 2023	530678.043	Series: E ( 19 ) 0.130%
+Tue Jun 20 12:45:48 2023	530714.616	Series: E ( 18 ) 0.181%
+Tue Jun 20 12:46:38 2023	530764.161	Series: E ( 17 ) 0.252%
+Tue Jun 20 12:47:50 2023	530836.146	Series: E ( 16 ) 0.351%
+Tue Jun 20 12:49:37 2023	530943.022	Series: E ( 15 ) 0.489%
+Tue Jun 20 12:52:08 2023	531094.876	Series: E ( 14 ) 0.680%
+Tue Jun 20 12:55:55 2023	531321.554	Series: E ( 13 ) 0.946%
+Tue Jun 20 13:00:57 2023	531622.918	Series: E ( 12 ) 1.317%
+Tue Jun 20 13:09:36 2023	532142.472	Series: E ( 11 ) 1.833%
+Tue Jun 20 13:21:58 2023	532884.489	Series: E ( 10 ) 2.552%
+Tue Jun 20 13:39:28 2023	533934.042	Series: E ( 9 ) 3.552%
+Tue Jun 20 14:06:05 2023	535531.158	Series: E ( 8 ) 4.944%
+Tue Jun 20 14:40:06 2023	537572.903	Series: E ( 7 ) 6.884%
+Tue Jun 20 15:37:11 2023	540997.592	Series: S ( 6 ) 9.586%
+Tue Jun 20 16:58:24 2023	545870.817	Series: S ( 5 ) 13.351%
+Tue Jun 20 18:57:41 2023	553027.896	Series: S ( 4 ) 18.602%
+Tue Jun 20 21:49:53 2023	563359.666	Series: S ( 3 ) 25.931%
+Wed Jun 21 03:47:18 2023	584804.274	Series: S ( 2 ) 36.176%
+Wed Jun 21 12:16:06 2023	615332.881	Series: S ( 1 ) 50.536%
+Thu Jun 22 02:28:26 2023	666472.721	Series: S ( 0 ) 70.772%
+Thu Jun 22 23:15:43 2023	741309.902	Finishing Series
+Fri Jun 23 00:02:19 2023	744105.029	Large Division
+Fri Jun 23 08:05:05 2023	773071.452	Accumulate
+Fri Jun 23 08:21:01 2023	774027.319	8 ArcCoth( 8749 ):
+Fri Jun 23 08:21:01 2023	774027.319	Series CommonP2B3...  126,840,505,980 terms  (Expansion Factor = 2.391)
+Fri Jun 23 08:21:01 2023	774027.319	Series: A ( 30 ) 0.000%
+Fri Jun 23 08:21:01 2023	774027.790	Series: A ( 29 ) 0.002%
+Fri Jun 23 08:21:02 2023	774028.764	Series: E ( 28 ) 0.004%
+Fri Jun 23 08:21:03 2023	774029.791	Series: E ( 27 ) 0.007%
+Fri Jun 23 08:21:05 2023	774030.971	Series: E ( 26 ) 0.009%
+Fri Jun 23 08:21:06 2023	774032.619	Series: E ( 25 ) 0.013%
+Fri Jun 23 08:21:09 2023	774035.194	Series: E ( 24 ) 0.018%
+Fri Jun 23 08:21:13 2023	774039.005	Series: E ( 23 ) 0.026%
+Fri Jun 23 08:21:19 2023	774045.067	Series: E ( 22 ) 0.037%
+Fri Jun 23 08:21:27 2023	774053.575	Series: E ( 21 ) 0.051%
+Fri Jun 23 08:21:40 2023	774066.113	Series: E ( 20 ) 0.073%
+Fri Jun 23 08:21:57 2023	774083.389	Series: E ( 19 ) 0.102%
+Fri Jun 23 08:22:24 2023	774110.068	Series: E ( 18 ) 0.144%
+Fri Jun 23 08:23:01 2023	774147.641	Series: E ( 17 ) 0.203%
+Fri Jun 23 08:24:00 2023	774206.801	Series: E ( 16 ) 0.286%
+Fri Jun 23 08:25:22 2023	774288.854	Series: E ( 15 ) 0.402%
+Fri Jun 23 08:27:30 2023	774416.283	Series: E ( 14 ) 0.567%
+Fri Jun 23 08:30:29 2023	774595.459	Series: E ( 13 ) 0.799%
+Fri Jun 23 08:35:00 2023	774866.766	Series: E ( 12 ) 1.125%
+Fri Jun 23 08:41:26 2023	775252.552	Series: E ( 11 ) 1.586%
+Fri Jun 23 08:52:22 2023	775907.977	Series: E ( 10 ) 2.234%
+Fri Jun 23 09:08:26 2023	776872.676	Series: E ( 9 ) 3.148%
+Fri Jun 23 09:33:25 2023	778371.179	Series: E ( 8 ) 4.435%
+Fri Jun 23 10:06:30 2023	780356.816	Series: E ( 7 ) 6.250%
+Fri Jun 23 10:57:24 2023	783410.191	Series: S ( 6 ) 8.810%
+Fri Jun 23 12:11:54 2023	787880.069	Series: S ( 5 ) 12.420%
+Fri Jun 23 14:06:59 2023	794785.111	Series: S ( 4 ) 17.515%
+Fri Jun 23 16:57:02 2023	804988.589	Series: S ( 3 ) 24.712%
+Fri Jun 23 22:18:05 2023	824251.051	Series: S ( 2 ) 34.894%
+Sat Jun 24 06:38:09 2023	854255.843	Series: S ( 1 ) 49.336%
+Sat Jun 24 19:44:14 2023	901420.072	Series: S ( 0 ) 69.927%
+Sun Jun 25 16:19:08 2023	975513.916	Finishing Series
+Sun Jun 25 16:56:12 2023	977738.520	Large Division
+Mon Jun 26 00:37:24 2023	1005410.099	Accumulate
+Mon Jun 26 00:53:22 2023	1006368.251	Writing Hexadecimal Digits
+Mon Jun 26 01:29:36 2023	1008542.589	Base Converting
+Mon Jun 26 09:37:31 2023	1037817.739	Writing Decimal Digits
+Mon Jun 26 10:14:17 2023	1040023.217	Verifying Base Conversion
+Mon Jun 26 13:56:04 2023	1053330.200	Verifying Binary Output
+Mon Jun 26 14:01:23 2023	1053649.229	Verifying Decimal Output
+Mon Jun 26 14:04:39 2023	1053845.652	Verifying Hexadecimal Output
+Mon Jun 26 14:07:42 2023	1054028.227	End Computation
+
+----
+
+Checksum0: 098a6e77b862e05719cde6e7244f0b5556939c4a41375042c1ca8af0279d9a723c7bb18aa93fc46b5024680cea186497e5e008402a722246268faaeb922c94cb
+Checksum1: 25e78ec1045f9f7891311d9b77d3119334a9b6a2444c58595d93bfd35f25cc169ef2fc13a86e4f547c306f38535d72213192034b96cf71efc1c382f2fd339e5d

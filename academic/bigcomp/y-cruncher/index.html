@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computations with y-cruncher</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Computations with y-cruncher</h1>
+
+<h2>List of Largest Computations</h2>
+
+<ul>
+    <li>
+        1 trillion digits of \(\pi\)
+        (<a href="validation/Pi - 20230614-082425.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of \(e\)
+        (<a href="validation/e - 20230609-215434.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of \(\phi\) (golden ratio)
+        (<a href="validation/Golden Ratio - 20230607-132602.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of Catalan's constant
+        (<a href="validation/Catalan - 20230907-145722.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of the lemniscate constant
+        (<a href="validation/Lemniscate - 20231228-090301.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of \(\zeta(3)\) (Apery's constant)
+        (<a href="validation/Zeta(3) - 20230807-220226.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of \(\log(2)\) (natural log)
+        (<a href="validation/Log(2) - 20230626-140829.txt" target="_blank">validation</a>)
+    </li>
+    <li>
+        1 trillion digits of \(\log(3)\) (natural log)
+        (<a href="validation/Log(3) - 20230712-101826.txt" target="_blank">validation</a>)
+    </li>
+</ul>
+
+<p>
+    The 8 listed above were done on a Dell R720 with 2x Xeon E5-2697 v2
+    (24C/48T @ 2.7GHz), 16x 32GB PC3L-10600R RAM (total 512GB), and 8x 4TB
+    SATA HDDs.
+</p>
+
+<p>
+    Currently in progress is a computation of
+    1 trillion digits of the Euler-Mascheroni constant.
+</p>
+
+<p>
+    For these large computations, I actually compute 50 extra digits to avoid
+    roundoff error if I do some calculations with the resulting output.
+</p>
+
+<h2>Normal Numbers P-value Calculation</h2>
+
+<p>
+    <a href="pvt.html">Click here to see the p-value tables.</a>
+</p>
+
+<p>
+    Normal numbers are those whose expansion in all bases has a uniform
+    distribution of each digit. Let \(b\) be a base. Then let \(X\) be a
+    random variable for counting a digit. \(X\) has a \(1/b\) probability of
+    being \(1\) and is \(0\) otherwise. This makes its mean \(\mu=1/b\) and
+    standard deviation
+    \[\sigma=\sqrt{\left({1\over b}\right)^2\cdot{b-1\over b}
+    +\left({b-1\over b}\right)^2\cdot{1\over b}}
+    =\sqrt{{b-1\over b^3}+{(b-1)^2\over b^3}}
+    =\sqrt{b^2-b\over b^3}={\sqrt{b-1}\over b}\]
+    This distribution describes a single digit and adding \(N\) of these random
+    variables describes how many occurrences of any digit we would expect to see
+    when computing \(N\) digits. The \(p\)-value can be computed by first
+    finding the test statistic, where \(M\) is the number of occurrences and
+    \(\bar{x}=M/N\) is the sample mean.
+    \[t={\bar{x}-\mu\over\sigma/\sqrt{N}}={M-N/b\over\sigma\sqrt{N}}\]
+    Then the \(p\)-value is (for the two-tailed test)
+    \[p=1-\text{erf}\left({|t|\over\sqrt{2}}\right)
+    =\text{erfc}\left({|t|\over\sqrt{2}}\right)\]
+    which describes the probability that we would see a value of \(\bar{x}\) at
+    least as extreme if \(X\) really has the mean \(\mu\) and standard
+    deviation \(\sigma\). In most practical uses of statistics, \(p&gt;0.05\)
+    is considered good enough to infer statistical significance, but we have
+    to interpret the results carefully. The \(p\)-value may be interpreted as a
+    measure of the risk of rejecting the null hypothesis. In this case, the null
+    hypothesis is that the number is normal, having uniformrly distributed
+    digits. Very low \(p\)-values would suggest that the number is not normal.
+    Numerical evidence like this is of course not a proof. So far, there is no
+    proof that any of these common irrational constants are normal.
+</p>
+
+<hr>
+
+<a href="../index.html">Back</a>
+
+</div>
+</body>
+</html>
