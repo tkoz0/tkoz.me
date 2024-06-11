@@ -5,3 +5,6 @@ prismjs/
 
 # this file is created by the speedtest thing
 speedtest/backend/getIP_serverLocation.php
+
+# certbot stuff
+.well-known
