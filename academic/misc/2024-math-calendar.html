@@ -354,8 +354,8 @@
     <tr>
         <td><a href="#jun10">10</a></td>
         <td><a href="#jun11">11</a></td>
-        <td>12</td>
-        <td>13</td>
+        <td><a href="#jun12">12</a></td>
+        <td><a href="#jun13">13</a></td>
         <td>14</td>
         <td>15</td>
         <td>16</td>
@@ -5132,6 +5132,45 @@ Then we use \(B\) and \(H\) in the volume of a pyramid formula.
 
 \[\gcd(2772,73337)=\gcd(2772,1265)=\gcd(242,1265)=\gcd(242,55)=\gcd(22,55)
 =\gcd(22,11)=\gcd(0,11)=11\]
+
+<h3 id="jun12">Jun 12</h3>
+
+\[{4x+30\over x+14}\in\mathbb{N},\ x\in\mathbb{N}\]
+
+<p>
+We can see that \(\lim_{x\to\infty}{4x+30\over x+14}=4\) and
+\({d\over dx}{4x+30\over x+14}={26\over(x+14)^2}&gt;0\) for all positive \(x\).
+Therefore, as \(x\) increases, this fraction is only increasing, and is always
+less than 4. So this fraction must be equal to 1, 2, or 3. This gives us 3
+equations to solve
+\[4x+30=1\cdot(x+14),\ 4x+30=2\cdot(x+14),\ 4x+30=3\cdot(x+14)\]
+which give solutions \(-16/3,-1,12\) respectively. Clearly 12 is the only valid
+solution since \(x\in\mathbb{N}\).
+</p>
+
+<h3 id="jun13">Jun 13</h3>
+
+<p>
+Find the number of digits in \(11^{12}\)
+</p>
+
+<p>
+First, we can write this as \((10\cdot1.1)^{12}=10^{12}\cdot1.1^{12}\). So we
+can put bounds on \(1.1^{12}\). Clearly \(1.1^{12}\geq1\) so the answer is at
+least \(10^{12}\) containing 13 digits. For a crude upper bound:
+\[\begin{align}&(1+0.1)^{12}=1+12\cdot0.1+{12\cdot11\over2}\cdot0.1^2
++{12\cdot11\cdot10\over6}0.1^3+\ldots=1+1.2+0.66+0.22+\ldots\\&
+\leq3.08+2^{12}\cdot0.1^4=3.08+0.4096=3.4896\end{align}\]
+That last part comes from taking the remaining terms
+\[{12\choose4}0.1^4+{12\choose5}0.1^5+\ldots
+\leq0.1^4\left({12\choose4}+{12\choose5}+\ldots\right)\leq0.1^4\cdot2^{12}\]
+We have replaced all greater powers of 0.1 with \(0.1^4\), and the sum of the
+binomial coefficients \({12\choose k}\) for \(0\leq k\leq12\) is \(2^{12}\) so
+that also is an upper bound. This shows that
+\(10^{12}\leq11^{12}\leq3.4896\cdot10^{12}\). This guarantees that it has 13
+digits without knowing the exact value. If we were to compute the exact value,
+we would get 3138428376721, which clearly is 13 digits.
+</p>
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
