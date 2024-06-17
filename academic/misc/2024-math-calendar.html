@@ -358,7 +358,7 @@
         <td><a href="#jun13">13</a></td>
         <td><a href="#jun14">14</a></td>
         <td><a href="#jun15">15</a></td>
-        <td>16</td>
+        <td><a href="#jun16">16</a></td>
     </tr>
     <tr>
         <td>17</td>
@@ -5212,6 +5212,33 @@ starting entirely in green and then marking composite numbers in red.
 Next, count the primes \(p\) such that either \(p+2\) or \(p-2\) are prime. We
 find the primes \(3,5,7,11,13,17,19,29,31,41,43,59,61,71,73\). This list has 15
 primes.
+</p>
+
+<h3 id="jun16">Jun 16</h3>
+
+<p>
+\(x=\) the number of sums of positive integers that add up to 5 (order matters).
+</p>
+
+<p>
+We can solve this by breaking it into smaller problems. For 1, there is just one
+way with the number 1. For 2, our sum can start with 1 or 2. If it starts with
+1, we have 1 way to finish it by summing to 1. If it starts with 2, it is done.
+Therefore there are 2 ways. For 3, it starts with 1, 2, or 3. By similar
+reasoning, there are \(2+1+1=4\) ways to make a sum to 3. We can repeat this 2
+more times to show that the answer is 16, but there is a pattern to notice here.
+Let \(P(n)\) mean there are \(2^{n-1}\) ways to write \(n\) as a sum. Clearly
+\(P(1)\) is true.
+</p>
+
+<p>
+Now assume \(P(1),P(2),\ldots,P(n)\) is true. Then to sum to \(n+1\), we can
+have the sum start with \(1,2,\ldots,n,n+1\). If it starts with \(n+1\), we are
+done so count 1 way. For all the other cases, we sum the numbers from
+\(P(1),P(2),\ldots,P(n)\) so we have
+\[1+2^{n-1}+2^{n-2}+\ldots+2^0=1+(2^n-1)=2^n\]
+so \(P(n+1)\) is true. Therefore, the answer is \(P(5)\), which is that there
+are \(2^{5-1}=16\) sums of positive integers with order mattering that sum to 5.
 </p>
 
 <!-- allow scroll past end a bit -->
