@@ -45,6 +45,8 @@ jobs:
             END
         - name: 'pull content'
           run: ssh website $SSH_CMD
+        - name: 'notify discord'
+          run: python3 -c "import requests; requests.post('$DISCORD_WEBHOOK'),{'content':'TKoz.me updated (probably a math problem solution)'}"
         env:
             SSH_USER: ${{secrets.SSH_USER}}
             SSH_KEY: ${{secrets.SSH_KEY}}
@@ -52,4 +54,5 @@ jobs:
             SSH_HOST: ${{secrets.SSH_HOST}}
             SSH_PORT: ${{secrets.SSH_PORT}}
             SSH_CMD: ${{secrets.SSH_CMD}}
+            DISCORD_WEBHOOK: ${{secrets.DISCORD_WEBHOOK}}
 
