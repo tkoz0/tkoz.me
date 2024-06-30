@@ -1,0 +1,822 @@
+﻿Benchmark Validation File - DO NOT MODIFY! If you do, it will fail validation.
+
+Validation Version:    1.3
+
+Program:               y-cruncher v0.8.3 Build 9532
+Tuning:                11-SNB ~ Hina
+
+User:                  None Specified - You can edit this in "Username.txt".
+
+Operating System:      Linux 5.15.0-91-generic x86_64
+
+Processor(s):
+    Name:              Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz
+    Logical Cores:     48
+    Physical Cores:    24
+    Sockets:           2
+    NUMA Nodes:        2
+    Base Frequency:    2,699,935,968 Hz
+
+Motherboard:
+    Manufacturer:      Dell Inc.
+    Model:             0C4Y3R
+    Version:           A02
+    Serial Number:     Suppressed - Personally identifiable information is opt-in only.
+
+Memory:
+    Usable Memory:     540,963,094,528 ( 504 GiB)
+    Total Memory:      Unable to Detect
+
+Constant:              Euler-Mascheroni Constant
+Algorithm:             Brent-McMillan with Refinement ( n = 2^39 )
+Decimal Digits:        1,000,000,000,050
+Hexadecimal Digits:    830,482,023,764
+Computation Mode:      Swap Mode
+Threading Mode:        Push Pool  ->  48 / ?  (randomization on)
+Working Memory:        514,787,275,520 ( 479 GiB)
+Total Memory:          515,396,119,168 ( 480 GiB)
+
+Logical Largest Checkpoint:    2,189,652,887,416 (1.99 TiB)
+Logical Peak Disk Usage:       6,940,069,238,840 (6.31 TiB)
+Logical Disk Bytes Read:       4,482,864,004,030,616 (3.98 PiB)
+Logical Disk Bytes Written:    3,874,321,810,854,120 (3.44 PiB)
+
+Configuration Dump:
+{
+    Constant : {
+        Constant : "gamma"
+        Algorithm : "brent-refined"
+    }
+    ComputeSize : {
+        DecimalDigits : 1000000000050
+        EnableHexDigits : true
+    }
+    Output : {
+        Framework : "ycd"
+        Path : ""
+        DigitsPerFile : 0
+        RawIO : true
+    }
+    OutputVerify : true
+    Mode : "swap"
+    Parallelism : {
+        TaskDecomposition : 48
+        Framework : "pushpool"
+        WorkerThreads : 0
+        Randomization : true
+        MaxSequentialDispatch : 64
+    }
+    Allocator : {
+        Threads : 24
+        Allocator : "interleave"
+        Hashed : true
+        mbind : false
+        LockedPages : "attempt"
+        Nodes : [0 1]
+    }
+    Memory : 515396075520
+    Checkpointing : {
+        Enabled : true
+        PostCheckpointCommand : ""
+    }
+    FarMemoryTuning : [
+        {
+            SizeInBytes : -1
+            BytesPerSeek : 4194304
+            PreferredAlignmentK : 12
+            ParallelAccess : "none"
+        }
+    ]
+    FarMemoryConfig : {
+        Framework : "disk-raid0"
+        InterleaveWidth : 65536
+        LaneMultiplier : 1
+        Workers : 1
+        BufferPerWorker : 67108864
+        Checksums : true
+        RawIO : true
+        ReadProtect : true
+        TuningDefault : "hard-drive"
+        Lanes : [
+            {   //  Lane 0
+                Path : "/mnt/y0"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 1
+                Path : "/mnt/y1"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 2
+                Path : "/mnt/y2"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 3
+                Path : "/mnt/y3"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 4
+                Path : "/mnt/y4"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 5
+                Path : "/mnt/y5"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 6
+                Path : "/mnt/y6"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 7
+                Path : "/mnt/y7"
+                BufferAllocator : {
+                    Threads : 24
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47]
+                WorkerThreadPriority : 2
+            }
+        ]
+    }
+}
+
+Start Date:            Tue Jan  2 05:00:11 2024
+End Date:              Wed Jun 19 09:14:14 2024
+
+Total Computation Time:    14593933.576 seconds
+Start-to-End Wall Time:    14616843.480 seconds
+
+CPU Utilization:           1625.66 %  +  1.62 % kernel overhead
+Multi-core Efficiency:     33.87 %  +  0.03 % kernel overhead
+
+Last Decimal Digits:
+9773093062 3932940217 8340090112 0052262117 4836976743  :  1,000,000,000,000
+8399998392 8440533894 4213617102 0000648828 4707149365  :  1,000,000,000,050
+
+Last Hexadecimal Digits:
+63fa14026d b53727bfa0 6e2b289d99 9af5f0b0c4 e7fade0c3e  :  830,482,023,750
+e11482a0c0 135b
+
+SHA256-dec(1,000,000,000,051 - 1,000,000,000,150): e47597ed5ae5c21b513865c21cbf1d6f64bdc460b0c41daccbb229996e5b0638
+
+Dec Counts: {100000239767,99999957397,100000158443,100000186948,100000081902,100000248485,99999788064,99999980213,99999729339,99999629492}
+Hex Counts: {51905359782,51905143593,51905276300,51905282765,51905005820,51905059297,51905082322,51904958995,51905390825,51905205085,51905073168,51905233997,51905197455,51904881198,51904790189,51905082973}
+
+Dec Hash: Floor(|x| * 10^dec) mod (2^61 - 1) = 206270938331609607
+Hex Hash: Floor(|x| * 16^hex) mod (2^61 - 1) = 810673147560541563
+
+Spot Check:                 Good through 700,000,000,000
+Timer Sanity Check:         Passed
+Frequency Sanity Check:     Disabled in this version of y-cruncher
+Reference Clock:            TSC
+Reference Clock 0:          0
+Reference Clock 1:          128,789,696
+Reference Clock 2:          9,082,941
+Is Debugger Present:        Unknown
+Is Contiguous:              Yes
+ECC Recovered Errors:       0
+Colors:                     Yes
+
+Event Log:
+Tue Jan  2 05:00:11 2024	0.317	Working Memory
+Tue Jan  2 05:01:47 2024	96.817	Working Memory:  479 GiB  (locked, spread: ?)
+Tue Jan  2 05:01:47 2024	96.817	Twiddle Tables
+Tue Jan  2 05:01:48 2024	96.901	Twiddle Tables: 68.6 MiB  (locked, spread: ?)
+Tue Jan  2 05:01:48 2024	96.901	I/O Buffers
+Tue Jan  2 05:01:48 2024	96.984	I/O Buffers:  513 MiB  (locked, spread: ?)
+Tue Jan  2 05:01:48 2024	96.984	Begin Computation
+Tue Jan  2 05:01:48 2024	96.984	Series A and B...  2,014,424,596,052 terms  (Expansion Factor = 72.210)
+Tue Jan  2 05:01:48 2024	96.984	Series A and B: A ( 402 ) 0.000%
+Tue Jan  2 05:01:48 2024	97.639	Series A and B: A ( 401 ) 0.000%
+Tue Jan  2 05:01:49 2024	98.530	Series A and B: A ( 400 ) 0.000%
+Tue Jan  2 05:01:50 2024	99.500	Series A and B: A ( 399 ) 0.000%
+Tue Jan  2 05:01:51 2024	100.560	Series A and B: A ( 398 ) 0.000%
+Tue Jan  2 05:01:52 2024	101.635	Series A and B: A ( 397 ) 0.000%
+Tue Jan  2 05:01:53 2024	102.768	Series A and B: A ( 396 ) 0.000%
+Tue Jan  2 05:01:55 2024	103.927	Series A and B: A ( 395 ) 0.001%
+Tue Jan  2 05:01:56 2024	105.088	Series A and B: A ( 394 ) 0.001%
+Tue Jan  2 05:01:57 2024	106.293	Series A and B: A ( 393 ) 0.001%
+Tue Jan  2 05:01:58 2024	107.505	Series A and B: A ( 392 ) 0.001%
+Tue Jan  2 05:01:59 2024	108.733	Series A and B: A ( 391 ) 0.001%
+Tue Jan  2 05:02:01 2024	109.993	Series A and B: A ( 390 ) 0.001%
+Tue Jan  2 05:02:02 2024	111.267	Series A and B: A ( 389 ) 0.001%
+Tue Jan  2 05:02:03 2024	112.558	Series A and B: A ( 388 ) 0.001%
+Tue Jan  2 05:02:04 2024	113.863	Series A and B: A ( 387 ) 0.001%
+Tue Jan  2 05:02:06 2024	115.231	Series A and B: A ( 386 ) 0.001%
+Tue Jan  2 05:02:07 2024	116.572	Series A and B: A ( 385 ) 0.001%
+Tue Jan  2 05:02:09 2024	117.902	Series A and B: A ( 384 ) 0.001%
+Tue Jan  2 05:02:10 2024	119.294	Series A and B: A ( 383 ) 0.002%
+Tue Jan  2 05:02:11 2024	120.681	Series A and B: A ( 382 ) 0.002%
+Tue Jan  2 05:02:13 2024	122.037	Series A and B: A ( 381 ) 0.002%
+Tue Jan  2 05:02:14 2024	123.432	Series A and B: A ( 380 ) 0.002%
+Tue Jan  2 05:02:16 2024	124.900	Series A and B: A ( 379 ) 0.002%
+Tue Jan  2 05:02:17 2024	126.414	Series A and B: A ( 378 ) 0.002%
+Tue Jan  2 05:02:19 2024	127.911	Series A and B: A ( 377 ) 0.002%
+Tue Jan  2 05:02:20 2024	129.423	Series A and B: A ( 376 ) 0.002%
+Tue Jan  2 05:02:22 2024	130.931	Series A and B: A ( 375 ) 0.002%
+Tue Jan  2 05:02:23 2024	132.504	Series A and B: A ( 374 ) 0.002%
+Tue Jan  2 05:02:25 2024	134.050	Series A and B: A ( 373 ) 0.002%
+Tue Jan  2 05:02:26 2024	135.602	Series A and B: A ( 372 ) 0.002%
+Tue Jan  2 05:02:28 2024	137.159	Series A and B: A ( 371 ) 0.003%
+Tue Jan  2 05:02:29 2024	138.716	Series A and B: E ( 370 ) 0.003%
+Tue Jan  2 05:02:31 2024	140.299	Series A and B: E ( 369 ) 0.003%
+Tue Jan  2 05:02:33 2024	141.909	Series A and B: E ( 368 ) 0.003%
+Tue Jan  2 05:02:34 2024	143.549	Series A and B: E ( 367 ) 0.003%
+Tue Jan  2 05:02:36 2024	145.337	Series A and B: E ( 366 ) 0.003%
+Tue Jan  2 05:02:38 2024	147.154	Series A and B: E ( 365 ) 0.003%
+Tue Jan  2 05:02:40 2024	149.048	Series A and B: E ( 364 ) 0.003%
+Tue Jan  2 05:02:42 2024	151.035	Series A and B: E ( 363 ) 0.003%
+Tue Jan  2 05:02:44 2024	153.025	Series A and B: E ( 362 ) 0.003%
+Tue Jan  2 05:02:46 2024	155.053	Series A and B: E ( 361 ) 0.003%
+Tue Jan  2 05:02:48 2024	157.132	Series A and B: E ( 360 ) 0.004%
+Tue Jan  2 05:02:50 2024	159.271	Series A and B: E ( 359 ) 0.004%
+Tue Jan  2 05:02:52 2024	161.530	Series A and B: E ( 358 ) 0.004%
+Tue Jan  2 05:02:54 2024	163.812	Series A and B: E ( 357 ) 0.004%
+Tue Jan  2 05:02:57 2024	166.245	Series A and B: E ( 356 ) 0.004%
+Tue Jan  2 05:02:59 2024	168.684	Series A and B: E ( 355 ) 0.004%
+Tue Jan  2 05:03:02 2024	171.228	Series A and B: E ( 354 ) 0.004%
+Tue Jan  2 05:03:05 2024	174.024	Series A and B: E ( 353 ) 0.004%
+Tue Jan  2 05:03:07 2024	176.851	Series A and B: E ( 352 ) 0.004%
+Tue Jan  2 05:03:10 2024	179.744	Series A and B: E ( 351 ) 0.005%
+Tue Jan  2 05:03:13 2024	182.712	Series A and B: E ( 350 ) 0.005%
+Tue Jan  2 05:03:16 2024	185.751	Series A and B: E ( 349 ) 0.005%
+Tue Jan  2 05:03:19 2024	188.862	Series A and B: E ( 348 ) 0.005%
+Tue Jan  2 05:03:23 2024	192.039	Series A and B: E ( 347 ) 0.005%
+Tue Jan  2 05:03:26 2024	195.403	Series A and B: E ( 346 ) 0.005%
+Tue Jan  2 05:03:29 2024	198.779	Series A and B: E ( 345 ) 0.006%
+Tue Jan  2 05:03:33 2024	202.323	Series A and B: E ( 344 ) 0.006%
+Tue Jan  2 05:03:37 2024	206.140	Series A and B: E ( 343 ) 0.006%
+Tue Jan  2 05:03:41 2024	210.008	Series A and B: E ( 342 ) 0.006%
+Tue Jan  2 05:03:45 2024	213.980	Series A and B: E ( 341 ) 0.006%
+Tue Jan  2 05:03:49 2024	218.211	Series A and B: E ( 340 ) 0.006%
+Tue Jan  2 05:03:53 2024	222.436	Series A and B: E ( 339 ) 0.007%
+Tue Jan  2 05:03:57 2024	226.706	Series A and B: E ( 338 ) 0.007%
+Tue Jan  2 05:04:02 2024	231.133	Series A and B: E ( 337 ) 0.007%
+Tue Jan  2 05:04:06 2024	235.712	Series A and B: E ( 336 ) 0.007%
+Tue Jan  2 05:04:11 2024	240.562	Series A and B: E ( 335 ) 0.007%
+Tue Jan  2 05:04:16 2024	245.485	Series A and B: E ( 334 ) 0.008%
+Tue Jan  2 05:04:21 2024	250.698	Series A and B: E ( 333 ) 0.008%
+Tue Jan  2 05:04:27 2024	255.905	Series A and B: E ( 332 ) 0.008%
+Tue Jan  2 05:04:32 2024	261.276	Series A and B: E ( 331 ) 0.008%
+Tue Jan  2 05:04:38 2024	267.185	Series A and B: E ( 330 ) 0.009%
+Tue Jan  2 05:04:44 2024	273.165	Series A and B: E ( 329 ) 0.009%
+Tue Jan  2 05:04:50 2024	279.351	Series A and B: E ( 328 ) 0.009%
+Tue Jan  2 05:04:56 2024	285.596	Series A and B: E ( 327 ) 0.009%
+Tue Jan  2 05:05:03 2024	292.095	Series A and B: E ( 326 ) 0.010%
+Tue Jan  2 05:05:09 2024	298.776	Series A and B: E ( 325 ) 0.010%
+Tue Jan  2 05:05:16 2024	305.570	Series A and B: E ( 324 ) 0.010%
+Tue Jan  2 05:05:23 2024	312.696	Series A and B: E ( 323 ) 0.011%
+Tue Jan  2 05:05:31 2024	319.906	Series A and B: E ( 322 ) 0.011%
+Tue Jan  2 05:05:38 2024	327.521	Series A and B: E ( 321 ) 0.011%
+Tue Jan  2 05:05:46 2024	335.715	Series A and B: E ( 320 ) 0.012%
+Tue Jan  2 05:05:55 2024	343.929	Series A and B: E ( 319 ) 0.012%
+Tue Jan  2 05:06:03 2024	352.426	Series A and B: E ( 318 ) 0.012%
+Tue Jan  2 05:06:12 2024	361.350	Series A and B: E ( 317 ) 0.013%
+Tue Jan  2 05:06:21 2024	370.429	Series A and B: E ( 316 ) 0.013%
+Tue Jan  2 05:06:30 2024	379.645	Series A and B: E ( 315 ) 0.014%
+Tue Jan  2 05:06:40 2024	389.169	Series A and B: E ( 314 ) 0.014%
+Tue Jan  2 05:06:50 2024	398.975	Series A and B: E ( 313 ) 0.014%
+Tue Jan  2 05:07:00 2024	409.525	Series A and B: E ( 312 ) 0.015%
+Tue Jan  2 05:07:11 2024	420.389	Series A and B: E ( 311 ) 0.015%
+Tue Jan  2 05:07:22 2024	431.622	Series A and B: E ( 310 ) 0.016%
+Tue Jan  2 05:07:34 2024	442.938	Series A and B: E ( 309 ) 0.016%
+Tue Jan  2 05:07:45 2024	454.673	Series A and B: E ( 308 ) 0.017%
+Tue Jan  2 05:07:58 2024	467.291	Series A and B: E ( 307 ) 0.017%
+Tue Jan  2 05:08:11 2024	480.230	Series A and B: E ( 306 ) 0.018%
+Tue Jan  2 05:08:24 2024	493.616	Series A and B: E ( 305 ) 0.018%
+Tue Jan  2 05:08:38 2024	507.097	Series A and B: E ( 304 ) 0.019%
+Tue Jan  2 05:08:52 2024	521.407	Series A and B: E ( 303 ) 0.020%
+Tue Jan  2 05:09:06 2024	535.756	Series A and B: E ( 302 ) 0.020%
+Tue Jan  2 05:09:21 2024	550.317	Series A and B: E ( 301 ) 0.021%
+Tue Jan  2 05:09:36 2024	565.704	Series A and B: E ( 300 ) 0.021%
+Tue Jan  2 05:09:52 2024	581.163	Series A and B: E ( 299 ) 0.022%
+Tue Jan  2 05:10:08 2024	597.375	Series A and B: E ( 298 ) 0.023%
+Tue Jan  2 05:10:26 2024	615.004	Series A and B: E ( 297 ) 0.023%
+Tue Jan  2 05:10:44 2024	633.023	Series A and B: E ( 296 ) 0.024%
+Tue Jan  2 05:11:02 2024	651.225	Series A and B: E ( 295 ) 0.025%
+Tue Jan  2 05:11:22 2024	670.938	Series A and B: E ( 294 ) 0.026%
+Tue Jan  2 05:11:41 2024	690.558	Series A and B: E ( 293 ) 0.026%
+Tue Jan  2 05:12:01 2024	710.442	Series A and B: E ( 292 ) 0.027%
+Tue Jan  2 05:12:22 2024	731.020	Series A and B: E ( 291 ) 0.028%
+Tue Jan  2 05:12:43 2024	752.063	Series A and B: E ( 290 ) 0.029%
+Tue Jan  2 05:13:05 2024	774.203	Series A and B: E ( 289 ) 0.030%
+Tue Jan  2 05:13:28 2024	797.122	Series A and B: E ( 288 ) 0.031%
+Tue Jan  2 05:13:51 2024	820.582	Series A and B: E ( 287 ) 0.032%
+Tue Jan  2 05:14:15 2024	844.866	Series A and B: E ( 286 ) 0.033%
+Tue Jan  2 05:14:40 2024	869.261	Series A and B: E ( 285 ) 0.034%
+Tue Jan  2 05:15:07 2024	896.048	Series A and B: E ( 284 ) 0.035%
+Tue Jan  2 05:15:34 2024	923.162	Series A and B: E ( 283 ) 0.036%
+Tue Jan  2 05:16:01 2024	950.857	Series A and B: E ( 282 ) 0.037%
+Tue Jan  2 05:16:30 2024	979.431	Series A and B: E ( 281 ) 0.038%
+Tue Jan  2 05:17:00 2024	1009.499	Series A and B: E ( 280 ) 0.039%
+Tue Jan  2 05:17:31 2024	1040.031	Series A and B: E ( 279 ) 0.040%
+Tue Jan  2 05:18:02 2024	1071.106	Series A and B: E ( 278 ) 0.041%
+Tue Jan  2 05:18:34 2024	1103.616	Series A and B: E ( 277 ) 0.043%
+Tue Jan  2 05:19:07 2024	1136.856	Series A and B: E ( 276 ) 0.044%
+Tue Jan  2 05:19:42 2024	1171.428	Series A and B: E ( 275 ) 0.045%
+Tue Jan  2 05:20:20 2024	1209.112	Series A and B: E ( 274 ) 0.047%
+Tue Jan  2 05:20:58 2024	1246.978	Series A and B: E ( 273 ) 0.048%
+Tue Jan  2 05:21:36 2024	1285.240	Series A and B: E ( 272 ) 0.050%
+Tue Jan  2 05:22:18 2024	1326.972	Series A and B: E ( 271 ) 0.051%
+Tue Jan  2 05:23:00 2024	1368.950	Series A and B: E ( 270 ) 0.053%
+Tue Jan  2 05:23:42 2024	1411.324	Series A and B: E ( 269 ) 0.054%
+Tue Jan  2 05:24:26 2024	1454.918	Series A and B: E ( 268 ) 0.056%
+Tue Jan  2 05:25:10 2024	1499.799	Series A and B: E ( 267 ) 0.058%
+Tue Jan  2 05:25:59 2024	1548.030	Series A and B: E ( 266 ) 0.060%
+Tue Jan  2 05:26:47 2024	1596.792	Series A and B: E ( 265 ) 0.061%
+Tue Jan  2 05:27:37 2024	1646.194	Series A and B: E ( 264 ) 0.063%
+Tue Jan  2 05:28:28 2024	1697.381	Series A and B: E ( 263 ) 0.065%
+Tue Jan  2 05:29:20 2024	1749.824	Series A and B: E ( 262 ) 0.067%
+Tue Jan  2 05:30:19 2024	1808.230	Series A and B: E ( 261 ) 0.069%
+Tue Jan  2 05:31:18 2024	1867.086	Series A and B: E ( 260 ) 0.071%
+Tue Jan  2 05:32:18 2024	1926.987	Series A and B: E ( 259 ) 0.073%
+Tue Jan  2 05:33:19 2024	1987.963	Series A and B: E ( 258 ) 0.076%
+Tue Jan  2 05:34:22 2024	2051.264	Series A and B: E ( 257 ) 0.078%
+Tue Jan  2 05:35:27 2024	2116.580	Series A and B: E ( 256 ) 0.080%
+Tue Jan  2 05:36:33 2024	2182.454	Series A and B: E ( 255 ) 0.083%
+Tue Jan  2 05:37:43 2024	2251.930	Series A and B: E ( 254 ) 0.085%
+Tue Jan  2 05:38:53 2024	2322.237	Series A and B: E ( 253 ) 0.088%
+Tue Jan  2 05:40:08 2024	2397.350	Series A and B: E ( 252 ) 0.091%
+Tue Jan  2 05:41:28 2024	2477.459	Series A and B: E ( 251 ) 0.094%
+Tue Jan  2 05:42:48 2024	2557.327	Series A and B: E ( 250 ) 0.096%
+Tue Jan  2 05:44:10 2024	2639.387	Series A and B: E ( 249 ) 0.099%
+Tue Jan  2 05:45:38 2024	2727.554	Series A and B: E ( 248 ) 0.102%
+Tue Jan  2 05:47:07 2024	2816.866	Series A and B: E ( 247 ) 0.105%
+Tue Jan  2 05:48:37 2024	2906.539	Series A and B: E ( 246 ) 0.109%
+Tue Jan  2 05:50:12 2024	3000.985	Series A and B: E ( 245 ) 0.112%
+Tue Jan  2 05:51:48 2024	3096.906	Series A and B: E ( 244 ) 0.115%
+Tue Jan  2 05:53:30 2024	3199.520	Series A and B: E ( 243 ) 0.119%
+Tue Jan  2 05:55:13 2024	3302.876	Series A and B: E ( 242 ) 0.123%
+Tue Jan  2 05:57:00 2024	3409.283	Series A and B: E ( 241 ) 0.126%
+Tue Jan  2 05:58:47 2024	3516.835	Series A and B: E ( 240 ) 0.130%
+Tue Jan  2 06:00:37 2024	3626.599	Series A and B: E ( 239 ) 0.134%
+Tue Jan  2 06:02:40 2024	3748.999	Series A and B: E ( 238 ) 0.138%
+Tue Jan  2 06:04:45 2024	3874.406	Series A and B: E ( 237 ) 0.142%
+Tue Jan  2 06:06:53 2024	4002.413	Series A and B: E ( 236 ) 0.147%
+Tue Jan  2 06:09:07 2024	4136.166	Series A and B: E ( 235 ) 0.151%
+Tue Jan  2 06:11:30 2024	4278.997	Series A and B: E ( 234 ) 0.156%
+Tue Jan  2 06:13:51 2024	4420.229	Series A and B: E ( 233 ) 0.161%
+Tue Jan  2 06:16:12 2024	4561.382	Series A and B: E ( 232 ) 0.166%
+Tue Jan  2 06:18:41 2024	4710.433	Series A and B: E ( 231 ) 0.171%
+Tue Jan  2 06:21:15 2024	4864.485	Series A and B: E ( 230 ) 0.176%
+Tue Jan  2 06:23:59 2024	5028.417	Series A and B: E ( 229 ) 0.181%
+Tue Jan  2 06:26:51 2024	5200.191	Series A and B: E ( 228 ) 0.187%
+Tue Jan  2 06:29:45 2024	5374.631	Series A and B: E ( 227 ) 0.192%
+Tue Jan  2 06:32:41 2024	5550.235	Series A and B: E ( 226 ) 0.198%
+Tue Jan  2 06:35:51 2024	5740.085	Series A and B: E ( 225 ) 0.204%
+Tue Jan  2 06:39:05 2024	5934.606	Series A and B: E ( 224 ) 0.211%
+Tue Jan  2 06:42:24 2024	6133.033	Series A and B: E ( 223 ) 0.217%
+Tue Jan  2 06:45:49 2024	6338.160	Series A and B: E ( 222 ) 0.224%
+Tue Jan  2 06:49:18 2024	6546.927	Series A and B: E ( 221 ) 0.231%
+Tue Jan  2 06:52:57 2024	6766.075	Series A and B: E ( 220 ) 0.238%
+Tue Jan  2 06:56:48 2024	6997.127	Series A and B: E ( 219 ) 0.245%
+Tue Jan  2 07:00:36 2024	7225.670	Series A and B: E ( 218 ) 0.252%
+Tue Jan  2 07:04:32 2024	7461.385	Series A and B: E ( 217 ) 0.260%
+Tue Jan  2 07:08:37 2024	7706.163	Series A and B: E ( 216 ) 0.268%
+Tue Jan  2 07:13:09 2024	7978.071	Series A and B: E ( 215 ) 0.276%
+Tue Jan  2 07:17:41 2024	8250.647	Series A and B: E ( 214 ) 0.285%
+Tue Jan  2 07:22:17 2024	8526.708	Series A and B: E ( 213 ) 0.293%
+Tue Jan  2 07:27:02 2024	8811.235	Series A and B: E ( 212 ) 0.302%
+Tue Jan  2 07:32:06 2024	9115.179	Series A and B: E ( 211 ) 0.311%
+Tue Jan  2 07:37:14 2024	9423.345	Series A and B: E ( 210 ) 0.321%
+Tue Jan  2 07:42:24 2024	9733.124	Series A and B: E ( 209 ) 0.331%
+Tue Jan  2 07:47:58 2024	10067.600	Series A and B: E ( 208 ) 0.341%
+Tue Jan  2 07:53:36 2024	10405.334	Series A and B: E ( 207 ) 0.351%
+Tue Jan  2 07:59:30 2024	10758.975	Series A and B: E ( 206 ) 0.362%
+Tue Jan  2 08:05:35 2024	11124.217	Series A and B: E ( 205 ) 0.373%
+Tue Jan  2 08:11:51 2024	11500.612	Series A and B: E ( 204 ) 0.384%
+Tue Jan  2 08:18:03 2024	11872.569	Series A and B: E ( 203 ) 0.396%
+Tue Jan  2 08:24:55 2024	12283.952	Series A and B: E ( 202 ) 0.408%
+Tue Jan  2 08:31:53 2024	12702.643	Series A and B: E ( 201 ) 0.421%
+Tue Jan  2 08:38:56 2024	13125.347	Series A and B: E ( 200 ) 0.434%
+Tue Jan  2 08:46:27 2024	13576.825	Series A and B: E ( 199 ) 0.447%
+Tue Jan  2 08:54:06 2024	14035.550	Series A and B: E ( 198 ) 0.460%
+Tue Jan  2 09:02:15 2024	14523.940	Series A and B: E ( 197 ) 0.474%
+Tue Jan  2 09:10:22 2024	15010.927	Series A and B: E ( 196 ) 0.489%
+Tue Jan  2 09:18:30 2024	15499.319	Series A and B: E ( 195 ) 0.504%
+Tue Jan  2 09:26:56 2024	16004.937	Series A and B: E ( 194 ) 0.519%
+Tue Jan  2 09:35:39 2024	16528.636	Series A and B: E ( 193 ) 0.535%
+Tue Jan  2 09:45:20 2024	17109.440	Series A and B: E ( 192 ) 0.551%
+Tue Jan  2 09:55:06 2024	17694.990	Series A and B: E ( 191 ) 0.568%
+Tue Jan  2 10:05:05 2024	18294.839	Series A and B: E ( 190 ) 0.585%
+Tue Jan  2 10:15:25 2024	18913.960	Series A and B: E ( 189 ) 0.603%
+Tue Jan  2 10:25:47 2024	19536.471	Series A and B: E ( 188 ) 0.622%
+Tue Jan  2 10:36:36 2024	20185.173	Series A and B: E ( 187 ) 0.641%
+Tue Jan  2 10:47:37 2024	20846.490	Series A and B: E ( 186 ) 0.660%
+Tue Jan  2 10:59:26 2024	21555.166	Series A and B: E ( 185 ) 0.680%
+Tue Jan  2 11:11:16 2024	22265.242	Series A and B: E ( 184 ) 0.701%
+Tue Jan  2 11:23:30 2024	22999.266	Series A and B: E ( 183 ) 0.722%
+Tue Jan  2 11:36:15 2024	23764.168	Series A and B: E ( 182 ) 0.744%
+Tue Jan  2 11:49:21 2024	24550.410	Series A and B: E ( 181 ) 0.767%
+Tue Jan  2 12:02:51 2024	25360.537	Series A and B: E ( 180 ) 0.791%
+Tue Jan  2 12:17:45 2024	26253.884	Series A and B: E ( 179 ) 0.815%
+Tue Jan  2 12:33:00 2024	27168.950	Series A and B: E ( 178 ) 0.839%
+Tue Jan  2 12:47:56 2024	28065.265	Series A and B: E ( 177 ) 0.865%
+Tue Jan  2 13:03:47 2024	29016.345	Series A and B: E ( 176 ) 0.891%
+Tue Jan  2 13:20:05 2024	29994.486	Series A and B: E ( 175 ) 0.919%
+Tue Jan  2 13:36:49 2024	30998.363	Series A and B: E ( 174 ) 0.947%
+Tue Jan  2 13:54:09 2024	32038.731	Series A and B: E ( 173 ) 0.975%
+Tue Jan  2 14:11:59 2024	33108.171	Series A and B: E ( 172 ) 1.005%
+Tue Jan  2 14:30:09 2024	34198.416	Series A and B: E ( 171 ) 1.036%
+Tue Jan  2 14:48:30 2024	35299.732	Series A and B: E ( 170 ) 1.067%
+Tue Jan  2 15:08:58 2024	36527.091	Series A and B: E ( 169 ) 1.100%
+Tue Jan  2 15:30:13 2024	37802.096	Series A and B: E ( 168 ) 1.133%
+Tue Jan  2 15:51:32 2024	39081.500	Series A and B: E ( 167 ) 1.168%
+Tue Jan  2 16:13:16 2024	40385.233	Series A and B: E ( 166 ) 1.203%
+Tue Jan  2 16:35:35 2024	41724.839	Series A and B: E ( 165 ) 1.240%
+Tue Jan  2 16:59:08 2024	43137.449	Series A and B: E ( 164 ) 1.277%
+Tue Jan  2 17:22:48 2024	44557.641	Series A and B: E ( 163 ) 1.316%
+Tue Jan  2 17:46:51 2024	46000.676	Series A and B: E ( 162 ) 1.356%
+Tue Jan  2 18:12:34 2024	47543.071	Series A and B: E ( 161 ) 1.398%
+Tue Jan  2 18:38:34 2024	49103.029	Series A and B: E ( 160 ) 1.440%
+Tue Jan  2 19:06:12 2024	50761.220	Series A and B: E ( 159 ) 1.484%
+Tue Jan  2 19:34:35 2024	52463.975	Series A and B: E ( 158 ) 1.529%
+Tue Jan  2 20:02:53 2024	54162.424	Series A and B: E ( 157 ) 1.576%
+Tue Jan  2 20:31:57 2024	55906.508	Series A and B: E ( 156 ) 1.623%
+Tue Jan  2 21:04:03 2024	57831.985	Series A and B: E ( 155 ) 1.673%
+Tue Jan  2 21:35:55 2024	59744.339	Series A and B: E ( 154 ) 1.724%
+Tue Jan  2 22:10:08 2024	61797.790	Series A and B: E ( 153 ) 1.776%
+Tue Jan  2 22:45:08 2024	63897.292	Series A and B: E ( 152 ) 1.830%
+Tue Jan  2 23:20:38 2024	66027.512	Series A and B: E ( 151 ) 1.885%
+Tue Jan  2 23:57:39 2024	68248.189	Series A and B: E ( 150 ) 1.943%
+Wed Jan  3 00:36:45 2024	70594.368	Series A and B: E ( 149 ) 2.002%
+Wed Jan  3 01:16:02 2024	72951.429	Series A and B: E ( 148 ) 2.062%
+Wed Jan  3 01:55:47 2024	75336.734	Series A and B: E ( 147 ) 2.125%
+Wed Jan  3 02:39:30 2024	77959.482	Series A and B: E ( 146 ) 2.189%
+Wed Jan  3 03:23:27 2024	80596.840	Series A and B: E ( 145 ) 2.256%
+Wed Jan  3 04:09:22 2024	83351.734	Series A and B: E ( 144 ) 2.324%
+Wed Jan  3 04:55:42 2024	86131.765	Series A and B: E ( 143 ) 2.394%
+Wed Jan  3 05:44:24 2024	89053.851	Series A and B: E ( 142 ) 2.467%
+Wed Jan  3 06:33:16 2024	91985.244	Series A and B: E ( 141 ) 2.542%
+Wed Jan  3 07:23:55 2024	95024.358	Series A and B: E ( 140 ) 2.619%
+Wed Jan  3 08:14:40 2024	98069.542	Series A and B: E ( 139 ) 2.698%
+Wed Jan  3 09:09:53 2024	101382.718	Series A and B: E ( 138 ) 2.780%
+Wed Jan  3 10:06:23 2024	104772.581	Series A and B: E ( 137 ) 2.864%
+Wed Jan  3 11:04:35 2024	108264.559	Series A and B: E ( 136 ) 2.950%
+Wed Jan  3 12:07:29 2024	112038.629	Series A and B: S ( 135 ) 3.040%
+Wed Jan  3 13:20:19 2024	116408.107	Series A and B: S ( 134 ) 3.132%
+Wed Jan  3 14:35:09 2024	120898.223	Series A and B: S ( 133 ) 3.226%
+Wed Jan  3 15:56:43 2024	125792.634	Series A and B: S ( 132 ) 3.324%
+Wed Jan  3 17:19:31 2024	130760.073	Series A and B: S ( 131 ) 3.424%
+Wed Jan  3 18:43:03 2024	135771.890	Series A and B: S ( 130 ) 3.527%
+Wed Jan  3 20:11:03 2024	141052.230	Series A and B: S ( 129 ) 3.634%
+Wed Jan  3 21:41:30 2024	146479.301	Series A and B: S ( 128 ) 3.743%
+Wed Jan  3 23:12:32 2024	151941.303	Series A and B: S ( 127 ) 3.856%
+Thu Jan  4 00:47:00 2024	157609.307	Series A and B: S ( 126 ) 3.973%
+Thu Jan  4 02:24:45 2024	163474.644	Series A and B: S ( 125 ) 4.092%
+Thu Jan  4 04:03:44 2024	169413.821	Series A and B: S ( 124 ) 4.215%
+Thu Jan  4 05:43:43 2024	175412.769	Series A and B: S ( 123 ) 4.342%
+Thu Jan  4 07:33:49 2024	182018.680	Series A and B: S ( 122 ) 4.473%
+Thu Jan  4 09:27:44 2024	188853.561	Series A and B: S ( 121 ) 4.607%
+Thu Jan  4 11:22:43 2024	195751.911	Series A and B: S ( 120 ) 4.746%
+Thu Jan  4 13:20:43 2024	202832.120	Series A and B: S ( 119 ) 4.889%
+Thu Jan  4 15:23:57 2024	210226.613	Series A and B: S ( 118 ) 5.035%
+Thu Jan  4 17:32:34 2024	217943.136	Series A and B: S ( 117 ) 5.186%
+Thu Jan  4 19:44:08 2024	225837.258	Series A and B: S ( 116 ) 5.342%
+Thu Jan  4 22:10:06 2024	234595.357	Series A and B: S ( 115 ) 5.502%
+Fri Jan  5 00:45:48 2024	243936.992	Series A and B: S ( 114 ) 5.667%
+Fri Jan  5 03:25:11 2024	253500.541	Series A and B: S ( 113 ) 5.837%
+Fri Jan  5 06:12:47 2024	263556.040	Series A and B: S ( 112 ) 6.011%
+Fri Jan  5 09:09:30 2024	274159.475	Series A and B: S ( 111 ) 6.191%
+Fri Jan  5 12:08:18 2024	284887.278	Series A and B: S ( 110 ) 6.376%
+Fri Jan  5 15:14:16 2024	296045.842	Series A and B: S ( 109 ) 6.566%
+Fri Jan  5 18:34:48 2024	308077.547	Series A and B: S ( 108 ) 6.762%
+Fri Jan  5 21:54:37 2024	320066.591	Series A and B: S ( 107 ) 6.964%
+Sat Jan  6 01:20:48 2024	332437.510	Series A and B: S ( 106 ) 7.172%
+Sat Jan  6 04:58:18 2024	345487.651	Series A and B: S ( 105 ) 7.385%
+Sat Jan  6 08:43:18 2024	358987.003	Series A and B: S ( 104 ) 7.605%
+Sat Jan  6 12:40:44 2024	373233.723	Series A and B: S ( 103 ) 7.831%
+Sat Jan  6 16:48:14 2024	388083.556	Series A and B: S ( 102 ) 8.063%
+Sat Jan  6 21:14:35 2024	404064.477	Series A and B: S ( 101 ) 8.303%
+Sun Jan  7 01:48:53 2024	420522.400	Series A and B: S ( 100 ) 8.549%
+Sun Jan  7 06:44:26 2024	438255.573	Series A and B: S ( 99 ) 8.802%
+Sun Jan  7 12:29:03 2024	458931.932	Series A and B: S ( 98 ) 9.062%
+Sun Jan  7 18:35:58 2024	480947.609	Series A and B: S ( 97 ) 9.330%
+Mon Jan  8 00:57:23 2024	503831.991	Series A and B: S ( 96 ) 9.606%
+Mon Jan  8 07:40:40 2024	528029.716	Series A and B: S ( 95 ) 9.889%
+Mon Jan  8 15:13:00 2024	555168.942	Series A and B: S ( 94 ) 10.180%
+Mon Jan  8 22:50:56 2024	582645.008	Series A and B: S ( 93 ) 10.480%
+Tue Jan  9 05:37:08 2024	607017.512	Series A and B: S ( 92 ) 10.788%
+Tue Jan  9 12:38:23 2024	632292.181	Series A and B: S ( 91 ) 11.105%
+Tue Jan  9 21:09:25 2024	662954.149	Series A and B: S ( 90 ) 11.431%
+Wed Jan 10 06:35:26 2024	696915.057	Series A and B: S ( 89 ) 11.765%
+Wed Jan 10 15:57:16 2024	730625.439	Series A and B: S ( 88 ) 12.109%
+Thu Jan 11 00:23:36 2024	761005.214	Series A and B: S ( 87 ) 12.463%
+Thu Jan 11 09:44:12 2024	794641.854	Series A and B: S ( 86 ) 12.827%
+Thu Jan 11 19:54:23 2024	831252.103	Series A and B: S ( 85 ) 13.200%
+Fri Jan 12 07:37:28 2024	873437.074	Series A and B: S ( 84 ) 13.584%
+Fri Jan 12 20:49:39 2024	920968.318	Series A and B: S ( 83 ) 13.978%
+Sat Jan 13 07:55:29 2024	960918.375	Series A and B: S ( 82 ) 14.384%
+Sat Jan 13 21:45:36 2024	1010725.280	Series A and B: S ( 81 ) 14.800%
+Sun Jan 14 12:49:01 2024	1064930.509	Series A and B: S ( 80 ) 15.227%
+Mon Jan 15 03:03:57 2024	1116226.461	Series A and B: S ( 79 ) 15.666%
+Mon Jan 15 18:59:37 2024	1173566.793	Series A and B: S ( 78 ) 16.117%
+Tue Jan 16 09:24:41 2024	1225470.861	Series A and B: S ( 77 ) 16.581%
+Wed Jan 17 01:16:28 2024	1282576.983	Series A and B: S ( 76 ) 17.056%
+Wed Jan 17 18:42:45 2024	1345354.035	Series A and B: S ( 75 ) 17.544%
+Thu Jan 18 10:51:57 2024	1403506.158	Series A and B: S ( 74 ) 18.045%
+Fri Jan 19 04:59:12 2024	1468741.135	Series A and B: S ( 73 ) 18.559%
+Fri Jan 19 22:58:34 2024	1533503.585	Series A and B: S ( 72 ) 19.087%
+Sat Jan 20 19:30:06 2024	1607395.271	Series A and B: S ( 71 ) 19.629%
+Sun Jan 21 15:46:38 2024	1680387.630	Series A and B: S ( 70 ) 20.184%
+Mon Jan 22 12:21:44 2024	1754493.023	Series A and B: S ( 69 ) 20.754%
+Tue Jan 23 09:42:04 2024	1831313.691	Series A and B: S ( 68 ) 21.338%
+Wed Jan 24 07:51:01 2024	1911050.009	Series A and B: S ( 67 ) 21.938%
+Thu Jan 25 06:04:38 2024	1991067.850	Series A and B: S ( 66 ) 22.552%
+Fri Jan 26 04:45:17 2024	2072706.012	Series A and B: S ( 65 ) 23.182%
+Sat Jan 27 05:38:17 2024	2162286.377	Series A and B: S ( 64 ) 23.828%
+Sun Jan 28 07:25:29 2024	2255118.249	Series A and B: S ( 63 ) 24.490%
+Mon Jan 29 09:31:19 2024	2349068.651	Series A and B: S ( 62 ) 25.168%
+Tue Jan 30 12:08:19 2024	2444888.573	Series A and B: S ( 61 ) 25.862%
+Wed Jan 31 14:35:01 2024	2540090.192	Series A and B: S ( 60 ) 26.574%
+Thu Feb  1 18:43:59 2024	2641428.445	Series A and B: S ( 59 ) 27.302%
+Fri Feb  2 23:38:33 2024	2745502.437	Series A and B: S ( 58 ) 28.048%
+Sun Feb  4 05:04:01 2024	2851430.749	Series A and B: S ( 57 ) 28.812%
+Mon Feb  5 11:52:44 2024	2962353.799	Series A and B: S ( 56 ) 29.593%
+Tue Feb  6 20:22:31 2024	3079339.942	Series A and B: S ( 55 ) 30.392%
+Thu Feb  8 04:33:47 2024	3195216.068	Series A and B: S ( 54 ) 31.210%
+Fri Feb  9 13:29:56 2024	3313785.473	Series A and B: S ( 53 ) 32.046%
+Sun Feb 11 00:41:01 2024	3440449.986	Series A and B: S ( 52 ) 32.901%
+Mon Feb 12 13:10:25 2024	3571813.955	Series A and B: S ( 51 ) 33.774%
+Wed Feb 14 00:54:28 2024	3700457.306	Series A and B: S ( 50 ) 34.667%
+Thu Feb 15 13:36:27 2024	3832576.530	Series A and B: S ( 49 ) 35.579%
+Sat Feb 17 02:32:44 2024	3965553.607	Series A and B: S ( 48 ) 36.510%
+Sun Feb 18 16:32:33 2024	4102341.904	Series A and B: S ( 47 ) 37.461%
+Tue Feb 20 07:19:06 2024	4241935.009	Series A and B: S ( 46 ) 38.431%
+Wed Feb 21 21:32:58 2024	4379567.370	Series A and B: S ( 45 ) 39.421%
+Fri Feb 23 14:11:43 2024	4525892.682	Series A and B: S ( 44 ) 40.431%
+Sun Feb 25 07:13:35 2024	4673603.884	Series A and B: S ( 43 ) 41.460%
+Tue Feb 27 02:36:44 2024	4829793.026	Series A and B: S ( 42 ) 42.509%
+Wed Feb 28 22:38:04 2024	4988273.810	Series A and B: S ( 41 ) 43.578%
+Fri Mar  1 21:30:23 2024	5157012.674	Series A and B: S ( 40 ) 44.667%
+Sun Mar  3 17:47:39 2024	5316448.467	Series A and B: S ( 39 ) 45.775%
+Tue Mar  5 17:32:44 2024	5488353.841	Series A and B: S ( 38 ) 46.902%
+Thu Mar  7 16:59:25 2024	5659154.386	Series A and B: S ( 37 ) 48.048%
+Sat Mar  9 16:46:39 2024	5831188.620	Series A and B: S ( 36 ) 49.214%
+Mon Mar 11 17:28:59 2024	6006527.999	Series A and B: S ( 35 ) 50.398%
+Wed Mar 13 20:27:30 2024	6190039.237	Series A and B: S ( 34 ) 51.601%
+Fri Mar 15 21:23:08 2024	6366177.326	Series A and B: S ( 33 ) 52.822%
+Mon Mar 18 02:25:48 2024	6557136.991	Series A and B: S ( 32 ) 54.061%
+Wed Mar 20 06:29:50 2024	6744579.392	Series A and B: S ( 31 ) 55.316%
+Fri Mar 22 11:43:02 2024	6936171.086	Series A and B: S ( 30 ) 56.589%
+Sun Mar 24 17:46:49 2024	7130798.089	Series A and B: S ( 29 ) 57.878%
+Tue Mar 26 23:56:02 2024	7325750.931	Series A and B: S ( 28 ) 59.182%
+Fri Mar 29 05:56:47 2024	7520196.376	Series A and B: S ( 27 ) 60.501%
+Sun Mar 31 15:25:31 2024	7727120.553	Series A and B: S ( 26 ) 61.834%
+Wed Apr  3 01:49:09 2024	7937338.717	Series A and B: S ( 25 ) 63.180%
+Fri Apr  5 09:52:34 2024	8139143.837	Series A and B: S ( 24 ) 64.538%
+Sun Apr  7 20:19:17 2024	8349546.624	Series A and B: S ( 23 ) 65.908%
+Wed Apr 10 07:22:56 2024	8562165.586	Series A and B: S ( 22 ) 67.288%
+Fri Apr 12 17:14:02 2024	8770431.785	Series A and B: S ( 21 ) 68.677%
+Mon Apr 15 02:43:17 2024	8977386.330	Series A and B: S ( 20 ) 70.073%
+Wed Apr 17 15:36:25 2024	9196574.648	Series A and B: S ( 19 ) 71.476%
+Sat Apr 20 03:50:38 2024	9413427.587	Series A and B: S ( 18 ) 72.884%
+Mon Apr 22 14:39:29 2024	9625158.499	Series A and B: S ( 17 ) 74.294%
+Thu Apr 25 00:12:25 2024	9832334.005	Series A and B: S ( 16 ) 75.705%
+Sat Apr 27 12:08:22 2024	10048091.077	Series A and B: S ( 15 ) 77.117%
+Mon Apr 29 23:24:22 2024	10261451.042	Series A and B: S ( 14 ) 78.530%
+Thu May  2 09:38:22 2024	10471091.815	Series A and B: S ( 13 ) 79.944%
+Sat May  4 20:17:55 2024	10682264.715	Series A and B: S ( 12 ) 81.360%
+Tue May  7 08:01:49 2024	10897298.215	Series A and B: S ( 11 ) 82.776%
+Thu May  9 20:15:27 2024	11114116.334	Series A and B: S ( 10 ) 84.195%
+Sun May 12 07:48:17 2024	11328486.548	Series A and B: S ( 9 ) 85.614%
+Tue May 14 17:51:42 2024	11537491.578	Series A and B: S ( 8 ) 87.036%
+Fri May 17 05:29:30 2024	11752158.980	Series A and B: S ( 7 ) 88.460%
+Sun May 19 16:35:33 2024	11964922.116	Series A and B: S ( 6 ) 89.885%
+Wed May 22 02:53:07 2024	12174776.770	Series A and B: S ( 5 ) 91.313%
+Fri May 24 14:04:16 2024	12387845.030	Series A and B: S ( 4 ) 92.745%
+Mon May 27 01:22:26 2024	12601335.716	Series A and B: S ( 3 ) 94.179%
+Wed May 29 12:38:17 2024	12814685.880	Series A and B: S ( 2 ) 95.619%
+Sat Jun  1 00:26:41 2024	13029990.418	Series A and B: S ( 1 ) 97.064%
+Mon Jun  3 10:52:07 2024	13240315.919	Series A and B: S ( 0 ) 98.519%
+Wed Jun  5 20:21:15 2024	13447264.315	Finishing Series
+Thu Jun  6 02:03:42 2024	13467811.673	Large Division
+Thu Jun  6 11:54:45 2024	13503274.517	Squaring...
+Thu Jun  6 11:57:45 2024	13503453.988	Series C...  8,902,791,498 terms  (Expansion Factor = 6.829)
+Thu Jun  6 11:57:45 2024	13503453.988	Series: A ( 6 ) 0.000%
+Thu Jun  6 12:13:55 2024	13504424.484	Series: A ( 5 ) 14.457%
+Thu Jun  6 12:32:49 2024	13505558.370	Series: A ( 4 ) 28.962%
+Thu Jun  6 12:52:47 2024	13506755.930	Series: A ( 3 ) 43.505%
+Thu Jun  6 13:13:12 2024	13507981.601	Series: A ( 2 ) 58.095%
+Thu Jun  6 13:33:32 2024	13509201.714	Series: A ( 1 ) 72.751%
+Thu Jun  6 13:54:31 2024	13510460.004	Series: E ( 0 ) 87.513%
+Thu Jun  6 14:19:26 2024	13511955.008	Large Division
+Thu Jun  6 14:23:01 2024	13512170.673	Substracting
+Thu Jun  6 14:42:38 2024	13513346.945	-702 ArcCoth( 26 ):
+Thu Jun  6 14:42:38 2024	13513346.945	Series CommonP2B3...  353,363,546,260 terms  (Expansion Factor = 5.034)
+Thu Jun  6 14:42:38 2024	13513346.945	Series: A ( 60 ) 0.000%
+Thu Jun  6 14:42:38 2024	13513346.950	Series: A ( 59 ) 0.000%
+Thu Jun  6 14:42:38 2024	13513347.635	Series: A ( 58 ) 0.001%
+Thu Jun  6 14:42:39 2024	13513348.458	Series: A ( 57 ) 0.002%
+Thu Jun  6 14:42:40 2024	13513349.382	Series: A ( 56 ) 0.004%
+Thu Jun  6 14:42:41 2024	13513350.328	Series: A ( 55 ) 0.005%
+Thu Jun  6 14:42:42 2024	13513351.349	Series: E ( 54 ) 0.006%
+Thu Jun  6 14:42:43 2024	13513352.374	Series: E ( 53 ) 0.007%
+Thu Jun  6 14:42:44 2024	13513353.650	Series: E ( 52 ) 0.008%
+Thu Jun  6 14:42:46 2024	13513355.181	Series: E ( 51 ) 0.010%
+Thu Jun  6 14:42:48 2024	13513357.151	Series: E ( 50 ) 0.012%
+Thu Jun  6 14:42:50 2024	13513359.437	Series: E ( 49 ) 0.014%
+Thu Jun  6 14:42:53 2024	13513362.202	Series: E ( 48 ) 0.017%
+Thu Jun  6 14:42:56 2024	13513365.614	Series: E ( 47 ) 0.020%
+Thu Jun  6 14:43:01 2024	13513370.051	Series: E ( 46 ) 0.024%
+Thu Jun  6 14:43:06 2024	13513375.172	Series: E ( 45 ) 0.029%
+Thu Jun  6 14:43:12 2024	13513381.243	Series: E ( 44 ) 0.034%
+Thu Jun  6 14:43:20 2024	13513388.946	Series: E ( 43 ) 0.041%
+Thu Jun  6 14:43:29 2024	13513398.421	Series: E ( 42 ) 0.049%
+Thu Jun  6 14:43:40 2024	13513409.475	Series: E ( 41 ) 0.058%
+Thu Jun  6 14:43:53 2024	13513422.628	Series: E ( 40 ) 0.069%
+Thu Jun  6 14:44:10 2024	13513439.072	Series: E ( 39 ) 0.083%
+Thu Jun  6 14:44:30 2024	13513459.487	Series: E ( 38 ) 0.099%
+Thu Jun  6 14:44:54 2024	13513483.593	Series: E ( 37 ) 0.118%
+Thu Jun  6 14:45:23 2024	13513512.764	Series: E ( 36 ) 0.140%
+Thu Jun  6 14:45:59 2024	13513548.741	Series: E ( 35 ) 0.168%
+Thu Jun  6 14:46:43 2024	13513592.441	Series: E ( 34 ) 0.200%
+Thu Jun  6 14:47:36 2024	13513645.769	Series: E ( 33 ) 0.238%
+Thu Jun  6 14:48:40 2024	13513709.541	Series: E ( 32 ) 0.284%
+Thu Jun  6 14:49:57 2024	13513786.046	Series: E ( 31 ) 0.339%
+Thu Jun  6 14:51:31 2024	13513880.034	Series: E ( 30 ) 0.405%
+Thu Jun  6 14:53:29 2024	13513998.394	Series: E ( 29 ) 0.483%
+Thu Jun  6 14:55:45 2024	13514134.364	Series: E ( 28 ) 0.576%
+Thu Jun  6 14:58:33 2024	13514301.909	Series: E ( 27 ) 0.687%
+Thu Jun  6 15:02:05 2024	13514514.231	Series: E ( 26 ) 0.819%
+Thu Jun  6 15:06:19 2024	13514768.570	Series: E ( 25 ) 0.977%
+Thu Jun  6 15:11:33 2024	13515082.316	Series: E ( 24 ) 1.166%
+Thu Jun  6 15:17:48 2024	13515457.356	Series: E ( 23 ) 1.390%
+Thu Jun  6 15:25:31 2024	13515920.169	Series: E ( 22 ) 1.659%
+Thu Jun  6 15:34:49 2024	13516478.013	Series: E ( 21 ) 1.978%
+Thu Jun  6 15:46:00 2024	13517149.564	Series: E ( 20 ) 2.360%
+Thu Jun  6 15:59:12 2024	13517941.715	Series: E ( 19 ) 2.815%
+Thu Jun  6 16:16:19 2024	13518968.314	Series: E ( 18 ) 3.359%
+Thu Jun  6 16:36:19 2024	13520168.221	Series: E ( 17 ) 4.007%
+Thu Jun  6 17:01:54 2024	13521703.868	Series: E ( 16 ) 4.780%
+Thu Jun  6 17:32:09 2024	13523517.887	Series: E ( 15 ) 5.704%
+Thu Jun  6 18:08:42 2024	13525711.803	Series: E ( 14 ) 6.805%
+Thu Jun  6 18:52:01 2024	13528310.368	Series: E ( 13 ) 8.120%
+Thu Jun  6 19:48:32 2024	13531701.146	Series: S ( 12 ) 9.690%
+Thu Jun  6 21:09:08 2024	13536536.961	Series: S ( 11 ) 11.564%
+Thu Jun  6 22:43:16 2024	13542185.434	Series: S ( 10 ) 13.803%
+Fri Jun  7 00:46:36 2024	13549585.748	Series: S ( 9 ) 16.477%
+Fri Jun  7 03:19:54 2024	13558783.451	Series: S ( 8 ) 19.672%
+Fri Jun  7 07:30:22 2024	13573811.413	Series: S ( 7 ) 23.492%
+Fri Jun  7 13:30:28 2024	13595417.138	Series: S ( 6 ) 28.061%
+Fri Jun  7 20:49:56 2024	13621785.780	Series: S ( 5 ) 33.530%
+Sat Jun  8 06:05:17 2024	13655106.581	Series: S ( 4 ) 40.084%
+Sat Jun  8 18:13:24 2024	13698793.506	Series: S ( 3 ) 47.946%
+Sun Jun  9 09:34:37 2024	13754066.653	Series: S ( 2 ) 57.400%
+Mon Jun 10 05:04:03 2024	13824232.729	Series: S ( 1 ) 68.803%
+Tue Jun 11 04:37:15 2024	13909024.762	Series: S ( 0 ) 82.653%
+Wed Jun 12 11:06:46 2024	14018795.786	Finishing Series
+Wed Jun 12 12:05:19 2024	14022308.365	Large Division
+Wed Jun 12 22:08:59 2024	14058527.977	Accumulate
+Wed Jun 12 22:35:18 2024	14060107.276	78 ArcCoth( 4801 ):
+Wed Jun 12 22:35:18 2024	14060107.276	Series CommonP2B3...  135,820,415,013 terms  (Expansion Factor = 2.494)
+Wed Jun 12 22:35:18 2024	14060107.276	Series: A ( 31 ) 0.000%
+Wed Jun 12 22:35:18 2024	14060107.864	Series: A ( 30 ) 0.002%
+Wed Jun 12 22:35:19 2024	14060108.803	Series: E ( 29 ) 0.004%
+Wed Jun 12 22:35:20 2024	14060109.815	Series: E ( 28 ) 0.007%
+Wed Jun 12 22:35:22 2024	14060110.922	Series: E ( 27 ) 0.009%
+Wed Jun 12 22:35:23 2024	14060112.604	Series: E ( 26 ) 0.013%
+Wed Jun 12 22:35:26 2024	14060114.980	Series: E ( 25 ) 0.018%
+Wed Jun 12 22:35:29 2024	14060118.398	Series: E ( 24 ) 0.025%
+Wed Jun 12 22:35:34 2024	14060123.491	Series: E ( 23 ) 0.035%
+Wed Jun 12 22:35:42 2024	14060130.954	Series: E ( 22 ) 0.048%
+Wed Jun 12 22:35:52 2024	14060141.007	Series: E ( 21 ) 0.067%
+Wed Jun 12 22:36:07 2024	14060156.498	Series: E ( 20 ) 0.094%
+Wed Jun 12 22:36:29 2024	14060178.255	Series: E ( 19 ) 0.130%
+Wed Jun 12 22:36:59 2024	14060208.646	Series: E ( 18 ) 0.181%
+Wed Jun 12 22:37:46 2024	14060255.274	Series: E ( 17 ) 0.252%
+Wed Jun 12 22:38:52 2024	14060321.417	Series: E ( 16 ) 0.351%
+Wed Jun 12 22:40:26 2024	14060415.157	Series: E ( 15 ) 0.489%
+Wed Jun 12 22:42:52 2024	14060561.532	Series: E ( 14 ) 0.680%
+Wed Jun 12 22:46:19 2024	14060768.675	Series: E ( 13 ) 0.946%
+Wed Jun 12 22:50:56 2024	14061045.686	Series: E ( 12 ) 1.317%
+Wed Jun 12 22:57:47 2024	14061456.376	Series: E ( 11 ) 1.833%
+Wed Jun 12 23:07:29 2024	14062038.360	Series: E ( 10 ) 2.552%
+Wed Jun 12 23:22:02 2024	14062911.268	Series: E ( 9 ) 3.552%
+Wed Jun 12 23:43:10 2024	14064179.491	Series: E ( 8 ) 4.944%
+Thu Jun 13 00:12:19 2024	14065928.621	Series: E ( 7 ) 6.884%
+Thu Jun 13 00:57:23 2024	14068632.198	Series: S ( 6 ) 9.586%
+Thu Jun 13 02:12:37 2024	14073146.868	Series: S ( 5 ) 13.351%
+Thu Jun 13 04:04:09 2024	14079838.402	Series: S ( 4 ) 18.602%
+Thu Jun 13 06:57:12 2024	14090221.635	Series: S ( 3 ) 25.931%
+Thu Jun 13 13:33:07 2024	14113976.484	Series: S ( 2 ) 36.176%
+Thu Jun 13 23:07:38 2024	14148447.513	Series: S ( 1 ) 50.536%
+Fri Jun 14 14:11:17 2024	14202666.288	Series: S ( 0 ) 70.772%
+Sat Jun 15 11:21:47 2024	14278896.607	Finishing Series
+Sat Jun 15 12:06:11 2024	14281560.499	Large Division
+Sat Jun 15 21:41:18 2024	14316067.269	Accumulate
+Sat Jun 15 22:03:19 2024	14317388.756	-312 ArcCoth( 8749 ):
+Sat Jun 15 22:03:19 2024	14317388.756	Series CommonP2B3...  126,840,505,980 terms  (Expansion Factor = 2.391)
+Sat Jun 15 22:03:19 2024	14317388.756	Series: A ( 30 ) 0.000%
+Sat Jun 15 22:03:20 2024	14317389.232	Series: A ( 29 ) 0.002%
+Sat Jun 15 22:03:21 2024	14317390.155	Series: E ( 28 ) 0.004%
+Sat Jun 15 22:03:22 2024	14317391.153	Series: E ( 27 ) 0.007%
+Sat Jun 15 22:03:23 2024	14317392.260	Series: E ( 26 ) 0.009%
+Sat Jun 15 22:03:25 2024	14317393.941	Series: E ( 25 ) 0.013%
+Sat Jun 15 22:03:27 2024	14317396.365	Series: E ( 24 ) 0.018%
+Sat Jun 15 22:03:31 2024	14317400.014	Series: E ( 23 ) 0.026%
+Sat Jun 15 22:03:36 2024	14317405.205	Series: E ( 22 ) 0.037%
+Sat Jun 15 22:03:44 2024	14317413.138	Series: E ( 21 ) 0.051%
+Sat Jun 15 22:03:55 2024	14317424.538	Series: E ( 20 ) 0.073%
+Sat Jun 15 22:04:11 2024	14317440.243	Series: E ( 19 ) 0.102%
+Sat Jun 15 22:04:36 2024	14317465.092	Series: E ( 18 ) 0.144%
+Sat Jun 15 22:05:09 2024	14317498.873	Series: E ( 17 ) 0.203%
+Sat Jun 15 22:06:02 2024	14317550.889	Series: E ( 16 ) 0.286%
+Sat Jun 15 22:07:15 2024	14317623.980	Series: E ( 15 ) 0.402%
+Sat Jun 15 22:09:09 2024	14317737.903	Series: E ( 14 ) 0.567%
+Sat Jun 15 22:11:44 2024	14317893.182	Series: E ( 13 ) 0.799%
+Sat Jun 15 22:15:43 2024	14318132.686	Series: E ( 12 ) 1.125%
+Sat Jun 15 22:21:25 2024	14318474.228	Series: E ( 11 ) 1.586%
+Sat Jun 15 22:30:12 2024	14319001.345	Series: E ( 10 ) 2.234%
+Sat Jun 15 22:42:25 2024	14319734.405	Series: E ( 9 ) 3.148%
+Sat Jun 15 23:00:25 2024	14320814.241	Series: E ( 8 ) 4.435%
+Sat Jun 15 23:27:33 2024	14322442.635	Series: E ( 7 ) 6.250%
+Sun Jun 16 00:07:40 2024	14324849.655	Series: S ( 6 ) 8.810%
+Sun Jun 16 01:14:02 2024	14328831.060	Series: S ( 5 ) 12.420%
+Sun Jun 16 02:55:23 2024	14334912.600	Series: S ( 4 ) 17.515%
+Sun Jun 16 05:32:48 2024	14344356.920	Series: S ( 3 ) 24.712%
+Sun Jun 16 10:36:32 2024	14362581.198	Series: S ( 2 ) 34.894%
+Sun Jun 16 19:30:08 2024	14394597.863	Series: S ( 1 ) 49.336%
+Mon Jun 17 09:25:15 2024	14444704.117	Series: S ( 0 ) 69.927%
+Tue Jun 18 06:35:42 2024	14520931.838	Finishing Series
+Tue Jun 18 07:25:08 2024	14523896.903	Large Division
+Tue Jun 18 16:58:31 2024	14558300.323	Accumulate
+Tue Jun 18 17:22:53 2024	14559762.443	Writing Hexadecimal Digits
+Tue Jun 18 17:49:46 2024	14561375.548	Base Converting
+Wed Jun 19 03:20:55 2024	14595644.083	Writing Decimal Digits
+Wed Jun 19 03:55:51 2024	14597740.475	Verifying Base Conversion
+Wed Jun 19 08:59:47 2024	14615975.884	Verifying Binary Output
+Wed Jun 19 09:07:57 2024	14616465.930	Verifying Decimal Output
+Wed Jun 19 09:11:14 2024	14616663.299	Verifying Hexadecimal Output
+Wed Jun 19 09:14:14 2024	14616843.480	End Computation
+
+----
+
+Checksum0: fa13c8b2f1497ddd31ffed82a518099e8899d7b52d94e69c62a064c3c21f254b02e12d598ea15fca6215fac2b100be9062014b7c920bd4183cc6d8785fa9bde8
+Checksum1: e5efd3db059f1dc7b507cc704f34f46adcf35cd270d1baa713bf67eff9e454f5a3877da371ce125a4eef44e79db00bb8eda2a459cd96349b49ff6804edbcde24
