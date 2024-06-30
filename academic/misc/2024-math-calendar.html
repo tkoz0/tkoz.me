@@ -367,16 +367,16 @@
         <td><a href="#jun20">20</a></td>
         <td><a href="#jun21">21</a></td>
         <td><a href="#jun22">22</a></td>
-        <td>23</td>
+        <td><a href="#jun23">23</a></td>
     </tr>
     <tr>
-        <td>24</td>
-        <td>25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-        <td>29</td>
-        <td>30</td>
+        <td><a href="#jun24">24</a></td>
+        <td><a href="#jun25">25</a></td>
+        <td><a href="#jun26">26</a></td>
+        <td><a href="#jun27">27</a></td>
+        <td><a href="#jun28">28</a></td>
+        <td><a href="#jun29">29</a></td>
+        <td><a href="#jun30">30</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
@@ -5311,6 +5311,210 @@ are at the same position at hour 0. Then going to hour 24, the hour hand goes
 around twice and the minute hand goes around 24 times. They stop in the same
 position. The minute hand spins faster and passes thet hour hand \(24-2=22\)
 times during the day.
+</p>
+
+<h3 id="jun23">Jun 23</h3>
+
+\[x&gt;5,\quad x^2=1+2^y+2^{2y+1},\quad x,y\in\mathbb{Z}\]
+
+<p>
+I did not find a particularly satisfying solution for this problem so I'll
+present a simple way of seeing a solution, without showing that is it all the
+solutions. As \(y\) grows, \(x\) grows much faster. When \(y=0\), \(x^2=4\) is
+a perfect square, but we need \(x&gt;5\) so keep trying more values of \(y\).
+When \(y=4\), we find \(x^2=529=23^2\) so \(x=23\). This is the solution, but I
+have not found a way to show whether or not more solutions exist.
+</p>
+
+<h3 id="jun24">Jun 24</h3>
+
+<p>
+The order of the symmetry group of the regular dodecagon.
+</p>
+
+<p>
+The order of a polygon symmetry group is twice its number of sides, so for the
+dodecagon this is \(2\cdot12=24\). Each one describes one of 12 rotations either
+with or without a reflection.
+</p>
+
+<h3 id="jun25">Jun 25</h3>
+
+\[\sqrt{\sum_{n=1}^{100}\lfloor\sqrt{n}\rfloor}\]
+
+<p>
+Consider another sum that we can evaluate more easily.
+\[\begin{align}&\sum_{n=1}^{N^2-1}\lfloor\sqrt{n}\rfloor
+=\sum_{m=1}^{N-1}\sum_{n=m^2}^{(m+1)^2-1}\lfloor\sqrt{n}\rfloor
+=\sum_{m=1}^{N-1}\sum_{n=m^2}^{m^2+2m}m=\sum_{m=1}^{N-1}m(2m+1)
+=2\sum_{m=1}^{N-1}m^2+\sum_{m=1}^{N-1}m\\&
+={(N-1)N(2N-1)\over3}+{(N-1)N\over2}
+={N(N-1)\over6}\left({4N-2\over6}+{3\over6}\right)={N(N-1)(4N+1)\over6}\\
+\end{align}\]
+Then the summation for our problem becomes
+\[\sum_{n=1}^{100}\lfloor\sqrt{n}\rfloor
+=\sum_{n=1}^{10^2-1}\lfloor\sqrt{n}\rfloor+\lfloor\sqrt{100}\rfloor
+={10(10-1)(40+1)\over6}+10=625\]
+Then we take the square root so the answer is \(25\).
+</p>
+
+<h3 id="jun26">Jun 26</h3>
+
+\[\text{Round}\left({\cot^3\left({\pi\over12}\right)
+-\tan^3\left({\pi\over12}\right)\over2}\right)\]
+
+<p>
+Let \(x=\cos(\pi/12)\) and \(y=\sin(\pi/12)\). Then we have
+\[{{x^3\over y^3}-{y^3\over x^3}\over2}={x^6-y^6\over2x^3y^3}
+={(x^3+y^3)(x^3-y^3)\over2x^3y^3}\]
+Now we need to know what \(x,y\) are. The sum/difference trigonometric
+identities can be used.
+\[\begin{align}&x=\cos(\pi/12)=\cos(\pi/3-\pi/4)
+=\cos(\pi/3)\cos(\pi/4)+\sin(\pi/3)\sin(\pi/4)\\
+&={1\over2}{\sqrt{2}\over2}+{\sqrt{3}\over2}{\sqrt{2}\over2}
+={\sqrt{6}+\sqrt{2}\over4}\end{align}\]
+\[\begin{align}&y=\sin(\pi/12)=\sin(\pi/3-\pi/4)
+=\sin(\pi/3)\cos(\pi/4)-\cos(\pi/3)\sin(\pi/4)\\
+&={\sqrt{3}\over2}{\sqrt{2}\over2}-{1\over2}{\sqrt{2}\over2}
+={\sqrt{6}-\sqrt{2}\over4}\end{align}\]
+Next, using some algebra, we find
+\[x^3={3\sqrt{6}+5\sqrt{2}\over16},\quad y^3={3\sqrt{6}-5\sqrt{2}\over16}\]
+Then we substitute these.
+\[\begin{align}&{(x^3+y^3)(x^3-y^3)\over2x^3y^3}
+={\left({3\sqrt{6}+5\sqrt{2}\over16}+{3\sqrt{6}-5\sqrt{2}\over16}\right)
+\left({3\sqrt{6}+5\sqrt{2}\over16}-{3\sqrt{6}-5\sqrt{2}\over16}\right)
+\over2{3\sqrt{6}+5\sqrt{2}\over16}{3\sqrt{6}-5\sqrt{2}\over16}}\\&
+={{6\sqrt{6}\over16}{10\sqrt{2}\over16}\over2{9\cdot6-25\cdot2\over16^2}}
+={60\sqrt{12}/256\over8/256}={120\sqrt{3}\over8}=15\sqrt{3}\end{align}\]
+Rounding this to the nearest integer, the answer is 26.
+</p>
+
+<h3 id="jun27">Jun 27</h3>
+
+<p>
+\(f(x)=x^3-9x^2+bx-c\) has three real roots \(&gt;0\). Find the maximum value of
+\(c\).
+</p>
+
+<p>
+This one can be solved by making use of Vieta's formulas. Let the roots be
+\(r_1,r_2,r_3&gt;0\). Then using the 2 leading coefficients, \(r_1+r_2+r_3=9\).
+For the constant coefficient, we have \(r_1r_2r_3=c\). Now we need to find a
+way to relate these 2 expressions, which can be done with the property that
+arithmetic mean is always at least geometric mean.
+\[{r_1+r_2+r_3\over3}\geq\sqrt[3]{r_1r_2r_3}\Rightarrow3\geq\sqrt[3]{r_1r_2r_3}
+\Rightarrow27\geq r_1r_2r_3=c\]
+Therefore, the maximum value is \(c=27\). Given the constraint
+\(r_1+r_2+r_3=9\), the product \(r_1r_2r_3\) is a maximum when the values are
+equal to the average so \(r_1=r_2=r_3=3\). The polynomial corresponding to this
+solution is \(f(x)=(x-3)^3=x^3-9x^2+27x-27\).
+</p>
+
+<h3 id="jun28">Jun 28</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10" width="280" height="350" class="img_center">
+    <g stroke="black" stroke-width="0.06" fill="none">
+        <rect x="1" y="6.236" width="2.236" height="2.236" />
+        <rect x="4" y="4" width="2.236" height="2.236" />
+        <rect x="4" y="1" width="3" height="3" />
+        <rect x="3.236" y="6.236" width="3" height="3" />
+    </g>
+    <polygon points="3.236 8.472 7 1 6.236 6.236" stroke="black" stroke-width="0.06" fill="rgba(0,0,0,0.2)" />
+    <path d="M 3.75 2.5 h 0.5 M 6.75 2.5 h 0.5 M 5.5 0.75 v 0.5 M 5.986 7.736 h 0.5 M 4.736 8.986 v 0.5 M 0.75 7.229 h 0.5 M 0.75 7.479 h 0.5 M 1.993 5.986 v 0.5 M 2.243 5.986 v 0.5 M 1.993 8.222 v 0.5 M 2.243 8.222 v 0.5 M 3.75 4.993 h 0.5 M 3.75 5.243 h 0.5 M 5.986 4.993 h 0.5 M 5.986 5.243 h 0.5 M 1.5 6.236 v 0.5 h -0.5 M 4.5 4 v 0.5 h -0.5 M 4.5 1 v 0.5 h -0.5 M 3.736 6.236 v 0.5 h -0.5" stroke="black" stroke-width="0.06" fill="none" />
+    <g fill="black" font-size="0.03em">
+        <text x="1" y="2">x = sum of</text>
+        <text x="1" y="2.5">areas of the</text>
+        <text x="1" y="3">squares</text>
+        <text x="1" y="9.5">Area = 7</text>
+    </g>
+    <line x1="2.5" x2="4.5" y1="9" y2="7" stroke="black" stroke-width="0.06" fill="none" />
+    <polygon points="4.5 7 4.474 7.097 4.403 7.026" stroke="black" stroke-width="0.06" fill="none" />
+</svg>
+
+<p>
+Let \(x\) be the shorter square side length and \(y\) be the longer square side
+length. Consider the parts marked in orange below.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10" width="280" height="350" class="img_center">
+    <g stroke="black" stroke-width="0.06" fill="none">
+        <rect x="1" y="6.236" width="2.236" height="2.236" />
+        <rect x="4" y="4" width="2.236" height="2.236" />
+        <rect x="4" y="1" width="3" height="3" />
+        <rect x="3.236" y="6.236" width="3" height="3" />
+    </g>
+    <polygon points="3.236 8.472 7 1 6.236 6.236" stroke="black" stroke-width="0.06" fill="rgba(0,0,0,0.2)" />
+    <path d="M 3.75 2.5 h 0.5 M 6.75 2.5 h 0.5 M 5.5 0.75 v 0.5 M 5.986 7.736 h 0.5 M 4.736 8.986 v 0.5 M 0.75 7.229 h 0.5 M 0.75 7.479 h 0.5 M 1.993 5.986 v 0.5 M 2.243 5.986 v 0.5 M 1.993 8.222 v 0.5 M 2.243 8.222 v 0.5 M 3.75 4.993 h 0.5 M 3.75 5.243 h 0.5 M 5.986 4.993 h 0.5 M 5.986 5.243 h 0.5 M 1.5 6.236 v 0.5 h -0.5 M 4.5 4 v 0.5 h -0.5 M 4.5 1 v 0.5 h -0.5 M 3.736 6.236 v 0.5 h -0.5" stroke="black" stroke-width="0.06" fill="none" />
+    <g fill="black" font-size="0.03em">
+        <text x="1" y="2">x = sum of</text>
+        <text x="1" y="2.5">areas of the</text>
+        <text x="1" y="3">squares</text>
+        <text x="1" y="9.5">Area = 7</text>
+    </g>
+    <line x1="2.5" x2="4.5" y1="9" y2="7" stroke="black" stroke-width="0.06" fill="none" />
+    <polygon points="4.5 7 4.474 7.097 4.403 7.026" stroke="black" stroke-width="0.06" fill="none" />
+    <g stroke="orange" stroke-width="0.06" fill="rgba(255,127,0,0.2)">
+        <polygon points="3.236 8.472 6.236 8.472 6.236 6.236" />
+        <polygon points="6.236 6.236 7 1 7 6.236" />
+        <rect x="6.236" y="6.236" width="0.764" height="2.236" />
+    </g>
+</svg>
+
+<p>
+The desired quantity will be \(2x^2+2y^2\). To see how we can get there, we can
+write the area of the gray triangle by starting with the larger triangle of
+both the gray and orange parts, then subtracting the orange parts (2 triangles
+and 1 rectangle). The result is
+\[{1\over2}(2y-x)(2x+y)-{1\over2}xy-{1\over2}(y-x)(x+y)-x(y-x)
+={1\over2}x^2+{1\over2}y^2\]
+This is just 1/4 of the quantity we desire, so the answer is 4 times the area of
+the gray triangle, 28.
+</p>
+
+<h3 id="jun29">Jun 29</h3>
+
+<p>
+The average of a finite set \(S\) is \(x\). The average of \(S\cup\{1\}\) is
+\(x-2\) and the average of \(S\cup\{99\}\) is \(x+5\).
+</p>
+
+<p>
+Let \(n=|S|\) and \(t=\sum_{s\in S}s\). Then each statement corresponds to an
+equation:
+\[{t\over n}=x,\quad{t+1\over n}=x-2,\quad{t+99\over n}=x+5\]
+From the first equation, substitute \(t=nx\) into the others to get
+\(x-2n=3,x+5n=94\) which can be solved for \(n=13,x=29\). So the answer is
+\(x=29\).
+</p>
+
+<p>
+But we made the assumption that \(1\not\in S\) and \(99\not\in S\). If we assume
+both \(1,99\in S\), then the last 2 equations become \({t\over n}=x-2=x+5\)
+which has no solution. If we have \(1\in S,99\not\in S\), then the system would
+gives us \(n=92/7,x=198/7\). If we have \(1\not\in S,99\in S\), then the
+solution is \(n=-8/7,x=5/7\). In both of these cases, \(S\) would not have a
+nonnegative integer size, so even if we are careful about our assumptions, we
+find that no matter what \(S\) is, \(1,99\not\in S\).
+</p>
+
+<h3 id="jun30">Jun 30</h3>
+
+<p>
+How many numbers from 1 to 100 are divisible by 4 or 5 but not 6?
+</p>
+
+<p>
+This can be done by first drawing a venn diagram of 3 circles, one each for
+numbers divisible by 4, 5, or 6. Let's first start with numbers divisible by
+4 or 5. That is
+\[\left\lfloor{100\over4}\right\rfloor+\left\lfloor{100\over5}\right\rfloor
+-\left\lfloor{100\over\text{lcm}(4,5)}\right\rfloor=25+20-5=40\]
+Next, we have to subtract numbers divisible by 4 and 6, as well as numbers
+divisible by 5 and 6. These are \(\lfloor100/12\rfloor=8\) and
+\(\lfloor100/30\rfloor=3\) respectively. So now we have \(40-8-3=29\). But the
+last thing we need to do is add numbers divisible by all of 4,5,6 because we
+just subtracted each twice. There is only 1 such number since
+\(\lfloor100/60\rfloor=1\) so the answer is 30.
 </p>
 
 <!-- allow scroll past end a bit -->
