@@ -394,17 +394,17 @@
     <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
     <tr>
         <td><a href="#jul01">01</a></td>
-        <td>02</td>
-        <td>03</td>
-        <td>04</td>
-        <td>05</td>
-        <td>06</td>
-        <td>07</td>
+        <td><a href="#jul02">02</a></td>
+        <td><a href="#jul03">03</a></td>
+        <td><a href="#jul04">04</a></td>
+        <td><a href="#jul05">05</a></td>
+        <td><a href="#jul06">06</a></td>
+        <td><a href="#jul07">07</a></td>
     </tr>
     <tr>
-        <td>08</td>
-        <td>09</td>
-        <td>10</td>
+        <td><a href="#jul08">08</a></td>
+        <td><a href="#jul09">09</a></td>
+        <td><a href="#jul10">10</a></td>
         <td>11</td>
         <td>12</td>
         <td>13</td>
@@ -5524,6 +5524,121 @@ just subtracted each twice. There is only 1 such number since
 \[{1^2+2^2+\ldots+5^2\over1+2+\ldots+10}
 ={{5\cdot6\cdot11\over6}\over{10\cdot11\over2}}
 ={55\over55}=1\]
+
+<h3 id="jul02">Jul 02</h3>
+
+<p>
+Minimal number of sequential evaluations of \(p(x)\in\mathbb{N}[x]\) needed to
+determine the coefficients of \(p(x)\).
+</p>
+
+<p>
+This is worded a bit confusingly. It is asking how many evaluations are needed
+to determine coefficients of a polynomial with nonnegative integer coefficients.
+Suppose \(p(x)=a_0+a_1x+a_2x^2+\ldots+a_nx^n\) where each \(a_i\in\mathbb{N}
+=\{0,1,2,\ldots\}\). First evaluate \(p(1)=\sum a_i\) and let this value be
+\(q\). Next evaluate \(p(q)=a_0+a_1q+a_2q^2+\ldots+a_nq^n\). If only one of the
+\(a_i&gt;0\), then we would find \(p(x)=a_nq^n\) where \(a_n=q\) and
+\(n=\log_q(p(q))-1\). If multiple \(a_i&gt;0\), then we will have \(q&gt;a_i\)
+for each \(a_i\), so \(p(q)\) is represented such that each \(a_i\) are the
+digits of the base \(q\) representation, which allows us to determine them.
+</p>
+
+<h3 id="jul03">Jul 03</h3>
+
+<p>
+If \(\log_ab+\log_bc+\log_ca=0\), find \((\log_ab)^3+(\log_bc)^3+(\log_ca)^3\).
+</p>
+
+<p>
+To make this simpler, let \(x=\log_ab,y=\log_bc,z=\log_ca\). Then we have
+\(x+y+z=0\) and need to find \(x^3+y^3+z^3\). Now to get the cubes we need, cube
+each side of \(x+y=-z\), since this avoids cubing a side with 3 terms.
+\[x^3+y^3+3x^2y+3xy^2=-z^3 \Rightarrow x^3+y^3+z^3=-3xy(x+y)
+=-3xy(-z)=3xyz\]
+Now we just use the change base formula:
+\[3xyz=3{\ln(b)\over\ln(a)}{\ln(c)\over\ln(b)}{\ln(a)\over\ln(c)}
+=3{\ln(a)\ln(b)\ln(c)\over\ln(a)\ln(b)\ln(c)}=3\]
+</p>
+
+<h3 id="jul04">Jul 04</h3>
+
+\[\begin{align}&{\csc(75^\circ)\over\cos(75^\circ)}
+={1\over\sin(75^\circ)\cos(75^\circ)}
+={1\over\sin(30^\circ+45^\circ)\cos(30^\circ+45^\circ)}\\&
+={1\over\left[{1\over2}{\sqrt{2}\over2}+{\sqrt{3}\over2}{\sqrt{2}\over2}\right]
+    \left[{\sqrt{3}\over2}{\sqrt{2}\over2}-{1\over2}{\sqrt{2}\over2}\right]}
+={1\over{\sqrt{2}+\sqrt{6}\over4}{\sqrt{6}-\sqrt{2}\over4}}\\&
+={4\cdot4\over(\sqrt{2}+\sqrt{6})(\sqrt{6}-\sqrt{2})}={16\over6-2}={16\over4}=4
+\end{align}\]
+
+<h3 id="jul05">Jul 05</h3>
+
+<p>
+For the Fibonacci sequence \(F_i\),
+\[\begin{align}&a=F_0+F_1+\ldots+F_{59}\\&b=F_2+F_4+\ldots+F_{60}\\
+&c=F_2+F_5+\ldots+F_{59}\\&x={a+b+c\over c}\end{align}\]
+</p>
+
+<p>
+We will make use of the identity \(F_n=F_{n-1}+F_{n-2}\) (for \(n\geq2\)). This
+allows us to show that \(b=(F_0+F_1)+(F_2+F_3)+\ldots+(F_{58}+F_{59})=a\). Doing
+the same again, \(c=(F_0+F_1)+(F_3+F_4)+\ldots+(F_{57}+F_{58})\). This can be
+added to the original \(c\) to get a sum of all the terms \(F_0\) to \(F_{59}\)
+so \(c+c=2c=a=b\). Then \[x={a+b+c\over c}={2c+2c+c\over c}={5c\over c}=5\]
+</p>
+
+<h3 id="jul06">Jul 06</h3>
+
+\[\sqrt{9+6\sqrt{2}}+\sqrt{9-6\sqrt{2}}=2\sqrt{x}\]
+
+<p>
+This is another good problem for square each side and see what happens.
+\[\begin{align}&(9+6\sqrt{2})+(9-6\sqrt{2})+2\sqrt{(9+6\sqrt{2})(9-6\sqrt{2})}
+=4x\\&18+2\sqrt{81-72}=4x \Rightarrow 24=4x \Rightarrow x=6\\\end{align}\]
+</p>
+
+<h3 id="jul07">Jul 07</h3>
+
+\[y^3+{1\over y^3}=322,\quad x=y+{1\over y}\]
+
+<p>
+Start by evaluating \(x^3\).
+\[x^3=y^3+y^{-3}+3(y+y^{-1})=322+3x \Rightarrow x^3-3x-322=0\]
+This gives us a polynomial to factor. By using the factorization
+\(322=2\cdot7\cdot23\), we can find the rational root \(x=7\). Then dividing
+that out results in the polynomial \(x^2+7x+46\) which has imaginary roots.
+Therefore, the solution is \(x=7\).
+</p>
+
+<h3 id="jul08">Jul 08</h3>
+
+\[\text{gcf}(7000,504,120)\]
+
+<p>
+We can start with the smaller numbers to make this easier.
+\[\text{gcf}(504,120)=\text{gcf}(4\cdot120+24,120)=\text{gcf}(24,120)
+=\text{gcf}(24,5\cdot24)=\text{gcf}(24)\]
+Next compute
+\[\text{gcf}(7000,24)=\text{gcf}(291\cdot24+16,24)=\text{gcf}(16,24)
+=\text{gcf}(16,16+8)=\text{gcf}(16,8)=\text{gcf}(2\cdot8,8)=8\]
+</p>
+
+<h3 id="jul09">Jul 09</h3>
+
+\[f(a,b)={a+b\over a-b},\quad x=f(f(6,4),f(5,3))\]
+
+\[x=f\left({6+4\over6-4},{5+3\over5-3}\right)
+=f\left({10\over2},{8\over2}\right)=f(5,4)={5+4\over5-4}={9\over1}=9\]
+
+<h3 id="jul10">Jul 10</h3>
+
+\[{2x\over5}+1.5=x+1\]
+
+<p>
+Multiply each side by 10 and then combine similar terms.
+\[4x+15=5(x+1)\Rightarrow4x+15=5x+5\Rightarrow15-5=5x-4x\Rightarrow x=10\]
+</p>
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
