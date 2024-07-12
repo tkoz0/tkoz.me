@@ -405,8 +405,8 @@
         <td><a href="#jul08">08</a></td>
         <td><a href="#jul09">09</a></td>
         <td><a href="#jul10">10</a></td>
-        <td>11</td>
-        <td>12</td>
+        <td><a href="#jul11">11</a></td>
+        <td><a href="#jul12">12</a></td>
         <td>13</td>
         <td>14</td>
     </tr>
@@ -5638,6 +5638,47 @@ Next compute
 <p>
 Multiply each side by 10 and then combine similar terms.
 \[4x+15=5(x+1)\Rightarrow4x+15=5x+5\Rightarrow15-5=5x-4x\Rightarrow x=10\]
+</p>
+
+<h3 id="jul11">Jul 11</h3>
+
+<p>
+The sum of the roots of \(x^{45}+(0.5-x)^{45}\).
+</p>
+
+<p>
+There is a Vieta formula that can be used to solve this problem. Suppose
+\(p(z)=a_nz^n+a_{n-1}z^{n-1}+\ldots+a_1z+a_0\) is a polynomial. Then if we know
+its roots \(z_1,z_2,\ldots,z_n\),
+\[p(z)=a_n(z-z_1)(z-z_2)\ldots(z-z_n)\]
+Then expand it partially.
+\[p(z)=a_n\left(z^n-(z_1+z_2+\ldots+z_n)z^{n-1}
++(\text{other complex terms not needed})+(-1)^nz_1z_2\ldots z_n\right)\]
+Because the other complex terms not needed are lower powers of \(z\), we can
+compare the coefficients of \(z^{n-1}\) in both of these to find
+\[a_{n-1}=-a_n(z_1+z_2+\ldots+z_n)\]
+This gives us the general formula \(-{a_{n-1}\over a_n}\). Now we need to find
+the 2 relevant coefficients of the given polynomial.
+\[x^{45}+(0.5-x)^{45}=x^{45}-x^{45}+{45\choose1}0.5\cdot x^{44}
+-{45\choose2}0.5^2\cdot x^{43}+\ldots\]
+The \(x^{45}\) terms go away so this is a degree 44 polynomial. The coefficients
+we need tell us the sum of roots is
+\[-{-{45\choose2}0.5^2\over{45\choose1}0.5}={{45\cdot44\over2}0.5\over45}
+={44\cdot0.5\over2}=11\]
+</p>
+
+<h3 id="jul12">Jul 12</h3>
+
+<p>
+Find the difference between the roots of \(x^2+6x-27\).
+</p>
+
+<p>
+In general, with roots \(x={-b\pm\sqrt{b^2-4ac}\over2a}\), we can find that the
+difference is \({1\over a}\sqrt{b^2-4ac}\). For this problem, with
+\(a=1,b=6,c=-27\) we get \({1\over1}\sqrt{6^2-4\cdot1(-27)}=\sqrt{36+108}
+=\sqrt{144}=12\). Alternatively, this one is easy to factor to \((x+9)(x-3)\) so
+we can see the roots are \(x=-9,x=3\) and \(|-9-3|=12\).
 </p>
 
 <!-- allow scroll past end a bit -->
