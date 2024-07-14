@@ -8,3 +8,6 @@ speedtest/backend/getIP_serverLocation.php
 
 # certbot stuff
 .well-known
+
+# random stuff
+_test
