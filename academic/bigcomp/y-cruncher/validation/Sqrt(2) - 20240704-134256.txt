@@ -1,0 +1,627 @@
+﻿Benchmark Validation File - DO NOT MODIFY! If you do, it will fail validation.
+
+Validation Version:    1.3.1
+
+Program:               y-cruncher v0.8.5 Build 9539-icx
+Binary:                14-BDW ~ Kurumi
+
+User:                  None Specified - You can edit this in "Username.txt".
+
+Operating System:      Linux 5.15.0-113-generic x86_64
+
+Processor(s):
+    Name:              Intel(R) Xeon(R) CPU E5-2697A v4 @ 2.60GHz
+    Logical Cores:     64
+    Physical Cores:    32
+    Sockets:           2
+    NUMA Nodes:        2
+    Base Frequency:    2,599,976,576 Hz
+    Est. Frequency:    3,592,027,311 Hz
+
+Motherboard:
+    Manufacturer:      Dell Inc.
+    Model:             072T6D
+    Version:           A07
+    Serial Number:     Suppressed - Personally identifiable information is opt-in only.
+
+Memory:
+    Usable Memory:     135,051,341,824 ( 126 GiB)
+    Total Memory:      Unable to Detect
+
+Constant:              Sqrt(2)
+Algorithm:             Newton's Method
+Decimal Digits:        1,000,000,000,050
+Hexadecimal Digits:    830,482,023,764
+Computation Mode:      Swap Mode
+Threading Mode:        Push Pool  ->  64 / ?  (randomization on)
+Working Memory:        127,211,530,368 ( 118 GiB)
+Total Memory:          128,849,018,880 ( 120 GiB)
+
+Logical Largest Checkpoint:    0 ( 0 bytes)
+Logical Peak Disk Usage:       3,902,900,424,064 (3.55 TiB)
+Logical Disk Bytes Read:       38,208,886,330,720 (34.8 TiB)
+Logical Disk Bytes Written:    29,912,121,118,288 (27.2 TiB)
+
+Configuration Dump:
+{
+    Constant : {
+        Constant : "sqrt"
+        Argument : 2
+        Algorithm : "newton"
+    }
+    ComputeSize : {
+        DecimalDigits : 1000000000050
+        EnableHexDigits : true
+    }
+    Output : {
+        Framework : "ycd"
+        Path : ""
+        DigitsPerFile : 0
+        RawIO : true
+    }
+    OutputVerify : true
+    Mode : "swap"
+    Parallelism : {
+        TaskDecomposition : 64
+        Framework : "pushpool"
+        WorkerThreads : 0
+        Randomization : true
+        MaxSequentialDispatch : 64
+    }
+    Allocator : {
+        Threads : 10
+        Allocator : "interleave"
+        Hashed : true
+        mbind : false
+        LockedPages : "attempt"
+        Nodes : [0 1]
+    }
+    Memory : 128849018880
+    Checkpointing : {
+        Enabled : false
+        PostCheckpointCommand : ""
+    }
+    FarMemoryTuning : [
+        {
+            SizeInBytes : -1
+            BytesPerSeek : 12582912
+            PreferredAlignmentK : 16
+            ParallelAccess : "none"
+        }
+    ]
+    FarMemoryConfig : {
+        Framework : "disk-raid0"
+        InterleaveWidth : 65536
+        LaneMultiplier : 1
+        Workers : 1
+        BufferPerWorker : 67108864
+        Checksums : true
+        RawIO : true
+        ReadProtect : true
+        TuningDefault : "hard-drive"
+        Lanes : [
+            {   //  Lane 0
+                Path : "/mnt/sas00"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 1
+                Path : "/mnt/sas01"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 2
+                Path : "/mnt/sas02"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 3
+                Path : "/mnt/sas03"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 4
+                Path : "/mnt/sas04"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 5
+                Path : "/mnt/sas05"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 6
+                Path : "/mnt/sas06"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 7
+                Path : "/mnt/sas07"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 8
+                Path : "/mnt/sas08"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 9
+                Path : "/mnt/sas09"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 10
+                Path : "/mnt/sas10"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 11
+                Path : "/mnt/sas11"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 12
+                Path : "/mnt/sas12"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 13
+                Path : "/mnt/sas13"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 14
+                Path : "/mnt/sas14"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 15
+                Path : "/mnt/sas15"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 16
+                Path : "/mnt/sas16"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 17
+                Path : "/mnt/sas17"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 18
+                Path : "/mnt/sas18"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 19
+                Path : "/mnt/sas19"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 20
+                Path : "/mnt/sas20"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 21
+                Path : "/mnt/sas21"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 22
+                Path : "/mnt/sas22"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62]
+                WorkerThreadPriority : 2
+            }
+            {   //  Lane 23
+                Path : "/mnt/sas23"
+                BufferAllocator : {
+                    Threads : 10
+                    Allocator : "interleave"
+                    Hashed : true
+                    mbind : false
+                    LockedPages : "attempt"
+                    Nodes : [0 1]
+                }
+                WorkerThreadCores : [1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63]
+                WorkerThreadPriority : 2
+            }
+        ]
+    }
+    TuningProfile : "Kurumi"
+}
+
+Start Date:            Thu Jul  4 04:53:19 2024
+End Date:              Thu Jul  4 13:42:29 2024
+
+Total Computation Time:    19874.269 seconds
+Start-to-End Wall Time:    31749.950 seconds
+
+CPU Utilization:           1538.90 %  +  12.02 % kernel overhead
+Multi-core Efficiency:     24.05 %  +  0.19 % kernel overhead
+
+Decimal Digits:
+4142135623 7309504880 1688724209 6980785696 7187537694  :  50
+8073176679 7379907324 7846210703 8850387534 3276415727  :  100
+7111168391 6581726889 4197587165 8215212822 9518488472  :  1,000
+0015693691 7688185237 8684052287 8376293892 1430065586  :  1,200
+1814722318 1420407042 6509056532 3333984364 5786579679  :  1,500
+1156734585 3348332952 5467585164 4710757848 6024636008  :  2,000
+9988809917 6741774108 9830608003 2631181642 7988231171  :  2,500
+0339232437 0474115331 8725319060 1916599645 5381157888  :  4,000
+9488087744 7311122954 2652751653 6659117301 4236062652  :  5,000
+9244147086 0708660267 6349978793 4208758361 2194711699  :  7,500
+1537904877 8808300220 5833504674 6555323028 5873258351  :  10,000
+0757905942 4347046448 9575440238 7369360474 0130860360  :  12,000
+8859205640 6907697263 9093391116 1368466669 9318068382  :  15,000
+8535224334 9189341495 3731854617 7563908506 3014980593  :  20,000
+9849982146 2735902524 2435180332 5179402961 3213416361  :  25,000
+7988627673 8138291077 7335923984 7810548093 0369833513  :  40,000
+9125235456 4527298776 6200762220 3714877325 3707040015  :  50,000
+9183008394 6450010530 4448525482 1041097069 0831910012  :  75,000
+2493706886 4601669535 5591598401 8377008180 5610147523  :  100,000
+2811273273 5466476141 6623353891 3780827866 8771960684  :  120,000
+1375287200 9058138994 0893905424 8856202800 6786979163  :  150,000
+9632210467 4387295397 4019531357 8071689878 1126955755  :  200,000
+8733074507 8796891276 0493038785 3010987721 7604144162  :  250,000
+7725952339 5829545700 1937421416 7802286357 5469326109  :  400,000
+4138793684 8407355347 7481718093 3952555319 8229026068  :  500,000
+1713124080 7158714265 1548279947 1486965993 2706386470  :  750,000
+0401237494 7972946621 2294899384 2044193016 9048412043  :  1,000,000
+9778007351 6840703611 9880671114 4617006128 9129770238  :  1,200,000
+7190368387 4817638184 2392013179 8373188406 0148221461  :  1,500,000
+2373406899 9959144833 5208402310 7319121399 4376127612  :  2,000,000
+1449637640 0975035034 3939173248 4713478044 7106574788  :  2,500,000
+5257870129 7883193436 0676370671 5992791335 1497751108  :  4,000,000
+1239484532 1635481109 2138527795 9018134882 5342260927  :  5,000,000
+4075615972 4439197553 7939782823 3291208425 7667465543  :  7,500,000
+6630211470 1184377687 2480508054 1235727278 7213158971  :  10,000,000
+5643142481 3286835364 5447049737 2580416220 2910752454  :  12,000,000
+6381124257 3710830347 4546251252 6606293495 6720667127  :  15,000,000
+6956451375 2104060732 7466563593 5138109759 1503948085  :  20,000,000
+6605583451 3351767406 0300665913 3388821269 4265509668  :  25,000,000
+2135771591 5457672608 8511914031 6968323693 4420142016  :  40,000,000
+8024305657 4869266832 3801441832 3692737380 7506750500  :  50,000,000
+3671606184 0340633831 8845819152 2211470450 2291551984  :  75,000,000
+4248960513 4510236789 7774484472 3443287604 2328949711  :  100,000,000
+5291531622 2839448259 0804413580 9668044539 6235887753  :  120,000,000
+5057955651 3867873880 7543905830 7186773014 3045767793  :  150,000,000
+2806328607 9391922619 8293485599 9551830317 9610411484  :  200,000,000
+2807711257 9138886498 2100656693 1427637776 2112465513  :  250,000,000
+0315384841 4340940589 2595206834 2109727377 5098966522  :  400,000,000
+6223998888 8209890470 9387329237 4155118846 1031649968  :  500,000,000
+7211510517 2702536793 1473074803 5846660552 2813669720  :  750,000,000
+1701216532 8140121075 0295863181 7477180528 1585852742  :  1,000,000,000
+7412699364 8976759932 3596077884 4733243453 8708112778  :  1,200,000,000
+0475599136 6875123285 2626329193 1397696180 0368269404  :  1,500,000,000
+4267657287 3516709200 3062847865 1396590580 0762261455  :  2,000,000,000
+5597064111 4814082762 7487173302 4140053419 4096833828  :  2,500,000,000
+1359345783 7899330841 3727430045 2680007412 1889859616  :  4,000,000,000
+9156049471 0757694591 9442564369 7542130664 6128862463  :  5,000,000,000
+6041549620 0181261335 8611881250 0678412266 2468071106  :  7,500,000,000
+5250836258 6378469245 0310196801 1178369494 4997699614  :  10,000,000,000
+9773441798 3363680470 8085745588 5720457927 6763479567  :  12,000,000,000
+8846399548 1085438554 3728264423 1777606508 5279777306  :  15,000,000,000
+5927528851 3185330975 5463156133 0470024125 7479799548  :  20,000,000,000
+1033809110 7903126234 5289866469 7962003034 4733067389  :  25,000,000,000
+0770942208 3049469306 5608565936 0175936564 2105843189  :  40,000,000,000
+7369902152 7351567646 7772943549 3225422995 5419813589  :  50,000,000,000
+5522822791 5452631310 9742794789 9916755303 2866743357  :  75,000,000,000
+2656534913 2805033537 7635592374 8494719052 9057879069  :  100,000,000,000
+6123193146 5030231434 6220418267 6978459733 0138281201  :  120,000,000,000
+5372441692 7946901106 9587360051 0420216836 7632348644  :  150,000,000,000
+2019018420 1548065632 6484813125 7753162141 0376854514  :  200,000,000,000
+8177659896 2464901205 6770240091 1433197384 6462511735  :  250,000,000,000
+4590787748 4601609423 6783340019 1695500134 6579081649  :  400,000,000,000
+1761325365 5626627238 5185621463 0266198685 7213452552  :  500,000,000,000
+1139988744 4517399255 8854391658 0892786125 9273846065  :  750,000,000,000
+8664279163 3981364569 5307868920 8126542432 1137539121  :  1,000,000,000,000
+8190429160 1830137568 3134203923 2819307507 9368121958  :  1,000,000,000,050
+
+Hexadecimal Digits:
+6a09e667f3 bcc908b2fb 1366ea957d 3e3adec175 12775099da  :  50
+2f590b0667 322a95f906 0875714587 5163fcdfb9 07b6721ee9  :  100
+0350d02fe8 5f29ec8be5 c72b807af5 771b825b30 a0e78376a9  :  1,000
+c8173567c2 ba3d3ce9df e0bd1b4dd7 71178057b6 95b7eaf1b0  :  1,200
+58d81dd115 9e9643eaa2 7eb7757a20 52975b6f4a 889e3d092b  :  1,500
+3d0aabfbde 531f74bafd bc2dafbece 02e65bb77b 8fbb8cdb4a  :  2,000
+f1c3ab8971 dd4f7966dd 97614bae8d 797a0848b1 d5cfdb137d  :  2,500
+7c63c280d9 56143d30a6 a70be9ae91 7c17a1881b d5a4a51cbb  :  4,000
+0f056ff27d 9608fa1949 0ac2acf9df 3c24328b8c 0d2fc087b0  :  5,000
+45e7b21308 0b10e55bca 97052081cb c42b938a7d 01f316310f  :  7,500
+f739b0243e 8e1a34133b 51fa74a448 9b8c928445 bc5ebec930  :  10,000
+7031bc1da5 b076f8fc00 c1ac15510d 10a219ad4a 048a91e1f4  :  12,000
+b25c914a60 b5ac8b304f aaf9d39d25 6af178f86d 0d3f91833a  :  15,000
+d1b44bb962 b28e2aa26b a5e75a615d ee8ff3585f 511982bd2f  :  20,000
+9774769e90 80c8ea7f26 57d38a7f60 58284c8cdb d0e5b95737  :  25,000
+63fb88f0bb f4c6ddb6c8 c7ae8f1741 6d6b6ac757 41c6a03384  :  40,000
+fa6dd95ead 54fecce3e8 449da21acd f7b0abc6b9 12dd2ff15e  :  50,000
+b15460cd67 9254f48cf3 302efd6b1a 40c24cec47 3969c7decb  :  75,000
+9cdff2f507 9be7aa6fd5 69dded57dd adaa0c5b05 2aa0201689  :  100,000
+0c82e865a9 bdf8d1b9ba 41b5245549 eb4c452923 08e3483316  :  120,000
+ad969dff23 407bf29e35 372a68b5a9 bbcd866e5e e0fdd97c72  :  150,000
+b0ce3852b7 887eee979e 204449fb58 8c5b1df16e cbbc81e7c7  :  200,000
+f91c0d6c91 64210f8d6c 51fece1ee3 7ae6669f1a 6ac46a12a1  :  250,000
+b158505940 a2ab694710 3945ce94c2 ba4e336633 fd12cea0b6  :  400,000
+14816ee60f 1c6a1ad6eb a5672d8613 e1541d7ad4 8b07ba9376  :  500,000
+d8f96073e7 a50d851dae 0f46a67fda 2d6c4d7ca6 d18c5d0df8  :  750,000
+58090b9f0f ffd624882c 6e95b23fad ce4931416d 32ef135899  :  1,000,000
+07f1a40be8 7107c531ce 3368253e3a 7ca6fa18c6 07cb5dbde3  :  1,200,000
+51594b60bc 9b89fb21f1 747918ed76 d2a7ff3b09 55a2088ed3  :  1,500,000
+9660593103 328b9326f9 bef8842930 84810cc4fa 979e2503d5  :  2,000,000
+a074cd35fe 69526ea9e4 37a38a4319 e7a8b6fcf5 f2e8decda7  :  2,500,000
+dd7079dcc4 97744132b7 e87d7e3249 9886ac3197 8ca9ca166d  :  4,000,000
+1479ba24e9 12e6f31e1a bcc35e2be6 b729b84bdb 7360c4e934  :  5,000,000
+00d6d2a7fe f1d08a35e1 4e344c8f69 2a0251453d 640f1fb556  :  7,500,000
+5555f98882 6dc01c2050 709b8ab43a a7505a3ec3 65d0c4b289  :  10,000,000
+03a398669a 7dba2f7ac3 19d14061be 4f3483fd90 23f5f39a05  :  12,000,000
+324e0259da c7af5251df 65360d0819 5826d71017 bf46739620  :  15,000,000
+73d52abc49 5add506138 dbcb06fd21 71f8d59c3a 9d1c6d7849  :  20,000,000
+d44e47bd69 7e75b676f2 915e5d0425 840ee479b6 7655990114  :  25,000,000
+30271db1d3 d9dff19342 a67c0fa5bd e0138d479e 3b5fe610dd  :  40,000,000
+c6f689baa8 af13ad925d ab5b4f666f b7c58dd6a7 7f24c32de7  :  50,000,000
+dc9f78002b ad208301ce 9cf9ffe2a5 9653377132 b81cb25ab3  :  75,000,000
+d07a217120 368cc2dfd5 dad55f960a 5c5cd3d033 aa16475e4d  :  100,000,000
+9e272062d4 a73c7d5735 e0bfb1ff60 8abf0d4e47 1a86dcd941  :  120,000,000
+ccb90fbfcc 9343f7f669 863cb54c72 e9b3b6545e c8b27ad2e2  :  150,000,000
+d1de41b7f0 19005b4454 93f0741b63 9ffb8a665f 08066ab164  :  200,000,000
+455f480ab4 e1041a2360 d8fa1755fe de5a3e51b6 014b764b6e  :  250,000,000
+181018e931 2245fb5326 b0061a6a44 869749ead1 775b7a22ed  :  400,000,000
+d8ad994071 aa9472b88f 07d3f6d787 d59bc24e43 9016456964  :  500,000,000
+6f0c5af9cf f6e691e6ce f3c59d0ebc 80f918e2d3 cdefb9d03a  :  750,000,000
+8e899a2059 26b19777f9 69a08ad1c5 67fb20f845 6cfcc4191a  :  1,000,000,000
+84dfa46eae 15c5340225 a0f28b25ae 0c99cc60f7 a2a3778554  :  1,200,000,000
+4ab26ff0d0 234fdcd20f d62f6f9ef6 edb5e7c623 17b19cec47  :  1,500,000,000
+5b6aebd4e3 752e249e6b 002cdc9a3b ebc2bc4ba6 4ca670b6bf  :  2,000,000,000
+c938037937 55664d8812 f8276114f9 306f76d85d d059b66f83  :  2,500,000,000
+0572bec8aa 96dd49b015 4d86a01fec bbaee52dbd bd448b6475  :  4,000,000,000
+1775247a3e 8de624f94e fdd8146d7b 243f575f43 5b584251c6  :  5,000,000,000
+e44342b144 e07c5d3408 68d48c91c5 cb8536df61 98d2a07a11  :  7,500,000,000
+c3c723c670 dd96d2d1ef 6aedaab948 f28c5591fb 50a89a4447  :  10,000,000,000
+e67fcc119f da20ea34c6 1402087ab7 6ac234c1f8 cb6f43e10a  :  12,000,000,000
+2ae47c38d8 f07a18246d b8052f6884 ed56b3e153 301489aaa7  :  15,000,000,000
+c60609c967 1227b49f51 bfef8aec88 1d20eeeb83 5c37c70352  :  20,000,000,000
+126c5b9db5 e899b2084b f8bcfe9ac5 7560a2d841 ca950c0482  :  25,000,000,000
+4bceda5b62 665a44fad4 7bd3bbf3e7 7a7e833064 9720d25eb7  :  40,000,000,000
+35f56f53b4 88d9b297bd 7dca90c934 a4ced1eb79 e77607474c  :  50,000,000,000
+2d4319e529 fc024fd4ac d9749cf09e b4adb089a1 3092ce62e8  :  75,000,000,000
+b062dccf46 2801cb3f70 10f1a61f7e bbc6dd8424 9d1c9b17c1  :  100,000,000,000
+1b15987f0f 4e8e7caafb ad42f4bf28 4b09ed5b7a eed9fd8e6f  :  120,000,000,000
+1606d75cdb c9b0b3a0e5 2e1337544c cc43200079 5dcbd3b9cd  :  150,000,000,000
+af1c4cbf7f 3e3f9760b0 b21c3e2bca 60df69d7ba 1572253ac3  :  200,000,000,000
+8f49ff6591 0aa07993f7 e31e77f383 d30319d235 35b94131d2  :  250,000,000,000
+81b2cdacf2 22e1a41803 4b792ab152 ff58e69cde 0963ef964c  :  400,000,000,000
+ba25de33a4 ccd242828e 61e0773092 8543e96cb3 c580168c0c  :  500,000,000,000
+e76e1dc734 d5502a10e2 8068ce3157 32b8c06d1f 13d2044a24  :  750,000,000,000
+9a61894a0c e679771665 3ee839bbba ba05da8ed9 39fd4a614e  :  830,482,023,750
+b35e46b4a2 b03c                                         :  830,482,023,800
+
+SHA256-dec(1,000,000,000,051 - 1,000,000,000,150): 28ae6a51676b469d1da539738cfc513c9a03078a70d032c163fb23fc3a844f23
+
+Dec Counts: {99999581184,99999990862,99999633800,99999868973,100000203298,99999787309,99999740027,100000220605,100000574894,100000399098}
+Hex Counts: {51905624456,51904854268,51904854695,51904878071,51905174128,51905255805,51904991696,51905036010,51905030632,51905394872,51904794725,51905105809,51905507782,51905170425,51905385475,51904964915}
+
+Dec Hash: Floor(|x| * 10^dec) mod (2^61 - 1) = 48795566108406849
+Hex Hash: Floor(|x| * 16^hex) mod (2^61 - 1) = 348904327328670599
+
+Spot Check:                 Good through 1,000,000,000,000
+Timer Sanity Check:         Passed
+Frequency Sanity Check:     Disabled in this version of y-cruncher
+Reference Clock:            TSC
+Reference Clock 0:          0
+Reference Clock 1:          132,106,515
+Reference Clock 2:          7,120,478
+Is Debugger Present:        Unknown
+Is Contiguous:              Yes
+ECC Recovered Errors:       0
+Colors:                     Yes
+
+Event Log:
+Thu Jul  4 04:53:20 2024	0.837	Working Memory
+Thu Jul  4 04:53:47 2024	27.969	Working Memory:  118 GiB  (locked, spread: ?)
+Thu Jul  4 04:53:47 2024	27.970	Twiddle Tables
+Thu Jul  4 04:53:47 2024	28.065	Twiddle Tables: 25.5 MiB  (locked, spread: ?)
+Thu Jul  4 04:53:47 2024	28.065	I/O Buffers
+Thu Jul  4 04:53:47 2024	28.341	I/O Buffers: 1.50 GiB  (locked, spread: ?)
+Thu Jul  4 04:53:47 2024	28.341	Begin Computation
+Thu Jul  4 04:53:47 2024	28.341	InvSqrt(2)...
+Thu Jul  4 06:42:01 2024	6522.178	Small Multiply
+Thu Jul  4 06:45:48 2024	6749.057	Writing Hexadecimal Digits
+Thu Jul  4 07:22:04 2024	8925.006	Base Converting
+Thu Jul  4 11:01:18 2024	22078.560	Writing Decimal Digits
+Thu Jul  4 11:36:12 2024	24173.254	Verifying Base Conversion
+Thu Jul  4 13:35:10 2024	31310.627	Verifying Binary Output
+Thu Jul  4 13:37:01 2024	31421.411	Verifying Decimal Output
+Thu Jul  4 13:39:51 2024	31591.509	Verifying Hexadecimal Output
+Thu Jul  4 13:42:29 2024	31749.950	End Computation
+
+----
+
+Checksum0: 3f9cf87ccd7f3683697af5812e25af1d71b3e97a1d31a7c1024fca4500313e87a8bc9dcad8a2844a459bf2f92859d782f73131020151e10811da78e6ece78a83
+Checksum1: b3685cbfc20d75f1b2a7e2240c0b2e080a8143e36393fd799d6f4304c9f43c7394f01349f49092ed3a526cfe21bbf8820aeeb0f43fbde270342416285a55e30b
