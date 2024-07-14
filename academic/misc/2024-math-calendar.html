@@ -408,7 +408,7 @@
         <td><a href="#jul11">11</a></td>
         <td><a href="#jul12">12</a></td>
         <td><a href="#jul13">13</a></td>
-        <td>14</td>
+        <td><a href="#jul14">14</a></td>
     </tr>
     <tr>
         <td>15</td>
@@ -5681,7 +5681,7 @@ difference is \({1\over a}\sqrt{b^2-4ac}\). For this problem, with
 we can see the roots are \(x=-9,x=3\) and \(|-9-3|=12\).
 </p>
 
-<h3 i="jul13">Jul 13</h3>
+<h3 id="jul13">Jul 13</h3>
 
 \[\begin{align}&x+y=38\\&y+z=81\\&x+z=69\end{align}\]
 
@@ -5689,6 +5689,22 @@ we can see the roots are \(x=-9,x=3\) and \(|-9-3|=12\).
 \[\begin{pmatrix}1&1&0&38\\0&1&1&81\\1&0&1&69\\\end{pmatrix}\sim
 \begin{pmatrix}1&0&0&13\\0&1&0&25\\0&0&1&56\\\end{pmatrix}\]
 Therefore by linear algebra, \(x=13,y=25,z=56\).
+</p>
+
+<h3 id="jul14">Jul 14</h3>
+
+<p>
+How many positive two-digit numbers are divisible by each of their digits?
+</p>
+
+<p>
+The digits cannot be 0, so there are \(9\cdot9=81\) possible numbers. The
+easiest to start with are those with same digit: 11, 22, 33, 44, 55, 66, 77, 88,
+99. These are 11 times their digit. Next, for the tens, we try and find that 12
+and 15 also work. For the twenties, we start at 22, going up in multiples of 2,
+and only find 24. For thirties, we find 36. For forties, we find 48. Past this,
+there are no others besides the same digit number. In total, we found 14 such
+two digit numbers.
 </p>
 
 <!-- allow scroll past end a bit -->
