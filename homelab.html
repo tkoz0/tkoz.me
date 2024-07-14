@@ -10,7 +10,7 @@
         </header>
         <div id="content">
         <p>This page describes my janky homelab setup. Someone has to
-            pay the power bill for this thing... (around $100/month)</p>
+            pay the power bill for this thing... (over 100$/month)</p>
         <p>Some of my servers are on a wooden rack that I designed and built
             myself. The rack has a cheap 8 port gigabit switch which is
             connected to a router. I also have a APC Smart UPS SUA1500RM2U on
@@ -19,38 +19,49 @@
             (HPC). I also like learning how to configure and run my own
             services.</p>
         <p>I give all my servers character names to identify them.</p>
-        <h3>Rimuru (main server, July 2022 to present)</h3>
+        <h3>Tohka (new main server, June 2024 to present)</h3>
+        <p>Named after a character in the anime
+            <a href="https://anilist.co/anime/15583/Date-A-Live/" target="_blank">Date A Live</a>.
+            This server is a central location for data storage and self-hosted
+            services.
+        </p>
+        <ul>
+            <li>Dell PowerEdge R730xd LFF</li>
+            <li>1x Intel Xeon E5-2667 v4 (8C/16T 3.2GHz)</li>
+            <li>64GB (8x 8GB) PC4-2400T-R memory</li>
+            <li>12x 14TB SAS HDD in ZFS RAIDZ2</li>
+            <li>2x 1.6TB SAS SSD for OS</li>
+            <li>Dell PERC H730p Mini</li>
+            <li>2x 1100W power supplies</li>
+            <li>Ubuntu Server 24.04</li>
+        </ul>
+        <h3>Yuuka (compute server, June 2024 to present)</h3>
+        <p>Named after Yuuka from the mobile game <a href="https://bluearchive.nexon.com/home" target="_blank">Blue Archive</a>
+            which also has an <a href="https://anilist.co/anime/160589/Blue-Archive-The-Animation/" target="_blank">anime</a> adaptation.
+            This server was built for high disk speed to enable faster trillion
+            digit computations with y-cruncher.</p>
+        <ul>
+            <li>Dell PowerEdge R730xd SFF</li>
+            <li>2x Intel Xeon E5-2697A v4 (32C/64T 2.6GHz)</li>
+            <li>128GB (8x 16GB) PC4-2400T-R memory</li>
+            <li>Dell PERC H730 mini</li>
+            <li>26x 1.2TB 10KRPM SAS HDD</li>
+            <li>1TB PCIe NVMe SSD</li>
+            <li>2x 1100W Power Supplies</li>
+            <li>Ubuntu Server 22.04</li>
+        </ul>
+        <h3>Rimuru (storage server, July 2022 to present)</h3>
         <p>Named after the main character in the anime
             <a href="https://anilist.co/anime/101280/Tensei-Shitara-Slime-Datta-Ken/" target="_blank">
                 Tensei Shitara Slime Datta Ken (Tensura)</a>.
             I use this one as a central location for data and self-hosted
-            services I run at home instead of on cloud computing.
-            My intention is to replace this server with something newer and
-            using less power. I would like to have a high clock speed CPU and
-            a smaller number of high capacity hard drives.</p>
+            services I run at home instead of on cloud computing.</p>
         <ul>
-            <li>Dell PowerEdge R720xd</li>
+            <li>Dell PowerEdge R720xd LFF</li>
             <li>1x Intel Xeon E5-2643 v2 (6C/12T 3.5GHz)</li>
             <li>64GB (2x 32GB) PC3-10600R memory</li>
             <li>12x 8TB SAS HDD in ZFS RAIDZ2</li>
             <li>Dell PERC H310 (flashed to IT mode)</li>
-            <li>1TB PCIe NVMe SSD for OS</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Ubuntu Server 22.04</li>
-        </ul>
-        <h3>Lacia (compute server, July 2020 - present)</h3>
-        <p>Named after the character Lacia in the anime
-            <a href="https://anilist.co/anime/100245/BEATLESS/" target="_blank">Beatless</a>.
-            This used to be the central server for my data and services.
-            Now it is used for some heavy computing. I plan to remove this
-            server from my homelab after I finish some current projects.</p>
-        <ul>
-            <li>Dell PowerEdge R720</li>
-            <li>2x Intel Xeon E5-2697 v2 (24C/48T 2.7GHz)</li>
-            <li>NVidia Tesla P100 16GB GPU</li>
-            <li>512GB (16x 32GB) PC3L-10600R memory</li>
-            <li>8x 4TB SATA HDD</li>
-            <li>Dell PERC H710 (flashed to IT mode)</li>
             <li>1TB PCIe NVMe SSD for OS</li>
             <li>2x 750W Power Supplies</li>
             <li>Ubuntu Server 22.04</li>
@@ -78,15 +89,31 @@
         <ul>
             <li>Dell PowerEdge R630</li>
             <li>2x Intel Xeon E5-2698 v4 (40C/80T 2.2GHz)</li>
-            <li>384GB (8x 32GB + 8x 16GB) PC4-2400T-R memory</li>
-            <li>8x 1.2TB 10K SAS HDD</li>
+            <li>256GB (8x 32GB) PC4-2400T-R memory</li>
             <li>Dell PERC H730</li>
+            <li>1TB PCIe NVMe SSD</li>
+            <li>2x 750W Power Supplies</li>
+            <li>Ubuntu Server 22.04</li>
+        </ul>
+        <h3>Lacia (compute server, decommissioned, July 2020 - June 2024)</h3>
+        <p>Named after the character Lacia in the anime
+            <a href="https://anilist.co/anime/100245/BEATLESS/" target="_blank">Beatless</a>.
+            This used to be the central server for my data and services, then
+            became a place for some heavy computing. Considering its age, I have
+            decided to decommission this server from my homelab in favor of
+            better performance on newer hardware.</p>
+        <ul>
+            <li>Dell PowerEdge R720 LFF</li>
+            <li>2x Intel Xeon E5-2697 v2 (24C/48T 2.7GHz)</li>
+            <li>NVidia Tesla P100 16GB GPU</li>
+            <li>512GB (16x 32GB) PC3L-10600R memory</li>
+            <li>8x 4TB SATA HDD</li>
+            <li>Dell PERC H710 (flashed to IT mode)</li>
             <li>1TB PCIe NVMe SSD for OS</li>
             <li>2x 750W Power Supplies</li>
             <li>Ubuntu Server 22.04</li>
-            <li>Used from Jan 2024 - Present</li>
         </ul>
-        <h3>Shirase (decommissioned, 2020 to 2022)</h3>
+        <h3>Shirase (test server, decommissioned, 2020 to 2022)</h3>
         <p>Named after the main character from the anime
             <a href="https://anilist.co/anime/579/Battle-Programmer-Shirase/" target="_blank">
                 Battle Programmer Shirase (BPS)</a>.
@@ -101,10 +128,11 @@
             <li>2x460W Power Supplies</li>
         </ul>
         <h3>Pictures</h3>
-        <img src="images/hl_front2.jpg" class="img_fw" />
-        <img src="images/hl_back2.jpg" class="img_fw" />
+        <img src="images/hl_front3.jpg" class="img_fw" />
+        <img src="images/hl_back3.jpg" class="img_fw" />
+        <img src="images/hl_side3.jpg" class="img_fw" />
         <hr />
-        <p>Page last updated: 2024-05-25</p>
+        <p>Page last updated: 2024-07-14</p>
         <a href="index.html">Back to the home page</a>
     </div></div></body>
 </html>
