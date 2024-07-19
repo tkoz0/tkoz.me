@@ -415,7 +415,7 @@
         <td><a href="#jul16">16</a></td>
         <td><a href="#jul17">17</a></td>
         <td><a href="#jul18">18</a></td>
-        <td>19</td>
+        <td><a href="#jul19">19</a></td>
         <td>20</td>
         <td>21</td>
     </tr>
@@ -5748,6 +5748,24 @@ The sum of the first four primes.
 
 <p>
 \[\sqrt[3]{8}\cdot27^{2\over3}=2\cdot3^{3\cdot{2\over3}}=2\cdot3^2=18\]
+</p>
+
+<h3 id="jul19">Jul 19</h3>
+
+<p>
+Find the larger solution to \(7x^2+10x+8\equiv0\mod25\).
+</p>
+
+<p>
+Let \(f(x)=7x^2+10x+8\). Since \(25=5^2\), we start mod \(5\) and lift
+solutions. Reducing this quadratic polynomial modulo 5, we have
+\(2x^2+3\equiv0\mod5\). The solutions are \(x\equiv1,4\). If we start with
+\(x\equiv1\), then lift it modulo 25, we get
+\[1-f(1)f'(1)^{-1}\equiv1-(7+10+8)f'(1)^{-1}\equiv1-25f'(1)^{-1}\equiv1\]
+For \(x\equiv4\), lifting modulo 25 gets us
+\[4-f(4)f'(4)^{-1}\equiv4-160\cdot66^{-1}\equiv4-10\cdot16^{-1}
+\equiv4-10\cdot11\equiv-106\equiv19\]
+where we have found that \(16^{-1}\equiv11\) modulo 25 so the solution is 19.
 </p>
 
 <!-- allow scroll past end a bit -->
