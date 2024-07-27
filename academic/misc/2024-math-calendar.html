@@ -424,7 +424,7 @@
         <td><a href="#jul23">23</a></td>
         <td><a href="#jul24">24</a></td>
         <td><a href="#jul25">25</a></td>
-        <td>26</td>
+        <td><a href="#jul26">26</a></td>
         <td>27</td>
         <td>28</td>
     </tr>
@@ -5850,6 +5850,19 @@ We compute \(5^{1000}\) modulo 100. Clearly \(5^2\equiv25\) mod 100. From this,
 \(5^3\equiv5\cdot25\equiv125\equiv25\) mod 100. So by induction, when \(n\geq3\)
 then \(5^n\equiv5\cdot5^{n-1}\equiv5\cdot25\equiv125\equiv25\). Therefore,
 \(5^{1000}\equiv25\mod100\) so the final 2 digits are 25.
+</p>
+
+<h3 id="jul26">Jul 26</h3>
+
+\[\begin{align}&a_0=0,a_1=1\\&a_n=5a_{n-1}-4a_{n-2}
+\\&x=\log_2(a_{14}-a_{13})\end{align}\]
+
+<p>
+By evaluating a few terms, we can see \(a_1-a_0=1,a_2-a_1=4,a_3-a_2=16,\ldots\)
+so the clear conjecture is \(a_{n+1}-a_n=4^n\). It is true when \(n=0\), so when
+\(n&gt;0\), \[a_{n+1}-a_n=5a_n-4a_{n-1}-a_n=4a_n-4a_{n-1}=4(a_n-a_{n-1})
+=4\cdot4^{n-1}=4^n\]
+Therefore, \(\log_2(a_{14}-a_{13})=\log_2(4^{13})=\log_2(2^{26})=26\)
 </p>
 
 <!-- allow scroll past end a bit -->
