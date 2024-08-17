@@ -449,33 +449,33 @@
 </table>
 
 <table>
-    <tr><th colspan="7">August</th></tr>
+    <tr><th colspan="7"><a href="#aug">August</a></th></tr>
     <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
     <tr>
         <td></td>
         <td></td>
         <td></td>
-        <td>01</td>
-        <td>02</td>
-        <td>03</td>
-        <td>04</td>
+        <td><a href="#aug01">01</a></td>
+        <td><a href="#aug02">02</a></td>
+        <td><a href="#aug03">03</a></td>
+        <td><a href="#aug04">04</a></td>
     </tr>
     <tr>
-        <td>05</td>
-        <td>06</td>
-        <td>07</td>
-        <td>08</td>
-        <td>09</td>
-        <td>10</td>
-        <td>11</td>
+        <td><a href="#aug05">05</a></td>
+        <td><a href="#aug06">06</a></td>
+        <td><a href="#aug07">07</a></td>
+        <td><a href="#aug08">08</a></td>
+        <td><a href="#aug09">09</a></td>
+        <td><a href="#aug10">10</a></td>
+        <td><a href="#aug11">11</a></td>
     </tr>
     <tr>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-        <td>16</td>
-        <td>17</td>
+        <td><a href="#aug12">12</a></td>
+        <td><a href="#aug13">13</a></td>
+        <td><a href="#aug14">14</a></td>
+        <td><a href="#aug15">15</a></td>
+        <td><a href="#aug16">16</a></td>
+        <td><a href="#aug17">17</a></td>
         <td>18</td>
     </tr>
     <tr>
@@ -6008,6 +6008,302 @@ Find the largest prime factor of \(10!+11!+12!+13!\).
 &=10!\cdot12(12+12^2-1)=10!\cdot12\cdot155=10!\cdot2^2\cdot3\cdot5\cdot31
 \end{align}\]
 From this factorization, clearly \(31\) is the largest prime factor.
+</p>
+
+<h2 id="aug">August</h2>
+
+<h3 id="aug01">Aug 01</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.5" fill="none">
+        <polygon points="5 55 95 55 60 10" />
+        <polygon points="20 55 74 28 95 55" fill="rgba(0,0,0,0.2)" />
+        <line x1="20" x2="60" y1="55" y2="10" />
+        <line x1="50" x2="74" y1="55" y2="28" />
+        <polyline points="40.427 34.454 40 32.5 38.009 32.305" />
+        <polyline points="62.427 43.454 62 41.5 60.009 41.305" />
+        <circle cx="5" cy="55" r="2" fill="black" />
+        <circle cx="60" cy="10" r="2" fill="black" />
+        <circle cx="95" cy="55" r="2" fill="black" />
+        <circle cx="20" cy="55" r="2" fill="black" />
+        <circle cx="50" cy="55" r="2" fill="black" />
+        <circle cx="74" cy="28" r="2" fill="black" />
+    </g>
+    <g fill="black" font-size="0.5em" font-style="italic">
+        <text x="2" y="63">A</text>
+        <text x="17" y="63">P</text>
+        <text x="47" y="63">M</text>
+        <text x="92" y="63">B</text>
+        <text x="62" y="8">C</text>
+        <text x="76" y="26">D</text>
+        <text x="5" y="20" text-decoration="overline">AM</text>
+        <text x="25" y="20" text-decoration="overline">MB</text>
+        <text x="18" y="20">=</text>
+        <text x="15" y="75">Find the ratio of</text>
+        <text x="15" y="85">the areas of PDB</text>
+        <text x="15" y="95">and ACDP</text>
+    </g>
+</svg>
+
+<p>
+Since the angles are the same, there are 2 similar triangles:
+\(\triangle CPB\sim\triangle DMB\). This means that
+\[{CB\over DB}={PB\over MB}\Rightarrow DB\cdot PB=CB\cdot MB\]
+Now we can compute some triangle areas using the formula from side-angle-side.
+\[\text{area}(PDB) = {1\over2}\cdot DB\cdot PB\cdot\sin(B)\]
+\[\text{area}(ACB) = {1\over2}\cdot CB\cdot AB\cdot\sin(B)
+=CB\cdot MB\cdot\sin(B)\]
+Here we have used \(2\cdot MB=AB\). By comparing these formulas, we see that the
+area of \(\triangle ACB\) is twice the area of \(\triangle PDB\). The area of
+\(ACDP\) is just the area of \(\triangle ACB\) minus area of \(\triangle PDB\).
+Therefore, they have the same area so the ratio is 1.
+</p>
+
+<h3 id="aug02">Aug 02</h3>
+
+<p>
+How many \(\triangle ABC\) can you draw so \(\overline{AB}=5\) units,
+\(\overline{AC}=2\) units, and \(\text{area}(ABC)=4\) units<sup>2</sup>
+</p>
+
+<p>
+Using the side-angle-side area formula, we have
+\(4={1\over2}\cdot5\cdot2\cdot\sin(A)\). This equation tells us
+\(\sin(A)={4\over5}\) which has 2 solutions for \(0^\circ&lt;A&lt;180^\circ\)
+which are about \(53^\circ,127^\circ\).
+</p>
+
+<h3 id="aug03">Aug 03</h3>
+
+<p>
+\(y^2=x^3-2\) with \(x,y\in\mathbb{Z}\)
+</p>
+
+<p>
+By guessing a few numbers, we can see that \(x=3\) with \(y=\pm5\) are
+solutions. But to show these are the only solutions, we need some more advanced
+theory. This Diophantine equation is a case of Mordell's equation. See theorem
+3.4 in <a href="https://kconrad.math.uconn.edu/blurbs/gradnumthy/mordelleqn1.pdf" target="_blank">this paper</a>
+for a solution to this exact problem. It uses properties of the group
+\(\mathbb{Z}[\sqrt{-2}]=\{a+b\sqrt{-2}:a,b\in\mathbb{Z}\}\).
+</p>
+
+<h3 id="aug04">Aug 04</h3>
+
+<p>
+Xander jogged to and from the park at 5mph. The next day, he jogged at 4mph to
+the same location and 6mph back. The second job took 2 minutes longer than the
+first. How many miles did Xander jog the first day?
+</p>
+
+<p>
+Let \(d\) be the distance between the park and where he started. On day 1, he
+spent time \(t_1=2d/5mph\). On day 2, we can write an equation for his time:
+\[t_2={d\over4mph}+{d\over6mph}={10d\over24mph}=t_1+2min={2d\over5mph}+2min\]
+Now let's switch all the units to hours and miles. The equation is
+\[{10d\over24}={2d\over5}+{1\over30}\Rightarrow d=2\]
+This tells us that half of the distance is 2 miles so the total distance is
+4 miles.
+</p>
+
+<h3 id="aug05">Aug 05</h3>
+
+<p>
+Find the largest prime number whose base 4 representation only has the digit 1.
+</p>
+
+<p>
+In base 4, all numbers with only the digit 1 are of the form
+\(1+4+4^2+\ldots+4^n={4^{n+1}-1\over4-1}={1\over3}(4^{n+1}-1)\). If \(n=1\),
+then we have 5 which is prime. Now we show that if \(n&gt;1\), the number is
+not prime. We can factor
+\[{1\over3}(4^{n+1}-1)={1\over3}(2^{n+1}+1)(2^{n+1}-1)\]
+where we will have \(2^{n+1}+1\geq9\) and \(2^{n+1}-1\geq7\). Both of these
+differ by 2 so 3 can divide only 1 of them, leaving a nontrivial factorization.
+Therefore, the answer is 5.
+</p>
+
+<h3 id="aug06">Aug 06</h3>
+
+<p>
+\(10!\) seconds is exactly how many weeks?
+</p>
+
+<p>
+First we start with the factorization of \(10!=2^8\cdot3^4\cdot5^2\cdot7\). Now
+we can find how many seconds are in a week. \(60\cdot60\cdot24\cdot7
+=2^7\cdot3^3\cdot5^2\cdot7\). Then dividing, we find it is \(2\cdot3=6\) weeks.
+</p>
+
+<h3 id="aug07">Aug 07</h3>
+
+<p>
+\(x=z^2-y^3+5w^2+9z\) where \(w=2,y=5,z=7\).
+</p>
+
+<p>
+This is simply substituting some numbers.
+\[x=7^2-5^3+5\cdot2^2+9\cdot7=49-125+20+63=-76+83=7\]
+</p>
+
+<h3 id="aug08">Aug 08</h3>
+
+<p>
+What is the largest cube in the Virahanka-Fibonacci sequence?
+</p>
+
+<p>
+By looking at the first few terms with \(F_0=0,F_1=1,F_n=F_{n-1}+F_{n-2}\), we
+will see the values \(1,8,144\). Here, 8 is a cube. Showing that there are no
+more is a bit challenging. There is a 2006 paper by Andrejic that discusses the
+conjecture, available <a href="https://poincare.matf.bg.ac.rs/~vladica.andrejic/work/2006-OnFibonacciPowers.pdf" target="_blank">here</a>.
+In 2006, a proof was published, available <a href="https://arxiv.org/abs/math/0403046" target="_blank">here</a>.
+</p>
+
+<h3 id="aug09">Aug 09</h3>
+
+<p>
+\(123456789\mod45\)
+</p>
+
+<p>
+We can compute this manually, but there are some ways to make it easier. One
+thing to notice is that \(10^n\equiv10\mod45\) when \(n\geq2\). Therefore,
+\(123456789\equiv9+10(1+2+3+4+5+6+7+8)=9+8\cdot45\equiv9\mod45\). We could also
+observe that \(123456789\equiv0\mod9\) and \(123456789\equiv4\mod5\) and find
+the same result using the Chinese remainder theorem.
+</p>
+
+<h3 id="aug10">Aug 10</h3>
+
+<p>
+\(1594593=y^y(y^x+x)\) with \(x,y\in\mathbb{Z}\)
+</p>
+
+<p>
+We can start with the prime factorization
+\(1594593=3^3\cdot7\cdot11\cdot13\cdot59\). By looking at this, we can only
+match the \(y^y\) part with \(y=1\) or \(y=3\). If \(y=1\), then we have a
+solution with \(x=1594592\) which is not the intended solution. If \(y=3\), we
+can see that the remaining part is \(7\cdot11\cdot13\cdot59=59059=3^{10}+10\) so
+the intended solution has \(x=10\).
+</p>
+
+<h3 id="aug11">Aug 11</h3>
+
+<p>
+Let \(n_i\) be the binary number with \(i\) 1's (and no 0's). Find the sum of
+the binary digits of \(n_{44}/n_4\).
+</p>
+
+<p>
+A binary number with \(i\) 1's is \(2^i-1\). Therefore, we are looking for the
+sum of binary digits of
+\[{2^{44}-1\over2^4-1}={(2^4)^{10}-1\over2^4-1}=1+2^4+2^8+\ldots+2^{40}\]
+This is 11 terms for the binary digits so the solution is 11.
+</p>
+
+<h3 id="aug12">Aug 12</h3>
+
+<p>
+The number of non-negative integer solutions to
+\(\sqrt{a}+\sqrt{b}=\sqrt{4477}\).
+</p>
+
+<p>
+Square both sides and we have \(a+b+2\sqrt{ab}=4477=11^2\cdot37\). Since
+\(\sqrt{ab}\) cannot be a .5 number, it must be an integer. We can factor \(a\)
+and \(b\) each into some perfect square and a part common to each since a
+product of distinct primes dividing one must divide the other. Therefore, we
+have \(a=x^2y,b=yz^2\) for some \(x,y,z\). Substituting into the original
+equation, we get \(x\sqrt{y}+z\sqrt{y}=11\sqrt{37}\) or
+\((x+z)\sqrt{y}=11\sqrt{37}\). The integer solutions will come from \(x+z=11\)
+so there are 12 solutions we can choose in nonnegative integers.
+</p>
+
+<h3 id="aug13">Aug 13</h3>
+
+<p>
+\(23_{10}\cdot41_{10}=577_x\)
+</p>
+
+<p>
+Writing an equation for this, we have \(23\cdot41=5x^2+7x+7\) and we need a base
+\(x\geq8\). This is \(943=5x^2+7x+7\Rightarrow5x^2+7x-936=0
+\Rightarrow(5x+72)(x-13)=0\Rightarrow x=-72/5,13\). Therefore, the solution is
+base 13.
+</p>
+
+<h3 id="aug14">Aug 14</h3>
+
+<p>
+A figurine requiries 1 ounce of paint to decorate. How many ounces of paint are
+needed to paint 350 similar figurines that are \(1/5\) the height of the
+original?
+</p>
+
+<p>
+By scaling down a factor of 5, the surface areas scale down by a factor of 25.
+Therefore, 25 of the smaller figures require 1 ounce. Since \(350=14\cdot25\),
+the answer is 14.
+</p>
+
+<h3 id="aug15">Aug 15</h3>
+
+<p>
+How many four digit numbers that are divisible by 9 only use the digits
+\(0,1,2,3\)?
+</p>
+
+<p>
+This problem has a problem. The answer is not 15 and it will be explained.
+</p>
+
+<p>
+We can consider this by cases and counting. If the numbers start with 3, then
+we can form the remaining digits to sum to 6 by using 330, 321, 222. With
+permutation counting, this is 3+6+1=10 such numbers. If the first digit is 2,
+the remaining can be from 331 or 322, so 3+3=6 numbers. If the first digit is 1,
+then we need digits 332 so there are 3 more. In total, there are 19 numbers.
+</p>
+
+<p>
+This can be confirmed with the following python code.
+</p>
+
+<pre>
+&gt;&gt;&gt; [x for x in range(1000,10000) if set(str(x)) &lt;= set('0123') and sum(map(int,str(x)))==9]
+[1233, 1323, 1332, 2133, 2223, 2232, 2313, 2322, 2331, 3033, 3123, 3132, 3213, 3222, 3231, 3303, 3312, 3321, 3330]
+</pre>
+
+<h3 id="aug16">Aug 16</h3>
+
+<p>
+The volume enclosed by the paraboloids \(z=w^2+y^2\) and \(z=8-w^2-y^2\) is
+\(\pi x\).
+</p>
+
+<p>
+In cylindrical coordinates, we have \(r^2=w^2+y^2\). So the parabolas intersect
+when \(r^2=4\Rightarrow r=2\). We can integrate the difference on the disk
+\(r\leq2\).
+\[\begin{align}&\int_0^{2\pi}\int_0^2(8-r^2-r^2)rdrd\theta
+=2\pi\int_0^2(8r-2r^3)dr=2\pi\left[4r^2-{r^4\over2}\right]_0^2\\
+&=2\pi\left[16-{16\over2}\right]=16\pi\end{align}\]
+Therefore \(x=16\).
+</p>
+
+<h3 id="aug17">Aug 17</h3>
+
+<p>
+\(f(z)=z^7-16z^6+z^2+8z-1\), \(w=\text{the sum of the roots of}\ f(z)\),
+\(y=\text{the product of the roots of}\ f(z)\), \(x=w+y\).
+</p>
+
+<p>
+Using Vieta's formulas, the sum of roots is \(w={-a_{n-1}\over a_n}
+=-{-16\over1}=16\) and the product of roots is \(y=(-1)^n{a_0\over a_n}
+=-{-1\over1}=1\). Therefore, \(x=17\).
 </p>
 
 <!-- allow scroll past end a bit -->
