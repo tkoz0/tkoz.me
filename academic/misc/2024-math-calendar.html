@@ -484,11 +484,11 @@
         <td><a href="#aug21">21</a></td>
         <td><a href="#aug22">22</a></td>
         <td><a href="#aug23">23</a></td>
-        <td>24</td>
-        <td>25</td>
+        <td><a href="#aug24">24</a></td>
+        <td><a href="#aug25">25</a></td>
     </tr>
     <tr>
-        <td>26</td>
+        <td><a href="#aug26">26</a></td>
         <td>27</td>
         <td>28</td>
         <td>29</td>
@@ -6458,6 +6458,125 @@ solution to counting integer partitions.
 
 \[\sqrt{4+\sqrt{x+2}}=3\Rightarrow4+\sqrt{x+2}=9\Rightarrow\sqrt{x+2}=5
 \Rightarrow x+2=25\Rightarrow x=23\]
+
+<h3 id="aug24">Aug 24</h3>
+
+<p>
+Find the smallest \(x\) such that \(49\) divides \(1^2+2^2+\ldots+x^2\).
+</p>
+
+<p>
+The sum of squares formula is
+\[1^2+2^2+\ldots+x^2={x(x+1)(2x+1)\over6}\]
+We will need the factor 7 to appear twice in the numerator. If \(x=24\), then
+\(2x+1=49\) so the solution is at most 24. If \(7\mid x\) then \(7\nmid(x+1)\)
+and \(7\nmid(2x+1)\) so we would need \(49\mid x\) for a solution. If
+\(7\mid(x+1)\) then \(7\nmid x\) and \(7\nmid(2x+1)\) so we would need
+\(49\mid(x+1)\). Both of these would give bigger solutions. By similar reasoning
+we can also show that \(7\mid(2x+1)\) implies \(7\nmid x\) and \(7\nmid(x+1)\).
+Therefore the solution is \(x=24\).
+</p>
+
+<h3 id="aug25">Aug 25</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 70" width="225" height="315" class="img_center">
+    <polygon points="10 65 35 65 35 5" stroke="black" stroke-width="0.5" fill="none" />
+    <polyline points="35 60 30 60 30 65" stroke="black" stroke-width="0.5" fill="none" />
+    <text x="12" y="35" fill="black" font-size="0.5em">65</text>
+    <text x="36" y="40" fill="black" font-size="0.5em">60</text>
+    <line x1="10" x2="35" y1="65" y2="65" stroke="#7bf" stroke-width="0.5" fill="none" />
+    <text x="20" y="63" fill="#7bf" font-size="0.5em" font-style="italic">x</text>
+</svg>
+
+<p>
+Using the Pythagorean theorem, \(x=\sqrt{65^2-60^2}=25\). We can also observe
+that this right triangle is scaled up from the 5-12-13 right triangle by a
+factor of 5.
+</p>
+
+<h3 id="aug26">Aug 26</h3>
+
+<p>
+For a regular hexagon \(S\), find the number of equilateral triangles that have
+at least two vertices that are also vertices of \(S\).
+</p>
+
+<p>
+First, there are 12 triangles when we select 2 adjacent hexagon vertices, shown
+below, 6 inside, and 6 outside.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 4 4" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <polygon points="0 0 1 0 0.5 0.866" />
+        <polygon points="0 0 0.5 0.866 -0.5 0.866" />
+        <polygon points="0 0 -0.5 0.866 -1 0" />
+        <polygon points="0 0 -1 0 -0.5 -0.866" />
+        <polygon points="0 0 -0.5 -0.866 0.5 -0.866" />
+        <polygon points="0 0 0.5 -0.866 1 0" />
+        <polygon points="1.5 0.866 1 0 0.5 0.866" />
+        <polygon points="0 1.732 0.5 0.866 -0.5 0.866" />
+        <polygon points="-1.5 0.866 -0.5 0.866 -1 0" />
+        <polygon points="-1.5 -0.866 -1 0 -0.5 -0.866" />
+        <polygon points="-0 -1.732 -0.5 -0.866 0.5 -0.866" />
+        <polygon points="1.5 -0.866 0.5 -0.866 1 0" />
+        <polygon points="1 0 0.5 0.866 -0.5 0.866 -1 0 -0.5 -0.866 0.5 -0.866" stroke="red" />
+    </g>
+</svg>
+
+<p>
+If we select 2 vertices with 1 between, we can form 2 inner triangles shown
+below. There are 6 ways to choose 2 vertices such that there is 1 between them,
+but some choices give the same triangle.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 4 4" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <polygon points="1 0 -0.5 0.866 -0.5 -0.866" />
+        <polygon points="0.5 0.866 -1 0 0.5 -0.866" />
+        <polygon points="1 0 0.5 0.866 -0.5 0.866 -1 0 -0.5 -0.866 0.5 -0.866" stroke="red" />
+    </g>
+</svg>
+
+<p>
+Using the same vertex choices (2 with 1 between), there are 6 outer triangles,
+shown below with 1 example highlighted in green.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 4 4" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <polygon points="1 0 -0.5 0.866 1 1.732" />
+        <polygon points="0.5 0.866 -1 0 -1 1.732" />
+        <polygon points="-0.5 0.866 -0.5 -0.866 -2 0" />
+        <polygon points="-1 0 0.5 -0.866 -1 -1.732" />
+        <polygon points="-0.5 -0.866 1 0 1 -1.732" />
+        <polygon points="0.5 -0.866 0.5 0.866 2 0" />
+        <polygon points="1 0 0.5 0.866 -0.5 0.866 -1 0 -0.5 -0.866 0.5 -0.866" stroke="red" />
+        <polygon points="1 0 -0.5 0.866 1 1.732" stroke="green" />
+    </g>
+</svg>
+
+<p>
+Finally, we can pick opposite vertices and form 6 more triangles, shown below
+with an example highlighted in green.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 4 4" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <polygon points="1 0 -1 0 0 1.732" />
+        <polygon points="0.5 0.866 -0.5 -0.866 -1.5 0.866" />
+        <polygon points="-0.5 0.866 0.5 -0.866 -1.5 -0.866" />
+        <polygon points="-1 0 1 0 -0 -1.732" />
+        <polygon points="-0.5 -0.866 0.5 0.866 1.5 -0.866" />
+        <polygon points="0.5 -0.866 -0.5 0.866 1.5 0.866" />
+        <polygon points="1 0 0.5 0.866 -0.5 0.866 -1 0 -0.5 -0.866 0.5 -0.866" stroke="red" />
+        <polygon points="1 0 -1 0 0 1.732" stroke="green" />
+    </g>
+</svg>
+
+<p>
+In total, we count \(12+2+6+6=26\) triangles.
+</p>
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
