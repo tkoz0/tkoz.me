@@ -490,8 +490,8 @@
     <tr>
         <td><a href="#aug26">26</a></td>
         <td><a href="#aug27">27</a></td>
-        <td>28</td>
-        <td>29</td>
+        <td><a href="#aug28">28</a></td>
+        <td><a href="#aug29">29</a></td>
         <td>30</td>
         <td>31</td>
         <td></td>
@@ -6600,6 +6600,33 @@ One way to view this more generally is considering the sum of coefficienst of
 \((1+x+x^2+\ldots+x^{n-1})^n\). If we expand this, we get \(n^n\) terms, each a
 power of \(x\) with coefficient \(1\). Summing them, the sum of coefficients
 would just be \(n^n\). For this problem, \(n=3\).
+</p>
+
+<h3 id="aug28">Aug 28</h3>
+
+<p>
+Find 108 times the probability that 3 sequential die rolls are in non-decreasing
+order.
+</p>
+
+<p>
+Out of the \(6^3=216\) possible 3 die rolls, each nondecreasing order of 3 rolls
+corresponds to a way of selecting 3 numbers from 1-6 with replacement, where
+order does not matter (since we need them to be sorted nondecreasing and
+repetitions are allowed). There are \({6+3-1\choose3}={8!\over3!5!}
+={8\cdot7\cdot6\over6}=56\) such ways. Therefore, the probability of the rolls
+being in nondecreasing order is \(56/216=28/108\) and multiplying this by 108
+gets the answer 28.
+</p>
+
+<h3 id="aug29">Aug 29</h3>
+
+\[13+24\equiv8\mod x\]
+
+<p>
+Simplify to \(37\equiv8\mod x\). Then \(x\mid(37-8)\Rightarrow x\mid29\). Since
+29 is prime, \(x=1\) or \(x=29\). The writers intended for the solution be be
+\(x=29\).
 </p>
 
 <!-- allow scroll past end a bit -->
