@@ -492,8 +492,8 @@
         <td><a href="#aug27">27</a></td>
         <td><a href="#aug28">28</a></td>
         <td><a href="#aug29">29</a></td>
-        <td>30</td>
-        <td>31</td>
+        <td><a href="#aug30">30</a></td>
+        <td><a href="#aug31">31</a></td>
         <td></td>
     </tr>
     <tr>
@@ -508,7 +508,7 @@
 </table>
 
 <table>
-    <tr><th colspan="7">September</th></tr>
+    <tr><th colspan="7"><a href="#sep">September</a></th></tr>
     <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
     <tr>
         <td></td>
@@ -517,12 +517,12 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>01</td>
+        <td><a href="#sep01">01</a></td>
     </tr>
     <tr>
-        <td>02</td>
-        <td>03</td>
-        <td>04</td>
+        <td><a href="#sep02">02</a></td>
+        <td><a href="#sep03">03</a></td>
+        <td><a href="#sep04">04</a></td>
         <td>05</td>
         <td>06</td>
         <td>07</td>
@@ -6309,7 +6309,7 @@ Using Vieta's formulas, the sum of roots is \(w={-a_{n-1}\over a_n}
 <h3 id="aug18">Aug 18</h3>
 
 <p>
-How much would you saev if you bought a widget with a $150 list price that is
+How much would you save if you bought a widget with a $150 list price that is
 12% off?
 </p>
 
@@ -6627,6 +6627,68 @@ gets the answer 28.
 Simplify to \(37\equiv8\mod x\). Then \(x\mid(37-8)\Rightarrow x\mid29\). Since
 29 is prime, \(x=1\) or \(x=29\). The writers intended for the solution be be
 \(x=29\).
+</p>
+
+<h3 id="aug30">Aug 30</h3>
+
+<p>
+Find the number of two card hands where both cards are red and have the rank
+king, queen, or jack.
+</p>
+
+<p>
+There are 3 ranks and 2 suits, so 6 possible cards. Then we choose 2, but
+\[{6\choose2}={6\cdot5\over2}={30\over2}=15\]
+If order matters (which it has to for us to get the expected answer), then it
+is permutations of 2 of the cards so \(6\cdot5=30\).
+</p>
+
+<h3 id="aug31">Aug 31</h3>
+
+\[\left(\sqrt{32+\sqrt{63}}\right)\times\left(\sqrt{32-\sqrt{63}}\right)
+=\sqrt{32^2-63}=\sqrt{32^2-2\cdot32+1}=\sqrt{(32-1)^2}=31\]
+
+<h2 id="sep">September</h2>
+
+<h3 id="sep01">Sep 01</h3>
+
+\[{i^2+i^3+i^4\over i^6+i^7+i^8}={i^2+i^3+i^4\over i^4(i^2+i^3+i^4)}
+={-1-i+1\over-1-i+1}={-i\over-i}=1\]
+
+<h3 id="sep02">Sep 02</h3>
+
+<p>
+Find the largest \(n\in\mathbb{Z}\) such that \(\exists\ a,b,c\in\mathbb{Z}^+\)
+that satisfy \(a^n+b^n=c^n\).
+</p>
+
+<p>
+This is a statement of Fermat's last theorem which states that in integers there
+are no nontrivial solutions for \(n&gt;2\). So the answer is \(n=2\).
+</p>
+
+<h3 id="sep03">Sep 03</h3>
+
+\[3+{3\over3}\cdot3-{3^3\over3}\cdot(3)^{-3\over3}=3+3-3^2\cdot3^{-1}=3+3-3=3\]
+
+<h3 id="sep04">Sep 04</h3>
+
+\[\tan\left({\pi\over12}\right)+\tan\left({5\pi\over12}\right)\]
+
+<p>
+This can be done with tangent identities for sum and difference of angles.
+\[\begin{align}&\tan\left({\pi\over12}\right)
+=\tan\left({\pi\over3}-{\pi\over4}\right)
+={\tan(\pi/3)-\tan(\pi/4)\over1+\tan(\pi/3)\tan(\pi/4)}
+={\sqrt{3}-1\over1+\sqrt{3}}\cdot{1-\sqrt{3}\over1-\sqrt{3}}=2-\sqrt{3}
+\end{align}\]
+\[\begin{align}&\tan\left({5\pi\over12}\right)
+=\tan\left({\pi\over3}+{\pi\over12}\right)
+={\tan(\pi/3)+\tan(\pi/12)\over1-\tan(\pi/3)\tan(\pi/12)}
+={\sqrt{3}+2-\sqrt{3}\over1-\sqrt{3}\left(2-\sqrt{3}\right)}\\
+&={2\over4-2\sqrt{3}}={1\over2-\sqrt{3}}\cdot{2+\sqrt{3}\over2+\sqrt{3}}
+={2+\sqrt{3}\over4-3}=2+\sqrt{3}\\\end{align}\]
+So we add these to results and the answer is \((2-\sqrt{3})+(2+\sqrt{3})=4\).
 </p>
 
 <!-- allow scroll past end a bit -->
