@@ -523,22 +523,22 @@
         <td><a href="#sep02">02</a></td>
         <td><a href="#sep03">03</a></td>
         <td><a href="#sep04">04</a></td>
-        <td>05</td>
-        <td>06</td>
-        <td>07</td>
-        <td>08</td>
+        <td><a href="#sep05">05</a></td>
+        <td><a href="#sep06">06</a></td>
+        <td><a href="#sep07">07</a></td>
+        <td><a href="#sep08">08</a></td>
     </tr>
     <tr>
-        <td>09</td>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
+        <td><a href="#sep09">09</a></td>
+        <td><a href="#sep10">10</a></td>
+        <td><a href="#sep11">11</a></td>
+        <td><a href="#sep12">12</a></td>
+        <td><a href="#sep13">13</a></td>
+        <td><a href="#sep14">14</a></td>
+        <td><a href="#sep15">15</a></td>
     </tr>
     <tr>
-        <td>16</td>
+        <td><a href="#sep16">16</a></td>
         <td>17</td>
         <td>18</td>
         <td>19</td>
@@ -6689,6 +6689,166 @@ This can be done with tangent identities for sum and difference of angles.
 &={2\over4-2\sqrt{3}}={1\over2-\sqrt{3}}\cdot{2+\sqrt{3}\over2+\sqrt{3}}
 ={2+\sqrt{3}\over4-3}=2+\sqrt{3}\\\end{align}\]
 So we add these to results and the answer is \((2-\sqrt{3})+(2+\sqrt{3})=4\).
+</p>
+
+<h3 id="sep05">Sep 05</h3>
+
+\[1-2+3-4+5-6+7-8+9=1+1+1+1+1=5\]
+
+<h3 id="sep06">Sep 06</h3>
+
+<p>
+\[x={f(6)\over f(4)}\] where \(f(n)\) is the number of \(1\)'s in binary numbers
+with up to \(n\) digits.
+</p>
+
+<p>
+We can consider binary numbers up to \(n\) digits as binary strings of length
+\(n\). For each position, there are \(2^{n-1}\) numbers with that digit as a 1
+so \(f(n)=n\cdot2^{n-1}\). Therefore
+\[{f(6)\over f(4)}={6\cdot2^5\over4\cdot2^3}=6\]
+</p>
+
+<h3 id="sep07">Sep 07</h3>
+
+<p>
+Find the sum of the roots of \(x^3-7x^2-10x+16\).
+</p>
+
+<p>
+Using Vieta's formula, we can do this with the 2 leading coefficients, and get
+\(-(-7)/1=7\). Alternatively, by factoring it, the rational root theorem can
+help us find \(x=-2\) is a factor. From there, divide out \(x+2\) and solve the
+remaining quadratic so the full factorization is \((x+2)(x-1)(x-8)\) and the sum
+of roots is \(-2+1+8=7\).
+</p>
+
+<h3 id="sep08">Sep 08</h3>
+
+\[{5!\over4!-3!-2!-1!}={120\over24-6-2-1}={120\over15}=8\]
+
+<h3 id="sep09">Sep 09</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5" width="400" height="200" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <rect x="1" y="1" width="8" height="3" />
+        <line x1="1" x2="4" y1="1" y2="4" />
+        <rect x="1" y="3.5" width="0.5" height="0.5" />
+        <line x1="0.75" x2="1.25" y1="2.5" y2="2.5" />
+        <line x1="2.5" x2="2.5" y1="3.75" y2="4.25" />
+        <path d="M 3.121 1 A 2.121 2.121 0 0 1 2.5 2.5" stroke="red" />
+    </g>
+    <text x="3.25" y="2.25" fill="red" font-size="0.05em">5x&deg;</text>
+</svg>
+
+<p>
+This rectangle has an isosceles right triangle. The non right angles of it are
+\(45^\circ\) so the red angle is also \(45^\circ\). We solve
+\(5x=45\Rightarrow x=9\).
+</p>
+
+<h3 id="sep10">Sep 10</h3>
+
+<p>
+Gwen spent $390. She used the same number of $5s and $1s, double that of $10s,
+and 3 more $20s than $10s. How many $10s did she use?
+</p>
+
+<p>
+First we can write equations for this using \(x_1,x_5,x_{10},x_{20}\) as
+variables for how many of those dollar bills she used. The linear system is
+\[x_1+5x_5+10x_{10}+20x_{20}=390,\ x_1=x_5,\ x_{10}=2x_1,\ x_{20}=3+x_{10}\]
+This is simple enough to avoid solving with a matrix. Use the 2 equations in the
+middle to get \(26x_1+20x_{20}=390\) by replacing \(x_5\) and \(x_{10}\) with
+\(x_1\). Now we can replace \(x_{20}=3+x_{10}=3+2x_1\) so we have
+\(66x_1+60=390\Rightarrow x_1=5\). From this, we have
+\(x_5=5,x_{10}=10,x_{20}=13\). This is the unique solution to the system and the
+number we are looking for is \(x_{10}=10\).
+</p>
+
+<h3 id="sep11">Sep 11</h3>
+
+<p>
+What is the expected value of a roll of two fair 10-sided dice?
+</p>
+
+<p>
+Assuming the numbers are \(1,2,3,4,5,6,7,8,9,10\), each with equal probability,
+the average of these is \(5.5\). Expected value of 2 independent rolls adds
+together so \(5.5+5.5=11\).
+</p>
+
+<h3 id="sep12">Sep 12</h3>
+
+<p>
+Find the larger eigenvalue \[\begin{bmatrix}7&5\\4&8\\\end{bmatrix}\]
+</p>
+
+<p>
+\[\begin{vmatrix}7-\lambda&5\\4&8-\lambda\\\end{vmatrix}
+=(7-\lambda)(8-\lambda)-20=\lambda^2-15\lambda+36=(\lambda-3)(\lambda-12)\]
+Therefore the eigenvalues are \(\lambda=3,12\) and the larger is \(12\).
+</p>
+
+<h3 id="sep13">Sep 13</h3>
+
+\[\text{Googol}\mod23\]
+
+<p>
+This is a modular arithmetic problem. It can be solved with the usual methods,
+including modular exponentiation by squaring, but here is a way to do it that
+involves easy numbers. Below, all modular congruences are modulo \(23\).
+</p>
+
+<p>
+First compute a little bit by squaring. \(10^1\equiv10,10^2\equiv8,10^4\equiv-5,
+10^8\equiv2\). Now the last 2 multiply to \(-10\). So we have
+\(10^{12}\equiv-10\). Then we can use this:
+\[10^{100}\equiv10^{96}\cdot10^4\equiv(10^{12})^8\cdot10^4\equiv
+(-10)^8\cdot10^4\equiv10^8\cdot10^4\equiv10^{12}\equiv-10\equiv13\]
+</p>
+
+<h3 id="sep14">Sep 14</h3>
+
+<p>
+Find the sum of all primes \(p\) where \(7p+4\) is a perfect square.
+</p>
+
+<p>
+We have \(7p+4=q^2\Rightarrow7p=q^2-4=(q+2)(q-2)\) for some integer \(q\). This
+means \(7|(q+2)(q-2)\) and \(p|(q+2)(q-2)\). Since \(7\) is prime, \(7|(q+2)\)
+or \(7|(q-2)\). Since \(p\) is prime, we can make this a little stronger and say
+\(7=q+2\) or \(7=q-2\) since after dividing \(7\), what remains must be prime.
+If \(7=q+2\), then \(p=q-2=3\). If \(7=q-2\) then \(p=q+2=11\). Therefore, the
+2 solutions are \(p=3,11\) and the sum is \(14\).
+</p>
+
+<h3 id="sep15">Sep 15</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10" width="160" height="200" class="img_center">
+    <polygon points="7 1 7 9 1 9" stroke="black" stroke-width="0.1" fill="none" />
+    <rect x="6" y="8" width="1" height="1" stroke="black" stroke-width="0.1" fill="none" />
+    <text x="6" y="3" fill="black" font-size="0.05em">2x</text>
+    <text x="2" y="8.5" fill="black" font-size="0.05em">4x</text>
+</svg>
+
+<p>
+The only comment here is that the angles should also be specified as degrees.
+The 2 non right angles of a right triangle sum to \(90^\circ\) so we have
+\(4x+2x=90\Rightarrow x=15\).
+</p>
+
+<h3 id="sep16">Sep 16</h3>
+
+<p>
+Find the smallest \(n\in\mathbb{Z}\) you can write as \(x^y=y^x\) where
+\(x\neq y\) and \(x,y\in\mathbb{Z}\).
+</p>
+
+<p>
+By trying a few numbers, we can find \(2^4=4^2\) so we have \(n=16\) as a
+possibility. From here, the only possible integer powers (other than 1) which
+are smaller are \(2^3=8\) and \(3^2=9\), but these do not form a solution.
 </p>
 
 <!-- allow scroll past end a bit -->
