@@ -553,7 +553,7 @@
         <td><a href="#sep26">26</a></td>
         <td><a href="#sep27">27</a></td>
         <td><a href="#sep28">28</a></td>
-        <td>29</td>
+        <td><a href="#sep29">29</a></td>
     </tr>
     <tr>
         <td>30</td>
@@ -7117,6 +7117,26 @@ Adding the permutations for all 5 solutions found gives us a total of
 \[\sqrt[5]{256\times4\times32}+\sqrt[4]{625\times256}
 =\sqrt[5]{2^8\cdot2^2\cdot2^5}+\sqrt[4]{5^4\cdot4^4}
 =\sqrt[5]{(2^3)^5}+\sqrt[4]{(5\cdot4)^4}=2^3+5\cdot4=8+20=28\]
+
+<h3 id="sep29">Sep 29</h3>
+
+<p>
+A parabola with a vertical line of symmetry passes through
+\((0,-1),(1,7),(2,17)\) and \((3,x)\).
+</p>
+
+<p>
+The parabola has an equation \(y=ax^2+bx+c\). We could use the 3 given points to
+solve this with linear algbra but some of the points given are convenient for
+solving this without the matrix method. Using \(x=0\), we find \(c=-1\). Then
+point \((1,7)\) tells us that \(a+b-1=7\Rightarrow a+b=8\). Finally, \((2,17)\)
+tells us that \(4a+2b-1=17\Rightarrow2a+b=9\). Now from this system of 2
+equations we can find \(a=1,b=7\). So the equation is \(y=x^2+7x-1\) and
+substituting \(x=3\) tells us the missing point is \((3,29)\) so the answer is
+\(29\). We reused \(x\) for our parabola equation which may be a bit of a
+mistake but be aware that throughout this solution, \(x\) has nothing to do with
+the \(x\) stated in the problem.
+</p>
 
 <!-- allow scroll past end a bit -->
 <div style="height:50vh;"></div>
