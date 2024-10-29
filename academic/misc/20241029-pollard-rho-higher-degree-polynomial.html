@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20241029</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            t: ['\\theta'],
+            pmod: ['\\ (\\text{mod}\\ #1)',1]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Pollard Rho Factoring With Different Polynomials</h1>
+
+<div id="toc"></div>
+
+<h2>Intro</h2>
+
+<p>
+The <a href="https://en.wikipedia.org/wiki/Pollard's_rho_algorithm" target="_blank">Pollard Rho</a>
+factoring algorithm is a method of factoring integers that works well for some
+small factors, typically about 5-15 digits. Beyond that size, elliptic curve
+methods usually work better. It works by iterating what is expected to behave
+like a pseudorandom seqquence, until finding a repeat, which can be explained
+by the birthday problem. Let \(n=pq\) be a number to be factored. Then we choose
+a starting value \(x_0\) (often 2 in practice) and iterate \(x_{n+1}=g(x_n)\)
+for some function \(g\) that generates a sequence that is expected to behave
+pseudorandomly. Usually \(g(x)=x^2+c\) for \(c=1\), or another choice of \(c\).
+The sequence \(\{x_k\pmod{n}\}\) is expected to cycle after \(O(\sqrt{n})\)
+steps. But the sequence \(\{x_k\pmod{p}\}\) is expected to cycle after
+\(O(\sqrt{p})\) steps, which is at most \(O(\sqrt[4]{n})\) when \(p\) is the
+smallest prime factor. When a cycle occurs mod \(p\), we can find \(i\neq j\)
+where \(x_i\equiv x_j\pmod{p}\). It is most likely that
+\(x_i\not\equiv x_j\pmod{n}\), so we would probably find
+\(\gcd(|x_i-x_j|,n)=p\). In the rare case that \(x_i\equiv x_j\pmod{n}\), the
+algorithm would fail and find \(n\) as a factor. When this happens, a different
+\(x_0\) or \(c\) can be tried. Once combined with a cycle detection method such
+as <a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare" target="_blank">Floyd's tortise and hare</a>,
+the algorithm is short and simple. Below is an example implementation in Python.
+</p>
+
+<pre><code class="language-python">
+import math
+n = int(input())
+x = y = 2
+d = 1
+g = lambda x : (x*x + 1) % n
+while d == 1:
+    x = g(x)
+    y = g(g(y))
+    d = math.gcd(abs(x-y),n)
+print(d)
+</code></pre>
+
+<p>
+There are optimizations such as alternative cycle detection methods and
+multiplying several \(|x_i-x_j|\) together before computing \(\gcd\) since the
+\(\gcd\) calculation takes significantly longer than modular multiplication.
+These optimizations are not the main point of this page.
+</p>
+
+<h2>Linear or Constant Polynomials</h2>
+
+<p>
+If \(g(x)=c\) is used for some constant \(c\), then unless \(c\equiv0\pmod{p}\),
+a cycle would not occur until \(p\mid(i-j)\), where we would have
+\(|x_i-x_j|=cp\). This would be no better than trial division factoring since
+\(O(p)\) steps would be required.
+</p>
+
+<p>
+If \(g(x)=ax+c\), then the iteration would behave like a
+<a href="https://en.wikipedia.org/wiki/Linear_congruential_generator" target="_blank">LCG</a>
+random number generator. These have long cycles which are desired for random
+number generation purposes and not suitable for Pollard Rho factorization.
+</p>
+
+<h2>Quadratic Polynomials</h2>
+
+<p>
+The standard choice of polynomial for Pollard Rho factorization is
+\(g(x)=x^2+c\) for some small \(c\), usually \(c=1\). Consider what happens
+modulo \(p\), an odd prime. After every iteration, \(g(x)\pmod{p}\) will be
+\(q+c\pmod{p}\) for some quadratic residue \(q\) of \(p\). This means that the
+only time we have an \(x\) that is not \(q+c\) for some quadratic residue \(q\)
+is possibly \(x_0\). It would suggest that the iterated sequence is moving
+randomly through only half of the residues modulo \(p\). Some sources say that
+it behaves more like randomly iterating through a set of size \(p\) than of size
+\(p/2\), but this is only a constant factor difference. The observations here do
+not make it clear that this sequence would behave randomly, but in practice it
+does work well to find a prime factor \(p\) in \(O(\sqrt{p})\) time.
+</p>
+
+<h2>Higher Degree Polynomials</h2>
+
+<h3>Overview</h3>
+
+<p>
+Higher even degree polynomials appear to work similarly well in practice as
+quadratic polynomials are, but generally no better. In practice, there is no
+good reason to use these since they make iterations more expensive to compute.
+However, odd degree polynomials work poorly in practice.
+</p>
+
+<p>
+One observation from experimental evidence is that if we choose \(g(x)=x^3+c\),
+then it finds prime factors \(p\) efficiently in \(O(\sqrt{p})\) time when
+\(p\equiv1\pmod{6}\), but performs poorly and appears to take \(O(p)\) time when
+\(p\equiv5\pmod{6}\). This can be explained by the more general theorem which
+we will prove next.
+</p>
+
+<h3>Proof</h3>
+
+<p>
+Suppose we iterate \(g(x)=x^r+c\) modulo some prime \(p\). To understand the
+nature of randomness generated, we consider the degree \(r\) residues modulo
+\(p\). Let \(p=rn+s\) from division where \(0&lt;s&lt;r\) and \(n\) is some
+integer (since \(p\) is prime, \(s\neq0\)). We can show that if \(s-1\) is
+invertible modulo \(r\), then every integer is a degree \(r\) residue, modulo
+\(p\), meaning that for every \(y\), there exists \(x\) such that
+\(x^r\equiv y\pmod{p}\). This is important because it shows that \(g(x)\)
+behaves more like a random permutation than a random number generator for some
+primes, which we will explain more later.
+</p>
+
+<p>
+For the proof, we consider some prime modulus \(p=rn+s\) like stated in the
+previous paragraph. The trivial residue \(0\) is always a degree \(r\) residue
+modulo \(p\). Next, consider any \(x\) where \(0&lt;x&lt;p\), so we have
+\(\gcd(x,p)=1\) and can apply Fermat's little theorem.
+\[x^p\equiv x\pmod{p}\quad\text{and}\quad x^{p-1}\equiv1\pmod{p}\]
+Now look at what happens when we multiply these as shown below (modulo \(p\))
+for some \(k\) which we will use later
+\[x\cdot1^k\equiv x^p(x^{p-1})^k\equiv x^{p+(p-1)k}\equiv x^{p(k+1)-k}\]
+Next substitute \(p=rn+s\)
+\[x^{(rn+s)(k+1)-k}\equiv x^{rn(k+1)+k(s-1)+s}\]
+For this to be a degree \(r\) residue, we need \(r\mid(k(s-1)+s)\). So we have
+the following solution for \(k\) (modulo \(r\))
+\[k(s-1)+s\equiv0\Rightarrow k(s-1)\equiv-s\Rightarrow k\equiv-s(s-1)^{-1}\]
+So it is here that we require \(s-1\) to be invertible modulo \(r\). This shows
+that any \(x\) modulo \(p\) is a degree \(r\) residue and completes the proof.
+</p>
+
+<h3>Heuristic Explanation</h3>
+
+<p>
+When \(r=3\), primes \(p\equiv1\pmod{6}\) would correspond to \(s=1\) and primes
+\(p\equiv5\pmod{6}\) would correspond to \(s=2\). Only in the \(p\equiv5\) case
+will \(s-1\) be invertible, and this can explain why these primes behave poorly
+in Pollard Rho factorization.
+</p>
+
+<p>
+When the conditions are satisfied in the proof above, the mapping \(g(x)=x^r+c\)
+modulo \(p\) is bijective. There are \(p\) choices for \(x\) and \(x^r\) must
+cover all possible residues modulo \(p\). This allows us to view \(g(x)\) as a
+permutation of the residues modulo \(p\), which can be partitioned into cycles.
+There is theory about cycle lengths of random permutations which is
+asymptotically \(O(p)\) and described by the
+<a href="https://en.wikipedia.org/wiki/Golomb%E2%80%93Dickman_constant" target="_blank">Golomb-Dickman constant</a>.
+Therefore, with this random permutation assumption, we can expect Pollard Rho
+iteration to end up in a cycle of length \(O(p)\) which explains why it is slow
+to find factors under these conditions.
+</p>
+
+<p>
+If we use the theorem for even \(r\), then all primes \(p&gt;r\) will be
+coprime to \(r\). They will correspond to some odd \(s\) so \(s-1\) will not
+be invertible modulo \(r\). For even \(r\), there are always at most the
+\((p-1)/2\) quadratic residues modulo \(p\) so we cannot use the random
+permutation heuristic to explain it. For these, we return to the explanation
+for quadratic choices of \(g(x)\) which do not make it clear that the sequences
+should be expected to behave like random number generators. However, in practice
+the algorithm works and rigorous analysis to show the \(O(\sqrt{p})\) expected
+time is still an open question.
+</p>
+
+</div>
+</body>
+</html>
