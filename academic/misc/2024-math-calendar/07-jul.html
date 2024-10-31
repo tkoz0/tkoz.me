@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Calendar 2024 July</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <style type="text/css">
+        #cal {
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<h1>Math Calendar 2024 July</h1>
+
+<table id="cal">
+    <tr><th colspan="7">July</th></tr>
+    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    <tr>
+        <td><a href="#jul01">01</a></td>
+        <td><a href="#jul02">02</a></td>
+        <td><a href="#jul03">03</a></td>
+        <td><a href="#jul04">04</a></td>
+        <td><a href="#jul05">05</a></td>
+        <td><a href="#jul06">06</a></td>
+        <td><a href="#jul07">07</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jul08">08</a></td>
+        <td><a href="#jul09">09</a></td>
+        <td><a href="#jul10">10</a></td>
+        <td><a href="#jul11">11</a></td>
+        <td><a href="#jul12">12</a></td>
+        <td><a href="#jul13">13</a></td>
+        <td><a href="#jul14">14</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jul15">15</a></td>
+        <td><a href="#jul16">16</a></td>
+        <td><a href="#jul17">17</a></td>
+        <td><a href="#jul18">18</a></td>
+        <td><a href="#jul19">19</a></td>
+        <td><a href="#jul20">20</a></td>
+        <td><a href="#jul21">21</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jul22">22</a></td>
+        <td><a href="#jul23">23</a></td>
+        <td><a href="#jul24">24</a></td>
+        <td><a href="#jul25">25</a></td>
+        <td><a href="#jul26">26</a></td>
+        <td><a href="#jul27">27</a></td>
+        <td><a href="#jul28">28</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jul29">29</a></td>
+        <td><a href="#jul30">30</a></td>
+        <td><a href="#jul31">31</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<h3 id="jul01">Jul 01</h3>
+
+\[{1^2+2^2+\ldots+5^2\over1+2+\ldots+10}
+={{5\cdot6\cdot11\over6}\over{10\cdot11\over2}}
+={55\over55}=1\]
+
+<h3 id="jul02">Jul 02</h3>
+
+<p>
+Minimal number of sequential evaluations of \(p(x)\in\mathbb{N}[x]\) needed to
+determine the coefficients of \(p(x)\).
+</p>
+
+<p>
+This is worded a bit confusingly. It is asking how many evaluations are needed
+to determine coefficients of a polynomial with nonnegative integer coefficients.
+Suppose \(p(x)=a_0+a_1x+a_2x^2+\ldots+a_nx^n\) where each \(a_i\in\mathbb{N}
+=\{0,1,2,\ldots\}\). First evaluate \(p(1)=\sum a_i\) and let this value be
+\(q\). Next evaluate \(p(q)=a_0+a_1q+a_2q^2+\ldots+a_nq^n\). If only one of the
+\(a_i&gt;0\), then we would find \(p(x)=a_nq^n\) where \(a_n=q\) and
+\(n=\log_q(p(q))-1\). If multiple \(a_i&gt;0\), then we will have \(q&gt;a_i\)
+for each \(a_i\), so \(p(q)\) is represented such that each \(a_i\) are the
+digits of the base \(q\) representation, which allows us to determine them.
+</p>
+
+<h3 id="jul03">Jul 03</h3>
+
+<p>
+If \(\log_ab+\log_bc+\log_ca=0\), find \((\log_ab)^3+(\log_bc)^3+(\log_ca)^3\).
+</p>
+
+<p>
+To make this simpler, let \(x=\log_ab,y=\log_bc,z=\log_ca\). Then we have
+\(x+y+z=0\) and need to find \(x^3+y^3+z^3\). Now to get the cubes we need, cube
+each side of \(x+y=-z\), since this avoids cubing a side with 3 terms.
+\[x^3+y^3+3x^2y+3xy^2=-z^3 \Rightarrow x^3+y^3+z^3=-3xy(x+y)
+=-3xy(-z)=3xyz\]
+Now we just use the change base formula:
+\[3xyz=3{\ln(b)\over\ln(a)}{\ln(c)\over\ln(b)}{\ln(a)\over\ln(c)}
+=3{\ln(a)\ln(b)\ln(c)\over\ln(a)\ln(b)\ln(c)}=3\]
+</p>
+
+<h3 id="jul04">Jul 04</h3>
+
+\[\begin{align}&{\csc(75^\circ)\over\cos(75^\circ)}
+={1\over\sin(75^\circ)\cos(75^\circ)}
+={1\over\sin(30^\circ+45^\circ)\cos(30^\circ+45^\circ)}\\&
+={1\over\left[{1\over2}{\sqrt{2}\over2}+{\sqrt{3}\over2}{\sqrt{2}\over2}\right]
+    \left[{\sqrt{3}\over2}{\sqrt{2}\over2}-{1\over2}{\sqrt{2}\over2}\right]}
+={1\over{\sqrt{2}+\sqrt{6}\over4}{\sqrt{6}-\sqrt{2}\over4}}\\&
+={4\cdot4\over(\sqrt{2}+\sqrt{6})(\sqrt{6}-\sqrt{2})}={16\over6-2}={16\over4}=4
+\end{align}\]
+
+<h3 id="jul05">Jul 05</h3>
+
+<p>
+For the Fibonacci sequence \(F_i\),
+\[\begin{align}&a=F_0+F_1+\ldots+F_{59}\\&b=F_2+F_4+\ldots+F_{60}\\
+&c=F_2+F_5+\ldots+F_{59}\\&x={a+b+c\over c}\end{align}\]
+</p>
+
+<p>
+We will make use of the identity \(F_n=F_{n-1}+F_{n-2}\) (for \(n\geq2\)). This
+allows us to show that \(b=(F_0+F_1)+(F_2+F_3)+\ldots+(F_{58}+F_{59})=a\). Doing
+the same again, \(c=(F_0+F_1)+(F_3+F_4)+\ldots+(F_{57}+F_{58})\). This can be
+added to the original \(c\) to get a sum of all the terms \(F_0\) to \(F_{59}\)
+so \(c+c=2c=a=b\). Then \[x={a+b+c\over c}={2c+2c+c\over c}={5c\over c}=5\]
+</p>
+
+<h3 id="jul06">Jul 06</h3>
+
+\[\sqrt{9+6\sqrt{2}}+\sqrt{9-6\sqrt{2}}=2\sqrt{x}\]
+
+<p>
+This is another good problem for square each side and see what happens.
+\[\begin{align}&(9+6\sqrt{2})+(9-6\sqrt{2})+2\sqrt{(9+6\sqrt{2})(9-6\sqrt{2})}
+=4x\\&18+2\sqrt{81-72}=4x \Rightarrow 24=4x \Rightarrow x=6\\\end{align}\]
+</p>
+
+<h3 id="jul07">Jul 07</h3>
+
+\[y^3+{1\over y^3}=322,\quad x=y+{1\over y}\]
+
+<p>
+Start by evaluating \(x^3\).
+\[x^3=y^3+y^{-3}+3(y+y^{-1})=322+3x \Rightarrow x^3-3x-322=0\]
+This gives us a polynomial to factor. By using the factorization
+\(322=2\cdot7\cdot23\), we can find the rational root \(x=7\). Then dividing
+that out results in the polynomial \(x^2+7x+46\) which has imaginary roots.
+Therefore, the solution is \(x=7\).
+</p>
+
+<h3 id="jul08">Jul 08</h3>
+
+\[\text{gcf}(7000,504,120)\]
+
+<p>
+We can start with the smaller numbers to make this easier.
+\[\text{gcf}(504,120)=\text{gcf}(4\cdot120+24,120)=\text{gcf}(24,120)
+=\text{gcf}(24,5\cdot24)=\text{gcf}(24)\]
+Next compute
+\[\text{gcf}(7000,24)=\text{gcf}(291\cdot24+16,24)=\text{gcf}(16,24)
+=\text{gcf}(16,16+8)=\text{gcf}(16,8)=\text{gcf}(2\cdot8,8)=8\]
+</p>
+
+<h3 id="jul09">Jul 09</h3>
+
+\[f(a,b)={a+b\over a-b},\quad x=f(f(6,4),f(5,3))\]
+
+\[x=f\left({6+4\over6-4},{5+3\over5-3}\right)
+=f\left({10\over2},{8\over2}\right)=f(5,4)={5+4\over5-4}={9\over1}=9\]
+
+<h3 id="jul10">Jul 10</h3>
+
+\[{2x\over5}+1.5=x+1\]
+
+<p>
+Multiply each side by 10 and then combine similar terms.
+\[4x+15=5(x+1)\Rightarrow4x+15=5x+5\Rightarrow15-5=5x-4x\Rightarrow x=10\]
+</p>
+
+<h3 id="jul11">Jul 11</h3>
+
+<p>
+The sum of the roots of \(x^{45}+(0.5-x)^{45}\).
+</p>
+
+<p>
+There is a Vieta formula that can be used to solve this problem. Suppose
+\(p(z)=a_nz^n+a_{n-1}z^{n-1}+\ldots+a_1z+a_0\) is a polynomial. Then if we know
+its roots \(z_1,z_2,\ldots,z_n\),
+\[p(z)=a_n(z-z_1)(z-z_2)\ldots(z-z_n)\]
+Then expand it partially.
+\[p(z)=a_n\left(z^n-(z_1+z_2+\ldots+z_n)z^{n-1}
++(\text{other complex terms not needed})+(-1)^nz_1z_2\ldots z_n\right)\]
+Because the other complex terms not needed are lower powers of \(z\), we can
+compare the coefficients of \(z^{n-1}\) in both of these to find
+\[a_{n-1}=-a_n(z_1+z_2+\ldots+z_n)\]
+This gives us the general formula \(-{a_{n-1}\over a_n}\). Now we need to find
+the 2 relevant coefficients of the given polynomial.
+\[x^{45}+(0.5-x)^{45}=x^{45}-x^{45}+{45\choose1}0.5\cdot x^{44}
+-{45\choose2}0.5^2\cdot x^{43}+\ldots\]
+The \(x^{45}\) terms go away so this is a degree 44 polynomial. The coefficients
+we need tell us the sum of roots is
+\[-{-{45\choose2}0.5^2\over{45\choose1}0.5}={{45\cdot44\over2}0.5\over45}
+={44\cdot0.5\over2}=11\]
+</p>
+
+<h3 id="jul12">Jul 12</h3>
+
+<p>
+Find the difference between the roots of \(x^2+6x-27\).
+</p>
+
+<p>
+In general, with roots \(x={-b\pm\sqrt{b^2-4ac}\over2a}\), we can find that the
+difference is \({1\over a}\sqrt{b^2-4ac}\). For this problem, with
+\(a=1,b=6,c=-27\) we get \({1\over1}\sqrt{6^2-4\cdot1(-27)}=\sqrt{36+108}
+=\sqrt{144}=12\). Alternatively, this one is easy to factor to \((x+9)(x-3)\) so
+we can see the roots are \(x=-9,x=3\) and \(|-9-3|=12\).
+</p>
+
+<h3 id="jul13">Jul 13</h3>
+
+\[\begin{align}&x+y=38\\&y+z=81\\&x+z=69\end{align}\]
+
+<p>
+\[\begin{pmatrix}1&1&0&38\\0&1&1&81\\1&0&1&69\\\end{pmatrix}\sim
+\begin{pmatrix}1&0&0&13\\0&1&0&25\\0&0&1&56\\\end{pmatrix}\]
+Therefore by linear algebra, \(x=13,y=25,z=56\).
+</p>
+
+<h3 id="jul14">Jul 14</h3>
+
+<p>
+How many positive two-digit numbers are divisible by each of their digits?
+</p>
+
+<p>
+The digits cannot be 0, so there are \(9\cdot9=81\) possible numbers. The
+easiest to start with are those with same digit: 11, 22, 33, 44, 55, 66, 77, 88,
+99. These are 11 times their digit. Next, for the tens, we try and find that 12
+and 15 also work. For the twenties, we start at 22, going up in multiples of 2,
+and only find 24. For thirties, we find 36. For forties, we find 48. Past this,
+there are no others besides the same digit number. In total, we found 14 such
+two digit numbers.
+</p>
+
+<h3 id="jul15">Jul 15</h3>
+
+<p>
+Find the number of cards that make either a flush or straight with
+\({\color{red}2\diamondsuit},{\color{red}3\diamondsuit},
+{\color{red}4\diamondsuit},\text{ and }{\color{red}5\diamondsuit}\).
+</p>
+
+<p>
+Any other \(\color{red}\diamondsuit\) makes it a flush, so that is 9 possible
+cards. To make a straight using the other 3 suits, we select either an ace or 6
+so there are 6 other possible cards. \(9+6=15\).
+</p>
+
+<h3 id="jul16">Jul 16</h3>
+
+<p>
+\(x=\text{the natural number less than 50 that has exactly 5 factors}\)
+</p>
+
+<p>
+Consider a factorization \(x=p_1^{a_1}p_2^{a_2}\ldots\). We need
+\((a_1+1)(a_2+1)\ldots=5\) for 5 factors. The only way to form a product equal
+to 5 is with 1s and 5s, so the number we are looking for is a prime 4th power.
+The only such number below 50 is \(2^4=16\) and its factors are 1, 2, 4, 8, 16.
+</p>
+
+<h3 id="jul17">Jul 17</h3>
+
+<p>
+The sum of the first four primes.
+</p>
+
+<p>
+\(2+3+5+7=17\)
+</p>
+
+<h3 id="jul18">Jul 18</h3>
+
+<p>
+\[\sqrt[3]{8}\cdot27^{2\over3}=2\cdot3^{3\cdot{2\over3}}=2\cdot3^2=18\]
+</p>
+
+<h3 id="jul19">Jul 19</h3>
+
+<p>
+Find the larger solution to \(7x^2+10x+8\equiv0\mod25\).
+</p>
+
+<p>
+Let \(f(x)=7x^2+10x+8\). Since \(25=5^2\), we start mod \(5\) and lift
+solutions. Reducing this quadratic polynomial modulo 5, we have
+\(2x^2+3\equiv0\mod5\). The solutions are \(x\equiv1,4\). If we start with
+\(x\equiv1\), then lift it modulo 25, we get
+\[1-f(1)f'(1)^{-1}\equiv1-(7+10+8)f'(1)^{-1}\equiv1-25f'(1)^{-1}\equiv1\]
+For \(x\equiv4\), lifting modulo 25 gets us
+\[4-f(4)f'(4)^{-1}\equiv4-160\cdot66^{-1}\equiv4-10\cdot16^{-1}
+\equiv4-10\cdot11\equiv-106\equiv19\]
+where we have found that \(16^{-1}\equiv11\) modulo 25 so the solution is 19.
+</p>
+
+<h3 id="jul20">Jul 20</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 10" width="300" height="250" class="img_center">
+    <path d="M 5.5 5 L 3.5 5 A 2 2 0 0 0 3.621 5.684 Z" stroke="none" stroke-width="0.2" fill="#7af" />
+    <path d="M 3.5 5 A 2 2 0 0 0 3.621 5.684" stroke="blue" stroke-width="0.1" fill="none" />
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <line x1="5.5" x2="11.5" y1="5" y2="5" />
+        <line x1="5.5" x2="4.132" y1="5" y2="1.241" />
+        <line x1="5.5" x2="0.5" y1="5" y2="5" />
+        <line x1="5.5" x2="0.802" y1="5" y2="6.71" />
+        <line x1="5.5" x2="7.21" y1="5" y2="9.698" />
+        <polyline points="4.56 5.342 4.902 6.282 5.842 5.94" />
+    </g>
+    <g fill="black" font-size="0.05em">
+        <text x="6" y="4.5">(3y+20)&deg;</text>
+        <text x="6.5" y="6">(2y+10)&deg;</text>
+        <text x="1.5" y="6">x&deg;</text>
+    </g>
+</svg>
+
+<p>
+On the right side, \((3y+20)+(2y+10)=5y+30=180\Rightarrow y=30\). Then on the
+left side, \(x=180-90-(2y+10)=90-70=20\).
+</p>
+
+<h3 id="jul21">Jul 21</h3>
+
+\[(2^2-1)\cdot(0.5^{-(2^2-1)}-1)=(4-1)\cdot(0.5^{-(4-1)}-1)
+=3\cdot(0.5^{-3}-1)=3\cdot(8-1)=21\]
+
+<h3 id="jul22">Jul 22</h3>
+
+\[{1\over0.5-0.\overline{45}}\]
+
+<p>
+We can evaluate \(0.\overline{45}\) as a geometric series.
+\[45\sum_{i=1}^{\infty}100^{-i}=0.45\sum_{i=0}^{\infty}100^{-i}
+={9\over20}{1\over1-{1\over100}}={9\over20}{100\over99}={5\over11}\]
+Then the answer is:
+\[{1\over{1\over2}-{5\over11}}={1\over{11\over22}-{10\over22}}
+={1\over{1\over22}}=22\]
+</p>
+
+<h3 id="jul23">Jul 23</h3>
+
+<p>
+Find the sum of all natural numbers, \(n&lt;17\) where \(17\) divided by \(n\)
+gives a remainder of \(2\).
+</p>
+
+<p>
+To have a remainder of 2, we need \(n&gt;2\) and \(17\equiv2(\mod n)\) or
+\(n\mid(17-2)\Rightarrow n\mid15\). If \(n&lt;17\), then \(n\leq15\) or
+\(n=16\). Since \(16\nmid15\), we sum divisors of 15 and subtract those which
+are smaller than 2. Since \(15=3\cdot5\), its divisors sum to \((1+3)(1+5)=24\).
+1 divides 15 but 2 does not so we subtract 1 so the answer is \(24-1=23\).
+</p>
+
+<h3 id="jul24">Jul 24</h3>
+
+<p>
+A boat travels downriver at 30mph, then goes back up along the same path at
+20mph. What is the boat's average speed?
+</p>
+
+<p>
+If the distance is \(d\), then the time taken is \(d/30+d/20=d/12\). The average
+speed is distance divided by time so \(2d/(d/12)=24\). The \(d\) divides out so
+the answer does not depend on distance.
+</p>
+
+<h3 id="jul25">Jul 25</h3>
+
+<p>
+Find the final two digits of \(5^{1000}\).
+</p>
+
+<p>
+We compute \(5^{1000}\) modulo 100. Clearly \(5^2\equiv25\) mod 100. From this,
+\(5^3\equiv5\cdot25\equiv125\equiv25\) mod 100. So by induction, when \(n\geq3\)
+then \(5^n\equiv5\cdot5^{n-1}\equiv5\cdot25\equiv125\equiv25\). Therefore,
+\(5^{1000}\equiv25\mod100\) so the final 2 digits are 25.
+</p>
+
+<h3 id="jul26">Jul 26</h3>
+
+\[\begin{align}&a_0=0,a_1=1\\&a_n=5a_{n-1}-4a_{n-2}
+\\&x=\log_2(a_{14}-a_{13})\end{align}\]
+
+<p>
+By evaluating a few terms, we can see \(a_1-a_0=1,a_2-a_1=4,a_3-a_2=16,\ldots\)
+so the clear conjecture is \(a_{n+1}-a_n=4^n\). It is true when \(n=0\), so when
+\(n&gt;0\), \[a_{n+1}-a_n=5a_n-4a_{n-1}-a_n=4a_n-4a_{n-1}=4(a_n-a_{n-1})
+=4\cdot4^{n-1}=4^n\]
+Therefore, \(\log_2(a_{14}-a_{13})=\log_2(4^{13})=\log_2(2^{26})=26\)
+</p>
+
+<h3 id="jul27">Jul 27</h3>
+
+<p>
+Number of divisors of \(4900\).
+</p>
+
+<p>
+This one is particularly easy to factor to \(4900=2^2\cdot5^2\cdot7^2\). The
+number of divisors comes from choosing a power of each prime factor, so it is
+\((2+1)(2+1)(2+1)=27\).
+</p>
+
+<h3 id="jul28">Jul 28</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 60 60" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.3" fill="none">
+        <rect x="0" y="0" width="7" height="7" />
+        <rect x="0" y="-9" width="9" height="9" />
+        <rect x="-16" y="-9" width="16" height="16" />
+        <rect x="-16" y="7" width="23" height="23" />
+        <rect x="7" y="0" width="30" height="30" />
+        <line x1="8" x2="10" y1="-4.5" y2="-4.5" />
+        <line x1="4.5" x2="4.5" y1="-10" y2="-8" />
+        <line x1="-8.5" x2="-8.5" y1="-10" y2="-8" />
+        <line x1="-7.5" x2="-7.5" y1="-10" y2="-8" />
+        <line x1="-17" x2="-15" y1="-0.5" y2="-0.5" />
+        <line x1="-17" x2="-15" y1="-1.5" y2="-1.5" />
+        <line x1="-17" x2="-15" y1="18.5" y2="18.5" />
+        <line x1="-17" x2="-15" y1="17.5" y2="17.5" />
+        <line x1="-17" x2="-15" y1="19.5" y2="19.5" />
+        <line x1="-4.5" x2="-4.5" y1="29" y2="31" />
+        <line x1="-5.5" x2="-5.5" y1="29" y2="31" />
+        <line x1="-3.5" x2="-3.5" y1="29" y2="31" />
+        <line x1="37" x2="38.061" y1="15" y2="13.939" />
+        <line x1="37" x2="35.939" y1="15" y2="13.939" />
+        <line x1="22" x2="23.061" y1="30" y2="28.939" />
+        <line x1="22" x2="23.061" y1="30" y2="31.061" />
+        <line x1="10" x2="3" y1="-12" y2="3" />
+        <polygon points="3 3 3 1.5 4.149 2.036" fill="black" />
+        <polyline points="9 -1.5 7.5 -1.5 7.5 0" />
+        <polyline points="7 5.5 5.5 5.5 5.5 7" />
+        <polyline points="0 5.5 -1.5 5.5 -1.5 7" />
+        <polyline points="7 28.5 8.5 28.5 8.5 30" />
+    </g>
+    <line x1="9" x2="37" y1="0" y2="0" stroke="aqua" stroke-width="0.3" fill="none" />
+    <text x="20" y="-1" fill="black" font-size="0.5em">x</text>
+    <text x="10" y="-12" fill="black" font-size="0.5em">Area=49</text>
+</svg>
+
+<p>
+All of these shapes are squares. We know that square in the middle has side
+length 7, so label the next smallest square with side length \(y\) and start
+finding the side lengths of the other squares.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 60 60" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.3" fill="none">
+        <rect x="0" y="0" width="7" height="7" />
+        <rect x="0" y="-9" width="9" height="9" />
+        <rect x="-16" y="-9" width="16" height="16" />
+        <rect x="-16" y="7" width="23" height="23" />
+        <rect x="7" y="0" width="30" height="30" />
+        <line x1="8" x2="10" y1="-4.5" y2="-4.5" />
+        <line x1="4.5" x2="4.5" y1="-10" y2="-8" />
+        <line x1="-8.5" x2="-8.5" y1="-10" y2="-8" />
+        <line x1="-7.5" x2="-7.5" y1="-10" y2="-8" />
+        <line x1="-17" x2="-15" y1="-0.5" y2="-0.5" />
+        <line x1="-17" x2="-15" y1="-1.5" y2="-1.5" />
+        <line x1="-17" x2="-15" y1="18.5" y2="18.5" />
+        <line x1="-17" x2="-15" y1="17.5" y2="17.5" />
+        <line x1="-17" x2="-15" y1="19.5" y2="19.5" />
+        <line x1="-4.5" x2="-4.5" y1="29" y2="31" />
+        <line x1="-5.5" x2="-5.5" y1="29" y2="31" />
+        <line x1="-3.5" x2="-3.5" y1="29" y2="31" />
+        <line x1="37" x2="38.061" y1="15" y2="13.939" />
+        <line x1="37" x2="35.939" y1="15" y2="13.939" />
+        <line x1="22" x2="23.061" y1="30" y2="28.939" />
+        <line x1="22" x2="23.061" y1="30" y2="31.061" />
+        <line x1="10" x2="3" y1="-12" y2="3" />
+        <polygon points="3 3 3 1.5 4.149 2.036" fill="black" />
+        <polyline points="9 -1.5 7.5 -1.5 7.5 0" />
+        <polyline points="7 5.5 5.5 5.5 5.5 7" />
+        <polyline points="0 5.5 -1.5 5.5 -1.5 7" />
+        <polyline points="7 28.5 8.5 28.5 8.5 30" />
+    </g>
+    <line x1="9" x2="37" y1="0" y2="0" stroke="aqua" stroke-width="0.3" fill="none" />
+    <text x="20" y="-1" fill="black" font-size="0.5em">x</text>
+    <text x="10" y="-12" fill="black" font-size="0.5em">Area=49</text>
+    <g fill="red" font-size="0.3em">
+        <text x="0" y="5">7</text>
+        <text x="0" y="-3">y</text>
+        <text x="-11" y="7">y+7</text>
+        <text x="-11" y="35">y+14</text>
+        <text x="17" y="35">y+21</text>
+    </g>
+</svg>
+
+<p>
+From here, we can see the bottom edge is \(y+14+y+21=2y+35\). Now look at the
+other squares toward the top to subtract from this the part that is not included
+in \(x\). We would subtract \(y+7+7\) and that little bit between thet line
+\(x\) and the middle square which is \(y-7\). So in total, we subtract \(2y+7\)
+which gives us an answer of \((2y+35)-(2y+7)=28\).
+</p>
+
+<h3 id="jul29">Jul 29</h3>
+
+<p>
+The sum of two numbers is \(37\) and their product is \(132\). What is their
+difference?
+</p>
+
+<p>
+We can start with the equations \[a+b=37,\quad ab=132\] Clearly both are nonzero
+so \(b=132/a\) which can be substituted: \(a+132/a=37\). Multiply each side by
+\(a\) and we have a quadratic, \(a^2-37a+132=0\), which is not too hard to
+factor to \((a-33)(a-4)=0\). This gives us \(a=33\) corresponding to \(b=4\) and
+\(a=4\) corresponding to \(b=33\). The difference is \(|4-33|=29\).
+</p>
+
+<h3 id="jul30">Jul 30</h3>
+
+<p>
+What angle do clock hands make at 1PM?
+</p>
+
+<p>
+The minute hand is pointing straight up and the hour hand has rotated \(1/12\)
+of the way around so \(360^\circ/12=30^\circ\).
+</p>
+
+<h3 id="jul31">Jul 31</h3>
+
+<p>
+Find the largest prime factor of \(10!+11!+12!+13!\).
+</p>
+
+<p>
+\[\begin{align}&10!+11!+12!+13!=10!(1+11+11\cdot12+11\cdot12\cdot13)\\
+&=10!(12+12(12-1)+12(12-1)(12+1))=10!\cdot12(1+12-1+(12-1)(12+1))\\
+&=10!\cdot12(12+12^2-1)=10!\cdot12\cdot155=10!\cdot2^2\cdot3\cdot5\cdot31
+\end{align}\]
+From this factorization, clearly \(31\) is the largest prime factor.
+</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Calendar 2024 January</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <style type="text/css">
+        #cal {
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<h1>Math Calendar 2024 January</h1>
+
+<table id="cal">
+    <tr><th colspan="7">January</th></tr>
+    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    <tr>
+        <td><a href="#jan01">01</a></td>
+        <td><a href="#jan02">02</a></td>
+        <td><a href="#jan03">03</a></td>
+        <td><a href="#jan04">04</a></td>
+        <td><a href="#jan05">05</a></td>
+        <td><a href="#jan06">06</a></td>
+        <td><a href="#jan07">07</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jan08">08</a></td>
+        <td><a href="#jan09">09</a></td>
+        <td><a href="#jan10">10</a></td>
+        <td><a href="#jan11">11</a></td>
+        <td><a href="#jan12">12</a></td>
+        <td><a href="#jan13">13</a></td>
+        <td><a href="#jan14">14</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jan15">15</a></td>
+        <td><a href="#jan16">16</a></td>
+        <td><a href="#jan17">17</a></td>
+        <td><a href="#jan18">18</a></td>
+        <td><a href="#jan19">19</a></td>
+        <td><a href="#jan20">20</a></td>
+        <td><a href="#jan21">21</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jan22">22</a></td>
+        <td><a href="#jan23">23</a></td>
+        <td><a href="#jan24">24</a></td>
+        <td><a href="#jan25">25</a></td>
+        <td><a href="#jan26">26</a></td>
+        <td><a href="#jan27">27</a></td>
+        <td><a href="#jan28">28</a></td>
+    </tr>
+    <tr>
+        <td><a href="#jan29">29</a></td>
+        <td><a href="#jan30">30</a></td>
+        <td><a href="#jan31">31</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<h3 id="jan01">Jan 01</h3>
+
+<p>
+    Some wack geometry problem with circles. I manually drew an SVG that looks
+    like what they give you. For the solution, I had to learn about the
+    assumptions to make from someone else because it is not obvious.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 19 19" width="250" height="250" class="img_center">
+    <style>
+        .jan01_text { font-size: 0.1em; font-family: sans-serif; }
+        .jan01_text2 { font-size: 0.07em; font-family: sans-serif; }
+    </style>
+    <g id="jan01_lines" stroke="black" stroke-width="0.1" fill="none">
+        <!-- top circle -->
+        <rect x="0" y="0" width="15" height="15" />
+        <!-- quarter circles -->
+        <path d="M 0 7.5 A 7.5 7.5 0 0 1 7.5 15 A 7.5 7.5 0 0 1 15 7.5" />
+        <!-- inside top circle -->
+        <circle cx="7.5" cy="5" r="5" />
+        <circle cx="7.5" cy="5" r="0.15" fill="black" />
+        <line x1="7.5" x2="7.5" y1="0" y2="5" />
+        <!-- inside middle circle -->
+        <circle cx="7.5" cy="11" r="1" />
+        <circle cx="7.5" cy="11" r="0.15" fill="black" />
+        <line x1="7.5" x2="6.618" y1="11" y2="11.471" />
+    </g>
+    <g class="jan01_text">
+        <!-- text labels -->
+        <text x="8" y="3">5</text>
+        <text x="5" y="12">x</text>
+    </g>
+</svg>
+
+<p>
+    There are some problems with this. You are supposed to make some assumptions
+    that are supposedly "obvious" but I would argue they are not. Those are that
+    the outer box is a square, and the 2 circles at the corners have radius
+    equal to half of the side length of the square. Anyway, let's label some
+    things.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 19 19" width="250" height="250" class="img_center">
+    <style>
+        .jan01_text { font-size: 0.1em; font-family: sans-serif; }
+        .jan01_text2 { font-size: 0.07em; font-family: sans-serif; }
+    </style>
+    <g id="jan01_lines" stroke="black" stroke-width="0.1" fill="none">
+        <!-- top circle -->
+        <rect x="0" y="0" width="15" height="15" />
+        <!-- quarter circles -->
+        <path d="M 0 7.5 A 7.5 7.5 0 0 1 7.5 15 A 7.5 7.5 0 0 1 15 7.5" />
+        <!-- inside top circle -->
+        <circle cx="7.5" cy="5" r="5" />
+        <circle cx="7.5" cy="5" r="0.15" fill="black" />
+        <line x1="7.5" x2="7.5" y1="0" y2="5" />
+        <!-- inside middle circle -->
+        <circle cx="7.5" cy="11" r="1" />
+        <circle cx="7.5" cy="11" r="0.15" fill="black" />
+        <line x1="7.5" x2="6.618" y1="11" y2="11.471" />
+    </g>
+    <g class="jan01_text">
+        <!-- text labels -->
+        <text x="8" y="3">5</text>
+        <text x="5" y="12">x</text>
+    </g>
+    <!-- triangle 1 annotation -->
+    <polygon points="15 15 7.5 5 7.5 15" stroke="red" stroke-width="0.1" fill="none" />
+    <path d="M 15.5 0 h 1 M 15.5 15 h 1 M 0 15.5 v 1 M 15 15.5 v 1" stroke="red" stroke-width="0.1" fill="none" />
+    <!-- arrows -->
+    <path d="M 16 6.5 l 0 -6 l 0.354 0.354 m -0.354 -0.354 l -0.354 0.354 m 0.354 5.646 m 0 2 l 0 6 l -0.354 -0.354 m 0.354 0.354 l 0.354 -0.354 m -0.354 -5.646 M 6.5 16 l -6 0 l 0.354 -0.354 m -0.354 0.354 l 0.354 0.354 m 5.646 -0.354 m 2 0 l 6 0 l -0.354 0.354 m 0.354 -0.354 l -0.354 -0.354 m -5.646 0.354" stroke="red" stroke-width="0.1" fill="none" />
+    <g fill="red" class="jan01_text2">
+        <text x="15.5" y="8">2r</text>
+        <text x="7" y="16.5">2r</text>
+        <text x="10" y="14.5">r</text>
+        <text x="0" y="0" transform="translate(11.5 9.5) rotate(53.13)">r+5</text>
+        <text x="0" y="0" transform="translate(7 9) rotate(-90)">2r-5</text>
+    </g>
+</svg>
+
+<p>
+    Now we can write some equations. For the right triangle, we have
+    \(r^2+(2r-5)^2=(r+5)^2\). With some algebra, this simplifies to
+    \(2r(2r-15)=0\) so \(r=15/2\) because \(r=0\) is physically impossible.
+    Also observe that \(\cos(\theta)=\frac{2r-5}{r+5}=4/5\). We will use this in
+    the next part. Now we can draw a different triangle, and I will use up a
+    bunch of space for another SVG.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 19 19" width="250" height="250" class="img_center">
+    <style>
+        .jan01_text { font-size: 0.1em; font-family: sans-serif; }
+        .jan01_text2 { font-size: 0.07em; font-family: sans-serif; }
+    </style>
+    <g id="jan01_lines" stroke="black" stroke-width="0.1" fill="none">
+        <!-- top circle -->
+        <rect x="0" y="0" width="15" height="15" />
+        <!-- quarter circles -->
+        <path d="M 0 7.5 A 7.5 7.5 0 0 1 7.5 15 A 7.5 7.5 0 0 1 15 7.5" />
+        <!-- inside top circle -->
+        <circle cx="7.5" cy="5" r="5" />
+        <circle cx="7.5" cy="5" r="0.15" fill="black" />
+        <line x1="7.5" x2="7.5" y1="0" y2="5" />
+        <!-- inside middle circle -->
+        <circle cx="7.5" cy="11" r="1" />
+        <circle cx="7.5" cy="11" r="0.15" fill="black" />
+        <line x1="7.5" x2="6.618" y1="11" y2="11.471" />
+    </g>
+    <g class="jan01_text">
+        <!-- text labels -->
+        <text x="8" y="3">5</text>
+        <text x="5" y="12">x</text>
+    </g>
+    <!-- triangle 2 annotation -->
+    <polygon points="15 15 7.5 5 7.5 11" stroke="red" stroke-width="0.1" fill="none" />
+    <g fill="red" class="jan01_text2">
+        <text x="0" y="0" transform="translate(7.25 9) rotate(-90)">x+5</text>
+        <text x="0" y="0" transform="translate(9 13) rotate(28.072)">x+15/2</text>
+        <text x="0" y="0" transform="translate(12 10.5) rotate(53.13)">25/2</text>
+    </g>
+</svg>
+
+<p>
+    Now it is time for some law of cosines.
+</p>
+
+\[\begin{align}
+&\left(x+\frac{15}{2}\right)^2=(x+5)^2+\left(\frac{25}{2}\right)^2
+-2(x+5)\left(\frac{25}{2}\right)\cos(\theta)\\
+&\cancel{x^2}+15x+\frac{225}{4}
+=\cancel{x^2}+10x+25+\frac{625}{4}-25(x+5)\frac{4}{5}\\
+&15x=10x+25+\frac{400}{4}-20x-100 \Rightarrow 25x=25\\
+\end{align}\]
+
+<p>
+    So there you have it. The answer is \(x=1\).
+</p>
+
+<h3 id="jan02">Jan 02</h3>
+
+\[\left(\sum_{n=1}^\infty\frac{1}{(2n-1)(2n+1)}\right)^{-1}\]
+
+<p>
+    We'll evaluate the inner summation first. By partial fractions, we solve:
+</p>
+
+\[\begin{align}
+\frac{A}{2n-1}+\frac{B}{2n+1}&=\frac{1}{(2n-1)(2n+1)}\\
+A(2n+1)+B(2n-1)&=1\\
+(2A+2B)n+(A-B)&=1\\
+\Rightarrow A=\frac{1}{2},B=-\frac{1}{2}
+\end{align}\]
+
+<p>
+    Now we rewrite the inner summation:
+</p>
+
+\[\begin{align}
+&\sum_{n=1}^\infty\frac{1}{(2n-1)(2n+1)}=\sum_{n=1}^\infty\left(
+    \frac{1}{4n-2}-\frac{1}{4n+2}\right)\\
+&=\left(\frac{1}{2}-\frac{1}{6}\right)+\left(\frac{1}{6}-\frac{1}{10}\right)
++\left(\frac{1}{10}-\frac{1}{14}\right)+\left(\frac{1}{14}-\frac{1}{18}\right)
++\ldots\\
+&=\lim_{n\to\infty}\left(\frac{1}{2}-\frac{1}{4n+2}\right)=\frac{1}{2}
+\end{align}\]
+
+<p>
+    Then we take the \(-1\)th power of this to get the answer: \(2\).
+</p>
+
+<h3 id="jan03">Jan 03</h3>
+
+\[4^x+5^x+6^x=405\]
+
+<p>
+    If we are concerned with only \(x\in\mathbb{R}\), then the problem is
+    simple. The left side \(4^x+5^x+6^x\) is a differentiable and strictly
+    increasing function (because the derivative is strictly positive
+    everywhere), so there can only be one solution if it exists. Using a little
+    "big brain" reasoning, we try \(x=3\) and find that it works. This is the
+    only solution for \(x\in\mathbb{R}\). If there were 2 solutions, then the
+    mean value theorem would require the left side has a 0 derivative somewhere,
+    which cannot happen.
+</p>
+
+<p>
+    But the problem never specified the domain. What if \(x\in\mathbb{C}\)? The
+    problem can get a whole lot harder. The function is holomorphic so we can
+    apply Newton's method to find solutions of \(4^x+5^x+6^x-405=0\). I wrote
+    the following Python code to utilize floating point operations on complex
+    numbers for implementing Newton's method:
+</p>
+
+<pre><code>
+import sys
+from cmath import log,exp
+#f  = lambda x: 4**x + 5**x + 6**x - 405
+#fp = lambda x: (4**x)*log(4) + (5**x)*log(5) + (6**x)*log(6)
+f  = lambda x: exp(x*log(4)) + exp(x*log(5)) + exp(x*log(6)) - 405
+fp = lambda x: exp(x*log(4))*log(4) + exp(x*log(5))*log(5) + exp(x*log(6))*log(6)
+
+x = float(sys.argv[1])
+y = float(sys.argv[2])
+z0 = x + y*1j
+print(z0)
+
+z = z0
+i = 0
+while True:
+    i += 1
+    zz = z - f(z)/fp(z)
+    print(f'iter {i} {zz} {abs(zz-z)/abs(z)}')
+    if abs(zz-z)/abs(z) &lt; 2**-50:
+        break
+    z = zz
+print(z,f(z))
+</code></pre>
+
+<p>
+    By playing around with different values for the initial point, I was able
+    to find the following estimates of some other zeroes:
+</p>
+
+<ul>
+    <li>3.5017972508541466 - 10.71742884439549j</li>
+    <li>3.9253089239469547 - 52.65729631941949j</li>
+    <li>3.2142772380749354 - 70.16812321327346j</li>
+    <li>3.521872497531317 - 297.9333406366225j</li>
+    <li>3.327958222698801 - 7.338622689733879j</li>
+    <li>3.7436003721508793 - 20.88776322477031j</li>
+    <li>3.5994514995153435 + 157.77281528568807j</li>
+    <li>3.7436003721508793 + 20.88776322477031j</li>
+    <li>3.0907926449072503 + 3.738836066672608j</li>
+    <li>3.1002647381284145 + 35.195697916288744j</li>
+    <li>3.5942060942475123 + 17.654225129058005j</li>
+    <li>3.0536063750753657 - 168.1095063661735j</li>
+    <li>3.0907926449072507 - 3.738836066672608j</li>
+    <li>3.0964894133277245 - 62.98121964842654j</li>
+    <li>3.4927339968551534 - 14.139728883610228j</li>
+    <li>3.246294012452595 - 98.0855545958108j</li>
+    <li>3.211459534981861 - 4832.391314588924j</li>
+    <li>3.1835148099730293 - 4832586.50315164j</li>
+    <li>3.076487229266584 - 5999999999.500303j</li>
+</ul>
+
+<p>
+    Since \(b^{x+iy}=e^{\ln(b)(x+iy)}=e^{x\ln(b)}e^{iy\ln(b)}\), the complex
+    coordinate of the start point only affects angles of each exponent term,
+    not magnitude. Based on my experimentation, it looks like all these
+    solutions may have a real part a bit bigger than 3, and varying imaginary
+    parts. The Newton's method iteration seemed to fail when trying near any
+    other part of the complex plane. This result is entirely experimental and
+    not a proof of any sort. It seems plausible that we may be able to choose
+    almost any \(y\) value that distributes the angles around just right so we
+    can rescale by adjusting \(x\) so we get a solution, but it is hard to say.
+    Newton's method suggests there are many more zeroes if we extend solutions
+    to the complex plane.
+</p>
+
+<h3 id="jan04">Jan 04</h3>
+
+\[\begin{align}
+&\sqrt{2\sqrt{4\sqrt{8\sqrt{16\ldots}}}}
+=2^{1/2}\sqrt[4]{4\sqrt{8\sqrt{16\ldots}}}
+=2^{1/2}4^{1/4}\sqrt[8]{8\sqrt{16\ldots}}\\
+&=2^{1/2}4^{1/4}8^{1/8}\sqrt{16\ldots}
+=2^{1/2}2^{2/4}2^{3/8}2^{4/16}\ldots
+=2^{\sum_{n=1}^\infty n/2^n}
+\end{align}\]
+
+<p>
+    Now we focus on the summation on the exponent.
+</p>
+
+\[\begin{align}
+&\sum_{n=1}^\infty\frac{n}{2^n}=\sum_{n=1}^\infty\sum_{m=1}^n\frac{1}{2^n}
+\end{align}\]
+
+<p>
+    Now we show the terms in a table to describe how to rewrite the summation.
+</p>
+
+\[\begin{array}{c|ccccc}
+&m=1&m=2&m=3&\ldots\\\hline
+n=1&1/2\\
+n=2&1/4&1/4\\
+n=3&1/8&1/8&1/8\\
+\vdots&\vdots&&&\ddots
+\end{array}\]
+
+<p>
+    The double summation above has the outer summation go over the rows. We will
+    rewrite it with an outer summation over the columns which gives us a way to
+    use geometric series.
+</p>
+
+\[\begin{align}
+&\sum_{n=1}^\infty\sum_{m=1}^n\frac{1}{2^n}
+=\sum_{m=1}^\infty\sum_{n=m}^\infty\frac{1}{2^n}
+=\sum_{m=1}^\infty\sum_{n=0}^\infty\frac{1}{2^{n+m}}
+=\sum_{m=1}^\infty\frac{1}{2^m}\sum_{n=0}^\infty\frac{1}{2^n}\\
+&=\sum_{m=1}^\infty\frac{1}{2^m}\frac{1}{1-\frac{1}{2}}
+=2\sum_{m=1}^\infty\frac{1}{2^m}
+=2\left(\frac{1}{1-\frac{1}{2}}-1\right)=2\\
+\end{align}\]
+
+<p>
+    So plug in this 2 for the exponent and the answer is \(2^2=4\).
+</p>
+
+<hr />
+
+<p>
+    Someone pointed out to me that the series summation can be solved with
+    calculus instead of a clever double summation trick. We have this geometric
+    series when \(|x|&lt;1\).
+</p>
+
+\[\frac{1}{1-x}=\sum_{n=0}^\infty x^n=1+x+x^2+x^3+\ldots\]
+
+<p>
+    Then we can take the derivative of both sides:
+</p>
+
+\[\frac{1}{(1-x)^2}=\sum_{n=1}^\infty nx^{n-1}=1+2x+3x^2+\ldots\]
+
+<p>
+    So if we multiply this summation by \(x\) to get the
+    exponent to be \(n\) instead of \(n-1\), we have:
+</p>
+
+\[\frac{x}{(1-x)^2}=\sum_{n=1}^\infty nx^n\]
+
+<p>
+    Now just plug in \(x=1/2\) so it matches the series we came up with before
+    and we will find that the summation is \(2\).
+</p>
+
+<h3 id="jan05">Jan 05</h3>
+
+\[2\log_5(2x-5)-\log_4(x-1)=1\]
+
+<p>
+    The "big brain" reasoning shows us that \(x=5\) is a solution. Let's see if
+    the derivative of the left side changes sign:
+</p>
+
+\[\frac{4}{\ln(5)(2x-5)}-\frac{1}{\ln(4)(x-1)}
+=\frac{4\ln(4)(x-1)-\ln(5)(2x-5)}{\ln(5)\ln(4)(2x-5)(x-1)}\]
+
+<p>
+    The function is only defined for \(x&gt;5/2\) so the bottom is always
+    positive, which means we need to analyze the sign of the top:
+</p>
+
+\[(4\ln(4)-2\ln(5))x+(5\ln(5)-4\ln(4))\]
+
+<p>
+    The slope is \(4\ln(4)-2\ln(5)\approx2.326\) and the zero is
+    \(x\approx-1.076\). Therefore, this function is always increasing on its
+    entire domain, so there can be no other solution.
+</p>
+
+<p>
+    What about a more satisfying solution? A friend suggested ignoring the logs
+    and thinking of it as \(2y-z=1\). If \(y=z=1\) then it would be solved.
+    It turns out that the single choice of \(x=5\) makes \(y=z=1\). This still
+    isn't the most satisfying solution though. WolframAlpha does not show a
+    clever way to solve it, instead showing the solution as a result of plots.
+</p>
+
+<p>
+    So is there a more satisfying way to solve this that doesn't exactly end up
+    being a form of "guess and check"?
+</p>
+
+<h3 id="jan06">Jan 06</h3>
+
+<p>
+    In base 10, how many distinct digits can be the last digit of a perfect
+    square?
+</p>
+
+<p>
+    Consider the numbers modulo 10. If \(n=10k+d\) for some \(k\) and
+    \(0\leq d&lt;10\), then \(n^2=100k^2+20kd+d^2\equiv d^2\:(\text{mod}\:10)\).
+    So the squares of single digits determine what the last digits of a perfect
+    square can be. The squares of the single digits are 0,1,4,9,16,25,36,64,81.
+    Taking these modulo 10, the unique digits are 0,1,4,5,6,9 so there are 6.
+</p>
+
+<h3 id="jan07">Jan 07</h3>
+
+<p>
+    How many frieze patterns are there?
+</p>
+
+<p>
+    A frieze patern repeats in one direction in 2 dimensions. There are 7 types
+    classified by their symmetries, as stated on
+    <a href="https://en.wikipedia.org/wiki/Frieze_group" target="_blank">Wikipedia</a>.
+</p>
+
+<ul>
+    <li>p1,T: translation only</li>
+    <li>p1m1,TV: translation and vertical line reflection</li>
+    <li>p11m,THG: translation, horizontal line reflection, glide reflection</li>
+    <li>p11g,TG: translation and glide reflection</li>
+    <li>p2,TR: translation and 180&deg; rotation</li>
+    <li>p2mg,TRVG: translation, 180&deg; rotation, vertical line reflection,
+        glide reflection</li>
+    <li>p2mm,TRHVG: translation, 180&deg; rotation, horizontal line reflection,
+        vertical line reflection, glide reflection</li>
+</ul>
+
+<p>
+    I probably need to understand more group theory to give a better explanation
+    about this stuff. The Wikipedia page shows examples in a table, including
+    Conway's names for them describing the symmetries with feet.
+</p>
+
+<h3 id="jan08">Jan 08</h3>
+
+\[2^y=9;3^z=16;x=yz=?\]
+
+<p>
+    First use logs to find
+    \(y\ln(2)=\ln(9)=2\ln(3) \Rightarrow y=\frac{2\ln(3)}{\ln(2)}\) and
+    \(z\ln(3)=\ln(16)=4\ln(2) \Rightarrow z=\frac{4\ln(2)}{\ln(3)}\). Then
+</p>
+
+\[x=yz=\left(\frac{2\ln(3)}{\ln(2)}\right)\left(\frac{4\ln(2)}{\ln(3)}\right)
+=8\]
+
+<h3 id="jan09">Jan 09</h3>
+
+<p>
+    What is the order of magnitude difference between a thousand and a trillion?
+</p>
+
+<p>
+    Normally when talking about order of magnitude, we mean in base 10. We can
+    about order of magnitude mathematically with base 10 logarithms. So a
+    thousand is \(10^3\) and a trillion is \(10^{12}\). The base 10 logarithms
+    of these are 3 and 12 respectively so the difference is 9.
+</p>
+
+<h3 id="jan10">Jan 10</h3>
+
+Oh boy it's time for more SVGs. This is what the problem gives us.
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.25 -0.25 1.5 1.5" width="250" height="250" class="img_center">
+    <style>
+        .jan10_text { font-size: 0.01em; font-family: sans-serif; }
+        .jan10_textg { font-size: 0.007em; font-family: sans-serif; fill: green; }
+        .jan10_textb { font-size: 0.007em; font-family: sans-serif; fill: blue; }
+    </style>
+    <rect x="0" y="0" width="1" height="1" stroke="black" stroke-width="0.01" fill="none" />
+    <rect x="0" y="0" width="0.25" height="0.25" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- mark the points -->
+    <circle cx="0" cy="0.75" r="0.03" />
+    <circle cx="0.2" cy="0.6" r="0.03" />
+    <circle cx="1" cy="0" r="0.03" />
+    <circle cx="0" cy="1" r="0.03" />
+    <circle cx="0.5" cy="1" r="0.03" />
+    <circle cx="1" cy="1" r="0.03" />
+    <!-- the circle arc -->
+    <path d="M 0 1 A 0.5 0.5 0 0 1 0.5 0.5 A 0.5 0.5 0 0 1 1 1" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- tick marks for equal side lengths -->
+    <path d="M 0 0.5 h 0.025 h -0.05 M 1 0.5 h 0.025 h -0.05 M 0.5 0 v 0.025 v -0.05" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- the line to solve for -->
+    <line x1="0" x2="1" y1="0.75" y2="0" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- text labels -->
+    <g class="jan10_text">
+        <text x="0.45" y="-0.05">8</text>
+        <text x="0.3" y="0.4">x</text>
+    </g>
+</svg>
+
+<p>
+    The only assumption we have to make is that this thing is in a square. It
+    may not be 100% obvious because the bottom edge is not labeled as equal
+    length like the others with side length 8, and the top right corner is not
+    labeled as a right angle. Now let's draw a right triangle and label some
+    things.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.25 -0.25 1.5 1.5" width="250" height="250" class="img_center">
+    <style>
+        .jan10_text { font-size: 0.01em; font-family: sans-serif; }
+        .jan10_textg { font-size: 0.007em; font-family: sans-serif; fill: green; }
+        .jan10_textb { font-size: 0.007em; font-family: sans-serif; fill: blue; }
+    </style>
+    <rect x="0" y="0" width="1" height="1" stroke="black" stroke-width="0.01" fill="none" />
+    <rect x="0" y="0" width="0.25" height="0.25" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- mark the points -->
+    <circle cx="0" cy="0.75" r="0.03" />
+    <circle cx="0.2" cy="0.6" r="0.03" />
+    <circle cx="1" cy="0" r="0.03" />
+    <circle cx="0" cy="1" r="0.03" />
+    <circle cx="0.5" cy="1" r="0.03" />
+    <circle cx="1" cy="1" r="0.03" />
+    <!-- the circle arc -->
+    <path d="M 0 1 A 0.5 0.5 0 0 1 0.5 0.5 A 0.5 0.5 0 0 1 1 1" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- tick marks for equal side lengths -->
+    <path d="M 0 0.5 h 0.025 h -0.05 M 1 0.5 h 0.025 h -0.05 M 0.5 0 v 0.025 v -0.05" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- the line to solve for -->
+    <line x1="0" x2="1" y1="0.75" y2="0" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- text labels -->
+    <g class="jan10_text">
+        <text x="0.45" y="-0.05">8</text>
+        <text x="0.3" y="0.4">x</text>
+    </g>
+    <!-- colored lines -->
+    <path d="M 0.2 0.6 L 1 0 L 0.5 1" stroke="red" stroke-width="0.01" fill="none" />
+    <path d="M 0.2 0.6 L 0.5 1 L 1 1" stroke="blue" stroke-width="0.01" fill="none" />
+    <path d="M 0.2 0.6 L 0 0.75 L 0.5 1" stroke="green" stroke-width="0.01" fill="none" />
+    <!-- line segment labels -->
+    <g class="jan10_textg">
+        <text x="0.05" y="0.6">y</text>
+        <text x="0.15" y="0.95">z</text>
+    </g>
+    <g class="jan10_textb">
+        <text x="0.35" y="0.8">4</text>
+        <text x="0.75" y="0.95">4</text>
+    </g>
+    <!-- right angles -->
+    <path d="M 0.28 0.54 l 0.06 0.08 l -0.08 0.06 M 1 1 m 0 -0.1 h -0.1 v 0.1" stroke="red" stroke-width="0.01" fill="none" />
+</svg>
+
+<p>
+    There are 3 right triangles. Let's call them "left" (with the green sides),
+    "middle" (with the right sides), and "right" (with the bottom right right
+    angle). For the right one, we have side lengths 4 and 8 (from the right side
+    of the square) so the remaining side length is \(\sqrt{4^2+8^2}=\sqrt{80}\).
+    Now for the middle triangle, we have hypotenuse \(\sqrt{80}\) and a side of
+    length 4 so the remaining side is \(\sqrt{80-4^2}=8\). Now we know that
+    \(x=8+y\) so we must solve for \(y\). Let's focus on different triangles
+    next:
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.25 -0.25 1.5 1.5" width="250" height="250" class="img_center">
+    <style>
+        .jan10_text { font-size: 0.01em; font-family: sans-serif; }
+        .jan10_textg { font-size: 0.007em; font-family: sans-serif; fill: green; }
+        .jan10_textb { font-size: 0.007em; font-family: sans-serif; fill: blue; }
+    </style>
+    <rect x="0" y="0" width="1" height="1" stroke="black" stroke-width="0.01" fill="none" />
+    <rect x="0" y="0" width="0.25" height="0.25" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- mark the points -->
+    <circle cx="0" cy="0.75" r="0.03" />
+    <circle cx="0.2" cy="0.6" r="0.03" />
+    <circle cx="1" cy="0" r="0.03" />
+    <circle cx="0" cy="1" r="0.03" />
+    <circle cx="0.5" cy="1" r="0.03" />
+    <circle cx="1" cy="1" r="0.03" />
+    <!-- the circle arc -->
+    <path d="M 0 1 A 0.5 0.5 0 0 1 0.5 0.5 A 0.5 0.5 0 0 1 1 1" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- tick marks for equal side lengths -->
+    <path d="M 0 0.5 h 0.025 h -0.05 M 1 0.5 h 0.025 h -0.05 M 0.5 0 v 0.025 v -0.05" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- the line to solve for -->
+    <line x1="0" x2="1" y1="0.75" y2="0" stroke="black" stroke-width="0.01" fill="none" />
+    <!-- text labels -->
+    <g class="jan10_text">
+        <text x="0.45" y="-0.05">8</text>
+        <text x="0.3" y="0.4">x</text>
+    </g>
+    <!-- colored lines -->
+    <path d="M 0.2 0.6 L 0 0.75 L 0 1 M 0 0.75 L 0.5 1" stroke="green" stroke-width="0.01" fill="none" />
+    <path d="M 0.2 0.6 L 0.5 1 L 0 1" stroke="blue" stroke-width="0.01" fill="none" />
+    <!-- line segment labels -->
+    <g class="jan10_textg">
+        <text x="0.05" y="0.65">y</text>
+        <text x="-0.1" y="0.9">y</text>
+        <text x="0.2" y="0.95">z</text>
+    </g>
+    <!-- right angles -->
+    <path d="M 0.16 0.63 l 0.03 0.04 l 0.04 -0.03 M 0 1 m 0 -0.05 h 0.05 v 0.05" stroke="red" stroke-width="0.01" fill="none" />
+</svg>
+
+<p>
+    The 2 blue sides are length 4 and they share the long green side. This means
+    they are similar right triangles so the 2 shorter green sides are the same
+    length. Now we can write out an equation for the right triangle formed with
+    \(x\), the top edge (8), and the left side \(8-y\).
+</p>
+
+\[\begin{align}
+&x^2=8^2+(8-y)^2\Rightarrow (8+y)^2=8^2+(8^2-16y+y^2)\\
+&\Rightarrow(\cancel{8^2}+16y+\cancel{y^2})=\cancel{8^2}+8^2-16y+\cancel{y^2}
+\Rightarrow 32y=64\\
+\end{align}\]
+
+<p>
+    So there we get \(y=2\) which means \(x=8+y=10\).
+</p>
+
+<h3 id="jan11">Jan 11</h3>
+
+<p>
+    Find the area bounded by \(y=\frac{4}{9}x+3,x=3\) and the axes.
+</p>
+
+<p>
+    On the \(x\) axis, we have \(x=0\) and \(x=3\) as bounds, so we can
+    integrate on that interval. We have \(y=0\) on the \(y\) axis, and a
+    function that is positive on our entire interval \(x\in[0,3]\). One way to
+    solve this is by integration.
+</p>
+
+\[\begin{align}
+&\int_0^3\left(\frac{4}{9}x+3\right)dx=\left[\frac{2}{9}x^2+3x\right]_0^3
+=\frac{2}{9}(3)^2+3(3)=2+9=11
+\end{align}\]
+
+<p>
+    Alternatively, we can use geometry. The plot looks like this:
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -5 4 5.5" width="200" height="275" class="img_center">
+    <!-- axes -->
+    <path d="M 0 0 h 3.25 l -0.071 0.071 l 0.071 -0.071 l -0.071 -0.071 M 0 0 v -4.75 l 0.071 0.071 l -0.071 -0.071 l -0.071 0.071" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- tick marks -->
+    <path d="M 1 0.1 v -0.2 M 2 0.1 v -0.2 M 3 0.1 v -0.2 M 0.1 -1 h -0.2 M 0.1 -2 h -0.2 M 0.1 -3 h -0.2 M 0.1 -4 h -0.2" stroke="black" stroke-width="0.05" fill="none" />
+    <g font-size="0.02em">
+        <text x="0.9" y="0.4">1</text>
+        <text x="1.9" y="0.4">2</text>
+        <text x="2.9" y="0.4">3</text>
+        <text x="-0.4" y="-0.9">1</text>
+        <text x="-0.4" y="-1.9">2</text>
+        <text x="-0.4" y="-2.9">3</text>
+        <text x="-0.4" y="-3.9">4</text>
+        <text x="-0.3" y="0.3">0</text>
+    </g>
+    <path d="M 0 -3 l 3 -1.333 v 4.333" stroke="red" stroke-width="0.05" fill="none" />
+    <circle cx="3" cy="-4.333" r="0.07" stroke="red" stroke-width="0.05" fill="red" />
+    <text x="2" y="-4.5" font-size="0.02em">(3,13/3)</text>
+</svg>
+
+<p>
+    So we have a trapezoid with a base length of \(3\), left height of \(3\),
+    and right height of \(\frac{4}{3}+3=\frac{13}{3}\). Using the trapezoid area
+    formula:
+</p>
+
+\[\frac{1}{2}(3)\left(3+\frac{13}{3}\right)=\frac{3}{2}\frac{22}{3}=11\]
+
+<h3 id="jan12">Jan 12</h3>
+
+<p>
+    Find the product of eigenvalues of
+    \(\begin{bmatrix}1&2&3\\2&1&3\\3&2&1\\\end{bmatrix}\)
+</p>
+
+<p>
+    One way is to compute the eigenvalues directly. The characteristic
+    polynomial is:
+</p>
+
+\[\begin{align}
+&\begin{vmatrix}1-\lambda&2&3\\2&1-\lambda&3\\3&2&1-\lambda\\\end{vmatrix}
+=(1-\lambda)\begin{vmatrix}1-\lambda&3\\2&1-\lambda\\\end{vmatrix}
+-2\begin{vmatrix}2&3\\3&1-\lambda\\\end{vmatrix}
++3\begin{vmatrix}2&1-\lambda\\3&2\\\end{vmatrix}\\
+&=(1-\lambda)[(1-\lambda)^2-6]-2[2(1-\lambda)-9]+3[4-3(1-\lambda)]\\
+&=(1-\lambda)^3-6(1-\lambda)-4(1-\lambda)+18+12-9(1-\lambda)\\
+&=(1-\lambda)^3-19(1-\lambda)+30=-\lambda^3+3\lambda^2+16\lambda+12
+\end{align}\]
+
+<p>
+    We could factor this in a logical way, or we can try something dumb I came
+    up with. Let's group the cubic+linear and quadratic+constant terms:
+</p>
+
+\[-\lambda(\lambda^2-16)+3(\lambda^2+4)\]
+
+<p>
+    Now let's adjust the constants in the parenthesis to each be -4 so we have
+    a common factor of \(\lambda^2-4\).
+</p>
+
+\[-\lambda(\lambda^2-4-12)+3(\lambda^2-4+8)
+=-\lambda(\lambda^2-4)+12\lambda+3(\lambda^2-4)+24\]
+
+<p>
+    Ok now we factor out \(\lambda^2-4\) and simplify the \(12\lambda+24\).
+</p>
+
+\[(-\lambda+3)(\lambda^2-4)+12(\lambda+2)\]
+
+<p>
+    Look at that, \(\lambda+2\) is now a factor of both parts. So let's factor
+    it even more.
+</p>
+
+\[(-\lambda+3)(\lambda+2)(\lambda-2)+12(\lambda+2)
+=(\lambda+2)[(-\lambda+3)(\lambda-2)+12]\]
+
+<p>
+    Now that part in brackets can be expanded to another quadratic polynomial
+    and those are easier to factor.
+</p>
+
+\[(\lambda+2)[-\lambda^2+5\lambda+6]=-(\lambda+2)(\lambda+1)(\lambda-6)\]
+
+<p>
+    So there, the eigenvalues are \(-1,-2,6\) and the product is \(12\). That
+    was a bit painful to factor. Instead, since we only need to know the product
+    and not the individual eigenvalues, we can use a theorem from linear algebra
+    which is that the determinant is equal to the product of the eigenvalues.
+    So we just need to find the determinant:
+</p>
+
+\[\begin{align}
+&\begin{vmatrix}1&2&3\\2&1&3\\3&2&1\\\end{vmatrix}
+=1\begin{vmatrix}1&3\\2&1\\\end{vmatrix}
+-2\begin{vmatrix}2&3\\3&1\\\end{vmatrix}
++3\begin{vmatrix}2&1\\3&2\\\end{vmatrix}\\
+&=(1-6)-2(2-9)+3(4-3)=-5+14+3=12\\
+\end{align}\]
+
+<h3 id="jan13">Jan 13</h3>
+
+<p>
+    Find the median of \(\{15,25,0,7,19,4,11,21\}\).
+</p>
+
+<p>
+    Today is an easy one. We first sort the list in order:
+    \(\{0,4,7,11,15,19,21,25\}\). Then we pick the item in the middle, but since
+    this list is even length, we use the average of the 2 items in the middle.
+    That is, \(\frac{11+15}{2}=13\).
+</p>
+
+<h3 id="jan14">Jan 14</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="250" height="250" class="img_center">
+    <polygon points="4 3 10.687 0.931 1.762 11.717" stroke="black" stroke-width="0.1" fill="none" />
+    <line x1="4" x2="6.225" y1="3" y2="6.324" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- tick marks for side bisection -->
+    <line x1="4.147" x2="3.839" y1="9.148" y2="8.893" stroke="black" stroke-width="0.1" fill="none" />
+    <line x1="8.61" x2="8.302" y1="3.755" y2="3.5" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- labels -->
+    <g font-size="0.1em" font-family="sans-serif">
+        <text x="7" y="7.5">x</text>
+        <text x="4.25" y="6.25">4</text>
+        <text x="6" y="2">7</text>
+        <text x="2" y="7">9</text>
+    </g>
+</svg>
+
+<p>
+    The first way I came up with to solve this is really stupid because the
+    algebra becomes disgusting. We use Heron's formula. The area for the full
+    triangle is:
+</p>
+
+\[A=\sqrt{s(s-7)(s-9)(s-x)},s=\frac{7+9+x}{2}=8+\frac{x}{2}\]
+
+<p>
+    This can be simplified somewhat with algebra. I won't go into all the
+    details because I don't feel like typing all the disgusting algebra.
+</p>
+
+\[4A=\sqrt{(256-x^2)(x^2-4)}\]
+
+<p>
+    This area is equal to the areas of the 2 smaller triangles added together.
+    Let's find formulas for those areas similarly. Again, I don't feel like
+    writing out all the work, but these are the formulas I obtained:
+</p>
+
+\[16A_1=\sqrt{(676-x^2)(x^2-100)},16A_2=\sqrt{(484-x^2)(x^2-36)}\]
+
+<p>
+    So now we know that \(A=A_1+A_2 \Rightarrow A^2=A_1^2+A_2^2+2A_1A_2\). Since
+    we are squaring something with square roots, we may introduce extraneous
+    solutions. I'm going to multiply each side by 256 to make it a little easier
+    to plug in the formulas above, so we have
+    \(256A^2=256A_1^2+256A_2^2+512A_1A_2\) which can also be written as
+    \(16(4A)^2=(16A_1)^2+(16A_2)^2+2(16A_1)(16A_2)\). Now we plug in the Heron's
+    formula results. What happens is we will end up with a square root and some
+    polynomial terms. I will omit all the tedious algebra, but after separating
+    the polynomial stuff and the square root on different side, you should have
+    this:
+</p>
+
+\[-14x^4+2864x^2+68640=2\sqrt{(676-x^2)(x^2-100)(484-x^2)(x^2-36)}\]
+
+<p>
+    Now, square both sides so we can write it as a single polynomial. This gets
+    very disgusting.
+</p>
+
+\[192x^8-75008x^6+4326400x^4+587862016x^2=0\]
+
+<p>
+    Now let's substitute \(u=x^2\) since all the \(x\) degrees are even. We can
+    divide 64 out of each coefficient too.
+</p>
+
+\[u(3u^3-1172u^2+67600u+9185344)=0\]
+
+<p>
+    It's a lot of work by hand, but using a tool like WolframAlpha, this can be
+    factored. With that assistance, the factorization I found is:
+</p>
+
+\[u(u-196)(3u^2-584u-46864)=0\]
+
+<p>
+    So from this, we have a few solutions. \(x^2=0\Rightarrow x=0\) doesn't work
+    because it is physically impossible. \(x^2=\frac{292-8\sqrt{3529}}{3}\)
+    gives imaginary solutions so that doesn't work. For
+    \(x^2=\frac{292+8\sqrt{3529}}{3}\), we get a solution \(x\approx15.992\)
+    which is not physically possible, but that takes a bit more work to show so
+    I will omit that as well. So that leaves \(x^2=196\Rightarrow x=\pm14\) so
+    the only solution that does work is \(x=14\).
+</p>
+
+<hr />
+
+<p>
+    The Heron's method way was really stupid because if you are experienced with
+    algebra, you'll realize that if anything you plug in at the start is mildly
+    disgusting, its disgustingness will be amplified by multiplying and squaring
+    several mildly disgusting formulas together.
+</p>
+
+<p>
+    It turns out that since the edge of length 4 is a median (because it bisects
+    the edge of length \(x\)), we could use Apollonius's theorem, which was new
+    to me. Instead, I will present a solution using the law of cosines which is
+    similar to a proof of Apollonius's theorem. Let \(\alpha\) be the angle
+    between the sides of lengths \(x\) and \(7\). Then we can use the law of
+    cosines on that angle for both triangles it is contained in.
+</p>
+
+\[9^2=x^2+7^2-2(x)(7)\cos(\alpha) \Rightarrow \cos(\alpha)=\frac{x^2-32}{14x}\]
+
+\[4^2=\left(\frac{x}{2}\right)^2+7^2-2(7)\left(\frac{x}{2}\right)\cos(\alpha)
+\Rightarrow \cos(\alpha)=\frac{x^2+132}{28x}\]
+
+<p>
+    So we have 2 things equal to \(\cos(\alpha)\) so let's solve for \(x\).
+</p>
+
+\[\frac{x^2-32}{14x}=\frac{x^2+132}{28x} \Rightarrow
+2x^2-64=x^2+132 \Rightarrow x^2-196=0\]
+
+<p>
+    So \(x=\pm14\) and of course \(x=14\) is the only possible solution.
+</p>
+
+<h3 id="jan15">Jan 15</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <line x1="1" x2="24" y1="24" y2="24" stroke="black" stroke-width="0.15" fill="none" />
+    <!-- the 2 triangles -->
+    <path d="M 3 24 l 20.732 -23.025 l -11.732 23.025 l -10.522 -14.483 l 1.522 14.483" stroke="black" stroke-width="0.15" fill="none" />
+    <!-- angle arcs -->
+    <path d="M 5 24 A 2 2 0 0 0 2.791 22.011 M 3 24 m 1.442 -0.413 l 0.961 -0.276 m -2.403 0.689 m 1.272 -0.795 l 0.848 -0.53 m -2.12 1.325 m 0.658 -1.348 l 0.438 -0.899 m -1.096 2.247 m 0.26 -1.477 l 0.174 -0.985 m -0.434 2.462 M 14 24 A 2 2 0 0 0 10.824 22.382 M 12 24 m 1.279 -0.784 l 0.853 -0.522 m -2.132 1.306 m -0.118 -1.495 l -0.078 -0.997 m 0.196 2.492 M 21.008 6.321 A 6 6 0 0 1 19.717 5.434 M 3.829 12.754 A 4 4 0 0 1 1.896 13.496" stroke="black" stroke-width="0.15" fill="none" />
+    <!-- angle labels -->
+    <g stroke="black" stroke-width="0.15" fill="none">
+        <line x1="18" x2="21" y1="3" y2="5" />
+        <line x1="5" x2="2.5" y1="8" y2="12" />
+        <line x1="7" x2="4" y1="12" y2="23.5" />
+    </g>
+    <g font-size="0.1em" font-family="sans-serif">
+        <text x="17" y="3">x&deg;</text>
+        <text x="5" y="8">30&deg;</text>
+        <text x="7" y="12">48&deg;</text>
+    </g>
+</svg>
+
+<p>
+    This is a problem using properties of angles. Let's first label unknown
+    angles so the equations are not confusing.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <line x1="1" x2="24" y1="24" y2="24" stroke="black" stroke-width="0.15" fill="none" />
+    <!-- the 2 triangles -->
+    <path d="M 3 24 l 20.732 -23.025 l -11.732 23.025 l -10.522 -14.483 l 1.522 14.483" stroke="black" stroke-width="0.15" fill="none" />
+    <!-- angle arcs -->
+    <path d="M 5 24 A 2 2 0 0 0 2.791 22.011 M 3 24 m 1.442 -0.413 l 0.961 -0.276 m -2.403 0.689 m 1.272 -0.795 l 0.848 -0.53 m -2.12 1.325 m 0.658 -1.348 l 0.438 -0.899 m -1.096 2.247 m 0.26 -1.477 l 0.174 -0.985 m -0.434 2.462 M 14 24 A 2 2 0 0 0 10.824 22.382 M 12 24 m 1.279 -0.784 l 0.853 -0.522 m -2.132 1.306 m -0.118 -1.495 l -0.078 -0.997 m 0.196 2.492 M 21.008 6.321 A 6 6 0 0 1 19.717 5.434 M 3.829 12.754 A 4 4 0 0 1 1.896 13.496" stroke="black" stroke-width="0.15" fill="none" />
+    <!-- angle labels -->
+    <g stroke="black" stroke-width="0.15" fill="none">
+        <line x1="18" x2="21" y1="3" y2="5" />
+        <line x1="5" x2="2.5" y1="8" y2="12" />
+        <line x1="7" x2="4" y1="12" y2="23.5" />
+    </g>
+    <g font-size="0.1em" font-family="sans-serif">
+        <text x="17" y="3">x&deg;</text>
+        <text x="5" y="8">30&deg;</text>
+        <text x="7" y="12">48&deg;</text>
+    </g>
+    <g fill="red" font-size="0.1em" font-family="sans-serif">
+        <text x="3" y="21">a</text>
+        <text x="5.5" y="23">a</text>
+        <text x="14.5" y="23">b</text>
+        <text x="11" y="21.5">b</text>
+        <text x="10" y="23.5">e</text>
+        <text x="6.5" y="19">c</text>
+        <text x="8.5" y="19">c</text>
+        <text x="7.5" y="17.5">d</text>
+        <text x="7.5" y="20.5">d</text>
+    </g>
+</svg>
+
+<p>
+    Now we know \(a=48\). Since \(a\degree+30\degree+c\degree=180\degree\) from
+    the left triangle, we get \(c=102\). By supplementary angles,
+    \(c\degree+d\degree=180\degree\) so \(d=78\). Now using the middle triangle,
+    \(a\degree+d\degree+e\degree=180\degree\), so \(e=54\). Using supplementary
+    angles again, wew have \(e\degree+2b\degree=180\degree\) so \(b=63\). And
+    finally from the triangle at the right, we use
+    \(c\degree+b\degree+x\degree=180\degree\) to find \(x=15\).
+</p>
+
+<h3 id="jan16">Jan 16</h3>
+
+\[2^{2^2}=2^4=16\]
+
+<p>
+    Even if you did this incorrectly with left associativity, you would still
+    get \(2^{2^2}=4^2=16\).
+</p>
+
+<h3 id="jan17">Jan 17</h3>
+
+<p>
+    Find the base 10 integer with Zeckendorf representation \(100101\).
+</p>
+
+<p>
+    The Zeckendorf representation is a sum of Fibonacci numbers. It comes from
+    Zeckendorf's theorem which states every positive integer has a unique
+    representation as the sum of nonadjacent Fibonacci numbers. For this number,
+    using the positions of the ones, it is \(F_6+F_3+F_1=13+3+1=17\).
+</p>
+
+<h3 id="jan18">Jan 18</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -1.5 6.85 8.35" width="205" height="250" class="img_center">
+    <rect x="0" y="0" width="5.85" height="5.85" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- shaded rectangle -->
+    <path d="M 0 5.183 L 1.333 -0.667 L 4.258 0 L 2.925 5.85 Z" stroke="black" stroke-width="0.05" fill="rgba(0,0,255,0.3)" />
+    <!-- outer square tick marks -->
+    <path d="M 1.462 5.85 v 0.2 v -0.4 M 4.387 5.85 v 0.2 v -0.4 M 5.85 2.925 l 0.141 0.141 l -0.141 -0.141 l -0.141 0.141 M 2.925 0 l 0.141 -0.141 l -0.141 0.141 l 0.141 0.141 M 0 2.925 l 0.141 -0.141 l -0.141 0.141 l -0.141 -0.141" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- shaded rectangle tick marks -->
+    <path d="M 0 5.183 m 0.736 0.373 l 0.089 -0.39 m 0.106 0.434 l 0.089 -0.39 M 1.333 -0.667 m 0.736 0.373 l 0.089 -0.39 m 0.106 0.434 l 0.089 -0.39 M 0 5.183 m 0.817 -2.686 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089 M 2.925 5.85 m 0.817 -2.686 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- right angles -->
+    <path d="M 0.39 5.272 l 0.089 -0.39 l -0.39 -0.089 M 5.85 5.45 h -0.4 v 0.4" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- text labels -->
+    <g font-size="0.07em">
+        <text x="1.925" y="2.925">x</text>
+        <text x="2.925" y="-0.5">3</text>
+    </g>
+</svg>
+
+<p>
+    Another geometry problem. The only slightly not obvious things to note here
+    are that \(x\) is the area of the shaded region, \(3\) is the side length of
+    the shaded region, and the outer shape is a square. First we shall label 2
+    right triangles and their points.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -1.5 6.85 8.35" width="205" height="250" class="img_center">
+    <rect x="0" y="0" width="5.85" height="5.85" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- shaded rectangle -->
+    <path d="M 0 5.183 L 1.333 -0.667 L 4.258 0 L 2.925 5.85 Z" stroke="black" stroke-width="0.05" fill="rgba(0,0,255,0.3)" />
+    <!-- outer square tick marks -->
+    <path d="M 1.462 5.85 v 0.2 v -0.4 M 4.387 5.85 v 0.2 v -0.4 M 5.85 2.925 l 0.141 0.141 l -0.141 -0.141 l -0.141 0.141 M 2.925 0 l 0.141 -0.141 l -0.141 0.141 l 0.141 0.141 M 0 2.925 l 0.141 -0.141 l -0.141 0.141 l -0.141 -0.141" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- shaded rectangle tick marks -->
+    <path d="M 0 5.183 m 0.736 0.373 l 0.089 -0.39 m 0.106 0.434 l 0.089 -0.39 M 1.333 -0.667 m 0.736 0.373 l 0.089 -0.39 m 0.106 0.434 l 0.089 -0.39 M 0 5.183 m 0.817 -2.686 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089 M 2.925 5.85 m 0.817 -2.686 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089 m 0.434 -0.106 l -0.39 -0.089" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- right angles -->
+    <path d="M 0.39 5.272 l 0.089 -0.39 l -0.39 -0.089 M 5.85 5.45 h -0.4 v 0.4" stroke="black" stroke-width="0.05" fill="none" />
+    <!-- text labels -->
+    <g font-size="0.07em">
+        <text x="1.925" y="2.925">x</text>
+        <text x="2.925" y="-0.5">3</text>
+    </g>
+    <!-- triangles and right angles -->
+    <polygon points="0 5.183 0 5.85 2.925 5.85" stroke="lightgreen" stroke-width="0.05" fill="none" />
+    <polygon points="4.258 0 4.258 5.85 2.925 5.85" stroke="red" stroke-width="0.05" fill="none" />
+    <path d="M 0 5.55 h 0.3 v 0.3" stroke="lightgreen" stroke-width="0.05" fill="none" />
+    <path d="M 3.958 5.85 v -0.3 h 0.3" stroke="red" stroke-width="0.05" fill="none" />
+    <!-- labeled points -->
+    <g font-size="0.03em">
+        <text x="-0.4" y="5.183">A</text>
+        <text x="-0.4" y="6.25">B</text>
+        <text x="4.058" y="-0.2">C</text>
+        <text x="4.058" y="6.25">D</text>
+        <text x="2.725" y="6.25">E</text>
+    </g>
+</svg>
+
+<p>
+    We would like to show \(\triangle ABE \sim \triangle EDC\) (the 2 triangles
+    are similar). By using complementary angles, we can show that
+    \(\angle BAE = \angle DEC\) and \(\angle BEA = \angle DCE\). Since all 3
+    angles have matching measures, they are similar. Next, we know
+    \(\overline{CD}=2\overline{BE}\) because \(\overline{CD}\) is the same
+    length of a side of the square and \(\overline{BE}\) is half of the side
+    length of the square. Therefore, by triangle similarity,
+    \(\overline{CE}=2\overline{AE}=2\times3=6\). So then we can determine that
+    the area of the shaded rectangle is \(3\times6=18\).
+</p>
+
+<h3 id="jan19">Jan 19</h3>
+
+\[2^x=4^9+8^6\]
+
+\[2^x=4^9+8^6=(2^2)^9+(2^3)^6=2^{18}+2^{18}=2\cdot2^{18}=2^{19}
+\Rightarrow x=19\]
+
+<h3 id="jan20">Jan 20</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 10 10" width="250" height="250" class="img_center">
+    <circle cx="0" cy="0" r="4.5" stroke="black" stroke-width="0.1" fill="none" />
+    <circle cx="0" cy="0" r="0.1" stroke="black" stroke-width="0.1" fill="black" />
+    <line x1="-3.447" x2="-1.039" y1="2.893" y2="2.016" stroke="red" stroke-width="0.1" fill="none" />
+    <line x1="4.5" x2="-1.039" y1="0" y2="2.016" stroke="green" stroke-width="0.1" fill="none" />
+    <line x1="2.893" x2="-1.039" y1="3.447" y2="2.016" stroke="purple" stroke-width="0.1" fill="none" />
+    <line x1="-4.432" x2="-1.039" y1="0.781" y2="2.016" stroke="black" stroke-width="0.1" fill="none" />
+    <g font-size="0.05em" font-family="sans-serif">
+        <text x="-3" y="1" fill="black">2x-10</text>
+        <text x="1.5" y="0.5" fill="green">3x</text>
+        <text x="-2.5" y="3.5" fill="red">2x-20</text>
+        <text x="0.5" y="3.5" fill="purple">2x</text>
+    </g>
+</svg>
+
+<p>
+    This is another geometry problem. We can solve it with the intersecting
+    chords theorem, sometimes called power of a point. Using that theorem, we
+    have:
+</p>
+
+\[2x(2x-10)=3x(2x-20) \Rightarrow 4x^2-20x=6x^2-60x
+\Rightarrow 2x^2-40x=0 \Rightarrow x(x-20)=0\]
+
+<p>
+    So \(x=0\) or \(x=20\). Since only one of these is physically possible,
+    the answer is \(x=20\).
+</p>
+
+<h3 id="jan21">Jan 21</h3>
+
+<p>
+    How many factors does \(576\) have?
+</p>
+
+<p>
+    First factor it. \(576=2\cdot288=2^2\cdot144=2^3\cdot72=2^4\cdot36=
+    2^5\cdot18=2^6\cdot9=2^6\cdot3^2\). Therefore, every factor of \(576\) is
+    a number \(n=2^a\cdot3^b\) where \(a=0,1,2,3,4,5,6\) and \(b=0,1,2\). There
+    are 7 choices for \(a\) and 3 choices for \(b\) so it has \(21\) factors.
+</p>
+
+<h3 id="jan22">Jan 22</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 164 125.5" width="328" height="251" class="img_center">
+    <polygon points="0 115.5 154 0 154 115.5" stroke="black" stroke-width="1" fill="none" />
+    <rect x="88" y="49.5" width="66" height="66" stroke="black" stroke-width="1" fill="none" />
+    <rect x="146" y="107.5" width="8" height="8" stroke="black" stroke-width="1" fill="none" />
+    <!-- top circle (r) -->
+    <circle cx="137.5" cy="33" r="16.5" stroke="black" stroke-width="1" fill="none" />
+    <!-- radius x circle -->
+    <circle cx="66" cy="93.5" r="22" stroke="black" stroke-width="1" fill="none" />
+    <!-- circles horizontal in square -->
+    <circle cx="99" cy="82.5" r="11" stroke="black" stroke-width="1" fill="none" />
+    <circle cx="143" cy="82.5" r="11" stroke="black" stroke-width="1" fill="none" />
+    <!-- circles vertical in square -->
+    <circle cx="121" cy="66" r="16.5" stroke="black" stroke-width="1" fill="none" />
+    <circle cx="121" cy="99" r="16.5" stroke="black" stroke-width="1" fill="none" />
+    <g stroke="lightgreen" stroke-width="1" fill="none">
+        <line x1="137.5" x2="151.789" y1="33" y2="24.75" />
+        <line x1="121" x2="136.505" y1="66" y2="60.357" />
+        <line x1="121" x2="136.505" y1="99" y2="104.643" />
+    </g>
+    <g fill="lightgreen">
+        <text x="137.5" y="30">r</text>
+        <text x="121" y="63">r</text>
+        <text x="121" y="97">r</text>
+    </g>
+    <g stroke="red" stroke-width="1" fill="none">
+        <line x1="99" x2="91.222" y1="82.5" y2="90.278" />
+        <line x1="143" x2="150.778" y1="82.5" y2="90.278" />
+    </g>
+    <line x1="66" x2="81.556" y1="93.5" y2="77.944" stroke="#7bf" stroke-width="1" fill="none" />
+    <text x="61" y="88.5" fill="#7bf">x</text>
+    <path d="M 88 82.5 m -4 0 h 8 M 154 82.5 m -4 0 h 8 M 121 49.5 m 0 -4 v 8 M 121 115.5 m 0 -4 v 8" stroke="black" stroke-width="1" fill="none" />
+    <g stroke="red" stroke-width="1" fill="red">
+        <line x1="66" x2="96" y1="41.25" y2="79.5" />
+        <line x1="66" x2="138" y1="41.25" y2="82.5" />
+        <polygon points="96 79.5 96 77.5 94 79.5" />
+        <polygon points="138 82.5 138 80.5 136 82.5" />
+    </g>
+    <text x="56" y="36.25" fill="red">11</text>
+</svg>
+
+<p>
+    This problem is going to involve a few steps, each requiring its own SVG
+    that isn't a copy of the above + annotations (so a lot of tedious work
+    because I've been writing these SVGs manually). First let's focus on the
+    square and solve for \(r\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 76 76" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.5" fill="none">
+        <rect x="0" y="0" width="66" height="66" />
+        <circle cx="11" cy="33" r="11" />
+        <circle cx="55" cy="33" r="11" />
+        <circle cx="33" cy="16.5" r="16.5" />
+        <circle cx="33" cy="49.5" r="16.5" />
+        <line x1="-2" x2="2" y1="33" y2="33" />
+        <line x1="64" x2="68" y1="33" y2="33" />
+        <line x1="33" x2="33" y1="-2" y2="2" />
+        <line x1="33" x2="33" y1="64" y2="68" />
+    </g>
+    <line x1="0" x2="11" y1="33" y2="33" stroke="red" stroke-width="0.5" fill="none" />
+    <line x1="33" x2="33" y1="0" y2="16.5" stroke="lightgreen" stroke-width="0.5" fill="none" />
+    <polygon points="33 33 33 16.5 11 33" stroke="blue" stroke-width="0.5" fill="none" />
+    <text x="5" y="30" fill="red" font-size="0.3em">11</text>
+    <text x="28" y="10" fill="lightgreen" font-size="0.3em">r</text>
+    <g fill="blue" font-size="0.3em">
+        <text x="0" y="0" transform="translate(22 22) rotate(-36.87)">11+r</text>
+        <text x="0" y="0" transform="translate(25 40) rotate(-20)">2r-11</text>
+        <text x="36" y="28.5">r</text>
+    </g>
+</svg>
+
+<p>
+    The side length of the square is \(4r\) from the 2 circles of radius \(r\)
+    so the square we have drawn in the top right corner has side length \(2r\).
+    Then by using the radii of the circles, we can find the blue right triangle.
+    By the Pythagorean theorem, we get (\(r=0\) is impossible):
+</p>
+
+\[r^2+(2r-11)^2=(11+r)^2 \Rightarrow 2r(2r-33)=0 \Rightarrow r=\frac{33}{2}\]
+
+<p>
+    Next we focus on the right triangle on the top.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 76 59.5" width="250" height="196" class="img_center">
+    <polyline points="39.6 19.8 0 49.5 49.5 49.5" stroke="blue" stroke-width="0.5" fill="none" />
+    <polyline points="39.6 19.8 66 0 66 33" stroke="red" stroke-width="0.5" fill="none" />
+    <path d="M 66 33 v 16.5 h -16.5" stroke="black" stroke-width="0.5" fill="none" />
+    <circle cx="49.5" cy="33" r="16.5" stroke="black" stroke-width="0.5" fill="none" />
+    <g stroke="lightgreen" stroke-width="0.5" fill="none">
+        <line x1="49.5" x2="66" y1="33" y2="33" />
+        <line x1="49.5" x2="49.5" y1="33" y2="49.5" />
+        <line x1="49.5" x2="39.6" y1="33" y2="19.8" />
+    </g>
+    <text x="16.5" y="33" fill="blue" font-size="0.3em">3r</text>
+    <text x="16.5" y="47.5" fill="blue" font-size="0.3em">3r</text>
+    <text x="49.5" y="8.5" fill="red" font-size="0.3em">s</text>
+    <text x="63" y="16.5" fill="red" font-size="0.3em">s</text>
+    <text x="51.5" y="31" fill="lightgreen" font-size="0.3em">r</text>
+</svg>
+
+<p>
+    To solve for \(s\), we use the Pythagorean theorem.
+</p>
+
+\[(4r)^2+(r+s)^2=(3r+s)^2 \Rightarrow 8r^2=4rs \Rightarrow s=2r\]
+
+<p>
+    Now we know this right triangle has side lengths \(3r,4r,5r\). By triangle
+    similarity, we can find the ratio of the bottom left triangle to this
+    triangle (using the sides on the right) and use that ratio to solve for
+    \(x\). These right triangles are similar because the angles are all the
+    same, because of the theorem about a line intersecting 2 parallel lines.
+</p>
+
+\[\frac{4r}{3r}=\frac{4}{3} \Rightarrow \frac{x}{r}=\frac{4}{3}
+\Rightarrow x=22\]
+
+<h3 id="jan23">Jan 23</h3>
+
+\[\frac{x+x^2+x^3+x^4}{x^2+x+1+x^{-1}}\:\text{at}\:x=\sqrt{23}\]
+
+<p>
+    Both parts of the fraction have consecutive powers so let's factor to be
+    able to write the power sum part as \(1+x+x^2+x^3\).
+</p>
+
+\[\frac{x+x^2+x^3+x^4}{x^2+x+1+x^{-1}}
+=\frac{x(1+x+x^2+x^3)}{\frac{1}{x}(x^3+x^2+x+1)}
+=x^2\:\text{when}\:1+x+x^2+x^3\neq0\]
+
+<p>
+    Since the sum \(1+x+x^2+x^3\) is all positive numbers, it is nonzero so the
+    answer is \(x^2=23\).
+</p>
+
+<h3 id="jan24">Jan 24</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="250" height="250" class="img_center">
+    <polygon points="10 70 30 10 90 90" stroke="black" stroke-width="0.5" fill="none" />
+    <polyline points="20 40 60 50 10 70" stroke="black" stroke-width="0.5" fill="none" />
+    <line x1="30" x2="50" y1="10" y2="80" stroke="black" stroke-width="0.5" fill="none" />
+    <path d="M 15.949 58.479 l -3.795 -1.265 M 27.846 22.786 l -3.795 -1.265 M 16.897 55.632 l -3.795 -1.265 M 26.897 25.632 l -3.795 -1.265 M 17.846 52.786 l -3.795 -1.265 M 25.949 28.479 l -3.795 -1.265" stroke="black" stroke-width="0.5" fill="none" />
+    <path d="M 43.4 31.2 l 3.2 -2.4 M 73.4 71.2 l 3.2 -2.4" stroke="black" stroke-width="0.5" fill="none" />
+    <path d="M 28.06 76.576 l 0.97 -3.881 M 70.97 87.304 l 0.97 -3.881 M 30.97 77.304 l 0.97 -3.881 M 68.06 86.576 l 0.97 -3.881" stroke="black" stroke-width="0.5" fill="none" />
+    <polygon points="40 45 60 50 43.333 56.667" stroke="black" stroke-width="0.5" fill="lightgray" />
+    <g font-size="0.5em">
+        <text x="3" y="70">A</text>
+        <text x="30" y="10">B</text>
+        <text x="90" y="90">C</text>
+        <text x="60" y="50">Q</text>
+        <text x="33" y="43">P</text>
+        <text x="36.333" y="56.667">R</text>
+    </g>
+</svg>
+
+<p>
+    Find \(x=\frac{\text{area}(ABC)}{\text{area}(PQR)}\)
+</p>
+
+<p>
+    This is doable with triangle median theorems. Each median divides the
+    triangle into 2 equal halfs and all 3 medians divide the triangle into 6
+    equal areas. First let's label the areas so we can work with them.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="250" height="250" class="img_center">
+    <polygon points="10 70 30 10 90 90" stroke="black" stroke-width="0.5" fill="none" />
+    <polyline points="20 40 60 50 10 70" stroke="black" stroke-width="0.5" fill="none" />
+    <line x1="30" x2="50" y1="10" y2="80" stroke="black" stroke-width="0.5" fill="none" />
+    <path d="M 15.949 58.479 l -3.795 -1.265 M 27.846 22.786 l -3.795 -1.265 M 16.897 55.632 l -3.795 -1.265 M 26.897 25.632 l -3.795 -1.265 M 17.846 52.786 l -3.795 -1.265 M 25.949 28.479 l -3.795 -1.265" stroke="black" stroke-width="0.5" fill="none" />
+    <path d="M 43.4 31.2 l 3.2 -2.4 M 73.4 71.2 l 3.2 -2.4" stroke="black" stroke-width="0.5" fill="none" />
+    <path d="M 28.06 76.576 l 0.97 -3.881 M 70.97 87.304 l 0.97 -3.881 M 30.97 77.304 l 0.97 -3.881 M 68.06 86.576 l 0.97 -3.881" stroke="black" stroke-width="0.5" fill="none" />
+    <polygon points="40 45 60 50 43.333 56.667" stroke="black" stroke-width="0.5" fill="lightgray" />
+    <g font-size="0.5em">
+        <text x="3" y="70">A</text>
+        <text x="30" y="10">B</text>
+        <text x="90" y="90">C</text>
+        <text x="60" y="50">Q</text>
+        <text x="33" y="43">P</text>
+        <text x="36.333" y="56.667">R</text>
+    </g>
+    <g fill="red" font-size="0.5em">
+        <text x="28" y="35">D</text>
+        <text x="40" y="40">E</text>
+        <text x="25" y="55">F</text>
+        <text x="45" y="53">G</text>
+        <text x="35" y="70">H</text>
+        <text x="55" y="70">J</text>
+    </g>
+</svg>
+
+<p>
+    Using the median with point \(B\), we have
+</p>
+
+\[D+F+H=E+G+J\]
+
+<p>
+    Since \(PQ||AC\), we have similar triangles and can find \(D=E\) so we can
+    simplify the above to
+</p>
+
+\[F+H=G+J\]
+
+<p>
+    Now by similar triangles, \(D+F+H=4D\) so we can substitute \(F+H=3D\)
+</p>
+
+\[3D=G+J\]
+
+<p>
+    Now let \(X\) be the area of \(\triangle ABC\). We have \(D+F+H=X/2\) so
+    \(D=E=X/8\). From the equal areas theorem, \(J=X/3\) since it contains 2 of
+    the 6 areas created by the medians. Now we plug those in
+</p>
+
+\[3X/8=G+X/3 \Rightarrow G=X/24\]
+
+<p>
+    So we find that if \(\text{area}(ABC)=X\) then \(\text{area}(PQR)=G=X/24\).
+    Therefore, \(x=24\).
+</p>
+
+<h3 id="jan25">Jan 25</h3>
+
+\[49^{49^{49^{49^{49}}}}\mod47\]
+
+<p>
+    Anoher way we can write this is \(49\uparrow\uparrow5\mod47\) using Knuth's
+    up arrow notation. 2 up arrows is for power towers. Repeated multiplication
+    creates a cycle in modular arithmeic, so we will have to look at these
+    power cycles to solve this problem.
+</p>
+
+<p>
+    First we look at powers of \(49\) modulo \(47\). Since \(49\equiv2\mod47\),
+    we can look at powers of \(2\) modulo \(47\). Since \(\gcd(2,47)=1\), we can
+    find some power \(p\) so \(2^{p}\equiv1\mod47\). From number theory,
+    \(p|\phi(47)\) so since \(\phi(47)=46\), \(p\) is one of \(1,2,23,46\).
+    We could use \(p=46\) since that will work, but the math gets a little
+    easier if we can use something smaller. It turns out that \(2\) is not a
+    primitive root modulo \(47\) and that the smallest such \(p\) that works is
+    \(23\). So we have
+    \(49\uparrow\uparrow5\equiv2^{49\uparrow\uparrow4}\mod47\). If we can
+    express \(49\uparrow\uparrow4=23u+v\), then we would know the answer is
+    \(2^v\mod47\). This has reduced the power tower size by 1 and the modulus
+    we are working with from 47 to 23. We have to repeat this a few times so the
+    work is summarized in the table below.
+</p>
+
+<table>
+    <tr>
+        <th>step</th>
+        <th>compute this</th>
+        <th>base reduction</th>
+        <th>power cycle</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>\(49\uparrow\uparrow5\mod47\)</td>
+        <td>\(2^{49\uparrow\uparrow4}\mod47\)</td>
+        <td>\(2^{23}\equiv1\mod47\)</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>\(49\uparrow\uparrow4\mod23\)</td>
+        <td>\(3^{49\uparrow\uparrow3}\mod23\)</td>
+        <td>\(3^{11}\equiv1\mod23\)</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>\(49\uparrow\uparrow3\mod11\)</td>
+        <td>\(5^{49\uparrow\uparrow2}\mod11\)</td>
+        <td>\(5^5\equiv1\mod11\)</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>\(49^{49}\mod5\)</td>
+        <td>\(4^{49}\mod5\)</td>
+        <td>\(4^2\equiv1\mod5\)</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>\(49\mod2\)</td>
+        <td>\(1\)</td>
+        <td></td>
+    </tr>
+</table>
+
+<p>
+    Next, we have to work backwards. We know that \(49\equiv1\mod2\). Using
+    this, we have \(49^{49}\equiv4^{49}\equiv4^1\equiv4\mod5\). Next,
+    \(49\uparrow\uparrow3\equiv5^{49^{49}}\equiv5^4\equiv9\mod11\). We repeat
+    this and the work is summarized in the following table.
+</p>
+
+<table>
+    <tr>
+        <th>step</th>
+        <th>compute this</th>
+        <th>work</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>\(49\mod2\)</td>
+        <td>\(1\)</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>\(49^{49}\mod5\)</td>
+        <td>\(\equiv4^{49}\equiv4^{2\cdot24+1}\equiv4^1\equiv4\mod5\)</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>\(49\uparrow\uparrow3\mod11\)</td>
+        <td>\(\equiv5^{49\uparrow\uparrow2}\equiv5^4\equiv9\mod11\)</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>\(49\uparrow\uparrow4\mod23\)</td>
+        <td>\(\equiv3^{49\uparrow\uparrow3}\equiv3^9=18\mod23\)</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>\(49\uparrow\uparrow5\mod47\)</td>
+        <td>\(\equiv2^{49\uparrow\uparrow4}\equiv2^{18}\equiv25\mod47\)</td>
+    </tr>
+</table>
+
+<p>
+    Therefore, the answer is 25.
+</p>
+
+<h3 id="jan26">Jan 26</h3>
+
+\[-1+2-3+4-\ldots-51+52\]
+
+<p>
+    We can split this into odds and evens and use summation properties.
+</p>
+
+\[(2+4+\ldots+52)-(1+3+\ldots+51)=2\sum_{i=1}^{26}i-\sum_{i=1}^{26}(2i-1)
+=26(27)-26^2=26\]
+
+<p>
+    We can also make the following observation:
+</p>
+
+\[(-1+2)+(-3+4)+\ldots+(-51+52)=1+1+\ldots+1=26\]
+
+<h3 id="jan27">Jan 27</h3>
+
+\[\begin{align}&3r+6s+t=21\\&5r+11s+t=33\\&x=3r+3s+3t\end{align}\]
+
+<p>
+    There can only be a possible value for \(x\) if \(3r+3s+3t\) is linearly
+    dependent on the first 2 equations so let's see if we can find constants
+    \(a,b\) to add multiples of them to get \(3r+3s+3t\).
+</p>
+
+\[a(3r+6s+t)+b(5r+11+t)=3r+3s+3t \Rightarrow 3a+5b=3,6a+11b=3,a+b=3\]
+
+<p>
+    We have 2 variables and 3 equations. By solving the first 2, we find
+    \(a=6,b=-3\) and this also satisfies the 3rd. So this means
+    \(x=21a+33b=6\cdot21-3\cdot33=126-99=27\).
+</p>
+
+<p>
+    Alternatively, we can write this as a matrix and do row elimination.
+</p>
+
+\[\begin{align}
+&\begin{bmatrix}
+3&6&1&\big|&21\\
+5&11&1&\big|&33\\
+3&3&3&\big|&x\\
+\end{bmatrix}\sim
+\begin{bmatrix}
+1&1&1&\big|&x/3\\
+3&6&1&\big|&21\\
+5&11&1&\big|&33\\
+\end{bmatrix}\sim
+\begin{bmatrix}
+1&1&1&\big|&x/3\\
+0&3&-2&\big|&21-x\\
+0&6&-4&\big|&33-5x/3\\
+\end{bmatrix}\\
+\sim&
+\begin{bmatrix}
+1&1&1&\big|&x/3\\
+0&3&-2&\big|&21-x\\
+0&0&0&\big|&(33-5x/3)-2(21-x)\\
+\end{bmatrix}
+\end{align}\]
+
+<p>
+    For this matrix to have a solution, we must have
+    \(0=(33-5x/3)-2(21-x)=x/3-9\Rightarrow x=27\).
+</p>
+
+<h3 id="jan28">Jan 28</h3>
+
+\[\sqrt[4]{112\cdot98\cdot56}=\sqrt[4]{(2^4\cdot7)(2\cdot7^2)(2^3\cdot7)}
+=\sqrt[4]{2^8\cdot7^4}=2^2\cdot7=28\]
+
+<h3 id="jan29">Jan 29</h3>
+
+\[\frac{3x}{5}-2.5=\frac{2x+1}{10}+9\]
+
+<p>
+    Multiply each side by 10
+</p>
+
+\[6x-25=2x+1+90\]
+
+<p>
+    Group similar terms and solve.
+</p>
+
+\[4x=116 \Rightarrow x=29\]
+
+<h3 id="jan30">Jan 30</h3>
+
+<p>
+    The line passing through \((-1,3)\) and \((-3,-2)\) is perpendicular to the
+    line passing through \((-5,3)\) and \((x,-11)\).
+</p>
+
+<p>
+    The slope of the first line is
+    \(\frac{-2-3}{-3-(-1)}=\frac{-5}{-2}=\frac{5}{2}\) so the slope of a
+    perpendicular line is \(-1/\frac{5}{2}=\frac{-2}{5}\). Using point-slope
+    form for the known point on the 2nd line, we get \(y-3=\frac{-2}{5}(x+5)\).
+    Now we substitute \(y=-11\) and solve to find that \(x=30\).
+</p>
+
+<p>
+    We could also do this with vectors. A vector describing the first line is
+    \((-2,-5)\) and a vector describing the second line is \((x+5,-14)\). The
+    dot product must be zero for them to be perpendicular so we solve an
+    equation: \(-2(x+5)+(-5)(-14)=0\Rightarrow x=30\).
+</p>
+
+<h3 id="jan31">Jan 31</h3>
+
+\[\left(4+\frac{4}{4}\right)\cdot\left(4-\frac{4}{4}\right)
++4^{\frac{4}{4}+\frac{4}{4}}
+=(4+1)(4-1)+4^{1+1}=5\cdot3+4^2=15+16=31\]
+
+</div>
+</body>
+</html>

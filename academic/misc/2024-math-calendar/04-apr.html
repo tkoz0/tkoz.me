@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Calendar 2024 April</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <style type="text/css">
+        #cal {
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<h1>Math Calendar 2024 April</h1>
+
+<table id="cal">
+    <tr><th colspan="7">April</th></tr>
+    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    <tr>
+        <td><a href="#apr01">01</a></td>
+        <td><a href="#apr02">02</a></td>
+        <td><a href="#apr03">03</a></td>
+        <td><a href="#apr04">04</a></td>
+        <td><a href="#apr05">05</a></td>
+        <td><a href="#apr06">06</a></td>
+        <td><a href="#apr07">07</a></td>
+    </tr>
+    <tr>
+        <td><a href="#apr08">08</a></td>
+        <td><a href="#apr09">09</a></td>
+        <td><a href="#apr10">10</a></td>
+        <td><a href="#apr11">11</a></td>
+        <td><a href="#apr12">12</a></td>
+        <td><a href="#apr13">13</a></td>
+        <td><a href="#apr14">14</a></td>
+    </tr>
+    <tr>
+        <td><a href="#apr15">15</a></td>
+        <td><a href="#apr16">16</a></td>
+        <td><a href="#apr17">17</a></td>
+        <td><a href="#apr18">18</a></td>
+        <td><a href="#apr19">19</a></td>
+        <td><a href="#apr20">20</a></td>
+        <td><a href="#apr21">21</a></td>
+    </tr>
+    <tr>
+        <td><a href="#apr22">22</a></td>
+        <td><a href="#apr23">23</a></td>
+        <td><a href="#apr24">24</a></td>
+        <td><a href="#apr25">25</a></td>
+        <td><a href="#apr26">26</a></td>
+        <td><a href="#apr27">27</a></td>
+        <td><a href="#apr28">28</a></td>
+    </tr>
+    <tr>
+        <td><a href="#apr29">29</a></td>
+        <td><a href="#apr30">30</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<h3 id="apr01">Apr 01</h3>
+
+<p>
+    Half of the oddest prime.
+</p>
+
+<p>
+    This is more of a thing with words. The "oddest" prime in a way is 2 because
+    it is the only even prime, so half of that is 1.
+</p>
+
+<h3 id="apr02">Apr 02</h3>
+
+\[{\sinh(2\theta)\over\sinh'(\theta)\sinh''(\theta)}\]
+
+<p>
+    This can be solved by using definitions of the hyperbolic functions. The
+    derivatives are \(\sinh'(\theta)=\cosh(\theta)\) and
+    \(\sinh''(\theta)=\sinh(\theta)\). Then using the definitions in terms of
+    \(e^\theta\), we have
+</p>
+
+\[\begin{align}&{\sinh(2\theta)\over\sinh'(\theta)\sinh''(\theta)}
+={\sinh(2\theta)\over\cosh(\theta)\sinh(\theta)}
+={{1\over2}\left(e^{2\theta}-e^{-2\theta}\right)\over
+    {1\over2}\left(e^\theta+e^{-\theta}\right)
+    {1\over2}\left(e^\theta-e^{-\theta}\right)}\\&
+=2{e^{2\theta}-e^{-2\theta}\over(e^\theta+e^{-\theta})(e^\theta-e^{-\theta})}
+=2{e^{2\theta}-e^{-2\theta}\over e^{2\theta}-e^{-2\theta}}=2
+\end{align}\]
+
+<h3 id="apr03">Apr 03</h3>
+
+\[\sin(2\alpha)=0.6,2\alpha\ \text{in quadrant 2},x=\tan(\alpha)\]
+
+<p>
+    A basic trigonometric identity tells us
+    \(\cos(2\alpha)=\pm\sqrt{1-\sin^2(2\alpha)}=\pm\sqrt{1-0.6^2}=\pm0.8\).
+    Since \(2\alpha\) is in quadrant 2, cosine is negative so we would have
+    \(\cos(2\alpha)=-0.8\). Then we can find \(\tan(\alpha)\) with the following
+    half angle identity, taking the positive answer since \(\alpha\) is in
+    quadrant 1 so \(\tan(\alpha)\) will be positive.
+</p>
+
+\[\tan(\alpha)=\sqrt{1-\cos(2\alpha)\over1+\cos(2\alpha)}
+=\sqrt{1+0.8\over1-0.8}=\sqrt{1.8\over0.2}=\sqrt{9}=3\]
+
+<h3 id="apr04">Apr 04</h3>
+
+<p>
+    How many double Mersenne primes are there conjectured to be?
+</p>
+
+<p>
+    Double Mersenne primes are numbers \(2^{2^p-1}-1\) for some prime \(p\).
+    If the exponent \(2^p-1\) is not a Mersenne prime, then \(2^{2^p-1}-1\) is
+    not prime. These double Mersenne numbers are prime for \(p=2,3,5,7\) and it
+    is not known whether any more exist. These 4 are conjectured to be the only
+    ones by estimating the probability of a number being prime. A number \(n\)
+    has about a \(1/\ln(n)\) chance of being prime based on the prime number
+    theorem. Then double Mersenne numbers grow so quickly that the chance they
+    are prime approaches 0 faster than a geometric series, so the summation of
+    the probabilities than these numbers are prime is tiny which is a heuristic
+    to predict that no more double Mersenne primes exist.
+</p>
+
+<h3 id="apr05">Apr 05</h3>
+
+<p>
+    The largest prime \(p\) such that neither \(p^2-1\) nor \(p^2+1\) are
+    divisible by \(10\).
+</p>
+
+<p>
+    We notice that \(p=2\) would work. All other primes are odd so consider the
+    5 cases of congruency modulo 10.
+</p>
+
+<table>
+    <tr><th>\(\mod10\)</th><th>\(p^2-1\)</th><th>\(p^2+1\)</th></tr>
+    <tr><td>1</td><td style="background:#f77;">0</td><td>2</td></tr>
+    <tr><td>3</td><td>8</td><td style="background:#f77;">0</td></tr>
+    <tr style="background:#7f7;"><td>5</td><td>4</td><td>6</td></tr>
+    <tr><td>7</td><td>8</td><td style="background:#f77;">0</td></tr>
+    <tr><td>9</td><td style="background:#f77;">0</td><td>2</td></tr>
+</table>
+
+<p>
+    From this, we must have \(p\equiv5\mod10\) otherwise either \(p^2-1\) or
+    \(p^2+1\) would be divisible by 10. The only such prime for which this is
+    possible is \(p=5\).
+</p>
+
+<h3 id="apr06">Apr 06</h3>
+
+\[\sqrt{30+\sqrt{30+\sqrt{30+\sqrt{36}}}}\]
+
+<p>
+    This can be trivially evaluated to get 6. Another way to see it is that
+    \(\sqrt{36}=6\) is a fixed point of \(\sqrt{30+x}\) so no matter how many
+    times this function is applied (3 in this case), the result stays fixed at
+    6.
+</p>
+
+<h3 id="apr07">Apr 07</h3>
+
+\[\begin{align}&
+\left(1+\sqrt{2}\right)^2+4\left({\sqrt{2}-1\over\sqrt{2}}\right)
+=1+2\sqrt{2}+2+4{\sqrt{2}-1\over\sqrt{2}}{\sqrt{2}\over\sqrt{2}}\\&
+=3+2\sqrt{2}+2\left(2-\sqrt{2}\right)=3+2\sqrt{2}+4-2\sqrt{2}=7
+\end{align}\]
+
+<h3 id="apr08">Apr 08</h3>
+
+\[{1\times2\times3\times4\times5\over1+2+3+4+5}={120\over15}=8\]
+
+<h3 id="apr09">Apr 09</h3>
+
+\[f(y)=\sum_{i=0}^\infty{y^i\over2^i},\quad S=\int_{-1}^1f(y)dy,\quad x=e^S\]
+
+<p>
+    First rewrite \(f(y)\) in a way that is easier to integrate by using the
+    geometric sum formula.
+</p>
+
+\[f(y)=\sum_{i=0}^\infty\left({y\over2}\right)^i={1\over1-{y\over2}}
+={1\over{2-y\over2}}={2\over2-y}\]
+
+<p>
+    Note that this formula is valid only when \(f(y)\) converges, which is when
+    \(\left|{y\over2}\right|&lt;1\Rightarrow|y|&lt;2\) so the integration bounds
+    are valid. Next we can evaluate the integral by substituting \(z=2-y\).
+</p>
+
+\[S=\int_{y=-1}^{y=1}{2dy\over2-y}=\int_{z=3}^{z=1}{-2dz\over z}
+=2\int_{z=1}^{z=3}{dz\over z}=2\ln|z|\Big|_1^3=2\ln(3)\]
+
+<p>
+    Finally, \(x=e^S=(e^{\ln(3)})^2=3^2=9\).
+</p>
+
+<h3 id="apr10">Apr 10</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0.5 0.5 3 3" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <path d="M 3 1 h -2 v 2 h 2" />
+        <line x1="2" x2="2" y1="1" y2="3" />
+        <line x1="1" x2="2" y1="2" y2="2" />
+        <rect x="1" y="2.7" width="0.3" height="0.3" />
+        <path d="M 2 2 l 0.866 0.5 l 0.5 -0.866 l -0.866 -0.5 l -0.5 0.866 M 3.216 1.894 l -0.26 -0.15 l 0.15 -0.26" />
+    </g>
+    <path d="M 1 3 v -2 h 2 L 3 1.423 L 2.5 1.134 L 2 2 L 2.866 2.5 L 3 2.268 L 3 3 h -2" stroke="#0cf" stroke-width="0.03" fill="rgba(0,0,0,0.25)" />
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <line x1="0.925" x2="1.075" y1="1.5" y2="1.5" />
+        <line x1="0.925" x2="1.075" y1="2.5" y2="2.5" />
+        <line x1="1.5" x2="1.5" y1="0.925" y2="1.075" />
+        <line x1="2.5" x2="2.5" y1="0.925" y2="1.075" />
+        <line x1="1.5" x2="1.5" y1="2.925" y2="3.075" />
+        <line x1="2.5" x2="2.5" y1="2.925" y2="3.075" />
+        <path d="M 2.471 2.185 l -0.075 0.13 M 3.051 2.029 l 0.13 0.075 M 2.896 1.449 l 0.075 -0.13 M 2.185 1.529 l 0.13 0.075" />
+    </g>
+    <text x="2.25" y="1.9" font-size="0.025em">1</text>
+</svg>
+
+<p>
+    We need to find the perimeter of the shaded area, marked in light blue. The
+    amount the white square is angled is not specified (and turns out to not
+    matter) so we can mark that angle as \(\theta\) where
+    \(0&lt;\theta&lt;\pi/2\). In the diagram below, we form 2 right triangles
+    inside the white square. Both of these triangles have a hypotenuse of length
+    1 so their leg lengths are \(\sin(\theta)\) and \(\cos(\theta)\). It should
+    be clear that the red part has a length of 8, so we must find the length of
+    the lightblue segments labeld \(a,b\) and the blue segments of the smaller
+    right triangles. By using the measurements of the right triangles inside the
+    white square, we find \(a=1-\cos(\theta)\) and \(b=1-\sin(\theta)\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0.5 0.5 3 3" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <path d="M 3 1 h -2 v 2 h 2" />
+        <line x1="2" x2="2" y1="1" y2="3" />
+        <line x1="1" x2="2" y1="2" y2="2" />
+        <rect x="1" y="2.7" width="0.3" height="0.3" />
+        <path d="M 2 2 l 0.866 0.5 l 0.5 -0.866 l -0.866 -0.5 l -0.5 0.866 M 3.216 1.894 l -0.26 -0.15 l 0.15 -0.26" />
+    </g>
+    <path d="M 1 3 v -2 h 2 L 3 1.423 L 2.5 1.134 L 2 2 L 2.866 2.5 L 3 2.268 L 3 3 h -2" stroke="#0cf" stroke-width="0.03" fill="rgba(0,0,0,0.25)" />
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <line x1="0.925" x2="1.075" y1="1.5" y2="1.5" />
+        <line x1="0.925" x2="1.075" y1="2.5" y2="2.5" />
+        <line x1="1.5" x2="1.5" y1="0.925" y2="1.075" />
+        <line x1="2.5" x2="2.5" y1="0.925" y2="1.075" />
+        <line x1="1.5" x2="1.5" y1="2.925" y2="3.075" />
+        <line x1="2.5" x2="2.5" y1="2.925" y2="3.075" />
+        <path d="M 2.471 2.185 l -0.075 0.13 M 3.051 2.029 l 0.13 0.075 M 2.896 1.449 l 0.075 -0.13 M 2.185 1.529 l 0.13 0.075" />
+    </g>
+    <text x="2.25" y="1.9" font-size="0.025em">1</text>
+    <path d="M 3 1 h -2 v 2 h 2 M 2.5 1.134 l -0.5 0.866 l 0.866 0.5" stroke="red" stroke-width="0.03" fill="none" />
+    <g stroke="orange" stroke-width="0.03" fill="none">
+        <polyline points="2.866 2.5 2.866 2 2 2" />
+        <polyline points="2.5 1.134 2.5 2 2 2" />
+        <line x1="2.5" x2="3" y1="1.134" y2="1.134" />
+        <line x1="2.866" x2="3" y1="2.5" y2="2.5" />
+    </g>
+    <g stroke="blue" stroke-width="0.03" fill="none">
+        <polyline points="2.5 1.134 3 1.423 3 1.134" />
+        <polyline points="2.866 2.5 3 2.268 3 2.5" />
+    </g>
+    <g fill="green" font-size="0.01em">
+        <text x="2.05" y="1.65">&theta;</text>
+        <text x="2.3" y="2.15">&theta;</text>
+        <text x="2.4" y="1.5">&theta;</text>
+        <text x="3.05" y="1.3">&triangle;A</text>
+        <text x="3.05" y="2.4">&triangle;B</text>
+    </g>
+    <path d="M 2 1.7 A 0.3 0.3 0 0 1 2.15 1.74" stroke="green" stroke-width="0.03" fill="none" />
+    <text x="3.05" y="1.15" fill="#0cf" font-size="0.01em">a</text>
+    <text x="3.05" y="2.8" fill="#0cf" font-size="0.01em">b</text>
+</svg>
+
+<p>
+    Next, we focus on the smaller right triangles (not drawn to scale below).
+    The orange leg lengths can be determined by using the measurements of the
+    right triangles inside the white squares.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100" class="img_center">
+    <line x1="10" x2="90" y1="30" y2="30" stroke="orange" stroke-width="2" fill="none" />
+    <polyline points="10 30 90 70 90 30" stroke="blue" stroke-width="2" fill="none" />
+    <line x1="130" x2="170" y1="75" y2="75" stroke="orange" stroke-width="2" fill="none" />
+    <polyline points="130 75 170 15 170 75" stroke="blue" stroke-width="2" fill="none" />
+    <text x="30" y="25">1&ndash;sin(&theta;)</text>
+    <text x="125" y="90">1&ndash;cos(&theta;)</text>
+    <text x="45" y="45">&theta;</text>
+    <text x="160" y="45">&theta;</text>
+    <text x="40" y="65">h&#8321;</text>
+    <text x="135" y="40">h&#8322;</text>
+    <text x="95" y="50">c&#8321;</text>
+    <text x="175" y="55">c&#8322;</text>
+</svg>
+
+<p>
+    Now with some right triangle trigonometry, focus on the triangle shown on
+    the left which corresponds to \(\triangle A\) in the previous diagram. We
+    have \[\tan(\theta)={c_1\over1-\sin(\theta)}\Rightarrow
+    c_1=(1-\sin(\theta))\tan(\theta)\] and \[h_1^2=(1-\sin(\theta))^2+c_1^2
+    =(1-\sin(\theta))^2(1+\tan^2(\theta))=(1-\sin(\theta))^2\sec^2(\theta)\]
+    so \(h_1=(1-\sin(\theta))\sec(\theta)\). Then we add them to get
+    \[h_1+c_1=(1-\sin(\theta))(\sec(\theta)+\tan(\theta))
+    =(1-\sin(\theta)){1+\sin(\theta)\over\cos(\theta)}
+    ={1-\sin^2(\theta)\over\cos(\theta)}=\cos(\theta)\]
+</p>
+
+<p>
+    Next, focus on the other triangle, \(\triangle B\). We have
+    \[\tan(\theta)={1-\cos(\theta)\over c_2}\Rightarrow
+    c_2\tan(\theta)=1-\cos(\theta)\Rightarrow c_2=(1-\cos(\theta))\cot(\theta)\]
+    and \[h_2^2=(1-\cos(\theta))^2(1+\cot^2(\theta))
+    =(1-\cos(\theta))^2\csc^2(\theta)\] so \(h_2=(1-\cos(\theta))\csc(\theta)\).
+    Then \[h_2+c_2=(1-\cos(\theta))(\csc(\theta)+\cot(\theta))
+    =(1-\cos(\theta)){1+\cos(\theta)\over\sin(\theta)}
+    ={1-\cos^2(\theta)\over\sin(\theta)}=\sin(\theta)\]
+</p>
+
+<p>
+    Now to complete the work for the nontrivial part of the perimeter, we add
+    \(a+b\) with the lengths of the blue sides of the smaller right triangles.
+    \[(1-\cos(\theta))+(1-\sin(\theta))+\cos(\theta)+\sin(\theta)=2\]
+    Finally add this 2 to the 8 we found earlier and the perimeter is 10. From
+    this work, we can also see that the length of the nontrivial parts of the
+    perimeter is independent of \(\theta\) (as long as it is in the range that
+    makes sense for this problem).
+</p>
+
+<hr />
+
+<p>
+    An alternative solution is drawing the following isosceles triangles. They
+    are isosceles because 2 of the side lengths are the same. The blue segments
+    are each 1 so those triangles with the blue and orange edges are isosceles.
+    In each of those triangles, the angles next to the orange edge are of equal
+    measure. Using complementary angles, the angles on the other side of each
+    orange edge have equal measure so the triangles formed with the orange, red,
+    and green edges are isosceles. From this, we can replace 2 segments of the
+    perimeter with the green and red edges at the far right. This tells us that
+    the perimeter we are looking for is the perimeter of the 2x2 outer square
+    added to the 2 blue edges of the white/rotated square, so the perimeter is
+    10.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0.5 0.5 3 3" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <path d="M 3 1 h -2 v 2 h 2" />
+        <line x1="2" x2="2" y1="1" y2="3" />
+        <line x1="1" x2="2" y1="2" y2="2" />
+        <rect x="1" y="2.7" width="0.3" height="0.3" />
+        <path d="M 2 2 l 0.866 0.5 l 0.5 -0.866 l -0.866 -0.5 l -0.5 0.866 M 3.216 1.894 l -0.26 -0.15 l 0.15 -0.26" />
+    </g>
+    <path d="M 1 3 v -2 h 2 L 3 1.423 L 2.5 1.134 L 2 2 L 2.866 2.5 L 3 2.268 L 3 3 h -2" stroke="#0cf" stroke-width="0.03" fill="rgba(0,0,0,0.25)" />
+    <g stroke="black" stroke-width="0.03" fill="none">
+        <line x1="0.925" x2="1.075" y1="1.5" y2="1.5" />
+        <line x1="0.925" x2="1.075" y1="2.5" y2="2.5" />
+        <line x1="1.5" x2="1.5" y1="0.925" y2="1.075" />
+        <line x1="2.5" x2="2.5" y1="0.925" y2="1.075" />
+        <line x1="1.5" x2="1.5" y1="2.925" y2="3.075" />
+        <line x1="2.5" x2="2.5" y1="2.925" y2="3.075" />
+        <path d="M 2.471 2.185 l -0.075 0.13 M 3.051 2.029 l 0.13 0.075 M 2.896 1.449 l 0.075 -0.13 M 2.185 1.529 l 0.13 0.075" />
+    </g>
+    <text x="2.25" y="1.9" font-size="0.025em">1</text>
+    <polyline points="2.5 1.134 2 2 2.866 2.5" stroke="blue" stroke-width="0.03" fill="none" />
+    <line x1="2" x2="3" y1="2" y2="2" stroke="blue" stroke-width="0.03" fill="none" />
+    <polyline points="2.866 2.5 3 2 2.5 1.134" stroke="orange" stroke-width="0.03" fill="none" />
+    <polyline points="2.5 1.134 3 1.423 3 2" stroke="red" stroke-width="0.03" fill="none" />
+    <polyline points="2.866 2.5 3 2.268 3 2" stroke="#0f0" stroke-width="0.03" fill="none" />
+</svg>
+
+<h3 id="apr11">Apr 11</h3>
+
+\[\text{Round}\left(\int_0^\infty e^{-4t^2\over625}dt\right)\]
+
+<p>
+    This is an integral with \(e^{-t^2}\) like the one that shows up in the
+    normal distribution. We can evaluate this by converting to polar coordinates
+    from squaring the integral and combining them into a double integral because
+    of independent variables.
+</p>
+
+\[\left(\int_0^\infty e^{-4t^2\over625}dt\right)^2
+=\left(\int_0^\infty e^{-4v^2\over625}dv\right)
+\left(\int_0^\infty e^{-4u^2\over625}du\right)
+=\left(\int_0^\infty\int_0^\infty e^{-4(u^2+v^2)\over625}dvdu\right)\]
+
+<p>
+    Next, we convert the area \([0,\infty]\times[0,\infty]\) in rectangular
+    coordinates to \([0,\pi/2]\times[0,\infty]\) in polar coordinates.
+</p>
+
+\[\begin{align}&
+=\int_0^{\pi/2}\int_0^\infty e^{-4r^2\over625}rdrd\theta
+={\pi\over2}\int_0^\infty e^{-4r^2\over625}rdr\\&
+={\pi\over2}{625\over2\cdot4}
+\int_\infty^0e^{-4r^2\over625}d\left({-4r^2\over625}\right)
+={625\pi\over16}e^{-4r^2\over625}\Big|_\infty^0={625\pi\over16}
+\end{align}\]
+
+<p>
+    Now we take the square root and round, finding
+    \({25\over4}\sqrt{\pi}\approx11\).
+</p>
+
+<h3 id="apr12">Apr 12</h3>
+
+\[\begin{align}&x+y+z=36\\&4x+3y+5z=136\\&x^2+y^2+z^2=464\end{align}\]
+
+<p>
+    We have 2 planes and a sphere. From the equations for the 2 planes, we can
+    replace \(y\) and \(z\) with expressions in terms of \(x\). Subtract 3 times
+    the first plane from the second and we find \(x+2z=28\). From 2 times the
+    first plane, \[2y=72-2x-2z=72-2x-(28-x)=44-x\] Next multiply the sphere
+    equation by 4 and we can substitute these \[\begin{align}
+    &(2x)^2+(2y)^2+(2z)^2=1856 \\& (2x)^2+(44-x)^2+(28-x)^2=1856 \\&
+    4x^2+44^2-88x+x^2+28^2-56x+x^2=1856\\& 6x^2-144x=-864 \\& x^2-24x+144=0\\&
+    (x-12)^2=0\end{align}\] so we find \(x=12\). Using the 2 planes, we can also
+    find \(y=16,z=8\) and these satisfy the sphere equation as well. The 2
+    planes intersect at a line, which intersects the sphere at exactly 1 point.
+</p>
+
+<h3 id="apr13">Apr 13</h3>
+
+\[\begin{align}&\text{Find the largest}\ x\ \text{such that}\\&
+x^2+xy=312\\&xy+y^2=264\end{align}\]
+
+<p>
+    One way to see the solution is to factor \(312=24\cdot13\) and
+    \(264=24\cdot11\) and notice that \(11+13=24\). But to solve this with
+    algebra, first factor the equations to find:
+    \[\begin{align}&x(x+y)=24\cdot13\\&y(x+y)=24\cdot11\end{align}\]
+    Next, notice that each of the quantities \(x,y,x+y\) are nonzero. Then if
+    we divide the 2 equations we get \({x\over y}={13\over11}\). So substitute
+    \(y={11\over13}x\) into the first equation and we have:
+    \[x\left(x+{11\over13}x\right)={24\over13}x^2=24\cdot13 \Rightarrow x^2=13^2
+    \Rightarrow x=\pm13\] This tells us the answer is \(x=13\). The 2 solutions
+    to this system are \(x=13,y=11\) and \(x=-13,y=-11\).
+</p>
+
+<hr />
+
+<p>
+    Another useful observation is that by adding the 2 equations, we get
+    \[x^2+2xy+y^2=576 \Rightarrow (x+y)^2=\pm24\] which leads to the same
+    solutions by using the equations written as factored above.
+</p>
+
+<h3 id="apr14">Apr 14</h3>
+
+<p>
+    What is the expected value of the total pips from a throw of four fair-sided
+    dice?
+</p>
+
+<p>
+    Each dice throw is independent so let \(X\) be a random variable for 1 dice
+    throw. Then \[E(X)={1\over6}(1+2+3+4+5+6)={7\over2}\] because each roll has
+    the same probability. Since there are 4 dice, we are looking for
+    \(4\cdot E(X)=14\).
+</p>
+
+<h3 id="apr15">Apr 15</h3>
+
+\[\begin{align}&a,b,c,d\ \text{represent distinct non-0 digits}\\&
+\sqrt{abcd}=ad,\quad x=a+d\end{align}\]
+
+<p>
+    Due to the nature of this problem, I will always use \(\cdot\) to explicitly
+    show multiplication, otherwise digits are concatenated. First square each
+    side to find \[abcd=(10\cdot a+d)^2=100\cdot a^2+20\cdot a\cdot d+d^2\]
+    Since \(0&lt;d\leq9\), we have \[100\cdot a^2+20\cdot a\cdot d+d^2 \leq
+    100\cdot a^2+180\cdot a+81\] and we can show \[100\cdot a^2+180\cdot a+81
+    &lt;a000=1000\cdot a\] Subtracting, we have the quadratic inequality
+    \[100\cdot a^2-820\cdot a+81&lt;0\] which can be shown true by finding the
+    zeroes which are \({1\over10},{81\over10}\). This shows that \((ad)^2\)
+    cannot be big enough which \(a&lt;9\). This gives us \(a=9\). Then we need
+    \(d^2\equiv d\mod10\) so the ones digits match. The only possible \(d\) that
+    satisfy this modular equation are \(1,5,6\). By testing each, we find that
+    \(96^2=9216\) so the answer is \(x=a+d=9+6=15\).
+</p>
+
+<h3 id="apr16">Apr 16</h3>
+
+\[8^x+4^{x-8}=4^{x+8}+2^x\]
+
+<p>
+    First rewrite this with exponent base 2 \[2^{3x}+2^{2x-16}=2^{2x+8}+2^x\]
+    Then multiply each side by \(2^{-x}\) which subtracts \(x\) from each
+    exponent \[2^{2x}+2^{x-16}=2^{x+16}+1\] then if we multiply each side by
+    \(2^{16}\), it might look a little nicer \[2^{2x+16}+2^x=2^{x+32}+2^{16}\]
+    Now with some not as analytical thinking, what if the terms corresponded to
+    each other in pairs? If we make \(2^x=2^{16}\), then \(x=16\) works for the
+    other pair of terms. This can be shown to be the only solution but that is
+    kind of hard to do rigorously. By plotting the log of each side, it shows
+    that they have 1 intersection point.
+</p>
+
+<h3 id="apr17">Apr 17</h3>
+
+\[2^{1000}\mod19\]
+
+\[\begin{align}&2^{1000}\equiv(((((2^2)^2)^2)^5)^5)^5\equiv(((16^2)^5)^5)^5
+\equiv((((-3)^2)^5)^5)^5\equiv(((9)^5)^5)^5\\&
+\equiv9^{125}\equiv9^{128}(-2)^3\equiv5(-8)\equiv17\mod19
+\end{align}\]
+
+<p>
+    Here we have used squaring to compute \(2^8\mod19\) for the 2s factored from
+    1000. Then we leave the 5s since the power 125 is close to 128, a power of
+    2. Next, square 7 times to compute \(9^{128}\mod19\). We need to subtract 3
+    from that exponent which can be done with the modular inverse of 9 modulo 19
+    which is 17 (or -2). This allows us to evaluate the answer without a whole
+    lot of tedious work. The most tedious part here is computing
+    \(9^{128}\mod19\).
+</p>
+
+<h3 id="apr18">Apr 18</h3>
+
+<p>
+    \(y\) is a two-digit decimal number that is not divisible by 10. \(x\) is
+    the sum of the digits of \(99y\).
+</p>
+
+<p>
+    Let \(y=10a+b\) for the digits \(0&lt;a,b\leq9\). Then we can compute
+    \(100y-y\) by subtraction with borrowing. \[\begin{array}{c|c|c|c|c}
+    &&&9&10\\&&b-1&\cancel{10}&\\&a&\cancel{b}&0&0\\
+    -&&&a&b\\\hline&a&b-1&9-a&10-b\end{array}\] Now we just add the 4 digits of
+    the result to get \(a+(b-1)+(9-a)+(10-b)=18\).
+</p>
+
+<h3 id="apr19">Apr 19</h3>
+
+\[1\cdot2+3\cdot4+5=2+12+5=19\]
+
+<h3 id="apr20">Apr 20</h3>
+
+<p>
+    For any function \(f:\mathbb{R}^+\to\mathbb{R}^+\) such that
+    \(\forall x,y:x^2(f(x)+f(y))=(x+y)f(f(x)y)\) find \(f(0.05)\).
+</p>
+
+<p>
+    First substitute \(x=y\) to see what happens. \[2x^2f(x)=2xf(f(x)x)
+    \Rightarrow xf(x)=f(xf(x))\] This shows that all possible values of
+    \(xf(x)\) are fixed points of \(f\). Notice how we have \(x+y\) on one side
+    and \(f(x)+f(y)\) on the other side. We can remove one usage of \(f\) if we
+    make \(x\) and \(y\) fixed points. Make the substitution \(x=tf(t)\) and
+    \(y=sf(s)\) for some \(s,t\). This allows us to divide the \(x+y\) and
+    \(f(x)+f(y)\) parts.
+    \[\begin{align}&t^2f(t)^2(f(tf(t))+f(sf(s)))=(tf(t)+sf(s))f(f(tf(t))sf(s))\\
+    &t^2f(t)^2(tf(t)+sf(s))=(tf(t)+sf(s))f(tf(t)sf(s))\\&t^2f(t)^2=f(tf(t)sf(s))
+    \end{align}\] If instead we substitute \(x=sf(s)\) and \(y=tf(t)\) we get a
+    similar expression. \[s^2f(s)^2=f(tf(t)sf(s))\] Now if we substitute \(s=1\)
+    in both, the right sides are equal so we find \(f(1)^2=t^2f(t)^2
+    \Rightarrow f(1)=tf(t)\) which we can also write as \(f(t)={f(1)\over t}\).
+    All that is left is to find what \(f(1)\) is.
+    \[f(1)=tf(t)=f(tf(t))=f(f(1))={f(1)\over f(1)}=1\]
+    Therefore \(f(t)={1\over t}\) is the only solution and \(f(0.05)=20\).
+</p>
+
+<h3 id="apr21">Apr 21</h3>
+
+\[\sum_{n=1}^\infty\sum_{m=1}^\infty{12\over mn(m+n+2)}\]
+
+<p>
+    This one is a bit difficult and takes quite a bit of work but once you see
+    how to do it, it is mostly familiar partial fractions and telescoping
+    series. First let's focus on the inner summation, factoring out \(12/n\)
+    \[{12\over n}\sum_{m=1}^\infty{1\over m(m+n+2)}\]
+    then using partial fractions to decompose
+    \[\begin{align}&{A\over m}+{B\over m+n+2}={1\over m(m+n+2)}\\
+    &A(m+n+2)+Bm=1\\&(A+B)m+A(n+2)=1\\
+    &A={1\over n+2},B={-1\over n+2}\end{align}\]
+    Then apply this decomposition to the summation of \(m\)
+    \[\begin{align}&{12\over n}\sum_{m=1}^\infty
+        \left[{1/(n+2)\over m}-{1/(n+2)\over m+n+2}\right]
+    ={12\over n(n+2)}\sum_{m=1}^\infty\left[{1\over m}-{1\over m+n+2}\right]\\
+    &{12\over n(n+2)}\left[
+        \begin{array}
+            {1\over1}&+&{1\over2}&+&\ldots&+&{1\over n+2}&
+                +&{1\over n+3}&+&{1\over n+4}&+&\ldots\\
+            &&&&&&&-&{1\over n+3}&-&{1\over n+4}&-&\ldots\\
+        \end{array}\right]\\&
+    ={12\over n(n+2)}\sum_{m=1}^{n+2}{1\over m}\end{align}\]
+    We still have to sum this over \(n=1\) to \(\infty\). First we can apply
+    partial fraction decomposition to \({12\over n(n+2)}\). It is just like the
+    partial fraction decomposition we already did but replace 12 with 1, remove
+    the \(n\), and change each remaining \(m\) to \(n\). Then combining this
+    with summing over \(n\), we have
+    \[\sum_{n=1}^\infty{12\over n(n+2)}\sum_{m=1}^{n+2}{1\over m}
+    =6\sum_{n=1}^\infty\left[{1\over n}-{1\over n+2}\right]
+        \sum_{m=1}^{n+2}{1\over m}
+    =6\sum_{n=1}^\infty\left[{1\over n}-{1\over n+2}\right]S(n)\]
+    where \(S(n)=\sum_{m=1}^{n+2}{1\over m}\). Now we use telescoping series
+    reasoning on the \(1/n-1/(n+2)\) part
+    \[\begin{align}&6\left[\begin{array}
+        {1\over1}S(1)&+&{1\over2}S(2)&+&{1\over3}S(3)&+&{1\over4}S(4)&+&\ldots\\
+        &&&-&{1\over3}S(1)&-&{1\over4}S(2)&-&\ldots\\
+    \end{array}\right]\\
+    &=6\left[S(1)+{1\over2}S(2)+\sum_{r=3}^\infty{1\over r}
+        \left(S(r)-S(r-2)\right)\right]\\
+    &=6\left[{11\over6}+{1\over2}\cdot{25\over12}
+        +\sum_{r=3}^\infty{1\over r}
+        \left({1\over r+1}+{1\over r+2}\right)\right]\\
+    &=11+{25\over4}+6\sum_{r=3}^\infty{1\over r(r+1)}
+        +6\sum_{r=3}^\infty{1\over r(r+2)}\end{align}\]
+    We are almost to the solution. Next we apply partial fractions to these 2
+    summations which is just like what we did before. Then they are going to be
+    familiar telescoping series.
+    \[\sum_{r=3}^\infty{1\over r(r+1)}
+    =\sum_{r=3}^\infty\left({1\over r}-{1\over r+1}\right)
+    ={1\over3}\]
+    \[\sum_{r=3}^\infty{1\over r(r+2)}
+    ={1\over2}\sum_{r=3}^\infty\left({1\over r}-{1\over r+2}\right)
+    ={1\over2}\left({1\over3}+{1\over4}\right)={7\over24}\]
+    Then we use these to finalize our answer.
+    \[11+{25\over4}+6{1\over3}+6{7\over24}={69\over4}+6{5\over8}
+    ={69\over4}+{15\over4}={84\over4}=21\]
+</p>
+
+<h3 id="apr22">Apr 22</h3>
+
+<p>
+    Find the radius of the circle \[{x^2\over4}-x+{y^2\over4}-2y-116=0\]
+</p>
+
+<p>
+    \[x^2-4x+y^2-8y-464=0\] \[(x-2)^2-2^2+(y-4)^2-4^2-464=0\]
+    \[(x-2)^2+(y-4)^2=484=22^2\] Therefore the radius is 22 and the circle is
+    centered at (2,4).
+</p>
+
+<h3 id="apr23">Apr 23</h3>
+
+\[5^2+(4^2-3^2)-(2^2-1)^2\]
+
+<p>
+    \[\begin{align}&=5^2+(4+3)(4-3)-(2^2-1)^2=5^2-(2^2-1)^2+(4+3)(4-3)
+    =5^2-(4-1)^2+(4+3)(4-3)\\&=5^2-3^2+(4+3)(4-3)=(5+3)(5-3)+(4+3)(4-3)
+    =8\cdot2+7\cdot1=16+7=23\end{align}\]
+</p>
+
+<h3 id="apr24">Apr 24</h3>
+
+\[\left(\sum_{n=1}^\infty{2^{n-2}\over8\cdot4^n-6\cdot2^n+1}\right)^{-1}\]
+
+<p>
+    Notice how the exponent bases are 2 and 4, which suggests the bottom is like
+    a quadratic polynomial. First factor \(2^{-2}\) from the numerator and then
+    use \(u=2^n\) to observe that it is just like a rational function.
+    \[\left({1\over4}\sum_{n=1}^\infty
+        {2^n\over8\cdot4^n-6\cdot2^n+1}\right)^{-1}
+    \qquad{u\over8u^2-6u+1}\] Then we can factor \(8u^2-6u+1=(2u-1)(4u-1)\)
+    which prompts us to do the following partial fraction decomposition.
+    \[\begin{align}&{A\over2u-1}+{B\over4u-1}={u\over8u^2-6u+1}\\
+    &A(4u-1)+B(2u-1)=u\\&(4A+2B)u-A-B=u\\&4A+2B=1,\quad-A-B=0\\
+    &A={1\over2},\quad B={-1\over2}\\&{2^n\over8\cdot4^n-6\cdot2^n+1}=
+        {1/2\over2\cdot2^n-1}-{1/2\over4\cdot2^n-1}\end{align}\] Now we use this
+    to write the summation as \[\left({1\over4}\sum_{n=1}^\infty
+        {2^n\over8\cdot4^n-6\cdot2^n+1}\right)^{-1}
+    =8\left(\sum_{n=1}^\infty{1\over2\cdot2^n-1}
+        -\sum_{n=1}^\infty{1\over4\cdot2^n-1}\right)^{-1}\] The 2 summations
+    look similar. Changing \(4\cdot2^n=2\cdot2^{n+1}\) gives us
+    \[8\left(\sum_{n=1}^\infty{1\over2\cdot2^n-1}
+        -\sum_{n=1}^\infty{1\over2\cdot2^{n+1}-1}\right)^{-1}\]
+    We can substitute \(m=n+1\) into the summation to get
+    \[8\left(\sum_{n=1}^\infty{1\over2\cdot2^n-1}
+        -\sum_{m=2}^\infty{1\over2\cdot2^m-1}\right)^{-1}\]
+    Now the summations are the same except for the indexes. Notice how
+    subtracting leaves us with only the \(n=1\) term which is \(1/3\). The
+    answer is \(8(1/3)^{-1}=8\cdot3=24\).
+</p>
+
+<h3 id="apr25">Apr 25</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+</svg>
+
+<p>
+    There are a few ways to solve this problem. First I will present the first
+    way I tried which gives a tough system of equations to solve. Draw the 2
+    right triangles shown below.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+    <polygon points="8 22 13 22 13 3.34" stroke="red" stroke-width="0.2" fill="none" />
+    <polygon points="8 22 18 12 19.83 15.17" stroke="green" stroke-width="0.2" fill="none" />
+    <text x="4" y="8" fill="red" font-size="0.1em">t</text>
+    <text x="10" y="23.5" fill="red" font-size="0.1em">r</text>
+</svg>
+
+<p>
+    The side length of the gray square is \(\sqrt{75}=5\sqrt{3}\). The diagonal
+    of the big square is \(t\sqrt{2}\). For the red right triangle, we have the
+    equation \[r^2+(2r+5\sqrt{3})^2=(t\sqrt{2})^2\] and for the green one
+    \[t^2+(t-\sqrt{r^2+75})^2=(2r\sqrt{2})^2\] This system is difficult to
+    solve, but plotting it in a graphing calculator shows there is a single
+    solution. Next we will see easier methods for finding the answer.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+    <rect x="1.17" y="3.34" width="18.66" height="18.66" stroke="orange" stroke-width="0.2" fill="none" />
+    <text x="1.5" y="6.5" fill="orange" font-size="0.1em">b</text>
+    <text x="5" y="5" fill="orange" font-size="0.1em">a</text>
+    <polygon points="13 12 18 12 13 3.34" stroke="black" stroke-width="0.2" fill="rgba(255,255,0,0.5)" />
+    <polygon points="1.17 10.17 13 10.17 13 17" stroke="red" stroke-width="0.2" fill="none" />
+</svg>
+
+<p>
+    Here, we draw in orange a square around the big square, which is like the
+    one used in a proof of the Pythagorean theorem. Using the bottom orange edge
+    and the vertical line shared by the 3 smaller squares, we find
+    \[a+b=2b+r=2r+5\sqrt{3}\] where \(r=\sqrt{x}\). Next we draw the red right
+    triangle which also has legs of lengths \(a,b\) like the right triangles on
+    the outside with the orange legs. So we can see that
+    \[b={r+5\sqrt{3}\over2}\] Then \[a=r+b={3r+5\sqrt{3}\over2}\]
+    Now we use similar triangles. The yellow shaded triangle is similar to one
+    of the right triangles with legs \(a,b\) so
+    \[\begin{align}
+    &{a\over b}={5\sqrt{3}\over r}={3r+5\sqrt{3}\over r+5\sqrt{3}}\\
+    &5r\sqrt{3}+75=3r^2+5r\sqrt{3}\\&3r^2=75\Rightarrow r=5\Rightarrow x=r^2=25
+    \end{align}\]
+</p>
+
+<p>
+    An alternative solution uses the sum of angles for tangent. See the 2 angles
+    in the diagram below.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <path d="M 8 22 l 11.83 -6.83 l -6.83 -11.83 l -11.83 6.83 Z" />
+        <rect x="8" y="17" width="5" height="5" fill="rgba(0,127,255,0.25)" />
+        <rect x="13" y="12" width="5" height="5" />
+        <rect x="13" y="3.34" width="8.66" height="8.66" fill="rgba(127,127,127,0.25)" />
+        <path d="M 2.902 9.17 l 1 1.732 l -1.732 1" />
+        <path d="M 21.66 4.84 h -1.5 v -1.5" />
+        <path d="M 13 15.5 h -1.5 v 1.5" />
+        <path d="M 8 19.5 h 0.5 h -1 M 13 14.5 h 0.5 h -1 M 18 14.5 h 0.5 h -1 M 13 7.67 h 0.5 h -1 M 13 8.17 h 0.5 h -1 M 21.66 7.67 h 0.5 h -1 M 21.66 8.17 h 0.5 h -1" />
+        <path d="M 10.5 22 v 0.5 v -1 M 10.5 17 v 0.5 v -1 M 17.33 3.34 v 0.5 v -1 M 17.83 3.34 v 0.5 v -1" />
+        <path d="M 7.085 6.755 l 0.25 0.433 l -0.5 -0.866 M 6.652 7.005 l 0.25 0.433 l -0.5 -0.866 M 6.219 7.255 l 0.25 0.433 l -0.5 -0.866" />
+        <path d="M 4.585 16.085 l 0.433 -0.25 l -0.866 0.5 M 4.835 16.518 l 0.433 -0.25 l -0.866 0.5 M 5.085 16.951 l 0.433 -0.25 l -0.866 0.5" />
+    </g>
+    <g>
+        <text x="10" y="20" font-size="0.15em">x</text>
+        <text x="15" y="21" font-size="0.15em">Area=75</text>
+        <path d="M 21 19 L 18 9" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="18.2 9 17.8 9.2 17.8 8.5" stroke="black" stroke-width="0.2" fill="black" />
+    </g>
+    <polygon points="8 22 13 22 13 3.34" stroke="green" stroke-width="0.2" fill="none" />
+    <polygon points="13 3.34 18 12 13 12" stroke="red" stroke-width="0.2" fill="none" />
+    <text x="13.5" y="7" fill="red" font-size="0.1em">&alpha;</text>
+    <text x="11.8" y="9" fill="green" font-size="0.1em">&beta;</text>
+</svg>
+
+<p>
+    We can find \[\tan(\alpha)={r\over5\sqrt{3}},
+    \qquad\tan(\beta)={r\over2r+5\sqrt{3}}\] Observe that \(\alpha+\beta=\pi/4\)
+    so \(\tan(\alpha+\beta)=\tan(\pi/4)=1\) Using a trigonometric identity,
+    \[\begin{align}&\tan(\alpha+\beta)={\tan(\alpha)+\tan(\beta)
+        \over1-\tan(\alpha)\tan(\beta)}={{r\over5\sqrt{3}}+{r\over2r+5\sqrt{3}}
+        \over1-{r\over5\sqrt{3}}{r\over2r+5\sqrt{3}}}=1\\
+    &1-{r\over5\sqrt{3}}{r\over2r+5\sqrt{3}}
+        ={r\over5\sqrt{3}}+{r\over2r+5\sqrt{3}}\\
+    &5\sqrt{3}(2r+5\sqrt{3})-r^2=r(2r+5\sqrt{3})+5r\sqrt{3}\\
+    &10r\sqrt{3}+75-r^2=2r^2+10r\sqrt{3}\\
+    &3r^2=75\Rightarrow r=5\Rightarrow x=r^2=25\end{align}\]
+</p>
+
+<h3 id="apr26">Apr 26</h3>
+
+\[\int_0^\infty{52dt\over\pi(t+1)\sqrt{t^2+2t}}\]
+
+<p>
+    First to simplify it, let \(u=t+1\) and notice how we can use this to
+    complete the square inside the square root and simplify.
+    \[{52\over\pi}\int_{u=1}^{u\to\infty}{du\over u\sqrt{u^2-1}}\]
+    This looks like a good integral to use trigonometric substitution with. The
+    identity \(\tan^2(\theta)+1=\sec^2(\theta)\) tells us what we should pick to
+    simplify the square root part, which is \(u=\sec(\theta)\). This
+    substitution changes the domain to \([0,\pi/2)\) because \(\sec(0)=1\) and
+    \(\lim_{\theta\to\pi/2^-}\sec(\theta)=\infty\).
+    \[\begin{align}&{52\over\pi}\int_{\theta=0}^{\theta\to\pi/2^-}
+        {\sec(\theta)\tan(\theta)d\theta\over
+        \sec(\theta)\sqrt{\sec^2(\theta)-1}}
+    ={52\over\pi}\int_{\theta=0}^{\theta\to\pi/2^-}
+        {\sec(\theta)\tan(\theta)d\theta\over\sec(\theta)\tan(\theta)}\\
+    &={52\over\pi}\int_{\theta=0}^{\theta=\pi/2}d\theta
+    ={52\over\pi}{\pi\over2}=26\end{align}\]
+    The integral found after substituting \(u\) is also a familiar integral for
+    inverse trigonometric functions so it can be solved with that formula.
+</p>
+
+<h3 id="apr27">Apr 27</h3>
+
+\[\text{Round}\left(\lim_{n\to\infty}{10n\over(10n!)^{1\over n}}\right)\]
+
+<p>
+    Here, we can use Stirling's approximation which is
+    \[n!\sim\sqrt{2\pi n}\left(n\over e\right)^n\] which means the ratios of
+    these 2 approaches 1 as \(n\to\infty\).
+    \[\begin{align}&\lim_{n\to\infty}{10n\over(10n!)^{1/n}}
+        =\lim_{n\to\infty}{10n\over10^{1/n}(n!)^{1/n}}
+        =\lim_{n\to\infty}{10n\over10^{1/n}(\sqrt{2\pi n})^{1/n}({n\over e})}\\
+    &=\lim_{n\to\infty}{10e\over10^{1/n}(\sqrt{2\pi})^{1/n}(\sqrt{n})^{1/n}}
+    \end{align}\] Since \(10\) and \(\sqrt{2\pi}\) are constants,
+    \(10^{1/n}\to1\) and \((\sqrt{2\pi})^{1/n}\to1\) as \(n\to\infty\). We need
+    to focus on the remaining part which is
+    \[\lim_{n\to\infty}(\sqrt{n})^{1/n}=\lim_{n\to\infty}n^{1\over2n}
+    =\lim_{n\to\infty}e^{\ln(n)\over2n}=e^{\lim_{n\to\infty}{\ln(n)\over2n}}
+    =e^0=1\] So everything in the denominator is 1, which makes the limit equal
+    to \(10e\). The closest integer is 27.
+</p>
+
+<h3 id="apr28">Apr 28</h3>
+
+\[\sum_{n=1}^{500}2^n\mod223\]
+
+<p>
+    First use the geometric series summation to evaluate that the summation is
+    equal to \(2^{501}-2\). Then by efficient modular exponentiation, we have
+    \(2^{501}\mod223=30\) so subtract 2 and the answer is \(28\).
+</p>
+
+<h3 id="apr29">Apr 29</h3>
+
+<p>
+    Find the sum of the solutions to \(x^2+3x+16\equiv0\mod32\).
+</p>
+
+<p>
+    We can solve this with Hensel's lifting lemma. The modulus is \(32=2^5\)
+    which only has 1 prime, so we do not need to use the Chinese remainder
+    theorem. First, we find solutions \(x^2+3x+16\equiv0\mod2\) and then lift
+    the solutions \(\mod4,8,16,32\). Both \(x\equiv0\) and \(x\equiv1\) are
+    solutions so we have to lift these 2 solutions with the lemma. Let
+    \(f(x)=x^2+3x+16\) and \(f'(x)=2x+3\).
+</p>
+
+<p>
+    By Hensel's lemma, if \(f(a_k)\equiv0\mod p^k\) for some prime \(p\) and
+    integer \(k\), and \(f'(a_k)\not\equiv0\mod p\), then
+    \[a_{k+1}\equiv a_k-f(a_k)(f'(a_1))^{-1}\mod p^{k+1}\]
+    is a lifted solution, \(f(a_{k+1})\equiv0\mod p^{k+1}\). First we lift the
+    \(x\equiv0\) solution. We have \(a_1=0\) and \(f'(a_1)=3\). The table below
+    summarizes the steps which does involve a few tedious calculations.
+</p>
+
+<table>
+    <tr><th>\(k\)</th><th>\(a_k\)</th><th>\(f(a_k)\)</th><th>\(3^{-1}\)</th><th>\(a_{k+1}\)</th></tr>
+    <tr><td>\(1\)</td><td>\(0\)</td><td>\(16\equiv0\mod4\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod4\)</td></tr>
+    <tr><td>\(2\)</td><td>\(0\)</td><td>\(16\equiv0\mod8\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod8\)</td></tr>
+    <tr><td>\(3\)</td><td>\(0\)</td><td>\(16\equiv0\mod16\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod16\)</td></tr>
+    <tr><td>\(4\)</td><td>\(0\)</td><td>\(16\equiv16\mod32\)</td><td>\(11\)</td><td>\(0-16\cdot11\equiv16\mod32\)</td></tr>
+</table>
+
+<p>
+    Then we lift the \(x\equiv1\) solution. We have \(a_1=1\) and \(f'(a_1)=5\).
+    Below is a similar table.
+</p>
+
+<table>
+    <tr><th>\(k\)</th><th>\(a_k\)</th><th>\(f(a_k)\)</th><th>\(5^{-1}\)</th><th>\(a_{k+1}\)</th></tr>
+    <tr><td>\(1\)</td><td>\(1\)</td><td>\(20\equiv0\mod4\)</td><td>Not needed</td><td>\(1-20\cdot5^{-1}\equiv1\mod4\)</td></tr>
+    <tr><td>\(2\)</td><td>\(1\)</td><td>\(20\equiv4\mod8\)</td><td>\(5\mod8\)</td><td>\(1-20\cdot5^{-1}\equiv5\mod8\)</td></tr>
+    <tr><td>\(3\)</td><td>\(5\)</td><td>\(56\equiv8\mod16\)</td><td>\(13\mod16\)</td><td>\(5-56\cdot5^{-1}\equiv13\mod16\)</td></tr>
+    <tr><td>\(4\)</td><td>\(13\)</td><td>\(224\equiv0\mod32\)</td><td>Not needed</td><td>\(13-224\cdot5^{-1}\equiv13\mod32\)</td></tr>
+</table>
+
+<p>
+    So the solutions add to \(16+13=29\).
+</p>
+
+<h3 id="apr30">Apr 30</h3>
+
+\[\log_2\left(\sum_{k=0}^{10}3{30\choose3k}-2\right)\]
+
+<p>
+    The tricky part for this one is evaluating the summation. Consider the
+    binomial expansion \[(1+x)^{30}=\sum_{j=0}^{30}{30\choose j}x^j\]
+    When \(x=1\), then the terms for \(j=0,3,6,\ldots,30\) match what we are
+    looking for. So what we need is choices of \(x\) so we can add/subtract to
+    cancel the terms when \(j\) is not divisible by 3. It turns out that the
+    cube roots of unity are a good choice. We would evaluate the sum
+    \[(1+1)^{30}+(1+e^{2i\pi/3})^{30}+(1+e^{-2i\pi/3})^{30}
+    =\sum_{j=0}^{30}{30\choose j}(1+e^{2i\pi j/3}+e^{-2i\pi j/3})\]
+    On the right, the imaginary parts cancel so we have
+    \[1+e^{2i\pi j/3}+e^{-2i\pi j/3}=1+2\cos\left({2\pi j\over3}\right)=
+    \begin{cases}3&j\equiv0\mod3\\0&\text{otherwise}\\\end{cases}\]
+    This is exactly the summation we are looking for. On the left, we have
+    \[1+e^{2i\pi/3}=1+{-1\over2}+{\sqrt{3}\over2}i={1\over2}+{\sqrt{3}\over2}i
+    =e^{\pi i/3}\] and \[1+e^{-2i\pi/3}=1+{-1\over2}+{-\sqrt{3}\over2}i
+    ={1\over2}+{-\sqrt{3}\over2}i=e^{-\pi i/3}\]
+    Then the left side is \[2^{30}+(e^{\pi i/3})^{30}+(e^{-\pi i/3})^{30}
+    =2^{30}+e^{10\pi i}+e^{-10\pi i}=2^{30}+2\] Now putting this together, we
+    have \[\log_2\left(\sum_{k=0}^{10}3{30\choose3k}-2\right)=\log_2(2^{30}+2-2)
+    =\log_2(2^{30})=30\]
+</p>
+
+</div>
+</body>
+</html>
