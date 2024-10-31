@@ -112,21 +112,155 @@ Then finally \(x=H_{1\over2}+2\ln(2)=(2-2\ln(2))+2\ln(2)=2\)
 
 <h3 id="oct03">Oct 03</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 6" width="280" height="240" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <rect x="0.5" y="2.5" width="3" height="3" />
+        <rect x="0.5" y="5" width="0.5" height="0.5" />
+        <polygon points="3.5 2.5 5.5 3.5 6.5 1.5 4.5 0.5" />
+        <line x1="3.5" x2="5.5" y1="5.5" y2="3.5" />
+        <polygon points="0.5 2.5 3.5 2.5 4.5 0.5" fill="#7cf" />
+        <line x1="2" x2="2" y1="5.625" y2="5.375" />
+        <line x1="3.625" x2="3.375" y1="4" y2="4" />
+        <line x1="2" x2="2" y1="2.375" y2="2.625" />
+        <line x1="0.375" x2="0.625" y1="4" y2="4" />
+        <line x1="4.388" x2="4.5" y1="3.084" y2="2.86" />
+        <line x1="4.5" x2="4.612" y1="3.14" y2="2.916" />
+        <line x1="6.084" x2="5.86" y1="2.612" y2="2.5" />
+        <line x1="6.14" x2="5.916" y1="2.5" y2="2.388" />
+        <line x1="5.612" x2="5.5" y1="0.916" y2="1.14" />
+        <line x1="5.5" x2="5.388" y1="0.86" y2="1.084" />
+        <line x1="3.916" x2="4.14" y1="1.388" y2="1.5" />
+        <line x1="3.86" x2="4.084" y1="1.5" y2="1.612" />
+    </g>
+    <g fill="black" font-size="0.03em">
+        <text x="1.5" y="4">Area</text>
+        <text x="1.5" y="4.5">= 9</text>
+        <text x="3.75" y="3.75">Area</text>
+        <text x="3.75" y="4.25">= 3</text>
+        <text x="4.5" y="2">Area</text>
+        <text x="4.5" y="2.5">= 5</text>
+        <text x="3" y="2">x</text>
+    </g>
+</svg>
+
+<p>
+Consider the side-angle-side area formula for the "Area=3" triangle. It would be
+\({1\over2}ab\sin(\theta)\) where \(a,b\) are \(3,\sqrt{5}\) and \(\theta\) is
+its angle next to the point in the middle of the figure. Now the angle right
+across it, part of the \(x\) triangle, is \(180^\circ-\theta\). We can apply
+the same side-angle-side area formula and only the angle is different because
+the adjacent sides are the same \(3,\sqrt{5}\). Therefore,
+\(x={1\over2}ab\sin(180^\circ-\theta)\). It turns out that
+\(\sin(180^\circ-\theta)=\sin(\theta)\) so it is the same as the "Area=3"
+triangle. Therefore, \(x=3\)
+</p>
+
 <h3 id="oct04">Oct 04</h3>
+
+<p>
+What is the maximum area among all rhombuses of side length 2?
+</p>
+
+<p>
+Intuitively, we would think this is the square, the special case where all the
+angles are right angles, which would have area \(2\times2=4\). If we consider
+this more rigorously, a parallelogram has area \(ab\sin(\theta)\) where the
+side lengths are \(a,b\). The rhombus is the special case where \(a=b\). So the
+area of the rhombus in this problem is \(a^2\sin(\theta)=4\sin(\theta)\) and is
+maximized when \(\theta=\pi/2\).
+</p>
 
 <h3 id="oct05">Oct 05</h3>
 
+<p>
+What percent of integers is divisible by 2 and 5 but not 4?
+</p>
+
+<p>
+Since we are dealing with cardinality of integers, this may be better phrased
+in terms of natural density which is the ratio of integers \(1,2,3,\ldots,n\)
+satisfying a property as \(n\to\infty\). The ratio of integers divisible by 2
+and 5 is \(1/\text{lcm}(2,5)=1/10\) since \(2\mid n\) and \(5\mid n\) implies
+\(\text{lcm}(2,5)\mid n\). Then we subtract integers divisible by 10 but not 4.
+Any \(10k\) is divisible by 4 when \(k\) is even and not divisible by 4 when
+\(k\) is odd. Therefore it is half of these integers. So the ratio we are
+looking for is \({1\over10}\times{1\over2}={1\over20}\) which is 5%.
+</p>
+
 <h3 id="oct06">Oct 06</h3>
+
+<p>
+How many ways can Emmy, Maryam, and Federico line up?
+</p>
+
+<p>
+This is permutations of 3 objects taken from a set of 3, so \(3!=6\).
+</p>
 
 <h3 id="oct07">Oct 07</h3>
 
+<p>
+The largest zero of \(x^4-5x^3-19x^2+29x+42\).
+</p>
+
+<p>
+The zeroes can be found by the rational root test by testing
+\(\pm1,\pm2,\pm3,\pm6,\pm7,\pm14,\pm21,\pm42\). By trial and error, we can find
+all the zeroes with this method are \(-1,2,-3,7\) so the largest is \(7\).
+</p>
+
+<p>
+Another idea for solving this is suppose we can factor it into 2 quadratic
+polynomials with integer constants. Then let those constants be a factorization
+of 42 and see what happens. It turns out multiple choices work as long as each
+factor is the product of 2 of the zeroes. Let's first try \(6\times7=42\).
+We would be looking for \(a,b\) such that the polynomial factors to
+\[(x^2+ax+6)(x^2+bx+7)\]
+This expands to
+\[x^4+x^3(a+b)+x^2(13+ab)+x(7a+6b)+42\]
+Now using the \(x^3\) and \(x\) terms, we can solve the linear system
+\[a+b=-5,\quad7a+6b=29\]
+Which has solution
+\[a=59,\quad b=-64\]
+Then we have to check with the \(x^2\) term to make sure this works, but it does
+not since \(13+ab=-3763\). So we try another choice, such as \(3\times14=42\).
+\[(x^2+ax+3)(x^2+bx+14)=x^4+x^3(a+b)+x^2(17+ab)+x(14a+3b)+42\]
+This time the linear system is
+\[a+b=-5,\:14a+3b=29\quad\Rightarrow\quad a=4,\:b=-9\]
+And we find \(17+ab=-19\) so this is a valid factorization. Now we can find the
+zeroes by factoring quadratic polynomials
+\[x^2+4x+3=(x+1)(x+3),\quad x^2-9x+14=(x-2)(x-7)\]
+</p>
+
 <h3 id="oct08">Oct 08</h3>
+
+\[{{6\choose3}\over\left({5\choose3}\over{4\choose3}\right)}
+={{6\choose3}{4\choose3}\over{5\choose3}}
+={{6!\over3!3!}{4!\over3!1!}\over{5!\over3!2!}}
+={{6\cdot5\cdot4\over6}\cdot4\over{5\cdot4\over2}}
+={5\cdot4\cdot4\over(5\cdot4)/2}={5\cdot4\cdot4\cdot2\over5\cdot4}=4\cdot2=8\]
 
 <h3 id="oct09">Oct 09</h3>
 
+\[\int_0^3x^2dx=\left[{x^3\over3}\right]_0^3
+={3^3\over3}-{0^3\over3}={27\over3}=9\]
+
 <h3 id="oct10">Oct 10</h3>
 
+<p>
+How many binary numbers \(&lt;100000_2\) have exactly three \(1\)'s?
+</p>
+
+<p>
+This is counted from 5 bit numbers so we can view this as a combinatorics
+problem where the 3 positions for the ones are chosen. The answer is
+\({5\choose3}=10\)
+</p>
+
 <h3 id="oct11">Oct 11</h3>
+
+\[\begin{align}&|1+2-3\cdot4\div5\cdot5-4+3-2+1|\\&=|1+2-12\div5\cdot5-4+3-2+1|
+\\&=|1+2-(12/5)\cdot5-4+3-2+1|\\&=|1+2-12-4+3-2+1|=|-11|=11\end{align}\]
 
 <h3 id="oct12">Oct 12</h3>
 
