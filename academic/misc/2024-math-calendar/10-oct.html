@@ -81,7 +81,34 @@
 
 <h3 id="oct01">Oct 01</h3>
 
+\[-\cos(11\pi)=-\cos(11\pi-5\cdot2\pi)=-\cos(\pi)=-(-1)=1\]
+
 <h3 id="oct02">Oct 02</h3>
+
+<p>
+Let \(H_n\) be the generalized Harmonic numbers. \(x=H_{1\over2}+2\ln(2)\)
+</p>
+
+<p>
+The harmonic numbers are defined as
+\[H_n=1+{1\over2}+{1\over3}+\ldots+{1\over n}=\sum_{k=1}^n{1\over k}\]
+The generalized harmonic numbers can be defined from turning this summation into
+an integral as follows
+\[\begin{align}&\sum_{k=1}^n{1\over k}
+=\sum_{k=1}^n\left(\int_0^1x^{k-1}dx\right)
+=\int_0^1\left(\sum_{k=1}^nx^{k-1}\right)dx\\
+&=\int_0^1\left(1+x+x^2+\ldots+x^{n-1}\right)dx
+=\int_0^1{1-x^n\over1-x}dx\end{align}\]
+So we can compute this generalized harmonic number as
+\[H_{1\over2}=\int_0^1{1-\sqrt{x}\over1-x}dx
+=\int_0^1{1-\sqrt{x}\over(1-\sqrt{x})(1+\sqrt{x})}dx
+=\int_0^1{dx\over1+\sqrt{x}}\]
+Here, substitute \(u=1+\sqrt{x}\) which gives us \(du={dx\over2\sqrt{x}}
+\Rightarrow dx=2(u-1)du\). The bounds change to \(u(0)=1,u(1)=2\).
+\[\int_1^2{2(u-1)du\over u}=\int_1^2\left(2-{2\over u}\right)du
+=\left[2u-2\ln|u|\right]_1^2=2-2\ln(2)\]
+Then finally \(x=H_{1\over2}+2\ln(2)=(2-2\ln(2))+2\ln(2)=2\)
+</p>
 
 <h3 id="oct03">Oct 03</h3>
 
