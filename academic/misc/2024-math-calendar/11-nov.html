@@ -313,13 +313,99 @@ Then using the original \(x\) instead of our \(x\) from the derivation,
 
 <h3 id="nov17">Nov 17</h3>
 
+<p>
+How many ways can \(1225\) be written as the sum of at least two consecutive
+numbers.
+</p>
+
+<p>
+Let \(x\) be the first number in a sum of \(k\) numbers. Then the sum is
+\[x+(x+1)+(x+2)+\ldots+(x+k-1)=kx+{(k-1)k\over2}\]
+Then we need this sum to be equal to \(1225\) for some starting integer \(x\)
+and integer \(k\geq2\).
+\[1225=kx+{(k-1)k\over2}\Rightarrow2450=2kx+(k-1)k\Rightarrow
+k(2x+k-1)=2\cdot5^2\cdot7^2\]
+Since \(k\) is an integer, it is a divisor of \(2450\). Then \(2x+k-1\) has
+opposite parity of \(k\) and we can solve for \(x\). So we must factor \(2450\)
+into an odd and even number. This will always be the case since there is only a
+single \(2\), it will onlyn be part of 1 factor. So since there are \(18\)
+divisors of \(2450\), we can find a \(k\) and \(2x+k-1\) in \(18\) different
+ways. We only have to exclude \(k=1\) since it must be at least 2 consecutive
+numbers. Therefore, the answer is 17. Each possible way corresponds to \(k\)
+numbers where \(k&gt;1\) and \(k\mid2450\). The starting number is
+\(x={1\over2}\left({2450\over k}+1-k\right)\)
+</p>
+
 <h3 id="nov18">Nov 18</h3>
+
+<p>
+A sphere of radius \(x\) is inscribed in the tetrahedron with vertices
+\((162,0,0)\), \((0,108,0)\), \((0,0,54)\), and \((0,0,0)\).
+</p>
+
+<p>
+3 of the faces are on the main axis planes for the first octant
+(\(x,y,z\geq0\)). Since the sphere is tangent to each of these, its center must
+be \((r,r,r)\) with radius \(r\). From this center point, we can make a line of
+length \(r\) to the point of tangency with the last plane, which will be normal
+to that plane.
+</p>
+
+<p>
+The non-axis plane is described by the 3 points other than the origin. The plane
+can be described by \(ax+by+cz=1\) for some \(a,b,c\). We can use those 3 points
+to form the equations \(162a=1,108b=1,54c=1\) which gives us the plane equation:
+\[{1\over162}x+{1\over108}y+{1\over54}z=1\Rightarrow2x+3y+6z=324\]
+From \((r,r,r)\), we add a length \(r\) vector in the direction of the plane's
+normal vector \((2,3,6)\) to find a point on the plane. This gives us the point:
+\[(r,r,r)+r{(2,3,6)\over\Vert(2,3,6)\Vert}=(r,r,r)
++r\left({2\over7},{3\over7},{6\over7}\right)
+=r\left({9\over7},{10\over7},{13\over7}\right)\]
+Next we put these 3 points into the equation for the plane and solve for \(r\)
+\[2\cdot{9\over7}r+3\cdot{10\over7}r+6{13\over7}r=324\Rightarrow
+{18+30+78\over7}r=324\Rightarrow{126\over7}r=324\Rightarrow18r=324\Rightarrow
+r=18\]
+</p>
 
 <h3 id="nov19">Nov 19</h3>
 
+<p>
+3 kg of 24 carat gold and 5 kg of 16 carat gold are melted to form a bar of
+\(x\) carat gold.
+</p>
+
+<p>
+This is a weighted average \({3\over8}\cdot24+{5\over8}16=9+10=19\)
+</p>
+
 <h3 id="nov20">Nov 20</h3>
 
+\[x-y=10,\quad{1\over y}-{1\over x}={1\over20},\quad x&gt;0\]
+
+<p>
+Multiplying the 2nd equation by \(xy\), we have \(x-y={xy\over20}\). So by the
+first equation \(xy=200\). Then substitute for \(y\) and we solve the quadratic
+\[x(x-10)=200\Rightarrow x^2-10x-200=0\Rightarrow (x+10)(x-20)=0\]
+So the only positive solution as required is \(x=20,y=10\).
+</p>
+
 <h3 id="nov21">Nov 21</h3>
+
+<p>
+How many seven digit binary numbers are there such that no two consecutive
+digits are 0?
+</p>
+
+<p>
+Seven digit binary numbers start with a 1 and are followed by a binary string
+of length 6. So the answer is the number of binary strings of length 6 with no
+consecutive 0. Let \(C(n)\) be the number of length \(n\) binary strings with no
+consecutive 0s. Then \(C(0)=1,C(1)=2\) (for length 0 it is the empty string).
+Then \(C(n)\) is computed recursively. If the first bit is 0, the 2nd bit must
+be 1 and there are \(C(n-2)\) possible ways for the next bits. If the first bit
+is 1, then there are \(C(n-1)\) possible ways for the next bits. This is exactly
+the fibonacci sequence and we can find \(C(6)=21\) is the solution.
+</p>
 
 <h3 id="nov22">Nov 22</h3>
 
