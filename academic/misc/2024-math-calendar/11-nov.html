@@ -409,6 +409,42 @@ the fibonacci sequence and we can find \(C(6)=21\) is the solution.
 
 <h3 id="nov22">Nov 22</h3>
 
+<p>
+Find the average queue size (rounded) of an M/M/1 queue with arrival rate 22 and
+service rate 23.
+</p>
+
+<p>
+There is a lot of theory behind these queue models so this will probably not be
+a very complete answer.
+</p>
+
+<p>
+The M/M/1 queue is a stochastic model with a state space describing the number
+of jobs in the queue. Arrivals are poisson distributed with mean \(\lambda=22\)
+and service times are exponentially distributed with parameter \(\mu=23\) so
+they have mean \(1/\mu=1/23\). This says that every time unit, we expect about
+22 processes to arrive and 23 to be completed.
+</p>
+
+<p>
+Based on the <a href="https://en.wikipedia.org/wiki/M/M/1_queue" target="_blank">Wikipedia</a>
+article, the value \(p=\lambda/\mu=22/23\) describes the queue utilization. The
+model is stable when \(p&lt;1\), when jobs are completed on average faster than
+they arrive. The probability of the system being in state \(i\) is \((1-p)p^i\).
+This is a geometric distribution which has well-known results, but for the
+purpose of adding more math to this solution, we can compute the average state
+index with the following summation
+\[\sum_{i=0}^\infty i(1-p)p^i=(1-p)\sum_{i=1}^\infty ip^i\]
+Now visualize a grid of the values summed in the summmation
+\[\begin{array}{ccc}p&&&\\p^2&p^2&&\\p^3&p^3&p^3&\\\vdots&&&\ddots\\\end{array}\]
+The summation sums by rows so instead we can write a summation by columns
+\[(1-p)\sum_{i=1}^\infty p^i\left(1+p+p^2+\ldots\right)
+=(1-p)\sum_{i=1}^\infty p^i{1\over1-p}=\sum_{i=1}^\infty p^i={p\over1-p}\]
+So now substitute \(p\) to find the average queue size
+\[{p\over1-p}={22/23\over1-22/23}={22/23\over1/23}=22\]
+</p>
+
 <h3 id="nov23">Nov 23</h3>
 
 <h3 id="nov24">Nov 24</h3>
