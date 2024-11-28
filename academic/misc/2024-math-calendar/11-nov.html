@@ -447,13 +447,88 @@ So now substitute \(p\) to find the average queue size
 
 <h3 id="nov23">Nov 23</h3>
 
+<p>
+Find the number of weeks in 231840 minutes.
+</p>
+
+<p>
+By factoring, we find \(2^5\cdot3^2\cdot5\cdot7\cdot23\). We divide out
+\(60\cdot24=2^5\cdot3^2\cdot5\) for minutes in a day and \(7\) for days in a
+week. What remains in the factor \(23\)
+</p>
+
 <h3 id="nov24">Nov 24</h3>
+
+\[\begin{align}&x,y,z,w\in\mathbb{Z}^+\\&xyzw=8!\\
+&xy+x+y=524\\&yz+y+z=146\\&zw+z+w=104\\\end{align}\]
+
+<p>
+The 3 equations have a nice factorization if 1 is added to each side. We get
+\[\begin{align}&(x+1)(y+1)=525=3\cdot5\cdot5\cdot7\\
+&(y+1)(z+1)=147=3\cdot7\cdot7\\&(z+1)(w+1)=105=3\cdot5\cdot7\end{align}\]
+From the first 2 of these, \(y+1\) divides both \(525\) and \(147\) so it
+divides their GCD which is \(21\). Similarly, \(z+1\) divides \(21\). Since
+\(y&gt;0\), the 3 cases are \(y+1=3,7,21\). If \(y+1=3\), then \(z+1=49\) which
+does not divide \(21\) so it can't be that. If \(y+1=7\), then \(x+1=75\) so we
+find \(37\) is a factor of \(x\) but it is not a factor of \(8!\) so this case
+does not work either. Finally, if \(y+1=21\), then \(z+1=7,x+1=25,w+1=15\). So
+by multiplying the variables \(x=24,y=20,z=6,w=14\), we can confirm \(xyzw=8!\).
+Therefore the solution is \(x=24\).
+</p>
 
 <h3 id="nov25">Nov 25</h3>
 
+<p>
+Alec lost \(20\%\) of his money. He then gained \(x\%\) of what he had
+remaining, just breaking even.
+</p>
+
+<p>
+By losing \(20\%\), Alec has \(0.8M\) where \(M\) is the amount he started with.
+From here, we solve the equation \(0.8M(1+x/100)=M\) to find what \(\%\) he has
+to gain to get back to \(M\).
+\[0.8M(1+x/100)=M\Rightarrow1+x/100=1.25\Rightarrow x=25\]
+</p>
+
 <h3 id="nov26">Nov 26</h3>
 
+<p>
+Find the smallest positive integer \(x\) such that the sum of \(x\) and the next
+\(50\) consecutive numbers is a square number.
+</p>
+
+<p>
+The sum is
+\[x+(x+1)+(x+2)+\ldots+(x+50)=51x+{50\cdot51\over2}=51(x+25)\]
+The factors are \(51=3\cdot17\) so \(x+25\) must have these same factors to make
+this quantity a square. Therefore, \(x+25=51\Rightarrow x=26\).
+</p>
+
 <h3 id="nov27">Nov 27</h3>
+
+\[\begin{align}&x^2+y^2+z^2=1296\\&x+y+z=72\\&x^2=yz\\\end{align}\]
+
+<p>
+It turns out there is actually no point in 3D space that simultaneously
+satisfies all 3 of these equations. We can find a solution for \(x\) which may
+correspond to imaginary solutions. Start with the 2nd equation, multiply \(x\),
+then substitute the 3rd
+\[x^2+xy+xz=72x\Rightarrow yz+xy+xz=72x\]
+Now square both sides of the 2nd equation and use some substitutions
+\[\begin{align}&x^2+y^2+z^2+2xy+2xz+2yz=72^2\\
+&1296+2(xy+xz+yz)=72^2\\
+&36^2+2(72x)=72^2\\
+&144x=3\cdot36^2\Rightarrow x=27\\\end{align}\]
+Now if we substitute this into the equations, we get a new system in 2 variables
+\[\begin{align}&y^2+z^2=567\\&y+z=45\\&yz=729\\\end{align}\]
+But by using the first 2 equations
+\[y^2+(45-y)^2=567\Rightarrow y^2-45y+729=0\Rightarrow
+y={45\pm9\sqrt{-11}\over2}\]
+Then we can use this to show that there are 2 solutions in complex 3D space that
+satisfy all 3 equations simultaneously
+\[\begin{align}&x=24,y={45+9\sqrt{-11}\over2},z={45-9\sqrt{-11}\over2}\\
+&x=24,y={45-9\sqrt{-11}\over2},z={45+9\sqrt{-11}\over2}\end{align}\]
+</p>
 
 <h3 id="nov28">Nov 28</h3>
 
