@@ -563,7 +563,48 @@ supplementary to \(x^\circ\)) is
 
 <h3 id="nov29">Nov 29</h3>
 
+<p>
+A set of 5 positive integers has a median of 17 and mean of 13. Find the largest
+possible value in the set.
+</p>
+
+<p>
+For clarification, the word used is "set" is used but equal elements are
+allowed. Describe the set by the 5 integers
+\[0&lt;a\leq b\leq c\leq d\leq e\]
+where \(c=17\). From the mean, we know
+\[a+b+c+d+e=13\cdot5=65\]
+Subtract \(c=17\) so we have
+\[a+b+d+e=48\]
+Next subtract 2 since \(a,b\geq1\) which shows
+\[d+e\leq46\]
+And finally since \(d\geq c=17\), we find the largest element is
+\[e\leq46-17=29\]
+So the largest possible value is 29. The solution set is 1,1,17,17,29.
+</p>
+
 <h3 id="nov30">Nov 30</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 20 20" width="300" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="6.928 4 0 8 -6.928 4 -6.928 -4 -0 -8 6.928 -4" />
+        <line x1="6.428" x2="7.428" y1="0" y2="0" />
+        <line x1="3.214" x2="3.714" y1="5.567" y2="6.433" />
+        <line x1="-3.214" x2="-3.714" y1="5.567" y2="6.433" />
+        <line x1="-6.428" x2="-7.428" y1="0" y2="0" />
+        <line x1="-3.214" x2="-3.714" y1="-5.567" y2="-6.433" />
+        <line x1="3.214" x2="3.714" y1="-5.567" y2="-6.433" />
+        <path d="M 0 8 l 0 -6 A 6 6 0 0 0 -3 2.804 Z" stroke="#5ac" fill="#7cf" />
+        <polyline points="-6.928 -4 0 8 0 -8" />
+    </g>
+    <text x="-3" y="1" fill="black" font-size="0.15em">x&deg;</text>
+</svg>
+
+<p>
+Consider the circumscribed circle around this regular hexagon. The angle
+\(x^\circ\) subtends an arc of \(60^\circ\) since it is \(1/6\) of the circle.
+Therefore, \(x=30\), half of the arc measure.
+</p>
 
 </div>
 </body>
