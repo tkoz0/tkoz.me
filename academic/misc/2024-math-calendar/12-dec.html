@@ -13,6 +13,9 @@
             width: 250px;
             text-align: center;
         }
+        .b1 { border-top: 1px solid black; }
+        .b2 { border-left: 1px solid black; }
+        .td2 td { padding: 4px; text-align: center; }
     </style>
 </head>
 <body>
@@ -20,7 +23,7 @@
 
 <h1>Math Calendar 2024 December</h1>
 
-<table id="cal">
+<table id="cal" class="table_normal">
     <tr><th colspan="7">December</th></tr>
     <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
     <tr>
@@ -81,7 +84,116 @@
 
 <h3 id="dec01">Dec 01</h3>
 
+<p>
+Find \(-ijk\) where \(i,j,k\) are quaternions.
+</p>
+
+<p>
+Quaternions are an extension of complex numbers which is not commutative, but it
+is associative. Multiplication is defined where \(1\) is the identity element
+and the imaginary basis products are
+\[i^2=j^2=k^2=-1,\ ij=-ji=k,\ jk=-kj=i,\ ki=-ik=j\]
+So by using this
+\[-ijk=-(ij)k=-(k)k=-k^2=-(-1)=1\]
+</p>
+
 <h3 id="dec02">Dec 02</h3>
+
+<p>
+Find the remainder whehn \(x^6+1\) is divided by \(x^2-x+1\).
+</p>
+
+<p>
+The most clear way to solve this would be to use polynomial division.
+</p>
+
+<table style="border-collapse: collapse; margin: 0 auto;" class="td2">
+    <tr>
+        <td colspan="5"></td>
+        <td>\(x^4\)</td>
+        <td>\(+x^3\)</td>
+        <td>\(+0x^2\)</td>
+        <td>\(-x\)</td>
+        <td>\(-1\)</td>
+    </tr>
+    <tr>
+        <td>\(x^2\)</td>
+        <td>\(-x\)</td>
+        <td>\(+1\)</td>
+        <td class="b1 b2">\(x^6\)</td>
+        <td class="b1">\(+0x^5\)</td>
+        <td class="b1">\(+0x^4\)</td>
+        <td class="b1">\(+0x^3\)</td>
+        <td class="b1">\(+0x^2\)</td>
+        <td class="b1">\(+0x\)</td>
+        <td class="b1">\(+1\)</td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td>\(-\)</td>
+        <td>\((x^6\)</td>
+        <td>\(-x^5\)</td>
+        <td>\(+x^4)\)</td>
+        <td colspan="4"></td>
+    </tr>
+    <tr>
+        <td colspan="4"></td>
+        <td>\(x^5\)</td>
+        <td>\(-x^4\)</td>
+        <td>\(+0x^3\)</td>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <td colspan="3"></td>
+        <td>\(-\)</td>
+        <td>\((x^5\)</td>
+        <td>\(-x^4\)</td>
+        <td>\(+x^3)\)</td>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <td colspan="6"></td>
+        <td>\(-x^3\)</td>
+        <td>\(+0x^2\)</td>
+        <td>\(+0x\)</td>
+        <td colspan="1"></td>
+    </tr>
+    <tr>
+        <td colspan="5"></td>
+        <td>\(-\)</td>
+        <td>\((-x^3\)</td>
+        <td>\(+x^2\)</td>
+        <td>\(-x)\)</td>
+        <td colspan="1"></td>
+    </tr>
+    <tr>
+        <td colspan="7"></td>
+        <td>\(-x^2\)</td>
+        <td>\(+x\)</td>
+        <td>\(+1\)</td>
+    </tr>
+    <tr>
+        <td colspan="6"></td>
+        <td>\(-\)</td>
+        <td>\((-x^2\)</td>
+        <td>\(+x\)</td>
+        <td>\(-1)\)</td>
+    </tr>
+    <tr>
+        <td colspan="9"></td>
+        <td>\(2\)</td>
+    </tr>
+</table>
+
+<p>
+This shows that the remainder is \(2\) and
+\[{x^6+1\over x^2-x+1}=x^4+x^3-x-1+{2\over x^2-x+1}\]
+One other possible way to see it for this problem is noticing that \(x^2-x+1\)
+is a factor of \(x^3+1\). Then \((x^3+1)(x^3-1)=x^6-1\) and adding the remainder
+of \(2\) shows that \(x^6+1=(x^6-1)+2\) where \(x^2-x+1\) is a factor of
+\(x^6-1\). Or it can also be found by seeing how to factor
+\[x^6-1=(x^3+1)(x^3-1)=(x+1)(x^2-x+1)(x-1)(x^2+x+1)\]
+</p>
 
 <h3 id="dec03">Dec 03</h3>
 

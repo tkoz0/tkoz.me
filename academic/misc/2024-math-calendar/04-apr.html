@@ -13,6 +13,8 @@
             width: 250px;
             text-align: center;
         }
+        .r { background: #f77; }
+        .g { background: #7f7; }
     </style>
 </head>
 <body>
@@ -20,7 +22,7 @@
 
 <h1>Math Calendar 2024 April</h1>
 
-<table id="cal">
+<table id="cal" class="table_normal">
     <tr><th colspan="7">April</th></tr>
     <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
     <tr>
@@ -157,13 +159,13 @@
     5 cases of congruency modulo 10.
 </p>
 
-<table>
+<table class="table_normal">
     <tr><th>\(\mod10\)</th><th>\(p^2-1\)</th><th>\(p^2+1\)</th></tr>
-    <tr><td>1</td><td style="background:#f77;">0</td><td>2</td></tr>
-    <tr><td>3</td><td>8</td><td style="background:#f77;">0</td></tr>
-    <tr style="background:#7f7;"><td>5</td><td>4</td><td>6</td></tr>
-    <tr><td>7</td><td>8</td><td style="background:#f77;">0</td></tr>
-    <tr><td>9</td><td style="background:#f77;">0</td><td>2</td></tr>
+    <tr><td>1</td><td class="r">0</td><td>2</td></tr>
+    <tr><td>3</td><td>8</td><td class="r">0</td></tr>
+    <tr class="g"><td>5</td><td>4</td><td>6</td></tr>
+    <tr><td>7</td><td>8</td><td class="r">0</td></tr>
+    <tr><td>9</td><td class="r">0</td><td>2</td></tr>
 </table>
 
 <p>
@@ -930,7 +932,7 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     summarizes the steps which does involve a few tedious calculations.
 </p>
 
-<table>
+<table class="table_normal">
     <tr><th>\(k\)</th><th>\(a_k\)</th><th>\(f(a_k)\)</th><th>\(3^{-1}\)</th><th>\(a_{k+1}\)</th></tr>
     <tr><td>\(1\)</td><td>\(0\)</td><td>\(16\equiv0\mod4\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod4\)</td></tr>
     <tr><td>\(2\)</td><td>\(0\)</td><td>\(16\equiv0\mod8\)</td><td>Not needed</td><td>\(0-16\cdot3^{-1}\equiv0\mod8\)</td></tr>
@@ -943,7 +945,7 @@ x^2+xy=312\\&xy+y^2=264\end{align}\]
     Below is a similar table.
 </p>
 
-<table>
+<table class="table_normal">
     <tr><th>\(k\)</th><th>\(a_k\)</th><th>\(f(a_k)\)</th><th>\(5^{-1}\)</th><th>\(a_{k+1}\)</th></tr>
     <tr><td>\(1\)</td><td>\(1\)</td><td>\(20\equiv0\mod4\)</td><td>Not needed</td><td>\(1-20\cdot5^{-1}\equiv1\mod4\)</td></tr>
     <tr><td>\(2\)</td><td>\(1\)</td><td>\(20\equiv4\mod8\)</td><td>\(5\mod8\)</td><td>\(1-20\cdot5^{-1}\equiv5\mod8\)</td></tr>

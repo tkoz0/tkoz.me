@@ -19,21 +19,23 @@ body {
     box-sizing: border-box;
 }
 
-table {
+.table_normal {
     border-collapse: collapse;
     margin: 0 auto;
 }
 
-th {
+.table_normal th {
     background: lightgray;
-}
-
-th, td {
     border: 1px solid black;
     padding: 2px;
 }
 
-details {
+.table_normal td {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.pe_answer {
     background: lightgray;
 }
 
