@@ -197,7 +197,45 @@ of \(2\) shows that \(x^6+1=(x^6-1)+2\) where \(x^2-x+1\) is a factor of
 
 <h3 id="dec03">Dec 03</h3>
 
+\[\sum_{k=0}^9k2^k-\sum_{j=0}^{12}2^j\]
+
+<p>
+The 2nd summation is a typical geometric sum. There is a way to modify the first
+so we can evaluate it with geometric sums. Ignore \(k=0\) since it is 0 and
+consider the grid
+\[\begin{array}{|c|c|c|c|c|}\hline
+2^1&&&&\\\hline
+2^2&2^2&&&\\\hline
+2^3&2^3&2^3&&\\\hline
+\vdots&&&\ddots&\\\hline
+2^9&2^9&\ldots&2^9&2^9\\\hline
+\end{array}\]
+If we expand \(k2^k=2^k+2^k+\ldots+2^k\) then the summation sums row by row in
+this grid. We can change it to sum column by column instead.
+\[\sum_{k=0}^9k2^k=\sum_{k=1}^9k2^k=\sum_{i=1}^9\left[\sum_{j=i}^92^j\right]\]
+Next we replace the inner summation with 2 summations and proceed to solve it
+\[\begin{align}&=\sum_{k=1}^9\left[\sum_{j=0}^92^j-\sum_{j=0}^{i-1}2^j\right]
+=\sum_{k=1}^9\left[(2^{10}-1)-(2^i-1)\right]
+=\sum_{k=1}^9\left[2^{10}-2^i\right]\\&=9\cdot2^{10}-\sum_{k=1}^92^i
+=9\cdot2^{10}-(2^{10}-2)=8\cdot2^{10}+2=2^{13}+2
+\end{align}\]
+Then we just subtract
+\[(2^{13}+2)-\sum_{j=0}^{12}2^j=(2^{13}+2)-(2^{13}-1)=3\]
+</p>
+
 <h3 id="dec04">Dec 04</h3>
+
+<p>
+Find the smaller solution
+\[\sqrt{85-x}+\sqrt{x}=11\]
+We can square each side to eliminate square roots, but at the end we will have
+to check for extraneous solutions.
+\[(85-x)+x+2\sqrt{(85-x)x}=11^2=121\Rightarrow\sqrt{85x-x^2}=(121-85)/2=18\]
+Then square again to eliminate the new square root.
+\[85x-x^2=18^2=324\Rightarrow x^2-85x+324=0\Rightarrow(x-4)(x-81)=0\]
+So the solutions are \(x=4,x=81\). Checking shows that both are solutions and we
+take the smaller one which is \(x=4\).
+</p>
 
 <h3 id="dec05">Dec 05</h3>
 
