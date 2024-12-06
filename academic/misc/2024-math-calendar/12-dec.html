@@ -246,6 +246,44 @@ take the smaller one which is \(x=4\).
 
 <h3 id="dec06">Dec 06</h3>
 
+<p>
+How many times would you expect to have to flip a coin if you flip until two
+tails are flipped in a row?
+</p>
+
+<p>
+Let \(E\) be the expected number of flips. Consider the following tree.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -10 12 15" width="120" height="150" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <circle cx="0" cy="-8" r="0.25" fill="black" />
+        <line x1="0.5" x2="2.5" y1="-7.5" y2="-3.5" />
+        <line x1="-0.5" x2="-2.5" y1="-7.5" y2="-3.5" />
+        <line x1="2.5" x2="0.5" y1="-1.5" y2="2.5" />
+        <line x1="3" x2="5" y1="-1.5" y2="2.5" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="-3.5" y="-2">H</text>
+        <text x="2.5" y="-2">T</text>
+        <text x="-0.5" y="4">H</text>
+        <text x="5" y="4">T</text>
+    </g>
+</svg>
+
+<p>
+If we start with heads, then we are back to the start waiting for 2 consecutive
+tails. This has probability \(1/2\) and expected flips \(E+1\). If we flip tails
+and then heads, it is a similar situation of returning to the start. The
+probability is \(1/4\) and expected flips is \(E+2\). Finally, flipping 2 tails
+has probability \(1/4\) and expected flips \(2\). Combining all this information
+gives us the following equation for \(E\)
+\[E={1\over2}\cdot(E+1)+{1\over4}\cdot(E+2)+{1\over4}\cdot2\]
+Multiply each side by \(4\)
+\[4E=2(E+1)+(E+2)+2=3E+6\]
+Then subtract to get \(E=6\). Therefore 6 flips are expected.
+</p>
+
 <h3 id="dec07">Dec 07</h3>
 
 <h3 id="dec08">Dec 08</h3>
