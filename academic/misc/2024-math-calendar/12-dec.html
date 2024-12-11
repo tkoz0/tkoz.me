@@ -297,9 +297,51 @@ Using the 2 point slope formula
 
 <h3 id="dec08">Dec 08</h3>
 
+<p>
+\(247,623,212,35x\) is divisible by \(9\). \(x\) is a single digit.
+</p>
+
+<p>
+When writing a base 10 number with digits \(d_nd_{n-1}\ldots d_1d_0\) as a sum,
+we can see the following reduction modulo 9.
+\[\sum_{i=0}^nd_i\cdot10^i\equiv\sum_{i=0}^nd_i1^i=\sum_{i=0}^nd_i\]
+This shows a number is divisible by 9 when its digit sum is divisible by 9. We
+have the following sum
+\[2+4+7+6+2+3+2+1+2+3+5+x=37+x\]
+which must be divisible by 9 for some \(0\leq x&lt;10\). The solution is
+\(x=8\).
+</p>
+
 <h3 id="dec09">Dec 09</h3>
 
+<p>
+What is the tenths digit of \(\left(17+\sqrt{280}\right)^2\)
+</p>
+
+<p>
+I did not find an elegant way to solve this. When expanding this thing, the term
+we have to care about is \(34\sqrt{280}\) since it creates the fractional part,
+the integer part does not affect the answer. If we multiply it by 10, then we
+are looking for the ones digit. Then
+\[340\sqrt{280}=\sqrt{340^2\cdot280}=\sqrt{32368000}\]
+and we could find by integer square root
+\[5689^2&lt;32368000&lt;5690^2\]
+So we take the ones digit from the floor which is \(9\). This can also be solved
+by calculator.
+</p>
+
 <h3 id="dec10">Dec 10</h3>
+
+<p>
+How many ways can one choose 2 pieces of fruit from a choice of nectarine,
+tangerine, mango, apple, pear?
+</p>
+
+<p>
+The fruits available are irrelevant. The part that matters is there are 5 of
+them. This is 5 choose 2 in combinatorics.
+\[{5\choose2}={5!\over2!(5-2)!}={5!\over2!3!}={5\cdot4\over2}=10\]
+</p>
 
 <h3 id="dec11">Dec 11</h3>
 
