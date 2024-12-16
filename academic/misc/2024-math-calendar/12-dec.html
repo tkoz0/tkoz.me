@@ -16,6 +16,9 @@
         .b1 { border-top: 1px solid black; }
         .b2 { border-left: 1px solid black; }
         .td2 td { padding: 4px; text-align: center; }
+        .h { background: yellow; }
+        .dr { background: #f77; }
+        .db { background: lightblue; }
     </style>
 </head>
 <body>
@@ -511,7 +514,222 @@ This can be checked to ensure it is not an extraneous solution.
 
 <h3 id="dec14">Dec 14</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="200" height="200" class="img_center">
+    <polygon points="2 8 4 4 6 3 8 7 7 1 3 2" stroke="black" stroke-width="0.05" fill="#7cf" />
+    <g stroke="black" stroke-width="0.05" fill="black">
+        <circle cx="2" cy="8" r="0.2" />
+        <circle cx="4" cy="4" r="0.2" />
+        <circle cx="6" cy="3" r="0.2" />
+        <circle cx="8" cy="7" r="0.2" />
+        <circle cx="7" cy="1" r="0.2" />
+        <circle cx="3" cy="2" r="0.2" />
+    </g>
+    <text x="4.3" y="3" fill="black" font-size="0.1em">x</text>
+    <g fill="black" font-size="0.05em">
+        <text x="1" y="9">(1,1)</text>
+        <text x="3" y="5">(3,5)</text>
+        <text x="5" y="4">(5,6)</text>
+        <text x="7" y="8">(7,2)</text>
+        <text x="7.5" y="1.5">(6,8)</text>
+        <text x="1" y="2.5">(2,7)</text>
+    </g>
+</svg>
+
+<p>
+There are various methods to solve this problem. One is to split the object into
+triangles and add their areas. Triangle areas can be computed by using 2 of
+their sides as vectors. The determinant of 2 vectors \((a,b),(c,d)\) is
+\(ad-bc\) and its absolute value is the area of the parallelogram determined by
+it. Half of this parallelogram is a triangle with area \(|ad-bc|/2\). Below is
+the diagram with points labeled.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="200" height="200" class="img_center">
+    <polygon points="2 8 4 4 6 3 8 7 7 1 3 2" stroke="black" stroke-width="0.05" fill="#7cf" />
+    <g stroke="black" stroke-width="0.05" fill="black">
+        <circle cx="2" cy="8" r="0.2" />
+        <circle cx="4" cy="4" r="0.2" />
+        <circle cx="6" cy="3" r="0.2" />
+        <circle cx="8" cy="7" r="0.2" />
+        <circle cx="7" cy="1" r="0.2" />
+        <circle cx="3" cy="2" r="0.2" />
+    </g>
+    <text x="4.3" y="3" fill="black" font-size="0.1em">x</text>
+    <g fill="black" font-size="0.05em">
+        <text x="1" y="9">A(1,1)</text>
+        <text x="3" y="5">B(3,5)</text>
+        <text x="5" y="4">C(5,6)</text>
+        <text x="7" y="8">D(7,2)</text>
+        <text x="7.5" y="1.5">E(6,8)</text>
+        <text x="0.5" y="2.5">F(2,7)</text>
+    </g>
+</svg>
+
+<p>
+The area of the "outer" quadrilateral from points \(A,D,E,F\) can be determined
+from adding the following 2 triange areas:
+\[{1\over2}\begin{vmatrix}F-A\\D-A\\\end{vmatrix}
+={1\over2}\begin{vmatrix}1&6\\6&1\\\end{vmatrix}={35\over2}\]
+\[{1\over2}\begin{vmatrix}F-E\\D-E\\\end{vmatrix}
+={1\over2}\begin{vmatrix}-4&-1\\1&-6\\\end{vmatrix}={25\over2}\]
+So the "outer" quadrilateral has area \(30\). For the "inner" quadrilateral
+\(A,B,C,D\), we use the following 2 triangles:
+\[{1\over2}\begin{vmatrix}B-A\\D-A\\\end{vmatrix}
+={1\over2}\begin{vmatrix}2&4\\6&1\\\end{vmatrix}={22\over2}\]
+\[{1\over2}\begin{vmatrix}B-C\\D-C\\\end{vmatrix}
+={1\over2}\begin{vmatrix}-2&-1\\2&-4\\\end{vmatrix}={10\over2}\]
+So the "inner" quadrilateral has area \(16\). By subtracting, the area of the
+shaded part is \(30-16=14\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="200" height="200" class="img_center">
+    <polygon points="2 8 4 4 6 3 8 7 7 1 3 2" stroke="black" stroke-width="0.05" fill="#7cf" />
+    <g stroke="black" stroke-width="0.05" fill="black">
+        <circle cx="2" cy="8" r="0.2" />
+        <circle cx="4" cy="4" r="0.2" />
+        <circle cx="6" cy="3" r="0.2" />
+        <circle cx="8" cy="7" r="0.2" />
+        <circle cx="7" cy="1" r="0.2" />
+        <circle cx="3" cy="2" r="0.2" />
+    </g>
+    <text x="4.3" y="3" fill="black" font-size="0.1em">x</text>
+    <g fill="black" font-size="0.05em">
+        <text x="1" y="9">(1,1)</text>
+        <text x="3" y="5">(3,5)</text>
+        <text x="5" y="4">(5,6)</text>
+        <text x="7" y="8">(7,2)</text>
+        <text x="7.5" y="1.5">(6,8)</text>
+        <text x="1" y="2.5">(2,7)</text>
+    </g>
+    <g stroke="black" stroke-width="0.02" fill="none">
+        <line x1="0" x2="0" y1="10" y2="0" />
+        <line x1="1" x2="1" y1="10" y2="0" />
+        <line x1="2" x2="2" y1="10" y2="0" />
+        <line x1="3" x2="3" y1="10" y2="0" />
+        <line x1="4" x2="4" y1="10" y2="0" />
+        <line x1="5" x2="5" y1="10" y2="0" />
+        <line x1="6" x2="6" y1="10" y2="0" />
+        <line x1="7" x2="7" y1="10" y2="0" />
+        <line x1="8" x2="8" y1="10" y2="0" />
+        <line x1="9" x2="9" y1="10" y2="0" />
+        <line x1="10" x2="10" y1="10" y2="0" />
+        <line x1="0" x2="10" y1="10" y2="10" />
+        <line x1="0" x2="10" y1="9" y2="9" />
+        <line x1="0" x2="10" y1="8" y2="8" />
+        <line x1="0" x2="10" y1="7" y2="7" />
+        <line x1="0" x2="10" y1="6" y2="6" />
+        <line x1="0" x2="10" y1="5" y2="5" />
+        <line x1="0" x2="10" y1="4" y2="4" />
+        <line x1="0" x2="10" y1="3" y2="3" />
+        <line x1="0" x2="10" y1="2" y2="2" />
+        <line x1="0" x2="10" y1="1" y2="1" />
+        <line x1="0" x2="10" y1="0" y2="0" />
+    </g>
+    <g stroke="black" stroke-width="0.05" fill="red">
+        <circle cx="3" cy="6" r="0.15" />
+        <circle cx="7" cy="5" r="0.15" />
+        <circle cx="3" cy="4" r="0.15" />
+        <circle cx="5" cy="3" r="0.15" />
+        <circle cx="5" cy="2" r="0.15" />
+        <circle cx="4" cy="3" r="0.15" />
+        <circle cx="4" cy="2" r="0.15" />
+        <circle cx="6" cy="2" r="0.15" />
+        <circle cx="7" cy="4" r="0.15" />
+        <circle cx="7" cy="3" r="0.15" />
+        <circle cx="7" cy="2" r="0.15" />
+        <circle cx="3" cy="5" r="0.15" />
+        <circle cx="3" cy="3" r="0.15" />
+    </g>
+</svg>
+
+<p>
+Another method is to use Pick's theorem which shows a way to calculate the area
+of simple polygons with integer coordinates by counting integer coordinate
+points. There are 11 interier points and 8 border points so the area is
+\[i+{b\over2}-1=11+{8\over2}-1=14\]
+</p>
+
 <h3 id="dec15">Dec 15</h3>
+
+<p>
+Find the number of ways that a red and blue die can be rolled so that their
+product is a multiple of 6.
+</p>
+
+<p>
+This could be done by writing the multiplication table and counting, but can be
+counting a bit more intelligently. One condition is that either is 6 so by
+inclusion-exclusion, it is 6 for the red die, 6 for the blue die, and subtract 1
+for when both are 6 so there are 11 ways. Without a 6, there are the following
+pairs \((2,3),(3,2),(3,4),(4,3)\). So there is a total of 15. Below is the table
+with highlighted (yellow) multiples of 6.
+</p>
+
+<table class="table_normal">
+    <tr>
+        <td></td>
+        <td class="dr">1</td>
+        <td class="dr">2</td>
+        <td class="dr">3</td>
+        <td class="dr">4</td>
+        <td class="dr">5</td>
+        <td class="dr">6</td>
+    </tr>
+    <tr class="b1">
+        <td class="db">1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td class="h">6</td>
+    </tr>
+    <tr>
+        <td class="db">2</td>
+        <td>2</td>
+        <td>4</td>
+        <td class="h">6</td>
+        <td>8</td>
+        <td>10</td>
+        <td class="h">12</td>
+    </tr>
+    <tr>
+        <td class="db">3</td>
+        <td>3</td>
+        <td class="h">6</td>
+        <td>9</td>
+        <td class="h">12</td>
+        <td>15</td>
+        <td class="h">18</td>
+    </tr>
+    <tr>
+        <td class="db">4</td>
+        <td>4</td>
+        <td>8</td>
+        <td class="h">12</td>
+        <td>16</td>
+        <td>20</td>
+        <td class="h">24</td>
+    </tr>
+    <tr>
+        <td class="db">5</td>
+        <td>5</td>
+        <td>10</td>
+        <td>15</td>
+        <td>20</td>
+        <td>25</td>
+        <td class="h">30</td>
+    </tr>
+    <tr>
+        <td class="db">6</td>
+        <td class="h">6</td>
+        <td class="h">12</td>
+        <td class="h">18</td>
+        <td class="h">24</td>
+        <td class="h">30</td>
+        <td class="h">36</td>
+    </tr>
+</table>
 
 <h3 id="dec16">Dec 16</h3>
 
