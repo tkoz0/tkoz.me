@@ -888,6 +888,66 @@ is \(2^4=16\).
 
 <h3 id="dec17">Dec 17</h3>
 
+\[\sqrt{784-440\sqrt{3}}+\sqrt{325-100\sqrt{3}}\]
+
+<p>
+The messy way to solve this is by squaring to remove the square roots. First let
+\[x=\sqrt{784-440\sqrt{3}}+\sqrt{325-100\sqrt{3}}\]
+Then
+\[\begin{align}&x^2=\left(784-440\sqrt{3}\right)+\left(325-100\sqrt{3}\right)
++2\sqrt{\left(784-440\sqrt{3}\right)\left(325-100\sqrt{3}\right)}\\
+&=1109-540\sqrt{3}+2\sqrt{386800-221400\sqrt{3}}
+=1109-540\sqrt{3}+20\sqrt{3868-2214\sqrt{3}}\\\end{align}\]
+Now to get rid of the nested root, we rearrange to
+\[x^2-1109+540\sqrt{3}=20\sqrt{3868-2214\sqrt{3}}\]
+Then square each side
+\[x^4+x^2\left(-2218+1080\sqrt{3}\right)+\left(2104681-1197720\sqrt{3}\right)
+=400\left(3868-2214\sqrt{3}\right)\]
+\[x^4+x^2\left(-2218+1080\sqrt{3}\right)+\left(557481-312120\sqrt{3}\right)=0\]
+Now using the quadratic formula with \(y=x^2\), we find
+\[\begin{align}y&={\left(2218-1080\sqrt{3}\right)\pm\sqrt{
+    \left(2218-1080\sqrt{3}\right)^2-4\left(557481-312120\sqrt{3}\right)}\over2}
+\\&={\left(2218-1080\sqrt{3}\right)\pm\sqrt{6188800-3542400\sqrt{3}}\over2}\\
+\end{align}\]
+If we expect an integer answer, we should find that the square root part is the
+square of some integer plus/minus \(1080\sqrt{3}\). By factoring we can see
+\[3542400\sqrt{3}=2\cdot1640\cdot1080\sqrt{3}\]
+This suggests we should be able to have this as the \(2ab\) part of
+\((a+b)^2=a^2+b^2+2ab\). It turns out this factoring works and
+\[\begin{align}y&={\left(2218-1080\sqrt{3}\right)\pm\sqrt{
+    \left(1080\sqrt{3}-1640\right)^2}\over2}\\
+\end{align}\]
+The first solution \((+)\) gives us
+\[y={2218-1080\sqrt{3}+1080\sqrt{3}-1640\over2}={2218-1640\over2}={578\over2}
+=289\Rightarrow x^2=289\Rightarrow x=\pm17\]
+So clearly \(x=17\) is the solution and \(x=-17\) is extraneous. For the other
+solution to \(y\)
+\[y={3858-2160\sqrt{3}\over2}=1929-1080\sqrt{3}\approx58.385\]
+This is extraneous since our first squaring shows
+\[y=x^2\geq1109-540\sqrt{3}\approx173.693\]
+</p>
+
+<hr />
+
+<p>
+Another way is to consider that the values inside the square roots look like the
+result of \(\left(a-b\sqrt{3}\right)^2=a^2+3b^2+2ab\sqrt{3}\). So if both of
+them are like this, we would expect to find the same multiple of \(\sqrt{3}\)
+for each. The \(\sqrt{3}\) parts should match the \(2ab\sqrt{3}\)
+\[440\sqrt{3}=2\cdot220\sqrt{3},\quad100\sqrt{3}=2\cdot50\sqrt{3}\]
+So we need a \(\sqrt{3}\) multiple that divides \(\gcd(220,50)=10\). So we can
+try \(10\sqrt{3}\). For the first root,
+\[2\cdot220\sqrt{3}=2\cdot22\cdot10\sqrt{3}\Rightarrow
+\left(22-10\sqrt{3}\right)^2=484-440\sqrt{3}+100\cdot3=784-440\sqrt{3}\]
+And for the second root,
+\[2\cdot50\cdot\sqrt{3}=2\cdot5\cdot10\sqrt{3}\Rightarrow
+\left(10\sqrt{3}-5\right)^2=100\cdot3-100\sqrt{3}+25=325-100\sqrt{3}\]
+Therefore
+\[\begin{align}&\sqrt{784-440\sqrt{3}}+\sqrt{325-100\sqrt{3}}
+=\sqrt{\left(22-10\sqrt{3}\right)^2}+\sqrt{\left(10\sqrt{3}-5\right)^2}\\
+&=22-10\sqrt{3}+10\sqrt{3}-5=22-5=17\\\end{align}\]
+</p>
+
 <h3 id="dec18">Dec 18</h3>
 
 <h3 id="dec19">Dec 19</h3>
