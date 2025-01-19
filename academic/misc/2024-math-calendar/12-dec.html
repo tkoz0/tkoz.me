@@ -1018,19 +1018,213 @@ The derivative is \(y'=3^x\ln(3)\). The slope is
 
 <h3 id="dec24">Dec 24</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 12" width="200" height="240" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="2 1 8 1 8 7 2 7" />
+        <line x1="2" x2="8" y1="1" y2="7" />
+        <line x1="8" x2="2" y1="1" y2="7" />
+    </g>
+    <g stroke="black" stroke-width="0.1" fill="black">
+        <circle cx="2" cy="1" r="0.2" />
+        <circle cx="8" cy="1" r="0.2" />
+        <circle cx="8" cy="7" r="0.2" />
+        <circle cx="2" cy="7" r="0.2" />
+    </g>
+    <g fill="black" font-size="0.05em">
+        <text x="1" y="9">x = number of</text>
+        <text x="1" y="10">Hamiltonian paths</text>
+        <text x="1" y="11">for this graph</text>
+    </g>
+</svg>
+
+<p>
+This is a 4 vertex complete graph. Any permutation of the vertices is a valid
+path so the number of Hamiltonian paths is \(4!=24\).
+</p>
+
 <h3 id="dec25">Dec 25</h3>
+
+\[\text{Maximize}\ f(x)=7\sin(x)+24\cos(x)\]
+
+<p>
+Compute the derivative \(f'(x)=7\cos(x)-24\sin(x)\) and then a maximum will
+occur at one of the solutions to
+\[7\cos(x)-24\sin(x)=0\Rightarrow7\cos(x)=24\sin(x)
+\Rightarrow\tan(x)={7\over24}\Rightarrow x=\arctan\left({7\over24}\right)\]
+This gives a unique solution on \((-\pi/2,\pi/2)\) and 2 solutions on
+\((-\pi,\pi)\). Using this angle, we can draw the following right triangle.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 1 30 12" width="300" height="120" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="3 10 27 10 27 3" />
+        <path d="M 8 10 A 5 5 0 0 0 7.8 8.6" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="9" y="9.8">&theta;</text>
+        <text x="15" y="12">24</text>
+        <text x="28" y="7">7</text>
+        <text x="15" y="5">25</text>
+    </g>
+</svg>
+
+<p>
+Let \(\theta\) be this angle in \((0,\pi/2)\). Then \(\theta+\pi\) is also a
+solution. Therefore we have 2 points to evaluate \(f(x)\) at.
+\[f(\theta)=7\left({7\over25}\right)+24\left({24\over25}\right)
+={7^2+24^2\over25}={25^2\over25}=25\]
+\[\begin{align}&f(\theta+\pi)=7\sin(\theta+\pi)+24\cos(\theta+\pi)
+=7\sin(\theta)\cos(\pi)+7\cos(\theta)\sin(\pi)
++24\cos(\theta)\cos(\pi)-24\sin(\theta)\sin(\pi)\\&
+=-7\sin(\theta)-24\cos(\theta)=-f(\theta)=-25
+\end{align}\]
+This gives us a maximum of \(25\) and minimum of \(-25\).
+</p>
 
 <h3 id="dec26">Dec 26</h3>
 
+<p>
+Find the sum of the number of faces, vertices, and edges in a cube.
+</p>
+
+<p>
+There are 6 faces, 8 vertices, and 12 edges. If we did not know one of these, we
+could find the remaining quartity with Euler's formula
+\[\text{faces}+\text{vertices}=\text{edges}+2\]
+The total is \(6+8+12=26\).
+</p>
+
 <h3 id="dec27">Dec 27</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 12" width="200" height="240" class="img_center">
+    <circle cx="5" cy="5" r="4" stroke="#59a" stroke-width="0.1" fill="#7cf" />
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <circle cx="7.667" cy="5" r="1.333" />
+        <circle cx="6.333" cy="7.309" r="1.333" />
+        <circle cx="3.667" cy="7.309" r="1.333" />
+        <circle cx="2.333" cy="5" r="1.333" />
+        <circle cx="3.667" cy="2.691" r="1.333" />
+        <circle cx="6.333" cy="2.691" r="1.333" />
+    </g>
+    <g fill="black" font-size="0.05em">
+        <text x="6.733" y="5">Area</text>
+        <text x="5.4" y="7.309">Area</text>
+        <text x="2.733" y="7.309">Area</text>
+        <text x="1.4" y="5">Area</text>
+        <text x="2.733" y="2.691">Area</text>
+        <text x="5.4" y="2.691">Area</text>
+        <text x="7.133" y="5.8">=3</text>
+        <text x="5.8" y="8.109">=3</text>
+        <text x="3.133" y="8.109">=3</text>
+        <text x="1.8" y="5.8">=3</text>
+        <text x="3.133" y="3.491">=3</text>
+        <text x="5.8" y="3.491">=3</text>
+    </g>
+    <g fill="black" font-size="0.05em">
+        <text x="1.5" y="10">Find the area of</text>
+        <text x="1.5" y="11">the largest circle</text>
+    </g>
+</svg>
+
+<p>
+If we draw a hexagon through the centers of the 6 smaller circles, we will find
+that it is a regular hexagon with side length \(2r\) (where
+\(r=\sqrt{3\over\pi}\) is the radius of a small circle). A regular hexagon can
+be split nicely into 6 equilateral triangles so the distance from 1 point to the
+opposite point is twice the smaller radius, \(2r\). Then subtract both of the
+half radii of smaller circles and the remaining distance is \(r\) for the radius
+of the circle that fits in the center. From here, we can see the radius of the
+larger circle is \(3r\) so its area is \(9\times3=27\).
+</p>
 
 <h3 id="dec28">Dec 28</h3>
 
+<p>
+Find the order of the dihedral group of a regular 14-gon.
+</p>
+
+<p>
+Dihedral groups describe rotating a n-gon so it fits back over its original
+position. This also includes flipping it over. The number of ways this can
+happen is twice the number of sides/vertices so \(2\times14=28\).
+</p>
+
 <h3 id="dec29">Dec 29</h3>
+
+\[S=\{100\leq y\leq800:\text{the last two digits of}\ y
+=\text{the last two digits of}\ y^2\},\quad x=|S|\]
+
+<p>
+To count these elements, we have to find which last 2 digits stay the same when
+squaring the number. We look for \(z\in\{0,1,2,\ldots,99\}\) that solve
+\(z\equiv z^2\) mod 100 \(\Rightarrow z(z-1)\equiv0\). We can factor
+\(100=4\times25\) which are coprime and using the Chinese remainder theorem we
+must have \(z(z-1)\equiv0\) modulo both 4 and 25. For modulo 4, since \(z\) and
+\(z-1\) are coprime, 4 must divide one of them so the only solutions are
+\(z\equiv0,1\). Similarly modulo 25, we must have \(z\equiv0,1\). These can be
+combined into the following 4 solutions.
+</p>
+
+<table class="table_normal">
+    <tr>
+        <th>mod 4</th>
+        <th>mod 25</th>
+        <th>mod 100</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>76</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<p>
+This shows that each of the internals \([100,199],[200,299],\ldots,[700,799]\)
+have 4 solutions, for a total of 28. Then we add the solution \(y=800\) for a
+total of \(|S|=29\).
+</p>
 
 <h3 id="dec30">Dec 30</h3>
 
+<p>
+The Nim game with piles of 9, 23, and \(x\) is a second player win.
+</p>
+
+<p>
+Nim has been solved and it is shown that the first player has a winning strategy
+iff the nim sum of the piles is nonzero. So the second player has a winning
+strategy iff the nim sum of the piles is zero. Nim sum is another terminology
+for binary xor. So we need to solve
+\[9\oplus23\oplus x=0\Rightarrow x=9\oplus23\]
+In binary, \(9=1001_2\) and \(23=10111_2\) so \(9\oplus23=11110_2=30\).
+</p>
+
 <h3 id="dec31">Dec 31</h3>
+
+<p>
+What is the third Mersenne prime?
+</p>
+
+<p>
+The first 3 primes are \(2,3,5\) so the first Mersenne numbers are
+\(2^2-1,2^3-1,2^5-1\) or \(3,7,31\). All 3 of these are prime so the third
+Mersenne number is 31.
+</p>
 
 </div>
 </body>
