@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Calendar {{year}} {{month_full}}</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+        {% raw %}        }}};
+        {% endraw %}
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <style type="text/css">
+        #cal {
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<h1>Math Calendar {{year}} {{month_full}}</h1>
+
+<table id="cal" class="table_normal">
+    <tr><th colspan="7">{{month_full}}</th></tr>
+    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    {% for week_row in month_table %}
+    <tr>
+        {% for text,link in week_row %}
+        {% if link %}
+        <td><a href="{{link}}">{{text}}</a></td>
+        {% else %}
+        <td>{{text}}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% for h3id,h3text in day_data %}
+<h3 id="{{h3id}}">{{h3text}}</h3>
+
+{% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Calendar {{year}}</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+        {% raw %}        }}};
+        {% endraw %}
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <style type="text/css">
+        #cal {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #cal table {
+            flex-basis: 33%;
+            max-width: 250px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<h1>Math Calendar {{year}}</h1>
+
+<p>
+    These problems are from <a href="https://dailyepsilon.com/" target="_blank">
+        <em>Your Daily Epsilon of Math</em></a>.
+</p>
+
+<div id="cal">
+
+{% for month_table,month_full,month_link in data %}
+<table class="table_normal">
+    <tr><th colspan="7"><a href="{{month_link}}">{{month_full}}</a></th></tr>
+    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    {% for week_row in month_table %}
+    <tr>
+        {% for text,link in week_row %}
+        {% if link %}
+        <td><a href="{{link}}">{{text}}</a></td>
+        {% else %}
+        <td>{{text}}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endfor %}
+</div>
+
+</div>
+</body>
+</html>
