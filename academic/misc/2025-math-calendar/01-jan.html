@@ -289,25 +289,193 @@ The positive number restriction means only \(y=3\) is suitable which gives us
 
 <h3 id="jan05">Jan 05</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 2 22 12" width="330" height="180" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <rect x="1" y="10" width="2" height="1" />
+        <rect x="3" y="10" width="2" height="1" />
+        <rect x="5" y="10" width="2" height="1" />
+        <rect x="7" y="10" width="2" height="1" />
+        <rect x="9" y="10" width="2" height="1" />
+        <rect x="11" y="10" width="2" height="1" />
+        <rect x="13" y="10" width="2" height="1" />
+        <rect x="15" y="10" width="2" height="1" />
+        <rect x="17" y="10" width="2" height="1" />
+        <rect x="19" y="10" width="2" height="1" />
+        <polygon points="11 11 13 13 9 13" />
+        <rect x="5" y="5" width="2" height="5" />
+        <rect x="7" y="5" width="2" height="5" />
+        <rect x="15" y="5" width="2" height="5" />
+        <rect x="19" y="5" width="2" height="5" />
+    </g>
+    <g fill="black" font-size="0.07em">
+        <text x="4.75" y="4">7kg</text>
+        <text x="6.75" y="4">5kg</text>
+        <text x="14.75" y="4">1kg</text>
+        <text x="18.75" y="4">xkg</text>
+    </g>
+</svg>
+
+<p>
+The torque applied is the mass times the distance from the center. For each of
+these blocks, we use the midpoint. The values to balance form the equation
+\[7\cdot2.5+5\cdot1.5=1\cdot2.5+x\cdot4.5\Rightarrow17.5+7.5=2.5+4.5x
+\Rightarrow22.5=4.5x\Rightarrow x=5\]
+</p>
+
 <h3 id="jan06">Jan 06</h3>
+
+\[\sqrt{7+\sqrt{13}}\cdot\sqrt{7-\sqrt{13}}=\sqrt{7^2-13}=\sqrt{36}=6\]
 
 <h3 id="jan07">Jan 07</h3>
 
+<p>
+Find the sum of the roots of \(x^8-7x^7+8\)
+</p>
+
+<p>
+Using Vieta's formula, is is \(-a_7/a_8=-(-7)/1=7\).
+</p>
+
 <h3 id="jan08">Jan 08</h3>
+
+<p>
+\(y\) is a positive integer and \(x=1+y+y^2+\ldots+y^7\) is a power of a prime.
+</p>
+
+<p>
+By finite geometric sum, \(x={y^8-1\over y-1}\) when \(y&gt;1\). This can be
+further factored:
+\[\begin{align}&x={y^8-1\over y-1}={(y^4+1)(y^4-1)\over y-1}
+={(y^4+1)(y^2+1)(y^2-1)\over y-1}\\&
+={(y^4+1)(y^2+1)(y+1)(y-1)\over y-1}=(y^4+1)(y^2+1)(y+1)\end{align}\]
+From here, \(y+1\) is a power of a prime. Suppose \(y+1=p^a\) for some prime
+\(p\) and integer \(a&gt;0\). Then
+\[y=p^a-1\Rightarrow y^2=p^{2a}-2p^a+1\Rightarrow y^2+1=p^{2a}-2p^a+2\]
+This quantity must be equal to some other power of the same prime so suppose for
+some integer \(b&gt;0\)
+\[p^{2a}-2p^a+2=p^b\Rightarrow 2=p^b-p^{2a}+2p^a\]
+We see that 2 is a multiple of \(p\) therefore our prime must be \(p=2\). This
+means \(y+1=2^a\). Then
+\[y^2=(2^a-1)^2=2^{2a}-2\cdot2^a+1\Rightarrow y^2+1=2^{2a}-2\cdot2^a+2=2^b\]
+The only time this is true is when \(a=1\). We can see this by factoring it to
+\[y^2+1=2\cdot(2^{2a-1}-2^a+1)\]
+which is twice an odd number whenever \(a&gt;1\). Therefore, the only
+possibility is \(y+1=2\Rightarrow y=1\). In this case, \(x=8=2^3\) which is the
+solution.
+</p>
 
 <h3 id="jan09">Jan 09</h3>
 
+<p>
+Find the number of factors of 36.
+</p>
+
+<p>
+Factor it to \(36=2^2\cdot3^2\). For each prime, there are 3 power choices to
+form a factor (0,1,2). Therefore the number of factors is \(3\times3=9\).
+</p>
+
 <h3 id="jan10">Jan 10</h3>
+
+\[{14\over15}x-{2\over3}x+{3\over5}x-{7\over9}x={8\over9}\]
+
+<p>
+\[x{42-30+27-35\over45}={40\over45}\Rightarrow 4x=40\Rightarrow x=10\]
+</p>
 
 <h3 id="jan11">Jan 11</h3>
 
+\[\begin{align}&3\sin\theta+4\cos\theta=5\\
+&5\sin\theta+5\cos\theta+3\cot\theta=x\end{align}\]
+
+<p>
+We should focus on the first equation to find what \(\theta\) is. This might
+make us think of the 3-4-5 right triangle which is related. That can be used to
+find \(\sin(\theta)=3/5,\cos(\theta)=4/5\). These values can be used to find
+\(x\) in the second equation
+\[5\sin\theta+5\cos\theta+3\cot\theta=5(3/5)+5(4/5)+3{4/5\over3/5}=3+4+4=11\]
+</p>
+
 <h3 id="jan12">Jan 12</h3>
+
+\[\sum_{x=0}^\infty{2x+1\over2^{x-1}}\]
+
+<p>
+Multiply by \(2/2\) so the denominator becomes \(2^x\)
+\[2\sum_{x=0}^\infty{2x+1\over2^x}=2\left[2\sum_{x=0}^\infty{x\over2^x}
++\sum_{x=0}^\infty2^{-x}\right]\]
+The simpler sum is
+\[\sum_{x=0}^\infty2^-x={1\over1-1/2}={1\over1/2}=2\]
+The other sum can be rewritten as a double summation by changing the order of
+summation thinking about the following table
+\[\begin{array}{cccc}1/2&&&\\1/4&1/4&&\\1/8&1/8&1/8&\\\vdots&&&\ddots\\
+\end{array}\]
+Each term corresponds to a row so now if we sum column by column
+\[\begin{align}&\sum_{x=1}^\infty{x\over2^x}=\sum_{x=1}^\infty
+\sum_{y=x}^\infty{2^{-y}}=\sum_{x=1}^\infty\left[\sum_{y=0}^\infty2^{-y}
+-\sum_{y=0}^{x-1}2^{-y}\right]=\sum_{x=1}^\infty\left[
+{1\over1-1/2}-{1-2^{-x}\over1-1/2}\right]\\&
+=\sum_{x=1}^\infty(2-2+2\cdot2^{-x})=2\sum_{x=1}^\infty2^{-x}
+=2\left[{1\over1-1/2}-2^0\right]=2\end{align}\]
+So it turns out both of these summations are 2 and if we substitute them into
+the expression we found earlier, the answer is \(6\).
+</p>
 
 <h3 id="jan13">Jan 13</h3>
 
+<p>
+Find the largest solution of \((25-2y)^{(y^2-25)}=1\).
+</p>
+
+<p>
+If \(|25-2y|\neq1\) then we need \(y^2-25=0\Rightarrow y=\pm5\).
+</p>
+
+<p>
+If \(|25-2y|=1\) then \(y=12,13\). The only requirement is the exponent is
+positive to avoid the division by zero problem, which is true for these values.
+Therefore, the largest solution is \(y=13\).
+</p>
+
 <h3 id="jan14">Jan 14</h3>
 
+<p>
+Two natural numbers differ by 4. The sum of their squares is 106. Find their
+sum.
+</p>
+
+<p>
+Without loss of generality, let \(a,b\) be the 2 numbers with \(a&gt;b\). Then
+\(a-b=4\) and \(a^2+b^2=106\). By substitution
+\[(b+4)^2+b^2=106\Rightarrow2b^2+8b+16=106\Rightarrow b^2+4b-45=0
+\Rightarrow(b+9)(b-5)=0\]
+The solutions are \(b=5,-9\) so the only natural number solution is \(b=5\).
+Then \(a=b+4=9\) so the sum is \(a+b=14\).
+</p>
+
 <h3 id="jan15">Jan 15</h3>
+
+\[{\cot^3(\pi/12)-\tan^3(\pi/12)\over2\sqrt{3}}\]
+
+<p>
+The easiest way to solve this is probably by first finding \(\tan(\pi/12)\)
+which can be done with the angle difference identity
+\[\tan(\pi/3-\pi/4)={\tan(\pi/3)-\tan(\pi/4)\over1+\tan(\pi/3)\tan(\pi/4)}
+={\sqrt{3}-1\over1+\sqrt{3}}\]
+Then from this we can easily find
+\[\cot(\pi/12)={1+\sqrt{3}\over\sqrt{3}-1}\]
+These can be substituted in with some gross algebra
+\[\begin{align}&{\cot^3(\pi/12)-\tan^3(\pi/12)\over2\sqrt{3}}
+={\left({1+\sqrt{3}\over\sqrt{3}-1}\right)^3
+-\left({\sqrt{3}-1\over1+\sqrt{3}}\right)^3\over2\sqrt{3}}
+={{6\sqrt{3}+10\over6\sqrt{3}-10}-{6\sqrt{3}-10\over6\sqrt{3}+10}
+\over2\sqrt{3}}\\&
+={\left(6\sqrt{3}+10\right)^2-\left(6\sqrt{3}-10\right)^2
+\over2\sqrt{3}\left(6\sqrt{3}-10\right)\left(6\sqrt{3}+10\right)}
+={36\cdot3+100+120\sqrt{3}-36\cdot3-100+120\sqrt{3}
+\over2\sqrt{3}\left(36\cdot3-100\right)}
+={240\sqrt{3}\over16\sqrt{3}}=15\end{align}\]
+</p>
 
 <h3 id="jan16">Jan 16</h3>
 
