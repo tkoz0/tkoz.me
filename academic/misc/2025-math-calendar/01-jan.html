@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
     <script type="text/javascript">
         window.MathJax = { tex: { macros: {
+            'pmod': ['\\ (\\text{mod}\\ #1)',1]
         }}};
     </script>
     <script type="text/javascript" src="/mathscripts.js"></script>
@@ -81,11 +82,210 @@
 
 <h3 id="jan01">Jan 01</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2" width="250" height="250" class="img_center">
+    <text x="0.2" y="1.5" fill="black" font-size="0.01em">The square has</text>
+    <text x="0.2" y="1.75" fill="black" font-size="0.01em">side length &radic;3 - 1</text>
+    <text x="0.3" y="1" fill="#7cf" font-size="0.01em">x</text>
+    <g stroke="black" stroke-width="0.02" fill="none">
+        <rect x="0.6" y="0.3" width="0.732" height="0.732" />
+        <path d="M 0.677 1.166 l 0.577 -1 l 0.5 0.866 h -0.423" />
+        <line x1="0.6" x2="0.177" y1="0.3" y2="0.3" />
+        <line x1="0.177" x2="0.677" y1="0.3" y2="1.166" stroke="#7cf" />
+    </g>
+    <g stroke="black" stroke-width="0.01" fill="none">
+        <line x1="1.255" x2="1.255" y1="0.26" y2="0.34" />
+        <line x1="1.181" x2="1.251" y1="0.213" y2="0.253" />
+        <path d="M 0.727 1.079 A 0.1 0.1 0 0 0 0.627 1.079" />
+        <line x1="0.677" x2="0.677" y1="1.106" y2="1.026" />
+        <path d="M 1.077 0.3 A 0.1 0.1 0 0 0 1.127 0.387" />
+        <line x1="1.125" x2="1.056" y1="0.33" y2="0.37" />
+        <path d="M 0.227 0.387 A 0.1 0.1 0 0 0 0.277 0.3" />
+        <line x1="0.229" x2="0.299" y1="0.33" y2="0.37" />
+    </g>
+</svg>
+
+<p>
+The large left triangle is equilateral with side length \(x\) as given. By using
+angle properties and observing the upper small triangle is isosceles, we can
+show the other large triangle and the 2 small ones must also be equilateral. The
+other part we have to assume is that the 2 small triangles are congruent, which
+is not stated. It is possible to draw this diagram where the small triangles are
+different sizes but a side from each add to the same value which can be shown to
+be \(4/\sqrt{3}-2\).
+</p>
+
+<p>
+Next, focus on the following 30-60-90 triangle (orange).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2" width="250" height="250" class="img_center">
+    <text x="0.2" y="1.5" fill="black" font-size="0.01em">The square has</text>
+    <text x="0.2" y="1.75" fill="black" font-size="0.01em">side length &radic;3 - 1</text>
+    <text x="0.3" y="1" fill="#7cf" font-size="0.01em">x</text>
+    <g stroke="black" stroke-width="0.02" fill="none">
+        <rect x="0.6" y="0.3" width="0.732" height="0.732" />
+        <path d="M 0.677 1.166 l 0.577 -1 l 0.5 0.866 h -0.423" />
+        <line x1="0.6" x2="0.177" y1="0.3" y2="0.3" />
+        <line x1="0.177" x2="0.677" y1="0.3" y2="1.166" stroke="#7cf" />
+        <polygon points="0.6 0.3 0.177 0.3 0.6 1.032" stroke="orange" />
+        <rect x="0.445" y="0.3" width="0.155" height="0.155" stroke="orange" />
+    </g>
+    <g stroke="black" stroke-width="0.01" fill="none">
+        <line x1="1.255" x2="1.255" y1="0.26" y2="0.34" />
+        <line x1="1.181" x2="1.251" y1="0.213" y2="0.253" />
+        <path d="M 0.727 1.079 A 0.1 0.1 0 0 0 0.627 1.079" />
+        <line x1="0.677" x2="0.677" y1="1.106" y2="1.026" />
+        <path d="M 1.077 0.3 A 0.1 0.1 0 0 0 1.127 0.387" />
+        <line x1="1.125" x2="1.056" y1="0.33" y2="0.37" />
+        <path d="M 0.227 0.387 A 0.1 0.1 0 0 0 0.277 0.3" />
+        <line x1="0.229" x2="0.299" y1="0.33" y2="0.37" />
+    </g>
+</svg>
+
+<p>
+Its right side is \(\sqrt{3}-1\) since it is part of the square. The top side is
+\(1-1/\sqrt{3}\) and the hypotenuse is \(2-2/\sqrt{3}\). Let \(y\) be the side
+length of the small triangles which we have to assume are congruent. Then an
+equation for \(x\) is \[x=2-{2\over\sqrt{3}}+y\]
+Now along the top edge of the square, another equation for \(x\) we can form is
+\[x=1-{1\over\sqrt{3}}+\sqrt{3}-1-y\]
+The value of \(y\) is not important to find \(x\) because we can add the 2
+equations to cancel it
+\[2x=2-{2\over\sqrt{3}}+1-{1\over\sqrt{3}}+\sqrt{3}-1
+=3-{3\over\sqrt{3}}+\sqrt{3}-1=3-\sqrt{3}+\sqrt{3}-1=2\]
+Therefore, \(x=1\). If we want, \(y=2/\sqrt{3}-1\).
+</p>
+
+<p>
+An alternative more complicated solution can be found by forming a system of
+equations with the following side lengths.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2" width="250" height="250" class="img_center">
+    <text x="0.2" y="1.5" fill="black" font-size="0.01em">The square has</text>
+    <text x="0.2" y="1.75" fill="black" font-size="0.01em">side length &radic;3 - 1</text>
+    <text x="0.3" y="1" fill="#7cf" font-size="0.01em">x</text>
+    <g stroke="black" stroke-width="0.02" fill="none">
+        <rect x="0.6" y="0.3" width="0.732" height="0.732" />
+        <path d="M 0.677 1.166 l 0.577 -1 l 0.5 0.866 h -0.423" />
+        <line x1="0.6" x2="0.177" y1="0.3" y2="0.3" />
+        <line x1="0.177" x2="0.677" y1="0.3" y2="1.166" stroke="#7cf" />
+        <polygon points="0.6 0.3 0.177 0.3 0.6 1.032" stroke="orange" />
+        <rect x="0.445" y="0.3" width="0.155" height="0.155" stroke="orange" />
+    </g>
+    <g stroke="black" stroke-width="0.01" fill="none">
+        <line x1="1.255" x2="1.255" y1="0.26" y2="0.34" />
+        <line x1="1.181" x2="1.251" y1="0.213" y2="0.253" />
+        <path d="M 0.727 1.079 A 0.1 0.1 0 0 0 0.627 1.079" />
+        <line x1="0.677" x2="0.677" y1="1.106" y2="1.026" />
+        <path d="M 1.077 0.3 A 0.1 0.1 0 0 0 1.127 0.387" />
+        <line x1="1.125" x2="1.056" y1="0.33" y2="0.37" />
+        <path d="M 0.227 0.387 A 0.1 0.1 0 0 0 0.277 0.3" />
+        <line x1="0.229" x2="0.299" y1="0.33" y2="0.37" />
+    </g>
+    <text x="0.5" y="1.2" fill="black" font-size="0.01em">y</text>
+    <text x="0.35" y="0.25" fill="black" font-size="0.01em">z</text>
+</svg>
+
+<p>
+Let \(w=\sqrt{3}-1\) be the square side length. Then from the sides, we can find
+\(x+y=z+w\). The total are of the 2 large triangles can form the following
+equation
+\[{x^2\sqrt{3}\over4}=w^2+{y^2\sqrt{3}\over4}+zw\]
+And finally for the orange triangle, \((x-y)^2=z^2+w^2\). These equations are
+tough to solve. A computer algebra system found 4 solutions only one of which is
+valid because all the side lengths must be positive.
+</p>
+
 <h3 id="jan02">Jan 02</h3>
+
+\[{8^x+125^x\over20^x+50^x}=5.41,\qquad x&gt;0\]
+
+<p>
+There is symmetry that can be observed with the substitutions \(u=2^x,v=5^x\)
+\[{u^3+v^3\over u^2v+uv^2}={(u+v)(u^2-uv+v^2)\over uv(u+v)}
+={u^2-uv+v^2\over uv}={u^2+v^2\over uv}-1=5.41\]
+This problem is easiest to solve by guessing a few values and seeing that
+\(x=2\) works because
+\[{8^2+125^2\over20^2+50^2}={64+15625\over400+2500}={15689\over2900}
+={29\cdot541\over29\cdot100}=5.41\]
+Proving this is the only answer is more complicated, one possible way is showing
+the function increases for \(x&gt;0\). By plotting it in a graphing tool, the
+function is even and the solution can be seen easily. The function can be shown
+to be even algebraically.
+</p>
 
 <h3 id="jan03">Jan 03</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 15" width="200" height="300" class="img_center">
+    <text x="7.2" y="2.5" fill="black" font-size="0.07em">x</text>
+    <text x="3.2" y="13" fill="black" font-size="0.07em">2&radic;2&radic;3</text>
+    <text x="5.3" y="12.3" fill="black" font-size="0.03em">4</text>
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="3 4.536 5 1.072 7 4.536 5 2.804" fill="#7cf" />
+        <polygon points="9 8 7 11.464 3 11.464 1 8 3 4.536 7 4.536" />
+        <line x1="7.75" x2="8.25" y1="8" y2="8" />
+        <line x1="6.375" x2="6.625" y1="10.382" y2="10.815" />
+        <line x1="3.625" x2="3.375" y1="10.382" y2="10.815" />
+        <line x1="2.25" x2="1.75" y1="8" y2="8" />
+        <line x1="3.625" x2="3.375" y1="5.618" y2="5.185" />
+        <line x1="6.375" x2="6.625" y1="5.618" y2="5.185" />
+        <path d="M 8.5 7.134 A 1 1 0 0 0 8.5 8.866" />
+        <path d="M 7.5 10.598 A 1 1 0 0 0 6 11.464" />
+        <path d="M 4 11.464 A 1 1 0 0 0 2.5 10.598" />
+        <path d="M 1.5 8.866 A 1 1 0 0 0 1.5 7.134" />
+        <path d="M 2.5 5.402 A 1 1 0 0 0 4 4.536" />
+        <path d="M 6 4.536 A 1 1 0 0 0 7.5 5.402" />
+        <polygon points="7 4.536 3 4.536 5 1.072" />
+        <line x1="7" x2="5" y1="4.536" y2="2.804" />
+        <line x1="5.869" x2="6.131" y1="3.821" y2="3.519" />
+        <line x1="3" x2="5" y1="4.536" y2="2.804" />
+        <line x1="3.869" x2="4.131" y1="3.519" y2="3.821" />
+        <line x1="5" x2="5" y1="4.536" y2="2.804" />
+        <line x1="4.8" x2="5.2" y1="3.583" y2="3.583" />
+        <line x1="4.8" x2="5.2" y1="3.756" y2="3.756" />
+        <line x1="5" x2="5" y1="1.072" y2="2.804" />
+        <line x1="5.2" x2="4.8" y1="2.024" y2="2.024" />
+        <line x1="5.2" x2="4.8" y1="1.851" y2="1.851" />
+        <line x1="7" x2="5.7" y1="2" y2="3" />
+    </g>
+    <g stroke="black" stroke-width="0.1" fill="black">
+        <circle cx="9" cy="8" r="0.2" />
+        <circle cx="7" cy="11.464" r="0.2" />
+        <circle cx="3" cy="11.464" r="0.2" />
+        <circle cx="1" cy="8" r="0.2" />
+        <circle cx="3" cy="4.536" r="0.2" />
+        <circle cx="7" cy="4.536" r="0.2" />
+        <circle cx="5" cy="4.536" r="0.2" />
+        <circle cx="5" cy="1.072" r="0.2" />
+        <circle cx="5" cy="2.804" r="0.2" />
+    </g>
+</svg>
+
+<p>
+It's not stated, but this is a regular hexagon and the triangle at the top is
+equilateral. Notice how the height of the triangle is divided in 2 so the area
+\(x\) is half the area of that triangle. Given side length \(s\), an equilateral
+triangle has area \(s^2\sqrt{3}/4\). Using the provided \(s\), the area of the
+shaded area is
+\[{1\over2}{\left(2\sqrt{2}\sqrt[4]{3}\right)^2\sqrt{3}\over4}
+={1\over8}\left(4\cdot2\cdot\sqrt{3}\right)\sqrt{3}=3\]
+</p>
+
 <h3 id="jan04">Jan 04</h3>
+
+<p>
+\(x\) and \(y\) are natural numbers such that \(8x+7y=53\)
+</p>
+
+<p>
+The simplest way is to try different \(x\) until \(8x\) exceeds 53. Another way
+is observing that \(53\equiv5\pmod{8}\). Then
+\[53-7y\equiv5+y\pmod{8}\]
+So we need \(y=3,11,\ldots\) for the quantity \(53-7y\) to be divisible by 8.
+The positive number restriction means only \(y=3\) is suitable which gives us
+\[8x+7\cdot3=53\Rightarrow 8x=53-21=32\Rightarrow x=4\]
+</p>
 
 <h3 id="jan05">Jan 05</h3>
 
