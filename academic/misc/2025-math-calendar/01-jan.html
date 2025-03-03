@@ -479,15 +479,160 @@ These can be substituted in with some gross algebra
 
 <h3 id="jan16">Jan 16</h3>
 
+\[y=\int_0^\infty{t^4\over(t^4-t^2+1)^4}dt,\qquad x={3\pi\over y}\]
+
+<p>
+This integral does not seem solvable with any standard integration techniques
+and the result from a computer algebra system is very complicated. We should
+somehow be able to find \(y=3\pi/16\). Below is code to approximate the solution
+and guess what fraction it is assuming it is supposed to be a multiple of
+\(\pi\). This is of course not a proof but a way to get some ideas. As of now,
+I cannot find a better way to solve this problem.
+</p>
+
+<pre><code>
+    from fractions import Fraction
+    from math import pi
+    f = lambda t : (t**4)/(t**4-t**2+1)**4
+    dt = 0.001
+    stop = 5.0
+    area = 0.0
+    i = 0
+    while True:
+        x1 = i*dt
+        x2 = (i+1)*dt
+        h1 = f(x1)
+        h2 = f(x2)
+        if x1 >= stop:
+            break
+        area += (h1 + h2) * dt / 2
+        i += 1
+    print(area)
+    print(Fraction(area/pi).limit_denominator())    
+</code></pre>
+
+<p>
+The code sums trapezoids of width \(0.001\) on \([0,5]\), a total of 5000
+trapezoids. The resulting area is \(\approx0.5890486\) and if divided by \(\pi\)
+it is very close to \(3/16\). At \(t=5\), the function is already below
+\(10^{-9}\) and decreases asymptotically like \(t^{-12}\).
+</p>
+
 <h3 id="jan17">Jan 17</h3>
+
+<p>
+Find the size of the internal that satisfies \(|2x-5|-7\leq10\)
+</p>
+
+<p>
+Add 7 to each side \[|2x-5|\leq17\]
+Use the absolute value equation \[-17\leq2x-5\leq17\]
+Add 5 \[-12\leq2x\leq22\]
+Divide 2 \[-6\leq x\leq11\]
+The interval size is \(|11-(-6)|=17\)
+</p>
 
 <h3 id="jan18">Jan 18</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12" width="160" height="240" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <rect x="4" y="2.955" width="3.568" height="5.045" fill="#7cf" />
+        <rect x="4" y="7" width="1" height="1" />
+        <circle cx="4" cy="8" r="3.568" />
+        <circle cx="5.784" cy="2.955" r="1.784" />
+        <g fill="black">
+            <circle cx="4" cy="8" r="0.1" />
+            <circle cx="7.568" cy="8" r="0.1" />
+            <circle cx="4" cy="2.955" r="0.1" />
+            <circle cx="5.784" cy="2.955" r="0.1" />
+            <circle cx="7.568" cy="2.955" r="0.1" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.07em">
+        <text x="4.5" y="6.5">x</text>
+        <text x="4.3" y="9.2">3&radic;2</text>
+        <text x="5" y="8.5" font-size="0.5em">4</text>
+    </g>
+</svg>
+
+<p>
+The horizontal side length of the rectangle is \(s=3\sqrt[4]{2}\). To find the
+height, form a right triangle with the line connecting the centers of the 2
+circles.
+\[(s/2)^2+h^2=(3s/2)^2\Rightarrow h^2=(9/4-1/4)s^2=2s^2\]
+Therefore, \(h=\sqrt{2}s\) so the area of the rectangle is
+\[sh=3\sqrt[4]{2}\cdot\sqrt{2}\cdot3\sqrt[4]{2}=3\cdot3\cdot2=18\]
+</p>
+
 <h3 id="jan19">Jan 19</h3>
+
+<p>
+Each edge of a cube is increased by \(6\%\). The volume is thus increased by
+\(x\%\) (round).
+</p>
+
+<p>
+If the old edge is \(1\), then the edge length would be \(1.06\). We can
+approximate the volume
+\[(1+0.06)^3=1+3\cdot0.06+3\cdot0.06^2+0.06^3
+=1+0.18+3\cdot0.0036+0.06^3\approx1+0.18+0.01=1.19\]
+The volume has increased by \(19\%\). The exact value is \(19.1016\%\).
+</p>
 
 <h3 id="jan20">Jan 20</h3>
 
+\[y=\sin\left({\pi\over10}\right)\qquad x=16y^2+8y+16\]
+
+<p>
+We can first simplify the expression for \(x\) a bit
+\[x=16\sin^2\left({\pi\over10}\right)+8\sin\left({\pi\over10}\right)+16\]
+By double angle identity
+\[=8\left(1-\cos\left({\pi\over5}\right)\right)
++8\sin\left({\pi\over10}\right)+16
+=24+8\left(\sin\left({\pi\over10}\right)-\cos\left({\pi\over5}\right)\right)\]
+Next we will find \(\cos(\pi/5)\). Let \(\theta=\pi/5\). Start with the identity
+\[\sin(2\theta)=\sin(\pi-2\theta)\Rightarrow\sin(2\theta)=\sin(3\theta)\]
+On the left we have \[\sin(\theta+\theta)=2\sin(\theta)\cos(\theta)\]
+On the right we have
+\[\sin(2\theta+\theta)=\sin(2\theta)\cos(\theta)+\cos(2\theta)\sin(\theta)
+=2\sin(\theta)\cos^2(\theta)+\sin(\theta)(1-2\sin^2(\theta))\]
+\[=2\sin(\theta)(1-\sin^2(\theta))+\sin(\theta)-2\sin^3(\theta)
+=3\sin(\theta)-4\sin^3(\theta)\]
+Next write the equation and divide by \(\sin(\theta)\neq0\)
+\[3\sin(\theta)-4\sin^3(\theta)=2\sin(\theta)\cos(\theta)
+\Rightarrow3-4\sin^2(\theta)=2\cos(\theta)=3-4(1-\cos^2(\theta))\]
+So in terms of \(\cos(\theta)\) we have
+\[4\cos^2(\theta)-2\cos(\theta)-1=0\]
+By quadratic formula
+\[\cos(\theta)={2\pm\sqrt{20}\over8}={1\pm\sqrt{5}\over4}\]
+We must take the positive solution since \(\cos(\theta)&gt;0\). Therefore,
+\[\cos\left({\pi\over5}\right)={1+\sqrt{5}\over4}\]
+We can find the other quantity needed with the half angle identity
+\[\sin\left({\pi\over10}\right)=\pm\sqrt{1-\cos\left({\pi\over5}\right)\over2}
+=\pm\sqrt{3-\sqrt{5}\over8}\]
+We also take the positive solution since \(\sin(\theta/2)&gt;0\)
+Then
+\[\begin{align}x&=24+8\left(\sqrt{3-\sqrt{5}\over8}-{1+\sqrt{5}\over4}\right)
+=24+8\left(\sqrt{\left(3-\sqrt{5}\right)\left(3+\sqrt{5}\right)
+\over8\left(3+\sqrt{5}\right)}-{1+\sqrt{5}\over4}\right)\\&
+=24+8\left(\frac{1}{\sqrt{6+2\sqrt{5}}}-\frac{1+\sqrt{5}}{4}\right)
+=24+8\left(\frac{1}{\sqrt{\left(1+\sqrt{5}\right)^2}}
+-\frac{1+\sqrt{5}}{4}\right)\\&=24+8\left({1\over1+\sqrt{5}}
+-{1+\sqrt{5}\over4}\right)=24+8\left({1-\sqrt{5}\over-4}
++{1+\sqrt{5}\over-4}\right)=24+8\left(2\over-4\right)=20\end{align}\]
+</p>
+
 <h3 id="jan21">Jan 21</h3>
+
+<p>
+Find the count of integers where \((n^2-101)\) is negative.
+</p>
+
+<p>
+\[n^2-101&lt;0\Rightarrow n^2&lt;101\Rightarrow-\sqrt{101}&lt;n&lt;\sqrt{101}\]
+Since \(n\) is an integer, this bound can become \(-10\leq n\leq10\) so there
+are 21 solutions.
+</p>
 
 <h3 id="jan22">Jan 22</h3>
 
