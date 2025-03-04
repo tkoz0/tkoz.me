@@ -491,24 +491,24 @@ I cannot find a better way to solve this problem.
 </p>
 
 <pre><code>
-    from fractions import Fraction
-    from math import pi
-    f = lambda t : (t**4)/(t**4-t**2+1)**4
-    dt = 0.001
-    stop = 5.0
-    area = 0.0
-    i = 0
-    while True:
-        x1 = i*dt
-        x2 = (i+1)*dt
-        h1 = f(x1)
-        h2 = f(x2)
-        if x1 >= stop:
-            break
-        area += (h1 + h2) * dt / 2
-        i += 1
-    print(area)
-    print(Fraction(area/pi).limit_denominator())    
+from fractions import Fraction
+from math import pi
+f = lambda t : (t**4)/(t**4-t**2+1)**4
+dt = 0.001
+stop = 5.0
+area = 0.0
+i = 0
+while True:
+    x1 = i*dt
+    x2 = (i+1)*dt
+    h1 = f(x1)
+    h2 = f(x2)
+    if x1 >= stop:
+        break
+    area += (h1 + h2) * dt / 2
+    i += 1
+print(area)
+print(Fraction(area/pi).limit_denominator())
 </code></pre>
 
 <p>
@@ -636,23 +636,145 @@ are 21 solutions.
 
 <h3 id="jan22">Jan 22</h3>
 
+<p>
+In 2005, Alex is four times as old as Beth. Cal is two times as old as Beth,
+and Alex is four years older than Cal. How old is Beth in 2025?
+</p>
+
+<p>
+In 2005, \(A=4B,C=2B,A=C+4\). Using this information:
+\[A=4B=2C=2(A-4)=2A-8\Rightarrow A=8\]
+Therefore, \(B=2,C=4\). We are looking for \(B+20=22\) since it asks for 20
+years later in 2025.
+</p>
+
 <h3 id="jan23">Jan 23</h3>
+
+<p>
+The sum of \(x\) consecutive numbers is \(529\). Their average is \(x\).
+</p>
+
+<p>
+For the average, we have
+\[{529\over x}=x\Rightarrow x^2=529\Rightarrow x=\pm23\]
+Since \(x&gt;0\), we must have \(x=23\). The fact that they are consecutive was
+not important to solve this. If we were to solve for that, we would find the
+consecutive numbers are \(12,13,\ldots,34\).
+</p>
 
 <h3 id="jan24">Jan 24</h3>
 
+<p>
+How many digits are in the largest left-truncatable prime?
+</p>
+
+<p>
+There are lists of these published on the internet. Out of the 4260 base 10
+left-truncatable primes, the largest is 357686312646216567629137 which is 24
+digits. They can be computed quickly with some code. Below is an example in
+Python using the gmpy2 package which has a probable prime test (it turns out
+the probable test is correct for all the numbers tested in this case). It also
+finds the maximum right truncatable prime which is a similar process.
+</p>
+
+<pre><code>
+import gmpy2
+
+def left(n:str):
+    if n == '' or gmpy2.is_prime(int(n)): # type:ignore
+        if n != '':
+            yield int(n)
+        for i in '123456789':
+            yield from left(i+n)
+
+left_list = list(left(''))
+
+def right(n:str):
+    if n == '' or gmpy2.is_prime(int(n)): # type:ignore
+        if n != '':
+            yield int(n)
+        for i in '123456789':
+            yield from right(n+i)
+
+right_list = list(right(''))
+
+print(len(left_list),max(left_list),len(str(max(left_list))))
+print(len(right_list),max(right_list),len(str(max(right_list))))
+</code></pre>
+
 <h3 id="jan25">Jan 25</h3>
+
+\[{10^3\over2^2+76\div4+17}={1000\over4+19+17}={1000\over40}=25\]
 
 <h3 id="jan26">Jan 26</h3>
 
+\[5!\left({1\over4}-{1\over5}+{1\over6}\right)=120\cdot\left({30\over120}
+-{24\over120}+{20\over120}\right)=30-24+20=26\]
+
 <h3 id="jan27">Jan 27</h3>
+
+<p>
+Find the sum of the digits of any three-digit number times 999
+</p>
+
+<p>
+TODO use paper
+</p>
 
 <h3 id="jan28">Jan 28</h3>
 
+<p>
+Zia used \(x\) five dollar bills to buy books. He could have used 21 fewer 20
+dollar bills instead.
+</p>
+
+<p>
+This tells us the total cost was \(5x\) dollars. If \(x-21\) 20 dollar bills are
+used, then the total cost is \(20(x-21)\). This gives us an equation to solve
+\[5x=20(x-21)\Rightarrow5x=20x-420\Rightarrow15x=420\Rightarrow x=28\]
+</p>
+
 <h3 id="jan29">Jan 29</h3>
+
+\[&#20108;&#21313;&#20061;\]
+
+<p>
+This is the way to write the number 29 in Chinese.
+</p>
 
 <h3 id="jan30">Jan 30</h3>
 
+<p>
+Kiran can paint half a room in 1 hour, and Jake can paint two-thirds of a room
+in 2 hours. How long will it take them to point 25 rooms?
+</p>
+
+<p>
+This tells us that Kiran paints 0.5 rooms per hour and Jake paints 1/3 of a room
+every hour. The total rate is \(1/2+1/3=5/6\) rooms per hour. Therefore it will
+take them \(25/(5/6)=30\) hours to paint 25 rooms.
+</p>
+
 <h3 id="jan31">Jan 31</h3>
+
+\[|\{\text{squarefree integers from 101 to 150}\}|\]
+
+<p>
+There are 50 integers to consider. We need to subtract away how many are
+divisible by the square of a prime. For \(2^2=4\) it is \(104,108,\ldots,148\)
+so 12. For \(3^2=9\) it is 5. For \(5^2=25\) is it 2. For \(7^2=49\) it is 1.
+For \(11^2=121\) it is also 1. We can stop since \(13^2&gt;150\).
+The total is now \[50-12-5-2-1-1=29\]
+By the inclusion-exclusion principle, we must add back those which were
+subtracted twice so the numbers divisible by the squares of 2 primes. Only
+\(2^2\cdot3^2=36\) ends up being counted to add back 2 numbers. Continuing the
+inclusion-exclusion principle further is not necessary since the smallest would
+be \(2^2\cdot3^2\cdot5^2=900&gt;150\). Therefore the size of this set is
+\(29+2=31\). If we were to solve this by testing numbers individually, we would
+find the following list of 31 numbers: 101, 102, 103, 105, 106, 107, 109, 110,
+111, 113, 114, 115, 118, 119, 122, 123, 127, 129, 130, 131, 133, 134, 137, 138,
+139, 141, 142, 143, 145, 146, 149.
+</p>
 
 </div>
 </body>
