@@ -81,17 +81,120 @@
 
 <h3 id="mar01">Mar 01</h3>
 
+\[{1^3+2^3+\ldots+2025^3\over(1+2+\ldots+2025)^2}\]
+
+<p>
+This could be evaluated by using the sum of integers and sum of cubes formulas.
+But it is even simpler if we are aware of the following well known fact
+\[\left(\sum_{i=1}^n{i}\right)^2=\sum_{i=1}^n{i^3}\]
+In this problem, \(n=2025\) but it does not matter which \(n\) we use. Both
+parts of the fraction are equal so the answer is 1.
+</p>
+
 <h3 id="mar02">Mar 02</h3>
+
+\[x!+x=x^x,\quad x&gt;0\]
+
+<p>
+Here, \(x^x\) grows faster than \(x!+x\). If we use the continuous factorial
+(gamma function) this problem will be more complicated. But for integers, we can
+see that \(x=2\) works and from there the right grows faster than the left.
+When \(x\geq3\)
+\[x^x=x\cdot x^{x-1}=x^{x-1}(x-1)+x^{x-1}&gt;x!+x\]
+Here we can see \(x^{x-1}&gt;x\) since \(x-1\geq2\). Also
+\[x^{x-1}(x-1)=x(x-1)\cdot x^{x-2}&gt;x(x-1)\cdot(x-2)^{x-2}\geq x(x-1)(x-2)!
+=x!\]
+So in integers the only solution is \(x=2\). A plot of the graphs suggests that
+when using the gamma function this is still true but that would require other
+techniques to prove.
+</p>
 
 <h3 id="mar03">Mar 03</h3>
 
+\[{1\over\log_{100}(30)}+{1\over\log_{10}(30)}+{1\over\log_{27}(30)}\]
+
+<p>
+First use the base change formula to write it with natural logarithms.
+\[\begin{align}&={\ln(100)\over\ln(30)}+{\ln(10)\over\ln(30)}
++{\ln(27)\over\ln(30)}={\ln(100)+\ln(10)+\ln(27)\over\ln(30)}\\
+&={\ln(27000)\over\ln(30)}={\ln(30^3)\over\ln(30)}={3\ln(30)\over\ln(30)}=3\\
+\end{align}\]
+</p>
+
 <h3 id="mar04">Mar 04</h3>
+
+\[\left(\prod_{n=2}^\infty{n^2\over n^2-1}\right)^2\]
+
+<p>
+To evaluate this, we can factor the expression and look at the pattern
+\[\begin{align}
+\prod_{n=2}^x{n^2\over(n-1)(n+1)}&={2\cdot2\over1\cdot3}{3\cdot3\over2\cdot4}
+{4\cdot4\over3\cdot5}\ldots{(x-1)(x-1)\over(x-2)x}{x\cdot x\over(x-1)(x+1)}\\
+&={2\over1}{2\cdot3\over3\cdot2}{3\cdot4\over4\cdot3}
+\ldots{(x-1)x\over x(x-1)}{x\over x+1}={2x\over x+1}\\
+\end{align}\]
+And we can see this is \(2\) as \(x\to\infty\). To prove this more formally,
+we can use induction. When \(x=2\) it is true trivially. Then assume
+\[\prod_{n=2}^x{n^2\over(n-1)(n+1)}={2x\over x+1}\]
+Now we can find
+\[\begin{align}&\prod_{n=2}^{x+1}{n^2\over(n-1)(n+1)}
+={2x\over x+1}{(x+1)^2\over x(x+2)}={2(x+1)\over x+2}\end{align}\]
+Which shows that the formula is correct. So the product inside the parenthesis
+is \(2\) and the answer is \(2^2=4\)
+</p>
 
 <h3 id="mar05">Mar 05</h3>
 
+\[\begin{align}
+&\begin{array}{cccc}&A&B&X\\\times&&&X\\\hline&C&B&X\\\end{array}\\
+&\text{A, B, C, and X}\\&\text{are different digits}\\\end{align}\]
+
+<p>
+Using the digit squares modulo 10, the only possibilities are \(x=0,1,5\) since
+the ones digit comes from \(X^2\). If \(X=0\), then we would need \(B=C=0\) so
+the digits are not distinct. If \(X=1\), then both 3 digit numbers must be
+equal so we would have \(A=C\), not distinct. By elimination it must be \(X=5\).
+</p>
+
+<p>
+To solve for what the original letters are, start with \(X=5\). Then
+\[(100A+10B+5)\times5=500+50B+25\]
+This must be a 3 digit number so \(A=1\). Now try again with \(X=5,A=1\).
+\[(100+10B+5)\times5=500+50B+25=100C+10B+5\]
+We can derive the following
+\[520+40B=100C\]
+Which shows \(520+40B\) must be a multiple of \(100\). So the only possibilities
+are \(B=2,B=7\). With \(B=2\) we can see \(125\times5=625\) which has \(C=6\).
+With \(B=7\) we can see \(175\times5=875\) which has \(C=8\). So there are 2
+solutions both with \(X=5\).
+</p>
+
 <h3 id="mar06">Mar 06</h3>
 
+\[y=2^{-1}+6^{-1}+12^{-1}+20^{-1}+30^{-1}+42^{-1},\quad x=7y\]
+
+<p>
+By observing a pattern, we can see
+\[y={1\over1\cdot2}+{1\over2\cdot3}+{1\over3\cdot4}+{1\over4\cdot5}
++{1\over5\cdot6}+{1\over6\cdot7}=\sum_{n=1}^6{1\over n(n+1)}\]
+By using partial fractions this becomes
+\[\sum_{n=1}^6\left({1\over n}-{1\over n+1}\right)\]
+This is a telescoping series and evaluates to \(1-1/7=6/7\). The problem asks
+for \(7\) times this which is \(6\).
+</p>
+
 <h3 id="mar07">Mar 07</h3>
+
+\[x+y=13,\quad10x+5y=100\]
+
+<p>
+This is a linear system. First simplify the 2nd equation by dividing 5
+\[x+y=13,\quad2x+y=20\]
+The \(y\) coefficientns match so we can cancel it. Subtract the first equation
+from the second
+\[(2x+y)-(x+y)=20-13\Rightarrow x=7\]
+This one turns out to be simple to solve with the right choices.
+</p>
 
 <h3 id="mar08">Mar 08</h3>
 
