@@ -283,39 +283,230 @@ give a rectangle with area \(3\times4=12\).
 
 <h3 id="mar14">Mar 14</h3>
 
+\[12+{12\over7}+{12\over49}+\ldots=12\left(1+{1\over7}+{1\over7^2}+\ldots\right)
+=12\left({1\over1-{1\over7}}\right)=12\cdot{7\over6}=14\]
+
 <h3 id="mar15">Mar 15</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 30" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <g stroke="green">
+            <rect x="16" y="17" width="3" height="3" />
+            <rect x="6" y="9" width="3" height="3" />
+        </g>
+        <g stroke="red">
+            <polygon points="19 5 17.5 5 18.25 3.701" />
+            <polygon points="9 27 7.5 27 8.25 25.701" />
+        </g>
+        <g stroke="blue">
+            <line x1="15" x2="15" y1="5" y2="20" />
+            <line x1="5" x2="5" y1="12" y2="27" />
+        </g>
+        <line x1="11" x2="19" y1="5" y2="5" />
+        <line x1="1" x2="9" y1="12" y2="12" />
+        <path d="M 20 3.701 h 0.5 v 6 l 0.5 0.5 l -0.5 0.5 v 6 h -0.5" />
+        <path d="M 10 9 h 0.5 v 7.7 l 0.5 0.5 l -0.5 0.5 v 7.7 h -0.5" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="22" y="10.5">13</text>
+        <text x="12" y="18">17</text>
+        <g fill="blue">
+            <text x="13.5" y="10">x</text>
+            <text x="3.5" y="17">x</text>
+        </g>
+    </g>
+</svg>
+
+<p>
+Using the lengths shown, for the upper diagram we have
+\[x+\triangle=13+\square\]
+and for the lower diagram we have
+\[x+\square=17+\triangle\]
+Adding them we get
+\[2x+\triangle+\square=30+\triangle+\square\]
+So \(2x=30\Rightarrow x=15\).
+</p>
 
 <h3 id="mar16">Mar 16</h3>
 
+\[\sin\theta\cos\theta={7\over18},\quad x=9(\sin\theta+\cos\theta)^2\]
+
+\[x=9(\sin^2\theta+\cos^2\theta+2\sin\theta\cos\theta)
+=9\left(1+2\cdot{7\over18}\right)=9\left({32\over18}\right)={32\over2}=16\]
+
 <h3 id="mar17">Mar 17</h3>
+
+<p>
+Find the sum of the roots of \((x-7)(x-5)+(x-7)(x-15)\)
+</p>
+
+<p>
+Simplify to
+\[(x-7)((x-5)+(x-15))=(x-7)(2x-20)=0\Rightarrow x=7,10\]
+So the sum of roots is \(7+10=17\)
+</p>
 
 <h3 id="mar18">Mar 18</h3>
 
+<p>
+Find the count of base 3 three digit numbers.
+</p>
+
+<p>
+The smallest is \(3^2\) and the largest is \(3^3-1\) so the total is
+\[1+(3^3-1-3^2)=3^3-3^2=27-9=18\]
+</p>
+
 <h3 id="mar19">Mar 19</h3>
+
+<p>
+\(x\) is the largest integer such that \(1\) through \(37\) can be partitioned
+into \(x\) subsets, all with the same sum.
+</p>
+
+<p>
+The sum is \(37(38)/2=37\cdot19\) so \(x\) must be a factor of this, meaning
+\(x=1,19,37\) are possible, since \(x\leq37\). Clearly \(x=37\) is wrong
+because each number is different. Partitioning it into \(x=1\) subsets would
+work. But there is also a way to partition it into \(x=19\) such subsets:
+\[\{1,36\},\{2,35\},\{3,34\},\ldots,\{17,20\},\{18,19\},\{37\}\]
+Therefore the answer is \(x=19\).
+</p>
 
 <h3 id="mar20">Mar 20</h3>
 
+<p>
+How many natural numbers leave a remainder of \(4\) when divided into \(364\)?
+</p>
+
+<p>
+This is counting how many \(m\) satisfy
+\[364\equiv4\pmod{m}\]
+Which means
+\[m\mid(364-4)\Rightarrow m\mid360\]
+Factoring we have \(360=2^3\cdot3^2\cdot5\) so it has \(4\cdot3\cdot2=24\)
+divisors. But we also need \(m&gt;4\) to have a remainder of \(4\) so we exclude
+the divisiors \(1,2,3,4\) leaving 20 divisors.
+</p>
+
 <h3 id="mar21">Mar 21</h3>
+
+<p>
+Find the coefficient of the \(x^2\) in the Taylor expansion of
+\(f(x)=e^{3x^2+6x}\) at \(x=0\)
+</p>
+
+<p>
+The \(x^2\) term has coefficient \(f''(0)/2!\) so we need some derivatives
+\[f'(x)=e^{3x^2+6x}(6x+6)\]
+\[f''(x)=e^{3x^2+6x}(6x+6)^2+e^{3x^2+6x}\cdot6\]
+Then \(f''(0)/2=(6^2+6)/2=(36+6)/2=42/2=21\)
+</p>
 
 <h3 id="mar22">Mar 22</h3>
 
+\[y=\sum_{n=1}^{21}n\cdot n!,\quad x!=y+1\]
+
+<p>
+The expression for \(y\) is the largest number in the "factorial base" system
+with 21 digits. In general, we can show by induction that
+\[\sum_{n=1}^x n\cdot n!=(x+1)!-1\]
+Clearly it is true for \(x=1\) so then
+\[\sum_{n=1}^{x+1}n\cdot n!=(x+1)!-1+(x+1)(x+1)!=(x+2)(x+1)!-1=(x+2)!-1\]
+completes the induction. Therefore, \(y=22!-1\) so \(x=22\).
+</p>
+
 <h3 id="mar23">Mar 23</h3>
+
+\[y+z=41,\quad yz=288,\quad x=|y-z|\]
+
+<p>
+One thing we can do to start is adding the 2 equations and then adding 1 which
+allows us to do a nice factorization
+\[yz+y+z+1=288+41+1=330\Rightarrow(y+1)(z+1)=330\]
+Next substitute \(y=41-z\) so we have a quadratic equation to solve
+\[(42-z)(z+1)=330\Rightarrow-z^2+41z+42=330\Rightarrow z^2-41z+288=0
+\Rightarrow(z-9)(z-32)=0\]
+So \(z=9\Rightarrow y=32\) and \(z=32\Rightarrow y=9\) which makes sense since
+the 2 equations are symmetric. In both cases, \(x=|y-z|=23\).
+</p>
 
 <h3 id="mar24">Mar 24</h3>
 
+<p>
+Find the number of ways to make 99 cents using some of the coins from 15 dimes,
+15 nickels, 15 pennies.
+</p>
+
+<p>
+Subtracting pennies from 99 must leave a remaining total divisible by 5. So we
+can only use 4, 9, or 14 pennies. If 4 pennies are used, then we can make the
+remaining 90 cents with 2-9 dimes and nickels for the rest (8 ways) since with
+0 or 1 dimes there would not be enough nickels. If 9 pennies are used, then we
+can make 85 cents with 1-8 dimes and nickels for the rest (8 ways). And if 14
+pennies are used, we can also make 80 cents with 1-8 dimes and nickels for the
+rest (8 ways). In total, there are 24 ways.
+</p>
+
 <h3 id="mar25">Mar 25</h3>
+
+\[y=\sum_{n=1}^\infty{n\over6^{n+1}},\quad x={1\over y}\]
+
+<p>
+Let \[f(x)=1+x+x^2+x^3+\ldots={1\over1-x}\] then
+\[f'(x)=1+2x+3x^2+\ldots=\sum_{n=1}^\infty nx^{n-1}={1\over(1-x)^2}\]
+Now notice that
+\[36y=\sum_{n=1}^\infty{n\over6^{n-1}}=\sum_{n=1}^\infty n(1/6)^{n-1}
+=f'(1/6)={1\over(1-1/6)^2}={36\over25}\]
+So we have \(y=1/25\) and \(x=25\)
+</p>
 
 <h3 id="mar26">Mar 26</h3>
 
+\[\sqrt{171-\sqrt{1352}}+\sqrt{171+\sqrt{1352}}\]
+
+<p>
+Let \[x=\sqrt{171-\sqrt{1352}}+\sqrt{171+\sqrt{1352}}\]
+Then \[x^2=2\cdot171+2\sqrt{171^2-1352}=342+2\cdot167=676\]
+Finally we need the positive root so \(x=26\)
+</p>
+
 <h3 id="mar27">Mar 27</h3>
+
+\[3^4\cdot3^5\div3^6=3^9\div3^6=3^3=27\]
 
 <h3 id="mar28">Mar 28</h3>
 
+<p>
+How many multiples of 4 are between 55 and 166?
+</p>
+
+<p>
+The first multiple of 4 in the interval is 56 and the last is 164. To count how
+many are multiples of 4, we have
+\[1+(164-56)/4=1+108/4=1+27=28\]
+</p>
+
 <h3 id="mar29">Mar 29</h3>
+
+\[\left(1-{1\over30}\right)^{-29}=\left(1+{1\over x}\right)^x\]
+
+<p>
+We can rearrange the left a bit
+\[\left({29\over30}\right)^{-29}=\left({30\over29}\right)^{29}
+=\left(1+{1\over29}\right)^{29}\]
+So this matches with \(x=29\)
+</p>
 
 <h3 id="mar30">Mar 30</h3>
 
+\[\sqrt[3]{3^9+3^8+3^6+3^3}=3\sqrt[3]{3^6+3^5+3^3+1}=3\sqrt[3]{1000}
+=3\cdot10=30\]
+
 <h3 id="mar31">Mar 31</h3>
+
+\[{1\over31+{1\over31}}+{31\over1+{1\over961}}={1\over{961\over31}+{1\over31}}
++{31\over{961\over961}+{1\over961}}=31\cdot{1\over962}+31\cdot{961\over962}=31\]
 
 </div>
 </body>
