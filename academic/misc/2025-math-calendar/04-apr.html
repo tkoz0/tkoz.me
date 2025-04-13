@@ -81,29 +81,188 @@
 
 <h3 id="apr01">Apr 01</h3>
 
+<p>
+How many times can you subtract 10 from 100?
+</p>
+
+<p>
+This one is an april fools joke. The string "10" appears once in "100" so it can
+be removed once.
+</p>
+
 <h3 id="apr02">Apr 02</h3>
+
+<p>
+Find the area of the right triangle with hypotenuse 3 and whose legs differ in
+length by 1.
+</p>
+
+<p>
+Let the legs be \(x,y\) with \(x&lt;y\) and \(y-x=1\). Then
+\[x^2+y^2=3^2\Rightarrow x^2+(x+1)^2=9\Rightarrow x^2+x-4=0
+\Rightarrow x={-1\pm\sqrt{17}\over2}\]
+Then the area is
+\[{1\over2}xy={1\over2}\left({\sqrt{17}-1\over2}\right)
+\left(\sqrt{17}+1\over2\right)={1\over8}(17-1)=2\]
+</p>
 
 <h3 id="apr03">Apr 03</h3>
 
+\[4x^2-y^2=35,\quad2x+y=5\]
+
+<p>
+The first equation has a difference of squares and can be factored
+\[(2x+y)(2x-y)=35\]
+Then divide the other equation to get
+\[2x-y=7\]
+Now add this with the 2nd given equation
+\[(2x+y)+(2x-y)=12\Rightarrow4x=12\Rightarrow x=3\]
+</p>
+
 <h3 id="apr04">Apr 04</h3>
+
+\[{x\over2}+{8\over x}=4\]
+
+<p>
+Start by multiplying \(2x\)
+\[x^2+16=8x\Rightarrow x^2-8x+16=0\Rightarrow(x-4)^2=0\]
+So the solution is \(x=4\).
+</p>
 
 <h3 id="apr05">Apr 05</h3>
 
+\[\sqrt{x^2+24}-2=x\]
+
+<p>
+First move the 2 to the other side then square
+\[\sqrt{x^2+24}=x+2\Rightarrow x^2+24=x^2+4x+4\Rightarrow 4x=20\Rightarrow x=5\]
+</p>
+
 <h3 id="apr06">Apr 06</h3>
+
+\[x&gt;1,\quad{\sqrt{x!}\over x}=\sqrt{20}\]
+
+<p>
+We can also write the equation as
+\[x!=20x^2\]
+By trying a few small values, we can find \(x=6\) is the solution. From this
+point, we would expect \(x!&gt;20x^2\) for every \(x&gt;6\) which can be shown
+by induction.
+\[(x+1)!=(x+1)x!&gt;20x^2(x+1)&gt;20(x+1)^2\]
+Since \(x^2&gt;x+1\) when \(x&gt;6\).
+</p>
 
 <h3 id="apr07">Apr 07</h3>
 
+<p>
+\[ABCDX1=3\times1ABCDX\]
+\(A,B,C,D\), and \(X\) are distinct digits.
+</p>
+
+<p>
+When multiplying the right side, \(3\times X\) must have remainder \(1\), so the
+only possibility is \(X=7\). We do not need to evaluate this further, but if we
+do then we find \(ABCD=4285\)
+</p>
+
+<p>
+From \(3\times X=21\), we carry 2 so by remainder, \(3D+2=X=7\Rightarrow D=5\).
+Then \(3D+2=17\) so 1 is carried. Next is \(3C+1=D=5\Rightarrow C=8\). Next we
+carry 2 and \(3B+2=C=8\Rightarrow B=2\). Next 0 is carried because \(3B+2=8\)
+so we get \(3A=B=2\Rightarrow A=4\) (remainder mod 10). From here, we carry 1
+so \(3+1=A=4\) which works out.
+</p>
+
 <h3 id="apr08">Apr 08</h3>
+
+<p>
+For the geometric sequence \(4,12,36,108,\ldots\) which term of the sequence is
+\(8748\)?
+</p>
+
+<p>
+The sequence starts at \(4\) and terms after that are multiplied by 3 so the
+\((n+1)\)th term is \(4\cdot3^n\) so we solve
+\[4\cdot3^n=8748\Rightarrow3^n=2187\Rightarrow n=7\]
+So it is the 8th term of this sequence that is 8748.
+</p>
 
 <h3 id="apr09">Apr 09</h3>
 
+\[{10\over\left(1\over{1+{1\over2}}\right)+\left(1\over{2+{1\over4}}\right)}
+={10\over\left({2\over2+1}\right)+\left({4\over8+1}\right)}
+={10\over{2\over3}+{4\over9}}={10\over{6\over9}+{4\over9}}
+={10\over{10\over9}}=9\]
+
 <h3 id="apr10">Apr 10</h3>
+
+<p>
+How many roots of \(x^{12}-4096\) are non real complex numbers?
+</p>
+
+<p>
+One way we can solve this is by derivative tests. The derivative is \(12x^{11}\)
+so it has a minumum at 0 and we can tell the function is strictly decreasing
+when \(x&lt;0\) and strictly increasing when \(x&gt;0\). So it decreases from
+\(\infty\) to \(-4096\) crossing the \(x\) axis once, then increases from
+\(-4096\) to \(\infty\) crossing the \(x\) axis again. We find that 2 of the
+zeroes are real and the other 10 must be complex.
+</p>
+
+<p>
+Another method is starting by noticing the nice factorization
+\[x^{12}-2^{12}=(x^6+2^6)(x^6-2^6)=(x^6+2^6)(x^3+2^3)(x^3-2^3)\]
+\[=(x^2+4)(x^4-4x^2+16)(x+2)(x^2-2x+4)(x-2)(x^2+2x-4)\]
+We can see \(x=\pm2\) are real solutions and the quadratic formula shows that
+the quadratic factors have no real solutions. For the quartic factor, substitute
+\(y=x^2\) then observe that \(y^2-4y+16\) has no real solution for \(y\), so
+\(x=\pm\sqrt{y}\) cannot be real.
+</p>
 
 <h3 id="apr11">Apr 11</h3>
 
+\[0&lt;\theta&lt;{\pi\over2},\quad\cos^4(\theta)-\sin^4(\theta)={60\over61},
+\quad x=\cot(\theta)\]
+
+<p>
+Start by factoring the middle equation and using trigonometric identities.
+\[{60\over61}=\cos^4(\theta)-\sin^4(\theta)=(\cos^2(\theta)-\sin^2(\theta))
+(\cos^2(\theta)+\sin^2(\theta))=\cos(2\theta)\]
+Now we can draw a triangle with angle \(2\theta\) which has adjacent 60,
+hypotenuse 61, and opposite 11. We can use the double angle formula for tangent
+to find \(y=\tan(\theta)\) with a quadratic equation.
+\[\tan(2\theta)={11\over60}={2y\over1-y^2}\Rightarrow{11\over60}(1-y^2)=2y
+\Rightarrow11-11y^2=120y\Rightarrow(11y-1)(y+11)=0\Rightarrow y={1\over11},-11\]
+So because of the restriction on \(\theta\), we know \(y&gt;0\) so
+\(y={1\over11}\). Then
+\[x=\cot(\theta)={1\over\tan(\theta)}={1\over y}=11\]
+</p>
+
 <h3 id="apr12">Apr 12</h3>
 
+\[8\left(\sin\left({\pi\over12}\right)+\cos\left({\pi\over12}\right)\right)^2
+=8\left(\sin^2\left(\pi\over12\right)+\cos^2\left(\pi\over12\right)
++2\sin\left({\pi\over12}\right)\cos\left({\pi\over12}\right)\right)\]
+\[8\left(1+\sin\left({\pi\over6}\right)\right)=8\left(1+{1\over2}\right)=12\]
+
 <h3 id="apr13">Apr 13</h3>
+
+<p>
+The mean of
+<ul>
+    <li>\(x\) and \(9\) is \(w\)</li>
+    <li>\(2x\) and \(15\) is \(y\)</li>
+    <li>\(3x\) and \(18\) is \(z\)</li>
+    <li>\(w,y,\) and \(z\) is \(20\)</li>
+</ul>
+</p>
+
+<p>
+The equations from this are
+\[x+9=2w,\quad2x+15=2y,\quad3x+18=2z,\quad w+y+z=60\]
+The simplest way to solve this is by adding the first 3 equations
+\[6x+9+15+18=2(w+y+z)=2\cdot60=120\Rightarrow6x=120-42=78\Rightarrow x=13\]
+</p>
 
 <h3 id="apr14">Apr 14</h3>
 
