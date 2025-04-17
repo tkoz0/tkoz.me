@@ -266,9 +266,63 @@ The simplest way to solve this is by adding the first 3 equations
 
 <h3 id="apr14">Apr 14</h3>
 
+<p>
+How many triangles are there with integer side lengths and a perimeter of 23?
+</p>
+
+<p>
+Let \(a,b,c\) be the side lengths and order them \(0&lt;a\leq b\leq c\). We need
+\(a+b+c=23\) and \(a+b&gt;c\). Consider possible values of \(c\). If \(c\leq7\),
+then the maximum possible perimeter is \(21\) so \(c&gt;7\).
+</p>
+
+<p>
+If \(c=8\), then the only possibility is \(a=7,b=8\), so this is 1 triangle.
+</p>
+
+<p>
+If \(c=9\), then \((a,b)\) can be \((7,7),(6,8),(5,9)\) so 3 triangles.
+</p>
+
+<p>
+If \(c=10\), then we count \((6,7),(5,8),(4,9),(3,10)\) so 4 triangles.
+</p>
+
+<p>
+If \(c=11\), there are 6 triangles: \((6,6),(5,7),(4,8),(3,9),(2,10),(1,11)\).
+</p>
+
+<p>
+When \(c\geq12\), we cannot have \(a+b&gt;c\), so there are no more to count. In
+total there are 14 triangles.
+</p>
+
 <h3 id="apr15">Apr 15</h3>
 
+<p>
+Zia was asked to subtract 3 from a number then divide by 9. Instead he
+subtracted 9 then divided by 3 to get 43. What is the correct answer?
+</p>
+
+<p>
+The starting number can be solved for:
+\[{x-9\over3}=43\Rightarrow x-9=129\Rightarrow x=138\]
+Then doing the operations that were supposed to happen:
+\[{x-3\over9}={138-3\over9}={135\over9}=15\]
+</p>
+
 <h3 id="apr16">Apr 16</h3>
+
+<p>
+Find the number of squares with perimeter 12 that are needded to cover a square
+with side length 12.
+</p>
+
+<p>
+If the perimeter is 12, the side length is 3 so the area is 9. If the side
+length is 12, the area is 144. So then \(144/9=16\) so we need 16 of these
+smaller squares. These align to a \(4\times4\) grid in the bigger square.
+</p>
 
 <h3 id="apr17">Apr 17</h3>
 
