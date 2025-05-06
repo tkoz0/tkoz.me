@@ -81,13 +81,82 @@
 
 <h3 id="may01">May 01</h3>
 
+\[y=\sum_{n=1}^{99}{n\over(n+1)!},\quad x=y+{1\over101!}\]
+
+<p>
+This problem has a mistake. Either change the 99 to 100 or change the 101 to
+100. The same answer results. Here I will change the 101 to 100. Consider the
+pattern of partial sums of
+\[{1\over2!}+{2\over3!}+{3\over4!}+{4\over5!}+\ldots\]
+which are
+\[{1\over2}=1-{1\over2},{5\over6}=1-{1\over6},{23\over24}=1-{1\over24},\ldots\]
+This suggests the formula
+\[\sum_{n=1}^x{n\over(n+1)!}=1-{1\over(x+1)!}\]
+We can easily see it is true when \(x=1\), and can be proven by induction.
+\[\sum_{n=1}^{x+1}=1-{1\over(x+1)!}+{x+1\over(x+2)!}
+=1-{x+2\over(x+2)!}+{x+1\over(x+2)!}=1-{1\over(x+2)!}\]
+So from this, we have
+\[y=1-{1\over100!},\quad x=1\]
+</p>
+
 <h3 id="may02">May 02</h3>
+
+\[\lim_{n\to1}{\sqrt{n}-\sqrt[6]{n}\over\sqrt{n}-\sqrt[3]{n}}
+=\lim_{n\to1}{n^{1/2}-n^{1/6}\over n^{1/2}-n^{1/3}}
+=\lim_{n\to1}{{1\over2}n^{-1/2}-{1\over6}n^{-5/6}
+\over{1\over2}n^{-1/2}-{1\over3}n^{-2/3}}
+={{1\over2}-{1\over6}\over{1\over2}-{1\over3}}={2/6\over1/6}=2\]
 
 <h3 id="may03">May 03</h3>
 
+\[4^x-32-2^{x+2}=0\]
+
+<p>
+This is an exponential equation that can be solved as a quadratic since
+\(4^x=(2^x)^2\). Let \(y=2^x\). Then
+\[y^2-32-4y=0\Rightarrow y={4\pm\sqrt{16+4\cdot32}\over2}
+={2\pm\sqrt{4+32}}=2\pm\sqrt{36}=2\pm6=-4,8\]
+So then solving for \(x\), we have \(x=3\) since there is no solution for
+\(y=-4\).
+</p>
+
 <h3 id="may04">May 04</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 15" width="200" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="7 13 7 1 3.229 11.667" />
+        <polygon points="7 13 3.229 11.667 1 13" fill="#7cf" />
+        <polygon points="3.229 11.667 3.479 10.96 4.186 11.21 3.936 11.917" />
+        <rect x="6.25" y="12.25" width="0.75" height="0.75" />
+    </g>
+    <g fill="black" font-size="0.075em">
+        <text x="5" y="12">4</text>
+        <text x="3" y="14.5">6</text>
+        <text x="7.5" y="8">12</text>
+    </g>
+</svg>
+
+<p>
+Consider the right triangle on the right with side lengths 4 and 12. The
+remaining leg has length \(\sqrt{12^2-4^2}=\sqrt{128}\). Then let \(a\) be the
+altitude of this triangle and we can form the ratio
+\[{12\over\sqrt{128}}={4\over a}\Rightarrow a={\sqrt{128}\over3}\]
+Now let \(h\) be the height of the shaded triangle. This is also a leg of one
+of the right triangles the altitude formed so
+\[h=\sqrt{4^2-a^2}=\sqrt{16-{128\over9}}=\sqrt{144-128\over9}={4\over3}\]
+Then the area of the shaded triangle is
+\[{1\over2}\cdot6\cdot{4\over3}=4\]
+</p>
+
 <h3 id="may05">May 05</h3>
+
+\[8^x+2^x=2\cdot4^{x+2}+32\]
+
+<p>
+Another exponential equation that can be solved as a polynomial. Let \(y=2^x\).
+\[y^3+y=32y^2+32\Rightarrow y(y^2+1)=32(y^2+1)\Rightarrow y=32\]
+Then \(x=\log_2(y)=5\)
+</p>
 
 <h3 id="may06">May 06</h3>
 
