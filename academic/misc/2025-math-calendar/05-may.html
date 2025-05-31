@@ -160,55 +160,391 @@ Then \(x=\log_2(y)=5\)
 
 <h3 id="may06">May 06</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="1 8 4 3 9 3 6 8" />
+        <path d="M 2 8 A 1 1 0 0 0 1.514 7.143" />
+        <path d="M 3.486 3.857 A 1 1 0 0 0 5 3" />
+        <path d="M 8 3 A 1 1 0 0 0 8.486 3.857" />
+        <path d="M 6.514 7.143 A 1 1 0 0 0 5 8" />
+        <line x1="1.653" x2="2.088" y1="7.63" y2="7.384" />
+        <line x1="8.347" x2="7.912" y1="3.37" y2="3.616" />
+        <line x1="4.463" x2="4.772" y1="3.59" y2="3.984" />
+        <line x1="4.268" x2="4.446" y1="3.701" y2="4.168" />
+        <line x1="5.537" x2="5.228" y1="7.41" y2="7.016" />
+        <line x1="5.732" x2="5.554" y1="7.299" y2="6.832" />
+    </g>
+    <g fill="black" font-size="0.05em">
+        <text x="2.5" y="2.5">1000z&deg;</text>
+        <text x="6.5" y="2.5">(5y+45)&deg;</text>
+        <text x="1" y="9">10x&deg;</text>
+        <text x="5" y="9">(25x-30)&deg;</text>
+    </g>
+</svg>
+
+<p>
+To solve for \(x\) here, we do not actually need to use all the information.
+This is a quadrilateral with interior angle sum \(360^\circ\). The 2 angles on
+the bottom sum to \(180^\circ\) and only involve \(x\) so we can find it from
+there.
+\[(10x+25x-30)=180\Rightarrow35x=210\Rightarrow x=6\]
+</p>
+
 <h3 id="may07">May 07</h3>
+
+<p>
+Jamal Brown is Kate's brother. Jamal has one brother, and Kate has twice as
+many sisters as brothers. How many Brown siblings are there?
+</p>
+
+<p>
+Jamal is a brother and we have to assume Kate is a female name here so she is
+a sister. If Jamal has 1 brother, then there are 2 males. This means Kate has
+2 brothers, and twice as many sisters, so 4 sisters. There are 2 males and 5
+females in the family so 7 siblings total.
+</p>
 
 <h3 id="may08">May 08</h3>
 
+\[a+b=5,\quad{a\over c}=7,\quad a-c=18,\quad x=a+b+c\]
+
+<p>
+The 2nd equation tells us \(a=7c\) so combining with the 3rd gives us
+\(7c-c=18\Rightarrow c=3\). Then we can use the first equation for the other
+variables (which we do not need to know the individual values of) so
+\[x=a+b+c=5+c=5+3=8\]
+</p>
+
 <h3 id="may09">May 09</h3>
+
+<p>
+Find the number of line segments in the complex plane that connect two of the
+sixth roots of 1 where at least one root is real.
+</p>
+
+<p>
+The roots form a hexagon around the origin and the only real roots are \(1,-1\).
+There is a line connecting these 2 real roots. Then for each of these real roots
+we can connect a line to 4 imaginary roots. In total, \(1+4+4=9\) lines.
+</p>
 
 <h3 id="may10">May 10</h3>
 
+\[{4\over1-{3\over5}}={4\over2/5}=4\cdot{5\over2}=10\]
+
 <h3 id="may11">May 11</h3>
+
+\[t=\sqrt{2}-1,\quad x=t^5+3t^4+t^3+2t+10\]
+
+<p>
+There is not a whole lot that can be done to simplify the algebra, but one
+observation is
+\[x=t^3(t^2+3t+1)+2t+10=t^3((t+1)^2+t)+2t+10\]
+Then we can evaluate \((t+1)^2=2\) and \(t^3=5\sqrt{2}-7\) and substitute
+\[x=\left(5\sqrt{2}-7\right)\left(\sqrt{2}+1\right)+2\sqrt{2}+8
+=10-7\sqrt{2}+5\sqrt{2}-7+2\sqrt{2}+8=11\]
+</p>
 
 <h3 id="may12">May 12</h3>
 
+<p>
+Let \(r,s\) be the solutions of \(y+{1\over\sqrt{y}}=2\). Then let
+\(z=r+s+\sqrt{r}+\sqrt{s}\) and find \(x=z^2+z\). First we can find solutions
+for \(y\).
+\[y\sqrt{y}+1=2\sqrt{y}\]
+Let \(u=\sqrt{y}\), then we have a cubic
+\[u^3-2u+1=0\Rightarrow(u-1)(u^2+u-1)=0\Rightarrow u=1,{-1\pm\sqrt{5}\over2}\]
+Since \(u\geq0\), the solutions are \(u=1,u={-1+\sqrt{5}\over2}\) which can both
+be verified. We square these to find solutions \(y=1,{3-\sqrt{5}\over2}\).
+Let \(r=1,s={3-\sqrt{5}\over2}\). Then after a bit of algebra
+\[z={7\over2}-{\sqrt{5}\over2}+t,\quad t=\sqrt{{3\over2}-{\sqrt{5}\over2}}\]
+\[z^2+z=z+{49\over2}+{5\over4}+t^2
+-2{7\over2}{\sqrt{5}\over2}+2{7\over2}t-2{\sqrt{5}\over2}t
+={37\over2}-{9\sqrt{5}\over2}+t\left(8-\sqrt{5}\right)\]
+Now supposing we can find an integer solution, we should be able to find some
+\(a,b\) such that
+\[a+b\sqrt{5}=t\left(8-\sqrt{5}\right)\]
+Looking at the terms we have, suppose \(b=9/2\). Then by squaring,
+\[a^2+{81\cdot5\over4}+9a\sqrt{5}
+=\left({3\over2}-{\sqrt{5}\over2}\right)\left(69-16\sqrt{5}\right)
+={287\over2}-{117\sqrt{5}\over2}\]
+Trying to get the parts with \(\sqrt{5}\) to match, we have
+\[9a=-{117\over2}\Rightarrow a={-13\over2}\]
+We can verify that this choice of \(a\) solves the equation. So now we have
+\[z^2+z={37\over2}-{9\sqrt{5}\over2}-{13\over2}+{9\sqrt{5}\over2}=12\]
+</p>
+
 <h3 id="may13">May 13</h3>
+
+\[3^{2x+1}=27^{x-4}\Rightarrow3^{2x+1}=3^{3(x-4)}\Rightarrow2x+1=3x-12
+\Rightarrow x=13\]
 
 <h3 id="may14">May 14</h3>
 
+\[\forall t,f(g(t))=4t+3,\quad f(t)=2t-1,\quad g(6)=x\]
+
+<p>
+Using the definition of \(f(t)\),
+\[f(g(t))=2g(t)-1=4t+3\Rightarrow g(t)=2t+2\]
+So then \(x=g(6)=2\cdot6+2=14\)
+</p>
+
 <h3 id="may15">May 15</h3>
+
+\[y=\sqrt{{28\over63}+{36\over100}-{96\over120}},\quad x={1\over y}\]
+
+<p>
+First simplify
+\[y=\sqrt{{4\over9}+{9\over25}-{4\over5}}=\sqrt{{4\cdot25\over9\cdot25}
++{9\cdot9\over25\cdot9}-{4\cdot5\cdot9\over5\cdot5\cdot9}}
+={1\over3\cdot5}\sqrt{100+81-180}={1\over15}\]
+So then \(x=1/y=15\)
+</p>
 
 <h3 id="may16">May 16</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -15 20 20" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <line x1="-9" x2="9" y1="0" y2="0" />
+        <line x1="0" x2="0" y1="-14" y2="4" />
+        <line x1="5" x2="5" y1="0.5" y2="-0.5" />
+        <line x1="-5" x2="-5" y1="0.5" y2="-0.5" />
+        <line x1="-0.5" x2="0.5" y1="-5" y2="-5" />
+        <line x1="-0.5" x2="0.5" y1="-10" y2="-10" />
+        <g fill="black">
+            <circle cx="4" cy="0" r="0.25" />
+            <circle cx="-4" cy="0" r="0.25" />
+            <circle cx="2" cy="-6" r="0.25" />
+            <circle cx="0" cy="-4" r="0.25" />
+            <circle cx="0" cy="-12" r="0.25" />
+        </g>
+        <line x1="-0.5" x2="5" y1="-13.5" y2="3" />
+        <line x1="-6" x2="5" y1="2" y2="-9" />
+    </g>
+    <g fill="black" font-size="0.075em">
+        <text x="-3" y="-4">(0,a)</text>
+        <text x="-3" y="-12">(0,b)</text>
+        <text x="3" y="-6">(2,6)</text>
+        <text x="-6" y="-1">(-4,0)</text>
+        <text x="4" y="-1">(4,0)</text>
+        <text x="-6" y="3.5">Find a + b</text>
+    </g>
+</svg>
+
+<p>
+For the line through \((-4,0)\) and \((2,6)\), we can find the slope and then
+use point slope form
+\[{6-0\over2-(-4)}=1\Rightarrow y-6=1(x-2)\Rightarrow y=x+4\]
+This gives us a y-intercept of 4 so \(a=4\). Doing the same for the other line
+\[{0-6\over4-2}=-3\Rightarrow y-6=-3(x-2)\Rightarrow y=-3x+12\]
+So the y-intercept is 12 and we have \(b=12\). Then \(a+b=16\)
+</p>
+
 <h3 id="may17">May 17</h3>
+
+\[A@B={A+B\over2},\quad\text{Find}\ (4@10)@(24@30)\]
+
+\[=\left({4+10\over2}\right)@\left(24+30\over2\right)
+=7@27={7+27\over2}=17\]
 
 <h3 id="may18">May 18</h3>
 
+<p>
+Let \(\sigma_0(n)\) be defined as equal to the number of divisors of \(n\).
+Find \({\sigma_0(11!)\over\sigma_0(6!)}\)
+</p>
+
+<p>
+Consider the prime factorizations
+\[6!=1\cdot2\cdot3\cdot4\cdot5\cdot6
+=2\cdot3\cdot2\cdot2\cdot5\cdot2\cdot3
+=2^4\cdot3^2\cdot5\]
+So \(6!\) has \((4+1)(2+1)(1+1)=30\) divisors.
+\[11!=1\cdot2\cdot3\cdot4\cdot5\cdot6\cdot7\cdot8\cdot9\cdot10\cdot11
+=2^8\cdot3^4\cdot5^2\cdot7\cdot11\]
+So \(11!\) has \((8+1)(4+1)(2+1)(1+1)(1+1)=540\) divisors. The solution is
+\(540/30=18\).
+</p>
+
 <h3 id="may19">May 19</h3>
+
+\[\sqrt{2025^2-2006*2044}=\sqrt{2025^2-(2025-19)(2025+19)}
+=\sqrt{2025^2-2025^2+19^2}=\sqrt{19^2}=19\]
 
 <h3 id="may20">May 20</h3>
 
+<p>
+Find the difference between the sum of the four element subset of
+\(1,2,\ldots,9\) with the largest sum and the sum of the four element subset
+with the least sum.
+</p>
+
+<p>
+The largest subset of 4 has the 4 largest numbers and sum \(9+8+7+6=30\). The
+smallest has the 4 smallest and sum \(1+2+3+4=10\). The difference is
+\(30-10=20\)
+</p>
+
 <h3 id="may21">May 21</h3>
+
+<p>
+How many integers from 80 to 130 contain the digit 1 exactly once?
+</p>
+
+<p>
+Below 100, we have tens digit 8 or 9 so the only such numbers to count are 81
+and 91. After 100, we need numbers without a 1 in the tens or ones digit. The
+only tens digits we can have are 0 or 2. For each, there are 9 digits other than
+1. Finally we count 130. The total is \(2+9+9+1=21\)
+</p>
 
 <h3 id="may22">May 22</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="200" height="200" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <polygon points="2 18 18 18 18 2" />
+        <rect x="8" y="16" width="2" height="2" />
+        <rect x="16" y="16" width="2" height="2" />
+        <polygon points="10 10 10 18 18 2" fill="#7cf" />
+        <line x1="5.5" x2="5.5" y1="17" y2="19" />
+        <line x1="6.5" x2="6.5" y1="17" y2="19" />
+        <line x1="13.5" x2="13.5" y1="17" y2="19" />
+        <line x1="14.5" x2="14.5" y1="17" y2="19" />
+        <line x1="9" x2="11" y1="13.5" y2="13.5" />
+        <line x1="9" x2="11" y1="14.5" y2="14.5" />
+        <line x1="14.6" x2="16.8" y1="12.6" y2="12.6" stroke-width="0.1" />
+    </g>
+    <text x="13" y="14" fill="black" font-size="0.1em">2&radic;55</text>
+</svg>
+
+<p>
+Let \(a\) be the side length of one of the double tick marked edges. Then by
+observing the 45-45-90 right triangle, we can form the equation
+\[a^2+(2a)^2=\left(2\sqrt{55}\right)^2\Rightarrow a=2\sqrt{11}\]
+To find the shaded area, we can subtract from the area of the whole 45-45-90
+triangle.
+\[{1\over2}(2a)^2-{1\over2}a^2-{1\over2}a(2a)={1\over2}a^2
+={1\over2}4\cdot11=22\]
+</p>
+
 <h3 id="may23">May 23</h3>
+
+<p>
+Juan is given 40 cookies on a Monday and eats 2 cookies at lunch every school
+day and one cookie each weekend day. How many days will the cookies last?
+</p>
+
+<p>
+In a whole week, he eats 12 cookies (10 on weekdays, 2 on the weekend). So after
+going through the week cycle 3 times, he has \(40-36\) cookies left. Then he has
+4 cookies on a Monday, enough for 2 weekdays. In total it is \(21+2=23\) days.
+</p>
 
 <h3 id="may24">May 24</h3>
 
+\[12^y=18,\quad x=2^{y-5\over y-2}\]
+
+<p>
+Start with \(y=\log_{12}(18)\). Then we evaluate that fraction exponent
+\[{y-5\over y-2}={\log_{12}(18)-5\over\log_{12}(18)-2}
+={\log_{12}(18)-\log_{12}(12^5)\over\log_{12}(18)-\log_{12}(12^2)}
+={\log_{12}\left(18\over12^5\right)\over\log_{12}\left(18\over12^2\right)}\]
+\[={\ln(18/12^5)\over\ln(18/12^2)}={\ln(18)-5\ln(12)\over\ln(18)-2\ln(12)}
+={\ln(2)+2\ln(3)-10\ln(2)-5\ln(3)\over\ln(2)+2\ln(3)-4\ln(2)-2\ln(3)}\]
+\[={-9\ln(2)-3\ln(3)\over-3\ln(2)}={3\ln(2)+\ln(3)\over\ln(2)}
+={\ln(8)+\ln(3)\over\ln(2)}={\ln(24)\over\ln(2)}=\log_2(24)\]
+So then
+\[x=2^{y-5\over y-2}=2^{\log_2(24)}=24\]
+</p>
+
 <h3 id="may25">May 25</h3>
+
+\[\sqrt{x}+\sqrt{y}=9,\quad x-y=9\]
+
+<p>
+Squaring the first equation and then adding the 2nd to cancel the \(y\)
+\[x+y+2\sqrt{xy}=81\Rightarrow2x+2\sqrt{xy}=90\Rightarrow
+\sqrt{x}\left(\sqrt{x}+\sqrt{y}\right)=45\Rightarrow\sqrt{x}=45/9=5
+\Rightarrow x=25\]
+We can also find \(y=16\).
+</p>
 
 <h3 id="may26">May 26</h3>
 
+<p>
+An 8' by 3' rectangular pool is surrounded on all sides by 1' of grass. How
+many square feet of grass are there?
+</p>
+
+<p>
+Adding 1' on each side increases the dimensions to 10' by 5'. The grass has
+increased the area from the original \(8\cdot3=24\) to \(10\cdot5=50\). The new
+area of \(50-24=26\) square feet is the grass added.
+</p>
+
 <h3 id="may27">May 27</h3>
+
+<p>
+Find the number of two digit numbers larger than 20 whose digits sum to a
+number divisible by 3.
+</p>
+
+<p>
+There is a theorem about divisibility by 3 which is that every number divisible
+by 3 has a base 10 digit sum divisible by 3. So this is the same as counting
+how many numbers divisible by 3 there are between 20 and 100. The largest is
+99 and the smallest is 21. This gives us \({99-21\over3}=78/3=26\) steps of 3
+so a total of 27 such numbers.
+</p>
 
 <h3 id="may28">May 28</h3>
 
+\[r+s=2,\quad2^r+2^s=6,\quad4^r+4^s=x\]
+
+<p>
+Square the middle equation and things will simplify
+\[4^r+4^s+2\cdot2^r\cdot2^s=36\Rightarrow4^r+4^s+2\cdot2^{r+s}=36\]
+\[\Rightarrow4^r+4^s+2\cdot2^2=36\Rightarrow4^r+4^s=36-8=28\]
+</p>
+
 <h3 id="may29">May 29</h3>
+
+\[\sqrt{4\cdot5\cdot6\cdot7+1}=\sqrt{(4\cdot7)(5\cdot6)+1}
+=\sqrt{(29-1)(29+1)+1}=\sqrt{29^2-1+1}=\sqrt{29^2}=29\]
 
 <h3 id="may30">May 30</h3>
 
+<p>
+The average monthly salary at a company is $8000. If 10 employees have an
+average salary of $12000 and the rest average $6000, how many employees are
+there?
+</p>
+
+<p>
+We can express this as an average equation in thousands of dollars to make it
+simpler.
+\[{10\cdot12+x\cdot6\over10+x}=8\Rightarrow120+6x=80+8x
+\Rightarrow2x=40\Rightarrow x=20\]
+So there are \(x=20\) employees with an average salary of $6000. In total there
+are \(10+20=30\) employees.
+</p>
+
 <h3 id="may31">May 31</h3>
+
+\[z^2+z+1=0,\quad x=z^{90}+z^{87}+\ldots+z^3+1\]
+
+<p>
+One idea is to see \(x\) as a geometeric series and write
+\[x={(z^3)^{31}-1\over z^3-1}\]
+But we are going to see that this does not work since it requires \(z^3\neq1\).
+We can similarly see the first equation as a geometric series and write is as
+\[{z^3-1\over z-1}=0\Rightarrow z^3=1\]
+And clearly this works since \(z\neq1\). So \(z\) must be another cube root of
+unity. We could also find this with the quadratic formula. The exact values are
+\[z=-{1\over2}\pm i{\sqrt{3}\over2}\]
+But we do not actually need these. We know \(z^3=1\) so all the other powers
+in that formula for \(x\) are also 1. There are 31 terms so \(x=31\).
+</p>
 
 </div>
 </body>
