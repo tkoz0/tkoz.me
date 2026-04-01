@@ -44,9 +44,22 @@
 =8\sum_{k=0}^\infty{1\over16k^2+16k+3}\end{align}\]
 
 <p>
-    One way to prove this formula is to consider the following integral. This is
-    the more significant idea that came from exploring this \(\pi\) formula a
-    bit. It provides a way to evaluate similar summations by using integrals.
+    One way to prove the formula is to rewrite the integral as a geometric
+    series summation.
+</p>
+
+\[4\int_0^1{dx\over1+x^2}=4\arctan(x)\Big|_0^1=4\arctan(1)=4\frac{\pi}{4}=\pi\]
+\[=4\int_0^1{dx\over1-(-x^2)}=4\int_0^1{\left(1-x^2+x^4-\ldots\right)dx}
+=4\int_0^1\left[\sum_{k=0}^\infty{(-1)^k x^{2k}}\right]dx\]
+\[=4\sum_{k=0}^\infty\left[\int_0^1 (-1)^k x^{2k}dx\right]
+=4\sum_{k=0}^\infty{(-1)^k x^{2k+1}\over2k+1}\Big|_0^1
+=4\sum_{k=0}^\infty{(-1)^k\over2k+1}\]
+
+<p>
+    Another way to prove this formula is to consider the following integral.
+    This is the more significant idea that came from exploring this \(\pi\)
+    formula a bit. It provides a way to evaluate similar summations by using
+    integrals.
 </p>
 
 \[\begin{align}&
