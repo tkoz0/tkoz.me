@@ -85,8 +85,8 @@
 
 <p>
 Let \(y=2^{-x}\). Then \(y^2+y^2+y=1\Rightarrow2y^2+y-1=0\) and this has
-solutions \(y={-1\pm3\over4}=1/2,-1\). Clearly \(-1\) is extraneous so \(y=1/2\)
-which gives us \(x=1\).
+solutions \(y={-1\pm3\over4}=1/2,-1\). Clearly \(-1\) is extraneous since
+\(y=2^{-x}&gt;0\) so \(y=1/2\) which gives us \(x=1\).
 </p>
 
 <h3 id="jun02">Jun 02</h3>
@@ -137,9 +137,89 @@ so we must also have \(x=3\).
 
 <h3 id="jun04">Jun 04</h3>
 
+\[{\csc(15^\circ)\over\cos(15^\circ)}={1\over\sin(15^\circ)\cos(15^\circ)}
+={2\over2\sin(15^\circ)\cos(15^\circ)}={2\over\sin(30^\circ)}={2\over1/2}=4\]
+
+<p>
+    Note: we used the double angle identity: \(\sin(2x)=2\sin(x)\cos(x)\)
+</p>
+
 <h3 id="jun05">Jun 05</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.5 4.5" width="250" height="250" class="img_center">
+    <polygon points="0.7 4 2.2 3 3.2 4 3.2 2.5 3.7 1.5 2.7 1.5 1.7 0.5 1.7 2 0.7 2.5" stroke="black" stroke-width="0.05" fill="#7cf" />
+    <text x="1.95" y="2.5" fill="black" font-size="0.05em">x</text>
+    <circle cx="0.7" cy="4" r="0.1" />
+    <text x="0.8" y="4.25" fill="black" font-size="0.015em">(0.5,0.5)</text>
+    <circle cx="2.2" cy="3" r="0.1" />
+    <text x="1.8" y="3.5" fill="black" font-size="0.015em">(2.0,1.5)</text>
+    <circle cx="3.2" cy="4" r="0.1" />
+    <text x="3.3" y="4.3" fill="black" font-size="0.015em">(3.0,0.5)</text>
+    <circle cx="3.2" cy="2.5" r="0.1" />
+    <text x="3.4" y="2.6" fill="black" font-size="0.015em">(3.0,2.0)</text>
+    <circle cx="3.7" cy="1.5" r="0.1" />
+    <text x="3.7" y="1.3" fill="black" font-size="0.015em">(3.5,3.0)</text>
+    <circle cx="2.7" cy="1.5" r="0.1" />
+    <text x="2.7" y="1.3" fill="black" font-size="0.015em">(2.5,3.0)</text>
+    <circle cx="1.7" cy="0.5" r="0.1" />
+    <text x="1.2" y="0.3" fill="black" font-size="0.015em">(1.5,4.0)</text>
+    <circle cx="1.7" cy="2" r="0.1" />
+    <text x="0.7" y="1.9" fill="black" font-size="0.015em">(1.5,2.5)</text>
+    <circle cx="0.7" cy="2.5" r="0.1" />
+    <text x="0.2" y="2.3" fill="black" font-size="0.015em">(0.5,2.0)</text>
+</svg>
+
+<p>
+    We have a sort of grid-aligned non convex polygon. Notice how it kind of
+    nicely fits into a rectangle of size \(3\times3.5=10.5\). We can draw some
+    lines to see how to exclude the parts inside the rectangle containing this
+    weird shape. Then it becomes a matter of subtracting some rectangles and
+    triangles from \(10.5\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.5 4.5" width="250" height="250" class="img_center">
+    <polygon points="0.7 4 2.2 3 3.2 4 3.2 2.5 3.7 1.5 2.7 1.5 1.7 0.5 1.7 2 0.7 2.5" stroke="black" stroke-width="0.05" fill="#7cf" />
+    <text x="1.95" y="2.5" fill="black" font-size="0.05em">x</text>
+    <circle cx="0.7" cy="4" r="0.1" />
+    <text x="0.8" y="4.25" fill="black" font-size="0.015em">(0.5,0.5)</text>
+    <circle cx="2.2" cy="3" r="0.1" />
+    <text x="1.8" y="3.5" fill="black" font-size="0.015em">(2.0,1.5)</text>
+    <circle cx="3.2" cy="4" r="0.1" />
+    <text x="3.3" y="4.3" fill="black" font-size="0.015em">(3.0,0.5)</text>
+    <circle cx="3.2" cy="2.5" r="0.1" />
+    <text x="3.4" y="2.6" fill="black" font-size="0.015em">(3.0,2.0)</text>
+    <circle cx="3.7" cy="1.5" r="0.1" />
+    <text x="3.7" y="1.3" fill="black" font-size="0.015em">(3.5,3.0)</text>
+    <circle cx="2.7" cy="1.5" r="0.1" />
+    <text x="2.7" y="1.3" fill="black" font-size="0.015em">(2.5,3.0)</text>
+    <circle cx="1.7" cy="0.5" r="0.1" />
+    <text x="1.2" y="0.3" fill="black" font-size="0.015em">(1.5,4.0)</text>
+    <circle cx="1.7" cy="2" r="0.1" />
+    <text x="0.7" y="1.9" fill="black" font-size="0.015em">(1.5,2.5)</text>
+    <circle cx="0.7" cy="2.5" r="0.1" />
+    <text x="0.2" y="2.3" fill="black" font-size="0.015em">(0.5,2.0)</text>
+    <line x1="0.7" x2="3.7" y1="0.5" y2="0.5" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="3.7" x2="3.7" y1="0.5" y2="4" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="3.7" x2="0.7" y1="4" y2="4" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="0.7" x2="0.7" y1="2.5" y2="0.5" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="1.7" x2="0.7" y1="2" y2="2" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="2.7" x2="2.7" y1="1.5" y2="0.5" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="3.2" x2="3.7" y1="2.5" y2="2.5" stroke="red" stroke-width="0.02" fill="none" />
+    <line x1="2.2" x2="2.2" y1="3" y2="4" stroke="red" stroke-width="0.02" fill="none" />
+</svg>
+
+<p>
+    Subtracting top left first, \(10.5-1\times1.5-{1\over2}\times0.5\times1
+    =10.5-1.5-0.25=8.75\). Next subtract the top right, \(8.75-1\times1
+    -{1\over2}\times1\times1=8.75-1-0.5=7.25\). Then the bottom right,
+    \(7.25-{1\over2}\times0.5\times1-0.5\times1.5=7.25-0.25-0.75=6.25\).
+    Finally subtract the bottom triangle, \(6.25-{1\over2}\times2.5\times1
+    =6.25-1.25=5\), so the area is \(5\).
+</p>
+
 <h3 id="jun06">Jun 06</h3>
+
+\[y=\sum_{n=0}^\infty{8\over36n^2+36n+5},\quad x=2\left({\pi\over y}\right)^2\]
 
 <h3 id="jun07">Jun 07</h3>
 
