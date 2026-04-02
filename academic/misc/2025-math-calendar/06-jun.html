@@ -325,9 +325,67 @@ of the process looks similar.
 
 <h3 id="jun07">Jun 07</h3>
 
+Find the smallest \(n\) such that a regular \(n\)-gon cannot be constructed
+with a straightedge and compass.
+
+<p>
+    According to the Gauss-Wantzel theorem, a regular \(n\)-gon can be
+    constructed with straightedge and compass iff \(n=2^{k}p_1p_2\ldots p_m\)
+    for an integer \(k\geq0\) and distinct Fermat primes \(p_i\). The first 2
+    Fermat primes are \(3,5\). We can test that \(3,4,5,6\) are all divisible by
+    only \(2,3,5\). But \(7\) is not, so a regular \(7\)-gon (heptagon) cannot
+    be constructed with straightedge and compass.
+</p>
+
+<p>
+    This theorem involves constructible numbers obtained by repeatedly adjoining
+    square roots to rational numbers. It also requires showing that we can
+    construct an angle \({2\pi\over n}\).
+</p>
+
 <h3 id="jun08">Jun 08</h3>
 
+How many pairs of prime numbers sum to \(102\)?
+
+<p>
+    The reasonable way to solve this is listing the primes and counting pairs.
+    The primes below \(102\) are: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
+    41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101. By symmetry, we can
+    go through the primes \(p\leq51\) and check if \(q=102-p\) is prime. The
+    pairs we find are (5,97), (13,89), (19,83), (23,79), (29,73), (31,71),
+    (41,61), (43,59). In total, there are 8 pairs.
+</p>
+
 <h3 id="jun09">Jun 09</h3>
+
+Find the tenths digit of \(\left(17+\sqrt{280}\right)^{17}\).
+
+<p>
+    Consider its binomial expansion and the conjugate binomial expansion.
+</p>
+
+\[\left(17+\sqrt{280}\right)^{17}=\sum_{k=0}^{17}{17\choose k}
+17^k\left(+\sqrt{280}\right)^{17-k}\]
+\[\left(17-\sqrt{280}\right)^{17}=\sum_{k=0}^{17}{17\choose k}
+17^k\left(-\sqrt{280}\right)^{17-k}\]
+
+When \(k\) is odd, the terms are integers, and identical in both summations.
+When \(k\) is even, they have opposite signs, positive in the first, negative
+in the second. Therefore, for some positive integers \(A,B\)
+
+\[\left(17+\sqrt{280}\right)^{17}=A+B\sqrt{280}\]
+\[\left(17-\sqrt{280}\right)^{17}=A-B\sqrt{280}\]
+\[\left(17+\sqrt{280}\right)^{17}+\left(17-\sqrt{280}\right)^{17}=2A\]
+
+Next, consider that \((16+1/2)^2=256+16+1/4=272+1/4&lt;280\). So
+\(\sqrt{280}&gt;16.5\) and \(0&lt;17-\sqrt{280}&lt;0.5\). From this, it clearly
+follows that \(0&lt;\left(17-\sqrt{280}\right)^{17}&lt;0.1\). Now we have
+
+\[\left(17+\sqrt{280}\right)^{17}=2A-\left(17-\sqrt{280}\right)^{17}
+&gt;2A-0.1\]
+
+So we subtract a tiny number from an integer \(2A\), meaning its tenth digit
+must be 9.
 
 <h3 id="jun10">Jun 10</h3>
 
