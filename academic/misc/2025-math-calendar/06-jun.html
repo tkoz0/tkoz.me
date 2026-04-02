@@ -221,6 +221,108 @@ so we must also have \(x=3\).
 
 \[y=\sum_{n=0}^\infty{8\over36n^2+36n+5},\quad x=2\left({\pi\over y}\right)^2\]
 
+First, we should focus on the summation to compute \(y\), then \(x\) follows
+easily. Begin by decomposing the fraction. We can factor
+\(36n^2+36n+5=(6n+1)(6n+5)\).
+
+\[{A \over 6n+1}+{B \over 6n+5}={8 \over 36n^2+36n+5}\]
+\[A(6n+5)+B(6n+1)=8 \Rightarrow n(6A+6B)+(5A+B)=8\]
+\[6A+6B=0,5A+B=8 \Rightarrow A=2,B=-2\]
+
+Then the summation is
+
+\[2\sum_{n=0}^\infty\left({1\over6n+1}-{1\over6n+5}\right)\]
+
+Now we can use an integration technique to evaluate two individual summations.
+Consider the following integral for some parameter \(p\).
+
+\[I(p)=\int_0^1{x^{p-1} dx\over 1-x^6}
+=\int_0^1 x^{p-1}\left(1+x^6+x^{12}+x^{18}+\ldots\right)dx\]
+\[=\int_0^1\sum_{n=0}^\infty x^{6n+p-1}dx=\sum_{n=0}^\infty\int_0^1 x^{6n+p-1}dx
+=\sum_{n=0}^\infty{x^{6n+p}\over 6n+p}\Big|_0^1
+=\sum_{n=0}^\infty{1\over 6n+p}\]
+
+So this gives us a way to compute the summations with an integral. Using this,
+the summation becomes the following integral:
+
+\[2I(1)-2I(5)=2\int_0^1{dx\over1-x^6}-2\int_0^1{x^4dx\over1-x^6}
+=2\int_0^1{(1-x^4)dx\over1-x^6}\]
+
+Proceed by factoring
+
+\[2\int_0^1{(1-x^2)(1+x^2)dx\over(1-x^2)(1+x^2+x^4)}
+=2\int_0^1{(1+x^2)dx\over1+x^2+x^4}\]
+
+To make progress, factor the denominator which we will do by using a little
+thing that lets us express it as the difference of squares.
+
+\[(1+x^2)^2=1+2x^2+x^4=(1+x^2+x^4)+x^2
+\Rightarrow (1+x^2)^2-x^2=1+x^2+x^4\]
+
+This gives us a \(a^2-b^2\) thing to factor the denominator.
+
+\[2\int_0^1{(1+x^2)dx\over(x^2+x+1)(x^2-x+1)}\]
+
+From here, we use partial fractions again. It can get complicated, but it turns
+out we can do something a bit simpler that actually works in this case
+(constant numerators instead of linear).
+
+\[{A\over x^2+x+1}+{B\over x^2-x+1}={1+x^2\over(x^2+x+1)(x^2-x+1)}\]
+\[A(x^2-x+1)+B(x^2+x+1)=1+x^2\]
+\[x^2(A+B)+x(-A+B)+(A+B)=x^2+1\]
+
+The conditions are \(-A+B=0\) for the linear part and \(A+B=1\) for the
+quadratic and constant parts. So we end up with \(A=B={1\over2}\).
+
+\[\int_0^1\left({1\over x^2+x+1}+{1\over x^2-x+1}\right)dx\]
+
+Next split up the integral and complete squares, so we get \(\arctan\) in the
+result.
+
+\[\int_0^1{d(x+{1\over2})\over(x+{1\over2})^2+{3\over4}}
++\int_0^1{d(x-{1\over2})\over(x-{1\over2})^2+{3\over4}}\]
+
+We can use the common \(\arctan\) integral for this with \(a^2={3\over4}\)
+
+\[\int{du\over a^2+x^2}={1\over a}\arctan\left({x\over a}\right)\]
+
+So now we have
+
+\[{2\over\sqrt{3}}\arctan\left(2x+1\over\sqrt{3}\right)\Big|_0^1
++{2\over\sqrt{3}}\arctan\left({2x-1\over\sqrt{3}}\right)\Big|_0^1\]
+\[={2\over\sqrt{3}}\left(
+\arctan\left(\sqrt{3}\right)-\arctan\left({1\over\sqrt{3}}\right)
++\arctan\left({1\over\sqrt{3}}\right)
+-\arctan\left({-1\over\sqrt{3}}\right)\right)\]
+\[={2\over\sqrt{3}}\left({\pi\over3}+{\pi\over6}\right)
+={2\over\sqrt{3}}{3\pi\over6}={\pi\over\sqrt{3}}\]
+
+Finally, substitute to get \(x\)
+
+\[x=2\left(\pi\over y\right)^2=2\left({\pi\sqrt{3}\over\pi}\right)^2=6\]
+
+<hr />
+
+One other note about the integral we obtained is that there is a nice symmetry
+property, which does not really make evaluating it any easier.
+
+\[I=\int_0^1{(1+x^2)dx\over1+x^2+x^4}\]
+
+Substitute \(u=x^{-1}\) and note the integral bounds swap cancels the negative
+from computing \(dx\).
+
+\[I=\int_1^\infty{1+u^{-2}\over1+u^{-2}+u^{-4}}{du\over u^2}
+=\int_1^\infty{1+u^{-2}\over u^2+1+u^{-2}}du
+=\int_1^\infty{u^2+1\over u^4+u^2+1}du\]
+
+So we obtain the same integral but on the interval \([1,\infty)\) instead. So
+
+\[2I=\int_0^\infty{(1+x^2)dx\over1+x^2+x^4}\]
+
+In order to proceed, we still need to factor the denominator and do something
+with completing the square to end up with \(\arctan\) like before, so the rest
+of the process looks similar.
+
 <h3 id="jun07">Jun 07</h3>
 
 <h3 id="jun08">Jun 08</h3>
