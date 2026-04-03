@@ -389,11 +389,89 @@ must be 9.
 
 <h3 id="jun10">Jun 10</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-11 -11 22 22" width="250" height="250" class="img_center">
+    <line x1="0" x2="7.071" y1="0" y2="-7.071" stroke="#7cf" stroke-width="0.2" fill="none" />
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <circle cx="0" cy="0" r="10" stroke="black" stroke-width="0.2" fill="none" />
+        <polygon points="-7.071 -7.071 7.071 -7.071 0 10" />
+        <g fill="black">
+            <circle cx="-7.071" cy="-7.071" r="0.4" />
+            <circle cx="7.071" cy="-7.071" r="0.4" />
+            <circle cx="0" cy="10" r="0.4" />
+            <circle cx="0" cy="0" r="0.4" />
+        </g>
+        <path d="M -4.071 -7.071 A 3 3 0 0 1 -5.923 -4.299 M -3.371 -7.071 A 3.7 3.7 0 0 1 -5.655 -3.653 M 4.071 -7.071 A 3 3 0 0 0 5.923 -4.299 M 3.371 -7.071 A 3.7 3.7 0 0 0 5.655 -3.653 M 1.416 6.582 A 3.7 3.7 0 0 0 -1.416 6.582" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="-1" y="6">45&deg;</text>
+        <text x="-2" y="-8">10&radic;2</text>
+        <text x="0.6" y="-9.5">__</text>
+        <text x="2.5" y="-1.5">x</text>
+    </g>
+</svg>
+
+The \(45^\circ\) angle subtends a circle arc of \(90^\circ\) so if we draw
+another line from the center to the top left triangle point, we form a right
+triangle. Both of the legs of the new triangle are radii of the circle so it is
+a "45-45-90" triangle. From here we can determine that \(x=10\) since the
+hypotenuse is \(10\sqrt{2}\).
+
 <h3 id="jun11">Jun 11</h3>
+
+How many proper divisors does \(265837\) have?
+
+<p>
+    We need to know the factorization. This one can be factored with a little
+    small number trial division and \(265837=11^2\times13^3\). Using the
+    exponents, there are \((2+1)(3+1)=12\) divisors, but we exclude the number
+    itself since that is not a proper divisor, so there are \(11\).
+</p>
 
 <h3 id="jun12">Jun 12</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 25" width="200" height="250" class="img_center">
+    <polygon points="2 24 12 3 15 4 16 6" stroke="black" stroke-width="0.25" fill="none" />
+    <g fill="black" font-size="0.1em">
+        <text x="2" y="20">x&deg;</text>
+        <text x="9" y="3">100&deg;</text>
+        <text x="15" y="3">130&deg;</text>
+        <text x="15" y="9">118&deg;</text>
+    </g>
+</svg>
+
+This is a quadrilateral so the angles sum to \(360^\circ\).
+
+\[x+100+130+118=360\Rightarrow x=360-100-130-118=12\]
+
 <h3 id="jun13">Jun 13</h3>
+
+Find the number of Archimedean solids.
+
+<p>
+    These solids are convex polyhedra which have regular polygon faces and are
+    vertex transitive (isogonal). The solids are listed below.
+</p>
+
+<ul>
+    <li>Truncated tetrahedron</li>
+    <li>Cuboctahedron</li>
+    <li>Truncated cube</li>
+    <li>Truncated octahedron</li>
+    <li>Rhombicuboctahedron</li>
+    <li>Truncated cuboctahedron</li>
+    <li>Snub cube</li>
+    <li>Icosidodecahedron</li>
+    <li>Truncated dodecahedron</li>
+    <li>Truncated icosahedron</li>
+    <li>Rhombicosidodecahedron</li>
+    <li>Truncated icosidodecahedron</li>
+    <li>Snub dodecahedron</li>
+</ul>
+
+<p>
+    There are 13 total. Sometimes it might be counted as 15 because the snub
+    cube and snub dodecahedron are chiral.
+</p>
 
 <h3 id="jun14">Jun 14</h3>
 
