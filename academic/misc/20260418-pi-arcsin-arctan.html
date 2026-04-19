@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20260418</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            t: ['\\theta'],
+            pmod: ['\\ (\\text{mod}\\ #1)',1]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Some Basic Pi Formulas</h1>
+
+<p>
+Some of the easiest to find series for computing \(\pi\) can be found from
+inverse trigonometric functions. We can evaluate inverse trigonometric functions
+at special angles and obtain series, some of which converge exponentially.
+Exponentially converging series provide a way to compute \(\pi\) efficiently
+with binary splitting and require \(O(n)\) terms to compute \(n\) digits.
+</p>
+
+<h2>The \(\arcsin\) Integral and Series</h2>
+
+<p>
+We can find it by starting from the derivative. If \(y=\arcsin(x)\), then
+\(\sin(y)=x\) and differentiating implicitly:
+\[\cos(y){dy\over dx}=1 \Rightarrow {dy\over dx}={1\over\cos(y)}
+={1\over\sqrt{1-\sin^2(y)}}={1\over\sqrt{1-x^2}}\]
+Then we can find the integral (which is defined for
+\(x\in[-{\pi\over2},{\pi\over2}]\)).
+\[\arcsin(x)=\int_0^x{dt\over\sqrt{1-t^2}}=\int_0^x(1-t^2)^{-1/2}dt\]
+To turn this into a summation, use the generalized binomial theorem.
+\[=\int_0^x\left[\sum_{k=0}^\infty{-1/2\choose k}(-t^2)^k\right]dt
+=\int_0^x\left[\sum_{k=0}^\infty{-1/2\choose k}(-1)^k t^{2k}\right]dt\]
+The generalized binomial coefficient can be simplified.
+\[{-1/2\choose k}={{-1\over2}\cdot{-3\over2}\cdot{-5\over2}
+\ldots{-(2k-1)\over2}\over k!}={(-1)^k(2k-1)!!\over 2^k\cdot k!}\]
+Then we can multiply \((2k)!=2^k\cdot k!\) to find another way to write it.
+\[={(-1)^k(2k)!!(2k-1)!!\over4^k\cdot(k!)^2}={(-1)^k(2k)!\over4^k\cdot(k!)^2}
+={2k\choose k}{(-1)^k\over4^k}\]
+Then substitute this result into the integral and we continue.
+\[=\int_0^x\left[\sum_{k=0}^\infty{2k\choose k}{t^{2k}\over4^k}\right]dt
+=\sum_{k=0}^\infty\left[{2k\choose k}{1\over4^k}\int_0^x{t^{2k}}dt\right]
+=\sum_{k=0}^\infty{2k\choose k}{x^{2k+1}\over4^k(2k+1)}\]
+This power series converges when \(|x|\leq1\). To see the convergence rate, use
+Stirling's approximation on the part with factorials.
+\[{(2k)!\over(k!)^2}{x^{2k+1}\over4^k(2k+1)}\sim
+{\sqrt{4\pi k}\left(2k\over e\right)^{2k}\over2\pi k\left(k\over e\right)^{2k}}
+={1\over\sqrt{\pi k}}\left({2k\over e}{e\over k}\right)^{2k}
+={4^k\over\sqrt{\pi k}}\]
+So from this, we can see that the \(k\)th term is asymptotically
+\[{x^{2k+1}\over\sqrt{\pi k}(2k+1)}\propto{x^{2k+1}\over k^{3/2}}\]
+Now we can use the special angles \(x={1},{\sqrt{3}\over2},{\sqrt{2}\over2}
+,{1\over2}\) to obtain some \(\pi\) formulas.
+</p>
+
+<table class="table_normal">
+    <tr><th>Angle</th><th>Formula</th><th>Convergence</th></tr>
+    <tr>
+        <td>\[\pi\over2\]</td>
+        <td>\[\pi=2\sum_{k=0}^\infty{2k\choose k}{1\over4^k(2k+1)}\]</td>
+        <td>Very slow, error is \(\propto k^{-1/2}\)</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over3\]</td>
+        <td>\[\pi={3\sqrt{3}\over2}\sum_{k=0}^\infty{2k\choose k}
+            \left({3\over16}\right)^k{1\over2k+1}\]</td>
+        <td>~0.125 decimal digits per term</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over4\]</td>
+        <td>\[\pi=2\sqrt{2}\sum_{k=0}^\infty{2k\choose k}
+            {1\over8^k(2k+1)}\]</td>
+        <td>~0.301 decimal digits per term</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over6\]</td>
+        <td>\[\pi=3\sum_{k=0}^\infty{2k\choose k}{1\over16^k(2k+1)}\]</td>
+        <td>~0.602 decimal digits per term</td>
+    </tr>
+</table>
+
+<h2>The \(\arctan\) Integral and Series</h2>
+
+<p>
+Similarly, we can find the derivative of \(y=\arctan(x)\) implicitly.
+\[\tan(y)=x\Rightarrow\sec^2(x){dy\over dx}=1
+\Rightarrow{dy\over dx}={1\over\sec^2(x)}={1\over1+\tan^2(x)}={1\over1+x^2}\]
+Then the integral is defined for \(x\in(-\infty,\infty)\)
+\[\arctan(x)=\int_0^x{dt\over1+t^2}\]
+We can turn this into a summation with the geometric summation formula
+(or the generalized binomial theorem, but than gives the same result)
+\[=\int_0^x\left[\sum_{k=0}^\infty(-1)^kt^{2k}\right]dt
+=\sum_{k=0}^\infty\left[(-1)^k\int_0^x t^{2k}dt\right]
+=\sum_{k=0}^\infty{(-1)^kx^{2k+1}\over2k+1}\]
+There are no factorials in this one, so the convergence is determined just by
+the power \(x^{2k+1}\). It's an alternating series and converges for
+\(x\in[-1,1]\). Because of the more restricted convergence interval, we only
+can use 2 of the special angles to obtain \(\pi\) formulas:
+\(x={\sqrt{2}\over2},{\sqrt{3}\over3}\).
+</p>
+
+<table class="table_normal">
+    <tr><th>Angle</th><th>Formula</th><th>Convergence</th></tr>
+    <tr>
+        <td>\[{\pi\over4}\]</td>
+        <td>\[\pi=4\sum_{k=0}^\infty{(-1)^k\over2k+1}\]</td>
+        <td>Very slow, error is \(\propto k^{-1}\)</td>
+    </tr>
+    <tr>
+        <td>\[{\pi\over6}\]</td>
+        <td>\[\pi=2\sqrt{3}\sum_{k=0}^\infty{(-1)^k\over3^k(2k+1)}\]</td>
+        <td>~0.477 decimal digits per term</td>
+    </tr>
+</table>
+
+<h2>Using Other Angles</h2>
+
+<p>
+It is possible to create formulas that use other angles \(\theta\) such that
+\(\sin(\theta)\) or \(\tan(\theta)\) have a square root. Such series can be
+summed in \(\mathbb{Z}[\sqrt{n}]\) or \(\mathbb{Q}[\sqrt{n}]\), which adds
+complexity that would outweight the fewer terms needed. We could even go
+further to smaller angles with deeper nested square roots, but this adds
+complexity of summing in a ring/field with more square root terms to track.
+</p>
+
+<p>
+Additional series found with \(\arcsin(x)\) or
+\(\arccos(x)={\pi\over2}-\arcsin(x)\). Because of the angle complement,
+\(\theta\) and \({\pi\over2}-\theta\) give us the same series results.
+</p>
+
+<table class="table_normal">
+    <tr>
+        <th>Angle (\(\theta\))</th>
+        <th>\(\sin(\theta)\)<br />and<br />\(\cos(\theta)\)</th>
+        <th>Formula from \(\arcsin\)<br />and<br />Formula from \(\arccos\)</th>
+        <th>Decimal Digits<br />Per Term</th>
+    </tr>
+    <tr>
+        <td rowspan="2">\[{\pi\over5}\]</td>
+        <td>\[{1\over2}\sqrt{{1\over2}\left(5-\sqrt{5}\right)}\]</td>
+        <td>\[\pi={5\over2}\sqrt{{1\over2}\left(5-\sqrt{5}\right)}
+            \sum_{k=0}^\infty{2k\choose k}{\left(5-\sqrt{5}\right)^k
+                \over32^k(2k+1)}\]</td>
+        <td>~0.462</td>
+    </tr>
+    <tr>
+        <td>\[{1\over4}\left(1+\sqrt{5}\right)\]</td>
+        <td>\[\pi={5\over6}\left(\sqrt{5}+1\right)\sum_{k=0}^\infty{2k\choose k}
+            {\left(3+\sqrt{5}\right)^k\over32^k(2k+1)}\]</td>
+        <td>~0.184</td>
+    </tr>
+    <tr>
+        <td rowspan="2">\[{\pi\over8}\]</td>
+        <td>\[{\sqrt{2-\sqrt{2}}\over2}\]</td>
+        <td>\[\pi=4\sqrt{2-\sqrt{2}}\sum_{k=0}^\infty{2k\choose k}
+            {\left(2-\sqrt{2}\right)^k\over16^k(2k+1)}\]</td>
+        <td>~0.834</td>
+    </tr>
+    <tr>
+        <td>\[{\sqrt{2+\sqrt{2}}\over2}\]</td>
+        <td>\[\pi={4\over3}\sqrt{2+\sqrt{2}}\sum_{k=0}^\infty{2k\choose k}
+            {\left(2+\sqrt{2}\right)^k\over16^k(2k+1)}\]</td>
+        <td>~0.069</td>
+    </tr>
+    <tr>
+        <td rowspan="2">\[{\pi\over10}\]</td>
+        <td>\[{1\over4}\left(\sqrt{5}-1\right)\]</td>
+        <td>\[\pi={5\over2}\left(\sqrt{5}-1\right)\sum_{k=0}^\infty{2k\choose k}
+            {\left(3-\sqrt{5}\right)^k\over32^k(2k+1)}\]</td>
+        <td>~1.020</td>
+    </tr>
+    <tr>
+        <td>\[{1\over2}\sqrt{{1\over2}\left(5+\sqrt{5}\right)}\]</td>
+        <td>\[\pi={5\over4}\sqrt{{1\over2}\left(5+\sqrt{5}\right)}
+            \sum_{k=0}^\infty{2k\choose k}
+                {\left(5+\sqrt{5}\right)^k\over32^k(2k+1)}\]</td>
+        <td>~0.044</td>
+    </tr>
+    <tr>
+        <td rowspan="2">\[{\pi\over12}\]</td>
+        <td>\[{\sqrt{3}-1\over2\sqrt{2}}\]</td>
+        <td>\[\pi=3\sqrt{2}\left(\sqrt{3}-1\right)\sum_{k=0}^\infty{2k\choose k}
+            {\left(2-\sqrt{3}\right)^k\over16^k(2k+1)}\]</td>
+        <td>~1.174</td>
+    </tr>
+    <tr>
+        <td>\[{1+\sqrt{3}\over2\sqrt{2}}\]</td>
+        <td>\[\pi={3\over5}\sqrt{2}\left(1+\sqrt{3}\right)\sum_{k=0}^\infty
+            {2k\choose k}{\left(2+\sqrt{3}\right)^k\over16^k(2k+1)}\]</td>
+        <td>~0.030</td>
+    </tr>
+</table>
+
+<p>
+Additional series found with \(\arctan(x)\).
+</p>
+
+<table class="table_normal">
+    <tr>
+        <th>Angle (\(\theta\))</th>
+        <th>\(\tan(\theta)\)</th>
+        <th>Formula</th>
+        <th>Decimal Digits<br />Per Term</th>
+    </tr>
+    <tr>
+        <td>\[{\pi\over5}\]</td>
+        <td>\[\sqrt{5-2\sqrt{5}}\]</td>
+        <td>\[\pi=5\sqrt{5-2\sqrt{5}}\sum_{k=0}^\infty
+            {(-1)^k\left(5-2\sqrt{5}\right)^k\over2k+1}\]</td>
+        <td>~0.277</td>
+    </tr>
+    <tr>
+        <td>\[{\pi\over8}\]</td>
+        <td>\[\sqrt{2}-1\]</td>
+        <td>\[\pi=8\left(\sqrt{2}-1\right)\sum_{k=0}^\infty
+            {(-1)^k\left(3-2\sqrt{2}\right)^k\over2k+1}\]</td>
+        <td>~0.766</td>
+    </tr>
+    <tr>
+        <td>\[{\pi\over10}\]</td>
+        <td>\[\sqrt{1-{2\sqrt{5}\over5}}\]</td>
+        <td>\[\pi=10\sqrt{5-2\sqrt{5}\over5}\sum_{k=0}^\infty
+            {(-1)^k\left(5-2\sqrt{5}\right)^k\over5^k(2k+1)}\]</td>
+        <td>~0.976</td>
+    </tr>
+    <tr>
+        <td>\[{\pi\over12}\]</td>
+        <td>\[2-\sqrt{3}\]</td>
+        <td>\[\pi=12\left(2-\sqrt{3}\right)\sum_{k=0}^\infty
+            {(-1)^k\left(7-4\sqrt{3}\right)^k\over2k+1}\]</td>
+        <td>~1.144</td>
+    </tr>
+</table>
+
+<h2>Concluding Comments</h2>
+
+<p>
+These methods would converge faster if we could find a smaller \(x\) to use. We
+need \(x\) to be in a nice form (at worst, a square root of a rational) and for
+\(\arcsin(x)\) or \(\arctan(x)\) to be \(\pi\) times some number which is easy
+to compute, so at worst we may want \(\pi\) times a square root of a rational.
+It turns out we cannot find any other such nice values to use. There are smaller
+angles like \(\pi/12\) which can be described by radicals, but not in a single
+term. It is possible to sum those with binary splitting over rings like
+\(\mathbb{Z}[\sqrt{3}]\) or fields like \(\mathbb{Q}[\sqrt{3}]\) but that adds
+complexity which would outweigh the smaller number of terms required. We can
+extend further to smaller angles whose values nest square roots more deeply, but
+then we increase complexity further by having to track more radical terms.
+</p>
+
+</div>
+</body>
+</html>
