@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20260429</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            t: ['\\theta'],
+            pmod: ['\\ (\\text{mod}\\ #1)',1]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Pi Formula With Beta Summation</h1>
+
+<p>
+Powers of \(x\) show up when we integrate \({1\over1-x}\) which turns into an
+integral of powers \(x^k\). If instead we had \({1\over1-x(1-x)}\), we would
+turn it into integrals of \(x^k(1-x)^k\), the beta integral. We can generalize
+this a bit with a constant and for \(c&gt;0\), the following integral can be
+turned into formulas for \(\pi\). Note that the integral is proper when
+\(0&lt;c&lt;4\).
+\[\int_0^1{dx\over1-cx(1-x)}=\sum_{k=0}^\infty c^k\int_0^1 x^k(1-x)^kdx
+=\sum_{k=0}^\infty{c^k(k!)^2\over(2k+1)!}\]
+Now we need to actually evaluate the integral so we can find what constants the
+summation can be used to approximate. Start by completing the square
+\[=\int_0^1{dx\over1-cx+cx^2}={1\over c}\int_0^1{dx
+    \over\left(x-{1\over2}\right)^2+\left({1\over c}-{1\over4}\right)}\]
+Let \(d=\sqrt{4-c\over4c}\) so now we can integrate
+\[{1\over c}\int_0^1{d\left(x-{1\over2}\right)
+    \over\left(x-{1\over2}\right)^2+d^2}
+={1\over cd}\arctan\left({x-{1\over2}\over d}\right)\Big|_0^1\]
+\[={1\over cd}\left(\arctan\left({1\over2d}\right)
+    -\arctan\left({-1\over2d}\right)\right)
+={2\over cd}\arctan\left({1\over2d}\right)\]
+So if we wanted to find a series for \(\arctan(r)\), we would need
+\[r={1\over2d}=\sqrt{c\over4-c}\Rightarrow c={4r^2\over1+r^2}\]
+Then our constant part is
+\[{2\over cd}={2\over{4r^2\over1+r^2}{1\over2r}}={1+r^2\over r}\]
+Using this to rewrite the constants, we find
+\[\arctan(r)={r\over1+r^2}\sum_{k=0}^\infty{(k!)^2\over(2k+1)!}
+    \left({4r^2\over1+r^2}\right)^k\]
+For convergence, we need \(\left|4r^2\over1+r^2\right|&lt;4\) which is true
+for all real numbers \(r\), so this series converges anywhere, but converges
+fastest near \(0\).
+</p>
+
+<h2>Creating Formulas For \(\pi\)</h2>
+
+<p>
+We can do this with the usual special angles. Since we also only have \(r^2\)
+in the summation ratio part, we might also like to see if other special angles,
+which require more complicated square roots, can give nice formulas. Below are
+formulas found for the usual special angles.
+</p>
+
+<table class="table_normal">
+    <tr><th>Angle</th><th>Formula</th><th>Digits Per Term</th></tr>
+    <tr>
+        <td>\[\pi\over3\]</td>
+        <td>\[\pi={3\sqrt{3}\over4}\sum_{k=0}^\infty
+            {3^k(k!)^2\over(2k+1)!}\]</td>
+        <td>~0.125</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over4\]</td>
+        <td>\[\pi=2\sum_{k=0}^\infty{2^k(k!)^2\over(2k+1)!}\]</td>
+        <td>~0.301</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over6\]</td>
+        <td>\[\pi={3\sqrt{3}\over2}\sum_{k=0}^\infty{(k!)^2\over(2k+1)!}\]</td>
+        <td>~0.602</td>
+    </tr>
+</table>
+
+<p>
+And formulas with other special angles that require more complicated square
+root expressions.
+</p>
+
+<table class="table_normal">
+    <tr><th>Angle</th><th>Formula</th><th>Digits Per Term</th></tr>
+    <tr>
+        <td>\[\pi\over5\]</td>
+        <td>\[\pi={5\over8}\left(3+\sqrt{5}\right)\sqrt{5-2\sqrt{5}}
+            \sum_{k=0}^\infty{(k!)^2\over(2k+1)!}
+            \left({5-\sqrt{5}\over2}\right)^k\]</td>
+        <td>~0.462</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over8\]</td>
+        <td>\[\pi=2\sqrt{2}\sum_{k=0}^\infty{(k!)^2\over(2k+1)!}
+            \left(2-\sqrt{2}\right)^k\]</td>
+        <td>~0.834</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over10\]</td>
+        <td>\[\pi={5\over4}\left(5+\sqrt{5}\right)\sqrt{1-{2\sqrt{5}\over5}}
+            \sum_{k=0}^\infty{(k!)^2\over(2k+1)!}
+            \left({3-\sqrt{5}\over2}\right)^k\]</td>
+        <td>~1.020</td>
+    </tr>
+    <tr>
+        <td>\[\pi\over12\]</td>
+        <td>\[\pi=3\sum_{k=0}^\infty{(k!)^2\over(2k+1)!}
+            \left(2-\sqrt{3}\right)^k\]</td>
+        <td>~1.174</td>
+    </tr>
+</table>
+
+<p>
+The usual special angles give us formulas which look like similar complexity to
+the ones from \(\arcsin\). In a way, they have the \({2k\choose k}\) part
+flipped. The extra special angles all give us formulas which require powers of
+something with a square root, which is disappointing. The \(\pi/12\) formula
+does not require computing a weird square root and produces almost 4 times as
+many digits per term as the \(\pi/4\) formula, so that might lead to the
+curiosity of whether its faster convergence is enough to overcome the added
+complexity of summing a series in \(\mathbb{Z}[\sqrt{3}]\) or
+\(\mathbb{Q}[\sqrt{3}]\).
+</p>
+
+</div>
+</body>
+</html>
