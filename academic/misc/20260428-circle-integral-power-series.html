@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20260428</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            t: ['\\theta'],
+            pmod: ['\\ (\\text{mod}\\ #1)',1]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Power Series For \(\pi\) From Geometric Integral</h1>
+
+<p>
+From the equation for a circle, \(x^2+y^2=1\), we know its total area is
+\(\pi\), and can form the following integral for computing its area utilizing
+symmetry and focusing on a quarter circle.
+\[4\int_0^1\sqrt{1-x^2}dx\]
+First we need to turn it into a power series.
+\[(1-x^2)^{1/2}=\sum_{k=0}^\infty{1/2\choose k}(-1)^kx^{2k}\]
+Simplifying the binomial coefficient (also afterward, ensure the result matches
+the original series since \(2k-3&lt;0\) when \(k=0,1\))
+\[{1/2\choose k}={{1\over2}{-1\over2}{-3\over2}\ldots{-(2k-3)\over2}\over k!}
+={(-1)^{k-1}(2k-3)!!\over2^kk!}\]
+\[={(-1)^{k-1}(2k-1)!!\over2^kk!(2k-1)}
+{(2k)!!\over2^kk!}={(-1)^{k-1}(2k)!\over4^k(k!)^2(2k-1)}
+={2k\choose k}{(-1)^{k-1}\over4^k(2k-1)}\]
+Now evaluate the integral of the power series
+\[4\int_0^1\left[\sum_{k=0}^\infty{2k\choose k}{-x^{2k}\over4^k(2k-1)}\right]dx
+=4\sum_{k=0}^\infty{2k\choose k}{-1\over4^k(2k-1)(2k+1)}\]
+\[=2\sum_{k=0}^\infty{2k\choose k}{1\over4^k}
+\left({1\over1+2k}+{1\over1-2k}\right)\]
+\[=2\sum_{k=0}^\infty{2k\choose k}{1\over4^k(2k+1)}
++2\sum_{k=0}^\infty{2k\choose k}{1\over4^k(1-2k)}\]
+So now we find that the integral evaluates into 2 summations. The first
+summation is actually the series expansion for \(\arcsin(1)\) so we know
+that the solution, \(\pi\), comes from there, and that this method does not
+give us a new series for approximating \(\pi\). But then we still have another
+summation which must be zero by this reasoning. We can show that it is zero,
+but that will not give us anything new for \(\pi\) approximations.
+</p>
+
+<h2>Showing That The Weird Summation Is Zero</h2>
+
+<p>
+We would like to show
+\[\sum_{k=0}^\infty{2k\choose k}{1\over4^k(1-2k)}=0\]
+Notice how the \(1-2k\) part is negative except for the \(k=0\) term. Split up
+the summation this way and then we can negate remaining terms to have positive
+denominators. Reindex the series to start at \(k=0\) and do some algebra to
+make it look nicer.
+\[=1-\sum_{k=1}^\infty{2k\choose k}{1\over4^k(2k-1)}
+=1-\sum_{k=0}^\infty{2k+2\choose k+1}{1\over4^{k+1}(2k+1)}\]
+\[=1-{1\over4}\sum_{k=0}^\infty{2k\choose k}{(2k+2)(2k+1)\over
+    (k+1)(k+1)}{1\over4^k(2k+1)}
+=1-{1\over2}\sum_{k=0}^\infty{2k\choose k}{1\over4^k(k+1)}\]
+From this, we could recognize a generating function appropriate for the
+summation. But for now, notice that it is similar to the power series for
+\(\arcsin\) which comes from this integral:
+\[\int_0^x{dt\over\sqrt{1-t^2}}
+=\sum_{k=0}^\infty{2k\choose k}{x^{2k+1}\over4^k(2k+1)}\]
+When we use a binomial expansion on this, the \(t^2\) gives us exponents of
+\(t^{2k}\) which integrate to \({x^{2k+1}\over2k+1}\). If it was \(t\) instead
+of \(t^2\), we would get exponents of \(t^k\) integrating to
+\({x^{k+1}\over k+1}\). We can turn it into a power series and evaluate the
+integral to check that we get exactly the summation we are looking for.
+\[\int_0^x{dt\over\sqrt{1-t}}=\int_0^x(1-t)^{-1/2}dt
+=\int_0^x\sum_{k=0}^\infty{-1/2\choose k}(-1)^kt^kdt\]
+\[=\sum_{k=0}^\infty{-1/2\choose k}{(-1)^kx^{k+1}\over k+1}\]
+From deriving the power series for \(\arcsin\) or by other means, we can show
+\[{-1/2\choose k}={2k\choose k}{(-1)^k\over4^k}\]
+So substituting this, we get
+\[\int_0^x{dt\over\sqrt{1-t}}
+=\sum_{k=0}^\infty{2k\choose k}{x^{k+1}\over4^k(k+1)}\]
+Now we use \(x=1\) so the summation identically matches what we were looking
+at before and show that it evaluates to \(2\).
+\[\int_0^1{dt\over\sqrt{1-t}}=\int_1^0(1-t)^{-1/2}d(1-t)
+=\left[{(1-t)^{1/2}\over1/2}\right]_1^0\]
+\[=2\left[(1-0)^{1/2}-(1-1)^{1/2}\right]=2\]
+Therefore, the strange summation that appeared turns out to be equal to zero.
+The integration of each \(\sqrt{1-x^2}\) and \({1\over\sqrt{1-x^2}}\) can give
+us \(\pi\), but it seems that \(\sqrt{1-x^2}\) only gives us the very slow
+series \(\arcsin(1)\) with further complications.
+</p>
+
+</div>
+</body>
+</html>
