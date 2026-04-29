@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20260422</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            t: ['\\theta'],
+            pmod: ['\\ (\\text{mod}\\ #1)',1]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Approximating Pi (and log(2)) with Beta Like Integrals</h1>
+
+<p>
+This is inspired by problem A1 on the 1968 Putnam exam which is to prove
+\[\int_0^1{x^4(1-x)^4\over1+x^2}dx={22\over7}-\pi\]
+The numerator \(x^4(1-x)^4\) is the beta integral and is very small on the
+interval \([0,1]\). Since \(1\leq1+x^2\leq2\) on \([0,1]\), we can bound this
+integral as follows:
+\[0&lt;\int_0^1{x^4(1-x)^4\over1+x^2}dx&lt;\int_0^1x^4(1-x)^4dx
+={4!4!\over9!}\approx0.001587\]
+This tells us
+\[{22\over7}-{4!4!\over9!}&lt;\pi&lt;{22\over7}\]
+</p>
+
+<h2>Generalizing The Integral</h2>
+
+<p>
+If we have some choice of exponents \(a,b\), then we can integrate with
+polynomial division:
+\[\int_0^1{x^a(1-x)^b\over1+x^2}dx
+=\int_0^1\left(Q(x)+{R(x)\over1+x^2}\right)dx
+=\int_0^1 Q(x)dx + \int_0^1 {R(x)dx\over1+x^2}\]
+Integrating \(Q(x)\) will give us some rational number. Since division is by a
+degree 2 polynomial, \(R(x)=r_1x+r_0\) for some integers \(r_1,r_0\).
+\[\int_0^1{r_1x+r_0\over1+x^2}dx=\int_0^1{r_1xdx\over1+x^2}
++\int_0^1{r_0dx\over1+x^2}\]
+The first integral can be solved with substitution \(y=1+x^2\) resulting in a
+\(\log(2)\) part.
+\[{r_1\over2}\int_0^1{2xdx\over1+x^2}={r_1\over2}\int_1^2{dy\over y}
+={r_1\over2}\left(\log(2)-\log(1)\right)={r_1\over2}\log(2)\]
+The other integral is where \(\pi\) comes from
+\[r_0\int_0^1{dx\over1+x^2}=r_0\left(\arctan(1)-\arctan(0)\right)
+=r_0\arctan(1)={r_0\pi\over4}\]
+In order to create a useful approximation, we need to isolate one constant, so
+identifying conditions where \(r_1=0\) for approximating \(\pi\) and \(r_0=0\)
+for \(\log(2)\). Note that both cannot be zero since \(1+x^2\) has roots
+\(\pm i\) which \(x^a(1-x)^b\) does not, so the remainder will be nonzero.
+</p>
+
+<h2>Identifying Remainder Conditions For \(\pi\)</h2>
+
+<p>
+Suppose we have \(P(x)=x^a(1-x)^b\) and divide it by \(Q(x)=1+x^2\). Then we
+need the remainder \(R(x)=r_1x+r_0\) to have \(r_1=0\) for an approximation to
+\(\pi\). A theorem that can help is: \(P(x)\equiv c\pmod{Q(x)}\) for some
+constant \(c\) iff \(P(r)=c\) for each root \(r\) of \(Q(x)\). For the proof,
+let \(P(x),Q(x)\) be general polynomials, not the ones already stated, and
+assume \(Q(x)\) does not have repeated roots.
+</p>
+
+<p>
+\(\Rightarrow\) Suppose \(P(x)\equiv c\pmod{Q(x)}\) for a constant \(c\).
+Then \(Q(x)|(P(x)-c)\) so \(P(x)-c=Q(x)H(x)\) for some other polynomial
+\(H(x)\). Every root of \(Q(x)\) satisfies \(Q(r)=0\) so \(P(r)-c=0\) and
+\(P(r)=c\).
+</p>
+
+<p>
+\(\Leftarrow\) Suppose \(P(r)=c\) for a constant \(c\) at each root \(r\) of
+\(Q(x)\). Each root \(r\) satisfies \((x-r)|Q(x)\) and \((x-r)|(P(x)-c)\) by
+the factor theorem. Since this is true for all roots \(r\) without repeated
+roots, \(Q(x)|(P(x)-c)\) which is equivalent to stating
+\(P(x)\equiv c\pmod{Q(x)}\).
+</p>
+
+<p>
+Since \(Q(x)=(x-i)(x+i)\), we need \(P(i)=P(-i)=c\) for some constant \(c\).
+\[i^a(1-i)^b=(-i)^a(1+i)^b \Rightarrow \left({1-i\over1+i}\right)^b=(-1)^a\]
+Since powers of these quantities are periodic, it can be easier to see the
+required condition in polar form.
+\[\left({\sqrt{2}e^{-i\pi\over4}\over\sqrt{2}e^{i\pi\over4}}\right)^b
+=(e^{i\pi})^a\Rightarrow (e^{-i\pi\over2})^b=(e^{i\pi})^a\Rightarrow
+e^{i\pi(a+{b\over2})}=1\]
+So we need for some integer \(z\)
+\[a+{b\over2}=2z\Rightarrow2a+b=4z\Rightarrow2a+b\equiv0\pmod{4}\]
+</p>
+
+<h2>Identifying Remainder Conditions For \(\log(2)\)</h2>
+
+<p>
+For \(\log(2)\), we need a condition where \(r_0=0\) so we get a remainder of
+\(R(x)=r_1x\). We can use the symmetry of the roots for this. By using the
+remainder theorem and evaluating at roots of \(Q(x)\),
+\(P(i)=s_1i+s_0\) and \(P(-i)=-s_1i+s_0\) for some \(s_1,s_0\). Then we can use
+\(P(i)+P(-i)=2s_0=0\).
+\[i^a(1-i)^b+(-i)^a(1+i)^b=0\Rightarrow\left({1-i\over1+i}\right)^b=-(-1)^a\]
+This looks similar to what we found previously.
+\[(e^{-i\pi\over2})^b=-(e^{i\pi})^a=e^{i\pi a+i\pi}
+\Rightarrow e^{i\pi(a+1+{b\over2})}=1\]
+And similarly for some \(z\) so the exponent is a multiple of \(2\pi\)
+\[a+1+{b\over2}=2z\Rightarrow2a+2+b=4z\Rightarrow2a+b\equiv2\pmod{4}\]
+</p>
+
+<h2>Accuracy of Approximation</h2>
+
+<p>
+We can upper bound the result using the beta integral and analyze its
+asymptotic behavior with Stirling's approximation.
+\[\int_0^1{x^a(1-x)^b\over1+x^2}dx&lt;\int_0^1x^a(1-x)^bdx
+={a!b!\over(a+b+1)!}={a!b!\over(a+b+1)(a+b)!}\]
+\[\sim{\sqrt{2\pi a}\left({a\over e}\right)^a
+\sqrt{2\pi b}\left({b\over e}\right)^b
+\over(a+b+1)\sqrt{2\pi(a+b)}\left({a+b\over e}\right)^{a+b}}
+={1\over a+b+1}\sqrt{2\pi ab\over a+b}
+{a^a b^b\over(a+b)^{a+b}}\]
+This asymptotic behavior in 2 variables becomes more clear if we restrict it
+to 1 variable. For example, if \(a=b\), then it becomes
+\[{\sqrt{\pi a}\over2a+1}{a^{2a}\over(2a)^{2a}}
+={\sqrt{\pi a}\over2a+1}4^{-a}\]
+So we get an error of roughly \(O(4^{-a})\).
+</p>
+
+<p>
+If \(b\) grows large, then we have large binomial coefficients when doing the
+polynomial division, so we might like to know about the error bound if we keep
+\(b\) fixed somewhere so the numbers in polynomial division stay small.
+\[{a!b!\over(a+b+1)!}={b!\over(a+1)(a+2)\ldots(a+b)(a+b+1)}\]
+\[={b!\over a^{b+1}(1+1/a)(1+2/a)\ldots(1+b/a)(1+(b+1)/a)}
+={b!\over a^{b+1}(1+O(1/a))}\]
+This shows that with \(b\) fixed, the error bound decay is described by a
+polynomial rather than exponential function. For a practical method to compute
+\(\pi\), we need rapid error decay. With this method, the only way we can get
+rapid error decays requires both \(a,b\) to grow together, which also means the
+polynomial coefficients grow exponentially. More practical ways to compute
+\(\pi\) have both exponential error decay and small terms.
+</p>
+
+</div>
+</body>
+</html>
