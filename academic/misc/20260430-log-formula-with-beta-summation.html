@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>20260430</title>
+    <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+    <link rel="stylesheet" type="text/css" href="/prismjs/proj_euler.css" />
+    <script type="text/javascript">
+        window.MathJax = { tex: { macros: {
+            t: ['\\theta'],
+            pmod: ['\\ (\\text{mod}\\ #1)',1]
+        }}};
+    </script>
+    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/prismjs/proj_euler.js"></script>
+</head>
+<body>
+<div id="root">
+
+<h1>Log Formula With Beta Summation</h1>
+
+<p>
+With integration of a geometric summation for \({1\over1-x}\), we get integrals
+of \(x^k\). If it was \({1\over1-x(1-x)}\), we would integrate \(x^k(1-x)^k\)
+which is the beta integral. Consider the following for positive values of \(c\).
+\[\int_0^1{dx\over1+cx(1-x)}=\sum_{k=0}^\infty(-1)^kc^k\int_0^1x^k(1-x)^kdx
+=\sum_{k=0}^\infty{(-1)^kc^k(k!)^2\over(2k+1)!}\]
+When \(0&lt;c&lt;4\), we get a convergent power series based on integrating
+beta functions. We can evaluate the integral to show that it gives us a way to
+create formulas for computing logarithms.
+\[\int_0^1{dx\over1+cx(1-x)}={1\over c}\int_0^1{dx\over{1\over c}+x-x^2}
+={1\over c}\int_0^1{d\left(x-{1\over2}\right)\over\left({4+c\over4c}\right)
+    -\left(x-{1\over2}\right)^2}\]
+Now let \(d=\sqrt{4+c\over4c}\)
+\[={1\over cd}\left[\text{arctanh}
+    \left({x-{1\over2}\over d}\right)\right]_0^1
+={1\over2cd}\left[\log\left|{{1\over2}+d\over{1\over2}-d}\right|
+    -\log\left|{-{1\over2}+d\over-{1\over2}-d}\right|\right]\]
+\[{1\over2cd}\log\left|{1+2d\over1-2d}\cdot{-1-2d\over-1+2d}\right|
+={1\over2cd}\log\left|{(2d+1)^2\over(2d-1)^2}\right|
+={1\over cd}\log\left|{1+2d\over1-2d}\right|\]
+Now if we were to want a formula for \(\log(r)\), we would need
+\[r={1+2d\over1-2d}\quad\text{or}\quad r=-{1+2d\over1-2d}\]
+So we obtain
+\[d={1\over2}\left({r+1\over r-1}\right)\quad\text{or}\quad
+d={1\over2}\left(r-1\over r+1\right)\]
+And solving for \(c\) from these, we get
+\[c={(r+1)^2\over-r}\quad\text{or}\quad c={(r-1)^2\over r}\]
+Considering that we only ever want \(r&gt;0\), with a little algebra, we can
+show that we always get a smaller value of \(|c|\) by choosing
+\[c={(r-1)^2\over r}\]
+So this choice is better for faster series convergence. Next we substitute our
+results and obtain the following series for \(\log(r)\)
+\[\log(r)={r^2-1\over2r}
+\sum_{k=0}^\infty{(-1)^k\left({(r-1)^2\over r}\right)^k(k!)^2\over(2k+1)!}\]
+This series converges when \(|c|&lt;4\) since
+\({(k!)^2\over(2k+1)!}\propto4^{-k}\), so
+\[\left|{(r-1)^2\over r}\right|&lt;4\Rightarrow3-2\sqrt{2}&lt;r&lt;3+2\sqrt{2}\]
+Our series gives us the following explicit formulas for logs of integers
+\[\log(2)={3\over4}\sum_{k=0}^\infty{(-1)^k
+    \left({1\over2}\right)^k(k!)^2\over(2k+1)!}\]
+\[\log(3)={4\over3}\sum_{k=0}^\infty{(-1)^k
+    \left({4\over3}\right)^k(k!)^2\over(2k+1)!}\]
+\[\log(4)=2\log(2)={15\over8}\sum_{k=0}^\infty{(-1)^k
+    \left({9\over4}\right)^k(k!)^2\over(2k+1)!}\]
+\[\log(5)={12\over5}\sum_{k=0}^\infty{(-1)^k
+    \left({16\over5}\right)^k(k!)^2\over(2k+1)!}\]
+This series is not the most practical for computing individual logs, but if we
+were to compute a sequence of logs of prime integers, we could obtain
+\(\log(p_{n+1})\) from \(\log(p_n)\) by computing
+\[\log(p_{n+1})=\log(p_n)+\log\left({p_{n+1}\over p_n}\right)\]
+The ratio \(p_{n+1}/p_n\) would get close to \(1\) for most differences between
+primes which is good for convergence of our series. We would have
+\(r=1+\epsilon\) and an asymptotic ratio between terms of
+\({(r-1)^2\over4r}\approx\epsilon^2/4\).
+</p>
+
+</div>
+</body>
+</html>
