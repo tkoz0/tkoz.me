@@ -475,29 +475,252 @@ Find the number of Archimedean solids.
 
 <h3 id="jun14">Jun 14</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 36" width="250" height="300" class="img_center">
+    <polygon points="14.957 8.251 12.275 18.001 23 21" stroke="black" stroke-width="0.25" fill="#7cf" />
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <line x1="6.913" x2="23" y1="13.501" y2="3" />
+        <line x1="6.913" x2="12.275" y1="13.501" y2="18.001" stroke="red" />
+        <line x1="12.275" x2="23" y1="18.001" y2="27" stroke="green" />
+        <line x1="23" x2="23" y1="27" y2="21" stroke="magenta" />
+        <line x1="23" x2="23" y1="21" y2="3" stroke="darkorange" />
+        <line x1="10.388" x2="11.481" y1="10.039" y2="11.713" />
+        <line x1="18.432" x2="19.525" y1="4.788" y2="6.463" />
+    </g>
+    <g fill="black" font-size="0.15em">
+        <text x="7" y="18" fill="red">m</text>
+        <text x="14" y="24" fill="green">2m</text>
+        <text x="24" y="24" fill="magenta">n</text>
+        <text x="24" y="12" fill="darkorange">3n</text>
+        <text x="15" y="16">x</text>
+        <text x="4" y="14">A</text>
+        <text x="24" y="29">B</text>
+        <text x="24" y="4">C</text>
+    </g>
+    <text x="3" y="33" fill="black" font-size="0.2em">Area ABC is 48.</text>
+</svg>
+
+<p>
+Consider the triangle area formula \({1\over2}abc\sin(\theta)\). This means
+that if 2 triangles share an angle and direction of 2 sides, the area scales
+with the lengths of those 2 sides.
+</p>
+
+<p>
+Label the midpoint of \(AC\) as \(M\), the point separating the \(m\) and \(2m\)
+segments as \(P\), and the point separating the \(n\) and \(3n\) segments as
+\(Q\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 36" width="250" height="300" class="img_center">
+    <polygon points="14.957 8.251 12.275 18.001 23 21" stroke="black" stroke-width="0.25" fill="#7cf" />
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <line x1="6.913" x2="23" y1="13.501" y2="3" />
+        <line x1="6.913" x2="12.275" y1="13.501" y2="18.001" stroke="red" />
+        <line x1="12.275" x2="23" y1="18.001" y2="27" stroke="green" />
+        <line x1="23" x2="23" y1="27" y2="21" stroke="magenta" />
+        <line x1="23" x2="23" y1="21" y2="3" stroke="darkorange" />
+        <line x1="10.388" x2="11.481" y1="10.039" y2="11.713" />
+        <line x1="18.432" x2="19.525" y1="4.788" y2="6.463" />
+    </g>
+    <g fill="black" font-size="0.15em">
+        <text x="7" y="18" fill="red">m</text>
+        <text x="14" y="24" fill="green">2m</text>
+        <text x="24" y="24" fill="magenta">n</text>
+        <text x="24" y="12" fill="darkorange">3n</text>
+        <text x="15" y="16">x</text>
+        <text x="4" y="14">A</text>
+        <text x="24" y="29">B</text>
+        <text x="24" y="4">C</text>
+        <text x="13" y="7">M</text>
+        <text x="11" y="21">P</text>
+        <text x="24" y="21">Q</text>
+    </g>
+    <text x="3" y="33" fill="black" font-size="0.2em">Area ABC is 48.</text>
+</svg>
+
+<p>
+The area of \(\triangle ABC\) is 48 and is \({1\over2}(AC)(AB)\sin(A)\) even
+though we do not know some of these quantities. But by replacing \(AC\) with
+\(AM\) and \(AB\) with \(AP\), we scale the area by \({1\over2}\) and
+\({1\over3}\). So the area of \(\triangle APM\) is \(8\).
+</p>
+
+<p>
+Similarly the area of \(\triangle BPQ\) is \(48\cdot{2\over3}\cdot{1\over4}=8\)
+and the area of \(\triangle CMQ\) is \(48\cdot{1\over2}\cdot{3\over4}=18\).
+</p>
+
+<p>
+Finally subtract away these 3 triangles areas from the big triangle to obtain
+\(x=48-8-8-18=14\).
+</p>
+
 <h3 id="jun15">Jun 15</h3>
+
+\[a=\log_2(3),\quad b=\log_8(6),\quad c=\log_{32}(12)\]
+\[x=\left({3b-1\over3a}\cdot{5c-2\over5a}\right)^{-1}\]
+
+<p>
+Begin by using a common base for the logs with the change base formula.
+\[b={\log_2(6)\over\log_2(8)}={1\over3}\log_2(6)={1\over3}(1+\log_2(3))\]
+\[c={\log_2(12)\over\log_2(32)}={1\over5}(2+\log_2(3))\]
+Then substitute to solve for \(x\)
+\[x=\left({1+\log_2(3)-1\over3\log_2(3)}\cdot
+{2+\log_2(3)-2\over5\log_2(3)}\right)^{-1}
+=\left({1\over3}\cdot{1\over5}\right)^{-1}=15\]
+</p>
 
 <h3 id="jun16">Jun 16</h3>
 
+<p>
+Find the sum of the solutions of \[\left|{x\over2}-4\right|=2025\]
+</p>
+
+<p>
+When \(|x/2-4|\geq0\) then solve
+\[{x\over2}-4=2025\Rightarrow{x\over2}=2029\Rightarrow x=4058\]
+When \(|x/2-4|&lt;0\) then solve
+\[-\left({x\over2}-4\right)=2025\Rightarrow4-{x\over2}=2025\Rightarrow8-x=4050
+\Rightarrow x=-4042\]
+Then the sum is \(4058-4042=16\).
+</p>
+
 <h3 id="jun17">Jun 17</h3>
+
+\[y+z=1,\quad y^2+z^2=5,\quad y^4+z^4=x\]
+
+<p>
+Square the first equation to get something resembling the second.
+\[(y+z)^2=1^2\Rightarrow(y^2+z^2)+2yz=1\Rightarrow5+2yz=1\Rightarrow yz=-2\]
+Now square the second equation to get something resembling the third.
+\[(y^2+z^2)^2=5^2\Rightarrow(y^4+z^4)+2y^2z^2=25\]
+\[\Rightarrow x+2(yz)^2=25\Rightarrow x+2(-2)^2=25\Rightarrow x=17\]
+If we also wanted solutions for \(y,z\), then \(y+z=1\) and \(yz=-2\) give us
+two solutions which do satisfy the three equations:
+\(y=-1,z=2\) and \(y=2,z=-1\).
+</p>
 
 <h3 id="jun18">Jun 18</h3>
 
+<p>
+What runway number is due South?
+</p>
+
+<p>
+We can find that runway numbers are from 01 to 36 (2 digits) indicating an
+azimuth angle to the nearest 10 degrees. Azimuth angles go clockwise from north
+so south would be \(180^\circ\), meaning runway number 18.
+</p>
+
 <h3 id="jun19">Jun 19</h3>
+
+\[f(t)=2t-18,\quad f(g(3t+1))=1-(t+1)g(t-3),\quad x=g(-5)\]
+
+<p>
+If we can get \(g(-5)\) to show up in the 2nd equation, we would be able to
+solve it. Notice how \(t=-2\) makes both instances of \(g\) have an argument of
+\(-5\). Then the 2nd equation can be used to find the solution:
+\[f(g(-5))=1-(-2+1)g(-5)\Rightarrow 2g(-5)-18=1+g(-5)\]
+\[\Rightarrow2x-18=1+x\Rightarrow x=19\]
+</p>
 
 <h3 id="jun20">Jun 20</h3>
 
+\[{5^{18}-5\over5^{16}+5^{15}+\ldots+5^1+1}\]
+
+\[={5(5^{17}-1)\over{5^{17}-1\over5-1}}={5(5^{17}-1)(5-1)\over5^{17}-1}=20\]
+
 <h3 id="jun21">Jun 21</h3>
+
+\[\text{Maximize}\,\,\,\sqrt{58x-x^2}-\sqrt{67x-x^2-522}\]
+
+<p>
+First factor the quadratic equations.
+\[f(x)=\sqrt{x(58-x)}-\sqrt{(x-9)(58-x)}\]
+Notice how this restricts the domain to \(9\leq x\leq58\). A maximum occurs
+either on an endpoint or critical point since this is continuous. At \(x=58\)
+we get \(0\) and at \(x=9\) we get \(\sqrt{9(58-9)}=21\).
+</p>
+
+<p>
+Next we need to check critical points. Start with the derivative of our
+objective function.
+\[f'(x)={58-2x\over2\sqrt{x(58-x)}}-{67-2x\over2\sqrt{(x-9)(58-x)}}=0\]
+The 2 fractions must be equal. Multiply each side by \(2\sqrt{x(x-9)(58-x)}\)
+which is valid for all \(x\) in the domain.
+\[(58-2x)\sqrt{x-9}=(67-2x)\sqrt{x}\]
+Now things get a bit messy with bigger numbers. We will omit some of the detail
+but square both sides to get polynomials and simplify, which ends up as a
+linear equation.
+\[963x-30276=0\Rightarrow x={30276\over963}={3364\over107}\]
+Since we squared things, check for extraneous solutions. We don't actually need
+to evaluate things exactly. Notice that our solution is \(x\approx31.4\) which
+makes \(58-2x&lt;0\) and \(67-2x&gt;0\). Since both denominators with the
+square roots are positive, \(f'(x)&lt;0\), which means this solution is
+extraneous. Therefore the maximum is \(21\) at \(x=9\).
+</p>
+
+<p>
+If we investigate further, we can see that \(f'(x)\) is finite and continuous
+between \(9&lt;x&lt;58\). It is nonzero on this interval so the sign is the
+same. Since the derivative must be the same sign on \((9,58)\), it
+must be negative since \(f(9)=21\) and \(f(58)=0\). \(f'(x)\) is undefined at
+both \(x=9\) and \(x=58\).
+</p>
 
 <h3 id="jun22">Jun 22</h3>
 
+\[y=\sqrt{7}+2,\quad x=(y-3)^2+2y+10\]
+
+\[x=\left(\sqrt{7}-1\right)^2+2\sqrt{7}+4+10
+=7+1-2\sqrt{7}+2\sqrt{7}+14=22\]
+
 <h3 id="jun23">Jun 23</h3>
+
+<p>
+A clock shows time up to 12:00. What is the highest sum of the digits that the
+clock can show?
+</p>
+
+<p>
+At 12:00, the sum is 3. At all other hours, :59 for minutes would maximize the
+sum. The highest sum for the hour we can have is 9: so the maximum is 9+5+9=23.
+</p>
 
 <h3 id="jun24">Jun 24</h3>
 
+\[\left(\left(16^3\right)^{1/6}\right)!=\left(16^{1/2}\right)!=(4)!=24\]
+
 <h3 id="jun25">Jun 25</h3>
 
+<p>
+Find the smallest square that can be written as a sum of two integer squares.
+</p>
+
+<p>
+This can be done with brute force. One common result is \(3^2+4^2=5^2=25\) so
+we have \(25\) as an upper bound. From there, we can try to form such sums for
+\(16,9,4,1\) and notice that it fails.
+</p>
+
+<p>
+One subtle point is that the problem states integer squares which may be
+interpreted to include \(0^2\). That allows trivial solutions so we ignore it.
+</p>
+
 <h3 id="jun26">Jun 26</h3>
+
+<p>
+Find the nim sum of 42, 36, 12, 24.
+</p>
+
+<p>
+The nim sum is defined as the binary exclusive or operation. First we convert
+the numbers to binary and compute exclusive or.
+\[\begin{align}&101010\\&100100\\&001100\\\oplus\quad&011000\\
+\hline&011010\\\end{align}\]
+Converting back to decimal, the answer is \(26\).
+</p>
 
 <h3 id="jun27">Jun 27</h3>
 
