@@ -724,11 +724,210 @@ Converting back to decimal, the answer is \(26\).
 
 <h3 id="jun27">Jun 27</h3>
 
+\[y=\int_0^{4\pi}{\cos(6t)\over5-3\cos(2t)}dt,\quad x={\pi\over y}\]
+
+<p>
+Solve for \(y\) first. Notice that the integrand is periodic with period \(\pi\)
+so we can immediately simplify it a bit. Next apply the triple angle identity
+\(\cos(3\theta)=4\cos^3(\theta)-3\cos(\theta)\). Then substitute \(u=2t\).
+Also factor \(5\) out from the denominator which puts it in a form that we can
+use for geometric summation.
+\[y=4\int_0^\pi{4\cos^3(2t)-3\cos(2t)\over5-3\cos(2t)}dt
+={2\over5}\int_0^{2\pi}{4\cos^3(u)-3\cos(u)\over1-{3\over5}\cos(u)}dt\]
+Next we turn the integrand into a geometric summation. Let \(x=\cos(u)\). Then
+\[{4x^3-3x\over1-{3\over5}x}
+=(4x^3-3x)\sum_{k=0}^\infty\left({3\over5}\right)^k x^k
+=4\sum_{k=3}^\infty\left({3\over5}\right)^{k-3}x^k
+-3\sum_{k=1}^\infty\left({3\over5}\right)^{k-1}x^k\]
+\[=4\sum_{k=3}^\infty\left({3\over5}\right)^{k-3}x^k
+-3\sum_{k=3}^\infty\left({3\over5}\right)^{k-1}x^k-3x-{9\over5}x^2\]
+\[=\sum_{k=3}^\infty\left({3\over5}\right)^k x^k\left(4\cdot{125\over27}
+-3\cdot{5\over5}\right)-3x-{9\over5}x^2
+={365\over27}\sum_{k=3}^\infty\left({3\over5}\right)^k x^k-3x-{9\over5}x^2\]
+Going back to the integral, we get
+\[y={2\over5}\int_0^{2\pi}\left[{365\over27}
+\sum_{k=3}^\infty\left({3\over5}\right)^k\cos^k(u)-3\cos(u)-{9\over5}\cos^2(u)
+\right]du\]
+\[={146\over27}\int_0^{2\pi}\sum_{k=3}^\infty
+\left({3\over5}\right)^k\cos^k(u)du
+-{6\over5}\int_0^{2\pi}\cos(u)du-{18\over25}\int_0^{2\pi}\cos^2(u)du\]
+Now the integral with \(\cos(u)\) can easily be found to be zero. The integral
+with \(\cos^2(u)\) can be evaluated with a double angle identity and leaves us
+with an extra \(18\pi/25\). The problem we have to solve now is
+\[y={146\over27}\sum_{k=3}^\infty
+\left({3\over5}\right)^k\int_0^{2\pi}\cos^k(u)du-{18\pi\over25}\]
+First we show that when \(k\) is even, the integral is zero, so we can eliminate
+those terms. Use the change of variables \(v=u-\pi\)
+\[I=\int_0^{2\pi}\cos^k(u)du=\int_{-\pi}^{\pi}\cos^k(v+\pi)dv\]
+\[=\int_{-\pi}^{\pi}\left(\cos(v)\cos(\pi)-\sin(v)\sin(\pi)\right)^kdv
+=-\int_{-\pi}^{\pi}\cos^k(v)dv\]
+But also since we are integrating one period, we also have
+\[I=\int_{-\pi}^{\pi}\cos^k(u)du\]
+Thus \(I=-I\Rightarrow I=0\). So we can eliminate the odd terms. We will reindex
+the series to start at \(k=0\) as well so there are 2 terms to subtract away.
+\[y={146\over27}\left[\sum_{k=0}^\infty\left({3\over5}\right)^{2k}
+\int_0^{2\pi}\cos^{2k}(u)du-\int_0^{2\pi}du-{9\over25}\int_0^{2\pi}\cos^2(u)du
+\right]-{18\pi\over25}\]
+\[={146\over27}\sum_{k=0}^\infty\left({3\over5}\right)^{2k}
+\int_0^{2\pi}\cos^{2k}(u)du-{146\over27}\left(2\pi+{9\pi\over25}\right)
+-{18\pi\over25}\]
+\[={146\over27}\sum_{k=0}^\infty\left({3\over5}\right)^{2k}
+\int_0^{2\pi}\cos^{2k}(u)du-{364\pi\over27}\]
+Next we need to find out what the cosine power integrals are for even powers.
+This is similar to the Wallis integrals but we will evaluate them here.
+Let \(I(2n)=\int_0^{2\pi}\cos^{2n}(t)dt\) with base case \(I(0)=2\pi\). To find
+a relationship, first use \(\cos^2(t)=1-\sin^2(t)\) to give us something for
+integration by parts.
+\[I(2n)=\int_0^{2\pi}\cos^{2n}(t)dt=\int_0^{2\pi}\cos^{2n-2}(t)dt
+-\int_0^{2\pi}\cos^{2n-2}(t)\sin^2(t)dt\]
+We get \(I(2n-2)\) and another integral which we will evaluate with the
+substitutions \(u=\sin(t)\) and \(dv=\cos^{2n-2}(t)\sin(t)dt
+\Rightarrow v=-{\cos^{2n-1}(t)\over2n-1}\).
+\[\int_0^{2\pi}\sin(t)\cos^{2n-2}\sin(t)dt
+=\left[\sin(t)\left(-{\cos^{2n-1}(t)\over2n-1}\right)\right]_0^{2\pi}
++\int_0^{2\pi}{\cos^{2n}(t)dt\over2n-1}\]
+The \(uv\) part is zero so returning to before, we now have
+\[I(2n)=I(2n-2)-{1\over2n-1}I(2n)\Rightarrow I(2n)={2n-1\over2n}I(2n-2)\]
+This gives us a clear recurrence relation leading to the following
+\[I(2n)={2n-1\over2n}\cdot{2n-3\over2n-2}\cdot\ldots\cdot{1\over2}I(0)
+={(2n-1)!!\over(2n)!!}\cdot2\pi\]
+\[={(2n)!\over((2n)!!)^2}\cdot2\pi={(2n)!\over(n!\cdot2^n)^2}\cdot2\pi
+={2n\choose n}{2\pi\over4^n}\]
+Now we return to solving for \(y\)
+\[y={292\pi\over27}\sum_{k=0}^\infty
+\left(3\over5\right)^{2k}{2k\choose k}{1\over4^k}-{364\pi\over27}\]
+The \({2k\choose k}{1\over4^k}\) part of the summation makes this recognizable
+from the power series of \((1-x^2)^{-1/2}\) which is used with the generalized
+binomial theorem to derive the power series for \(\arcsin(x)\):
+\[{1\over\sqrt{1-x^2}}=\sum_{k=0}^\infty{2k\choose k}{x^{2k}\over4^k}\]
+So this whole summation is just \(\left(1-\left(3\over5\right)^2\right)^{-1/2}\)
+and we are almost done
+\[y={292\pi\over27}{1\over\sqrt{1-{9\over25}}}-{364\pi\over27}
+={292\pi\over27}\cdot{5\over4}-{364\pi\over27}={365\pi\over27}-{364\pi\over27}
+=\boxed{\pi\over27}\]
+That was a lot of work. Now just a small evaluation to get \(x=27\).
+<hr />
+By recognizing that this integral is over full periods, we can actually turn it
+into a closed loop integral in the complex plane and evaluate it with the
+residue theorem, which tends to be easier for integrals like this. The residue
+theorem says if we have a closed contour \(\gamma\) with a function \(f(z)\)
+which is analytic on the closed area it contains, except at a finite number of
+poles \(z_1,\ldots,z_n\), then
+\[\oint_\gamma f(z)dz=2\pi i\sum_{k=1}^n\text{Res}(f,z_k)\]
+Return to near the beginning after we did a few simplifications of the integral
+\[y=2\int_0^{2\pi}{\cos(3u)du\over5-3\cos(u)}\]
+Use the change of variables \(z=e^{iu}\Rightarrow du={dz\over iz}\) which turns
+it into an integral on the unit circle. Then we use the exponential form for
+cosine, which is \(\cos(3u)={1\over2}(z^3+z^{-3})\) and
+\(\cos(u)={1\over2}(z+z^{-1})\).
+\[y=\oint_{|z|=1}{z^3+z^{-3}\over5-{3\over2}(z+z^{-1})}{dz\over iz}
+=2\oint_{|z|=1}{z^6+1\over10z^3-3z^3(z+z^{-1})}{dz\over iz}\]
+We multiplied by \({2z^3\over2z^3}\). Now simplify it and factor the denominator
+\[y={-2\over3i}\oint_{|z|=1}{z^6+1\over z^3(z-3)\left(z-{1\over3}\right)}dz\]
+The poles are \(z=0,{1\over3},3\) but we exclude \(z=3\) since it is outside
+the area inside the integration loop. The residue is defined as
+\[\text{Res}(f,z_0)={1\over(m-1)!}\lim_{z\to z_0}{d^{m-1}\over dz^{m-1}}
+\left[(z-z_0)^m f(z)\right]\]
+Where \(m\) is the pole order. For this rational function in the integral, we
+have the simpler order 1 pole at \(z=1/3\). So the formula simplifies a lot and
+we can find the residue easily
+\[f(z)={z^6+1\over z^3(z-3)(z-{1\over3})},\quad\text{Res}(f,1/3)
+={(1/3)^6+1\over(1/3)^3(-8/3)}=-{365\over36}\]
+The order 3 pole at \(z=0\) is a little more difficult. Another nice thing about
+residues is that they are also equal to the coefficient of \(z^{-1}\) in the
+Laurent series expansion. Dividing by \(z^3\) just shifts things so we look for
+the coefficient of \(z^2\) in the following Laurent series:
+\[{z^6+1\over(z-3)\left(z-{1\over3}\right)}={z^6+1\over(1-z/3)(1-3z)}
+=(1+z^6)(1+z/3+z^2/9+\ldots)(1+3z+9z^2+\ldots)\]
+Anything that the \(z^6\) term multiplies can be ignored. So we look for the
+ways the get \(z^2\) terms from the geometric sums we expanded
+\[ 9z^2 + {z^2\over9} + \left(z\over3\right)(3z) = {91z^2\over9} \]
+Therefore, \(\text{Res}(f,0)={91\over9}\). Now use the residue theorem to find
+\(y\)
+\[y={-2\over3i}2\pi i\left(-{365\over36}+{91\over9}\right)
+={-4\pi\over3}\cdot{-365+364\over36}={4\pi\over3}\cdot{1\over36}={\pi\over27}\]
+This is still quite a bit of work, but often easier for integrals like this.
+</p>
+
 <h3 id="jun28">Jun 28</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <circle cx="7.5" cy="7.5" r="7" />
+        <polygon points="14.5 7.5 0.5 7.5 8.5 0.572" fill="#7cf" />
+        <line x1="4.5" x2="8.5" y1="7.5" y2="0.572" />
+        <line x1="5" x2="5.75" y1="10.5" y2="7" />
+        <polygon points="5.946 7.042 5.554 6.958 5.876 6.413" fill="black" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="3" y="12">Area = x&radic;3</text>
+        <text x="2" y="9">4</text>
+        <text x="8" y="9">10</text>
+        <text x="6.5" y="5.5">8</text>
+    </g>
+</svg>
+
+<p>
+First draw a radius and label an angle as \(\theta\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <circle cx="7.5" cy="7.5" r="7" />
+        <polygon points="14.5 7.5 0.5 7.5 8.5 0.572" fill="#7cf" />
+        <line x1="4.5" x2="8.5" y1="7.5" y2="0.572" />
+        <line x1="5" x2="5.75" y1="10.5" y2="7" />
+        <polygon points="5.946 7.042 5.554 6.958 5.876 6.413" fill="black" />
+        <line x1="7.5" x2="8.5" y1="7.5" y2="0.572" stroke="red" />
+        <path d="M 6.75 7.5 A 0.75 0.75 0 0 1 7.607 6.758" stroke="red" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="3" y="12">Area = x&radic;3</text>
+        <text x="2" y="9">4</text>
+        <text x="8" y="9">10</text>
+        <text x="6.5" y="5.5">8</text>
+        <text x="6" y="7" fill="red">&theta;</text>
+        <text x="8.5" y="5.5" fill="red">7</text>
+    </g>
+</svg>
+
+<p>
+The red line separates the triangle into 2. Right around the circle center, we
+have 2 triangles with 2 sides of length 7 meeting there, so the area is
+\[{1\over2}(7)(7)\sin(\theta)+{1\over2}(7)(7)\sin(\pi-\theta)=49\sin(\theta)\]
+Now we need \(\sin(\theta)\). We can first find \(\cos(\theta)\) with the law of
+cosines on the middle triangle with side lengths \(3,7,8\).
+\[8^2=3^2+7^2-2\cdot3\cdot7\cos(\theta)\Rightarrow\cos(\theta)={-1\over7}\]
+Now we can find \(\sin(\theta)\) and solve for the area
+\[49\sin(\theta)=49\sqrt{1-\cos^2(\theta)}=49\sqrt{1-{1\over49}}
+=49{\sqrt{48}\over\sqrt{49}}=49{4\sqrt{3}\over7}=28\sqrt{3}\]
+Therefore \(x=28\).
+</p>
 
 <h3 id="jun29">Jun 29</h3>
 
+\[\begin{align}10x+4y&=310\\7x-12y&=143\end{align}\]
+
+<p>
+This is a linear system of equations. Rather than use the matrix method, we just
+need to cancel \(y\) so we can find \(x\). If we multiply the first by 3 and
+then add, we will cancel \(y\).
+\[\begin{align}30x+12y&=930\\7x-12y&=143\\\hline37x&=1073\end{align}\]
+Then \(x=29\). If we wanted, we can also find \(y=5\).
+</p>
+
 <h3 id="jun30">Jun 30</h3>
+
+<p>
+Jo travels 165 miles in 5 hours an arrives a half hour early. What speed should
+she travel to be right on time?
+</p>
+
+<p>
+If 5 hours is half hour early then 5.5 hours is on time. So she should travel
+165 miles in 5.5 hours.
+\[{165\text{mi}\over5.5\text{h}}=30\text{mi/h}\]
+</p>
 
 </div>
 </body>
