@@ -81,7 +81,107 @@
 
 <h3 id="jul01">Jul 01</h3>
 
+\[21!\ \text{mod}\ 23\]
+
+<p>
+Since \(23\) is prime, by Wilson's theorem:
+\[22!\equiv-1\ (\text{mod}\ 23)\]
+Now multiply each side by the inverse of \(22\) module \(23\) which is
+\(-1\equiv22\).
+\[21!\cdot(22\cdot-1)\equiv-1\cdot-1\ (\text{mod}\ 23)
+\Rightarrow 21!\equiv1\ (\text{mod}\ 23)\]
+</p>
+
 <h3 id="jul02">Jul 02</h3>
+
+\[xyzwv\cdot4=vwzyx,\quad x\neq y\neq z\neq w\neq v\]
+
+<p>
+It might not be clear, but each letter is a base 10 digit forming a 5 digit
+number. So the problem is asking us to find a number \(xyzwv\) that reverses to
+\(vwzyx\) when multiplied by \(4\). This is a cryptarithmetic puzzle that
+requires us to solve for individual digits of the number, and we are also given
+that the digits must be distinct.
+</p>
+
+<p>
+One observation to make is that the digit to digit carry can never exceed 3,
+since we start with at most \(4\cdot9=36\) which could carry 3, and at any
+further step, \(4\cdot9+c\leq39\) since \(c\leq3\). Also for simplicity,
+assume all modular congruences are mod \(10\) unless stated otherwise. Below is
+what the multiplication looks like, with the carries. We will solve for each
+variable.
+\[
+\begin{array}{cccccc}
+& (c_4) & (c_3) & (c_2) & (c_1) & \\
+& x & y & z & w & v \\
+\times & & & & & 4 \\
+\hline
+& v & w & z & y & x \\
+\end{array}
+\]
+Now start with the digits \(v\) and \(x\). We cannot have a carry value so we
+end up with \(v=4x+c_4\) for some carry \(c\). This means \(x=0,1,2\). Next,
+\(4v\equiv x\) so we can further narrow it down to \(x=0,2\) since \(4v\) is
+even. Now think about some cases. If \(x=0\), then \(v=5\) to satisfy
+\(4v\equiv x\) because
+\(x\neq v\). But then \(v=4x+c_4=c_4\) would mean we have to carry \(5\), bigger
+than the limit of \(3\) we established, so we must have \(x=2\) instead. Now
+suppose \(x=2\). Then we could have either \(v=3,8\) to satisfy \(4v\equiv x\).
+Since \(v=4x+c_4=8+c_4\geq8\), we can narrow this down to \(v=8\). So only one case
+remains: \(x=2,v=8\). We could stop here since we found \(x\), but similar
+reasoning can solve this full digit reversal puzzle. Here is what remains.
+\[
+\begin{array}{cccccc}
+& (0) & (c_3) & (c_2) & (3) & \\
+& 2 & y & z & w & 8 \\
+\times & & & & & 4 \\
+\hline
+& 8 & w & z & y & 2 \\
+\end{array}
+\]
+Next we focus on solving for \(w\) and \(y\). The equations for them are
+\[4w+3\equiv y,\quad 4y+c_3\equiv w\]
+Rearrange the second equation to \(w\equiv4y+c_3\) and then add the equations.
+\[5w+3\equiv 5y+c_3 \Rightarrow 5(w-y)\equiv c_3-3\]
+From this, we know \(c_3-3\equiv0,5\). But given that \(c_3\in\{0,1,2,3\}\),
+it must be \(c_3-3\equiv0\Rightarrow c_3\equiv3\). We can also
+determine that \(w-y\) is even in order to make \(5(w-y)\equiv0\). So our
+multiply and carry equations become
+\[4w+3\equiv y,\ 4y+3\equiv w \Rightarrow 3(w+y)\equiv-6
+\Rightarrow w+y\equiv-2\]
+Now combine this with our observation that \(w-y\) is even, and respect the
+constraint that each digit is unique and we have four cases:
+\((y,w)=(1,7),(3,5),(5,3),(7,1)\). Next focus on \(z\) in the middle. We have
+\(4z+c_2\equiv z\Rightarrow 3z+c_2\equiv0\). Since \(c_2\in\{0,1,2,3\}\),
+we can find possible values \(z=0,3,6,9\). But remember that we found \(c_3=3\),
+so \(4z+c_2\geq30\). The only value which can possibly give us a carry \(3\) is
+\(z=9\). That also allows us to show \(4\cdot9+c_2\equiv9\) implies \(c_2=3\).
+Here is the puzzle with our new information.
+\[
+\begin{array}{cccccc}
+& (0) & (3) & (3) & (3) & \\
+& 2 & y & 9 & w & 8 \\
+\times & & & & & 4 \\
+\hline
+& 8 & w & 9 & y & 2 \\
+\end{array}
+\]
+Next, we use our knowledge of the almost complete puzzle with some steps of the
+multiplication to reduce the cases on \((w,y)\). Since \(c_4=0\), \(4y+3=w\)
+must give us a single digit \(w\), so the only possibility is \(y=1\).
+Therefore, the case that works is \(y=1\) and \(w=7\). We can substitute these
+into our puzzle and check that it is a valid multiplication.
+\[
+\begin{array}{cccccc}
+& (0) & (3) & (3) & (3) & \\
+& 2 & 1 & 9 & 7 & 8 \\
+\times & & & & & 4 \\
+\hline
+& 8 & 7 & 9 & 1 & 2 \\
+\end{array}
+\]
+</p>
 
 <h3 id="jul03">Jul 03</h3>
 
