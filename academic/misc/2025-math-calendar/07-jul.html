@@ -667,37 +667,298 @@ Then we can pick a power for each prime (including 0) so counting factors:
 
 <h3 id="jul15">Jul 15</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 5" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <path d="M 3.5 0.3 l 0 1.2 A 1.2 1.2 0 0 0 3.811 1.459 M 3.5 0.3" stroke="#38b" fill="#7cf" />
+        <rect x="0.5" y="0.3" width="3" height="3" />
+        <line x1="3.5" x2="4.598" y1="3.3" y2="4.398" />
+        <g stroke="red">
+            <line x1="0.5" x2="3.5" y1="0.3" y2="3.3" />
+            <line x1="3.5" x2="4.598" y1="0.3" y2="4.398" />
+        </g>
+        <g fill="black">
+            <circle cx="0.5" cy="0.3" r="0.1" />
+            <circle cx="3.5" cy="3.3" r="0.1" />
+            <circle cx="3.5" cy="0.3" r="0.1" />
+            <circle cx="4.598" cy="4.398" r="0.1" />
+        </g>
+        <line x1="4.2" x2="3.6" y1="1" y2="1.3" />
+        <polygon points="3.6 1.3 3.655 1.235 3.68 1.29" fill="black" />
+        <line x1="0.45" x2="1.6" y1="3.8" y2="3.8" />
+        <line x1="2.4" x2="3.6" y1="3.8" y2="3.8" />
+    </g>
+    <g fill="black" font-size="0.03em">
+        <text x="0.05" y="0.5">A</text>
+        <text x="3.6" y="3.2">B</text>
+        <text x="3.65" y="0.5">C</text>
+        <text x="4.6" y="4.9">D</text>
+        <text x="4.3" y="1">x&deg;</text>
+    </g>
+    <text x="0.5" y="4.5" font-size="0.05em">AB = CD</text>
+</svg>
+
+<p>
+We are not give this, but we have to assume that \(\angle ACB\) is a right angle
+angle on a square. The angles are the same regardless of scaling so let
+\(AC=CB=1\) and \(AB=CD=\sqrt{2}\). If we extend the horizontal line through
+\(B\) to the right more, we can form a right angle and an angle equal to
+\(\angle CAB\). This will tell us that \(m\angle CBD=135^\circ\). Now we can
+use the law of sines.
+\[{\sin(135^\circ)\over\sqrt{2}}={\sin(D)\over1}\Rightarrow
+\sin(D)={\sqrt{2}/2\over\sqrt{2}}={1\over2}\]
+From this, we find \(D\) is at an angle of \(30^\circ\). Now we know 2 of the
+angles in the triangle with \(x^\circ\) and can solve:
+\[x=180-135-30=15\]
+One little thing about extending the problem is that if instead we were given
+the ratio \(r\) of \(BC\) to \(AC\), we could instead find that the angle \(x\)
+has a measure of
+\[\arctan\left({1\over r}\right)-\arcsin\left({r\over1+r^2}\right)\]
+</p>
+
 <h3 id="jul16">Jul 16</h3>
+
+<p>
+A coin is flipped until there are either 4 heads in a row or a tail followed by
+3 heads. What is the reciprocal of the chance that the last flip is heads?
+</p>
+
+<p>
+This problem seems to be stated incorrectly. As stated, it gives ending
+conditions of \(HHHH\) or \(THHH\) which always ends in heads. There are some
+possible alternatives it might have meant.
+</p>
+
+<p>
+One possibility is that it meant to ask for the probability that \(HHHH\) occurs
+before \(THHH\). In this case, it can only happen in the first 4 flips
+(probability \(1/16\)). If a \(T\) shows up, \(THHH\) would be completed first.
+</p>
+
+<p>
+Another possibility is it meant "a tail" instead of "a tail followed by 3 heads"
+which would still require \(HHHH\) in the first 4 flips. If a tails showed up,
+then it ends right there. The probability of this is \(1/16\).
+</p>
 
 <h3 id="jul17">Jul 17</h3>
 
+\[2^{2^2}+1=2^4+1=16+1=17\]
+
 <h3 id="jul18">Jul 18</h3>
+
+<p>
+Find the smallest positive integer that is twice the sum of its digits.
+</p>
+
+<p>
+Single digits have a sum equal to themselves so it cannot be one of those.
+Try solving an equation for 10-19, using \(x\) as the ones digit.
+\[2(1+x)=10+x \Rightarrow 2+2x=10+x \Rightarrow x=8\]
+Therefore, the smallest such number is 18.
+</p>
 
 <h3 id="jul19">Jul 19</h3>
 
+<p>
+Find the smallest prime that is the sum of three different primes.
+</p>
+
+<p>
+If \(2\) was included, then the other primes would be odd and the sum would be
+even, so we can only have odd primes. The first 3 primes are \(3+5+7=15\) which
+is not prime. Now consider if \(11\) is allowed.
+\[3+5+11=19,\quad3+7+11=21,\quad5+7+11=23\]
+We get \(19\). We have already explored all possibilities with primes up to
+\(11\). The next smallest sum of 3 primes is \(3+5+13=21&gt;19\) so there are
+no more that need to be checked.
+</p>
+
 <h3 id="jul20">Jul 20</h3>
+
+\[2^u=81,\quad3^v=32,\quad x=uv\]
+
+<p>
+Take logs, the base is actually not important, but use the same one.
+\[u\log(2)=\log(81)=4\log(3),\quad v\log(3)=\log(32)=5\log(2)\]
+Then multiply the equations.
+\[uv\log(2)\log(3)=20\log(2)\log(3)\Rightarrow uv=20\]
+</p>
 
 <h3 id="jul21">Jul 21</h3>
 
+\[{x^2\over\left(2-\sqrt{4+x}\right)^2}=x+28\]
+
+<p>
+One way to solve this could be to recognize one side is a square. But it turns
+out that we still have to eliminate square roots so that does not really help
+us because we will be squaring each side anyway.
+\[x^2=(x+28)\left(2-\sqrt{4+x}\right)^2=(x+28)\left(8+x-4\sqrt{4+x}\right)\]
+\[=x^2+36x+224-4(x+28)\sqrt{4+x} \Rightarrow
+\sqrt{4+x}={9x+56\over x+28}\]
+Now we square both sides again and deal with large numbers.
+\[(4+x)(x+28)^2=(9x+56)^2\]
+\[x^3+60x^2+1008x+3136=81x^2+1008x+3136\]
+\[x^3+60x^2=81x^2\Rightarrow x^3-21x^2=0\Rightarrow x^2(x-21)=0\]
+From here, we find \(x=0\) and \(x=21\) and it turns out \(x=0\) is extraneous
+and \(x=21\) is a solution.
+</p>
+
 <h3 id="jul22">Jul 22</h3>
+
+<p>
+Of the 64 ways to flip a coin 6 times, how many have more heads than tails?
+</p>
+
+<p>
+The number of ways to flip \(6\) coins with \(n\) tails is \({6\choose n}\).
+So we just need \(n\) (number of tails) to be greater than \(6-n\) (number of
+heads).
+\[{6\choose4}+{6\choose5}+{6\choose6}={6\cdot5\over2}+{6\over1}+1=15+6+1=22\]
+</p>
 
 <h3 id="jul23">Jul 23</h3>
 
+\[2^{x^2+1}\times16^{132+x}=4^{25x}\]
+
+<p>
+Put both sides in base 2 exponents first, then we can take logs to solve them.
+\[2^{x^2+1}2^{528+4x}=2^{50x}\Rightarrow x^2+4x+529=50x\Rightarrow
+x^2-46x+529=0\Rightarrow(x-23)^2=0\]
+So the solution is \(x=23\).
+</p>
+
 <h3 id="jul24">Jul 24</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 20 20" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <circle cx="0" cy="0" r="9" />
+        <path d="M 0 -9 L 4.045 -6.061 A 5 5 0 0 1 2.5 -4.67 L 0 -9" stroke="#49c" fill="#7cf" />
+        <polygon points="7.794 4.5 -7.794 4.5 -0 -9" />
+        <polygon points="5.29 7.281 -5.29 7.281 -8.56 -2.781 -0 -9 8.56 -2.781" />
+        <path d="M 5.908 5.379 A 2 2 0 0 0 3.29 7.281 M 4.702 6.472 l -1.176 -1.618" />
+        <path d="M -3.29 7.281 A 2 2 0 0 0 -5.908 5.379 M -4.702 6.472 l 1.176 -1.618" />
+        <path d="M -7.941 -0.879 A 2 2 0 0 0 -6.941 -3.957 M -7.608 -2.472 l 1.902 0.618" />
+        <path d="M 6.941 -3.957 A 2 2 0 0 0 7.941 -0.879 M 7.608 -2.472 l -1.902 0.618" />
+        <path d="M 6.294 1.902 A 3 3 0 0 0 4.794 4.5 M 6.262 3.214 l -1.532 -1.286 M 5.915 3.816 l -1.879 -0.684" />
+        <path d="M -4.794 4.5 A 3 3 0 0 0 -6.294 1.902 M -5.915 3.816 l 1.879 -0.684 M -6.262 3.214 l 1.532 -1.286" />
+        <path d="M -1.5 -6.402 A 3 3 0 0 0 1.5 -6.402 M -0.347 -7.03 l -0.347 1.97 M 0.347 -7.03 l 0.347 1.97" />
+        <line x1="7" x2="3" y1="-8" y2="-5.95" />
+        <polygon points="2.9 -6.1 3.05 -5.75 2.7 -5.75" fill="black" />
+    </g>
+    <text x="7" y="-8" fill="black" font-size="0.15em">x&deg;</text>
+</svg>
+
+<p>
+Given that the inscribed shapes are a regular triangle, and regular pentagon,
+we already know many of the angle measures. Note that they should have marked
+the top angle of the pentagon as the same measure as well.
+</p>
+
+<p>
+If we draw a radius from the shared vertex to the circle center, it bisects the
+angles of measure \(60^\circ\) and \(108^\circ\). If we focus on the side with
+\(x^\circ\), then the angles are \(30^\circ\) and \(54^\circ\). So we can find
+the difference: \(x=54-30=24\).
+</p>
 
 <h3 id="jul25">Jul 25</h3>
 
+\[{1\over2}+\sum_{t=-24}^{24}{1\over1+24^t}\]
+
+<p>
+We are seeing some symmetry here. Consider the terms at index \(t\) and \(-t\)
+\[{1\over1+24^t}+{1\over1+24^{-t}}={1\over1+24^t}+{24^t\over24^t+1}
+={1+24^t\over1+24^t}=1\]
+So we can simplify opposite terms to \(1\). The sum becomes
+\[{1\over2}+{1\over1+24^0}+\sum_{t=1}^{24}1={1\over2}+{1\over2}+24=25\]
+</p>
+
 <h3 id="jul26">Jul 26</h3>
+
+\[\begin{align}
+&21=2a+3b\\
+&25=2b+3c\\
+&19=2c+3a\\
+&x=2a+2b+2c\\
+\end{align}\]
+
+<p>
+Noticing the symmetry, add all 3 equations and then it becomes clear how to
+solve for \(x\).
+\[21+25+19=5(a+b+c)=65\Rightarrow a+b+c=13\]
+Then \(x=2(a+b+c)=2\cdot13=26\).
+</p>
 
 <h3 id="jul27">Jul 27</h3>
 
+<p>Find the number of non-prime factors of \(1200\).</p>
+
+<p>
+First factor it.
+\[1200=2^4\cdot3\cdot5^2\]
+The number of factors is \((4+1)(1+1)(2+1)=30\). Then subtract away the primes
+\(2,3,5\) and there are 27 factors which are not prime.
+</p>
+
 <h3 id="jul28">Jul 28</h3>
+
+\[2^{18}\times3^{27}\ \text{mod}\ 100\]
+
+<p>
+To solve this, break it up into coprime factors \(100=4\cdot25\) to use the
+Chinese remainder theorem. Since \(2^2\) is a factor,
+\[2^{18}\cdot3^{27}\equiv0\ \text{mod}\ 4\]
+Finding things modulo \(25\), start with \(2^{18}\). By going up in some powers
+of \(2\), we find \(2^{7}=128\equiv3\) is convenient. Then
+\[2^{18}\equiv2^7\cdot2^7\cdot2^6\equiv3\cdot3\cdot16\equiv9\cdot-9\equiv-81
+\equiv-6\ \text{mod}\ 25\]
+Then for \(3^{27}\), we can use \(3^3=27\) as a convenient starting point.
+\[3^{27}\equiv(3^3)^9\equiv2^9\equiv512\equiv12\ \text{mod}\ 25\]
+Then finally, \(-6\cdot12\equiv-72\equiv3\ \text{mod}\ 25\). Now since the
+numbers are small, we can cycle through multiples of \(25\) to find that the
+solution is \(2^{18}\cdot3^{27}\equiv28\ \text{mod}\ 100\).
+</p>
 
 <h3 id="jul29">Jul 29</h3>
 
+\[\sqrt{x+7}+\sqrt{x-25}=8\]
+
+<p>
+We can square things to eliminate square roots.
+\[x+7+x-25+2\sqrt{(x+7)(x-25)}=64\]
+\[\sqrt{(x+7)(x-25)}=41-x\]
+\[(x+7)(x-25)=x^2-18x-175=1681-82x+x^2\]
+\[64x=1856\Rightarrow x=29\]
+</p>
+
 <h3 id="jul30">Jul 30</h3>
 
+<p>
+Find the largest number \(x\) that is a factor of \(5250\) and \(1260\) and
+satisfies \(\gcd(x,1001)=1\).
+</p>
+
+<p>
+If \(x\) is a factor of those 2 numbers, then it is a factor of their gcd.
+\[\gcd(5250,1260)=\gcd(1260,210)=\gcd(210,0)=210\]
+Now factor \(210=2\cdot3\cdot5\cdot7\) and \(1001=7\cdot11\cdot13\). A factor
+of \(210\) that is coprime to \(1001\) must not contain the factor \(7\) so we
+take as many of the other factors we can: \(2\cdot3\cdot5=30\).
+</p>
+
 <h3 id="jul31">Jul 31</h3>
+
+<p>
+Find the largest \(y\) that satisfies \(z+y\leq64,\:z\geq y+2\).
+</p>
+
+<p>
+Write the 2nd one as \(y+2\leq z\). Add the inequalities
+since \(a\leq b\) and \(c\leq d\) implies \(a+b\leq c+d\).
+\[2y+z+2\leq64+z\Rightarrow 2y\leq62\Rightarrow y\leq31\]
+So the largest is \(y=31\). If \(y&gt;31\), then we could show \(z&lt;33\) from
+the first inequality, but also \(z&gt;33\) from the 2nd inequality.
+</p>
 
 </div>
 </body>
