@@ -341,23 +341,329 @@ on a website dedicated to "squaring the square" and related problems.
 
 <h3 id="jul05">Jul 05</h3>
 
+\[\begin{align}
+&\sqrt{y}+\sqrt{z}=3\\
+&\sqrt{y+5}+\sqrt{z+3}=5\\
+&y&gt;z\\
+&x=y+z\\
+\end{align}\]
+
+<p>
+To make this a little easier to read, let \(a=\sqrt{y}\) and \(b=\sqrt{z}\).
+The first equation becomes \(a+b=3\) and we can use this to simplify the 2nd
+equation to 1 variable.
+\[\sqrt{a^2+5}+\sqrt{b^2+3}=5 \Rightarrow \sqrt{a^2+5}+\sqrt{(3-a)^2+3}=5\]
+Then square twice with some rearranging to eliminate the square roots.
+\[a^2+5+(3-a)^2+3+2\sqrt{(a^2+5)((3-a)^2+3)}=25\]
+\[2a^2-6a+17+2\sqrt{(a^2+5)((3-a)^2+3)}=25\]
+\[(a^2+5)((3-a)^2+3)=(4+3a-a^2)^2\]
+\[a^4-6a^3+17a^2-30a+60=a^4-6a^3+a^2+24a+16\]
+\[8a^2-27a+22=0 \Rightarrow a={27\pm\sqrt{27^2-4\cdot8\cdot22}\over16}
+={27\pm5\over16}\]
+For \(a=11/8\) we find \(b=13/8\). For \(a=2\) we find \(b=1\). For the first,
+we get \((y,z)=(121/64,169/64)\). For the second, we get \((y,z)=(4,1)\). Only
+the latter satisfies \(y&gt;z\). So \(x=y+z=4+1=5\).
+</p>
+
 <h3 id="jul06">Jul 06</h3>
+
+\[x,y\in\mathbb{Z},\quad 4^x+2^y=4224\]
+
+<p>
+If \(x&lt;0\) or \(y&lt;0\) then the sum is below \(1\) so either \(x\geq0\) or
+\(y\geq0\). If \(x\geq0\) and \(y&lt;0\) then we would have a non integer
+result. If \(y\leq0\) and \(x&lt;0\) it would also be a non integer. So both
+\(x\geq0\) and \(y\geq0\).
+</p>
+
+<p>
+We will step through values of \(x\) and compute \(4224-4^x\) until we
+recognize a power of \(2\).
+</p>
+
+<table class="table_normal">
+    <tr><th>\(x\)</th><th>\(4224-4^x\)</th><th>Power of 2?</th></tr>
+    <tr><td>\(0\)</td><td>\(4223\)</td><td>no</td></tr>
+    <tr><td>\(1\)</td><td>\(4220\)</td><td>no</td></tr>
+    <tr><td>\(2\)</td><td>\(4208\)</td><td>no</td></tr>
+    <tr><td>\(3\)</td><td>\(4160\)</td><td>no</td></tr>
+    <tr><td>\(4\)</td><td>\(3968\)</td><td>no</td></tr>
+    <tr><td>\(5\)</td><td>\(3200\)</td><td>no</td></tr>
+    <tr><td>\(6\)</td><td>\(128\)</td><td>yes</td></tr>
+</table>
+
+<p>
+So we find the solution \(x=6\) and \(y=7\).
+</p>
 
 <h3 id="jul07">Jul 07</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 9" width="240" height="280" class="img_center">
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <polygon points="7.51 4 5.755 7.039 2.245 7.039 0.49 4 2.245 0.961 5.755 0.961" />
+        <line x1="4" x2="2.245" y1="4" y2="7.039" />
+        <line x1="4" x2="0.49" y1="4" y2="4" />
+        <line x1="4" x2="2.245" y1="4" y2="0.961" />
+        <line x1="4" x2="5.755" y1="4" y2="0.961" />
+        <polygon points="7.51 4 5.755 7.039 4 4" fill="#7cf" />
+        <polygon points="4 0.961 3.123 2.48 4.877 2.48" fill="#7cf" />
+        <polygon points="1.368 5.52 0.49 4 2.245 4" />
+        <polygon points="0.929 4.76 1.368 4 1.807 4.76" fill="#7cf" />
+        <line x1="0.975" x2="1.322" y1="4.28" y2="4.48" />
+        <line x1="1.76" x2="1.414" y1="4.28" y2="4.48" />
+        <line x1="1.368" x2="1.368" y1="4.96" y2="4.56" />
+        <line x1="0.975" x2="1.322" y1="5.24" y2="5.04" />
+        <line x1="0.929" x2="0.929" y1="3.8" y2="4.2" />
+        <line x1="2.199" x2="1.853" y1="4.48" y2="4.28" />
+        <line x1="0.537" x2="0.883" y1="4.48" y2="4.28" />
+        <line x1="1.807" x2="1.807" y1="3.8" y2="4.2" />
+        <line x1="1.76" x2="1.414" y1="5.24" y2="5.04" />
+        <line x1="1.677" x2="2.024" y1="6.455" y2="6.255" />
+        <line x1="1.589" x2="1.936" y1="6.304" y2="6.104" />
+        <line x1="3.21" x2="3.21" y1="4.2" y2="3.8" />
+        <line x1="3.035" x2="3.035" y1="4.2" y2="3.8" />
+        <line x1="3.432" x2="3.778" y1="3.416" y2="3.216" />
+        <line x1="3.344" x2="3.691" y1="3.264" y2="3.064" />
+        <line x1="3.035" x2="3.035" y1="0.761" y2="1.161" />
+        <line x1="3.21" x2="3.21" y1="0.761" y2="1.161" />
+        <line x1="5.533" x2="5.187" y1="1.745" y2="1.545" />
+        <line x1="5.445" x2="5.099" y1="1.896" y2="1.696" />
+        <line x1="2.555" x2="2.901" y1="1.896" y2="1.696" />
+        <line x1="2.467" x2="2.813" y1="1.745" y2="1.545" />
+        <line x1="4.79" x2="4.79" y1="0.761" y2="1.161" />
+        <line x1="4.965" x2="4.965" y1="0.761" y2="1.161" />
+        <line x1="4.656" x2="4.309" y1="3.264" y2="3.064" />
+        <line x1="4.568" x2="4.222" y1="3.416" y2="3.216" />
+        <line x1="3.778" x2="3.432" y1="1.745" y2="1.545" />
+        <line x1="3.691" x2="3.344" y1="1.896" y2="1.696" />
+        <line x1="3.912" x2="3.912" y1="2.28" y2="2.68" />
+        <line x1="4.088" x2="4.088" y1="2.28" y2="2.68" />
+        <line x1="4.309" x2="4.656" y1="1.896" y2="1.696" />
+        <line x1="4.222" x2="4.568" y1="1.745" y2="1.545" />
+        <line x1="1.107" x2="1.453" y1="2.532" y2="2.732" />
+        <line x1="1.195" x2="1.541" y1="2.38" y2="2.58" />
+        <line x1="1.282" x2="1.629" y1="2.228" y2="2.428" />
+        <line x1="6.718" x2="6.371" y1="2.228" y2="2.428" />
+        <line x1="6.805" x2="6.459" y1="2.38" y2="2.58" />
+        <line x1="6.893" x2="6.547" y1="2.532" y2="2.732" />
+        <line x1="6.893" x2="6.547" y1="5.468" y2="5.268" />
+        <line x1="6.805" x2="6.459" y1="5.62" y2="5.42" />
+        <line x1="6.718" x2="6.371" y1="5.772" y2="5.572" />
+        <line x1="4.175" x2="4.175" y1="7.239" y2="6.839" />
+        <line x1="4" x2="4" y1="7.239" y2="6.839" />
+        <line x1="3.825" x2="3.825" y1="7.239" y2="6.839" />
+        <line x1="5.579" x2="5.579" y1="3.8" y2="4.2" />
+        <line x1="5.755" x2="5.755" y1="3.8" y2="4.2" />
+        <line x1="5.93" x2="5.93" y1="3.8" y2="4.2" />
+        <line x1="4.963" x2="4.616" y1="5.268" y2="5.468" />
+        <line x1="5.051" x2="4.704" y1="5.42" y2="5.62" />
+        <line x1="5.138" x2="4.792" y1="5.572" y2="5.772" />
+        <line x1="3.384" x2="3.037" y1="5.468" y2="5.268" />
+        <line x1="3.296" x2="2.949" y1="5.62" y2="5.42" />
+        <line x1="3.208" x2="2.862" y1="5.772" y2="5.572" />
+        <line x1="6.75" x2="7.75" y1="1.1" y2="1.1" />
+        <line x1="7" x2="7.75" y1="1.25" y2="1.25" />
+    </g>
+    <text x="7" y="1" fill="black" font-size="0.05em">8</text>
+    <text x="6.8" y="1.65" fill="black" font-size="0.03em">&radic;27</text>
+    <text x="6.8" y="1.4" fill="black" font-size="0.02em">4</text>
+    <text x="1.5" y="8.5" fill="black" font-size="0.05em">Find the area</text>
+</svg>
+
+<p>
+Our outer hexagon has side length \(s={8\over\sqrt[4]{27}}\). An equaliteral
+triangle with side length \(s\) has area \({\sqrt{3}\over4}s^2\) which can be
+found by drawing an altitude from one vertex to the midpoint of the opposite
+side. Using the many tick marks for line length equality, we can see that the
+middle size blue triangle has side length \(s/2\) an the small one has side
+length \(s/4\). So adding the areas of these 3 equilateral triangles:
+\[{\sqrt{3}\over4}\left({8\over\sqrt[4]{27}}\right)^2
+\left(1+\left({1\over2}\right)^2+\left({1\over4}\right)^2\right)\]
+\[={\sqrt{3}\over4}\cdot{64\over\sqrt{27}}\left(1+{1\over4}+{1\over16}\right)
+={16\over3}\cdot{21\over16}=7\]
+</p>
+
 <h3 id="jul08">Jul 08</h3>
+
+<p>
+Find the largest zero of \(x^3-7x^2-10x+16\).
+</p>
+
+<p>
+By the rational root theorem, rational zeroes might be
+\(x=\pm1,\pm2,\pm4,\pm8\). By trying, we find \(x=1\) is a root. Then divide
+\(x-1\) to factor the polynomial to \((x-1)(x^2-6x-16)\). Now we can factor
+the quadratic one more easily and the fully factored polynomial is
+\((x-1)(x+2)(x-8)\). The zeroes are \(x=1,-2,8\) and the largest is \(x=8\).
+</p>
 
 <h3 id="jul09">Jul 09</h3>
 
+<p>
+What is the max area of a rectangle with perimeter 12?
+</p>
+
+<p>
+If a rectangle has sides \(x\) and \(y\) then its perimeter is \(2x+2y=12\) and
+area is \(xy\). We try to maximize \(xy\) subject to \(x+y=6\). Then
+\(xy=x(6-x)=6x-x^2\). This is a quadratic polynomial with a negative leading
+coefficient so it has a maximum at \(x={-(6)\over2(-1)}=3\). This also gives us
+\(y=3\) so the area is maximized at \(xy=9\).
+</p>
+
 <h3 id="jul10">Jul 10</h3>
+
+\[6!\cdot7!=x!\]
+
+<p>
+Start with \(7!\) and see what numbers following that which we can factor out
+of \(6!\). The factorization of \(6!\) is
+\[6!=2\cdot3\cdot4\cdot5\cdot6=2^4\cdot3^2\cdot5
+=8\cdot(2\cdot3^2\cdot5)=8\cdot9\cdot(2\cdot5)=8\cdot9\cdot10\]
+So then
+\[7!\cdot6!=7!\cdot8\cdot9\cdot10=10!=x!\Rightarrow x=10\]
+</p>
 
 <h3 id="jul11">Jul 11</h3>
 
+\[\begin{align}
+&2x+3y=43\\
+&x^2-y^2+2y=86\\
+&x+y&gt;0\\
+\end{align}\]
+
+<p>
+Notice that 43 is half of 86 so double equation 1.
+\[4x+6y=x^2-y^2+2y\]
+Separate \(x\) and \(y\)
+\[y^2+4y=x^2-4x\]
+Notice that if we add 4, we can factor them as perfect squares
+\[(y+2)^2=(x-2)^2\]
+Now if we take square roots, we have 2 cases. First
+\[y+2=x-2\Rightarrow y=x-4\]
+Then use the first given equation:
+\[2x+3(x-4)=43\Rightarrow5x-12=43\Rightarrow x=11\Rightarrow y=7\]
+For the other case,
+\[y+2=-(x-2)=2-x\Rightarrow y=-x\]
+Then in the first given equation:
+\[2x+3(-x)=43\Rightarrow x=-43\Rightarrow y=43\]
+This satisfies the first 2 given equations, but not \(x+y&gt;0\). Therefore,
+the solution is \(x=11\) and \(y=7\).
+</p>
+
 <h3 id="jul12">Jul 12</h3>
+
+\[900-314-143-431=900-888=12\]
 
 <h3 id="jul13">Jul 13</h3>
 
+\[\left(1-{1\over x}\right)^{1-x}=\left(1+{1\over12}\right)^{12}\]
+
+<p>
+Start with the left side and do some algebraic manipulation.
+\[\left(1-{1\over x}\right)^{1-x}=\left({x-1\over x}\right)^{1-x}
+=\left({x\over x-1}\right)^{x-1}=\left(1+{1\over x-1}\right)^{x-1}\]
+This clearly matches the structure to give us \(x-1=12\Rightarrow x=13\).
+In order to show that this is the only solution, we need to analyze the
+function more rigorously. To do this, let \(f(x)=\left(1+{1\over x}\right)^x\).
+We will show that \(f(x)\) is increasing on \((0,\infty)\) with range
+\((1,e)\) which shows our \(x-1=12\) must be unique in this interval. Then we
+will show that \(f(x)\) is increasing on \((-\infty,-1)\) with range
+\((e,\infty)\) which shows that there cannot be any more solutions in that
+interval. Note that \(f(x)\) is undefined at \(x=-1\) and \(x=0\) and that we
+have a negative exponent base in \((-1,0)\) which makes \(f(x)\) generally
+complex valued in that interval and not well behaved for real numbers.
+</p>
+
+<p>
+We will also state a few other pieces of useful things that will help us in
+this rigorous analysis. We already defined our function to analyze:
+\[f(x)=\left(1+{1\over x}\right)^x\]
+Now let's define the log of it, and compute its 2 derivatives.
+\[g(x)=x\ln\left(1+{1\over x}\right),\quad
+g'(x)=\ln\left(1+{1\over x}\right)-{1\over x+1},\quad
+g''(x)={-1\over x(x+1)^2}\]
+Since \(f(x)=e^{g(x)}\) and \(e^x\) is monotonic, the monotonicity of \(g(x)\)
+and \(f(x)\) will be the same. To show monotonicity, we will show \(g'(x)\) has
+a fixed sign in an interval, which implies \(g(x)\) is monotonic, and finally
+\(f(x)\) is monotonic.
+</p>
+
+<hr />
+
+<p>
+First, consider the interval \((0,\infty)\). We will first determine the limits.
+On the right, we have the well known limit
+\[\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\left(1+{1\over x}\right)^x=e\]
+On the left, we can do this by starting with taking the log, then change the
+form a bit so it matches the \(\infty/\infty\) case of LHopital's rule.
+\[\ln(L)=\lim_{x\to0^+}x\ln\left(1+{1\over x}\right)
+=\lim_{x\to0^+}{\ln\left(1+{1\over x}\right)\over{1\over x}}\]
+Now use LHopital's rule and simplify.
+\[=\lim_{x\to0^+}{{-x^{-2}\over1+{1\over x}}\over-x^{-2}}
+\cdot{-x^2\over-x^2}=\lim_{x\to0^+}{1\over1+{1\over x}}\cdot{x\over x}
+=\lim_{x\to0^+}{x\over x+1}=0\]
+So we find that \(L=e^0=1\). This establishes the endpoints of the range on the
+interval. Now we will show that \(f(x)\) is increasing on this interval.
+Focus on \(g'(x)\). We can substitute directly to find
+\[\lim_{x\to\infty}g'(x)=\ln(1)-0=0\]
+Then notice how \(g''(x)&lt;0\) on this interval since \(x\) and \(x+1\) are
+positive. This tells us that \(g'(x)\) decreases on \((0,\infty)\) approaching
+zero, which means \(g'(x)&gt;0\) and \(g(x)\) is increasing on the interval.
+Because \(g(x)\) preserves monotonicity, \(f(x)\) increases on \((0,\infty)\)
+with the range \((1,e)\).
+</p>
+
+<hr />
+
+<p>
+Now we look at the behavior or \((-\infty,-1)\). First the infinite limit.
+Let \(t=-x\).
+\[\lim_{x\to-\infty}\left(1+{1\over x}\right)^x
+=\lim_{t\to\infty}\left(1-{1\over t}\right)^{-t}
+=\lim_{t\to\infty}\left(t\over t-1\right)^t=L\]
+Now take the log and evaluate it using LHopital's rule with the \(0/0\) form.
+\[\ln(L)=\lim_{t\to\infty}t\ln\left({t\over t-1}\right)
+=\lim_{t\to\infty}{\ln(t)-\ln(t-1)\over{1\over t}}\]
+\[=\lim_{t\to\infty}{{1\over t}-{1\over t-1}\over{-1\over t^2}}
+=\lim_{t\to\infty}{{-1\over t(t-1)}\over{-1\over t^2}}
+=\lim_{t\to\infty}{t^2\over t(t-1)}=1\]
+So then \(\lim_{x\to-\infty}f(x)=L=e^1=e\). Now we find the other limit.
+\[L=\lim_{x\to-1^-}\left(1+{1\over x}\right)^x\Rightarrow
+\ln(L)=\lim_{x\to-1^-}x\ln\left(1+{1\over x}\right)\]
+Notice that \(x\) is negative and \(|x|&gt;1\). Also notice that
+\(0&lt;1+{1\over x}&lt;1\) but gets close to zero as \(x\to-1^-\). We can
+formalize it more rigorously, but there is always an \(x\) closer to \(-1\) we
+could pick to make \(\ln(1+1/x)\) as close to \(-\infty\) as we want. This is
+multiplied by the negative and bounded \(x\) so the limit is \(\infty\),
+implying
+\[\lim_{x\to-1^-}f(x)=L=e^\infty=\infty\]
+For the monotonicity behavior, we can direct substitute to find that
+\[\lim_{x\to-\infty}g'(x)=\ln(1)+0=0\]
+Then we find \(g''(x)&gt;0\) on our interval because \(x&lt;0\) and
+\((x+1)^2&gt;0\). This means \(g'(x)\) "starts at" \(0\) toward the beginning
+of the interval and increases. That tells us that \(g'(x)&gt;0\) so \(g(x)\)
+is increasing on \((-\infty,-1)\). Finally, the monotonicity behavior is
+preserved by the log operation so \(f(x)\) is increasing on \((-\infty,-1)\)
+with range \((e,\infty)\).
+</p>
+
+<p>
+Bringing this back to the original problem, \(f(x)\) in well defined only on
+\((-\infty,-1)\cup(0,\infty)\). On those intervals, it has distinct monotonic
+ranges \((e,\infty)\) and \((1,e)\). Therefore, if we find a solution on either
+interval, it must be unique.
+</p>
+
 <h3 id="jul14">Jul 14</h3>
+
+<p>How many factors are there fore 320?</p>
+
+<p>
+\[320=32\cdot10=2^5\cdot2\cdot5=2^6\cdot5\]
+Then we can pick a power for each prime (including 0) so counting factors:
+\[(6+1)(1+1)=7\cdot2=14\]
+</p>
 
 <h3 id="jul15">Jul 15</h3>
 
