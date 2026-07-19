@@ -81,65 +81,624 @@
 
 <h3 id="aug01">Aug 01</h3>
 
+\[\gcd(2^{107}-1,2^{127}-1)\]
+
+<p>
+We could recognize that both of these are Mersenne primes and from there, they
+must be coprime so the solution is \(1\). Alternatively, we can approach the
+problem with the following theorem for integers \(a&gt;1\) and \(m,n&gt;0\):
+\[\gcd(a^m-1,a^n-1)=a^{\gcd(m,n)}-1\]
+Assume than \(m\geq n\). Then subtract a multiple of \(a^n-1\) from \(a^m-1\).
+\[(a^m-1)-a^{m-n}(a^n-1)=a^m-1-a^m+a^{m-n}=a^{m-n}-1\]
+So now we have
+\[\gcd(a^m-1,a^n-1)=\gcd(a^n-1,a^{m-n}-1)\]
+Notice that the exponents behave like a \(\gcd\) algorithm:
+\(\gcd(m,n)=\gcd(n,m-n)\). This can be repeated until we end up with \(a^0-1=0\)
+and find that the other exponent is \(\gcd(m,n)\). Therefore,
+\[\gcd(a^m-1,a^n-1)=a^{\gcd(m,n)}-1\]
+For this problem specifically, both \(107\) and \(127\) are prime so
+\(\gcd(107,127)=1\).
+</p>
+
 <h3 id="aug02">Aug 02</h3>
+
+\[\sqrt{6+\sqrt{20}}-\sqrt{6-\sqrt{20}}\]
+
+<p>
+Another problem with roots and conjugates. Let \(x\) be equal to this expression
+and then square both sides:
+\[x^2=\left(6+\sqrt{20}\right)+\left(6-\sqrt{20}\right)
+-2\sqrt{\left(6+\sqrt{20}\right)\left(6-\sqrt{20}\right)}\]
+\[=12-2\sqrt{6^2-20}=12-2\sqrt{16}=4\]
+So then \(x=\sqrt{16}=2\). Another way is to find things that square to
+\(6+\sqrt{20}\) and \(6-\sqrt{20}\). Focusing on \(6+\sqrt{20}=6+2\sqrt{5}\),
+we expect it to look something like
+\[\left(a+b\sqrt{5}\right)^2=a^2+5b^2+2ab\sqrt{5}\]
+So we would solve for \(a^2+5b^2=6\) and \(2ab=2\). In general, this can be
+done similar to other systems with quadratic equations, but we can just spot
+that \(a=b=1\) works. A similar result can be found for the other root. So
+\[\sqrt{6+\sqrt{20}}-\sqrt{6-\sqrt{20}}
+=\left(1+\sqrt{5}\right)-\left(\sqrt{5}-1\right)=2\]
+</p>
 
 <h3 id="aug03">Aug 03</h3>
 
+\[x=\left|\left\{\text{divisors of}\ \left(7!+1\right)\right\}\right|\]
+
+<p>
+We can compute the value \(7!+1=5041\). This is not so easy to factor manually
+but it is \(71^2\) so its divisors are \(1,71,71^2\), 3 in total.
+</p>
+
 <h3 id="aug04">Aug 04</h3>
+
+<p>
+Find the radius of the circle inscribed inside a right triangle with shorter
+leg \(10\) and hypotenuse \(26\).
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 15" width="300" height="150" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <polygon points="3 2.5 3 12.5 27 2.5" />
+        <circle cx="7" cy="6.5" r="4" />
+        <line x1="7" x2="3" y1="6.5" y2="6.5" />
+        <line x1="7" x2="7" y1="6.5" y2="2.5" />
+        <line x1="7" x2="8.538" y1="6.5" y2="10.192" />
+        <line x1="7" x2="3" y1="6.5" y2="12.5" />
+        <line x1="7" x2="27" y1="6.5" y2="2.5" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="1.5" y="5">r</text>
+        <text x="1.5" y="10">s</text>
+        <text x="6" y="13">s</text>
+        <text x="0.5" y="7">10</text>
+        <text x="13" y="2">24</text>
+        <text x="13" y="11">26</text>
+    </g>
+</svg>
+
+<p>
+We can draw a few radii of the circle which create some more right triangles
+sharing a hypotenuse. Focus on the 2 new right triangles on the right. They each
+share a side and have a leg which is a radii. By equality to the hypotenuse,
+\[(26-s)^2+r^2=(24-r)^2+r^2\]
+Now on the left we can use \(r+s=10\) and substitute.
+\[(26-10+r)^2+r^2=(24-r)^2+r^2 \Rightarrow (16+r)^2=(24-r)^2\]
+Taking square roots we have 2 cases. First
+\[16+r=24-r \Rightarrow 2r=8 \Rightarrow r=4\]
+This is the solution. We should also check the other case, which is invalid.
+\[16+r=-(24-r)=r-24 \Rightarrow 16=-24\]
+Another way that is actually easier is to recognize that we can construct the
+hypotenuse from \(s=10-r\) and similarly a \(24-r\) segment. So
+\[26=(10-r)+(24-r)=34-2r\Rightarrow r=4\]
+</p>
 
 <h3 id="aug05">Aug 05</h3>
 
+\[\sum_{n=1}^\infty{20n^2+8n-4\over4n^4+8n^3-n^2-2n}\]
+
+<p>
+We should try partial fractions. This denominator looks complicated but it can
+be factored by grouping.
+\[4n^4+8n^3-n^2-2n=4n^3(n+2)-n(n+2)=(4n^3-n)(n+2)\]
+\[=n(n+2)(4n^2-1)=n(n+2)(2n-1)(2n+1)\]
+Now we evaluate a partial fraction decomposition.
+\[{20n^2+8n-4\over n(n+2)(2n-1)(2n+1)}
+={a\over n}+{b\over n+2}+{c\over2n-1}+{d\over2n+1}\]
+Each factor is linear and has multiplicity 1 so we can use the cover up method
+for all of them. It works by multiplying both sides by one of the linear factors
+and then evaluating at its root, which isolates one of the constants.
+\[n:{20n^2+8n-4\over(n+2)(2n-1)(2n+1)}\Big|_{n=0}={-4\over2(-1)(1)}=2\]
+\[n+2:{20n^2+8n-4\over n(2n-1)(2n+1)}\Big|_{n=-2}={80-16-4\over(-2)(-5)(-3)}
+={60\over-30}=-2\]
+\[2n-1:{20n^2+8n-4\over n(n+2)(2n+1)}\Big|_{n=1/2}={5+4-4\over(1/2)(5/2)(2)}
+={5(2)\over5}=2\]
+\[2n+1:{20n^2+8n-4\over n(n+2)(2n-1)}\Big|_{n=-1/2}={5-4-4\over(-1/2)(3/2)(-2)}
+={-3(-2)\over-3}=-2\]
+So our summation factors to
+\[\sum_{n=1}^\infty{20n^2+8n-4\over4n^4+8n^3-n^2-2n}
+=\sum_{n=1}^\infty\left({2\over n}-{2\over n+2}
++{2\over2n-1}-{2\over2n+1}\right)\]
+We get some telescoping summations. Use the first 2 terms, but split them into
+odd and even terms so the cancellation is clear.
+\[2\sum_{n=1}^\infty\left({1\over n}-{1\over n+2}\right)
+=2\sum_{n=1}^\infty\left({1\over2n-1}-{1\over2n+1}\right)
++2\sum_{n=1}^\infty\left({1\over2n}-{1\over2n+2}\right)\]
+We can see only the first term remains in both of these summations so
+\[2\left({1\over1}\right)+2\left({1\over2}\right)=3\]
+Then the other 2 terms is exactly the same as one of these 2 summations:
+\[\sum_{n=1}^\infty\left({2\over2n-1}-{2\over2n+1}\right)=2\]
+Adding all results, the solution is \(5\).
+</p>
+
 <h3 id="aug06">Aug 06</h3>
+
+<p>
+For the sequence \(a_n\) with \(a_1=2,a_n=2a_{n-1}+1\), \(a_x\) is the first
+composite number of the sequence.
+</p>
+
+<p>
+We can evaluate terms until one is composite:
+\[\begin{align}
+&a_1=2\\
+&a_2=2a_1+1=2(2)+1=5\\
+&a_3=2a_2+1=2(5)+1=11\\
+&a_4=2a_3+1=2(11)+1=23\\
+&a_5=2a_4+1=2(23)+1=47\\
+&a_6=2a_5+1=2(47)+1=95=5\cdot19\\
+\end{align}\]
+We have found the first composite term so \(x=6\).
+</p>
 
 <h3 id="aug07">Aug 07</h3>
 
+<p>
+Find the length of the long diagonal of a box with side lengths 2, 3, 6.
+</p>
+
+<p>
+This is a euclidean distance. \(\sqrt{2^2+3^2+6^2}=\sqrt{4+9+36}=\sqrt{49}=7\).
+</p>
+
 <h3 id="aug08">Aug 08</h3>
+
+<p>
+A set of test scores are normally distributed with mean 100 and standard
+deviation 15. What percentile is a score of 79?
+</p>
+
+<p>
+We can find that the z score of 79 is \({79-100\over15}={-21\over15}=-1.4\).
+In a table, this corresponds to a cumulative value of \(\approx0.0808\) which
+puts the score in the 8th percentile since it is between \(0.08\) and \(0.09\).
+</p>
+
+<p>
+Instead of table lookup, it can be computed with tedious work or on a calculator
+with an expression such as
+\[\Phi(x)
+={1\over2}\left[1+\text{erf}\left({x-\mu\over\sigma\sqrt{2}}\right)\right]\]
+or
+\[\Phi(z)={1\over2}\left[1+\text{erf}\left({z\over\sqrt{2}}\right)\right]\]
+This would still be a pain to do on paper but the taylor series is
+\[\text{erf}(x)={2\over\sqrt{\pi}}
+\sum_{n=0}^\infty{(-1)^n x^{2n+1}\over n!(2n+1)}\]
+</p>
 
 <h3 id="aug09">Aug 09</h3>
 
+<p>
+Find the count of two-digit primes where the number with digits reversed is
+still prime.
+</p>
+
+<p>
+List the two-digit primes and identify which ones have a reverse pair.
+\[\boxed{11},\boxed{13},\boxed{17},19,23,29,\boxed{31},\boxed{37},41,
+43,47,53,59,61,67,\boxed{71},\boxed{73},\boxed{79},83,89,\boxed{97}\]
+In total there are 9.
+</p>
+
 <h3 id="aug10">Aug 10</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14" width="200" height="280" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <line x1="1" x2="9" y1="13" y2="7" stroke="#7cf" />
+        <polyline points="1 13 9 13 9 7" />
+        <polyline points="9 7 4.5 1 1 13" />
+        <polyline points="9 7 9 1 4.5 1" />
+        <circle cx="9" cy="13" r="0.2" fill="black" />
+        <polyline points="9 11.5 7.5 11.5 7.5 13" />
+        <polyline points="7.5 1 7.5 2.5 9 2.5" />
+        <polyline points="8.1 5.8 6.9 6.7 7.8 7.9 9 7" />
+    </g>
+    <g fill="black" font-size="0.07em">
+        <text x="5.5" y="2">4.5</text>
+        <text x="8.2" y="4.5">6</text>
+        <text x="4" y="12.7">8</text>
+        <text x="4" y="10" fill="#7cf">x</text>
+    </g>
+</svg>
+
+<p>
+We can first use properties of complementary angles to identify similar
+triangles.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14" width="200" height="280" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <line x1="1" x2="9" y1="13" y2="7" stroke="#7cf" />
+        <polyline points="1 13 9 13 9 7" />
+        <polyline points="9 7 4.5 1 1 13" />
+        <polyline points="9 7 9 1 4.5 1" />
+        <circle cx="9" cy="13" r="0.2" fill="black" />
+        <polyline points="9 11.5 7.5 11.5 7.5 13" />
+        <polyline points="7.5 1 7.5 2.5 9 2.5" />
+        <polyline points="8.1 5.8 6.9 6.7 7.8 7.9 9 7" />
+        <g stroke="red">
+            <path d="M 5.5 1 A 1 1 0 0 1 5.1 1.8" />
+            <path d="M 9 8 A 1 1 0 0 1 8.2 7.6" />
+            <path d="M 2 13 A 1 1 0 0 0 1.8 12.4" />
+            <path d="M 2.25 13 A 1 1 0 0 0 2 12.25" />
+            <path d="M 9 6 A 1 1 0 0 0 8.4 6.2" />
+            <path d="M 9 5.75 A 1 1 0 0 0 8.25 6" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.07em">
+        <text x="5.5" y="2">4.5</text>
+        <text x="8.2" y="4.5">6</text>
+        <text x="4" y="12.7">8</text>
+        <text x="4" y="10" fill="#7cf">x</text>
+    </g>
+</svg>
+
+<p>
+Both are 3-4-5 right triangles. We can find that the smaller one is
+\(4.5,6,7.5\) and the larger one with \(6,8,10\). The hypotenuse of the larger
+one is \(x=10\).
+</p>
 
 <h3 id="aug11">Aug 11</h3>
 
+<p>
+What is the maximum number of regions in the plane four lines can form?
+</p>
+
+<p>
+This can be maximized in general by creating lines such that no pair is parallel
+and there are never more than 2 lines intersecting at a point. The first line
+divides the plane into 2 regions. Beyond that, when drawing a line, it starts in
+a region and switches to a new region every time it crosses a line, so it splits
+a number of regions equal to 1 more than how many lines it crosses. So the 2nd
+line crosses 1 line, creating 2 more regions. The 3rd line crosses 2 lines and
+creates 3 more regions. The 4th line crosses 3 regions and creates 4 more
+regions. In total, there are 11 regions. The general formula for \(n\) lines is
+\[1+{n(n+1)\over2}\]
+</p>
+
 <h3 id="aug12">Aug 12</h3>
+
+<p>
+Find the smallest whole number \(x\) such that \(2^7+4+x\) is a perfect square.
+</p>
+
+<p>
+This is equal to \(132+x\). It is larger than \(11^2=121\) but smaller than
+\(12^2=144\). So the solution is \(x=12\) and \(2^7+4+x=12^2\).
+</p>
 
 <h3 id="aug13">Aug 13</h3>
 
+\[\sqrt{15^2-4\times14}=\sqrt{225-56}=\sqrt{169}=13\]
+
 <h3 id="aug14">Aug 14</h3>
+
+\[\begin{align}
+&2x-3y+z=24\\
+&x-4y+6z=32\\
+&3x-5y-z=22\\
+\end{align}\]
+
+<p>
+Since we only need \(x\) for the calendar problem, we can use Cramer's rule
+which gives us just 1 value. If the system is \(Ax=b\) then
+\(x_i={\det(A_i)\over\det(A)}\) where \(A_i\) is \(A\) but with the \(i\)th
+column replaced by \(b\).
+\[x={\begin{vmatrix}24&-3&1\\32&-4&6\\22&-5&-1\\\end{vmatrix}\over
+\begin{vmatrix}2&-3&1\\1&-4&6\\3&-5&-1\\\end{vmatrix}}
+={96-396-160+88+720-96\over8-54-5+12+60-3}={252\over18}=14\]
+If we also wanted the other variables, we could use other methods and find
+\[y=3,\quad z=5\]
+</p>
 
 <h3 id="aug15">Aug 15</h3>
 
+\[\left|\left|4-x\right|+11\right|=22,\quad x&gt;0\]
+
+<p>
+Solve this by considering 2 cases for the sign of what is inside absolute value.
+</p>
+
+<p>
+For positive, \(|4-x|+11=22\Rightarrow|4-x|=11\). This has solutions \(x=15,-7\)
+so \(x=15\) is the only one relevant here.
+</p>
+
+<p>
+For negative, \(-|4-x|-11=22\Rightarrow|4-x|=-33\). This is impossible so there
+are no more solutions. We can actually see that \(|4-x|+11\geq11\) so this case
+is not even necessary.
+</p>
+
 <h3 id="aug16">Aug 16</h3>
+
+\[\sqrt{\log_{16}(x)+3}+\sqrt{\log_2(x)+12}=6\]
+
+<p>
+Let \(y=\log_{16}(x)\). Then we can solve a simpler looking equation
+\[\sqrt{y+3}+\sqrt{4y+12}=6=\sqrt{y+3}+2\sqrt{y+3}=3\sqrt{y+3}\]
+\[\Rightarrow\sqrt{y+3}=2\Rightarrow y+3=4\Rightarrow y=1\]
+Then \(x=16^y=16\).
+</p>
 
 <h3 id="aug17">Aug 17</h3>
 
+\[{2\over5}(x+3)=1-{1\over2}(3-x)\]
+
+<p>
+Multiply each side by 10 to make the numbers look nicer, then simplify.
+\[4(x+3)=10-5(3-x)\Rightarrow4x+12=10-15+5x\Rightarrow x=17\]
+</p>
+
 <h3 id="aug18">Aug 18</h3>
+
+<p>
+Find the sum of the digits of \(1000002^3\).
+</p>
+
+<p>
+\[(10^6+2)^3=10^{18}+3\cdot2\cdot10^{12}+3\cdot2^2\cdot10^6+2^3\]
+The numbers are small and put in parts of a large number with zeroes in between.
+The numbers we get are \(1,6,12,8\) so the digit sum is \(1+6+1+2+8=18\).
+</p>
 
 <h3 id="aug19">Aug 19</h3>
 
+<p>
+Ten numbers average to 10. One of those numbers is \(x\), and when it is
+removed, the average of the remaining nine numbers is 9.
+</p>
+
+<p>
+Let \(y\) be the sum of the other 9 numbers. Then
+\[x+y=10\times10=100\]
+But the average of \(y\) is 9, so
+\[y=9\times9=81\]
+Then \(x=100-y=100-81=19\).
+</p>
+
 <h3 id="aug20">Aug 20</h3>
+
+<p>
+How many four digit numbers \(abcd\) satisfy:
+</p>
+
+<ul>
+    <li>\(a\) is equal to \(b\)</li>
+    <li>\(d\) is the smallest digit</li>
+    <li>\(c\) is the average of \(a\) and \(d\)</li>
+</ul>
+
+<p>
+One detail missing is that no other digit can be equal to \(d\), it must be the
+unique smallest otherwise there are 29 solutions. We only have \(b\) in the
+first constraint, and \(a=b\) means it does not add any additional solutions so
+we can ignore \(b\).
+</p>
+
+<p>
+Since \(d\) is smallest, \(a&gt;d\). Since \(c=(a+d)/2\), \(a+d\) needs to be
+even. We can also verify \(2c=a+d&gt;d+d=2d\) so \(c&gt;d\) as required. Now
+we make a table with values \(a\) with allowed values \(d\) such that \(a+d\)
+is even.
+</p>
+
+<table class="table_normal">
+    <tr><th>\(a\)</th><th>\(d\) values</th></tr>
+    <tr><td>0</td><td>(none)</td></tr>
+    <tr><td>1</td><td>(none)</td></tr>
+    <tr><td>2</td><td>0</td></tr>
+    <tr><td>3</td><td>1</td></tr>
+    <tr><td>4</td><td>0,2</td></tr>
+    <tr><td>5</td><td>1,3</td></tr>
+    <tr><td>6</td><td>0,2,4</td></tr>
+    <tr><td>7</td><td>1,3,5</td></tr>
+    <tr><td>8</td><td>0,2,4,6</td></tr>
+    <tr><td>9</td><td>1,3,5,7</td></tr>
+</table>
+
+<p>
+In total, there are 20.
+</p>
 
 <h3 id="aug21">Aug 21</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <line x1="2.5" x2="2.5" y1="5" y2="13" />
+        <line x1="6.5" x2="6.5" y1="5" y2="13" />
+        <line x1="10.5" x2="10.5" y1="5" y2="13" />
+        <line x1="14.5" x2="14.5" y1="5" y2="13" />
+        <line x1="18.5" x2="18.5" y1="5" y2="13" />
+        <line x1="22.5" x2="22.5" y1="5" y2="13" />
+        <line x1="2.5" x2="22.5" y1="5" y2="5" />
+        <line x1="2.5" x2="22.5" y1="9" y2="9" />
+        <line x1="2.5" x2="22.5" y1="13" y2="13" />
+        <g fill="black">
+            <circle cx="2.5" cy="5" r="0.2" />
+            <circle cx="2.5" cy="9" r="0.2" />
+            <circle cx="2.5" cy="13" r="0.2" />
+            <circle cx="6.5" cy="5" r="0.2" />
+            <circle cx="6.5" cy="9" r="0.2" />
+            <circle cx="6.5" cy="13" r="0.2" />
+            <circle cx="10.5" cy="5" r="0.2" />
+            <circle cx="10.5" cy="9" r="0.2" />
+            <circle cx="10.5" cy="13" r="0.2" />
+            <circle cx="14.5" cy="5" r="0.2" />
+            <circle cx="14.5" cy="9" r="0.2" />
+            <circle cx="14.5" cy="13" r="0.2" />
+            <circle cx="18.5" cy="5" r="0.2" />
+            <circle cx="18.5" cy="9" r="0.2" />
+            <circle cx="18.5" cy="13" r="0.2" />
+            <circle cx="22.5" cy="5" r="0.2" />
+            <circle cx="22.5" cy="9" r="0.2" />
+            <circle cx="22.5" cy="13" r="0.2" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.12em">
+        <text x="2" y="15">A</text>
+        <text x="22" y="4">Z</text>
+        <text x="1" y="19">Find the number of paths</text>
+        <text x="1" y="21">from A to Z that only go</text>
+        <text x="1" y="23">up or to the right</text>
+    </g>
+</svg>
+
+<p>
+Each path must go up 2 times and right 5 times. So out of the 7 steps, we can
+pick any 2 to go up, and the other 5 go right.
+\[{7\choose2}={7\cdot6\over2}=21\]
+</p>
+
 <h3 id="aug22">Aug 22</h3>
+
+<p>
+Find the positive root of \(x^2-2x-440\).
+</p>
+
+<p>
+By looking at the factorization \(440=2\cdot2\cdot2\cdot5\cdot11\) we can search
+and find that \(20,22\) differ by 2. So we can factor it
+\[x^2-2x-440=(x+20)(x-22)=0\]
+The roots are \(x=-20,22\) so the positive one is \(x=22\).
+</p>
 
 <h3 id="aug23">Aug 23</h3>
 
+\[x+\sqrt{6x-134}=25\]
+
+<p>
+Separate the square root and square both sides.
+\[\sqrt{6x-134}=25-x\Rightarrow6x-134=625-50x+x^2\]
+\[\Rightarrow x^2-56x+759=0=(x-23)(x-33)\]
+From here, we can see that \(x=23\) is the solution and that \(x=33\) is
+extraneous because \(33\) plus a positive would be greater than \(25\).
+</p>
+
 <h3 id="aug24">Aug 24</h3>
+
+\[f(3y+5)=9y^2+30y,\quad x=f(7)\]
+
+<p>
+First we can simplify the function \(f\) and get a nicer expression for it.
+\[f(3y+5)=3y(3y+10)=(3y+5-5)(3y+5+5)\]
+Now let \(z=3y+5\) so \(f(z)=(z-5)(z+5)=z^2-25\). Then \(f(7)=7^2-25=49-25=24\).
+</p>
 
 <h3 id="aug25">Aug 25</h3>
 
+\[\forall t\in\mathbb{R}, f(3t+1)=2tf(1)+f(0)+2,\quad x=f(12)\]
+
+<p>
+To determine the constants \(f(1)\) and \(f(0)\), we pick a value for \(t\) to
+substitute which will give us a linear system:
+\[t=0:\quad f(1)=2(0)f(1)+f(0)+2=f(0)+2\]
+\[t=-1/3:\quad f(0)={-2\over3}f(1)+f(0)+2\]
+Substitute the first into the second
+\[f(0)={-2\over3}(f(0)+2)+f(0)+2\Rightarrow{2\over3}f(0)={-4\over3}+2
+\Rightarrow f(0)=1\]
+Then \(f(1)=f(0)+2=1+2=3\). So the function is \(f(3t+1)=6t+3=2(3t+1)+1\) which
+means we can also write it as \(f(u)=2u+1\). Then \(f(12)=25\).
+</p>
+
 <h3 id="aug26">Aug 26</h3>
+
+\[\sqrt{300+\sqrt{88556}}+\sqrt{300-\sqrt{88556}}\]
+
+<p>
+If we factor a bit, we find \(\sqrt{88556}=26\sqrt{131}\). Then we would like to
+find if the quantities inside square roots are perfect squares of something.
+\[\left(a+b\sqrt{131}\right)^2=a^2+131b^2+2ab\sqrt{131}\]
+We need \(a^2+131b^2=300\) in both cases, so \(a=\pm13,b=\pm1\) works just by
+recognizing that \(300=169+131\) gives us a perfect square. Then we need
+\(ab=13\). For the first root, \(a=13,b=1\) (note that it is important we pick
+the positive quantity that works). So we find
+\[\left(13+\sqrt{131}\right)^2=300+26\sqrt{131}\]
+For the other root, \(a=13,b=-1\) works and leaves us a positive quantity.
+\[\left(13-\sqrt{131}\right)^2=300-26\sqrt{131}\]
+So now we just add the roots
+\[\left(13+\sqrt{131}\right)+\left(13-\sqrt{131}\right)=26\]
+</p>
 
 <h3 id="aug27">Aug 27</h3>
 
+<p>
+A 54 liter solution that is 99% water is dehydrated to an \(x\) liter solution
+that is 98% water.
+</p>
+
+<p>
+We can find that the amount of other content is \(54\times0.01=0.54\). Now if
+it becomes 2% of the volume, then \(0.02\times x=0.54\) (2% of the new volume
+is equal to the same non water content). The solution is \(x=27\).
+</p>
+
+<p>
+Another way to look at this is the 1% other content increases to 2%. This means
+we have half as much total volume so the same amount of content takes up twice
+as much. \(x=54/2=27\).
+</p>
+
 <h3 id="aug28">Aug 28</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <g fill="#7cf">
+            <rect x="2" y="1" width="4" height="4" />
+            <polygon points="4 3 6.828 5.828 4 8.657 1.172 5.828" />
+        </g>
+        <rect x="2" y="1" width="4" height="4" />
+        <polygon points="4 3 6.828 5.828 4 8.657 1.172 5.828" />
+        <line x1="4" x2="4" y1="0.5" y2="1.5" />
+        <line x1="6.5" x2="5.5" y1="3" y2="3" />
+        <line x1="4" x2="4" y1="5.5" y2="4.5" />
+        <line x1="1.5" x2="2.5" y1="3" y2="3" />
+        <line x1="5.768" x2="5.061" y1="4.061" y2="4.768" />
+        <line x1="5.768" x2="5.061" y1="7.596" y2="6.889" />
+        <line x1="2.232" x2="2.939" y1="7.596" y2="6.889" />
+        <line x1="2.232" x2="2.939" y1="4.061" y2="4.768" />
+        <path d="M 2 1.5 l 0.5 0 l 0 -0.5" />
+        <path d="M 5.5 1 l 0 0.5 l 0.5 0" />
+        <path d="M 2.5 5 l 0 -0.5 l -0.5 -0" />
+        <path d="M 6.475 5.475 l -0.354 0.354 l 0.354 0.354" />
+        <path d="M 4.354 8.303 l -0.354 -0.354 l -0.354 0.354" />
+        <path d="M 1.525 6.182 l 0.354 -0.354 l -0.354 -0.354" />
+    </g>
+    <g fill="black" font-size="0.05em">
+        <text x="0.8" y="3.2">4</text>
+        <text x="2.4" y="2.5">Area = x</text>
+    </g>
+</svg>
+
+<p>
+We have 2 squares of area 16, but they overlap and share 1/4 of the area, so
+avoid double counting.
+\[16+16-4=28\]
+</p>
 
 <h3 id="aug29">Aug 29</h3>
 
+\[{2025\over30}+30-{2025+30\over30}={2025\over30}+30-{2025\over30}-{30\over30}
+=30-1=29\]
+
 <h3 id="aug30">Aug 30</h3>
 
+\[x=2^r=3^s=5^t,\quad1={1\over r}+{1\over s}+{1\over t}\]
+
+<p>
+First compute logs of the part with \(x\).
+\[\ln(x)=r\ln(2)=s\ln(3)=t\ln(5)\]
+Then we can use these to substitute \(r,s,t\) for something with \(x\).
+\[1={\ln(2)\over\ln(x)}+{\ln(3)\over\ln(x)}+{\ln(5)\over\ln(x)}\]
+Multiply by \(\ln(x)\).
+\[\ln(x)=\ln(2)+\ln(3)+\ln(5)=\ln(30)\]
+Then the solution is \(x=30\).
+</p>
+
 <h3 id="aug31">Aug 31</h3>
+
+\[4!+3!+2!-1!=24+6+2-1=31\]
 
 </div>
 </body>
