@@ -81,33 +81,439 @@
 
 <h3 id="sep01">Sep 01</h3>
 
+<p>
+Find the number of proper normal subgroups of \(A_5\), the alternative group on
+five elements.
+</p>
+
+<p>
+For \(n\geq5\), the alternating group \(A_n\) is a simple group, whose only
+normal subgroups are \(\{e\}\) and \(A_n\). Only \(\{e\}\) would be a proper
+subgroup so the answer is 1.
+</p>
+
+<p>
+If \(N\) is a normal subgroup of \(G\) (\(N \trianglelefteq G\)), then all
+\(n\in N\) and \(g\in G\) satisfy \(gng^{-1}\in N\). Proving that \(A_5\) is
+simple seems a bit challenging. Some relevant theorems are that \(|N|\) is the
+sum of sizes of some conjugacy classes of \(G\) and \(|N|\) divides \(|G|\).
+</p>
+
 <h3 id="sep02">Sep 02</h3>
+
+\[\sum_{n=0}^\infty\arctan\left({1\over n^2+n+1}\right)={\pi\over x}\]
+
+<p>
+We will be adding terms so we can try an arctangent addition formula:
+\[\arctan(a)+\arctan(b)=\arctan\left({a+b\over1-ab}\right)\]
+This formula can be derived by substituting \(\alpha=\arctan(a)\) and
+\(\beta=\arctan(b)\) into the sum formula:
+\[\tan(\alpha+\beta)={\tan(\alpha)+\tan(\beta)\over1-\tan(\alpha)\tan(\beta)}\]
+Now we evaluate a few partial sums to look for a pattern. The first term is
+\(\arctan(1)\). Then
+\[\arctan(1)+\arctan\left({1\over(1)^2+(1)+1}\right)=\arctan(1)
++\arctan\left({1\over3}\right)\]
+\[=\arctan\left(1+{1\over3}\over1-{1\over3}\right)
+=\arctan\left({4/3\over2/3}\right)=\arctan(2)\]
+One more term:
+\[\arctan(2)+\arctan\left({1\over(2)^2+(2)+1}\right)=\arctan(2)
++\arctan\left({1\over7}\right)\]
+\[=\arctan\left({2+{1\over7}\over1-{2\over7}}\right)
+=\arctan\left({15/7\over5/7}\right)=\arctan(3)\]
+So the pattern appears to be that the sum from \(n=0\) to \(N\) is
+\(\arctan(N+1)\). We already have a base case and can prove by induction.
+\[\arctan(N)+\arctan\left({1\over N^2+N+1}\right)
+=\arctan\left({N+{1\over N^2+N+1}\over1-{N\over N^2+N+1}}\right)\]
+\[=\arctan\left({N(N^2+N+1)+1\over N^2+N+1-N}\right)
+=\arctan\left({N^3+N^2+N+1\over N^2+1}\right)\]
+That numerator can be factored by grouping
+\[N^3+N^2+N+1=N^2(N+1)+(N+1)=(N^2+1)(N+1)\]
+So everything simplifies to \(\arctan(N+1)\) completing the proof. The summation
+is taken as \(N\to\infty\) so we get \(\pi/2\). Therefore \(x=2\).
+</p>
 
 <h3 id="sep03">Sep 03</h3>
 
+\[\begin{align}
+&r&lt;s\\
+&e^r+16e^{-r}=10\\
+&e^s+16e^{-s}=10\\
+&x={r\over s}\\
+\end{align}\]
+
+<p>
+The equations for \(r,s\) are identical in structure so we just solve one to
+find possible values for each. Multiply each side by \(e^r\).
+\[e^{2r}+16=10e^r \Rightarrow e^{2r}-10e^r+16=0 \Rightarrow (e^r-2)(e^r-8)=0\]
+Solving it like a quadratic equation, we find \(e^r=2\) or \(e^r=8\) so
+\(r=\ln(2)\) or \(r=\ln(8)=3\ln(2)\). There is a mistake because we should get
+an answer of \(3\). Either they meant \(r&gt;s\) or \(x=s/r\). With either
+correction, we find \(x=3\) after picking \(r,s\) from these 2 possible values.
+</p>
+
 <h3 id="sep04">Sep 04</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <line x1="3" x2="24" y1="24" y2="10" />
+        <circle cx="6.883" cy="15.402" r="5" />
+        <circle cx="15.203" cy="9.855" r="5" />
+        <g fill="black">
+            <circle cx="6.883" cy="15.402" r="0.2" />
+            <circle cx="15.203" cy="9.855" r="0.2" />
+        </g>
+        <polygon points="14.649 16.234 12.985 17.344 11.875 15.679 13.539 14.57" fill="#7cf" />
+        <line x1="13.955" x2="13.678" y1="16.997" y2="16.581" />
+        <line x1="13.886" x2="14.302" y1="15.541" y2="15.263" />
+        <line x1="12.846" x2="12.569" y1="15.333" y2="14.917" />
+        <line x1="12.222" x2="12.638" y1="16.65" y2="16.373" />
+        <line x1="9.656" x2="6.883" y1="19.562" y2="15.402" />
+        <line x1="17.977" x2="15.203" y1="14.015" y2="9.855" />
+        <polyline points="9.379 19.146 9.795 18.869 10.072 19.285" />
+        <polyline points="17.7 13.599 17.284 13.877 17.561 14.293" />
+        <polyline points="12.707 16.928 13.123 16.65 13.401 17.066" />
+        <polyline points="14.371 15.818 13.955 16.096 14.233 16.512" />
+        <line x1="13.262" x2="18" y1="15.957" y2="20" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="8.383" y="16.902">5</text>
+        <text x="16.703" y="11.355">5</text>
+        <text x="18.5" y="21">x</text>
+    </g>
+</svg>
+
+<p>
+First we let \(s\) be the side length of the square and draw a right triangle.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <line x1="3" x2="24" y1="24" y2="10" />
+        <circle cx="6.883" cy="15.402" r="5" />
+        <circle cx="15.203" cy="9.855" r="5" />
+        <g fill="black">
+            <circle cx="6.883" cy="15.402" r="0.2" />
+            <circle cx="15.203" cy="9.855" r="0.2" />
+        </g>
+        <polygon points="14.649 16.234 12.985 17.344 11.875 15.679 13.539 14.57" fill="#7cf" />
+        <line x1="13.955" x2="13.678" y1="16.997" y2="16.581" />
+        <line x1="13.886" x2="14.302" y1="15.541" y2="15.263" />
+        <line x1="12.846" x2="12.569" y1="15.333" y2="14.917" />
+        <line x1="12.222" x2="12.638" y1="16.65" y2="16.373" />
+        <line x1="9.656" x2="6.883" y1="19.562" y2="15.402" />
+        <line x1="17.977" x2="15.203" y1="14.015" y2="9.855" />
+        <polyline points="9.379 19.146 9.795 18.869 10.072 19.285" />
+        <polyline points="17.7 13.599 17.284 13.877 17.561 14.293" />
+        <polyline points="12.707 16.928 13.123 16.65 13.401 17.066" />
+        <polyline points="14.371 15.818 13.955 16.096 14.233 16.512" />
+        <line x1="13.262" x2="18" y1="15.957" y2="20" />
+        <g stroke="red">
+            <line x1="13.539" x2="15.203" y1="14.57" y2="9.855" />
+            <line x1="13.539" x2="16.868" y1="14.57" y2="12.351" />
+            <polyline points="16.313 11.519 15.481 12.074 16.035 12.906" />
+            <line x1="8.27" x2="16.59" y1="8.468" y2="20.949" stroke-dasharray="0.5" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="8.383" y="16.902">5</text>
+        <text x="16.703" y="11.355">5</text>
+        <text x="18.5" y="21">x</text>
+    </g>
+</svg>
+
+<p>
+Since the square sits in the middle of the 2 circles, we have a right triangle
+with longer leg \(5-s/2\) and shorter leg \(5-s\). The hypotenuse is a radius
+so it is \(5\). Now use the pythagorean theorem.
+\[(5-s/2)^2+(5-s)^2=5^2 \Rightarrow 25-5s+s^2/4+25-10s+s^2=25\]
+\[\Rightarrow (5/4)s^2-15s+25=0 \Rightarrow 5s^2-60s+100=0\]
+\[\Rightarrow s^2-12s+20=0 \Rightarrow (s-2)(s-10)=0\]
+If \(s=10\) then the square just fills the whole space between the circle
+centers and the right triangle we drew turns into \(5^2+0^2=5^2\). So we must
+have \(s=2\) for the side length and an area of \(x=4\).
+</p>
 
 <h3 id="sep05">Sep 05</h3>
 
+\[\begin{array}{ccc}
+&G&O\\
+\times&T&O\\
+\hline
+T&G&O\\
+G&O&\\
+\hline
+F&R&O\\
+\end{array}\]
+
+<p>
+Find the digit \(O\).
+</p>
+
+<p>
+Going through the steps of multiplication, we first see that
+\[O\times O\equiv O\ \text{mod}\ 10\]
+This restricts possibilities to \(O=1,5,6\). First we try \(O=1\).
+</p>
+
+<p>
+If \(O=1\) then there are no carries for the first row, and \(TGO=GO\) so
+\(T=0\). But then on the second row, \(T\times O=T\equiv O\) is not possible
+so \(O\neq1\).
+</p>
+
+<p>
+If \(O=6\), then \(O\times O\equiv O\) gives us a carry of 3 for the next step.
+\(O\times G+3=6G+3\equiv G\). But then \(5G\equiv-3\) is impossible modulo 10
+so \(O\neq6\).
+</p>
+
+<p>
+So the solution is \(O=5\) and we can work out the full puzzle. We carry 2 from
+the first \(O\times O\equiv O\) step. Then for \(O\times G+2\equiv G
+\Rightarrow4G\equiv-2\), we can find \(G=2\) and \(G=7\) as possibilities.
+Then since \(5\times G+2=TG\), we can match these to a value of \(T\), leaving
+us with either \((T,G)=(1,2)\) or \((T,G)=(3,7)\).
+</p>
+
+<p>
+Moving on to the second row, \(T\times O\equiv O\) is compatible with either
+possible value of \(T\). Next, \(T\times G\equiv G\) but it cannot carry because
+we have no more digits to the left. It turns out \((T,G)=(1,2)\) works here but
+not \((T,G)=(3,7)\). So we have \(O=5,G=2,T=1\) and can fully work out the
+puzzle to find \(F=3,R=7\).
+</p>
+
+\[\begin{array}{ccc}
+&2&5\\
+\times&1&5\\
+\hline
+1&2&5\\
+2&5&\\
+\hline
+3&7&5\\
+\end{array}\]
+
 <h3 id="sep06">Sep 06</h3>
+
+\[x,y\in\mathbb{Z},\quad y^x-x^y=47\times167\]
+
+<p>
+It turns out a problem like this is very difficult to solve in general. We can
+find some trivial solutions if we try \(x=1\) (finding \(y=7850\)) or \(y=1\)
+(finding \(x=-7848\)). Otherwise, we can search.
+</p>
+
+<table class="table_normal">
+    <tr><th>\(x\)</th><th>Explanation or work</th></tr>
+    <tr><td>\(x=2:y^2-2^y\)</td>
+        <td>We can't make \(y\) large enough to get \(y^2\) near \(7849\)
+            before \(2^y\) grows way too fast.<br />
+            \(2^2-2^2=0\)<br />
+            \(3^2-2^3=1\)<br />
+            \(4^2-2^4=0\)<br />
+            \(5^2-2^5=-7\)<br />
+            \(6^2-2^6=-28\)
+        </td></tr>
+    <tr><td>\(x=3:y^3-3^y\)</td>
+        <td>Similarly, \(3^y\) grows too quickly.<br />
+            \(2^3-3^2=-1\)<br />
+            \(3^3-3^3=0\)<br />
+            \(4^3-3^4=-17\)<br />
+            \(5^3-3^5=-118\)
+        </td></tr>
+    <tr><td>\(x=4:y^4-4^y\)</td>
+        <td>Once again, the quick growth of \(4^y\) dominates.<br />
+            \(2^4-4^2=0\)<br />
+            \(3^4-4^3=17\)<br />
+            \(4^4-4^4=0\)<br />
+            \(5^4-4^5=-399\)
+        </td></tr>
+    <tr><td>\(x=5:y^5-5^y\)</td>
+        <td>The numbers get a little bigger, but they still get negative fast.<br />
+            \(2^5-5^2=7\)<br />
+            \(3^5-5^3=118\)<br />
+            \(4^5-5^4=399\)<br />
+            \(5^5-5^5=0\)<br />
+            \(6^5-5^6=-7849\)
+        </td></tr>
+    <tr><td>\(x=6:y^6-6^y\)</td>
+        <td>Above we saw the constant we were looking for. Here we find it again.<br />
+            \(2^6-6^2=28\)<br />
+            \(3^6-6^3=513\)<br />
+            \(4^6-6^4=2800\)<br />
+            \(5^6-6^5=7849\)<br />
+            \(6^6-6^6=0\)<br />
+            \(7^6-6^7=-162287\)
+        </td></tr>
+</table>
+
+<p>
+So a solution we found is \(x=6\) and \(y=5\). Showing rigorously that this is
+the only solution is challenging. Below are some observations.
+</p>
+
+<pre>
+>>> [y**6-6**y for y in range(2,8)]
+[28, 513, 2800, 7849, 0, -162287]
+>>> [y**7-7**y for y in range(2,9)]
+[79, 1844, 13983, 61318, 162287, 0, -3667649]
+>>> [y**8-8**y for y in range(2,10)]
+[192, 6049, 61440, 357857, 1417472, 3667649, 0, -91171007]
+>>> [y**9-9**y for y in range(2,11)]
+[431, 18954, 255583, 1894076, 9546255, 35570638, 91171007, 0, -2486784401]
+</pre>
+
+<p>
+We may be able to show we have searched far enough if past a certain choice of
+\(x\), we can show it increases, then decreases to 0, and keeps decreasing. We
+would only have to check near \(2^x-x^2\) and \((x-1)^x-x^{x-1}\). Furthermore,
+we may be able to show that past a certain point, \(3^x-x^3&gt;7849\) and
+\((x-1)^x-x^{x-1}&gt;7849\) so we do not have to check everything in the middle.
+</p>
 
 <h3 id="sep07">Sep 07</h3>
 
+<p>
+Find the smallest natural number \(x\) such that \(10!\times x\) is a square
+number.
+</p>
+
+<p>
+Consider the factorization of \(10!\).
+\[10!=2^8\times3^4\times5^2\times7\]
+Square numbers have even exponents for all their prime factors, so we only need
+to multiply to make the exponents even. Multiplying by \(7\) is sufficient here
+since it is the only prime with an odd exponent, so \(x=7\).
+</p>
+
 <h3 id="sep08">Sep 08</h3>
+
+\[2^{2025}-2^{2024}-2^{2023}\ldots-2^5-2^4-2^3\]
+\[=2^{2025}-2^3(2^{2021}+2^{2020}+\ldots+2+1)\]
+\[=2^{2025}-2^3(2^{2022}-1)=2^{2025}-2^{2025}+2^3=8\]
 
 <h3 id="sep09">Sep 09</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 7" width="150" height="210" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <rect x="2.5" y="2.25" width="2" height="4.5" fill="#7cf" />
+        <circle cx="2.5" cy="5.5" r="1.25" />
+        <circle cx="2.5" cy="2.25" r="2" />
+        <circle cx="2.5" cy="5.5" r="0.1" fill="black" />
+        <line x1="2.5" x2="1.346" y1="5.5" y2="5.019" />
+        <polyline points="1.623 5.135 1.738 4.858 1.462 4.742" />
+        <line x1="2.5" x2="1.346" y1="2.25" y2="5.019" stroke="red" />
+    </g>
+    <g fill="black" font-size="0.07em">
+        <text x="1.3" y="3.3" fill="red">3</text>
+        <text x="3.7" y="4.8">x</text>
+    </g>
+</svg>
+
+<p>
+Let \(r\) be the radius of the smaller circle and let \(R\) be the radius of the
+larger circle. We can apply the pythagorean theorem on the right triangle.
+\[3^2+r^2=(R+r)^2\Rightarrow3^2=R^2+2rR=R(R+2r)\]
+We have 1 equation and 2 variables, so we can't exactly solve for the variables.
+But notice that one side of the rectangle is \(R\) and the other is \(R+2r\). So
+what we have is exactly the rectangle area, which is \(x=9\).
+</p>
+
 <h3 id="sep10">Sep 10</h3>
+
+<p>
+For the parabola \(y=ax^2+bx+c\) that passes through \((0,12),(-2,4),(2,4)\)
+find \(a+b+c\).
+</p>
+
+<p>
+In general, we can make 3 equations and solve a linear system. But here we have
+symmetry to do this. Clearly \((0,12)\) is the vertex because going 2 steps
+left or right decreases \(y\) from 12 to 4. The parabola is \(y=a(x-0)^2+c\) for
+value we need to find. At \(x=0\), we find \(c=12\). At \(x=2\), we find
+\(4=a(-2)^2+12\Rightarrow4=4a+12\Rightarrow a=-2\). We find the equation
+\(y=-2x^2+12\) with \(a=-2,b=0,c=12\). We can check that all 3 points are on it
+and \(x=a+b+c=10\).
+</p>
 
 <h3 id="sep11">Sep 11</h3>
 
+\[\left({4x\over x-9}\right)^2+88=26\left({4x\over x-9}\right)\]
+
+<p>
+Let \(y=4x/(x-9)\) and then we have a quadratic equation.
+\[y^2+88=26y\Rightarrow y^2-26y+88=0\Rightarrow(y-22)(y-4)=0\]
+Now try solving for \(x\) with each of these values.
+\[{4x\over x-9}=4\Rightarrow4x=4(x-9)\Rightarrow0=-36\Rightarrow\bot\]
+That gives us no solution, but the other one
+\[{4x\over x-9}=22\Rightarrow4x=22(x-9)=22x-198\Rightarrow18x=198
+\Rightarrow x=11\]
+</p>
+
 <h3 id="sep12">Sep 12</h3>
+
+\[2025^{2025}\ \text{mod}\ 33\]
+
+<p>
+Use the chinese remainder theorem. \(33=3\cdot11\) so we compute this expression
+module 3 and 11. For mod 3, we also reduce the exponent mod \(\phi(3)=2\), and
+see that 2025 is divisible by 3.
+\[2025^{2025}\equiv0^1\equiv0\]
+For mod 11, 2025 is congruent to 1 and we reduce the exponent mod 10
+\[2025^{2025}\equiv1^5\equiv1\]
+So now we know the solution is \(x\) where \(x\equiv0\ \text{mod}\ 3\) and
+\(x\equiv1\ \text{mod}\ 11\). There are few enough numbers to look at a cycle
+and find \(x=12\).
+</p>
 
 <h3 id="sep13">Sep 13</h3>
 
+<p>
+A class averaged \(6\) out of \(20\) on a quiz, so the teacher gave half credit
+on all missed questions. What is the adjusted average?
+</p>
+
+<p>
+The average person missed \(14\) questions so they gain \(7\) on average, which
+brings the average up by \(7\) to \(6+7=13\).
+</p>
+
 <h3 id="sep14">Sep 14</h3>
 
+\[\begin{align}
+&r^2-s^2=56\\
+&rs=45\\
+&r&gt;0\\
+&x=r+s\\
+\end{align}\]
+
+<p>
+Substitute \(s=45/r\) to get an equation with a single variable.
+\[r^2-\left({45\over r}\right)^2=56\]
+Multiply \(r^2\) to get a quadratic in \(r^2\)
+\[r^4-45^2=56r^2\]
+The numbers are large but this can be factored
+\[(r^2+25)(r^2-81)=0\]
+In real numbers, we only can get 0 from \(r=\pm9\). The constraint is \(r&gt;0\)
+so we pick \(r=9\). Then \(s=5\). We can verify that this solves the equations
+and then find \(x=r+s=9+5=14\).
+</p>
+
 <h3 id="sep15">Sep 15</h3>
+
+\[t^2-t-5=0,\quad x=(3-t)(2-t)(1-t)(t)(t+1)(t+2)\]
+
+<p>
+Get all the linear factors in the same form to make it a litte easier to see
+what we do next.
+\[x=-(t-3)(t-2)(t-1)(t)(t+1)(t+2)\]
+Now pick pairs of terms whose constant part adds to \(-1\), so we will end up
+with \(t^2-t\) and can substitute \(t^2-t=5\) from the quadratic we are given.
+\[(t-3)(t+2)=t^2-t-6=5-6=-1\]
+\[(t-2)(t+1)=t^2-t-2=5-2=3\]
+\[(t-1)(t)=t^2-t=5\]
+Then \(x=-(-1)(3)(5)=15\)
+</p>
 
 <h3 id="sep16">Sep 16</h3>
 
