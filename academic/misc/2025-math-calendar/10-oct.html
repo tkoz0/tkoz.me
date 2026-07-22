@@ -81,9 +81,46 @@
 
 <h3 id="oct01">Oct 01</h3>
 
+\[y=\sum_{n=0}^{2025}{2025\choose n}^2,\quad x={{4050\choose2025}\over y}\]
+
+<p>
+There is a relevant identity we can find. The general thing we can prove is
+\[\sum_{n=0}^N{N\choose n}^2={2N\choose N}\]
+The \({2N\choose N}\) value is the \(x^N\) term of the generating function
+\((1+x)^{2N}\). Now use symmetry and the same generating function written as
+\((1+x)^N(1+x)^N\)
+\[\sum_{n=0}^N{N\choose n}^2=\sum_{n=0}^N{N\choose n}{N\choose N-n}\]
+We can find the \(x^N\) term as a sum of what can multiply to \(x^N\). For each
+\(0\leq n\leq N\), choose the \(x^n\) term and the \(x^{N-n}\) term from each
+\((1+x)^N\). Then each \({N\choose n}x^n{N\choose N-n}x^{N-n}\) contributes to
+the sum for the \(x^N\) term and exactly matches the summation after symmetry.
+Now with \(N=2025\) specifically,
+\[y=\sum_{n=0}^{2025}{2025\choose n}^2={4050\choose2025}\]
+This can be used to show \(x=y/y=1\).
+</p>
+
 <h3 id="oct02">Oct 02</h3>
 
+\[\left({\sin(40^\circ)+\sin(50^\circ)\over\cos(5^\circ)}\right)^2\]
+
+<p>
+Let \(a=5^\circ\) and then there is some symmetry and cancellation that happens.
+\[\left({\sin(45^\circ-a)+\sin(45^\circ+a)\over\cos(a)}\right)^2\]
+\[=\left({\sin(45^\circ)\cos(a)-\cos(45^\circ)\sin(a)
++\sin(45^\circ)\cos(a)+\cos(45^\circ)\sin(a)\over\cos(a)}\right)^2\]
+\[=\left(2\sin(45^\circ)\cos(a)\over\cos(a)\right)^2
+=\left(2\sin(45^\circ)\right)^2=\left({2\sqrt{2}\over2}\right)^2
+=\left(\sqrt{2}\right)^2=2\]
+</p>
+
 <h3 id="oct03">Oct 03</h3>
+
+\[\left(3+{3\over5}\right)\times\left(1+{3\over7}\right)
+-10\div\left(4+{2\over3}\right)\]
+\[=\left({15\over5}+{3\over5}\right)\times\left({7\over7}+{3\over7}\right)
+-10\div\left({12\over3}+{2\over3}\right)\]
+\[={18\over5}\times{10\over7}-10\div{14\over3}
+={36\over7}-{30\over14}={72-30\over14}={42\over14}=3\]
 
 <h3 id="oct04">Oct 04</h3>
 
