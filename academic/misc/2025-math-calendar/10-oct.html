@@ -124,9 +124,140 @@ Let \(a=5^\circ\) and then there is some symmetry and cancellation that happens.
 
 <h3 id="oct04">Oct 04</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 30" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <polygon points="3 18 11 4 23 18" />
+        <line x1="7" x2="17" y1="11" y2="11" />
+        <line x1="5.868" x2="4.132" y1="14.996" y2="14.004" />
+        <line x1="9.868" x2="8.132" y1="7.996" y2="7.004" />
+        <line x1="12.941" x2="14.459" y1="7.801" y2="6.499" />
+        <line x1="13.541" x2="15.059" y1="8.501" y2="7.199" />
+        <line x1="18.941" x2="20.459" y1="14.801" y2="13.499" />
+        <line x1="19.541" x2="21.059" y1="15.501" y2="14.199" />
+    </g>
+    <g fill="black" font-size="0.15em">
+        <text x="1" y="17.5">A</text>
+        <text x="11.5" y="3.5">B</text>
+        <text x="23" y="18">C</text>
+        <text x="5" y="10.5">D</text>
+        <text x="17.5" y="10.5">E</text>
+        <text x="3" y="22">Find the ratio</text>
+        <text x="3" y="25">of the areas of</text>
+        <text x="3" y="28">&#9651;ABC and &#9651;DBE</text>
+    </g>
+</svg>
+
+<p>
+Both triangles share \(\angle B\) so their area can be described in the
+following ratio since we know \(BA=2BD\) and \(BC=2BE\).
+\[{\text{Area}(\triangle ABC)\over\text{Area}(\triangle DBE)}
+={{1\over2}(BA)(BC)\sin(B)\over{1\over2}(BD)(BE)\sin(B)}
+={(2BD)(2BE)\over(BD)(BE)}=2\cdot2=4\]
+</p>
+
 <h3 id="oct05">Oct 05</h3>
 
+\[x,y\in\mathbb{N},\quad x^4+x^2=651^y-1\]
+
+<p>
+By adding \(x^2+1\) to each side, we can complete a square.
+\[x^4+2x^2+1=651^y+x^2 \Rightarrow (x^2+1)^2=651^y+x^2\]
+Then subtract the \(x^2\) and we can factor a difference of squares. Also factor
+\(651=3\cdot7\cdot31\).
+\[(x^2+1)^2-x^2=(3\cdot7\cdot31)^y=(x^2+x+1)(x^2-x+1)\]
+Now consider greatest common divisor and subtract these 2 factors
+\[\gcd(x^2+x+1,x^2-x+1)=\gcd(x^2-x+1,2x)=g\]
+So \(x^2-x+1\) is always odd which means \(g\) is also odd. But also \(g\mid2x\)
+so \(g\mid x\). This means
+\[g=\gcd(x^2-x+1,x)=\gcd(x,1)=1\]
+This means \(A=x^2+x+1\) and \(B=x^2-x+1\) are coprime and each must be a
+\(y\)th power of an integer. All possible cases can be determined by the factors
+of \(651\) and noting that \(A&gt;B\) and \(A-B=2x\).
+\[(A,B)=(651^y,1^y),(217^y,3^y),(93^y,7^y),(31^y,21^y)\]
+First focus on \(y=1\). We can look at the values of \(x=(A-B)/2\) which are
+\(325,107,43,5\). Out of these, only \(x=5\) looks reasonable to get \(A,B\) to
+match the values in a pair here and it turns out that it works, so \(x=5,y=1\)
+is a solution.
+</p>
+
+<p>
+Now we would like to ensure there are no other solutions. Note that for
+\(y\geq2\), the smallest possible value of \(A\) is \(31^2=961\) which requires
+\(x&gt;30\). If \(y\) is even, then both \(A\) and \(B\) must be squares, but we
+can see clearly (knowing \(x&gt;30\)) that they lie between the consecutive
+squares:
+\[(x-1)^2&lt;B&lt;x^2&lt;A&lt;(x+1)^2\]
+So \(y\) must be odd and \(y\geq3\). First consider the case where
+\(A=651^y,B=1\). Then \(B=x^2-x+1=1\) only has solutions \(x=0,1\) and neither
+of these will make \(A=x^2+x+1=651^y\).
+</p>
+
+<p>
+Next, in other cases, for some integers \(a,b\) from our other cases, \(B=b^y\)
+and \(A=a^y\geq(b+10)^y\) (since the smallest \(b-a\) is \(10\)). From this,
+\[a^y-b^y\geq(b+10)^y-b^y&gt;10b^y\]
+Since \(A-B=a^y-b^y=2x\), \(x&gt;5\cdot b^y\). But then
+\(x^2&gt;25\cdot b^{2y}\). So now the value of \(B\) satisfies
+\[B=x^2-x+1&gt;(x-1)^2&gt;25\cdot b^{2y}-50b^y+1=25(b^{2y}-2b^y)+1\]
+Since \(b\geq3\), \(2b^y&lt;b^{y+1}\). Also since \(y\geq3\),
+\(2y\geq y+3\), and \(b\geq3\), we find \(b^{2y}\geq9\cdot b^{y+1}\). So we
+continue the big inequality sequence:
+\[&gt;25(9\cdot b^{y+1}-b^{y+1})+1&gt;200b^{y+1}&gt;b^y=B\]
+This is a contradiction, so no other solutions can exist.
+</p>
+
 <h3 id="oct06">Oct 06</h3>
+
+\[\begin{array}{ccccc}
+&A&B&C&X\\
+&&A&B&C\\
+&&&A&B\\
++&&&&A\\
+\hline
+&1&3&9&4\\
+\end{array}\]
+
+<p>
+In this cryptarithmetic puzzle, we can see that \(A=0\) or \(A=1\). If \(A=0\)
+then we would need a carry of \(1\). The maximum possible carry anywhere in this
+puzzle is \(3\) since there are \(4\) numbers added. This means \(B\geq7\). But
+for \(B=7,8,9\), we cannot get the carry to satisfy \(B+\text{carry}\equiv3\)
+modulo \(10\). So instead we must have \(A=1\).
+\[\begin{array}{ccccc}
+&1&B&C&X\\
+&&1&B&C\\
+&&&1&B\\
++&&&&1\\
+\hline
+&1&3&9&4\\
+\end{array}\]
+Now we know \(B+1+\text{carry}\) does not carry to the next column so we can
+only have \(B=1\) or \(B=2\). If \(B=1\), this forces \(C+B+1+\text{carry}=C+2\)
+to carry \(1\). We would need \(C+2+\text{carry}=19\) which cannot happen
+because \(C\leq9\) and \(\text{carry}\leq3\). So we must have \(B=2\).
+\[\begin{array}{ccccc}
+&1&2&C&X\\
+&&1&2&C\\
+&&&1&2\\
++&&&&1\\
+\hline
+&1&3&9&4\\
+\end{array}\]
+Now we can see \(C+2+1+\text{carry}=C+3+\text{carry}=9\) does not carry, so
+\(C\leq6\). In the right column, \(X+C+2+1\leq X+9\leq18\) so the largest carry
+possible is \(1\). We have either \(C=5\) or \(C=6\). If \(C=6\), then the right
+column cannot carry. But \(X+C+2+1=X+9&gt;4\) so we would need \(X=5\) with a
+carry. The only possibility left is \(C=5\) forcing a carry from the right, so
+\(X+C+2+1=X+8=14\) and we find \(X=6\). The completed puzzle is
+\[\begin{array}{ccccc}
+&1&2&5&6\\
+&&1&2&5\\
+&&&1&2\\
++&&&&1\\
+\hline
+&1&3&9&4\\
+\end{array}\]
+</p>
 
 <h3 id="oct07">Oct 07</h3>
 
