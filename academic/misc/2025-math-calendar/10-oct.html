@@ -261,23 +261,274 @@ carry. The only possibility left is \(C=5\) forcing a carry from the right, so
 
 <h3 id="oct07">Oct 07</h3>
 
+\[\left\lfloor{10^{2025}\over10^{25}+3}\right\rfloor\ \text{mod}\ 10\]
+
+<p>
+We can reduce the power of the numerator by subtracting away integer multiples
+of \(10\). This does create a different number we have to work with.
+\[\left\lfloor{10^{2025}\over10^{25}+3}\right\rfloor
+\equiv\left\lfloor{10^{2025}\over10^{25}+3}
+-10^{2000}{10^{25}+3\over10^{25}+3}\right\rfloor
+\equiv\left\lfloor{-3\cdot10^{2020}\over10^{25}+3}\right\rfloor\]
+\[\equiv\left\lfloor{-3\cdot10^{2020}\over10^{25}+3}
++3\cdot10^{1975}{10^{25}+3\over10^{25}+3}\right\rfloor
+\equiv\left\lfloor{3^2\cdot10^{1975}\over10^{25}+3}\right\rfloor\]
+We have reduced the power of \(10\) by \(50\) and introduced \(3^2\). This
+pattern continues 39 more times to get
+\[\equiv\ldots\equiv
+\left\lfloor{3^{80}\cdot10^{25}\over10^{25}+3}\right\rfloor\]
+We can't quite repeat the pattern because \(3^{80}\cdot10^0\) is not a multiple
+of 10, but we can do something a little different.
+\[\equiv\left\lfloor{3^{80}\cdot(10^{25}+3-3)\over10^{25}+3}\right\rfloor
+\equiv\left\lfloor3^{80}-{3^{81}\over10^{25}+3}\right\rfloor\]
+We can find \(3^4\equiv1\) modulo 10 so \(3^{80}=(3^4)^{20}\equiv1\) modulo 10
+also. The other fraction is clearly not an integer so let
+\({3^{81}\over10^{25}+3}=Z+\epsilon\) for an integer \(Z\) and
+\(0&lt;\epsilon&lt;1\). So now we have
+\[\equiv\lfloor1-(Z+\epsilon)\rfloor=1-\lceil Z+\epsilon\rceil
+=1-\left\lceil{3^{81}\over10^{25}+3}\right\rceil\]
+Now is where things get tricky. There is another little nice thing we can do,
+but beyond that it actually looks like something you just need large number
+arithmetic for. Anyway, we can compute
+\[{3^{81}\over10^{25}}-{3^{81}\over10^{25}+3}
+={3^{82}\over10^{50}+3\cdot10^{25}}\approx1.33\cdot10^{-11}\]
+It's small, and (verifiable with large number arithmetic) does not make our
+ceiling expression overflow to the next integer so we can find (modulo 10)
+\[1-\left\lceil{3^{81}\over10^{25}}\right\rceil\]
+This still requires us to determine the 26th digit from the right of \(3^{81}\)
+which is not easy to do without a proper calculator. Anyway by calculator,
+\(3^{81}/10^{25}\approx44342648824303.77\) so taking away the higher digits,
+\[1-\lceil3.77\rceil=1-4=-3\equiv7\]
+Using a large number calculator like Python can confirm that the last digit is
+\(7\).
+</p>
+
 <h3 id="oct08">Oct 08</h3>
+
+\[\sqrt{60+\sqrt{25-\sqrt{81}}}=\sqrt{60+\sqrt{25-9}}=\sqrt{60+\sqrt{16}}
+=\sqrt{60+4}=\sqrt{64}=8\]
 
 <h3 id="oct09">Oct 09</h3>
 
+\[\lim_{x\to0}x^2\cot^2\left({x\over3}\right)\]
+
+<p>
+As \(x\to0\), \(x^2\to0\) and \(\cot^2(x/3)\to\infty\). Keep \(x^2\) on the
+numerator since taking its derivative makes it simpler and put \(1/\cot^2(x/3)\)
+on the denominator, so we have something in a \(0/0\) form compatible with
+LHopital's rule.
+\[=\lim_{x\to0}{x^2\over{\tan^2(x/3)}}
+=\lim_{x\to0}{2x\over2\tan(x/3){1\over3}\sec^2(x/3)}
+=3\lim_{x\to0}{x\over\tan(x/3)\sec^2(x/3)}\]
+This is still in the \(0/0\) form so apply LHopital's rule again.
+\[=3\lim_{x\to0}{1\over{1\over3}\sec^2(x/3)\sec^2(x/3)
++\tan(x/3)\cdot2\sec(x/3)\cdot{1\over3}\sec(x/3)\tan(x/3)}\]
+\[=3\lim_{x\to0}{1\over{1\over3}\sec^4(x/3)+{2\over3}\tan^2(x/3)\sec^2(x/3)}\]
+Now we can directly substitute \(x=0\).
+\[=3\lim_{x\to0}{1\over{1\over3}\cdot1+{2\over3}\cdot0\cdot1}
+=3\left({1\over{1\over3}}\right)=3\cdot3=9\]
+</p>
+
+<hr />
+
+<p>
+A faster way to solve this actually involves recognizing the square.
+\[=\lim_{x\to0}\left(x\cot(x/3)\right)^2\]
+Focus on the limit inside the square, which as rewritten can be split up to
+familiar limits.
+\[\lim_{x\to0}{x\cos(x/3)\over\sin(x/3)}
+=\lim_{x\to0}{x\over\sin(x/3)}\cdot\lim_{x\to0}\cos(x/3)\]
+\[=3\lim_{x\to0}{x/3\over\sin(x/3)}\cdot\lim_{x\to0}\cos(x/3)
+=3\cdot1\cdot\cos(0/3)=3\cdot1\cdot1=3\]
+So the limit is \(3^2=9\).
+</p>
+
 <h3 id="oct10">Oct 10</h3>
+
+\[\begin{align}
+&t&gt;0\\
+&98=t+{1\over t}\\
+&x=\sqrt{t}+{1\over\sqrt{t}}\\
+\end{align}\]
+
+<p>
+Square the equation with \(x\) and then we can solve it easily.
+\[x^2=t+{1\over t}+2=98+2=100\Rightarrow x=\pm10\]
+But clearly \(x=10\) since \(t&gt;0\).
+</p>
 
 <h3 id="oct11">Oct 11</h3>
 
+<p>
+Find the largest root of the polynomial \(11x^3-111x^2-111x+11\).
+</p>
+
+<p>
+By the rational root theorem, possible rational roots are
+\[{\pm1,\pm11\over\pm1,\pm11}\Rightarrow\pm1,\pm11,\pm{1\over11}\]
+We can try \(\pm1\) first since they are simplest and find that \(x=-1\) is a
+root. Then after division, we have \((x+1)(11x^2-122x+11)=0\). With whatever
+technique you choose (quadratic formula, guessing, etc), we can finish factoring
+to \((x+1)(11x-1)(x-11)=0\). Therefore the roots are \(x=-1,1/11,11\) and \(11\)
+is the largest.
+</p>
+
 <h3 id="oct12">Oct 12</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="200" height="200" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <polygon points="0.5 1 6.5 1 4.5 5" fill="#7cf" />
+        <polygon points="0.5 1 6.5 1 6.5 7 0.5 7" />
+        <line x1="0.5" x2="6.5" y1="1" y2="7" />
+        <line x1="6.5" x2="3.5" y1="1" y2="7" />
+        <line x1="3.5" x2="3.5" y1="0.7" y2="1.3" />
+        <line x1="6.8" x2="6.2" y1="4" y2="4" />
+        <line x1="0.8" x2="0.2" y1="4" y2="4" />
+        <line x1="5.15" x2="5.15" y1="6.7" y2="7.3" />
+        <line x1="4.85" x2="4.85" y1="6.7" y2="7.3" />
+        <line x1="2.15" x2="2.15" y1="6.7" y2="7.3" />
+        <line x1="1.85" x2="1.85" y1="6.7" y2="7.3" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="3.5" y="3">x</text>
+        <text x="7" y="4.5">6</text>
+    </g>
+</svg>
+
+<p>
+Let \((0,0)\) be the coordinates of the bottom left corner. Then the top left to
+bottom right diagonal goes through \((0,6),(6,0)\). We can find the equation for
+it is \(y=6-x\). Next, the other diagonal goes through \((3,0),(6,6)\) which has
+equation \(y=-6+2x\). Solving for the intersection, we find it at \((4,2)\). It
+has \(y\) coordinate \(2\) which is \(4\) away from the top edge at \(y=6\). So
+the height of the triangle is \(4\) and the base (top edge) is \(6\). The area
+is \({1\over2}(4)(6)=12\).
+</p>
 
 <h3 id="oct13">Oct 13</h3>
 
+\[\begin{array}{rrrl}
+5x&-7y&+3z&=46\\
+2x&-4y&+z&=8\\
+6x&+2y&-5z&=42\\
+\end{array}\]
+
+<p>
+There does not appear to be anything special about this linear system so we can
+solve it with general gaussian elimination. Here, we multiply things to common
+multiples to avoid fractions.
+\[
+\left(\begin{array}{ccc|c}
+5&-7&3&46\\
+2&-4&1&8\\
+6&2&-5&42\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+30&-42&18&276\\
+30&-60&15&120\\
+30&10&-25&210\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&3&46\\
+0&-18&-3&-156\\
+0&52&-43&-66\\
+\end{array}\right)
+\]
+\[
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&3&46\\
+0&6&1&52\\
+0&52&-43&-66\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&3&46\\
+0&156&26&1352\\
+0&156&-129&-198\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&3&46\\
+0&6&1&52\\
+0&0&-155&-1550\\
+\end{array}\right)
+\]
+\[
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&3&46\\
+0&6&1&52\\
+0&0&1&10\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&0&16\\
+0&6&0&42\\
+0&0&1&10\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+5&-7&0&16\\
+0&1&0&7\\
+0&0&1&10\\
+\end{array}\right)
+\]
+\[
+\sim
+\left(\begin{array}{ccc|c}
+5&0&0&65\\
+0&1&0&7\\
+0&0&1&10\\
+\end{array}\right)
+\sim
+\left(\begin{array}{ccc|c}
+1&0&0&13\\
+0&1&0&7\\
+0&0&1&10\\
+\end{array}\right)
+\]
+The solution is \(x=13,y=7,z=10\).
+</p>
+
 <h3 id="oct14">Oct 14</h3>
+
+<p>
+Find the largest integer \(x\) for which there exists an integer \(y\) such that
+\(x^2=y^2+27\).
+</p>
+
+<p>
+Subtract \(y^2\) from each side and factor the difference of squares.
+\[x^2-y^2=27\Rightarrow(x+y)(x-y)=27\]
+Let \(A=x+y\) and \(B=x-y\). Both of these are integers so they factor \(27\).
+Notice that \(A+B=2x\) so maximizing \(A+B\) will find us a maximum of \(x\).
+Ignore the order for now, we just need to pick 2 numbers that multiply to \(27\)
+from the possibilities:
+\[(1,27),(3,9),(-1,-27),(-3,-9)\]
+The case that maximizes \(A+B\) is \((1,27)\) with \(2x=28\Rightarrow x=14\).
+This corresponds to \(y=\pm13\).
+</p>
 
 <h3 id="oct15">Oct 15</h3>
 
+\[{10!\over3!8!}={10\cdot9\over3!}={2\cdot5\cdot3\cdot3\over2\cdot3}
+=5\cdot3=15\]
+
 <h3 id="oct16">Oct 16</h3>
+
+<p>
+Find the number of factors of 18900 that are square-free.
+</p>
+
+<p>
+First factor it \(18900=2^2\cdot5^2\cdot189=2^2\cdot3^3\cdot5^2\cdot7\).
+Square-free numbers cannot have a prime square as a factor, so all prime
+exponents must be \(0\) or \(1\). This gives 2 choices for each of 4 prime
+factors so \(2^4=16\).
+</p>
 
 <h3 id="oct17">Oct 17</h3>
 
