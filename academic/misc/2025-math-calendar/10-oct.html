@@ -532,17 +532,163 @@ factors so \(2^4=16\).
 
 <h3 id="oct17">Oct 17</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="280" height="280" class="img_center">
+    <g stroke="black" stroke-width="0.35" fill="none">
+        <rect x="2.06" y="7" width="30.881" height="21" />
+        <line x1="2.06" x2="32.94" y1="22" y2="22" />
+        <line x1="12.06" x2="12.06" y1="7" y2="28" />
+        <rect x="2.06" y="7" width="2.5" height="2.5" />
+        <rect x="2.06" y="19.5" width="2.5" height="2.5" />
+        <rect x="2.06" y="25.5" width="2.5" height="2.5" />
+        <rect x="12.06" y="25.5" width="2.5" height="2.5" />
+        <rect x="30.44" y="25.5" width="2.5" height="2.5" />
+        <line x1="2.06" x2="12.06" y1="28" y2="22" stroke="red" />
+        <line x1="12.06" x2="32.94" y1="22" y2="28" stroke="green" />
+        <line x1="2.06" x2="12.06" y1="7" y2="22" stroke="#7cf" />
+        <line x1="12.06" x2="32.94" y1="22" y2="7" />
+        <line x1="9.06" x2="7.06" y1="5" y2="14.5" />
+        <polygon points="7.06 14.5 7.005 13.501 7.214 13.766 7.512 13.608" />
+        <line x1="22.06" x2="25.98" y1="5" y2="12" />
+        <polygon points="25.98 12 25.282 11.284 25.614 11.346 25.734 11.031" />
+        <line x1="10.06" x2="7.06" y1="30" y2="25" />
+        <polygon points="7.06 25 7.779 25.695 7.446 25.643 7.335 25.961" />
+        <line x1="20.06" x2="22.5" y1="30" y2="25" />
+        <polygon points="22.5 25 22.309 25.982 22.171 25.674 21.844 25.755" />
+        <line x1="20.06" x2="26.06" y1="30.4" y2="30.4" stroke="green" stroke-width="0.2" />
+    </g>
+    <g fill="black" font-size="0.2em">
+        <text x="8.06" y="4" fill="#7cf">x</text>
+        <text x="20.06" y="4">25</text>
+        <text x="9.06" y="33" fill="red">10</text>
+        <text x="18.06" y="33" fill="green">&radic;436</text>
+    </g>
+</svg>
+
+<p>
+Let \(a,b\) be the widths along the horizontal axis (left then right) and let
+\(c,d\) be the widths along the vertical axis (bottom then top). Then by the
+pythagorean theorem
+\[a^2+c^2=10^2,\ b^2+d^2=25^2,\ b^2+c^2=436,\ a^2+d^2=x^2\]
+Add the first two to form an equation, and same with the last two
+\[a^2+b^2+c^2+d^2=10^2+25^2,\ a^2+b^2+c^2+d^2=x^2+436\]
+Then we can solve
+\[x^2+436=10^2+25^2=100+625=725\Rightarrow x^2=289\Rightarrow x=17\]
+In general, the thing we have shown here is the British flag theorem.
+</p>
+
 <h3 id="oct18">Oct 18</h3>
+
+\[{18+20+22+\ldots+70\over7\cdot8+2\cdot5}\]
+\[={2(9+10+11+\ldots+35)\over56+10}
+={2\left({35\cdot36\over2}-{8\cdot9\over2}\right)\over66}\]
+\[={1\over33}(35\cdot18-4\cdot9)={1\over33}(35\cdot18-2\cdot18)\]
+\[={1\over33}((35-2)\cdot18)={1\over33}(33\cdot18)=18\]
 
 <h3 id="oct19">Oct 19</h3>
 
+<p>
+How many \(z\in\mathbb{Z}\) satisfy \({7\over z}\leq-{4\over11}\)
+</p>
+
+<p>
+Since \(z\neq0\), consider both positive and negative cases, since that
+determines whether inequalities need to be flipped. First \(z&gt;0\). Multiply
+each side by \(11z\).
+\[77\leq-4z\Rightarrow z\leq{-77\over4}&lt;0\]
+So both \(z&gt;0\) and \(z&lt;0\) which means there are no positive solutions.
+Now for \(z&lt;0\). Also multiply each side by \(11z\).
+\[77\geq-4z\Rightarrow z\geq{-77\over4}=-19.25\]
+So the integers that work are \(z=-1,-2,\ldots,-19\), 19 in total.
+</p>
+
 <h3 id="oct20">Oct 20</h3>
+
+\[\text{lcm}(\gcd(40,92),\gcd(70,30))\]
+
+<p>
+First evaluate each greatest common divisor
+\[\gcd(40,92)=\gcd(40,12)=\gcd(4,12)=\gcd(4,0)=4\]
+\[\gcd(70,30)=\gcd(10,30)=\gcd(10,0)=10\]
+Then use the formula \(\text{lcm}(a,b)=ab/\gcd(a,b)\)
+\[\text{lcm}(4,10)={4\cdot10\over\gcd(4,10)}={40\over2}=20\]
+</p>
 
 <h3 id="oct21">Oct 21</h3>
 
+\[\phi={1+\sqrt{5}\over2},\quad\phi^9=a+b\sqrt{5},\quad x=a-b\]
+
+<p>
+This is doable by manually calculating powers of \(\phi\). By expanding
+\(\phi^n=\phi^{n-1}\cdot\phi\), we can see a general recurrence for
+\(\phi^n=a_n+b_n\sqrt{5}\)
+\[\begin{align}&a_1=b_1={1\over2}\\
+&a_n={a_{n-1}+5b_{n-1}\over2}={a_{n-1}+b_{n-1}\over2}+2b_{n-1}=b_n+2b_{n-1}\\
+&b_n={a_{n-1}+b_{n-1}\over2}\\\end{align}\]
+But this is still tedious and requires following 2 variables that depend on the
+previous. This number \(\phi\) is the golden ratio and related to the Fibonacci
+and Lucas sequences. We can show this.
+</p>
+
+<p>
+Use the relationship \(\phi^2=\phi+1\). Now notice that
+\[\phi^n=\phi^{n-2}\phi^2=\phi^{n-2}(\phi+1)=\phi^{n-1}+\phi^{n-2}\]
+This relationship suggests the Fibonacci sequence, defined as
+\(F_0=0,F_1=1,F_n=F_{n-1}+F_{n-2}\). Notice that \(\phi^1=F_1\phi+F_0\). Next
+by induction, we prove \(\phi^n=F_n\phi+F_{n-1}\) for \(n\geq1\).
+\[\phi^n=\phi^{n-2}\phi^2=\phi^{n-2}(\phi+1)=\phi^{n-1}+\phi^{n-2}
+=(F_{n-1}\phi+F_{n-2})+(F_{n-2}\phi+F_{n-3})\]
+\[=(F_{n-1}+F_{n-2})\phi+(F_{n-2}+F_{n-3})=F_n\phi+F_{n-1}\]
+Now we can show
+\[\phi^n=F_n\left({1+\sqrt{5}\over2}\right)+F_{n-1}
+={F_n+F_n\sqrt{5}+2F_{n-1}\over2}={F_{n+1}+F_{n-1}+F_n\sqrt{5}\over2}\]
+We can use the Lucas numbers formula \(L_n=F_{n-1}+F_{n+1}\) here. To prove it,
+note that the Lucas numbers are defined by \(L_0=2,L_1=1,L_n=L_{n-1}+L_{n-2}\).
+The base case for \(L_1\) can be shown true easily. Then by induction
+\[L_n=L_{n-1}+L_{n-2}=F_n+F_{n-2}+F_{n-1}+F_{n-3}\]
+\[=(F_n+F_{n-1})+(F_{n-2}+F_{n-3})=F_{n+1}+F_{n-1}\]
+So the final formula is
+\[\phi^n={L_n+F_n\sqrt{5}\over2}\]
+The problem asks for \(x=a-b\) where \(a=L_9/2\) and \(b=F_9/2\) come from
+\(\phi^9\).
+\[x=(L_9-F_9)/2=(76-34)/2=42/2=21\]
+</p>
+
 <h3 id="oct22">Oct 22</h3>
 
+\[y={2025^3+1080^3\over2025^3+945^3},\quad x={1\over y-1}\]
+
+<p>
+First compute \(y-1\).
+\[y-1={2025^3+1080^3\over2025^3+945^3}-{2025^3+945^3\over2025^3+945^3}
+={1080^3-945^3\over2025^3+945^3}\]
+Next we can find that each of these numbers is divisible by \(135\) which allows
+a good amount of factoring to happen. Invert it for \(x=1/(y-1)\) and then
+simplify and apply \(a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)\).
+\[x={1\over y-1}={2025^3+945^3\over1080^3-945^3}
+={135^3\over135^3}\cdot{15^3+7^3\over8^3-7^3}
+={(15+7)(15^2-15\cdot7+7^2)\over(8-7)(8^2+8\cdot7+7^2)}\]
+\[={22\over1}\cdot{225-105+49\over64+56+49}=22\cdot{169\over169}=22\]
+</p>
+
 <h3 id="oct23">Oct 23</h3>
+
+<p>
+Find the largest prime divisor of the three digit number that is \(23\) times
+the sum of its digits.
+</p>
+
+<p>
+Write an equation for this problem where \(a,b,c\) are the 3 digits.
+\[100a+10b+c=23(a+b+c)\]
+Then we can rearrange it apply divisibility rules to reduce the search to almost
+nothing.
+\[77a=13b+22c \Rightarrow 13b=77a-22c=11(7a-2c)\]
+So now we see that \(11\mid13b\) but \(11\nmid13\) so we must have \(11\mid b\).
+But since \(b\) is a single digit, \(b=0\). This means \(7a-2c=0\) and in single
+digits the only solution is \(a=2,c=7\). Therefore \(207\) is the number and
+we can verify \(207=(2+7)\cdot23=9\cdot23=3^2\cdot23\).
+So the largest prime divisor is \(23\).
+</p>
 
 <h3 id="oct24">Oct 24</h3>
 
