@@ -81,23 +81,286 @@
 
 <h3 id="nov01">Nov 01</h3>
 
+\[\cos(36^\circ)+\cos(108^\circ)+\cos(252^\circ)+\cos(324^\circ)\]
+
+<p>
+Notice a bit of symmetry here. The angles \(36^\circ,324^\circ\) are centered
+around \(0^\circ\) at \(0^\circ\pm36^\circ\). The angles \(108^\circ,252^\circ\)
+are centered around \(180^\circ\) at \(180^\circ\pm72^\circ\). We can use sums
+and differences:
+\[\cos(0^\circ-36^\circ)+\cos(0^\circ+36^\circ)
++\cos(180^\circ-72^\circ)+\cos(180^\circ+72^\circ)\]
+Using the sum/difference identity for cosine, we can show
+\[\cos(a-b)+\cos(a+b)=2\cos(a)\cos(b)\]
+So if we apply it to the problem, we have
+\[2\cos(0^\circ)\cos(36^\circ)+2\cos(180^\circ)\cos(72^\circ)
+=2(\cos(36^\circ)-\cos(72^\circ))\]
+Now we need some way to handle these angles. Let \(\theta=36^\circ=\pi/5\). We
+can solve by using \(\sin(2\theta)=\sin(\pi-2\theta)=\sin(3\theta)\),
+starting with the double and triple angle formulas.
+\[2\sin(\theta)\cos(\theta)=3\sin(\theta)-4\sin^3(\theta)\]
+Divide by \(\sin(\theta)\neq0\) and apply \(\sin^2(\theta)=1-\cos^2(\theta)\),
+which leads us to the following quadratic equation.
+\[4\cos^2(\theta)-2\cos(\theta)-1=0\Rightarrow\cos(\theta)
+={1\pm\sqrt{5}\over4}\]
+Take the positive value since \(\theta\) is in quadrant 1. Then we can solve the
+problem with this quantity. For \(72^\circ\), use the double angle identity
+\(\cos(2\theta)=2\cos^2(\theta)-1\).
+\[2\left({1+\sqrt{5}\over4}-2\left({1+\sqrt{5}\over4}\right)^2+1\right)
+=2\left({1+\sqrt{5}\over4}-{2\left(6+2\sqrt{5}\right)\over16}+1\right)\]
+\[=2\left({1+\sqrt{5}\over4}-{3+\sqrt{5}\over4}+{4\over4}\right)
+=2\left({1-3+4\over4}\right)=2\cdot{1\over2}=1\]
+</p>
+
+<hr />
+
+<p>
+Another way to do this is with the formula from roots of unity / a regular
+polygon (\(n\) sides) in the complex plane.
+\[\sum_{k=0}^{n-1}\cos\left(\theta+k{2\pi\over n}\right)=0\]
+This formula can be thought of as the center of mass of the vertices of a
+regular polygon. We can prove this by using Euler's formula and properties of
+geometric series. We are looking for the real part of the following expression.
+\[\sum_{k=0}^{n-1}e^{i\left(\theta+k{2\pi\over n}\right)}
+=e^{i\theta}\sum_{k=0}^{n-1}e^{ik{2\pi\over n}}
+=e^{i\theta}\left(e^0+e^{i{2\pi\over n}}+e^{2i{2\pi\over n}}+\ldots+
+    e^{(n-1)i{2\pi\over n}}\right)\]
+\[=e^{i\theta}{1-e^{ni{2\pi\over n}}\over1-e^{i{2\pi\over n}}}
+=e^{i\theta}{1-e^{2\pi i}\over1-e^{i{2\pi\over n}}}
+=e^{i\theta}{1-1\over1-e^{i{2\pi\over n}}}=0\]
+Note that if \(n=1\) then this proof would divide by \(0\), so the proof is
+valid for \(n\geq2\). If \(n=1\) then we actually get \(\cos(\theta)\) instead
+of \(0\).
+</p>
+
+<p>
+Going back to the problem, let \(\theta=36^\circ\) and \(n=5\). Then
+\[\cos(36^\circ)+\cos(108^\circ)+\cos(180^\circ)
++\cos(252^\circ)+\cos(324^\circ)=0\]
+But \(\cos(180^\circ)=-1\) so if we add \(1\) to both sides, we have the answer.
+\[\cos(36^\circ)+\cos(108^\circ)+\cos(252^\circ)+\cos(324^\circ)=1\]
+</p>
+
 <h3 id="nov02">Nov 02</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 30" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <path d="M 12.5 12.5 l -2.457 2.492 a 3.5 3.5 0 0 0 5.746 -1.295" fill="#7cf" />
+        <path d="M 12.5 12.5 l 6.578 2.394 a 7 7 0 1 0 -11.492 2.591 z" />
+        <path d="M 22.837 16.262 A 11 11 0 1 0 4.777 20.333" />
+        <path d="M 7.586 17.485 A 7 7 0 0 0 19.078 14.894" stroke="magenta" />
+        <path d="M 4.777 20.333 A 11 11 0 0 0 22.837 16.262" stroke="green" />
+        <line x1="19.078" x2="22.837" y1="14.894" y2="16.262" stroke="red" />
+        <line x1="7.586" x2="4.777" y1="17.485" y2="20.333" stroke="red" />
+        <line x1="10.5" x2="13" y1="11.5" y2="14.5" />
+        <polygon points="13 14.5 12.79 14.046 12.76 14.212 12.591 14.212" />
+    </g>
+    <g fill="black" font-size="0.2em">
+        <text x="6.5" y="20.5" fill="red">a</text>
+        <text x="14.5" y="18.2" fill="magenta">b</text>
+        <text x="17.5" y="24.5" fill="green">c</text>
+        <text x="6.5" y="28.5">2</text>
+        <text x="8.5" y="28.5" fill="red">a</text>
+        <text x="10.5" y="28.5">+</text>
+        <text x="12.5" y="28.5" fill="magenta">b</text>
+        <text x="14.5" y="28.5">=</text>
+        <text x="16.5" y="28.5" fill="green">c</text>
+        <text x="7.5" y="10.5" font-size="0.7em">x radians</text>
+    </g>
+</svg>
+
+<p>
+Let \(r\) be the radius of the large circle. Then using some arc length formulas
+\[c=2\pi r\left({x\over2\pi}\right)=rx,
+\quad b=2\pi(r-a)\left({x\over2\pi}\right)=rx-ax\]
+First substitute \(c=rx\) into the formula we were given so \(2a+b=rx\). Now
+substitute \(b=rx-ax\) so \(2a+rx-ax=rx\). We can subtract away the \(rx\) terms
+relealing \(2a=ax\Rightarrow x=2\).
+</p>
 
 <h3 id="nov03">Nov 03</h3>
 
+\[{\sin^4(\theta)\over8}+\cos^4(\theta)={1\over9},
+\quad x=\sec(\theta),\quad x&gt;0\]
+
+<p>
+First use the identity \(\cos^2(\theta)=1-\sin^2(\theta)\) to find a quadratic
+equation.
+\[{\sin^4(\theta)\over8}+(1-\sin^2(\theta))^2={1\over9}
+\Rightarrow {9\over8}\sin^4(\theta)-2\sin(\theta)+{8\over9}=0\]
+Its solution is (turns out to only have 1)
+\[\sin^2(\theta)={2\pm\sqrt{2^2-4\cdot{9\over8}\cdot{8\over9}}\over9/4}
+={8\over9}\]
+We don't actually have to compute \(\sin(\theta)\). Focus on the expression for
+\(x\). Use the positive root since we are given \(x&gt;0\).
+\[x=\sec(\theta)={1\over\cos(\theta)}={1\over\sqrt{1-\sin^2(\theta)}}
+={1\over\sqrt{1-8/9}}={1\over\sqrt{1/9}}=\sqrt{9}=3\]
+</p>
+
 <h3 id="nov04">Nov 04</h3>
+
+<p>
+Find the only \(x\) such that there exists a differentiable manifold that is
+homeomorphic but not diffeomorphic to \(\mathbb{R}^x\).
+</p>
+
+<p>
+Homeomorphic is a topology term that means one space can be transformed into
+another space by smooth deformation. Mathematically, it means there exists a
+continuous bijection between the spaces whose inverse is also continuous.
+</p>
+
+<p>
+Diffeomorphic is similar, but also requires that the bijection is smooth in
+addition to continuous. This means that the bijection and its inverse are
+infinitely differentiable.
+</p>
+
+<p>
+People showed that in dimensions \(1,2,3\) and \(\geq5\), any smooth manifold
+homeomerphic to the space is also diffeomorphic to it. The 4th dimension is an
+anomaly and exotic smooth structures exist. Here, exotic means homeomorphic to
+the space but not diffeomorphic to it.
+</p>
+
+<p>
+The solution is \(x=4\), the only dimension with this different property.
+</p>
 
 <h3 id="nov05">Nov 05</h3>
 
+\[x=3125^{1\over x}\]
+
+<p>
+We can recognize that \(3125=5^5\), a power of \(5\). This makes it noticeable
+that \(x=5\) is the solution. If we do not know this, we could try increasing
+\(x\) to look for a positive solution, observing that \(3125^{1\over x}\)
+decreases as \(x\) increases.
+</p>
+
+<p>
+To see that this is the only solution in positive \(x\), notice how \(x\) is
+increasing. Then find the derivative to see that \(3125^{1\over x}\) decreases.
+\[{d\over dx}\left(3125^{1\over x}\right)
+=3125^{1\over x}\left({-1\over x^2}\ln(3125)\right)\]
+So for positive \(x\), there is only 1 solution. If \(x\) is negative, then
+there can be no solution because \(3125^{1\over x}\) would be positive.
+</p>
+
 <h3 id="nov06">Nov 06</h3>
+
+<p>
+Find the sum of the lengths of all sides and diagonals of a regular hexagon
+with side length \(2-\sqrt{3}\).
+</p>
+
+<p>
+First we have \(6\left(2-\sqrt{3}\right)=12-6\sqrt{3}\) from the lengths of the
+sides. Knowing that a regular hexagon can be divided into 6 equilateral
+triangles, we can see that the 3 "big" diagonals count 6 of the same segments
+doubling our current total to \(24-12\sqrt{3}\).
+</p>
+
+<p>
+Now focus on the smaller diagonals. If we draw one of them, and a line to the
+vertex in the middle, we create two 30-60-90 triangles. The leg we care about,
+which is half of the diagonal, has length
+\[\left(2-\sqrt{3}\right){\sqrt{3}\over2}=\sqrt{3}-{3\over2}\]
+One of these diagonals is twice this length so \(2\sqrt{3}-3\). There are 6 of
+them so they contribute \(12\sqrt{3}-18\) to our sum. Add this to what we had
+from the sides and big diagonals to find the solution.
+\[24-12\sqrt{3}+12\sqrt{3}-18=6\]
+</p>
 
 <h3 id="nov07">Nov 07</h3>
 
+\[\sqrt{\sqrt{81}+\sqrt{80}}=a+\sqrt{b},\quad a,b\in\mathbb{Z},\quad x=a+b\]
+
+<p>
+Square both sides first.
+\[9+\sqrt{80}=a^2+b+2a\sqrt{b}\]
+So this gives us equations
+\[a^2+b=9,\quad2a\sqrt{b}=\sqrt{80}\]
+Square the second one to find \(4a^2b=80\Rightarrow a^2b=20\). Multiply the
+first equation by \(b\) on each side to be able to substitute this.
+\[a^2b+b^2=9b\Rightarrow20+b^2=9b\Rightarrow b^2-9b+20=0
+\Rightarrow(b-4)(b-5)=0\]
+So \(b=4,5\). If we try \(b=4\), then \(a=\pm\sqrt{5}\not\in\mathbb{Z}\). So we
+find \(b=5\) and \(a=\pm2\). The one that works is \(a=2\). \(a=-2\) is
+extraneous. Finally the solution is \(x=2+5=7\).
+</p>
+
 <h3 id="nov08">Nov 08</h3>
+
+<p>
+Find the number of regions in a Venn diagram with three intersecting sets.
+</p>
+
+<p>
+Venn diagrams divide a plane into regions by all possible set containment. For
+each set, either the item is inside it or not. The outer region (not in any set)
+also counts as a region. In total, there would be \(2^3=8\) regions for 3
+intersecting sets.
+</p>
 
 <h3 id="nov09">Nov 09</h3>
 
+<p>
+Find the integer that is a perfect square and also the product of four
+consecutive odd integers.
+</p>
+
+<p>
+To make a nice equation for this, we search for an even integer \(n\) right in
+the middle so for some integer \(k\geq0\),
+\[(n-3)(n-1)(n+1)(n+3)=k^2\]
+We can multiply together pairs of terms to get differences of squares
+\[(n^2-1)(n^2-9)=k^2\]
+Now let \(m=n^2-5\) which is right in the middle, so we can get more differences
+of squares.
+\[(m+4)(m-4)=k^2\Rightarrow m^2-16=k^2\Rightarrow m^2-k^2=16
+\Rightarrow(m-k)(m+k)=16\]
+The difference between \(m-k\) and \(m+k\) is \(2k\) so they must both be even
+to multiply to \(16\). Also since \(n\) is even, \(m\) is odd, which also shows
+\(k\) is also odd. By searching \(0\leq m\leq16\), we find \(m=5,k=3\). We also
+need to check \(-16\leq m\leq0\) since we have not restricted things to just
+positive numbers. We also find the corresponding negative number solution with
+\(m=-5,k=3\). If \(m=5\), then \(n^2=10\) which does not result in an integer.
+If \(m=-5\) then \(n=0\). From this, we find \((-3)(-1)(1)(3)=9\) is the perfect
+square solution.
+</p>
+
 <h3 id="nov10">Nov 10</h3>
+
+\[{4^x-4^{-x}\over2^x+2^{-x}}={1048575\over1024}\]
+
+<p>
+Noticing that \(4^x=(2^x)^2\), the numerator is a difference of squares and
+can be factored. Also notice the powers of 2 in the fraction.
+\[{(2^x+2^{-x})(2^x-2^{-x})\over2^x+2^{-x}}=2^x-2^{-x}={2^{20}-1\over2^{10}}\]
+Multiply each side by \(2^{10}\)
+\[2^{10+x}-2^{10-x}=2^{20}-1\]
+Here we can see that \(x=10\) makes the 2 sides match.
+</p>
+
+<p>
+We can also do this by arranging the right side to look like the left.
+\[{2^{20}-1\over2^{10}}\cdot{2^{20}+1\over2^{20}+1}
+={2^{40}-1\over2^{30}+2^{10}}\cdot{2^{-20}\over2^{-20}}
+={2^{20}-2^{-20}\over2^{10}+2^{-10}}={4^{10}-4^{-10}\over2^{10}+2^{-10}}\]
+This also makes it clear that \(x=10\) is the solution.
+</p>
+
+<p>
+The last thing we might want to do is check that it is the only solution. If we
+let \(u=2^x\), then we differentiate to find
+\[{d\over dx}{u^2-u^{-2}\over u+u^{-1}}={d\over dx}{u^4-1\over u^3+u}
+={4u^3(u^3+u)-(u^4-1)(3u^2+1)\over(u^3+u)^2}\]
+\[={u^6+3u^4+3u^2+1\over u^2(u^2+1)^2}={(u^2+1)^3\over u^2(u^2+1)^2}
+={u^2+1\over u^2}\]
+This is clearly positive on the entire interval which means the function is
+always increasing so the \(x=10\) we found is the only solution.
+</p>
 
 <h3 id="nov11">Nov 11</h3>
 
