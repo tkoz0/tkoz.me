@@ -364,17 +364,96 @@ always increasing so the \(x=10\) we found is the only solution.
 
 <h3 id="nov11">Nov 11</h3>
 
+\[2^{2^2}-2^2-1=2^4-4-1=16-5=11\]
+
 <h3 id="nov12">Nov 12</h3>
+
+\[f(t)=\sqrt[3]{t},\quad x=f'\left({1\over216}\right)\]
+
+<p>
+First the derivative
+\[f'(t)={d\over dt}t^{1/3}={1\over3}t^{-2/3}\]
+Then notice that \({1\over216}=6^{-3}\) and evaluate
+\[x=f'(6^{-3})={1\over3}\left((6^{-3})^{-2}\right)^{1/3}={1\over3}(6^6)^{1/3}
+={1\over3}6^2=12\]
+</p>
 
 <h3 id="nov13">Nov 13</h3>
 
+<p>
+Find the sum of the coefficients of the odd powers of \((1+x+x^2)^3\).
+</p>
+
+<p>
+Let \(f(x)=(1+x+x^2)^3\). Then \(f(1)\) is the sum of all coefficients and
+\(f(-1)\) is the alternating sum of coefficients. If we compute \(f(1)-f(-1)\)
+then we get \(3^3-1^3=26\). This has the even exponents subtract away since
+\[c\cdot(1)^{2n}-c\cdot(-1)^{2n}=c-c=0\]
+But the odd exponents add to double
+\[c\cdot(1)^{2n+1}-c\cdot(-1)^{2n+1}=c+c=2c\]
+So \(26\) is twice the sum of the odd coefficients and \(13\) is the sum of the
+odd coefficients.
+</p>
+
 <h3 id="nov14">Nov 14</h3>
+
+\[x,y,z\in\mathbb{Z}^{&gt;0},\quad x+y+z=490,\quad9x+11y+0.5z=490\]
+
+<p>
+First multiply the 2nd equation by \(2\) so we have only integers
+\[18x+22y+z=980\]
+Then subtract the first to eliminate \(z\)
+\[17x+21y=490\]
+We need positive integer solutions to this. Consider operations modulo \(21\).
+Since \(490=21\cdot23+7\), \(17x\equiv7\). Now we would like to isolate \(x\).
+The inverse of \(17\) modulo \(21\) is \(5\). So \(x\equiv7\cdot5\equiv14\). We
+have that \(x=14+21k\) for some integer \(k\geq0\) since \(x&gt;0\). Now for
+\(y\), \(21y=490-17x=490-17(14+21k)\). This simplifies to \(y=12-17k\). Since
+\(y&gt;0\), we have \(k\leq0\). The only possible value is \(k=0\) so we find
+\(x=14\) and \(y=12\). Using the first equation, \(z=490-x-y=464\). These can
+all be verified to solve both equations.
+</p>
 
 <h3 id="nov15">Nov 15</h3>
 
+\[{x-y\over\sqrt{xy-y^2}}=2,\quad x+3y=24\]
+
+<p>
+Since there is a square root, and we will square things, be wary of extraneous
+solutions and that a square root needs a nonnegative quantity. Eliminate the
+square root by squaring both sides of the first equation.
+\[{(x-y)^2\over xy-y^2}=4 \Rightarrow x^2-2xy+y^2=4xy-4y^2
+\Rightarrow x^2-6xy+5y^2=0\]
+This factors nicely to
+\[(x-y)(x-5y)=0\]
+If \(x-y=0\) then the left side of the first equation is \(0\), so that would
+not equal \(2\). So we must have \(x-5y=0\). Substituting \(x=5y\) into the
+second equation find us \(5y+3y=24\Rightarrow8y=24\Rightarrow y=3\). Then we
+can find \(x=24-3y=24-9=15\). This solution satisfies both equations.
+</p>
+
 <h3 id="nov16">Nov 16</h3>
 
+\[\sqrt{2}^\sqrt{500-x}=2048\]
+
+<p>
+First observe \(2048=2^{11}=\sqrt{2}^{22}\). So by taking \(\log_{\sqrt{2}}\) of
+each side, we find
+\[\sqrt{500-x}=22\Rightarrow500-x=484\Rightarrow x=16\]
+</p>
+
 <h3 id="nov17">Nov 17</h3>
+
+\[x-2=3(y-2),\quad x-5=6(y-5)\]
+
+<p>
+First rearrange the equations into a standard form
+\[x-3y=-4,\quad x-6y=-25\]
+Now subtract the second from the first to eliminate \(x\)
+\[3y=21\Rightarrow y=7\]
+Finally we can find
+\[x=-4+3y=-4+21=17\]
+</p>
 
 <h3 id="nov18">Nov 18</h3>
 
