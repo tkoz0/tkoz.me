@@ -692,19 +692,206 @@ So the largest prime divisor is \(23\).
 
 <h3 id="oct24">Oct 24</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -5 10 10" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.1" fill="none">
+        <circle cx="0" cy="0" r="4" />
+        <path d="M -4 0 l 2.942 -0.588 A 3 3 0 0 1 -1.073 0.659 Z" stroke="#49b" fill="#7cf" />
+        <line x1="-4" x2="3.692" y1="0" y2="-1.538" />
+        <line x1="3.614" x2="3.913" y1="1.714" y2="-0.832" />
+        <line x1="-4" x2="4.789" y1="0" y2="1.979" />
+        <line x1="3.692" x2="4.789" y1="-1.538" y2="1.979" />
+        <g fill="black">
+            <circle cx="-4" cy="0" r="0.15" />
+            <circle cx="3.692" cy="-1.538" r="0.15" />
+            <circle cx="3.913" cy="-0.832" r="0.15" />
+        </g>
+        <path d="M 4.057 1.814 A 0.75 0.75 0 0 1 4.565 1.263" />
+        <path d="M 2.638 1.495 A 1 1 0 0 1 3.73 0.721" />
+        <line x1="4.47" x2="4" y1="1.685" y2="3" />
+    </g>
+    <g fill="black" font-size="0.06em">
+        <text x="-0.8" y="0.4">x&deg;</text>
+        <text x="2" y="0.5">84&deg;</text>
+        <text x="3.4" y="3.8">60&deg;</text>
+    </g>
+</svg>
+
+<p>
+If we can find out the arc angle that \(x\) subtends, we can identify its
+measure. Focus on the small triangle mostly outside the circle. We know one
+angle is \(60^\circ\). The \(84^\circ\) angle helps us find another angle of
+this triangle is \(180^\circ-84^\circ=96^\circ\). Then the remainding angle of
+the triangle (the top angle) is \(180^\circ-96^\circ-60^\circ=24^\circ\).
+Supplementary to it is a large angle inside the circle of measure
+\(180^\circ-24^\circ=156^\circ\). This large angle subtends an arc of measure
+\(2\cdot156^\circ=312^\circ\). Notice how this big arc is exactly the parts of
+the circle that \(x\) does not subtend so \(x\) subtends an arc of measure
+\(360^\circ-312^\circ=48^\circ\). An angle at a point on the circle has half
+the measure of arc it subtends so \(x=24\).
+</p>
+
 <h3 id="oct25">Oct 25</h3>
+
+<p>
+Find the difference between the min and max values of \(0.4x^3-0.6x^2-7.2x+4.5\)
+in the internal \([-3,4]\).
+</p>
+
+<p>
+Since the interval is closed, we consider the endpoints as well as any extrema.
+Look at the derivative to find critical points.
+\[1.2x^2-1.2x-7.2=0 \Rightarrow x^2-x-6=0 \Rightarrow (x+2)(x-3)=0\]
+So the points we have to test are \(-3,-2,3,4\). Since we only care about the
+difference, ignore the \(4.5\) constant, since all it does is shift the graph.
+\[\begin{array}{rll}
+-3: & 0.4(-27)-0.6(9)-7.2(-3) & = -10.8-5.4+21.6 & = 5.4 \\
+-2: & 0.4(-8)-0.6(4)-7.2(-2)  & = -3.2-2.4+14.4  & = 8.8 \\
+ 3: & 0.4(27)-0.6(9)-7.2(3)   & = 10.8-5.4-21.6  & = -16.2 \\
+ 4: & 0.4(64)-0.6(16)-7.2(4)  & = 25.6-9.6-28.8  & = -12.8 \\
+\end{array}\]
+So we pick the largest and smallest and find the difference
+\[(8.8)-(-16.2)=8.8+16.2=25\]
+</p>
 
 <h3 id="oct26">Oct 26</h3>
 
+<p>
+In the sequence \(12,y,x,40\), every term after the second is the sum of the
+previous two.
+</p>
+
+<p>
+This gives us equations:
+\[x=12+y,\quad40=y+x\]
+Use the first to replace \(y\) in the second.
+\[40=(x-12)+x=2x-12\Rightarrow2x=52\Rightarrow x=26\]
+We can also find \(y=14\).
+</p>
+
 <h3 id="oct27">Oct 27</h3>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 30" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <line x1="12.5" x2="22.348" y1="8" y2="16.264" />
+        <line x1="12.5" x2="21.16" y1="8" y2="23" />
+        <line x1="12.5" x2="15.92" y1="8" y2="27.397" />
+        <line x1="12.5" x2="9.08" y1="8" y2="27.397" />
+        <line x1="12.5" x2="3.84" y1="8" y2="23" />
+        <line x1="12.5" x2="2.652" y1="8" y2="16.264" />
+        <line x1="18.928" x2="22.348" y1="10.34" y2="16.264" />
+        <line x1="18.928" x2="21.16" y1="10.34" y2="23" />
+        <line x1="18.928" x2="15.92" y1="10.34" y2="27.397" />
+        <line x1="18.928" x2="9.08" y1="10.34" y2="27.397" />
+        <line x1="18.928" x2="3.84" y1="10.34" y2="23" />
+        <line x1="18.928" x2="2.652" y1="10.34" y2="16.264" />
+        <line x1="22.348" x2="9.08" y1="16.264" y2="27.397" />
+        <line x1="22.348" x2="3.84" y1="16.264" y2="23" />
+        <line x1="22.348" x2="2.652" y1="16.264" y2="16.264" />
+        <line x1="22.348" x2="6.072" y1="16.264" y2="10.34" />
+        <line x1="22.348" x2="12.5" y1="16.264" y2="8" />
+        <line x1="22.348" x2="18.928" y1="16.264" y2="10.34" />
+        <line x1="21.16" x2="9.08" y1="23" y2="27.397" />
+        <line x1="21.16" x2="3.84" y1="23" y2="23" />
+        <line x1="21.16" x2="2.652" y1="23" y2="16.264" />
+        <line x1="21.16" x2="6.072" y1="23" y2="10.34" />
+        <line x1="21.16" x2="12.5" y1="23" y2="8" />
+        <line x1="21.16" x2="18.928" y1="23" y2="10.34" />
+        <line x1="15.92" x2="9.08" y1="27.397" y2="27.397" />
+        <line x1="15.92" x2="3.84" y1="27.397" y2="23" />
+        <line x1="15.92" x2="2.652" y1="27.397" y2="16.264" />
+        <line x1="15.92" x2="6.072" y1="27.397" y2="10.34" />
+        <line x1="15.92" x2="12.5" y1="27.397" y2="8" />
+        <line x1="15.92" x2="18.928" y1="27.397" y2="10.34" />
+        <line x1="9.08" x2="6.072" y1="27.397" y2="10.34" />
+        <line x1="9.08" x2="12.5" y1="27.397" y2="8" />
+        <line x1="9.08" x2="18.928" y1="27.397" y2="10.34" />
+        <line x1="9.08" x2="22.348" y1="27.397" y2="16.264" />
+        <line x1="9.08" x2="21.16" y1="27.397" y2="23" />
+        <line x1="9.08" x2="15.92" y1="27.397" y2="27.397" />
+        <line x1="3.84" x2="6.072" y1="23" y2="10.34" />
+        <line x1="3.84" x2="12.5" y1="23" y2="8" />
+        <line x1="3.84" x2="18.928" y1="23" y2="10.34" />
+        <line x1="3.84" x2="22.348" y1="23" y2="16.264" />
+        <line x1="3.84" x2="21.16" y1="23" y2="23" />
+        <line x1="3.84" x2="15.92" y1="23" y2="27.397" />
+        <line x1="2.652" x2="6.072" y1="16.264" y2="10.34" />
+        <line x1="2.652" x2="12.5" y1="16.264" y2="8" />
+        <line x1="2.652" x2="18.928" y1="16.264" y2="10.34" />
+        <line x1="2.652" x2="22.348" y1="16.264" y2="16.264" />
+        <line x1="2.652" x2="21.16" y1="16.264" y2="23" />
+        <line x1="2.652" x2="15.92" y1="16.264" y2="27.397" />
+        <line x1="6.072" x2="22.348" y1="10.34" y2="16.264" />
+        <line x1="6.072" x2="21.16" y1="10.34" y2="23" />
+        <line x1="6.072" x2="15.92" y1="10.34" y2="27.397" />
+        <line x1="6.072" x2="9.08" y1="10.34" y2="27.397" />
+        <line x1="6.072" x2="3.84" y1="10.34" y2="23" />
+        <line x1="6.072" x2="2.652" y1="10.34" y2="16.264" />
+    </g>
+    <g fill="black" font-size="0.12em">
+        <text x="6" y="3">Find the number</text>
+        <text x="4" y="6">of edges in the graph</text>
+    </g>
+</svg>
+
+<p>
+We can see there are \(9\) vertices arranged in a circle and carefully check
+than each has \(6\) edges. Then \(9\cdot6=54\) counts each edge twice so there
+are \(54/2=27\) edges in total.
+</p>
 
 <h3 id="oct28">Oct 28</h3>
 
+<p>
+A cyclic group of order \(4004\) is generated by \(a\). Find the order of
+\(a^{715}\).
+</p>
+
+<p>
+We need to find some power \(p\) such that \(a^{715p}\) is the identity. Since
+\(a\) generates the group, the identity is \(a^{4004}\) so we need \(715p\) to
+be the smallest \(p\) that makes \(715p\) a multiple of \(4004\). This would be
+\[{4004\over\gcd(715,4004)}={4004\over\gcd(715,429)}={4004\over\gcd(286,429)}\]
+\[={4004\over\gcd(286,143)}={4004\over\gcd(0,143)}={4004\over143}=28\]
+So the order of \(a^{715}\) is \(28\).
+</p>
+
 <h3 id="oct29">Oct 29</h3>
+
+\[y=5789+7895+8957+9578,\quad x={y\over11\times101}\]
+
+<p>
+We could do the full manual arithmetic, but notice how the digits are rotated,
+so each digit ends up in each of the 4 positions exactly once. This means if we
+add them together, we get \((5+7+8+9)(10^3+10^2+10+1)\). Now notice that
+\(11\times101=1001=10^3+10^2+10+1\). So \(x\) is just \(5+7+8+9=29\).
+</p>
 
 <h3 id="oct30">Oct 30</h3>
 
+<p>
+Find the number of rectangles that can be formed using integer lattice points
+\(x,y\). \(0\leq x\leq2,0\leq y\leq4\).
+</p>
+
+<p>
+A rectangle is uniquely determined by its bounds on each axis. For those bounds,
+we choose 2 valid \(x\) coordinates and 2 valid \(y\) coordinates. There are
+\(3\) possible values for \(x\) and \(5\) possible values for \(y\). So the
+number of rectangles we can form is
+\[{3\choose2}{5\choose2}=3\cdot{5\cdot4\over2}=3\cdot10=30\]
+</p>
+
 <h3 id="oct31">Oct 31</h3>
+
+<p>
+Find the larger of two primes that sum to \(33\).
+</p>
+
+<p>
+Since \(33\) is odd, we must have 1 odd and 1 even prime. The only even prime is
+\(2\) and it so happens that \(33-2=31\) is prime so the larger of these primes
+is \(31\).
+</p>
 
 </div>
 </body>
