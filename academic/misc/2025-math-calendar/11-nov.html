@@ -622,11 +622,134 @@ the two given equations.
 
 <h3 id="nov24">Nov 24</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.2" fill="none">
+        <polygon points="15 20 11.536 0.947 15 6.144" fill="#7cf" />
+        <rect x="1.144" y="6.144" width="13.856" height="13.856" />
+        <polygon points="15 20 1.144 13.072 4.608 6.144" />
+        <line x1="4.608" x2="11.536" y1="6.144" y2="0.947" />
+        <rect x="1.144" y="19" width="1" height="1" />
+        <rect x="1.144" y="6.144" width="1" height="1" />
+        <rect x="14" y="6.144" width="1" height="1" />
+        <polyline points="1.591 12.177 2.485 12.625 2.038 13.519" />
+        <polyline points="5.408 5.544 6.008 6.344 5.208 6.944" />
+        <line x1="0.644" x2="1.644" y1="9.608" y2="9.608" />
+        <line x1="1.644" x2="0.644" y1="16.536" y2="16.536" />
+        <line x1="14.5" x2="15.5" y1="13.349" y2="13.349" />
+        <line x1="14.5" x2="15.5" y1="12.795" y2="12.795" />
+        <line x1="8.349" x2="8.349" y1="20.5" y2="19.5" />
+        <line x1="7.795" x2="7.795" y1="20.5" y2="19.5" />
+        <path d="M 13.2 17.6 A 3 3 0 0 0 12.317 18.658 M 13.081 18.398 l -0.768 -0.641" />
+        <path d="M 14.463 17.048 A 3 3 0 0 0 13.2 17.6 M 14 17.709 l -0.4 -0.916" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="3" y="22">8&radic;3</text>
+        <text x="13.5" y="9">x</text>
+    </g>
+</svg>
+
+<p>
+Notice how the bottom left triangle has side lengths in ratios \(1,2,\sqrt{5}\)
+and its side lengths are \(4\sqrt{3},8\sqrt{3},4\sqrt{15}\). The little triangle
+at the top left can be shown to be similar to it scaled down by \(2\), so its
+side lengths are \(2\sqrt{3},4\sqrt{3},2\sqrt{15}\). Their hypotenuses have
+ratio \(1:2\) and form the legs for the next triangle, so it is similar with the
+same \(1,2,\sqrt{5}\) ratio and has side lengths
+\(2\sqrt{15},4\sqrt{15},10\sqrt{3}\). Now the angle markings show us the final
+right triangle, bordering the \(x\) region, is similar, and we know its
+\(10\sqrt{3}\) longer leg, so its side lengths are
+\(5\sqrt{3},10\sqrt{3},5\sqrt{15}\).
+</p>
+
+<p>
+From this, we have shown that 2 sides of the \(x\) region have lengths
+\(5\sqrt{15}\) and \(8\sqrt{3}\). Now we can find the angle at the bottom to
+be able to solve with the \({1\over2}ab\sin(\theta)\) area formula. Since we
+showed the 3 right triangles stacked up rotating each are similar, the smaller
+angle of each is \(\theta=\arctan(1/2)\). So this means the angle we need to
+solve for \(x\) is \(\pi/2-3\arctan(1/2)\). We don't actually need to find this
+angle directly, but to find its sine. Start with cofunction identity.
+\[\sin\left({\pi\over2}-3\arctan\left({1\over2}\right)\right)
+=\cos\left(3\arctan\left({1\over2}\right)\right)=\cos(3\theta)\]
+If we draw a triangle for \(\theta=\arctan(1/2)\), we will find
+\(\cos(\theta)=2/\sqrt{5}\). Now apply the triple angle identity.
+\[\cos(3\theta)=4\cos^3(\theta)-3\cos(\theta)
+=4\cdot{8\over5\sqrt{5}}-3{2\over\sqrt{5}}
+={32\over5\sqrt{5}}-{6\cdot5\over5\sqrt{5}}={2\over5\sqrt{5}}\]
+Now we can put in the 2 side lengths and \(\sin(\pi/2-3\theta)\).
+\[x={1\over2}\left(5\sqrt{15}\right)\left(8\sqrt{3}\right){2\over5\sqrt{5}}
+=20\sqrt{45}{2\over5\sqrt{5}}={2\cdot20\cdot3\sqrt{5}\over5\sqrt{5}}=24\]
+</p>
+
 <h3 id="nov25">Nov 25</h3>
+
+<p>
+What is the least number of coins needed (among pennies, nickels, dimes, and
+quarters) that would add up to $4.99?
+</p>
+
+<p>
+In general, a greedy algorithm does not work for least number of coins, but it
+does happen to work for american coin amounts. So we make $4.75 with 19 quarters
+first. Then for the rest, we use 2 dimes and 4 pennies. The total number of
+coins is \(19+2+4=25\).
+</p>
 
 <h3 id="nov26">Nov 26</h3>
 
+<p>
+\(11010_2\) in base \(10\)
+</p>
+
+<p>
+We can convert this with place value of the ones:
+\[2^4+2^3+2^1=16+8+2=26\]
+</p>
+
 <h3 id="nov27">Nov 27</h3>
+
+<p>
+Find the maximum postage value that cannot be made with 5 cent and 8 cent
+stamps.
+</p>
+
+<p>
+We can do this by brute force. Once there are 5 consecutive values that can be
+made, we can make any larger value. Below is the table. Make this by starting
+with zero 8 cent coins and adding 5 cent coins to it repeatedly, then one 8
+cent coin, and so on.
+</p>
+
+<table class="table_normal">
+    <tr><th>Cost</th><th>Coins</th><th>Cost</th><th>Coins</th></tr>
+    <tr><td>1</td><td></td><td>17</td><td></td></tr>
+    <tr><td>2</td><td></td><td>18</td><td>8,5,5</td></tr>
+    <tr><td>3</td><td></td><td>19</td><td></td></tr>
+    <tr><td>4</td><td></td><td>20</td><td>5,5,5,5</td></tr>
+    <tr><td>5</td><td>5</td><td>21</td><td>8,8,5</td></tr>
+    <tr><td>6</td><td></td><td>22</td><td></td></tr>
+    <tr><td>7</td><td></td><td>23</td><td>8,5,5,5</td></tr>
+    <tr><td>8</td><td>8</td><td>24</td><td>8,8,8</td></tr>
+    <tr><td>9</td><td></td><td>25</td><td>5,5,5,5,5</td></tr>
+    <tr><td>10</td><td>5,5</td><td>26</td><td>8,8,5,5</td></tr>
+    <tr><td>11</td><td></td><td>27</td><td></td></tr>
+    <tr><td>12</td><td></td><td>28</td><td>8,5,5,5,5</td></tr>
+    <tr><td>13</td><td>8,5</td><td>29</td><td>8,8,8,5</td></tr>
+    <tr><td>14</td><td></td><td>30</td><td>5,5,5,5,5,5</td></tr>
+    <tr><td>15</td><td>5,5,5</td><td>31</td><td>8,8,5,5,5</td></tr>
+    <tr><td>16</td><td>8,8</td><td>32</td><td>8,8,8,8</td></tr>
+</table>
+
+<p>
+After doing this, we can see that 27 is the largest we cannot make with these
+coin values. For anything larger, we have a way for 5 consecutive values (28-32)
+so beyond that we can add as many 5 cent coins as necessary after choosing one.
+</p>
+
+<p>
+This is special case of the Frobenius coin problem. For 2 coprime integers
+\(a,b\), it has solution \(ab-a-b\). Here, we would have \(5\cdot8-5-8=27\).
+</p>
 
 <h3 id="nov28">Nov 28</h3>
 
