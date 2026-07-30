@@ -704,24 +704,22 @@ So \(x=-2\) (and \(y=-23\)) would not satisfy the constraints. But \(x=24\) and
 <h3 id="sep25">Sep 25</h3>
 
 <p>
-Find the sum of the squares of all complex solutions to \((z-4)^4=(z-2)^2\).
+Find the sum of the squares of all complex solutions to \((z-4)^4=(z-2)^4\).
 </p>
 
 <p>
-Start with square root of each side, which gives 2 cases.
-\[(z-4)^2=\pm(z-2)\]
-For the positive case:
-\[(z-4)^2=z-2\Rightarrow z^2-8z+16=z-2\Rightarrow z^2-9x+18=0
-\Rightarrow(z-3)(z-6)=0\]
-So we get \(z=3\) and \(z=6\). For the negative case:
-\[(z-4)^2=2-z\Rightarrow z^2-8z+16=2-z\Rightarrow z^2-7z+14=0\]
-This one can be solved with the quadratic formula:
-\[z={7\pm i\sqrt{7}\over2}\]
-And its squares are
-\[z^2={49\pm14i\sqrt{7}+7i^2\over4}={21\over2}\pm{7i\sqrt{7}\over2}\]
-Now adding all the squares gives us, not \(25\), so the problem is stated wrong.
-\[3^2+6^2+{21\over2}+{7i\sqrt{7}\over2}+{21\over2}-{7i\sqrt{7}\over2}
-=9+36+21=66\]
+Take the square root of each side and we have plus/minus cases.
+\[(z-4)^2=\pm(z-2)^2\]
+For the plus case, expand, see that \(z^2\) cancels, so we get 1 solution.
+\[z^2-8z+16=z^2-4z+4\Rightarrow-4z+12=0\Rightarrow z=3\]
+For the minus case, we get a quadratic equation
+\[z^2-8z+16=-z^2+4z-4\Rightarrow2z^2-12z+20=0\Rightarrow z^2-6z+10=0\]
+The solutions are
+\[z={6\pm2i\over2}=3\pm i\]
+And their squares are
+\[z^2=9+i^2\pm3i=8\pm 3i\]
+So now if we add squares of all 3 solutions we have
+\[3^2+(8+3i)+(8-3i)=9+8+8=25\]
 </p>
 
 <h3 id="sep26">Sep 26</h3>
