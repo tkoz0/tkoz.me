@@ -753,9 +753,80 @@ This is special case of the Frobenius coin problem. For 2 coprime integers
 
 <h3 id="nov28">Nov 28</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <polygon points="2 8 20 8 23 16 5 16" stroke="none" fill="#7cf" />
+        <polyline points="2 8 5 16 23 16" />
+        <g stroke-dasharray="0.7">
+            <polyline points="2 8 20 8 23 16" />
+            <line x1="20" x2="20" y1="8" y2="3" />
+        </g>
+        <line x1="20" x2="2" y1="3" y2="8" />
+        <line x1="20" x2="5" y1="3" y2="16" />
+        <line x1="20" x2="23" y1="3" y2="16" />
+    </g>
+    <g fill="black" font-size="0.1em">
+        <text x="18.5" y="6.5">1</text>
+        <text x="21.5" y="7">4</text>
+        <text x="13" y="7.5">7</text>
+        <text x="10" y="5">8</text>
+        <text x="12" y="13">Area = x</text>
+        <text x="2" y="20">All edges of rectangular</text>
+        <text x="2" y="22">pyramid have integer length</text>
+    </g>
+</svg>
+
+<p>
+There is actually a problem with the way it is stated. We can see this from the
+british flag theorem. Imagine we project the top vertex of the pyramid into its
+plane. Then we satisfy
+\[a^2+b^2=c^2+d^2\]
+Now add \(2h^2\) to each side where \(h\) is the height of the pyramid.
+\[(a^2+h^2)+(b^2+h^2)=(c^2+h^2)+(d^2+h^2)\]
+Now we can see each of these new quantities with the \(h^2\) added form the
+length of one of the 4 diagonals going up the pyramid. This means our pyramid
+should satisfy the british flag theorem with its diagonal lengths. But we see
+\(8^4+4^2\neq7^2+1^2\). However, if we swap the \(7\) and \(8\), then we have
+\(7^2+4^2=8^2+1^2\). I believe this is how the problem was meant to be.
+</p>
+
+<p>
+So with that correction out of the way, consider the 2 triangles with the side
+length \(1\). If \(a,b\) are side lengths of a triangle, \(a&gt;b\), then the
+remaining side \(c\) must satisfy \(b+c&gt;a\) and \(c&lt;a+b\). For the
+\(7,1,l\) triangle, we have (remembering that \(l\) must be an integer)
+\[1+l&gt;7,\ l&lt;7+1\ \Rightarrow\ 6&lt;l&lt;8\ \Rightarrow\ l=7\]
+Similarly for the \(4,1,w\) triangle
+\[1+w&gt;4,\ w&lt;4+1\ \Rightarrow\ 3&lt;w&lt;5\ \Rightarrow\ w=4\]
+So the area of the base is \(x=lw=7\cdot4=28\).
+</p>
+
 <h3 id="nov29">Nov 29</h3>
 
+<p>
+Find the sum of the denominators of the Egyptian fraction expansion of
+\({41\over55}\).
+</p>
+
+<p>
+The systematic way to do this is to subtract away the largest possible unit
+fraction until we reach zero. This can be shown to always terminate. In general,
+we would look for
+\[{1\over n}\leq{a\over b}\Rightarrow n\geq{b\over a}\]
+So we would choose \(n=\lceil b/a\rceil\). For the first step, we find
+\[\left\lceil{55\over41}\right\rceil=2,\ {41\over55}={1\over2}+{27\over110}\]
+Next,
+\[\left\lceil{110\over27}\right\rceil=5,\ {27\over110}={1\over5}+{1\over22}\]
+So the Egyptian fraction expansion is
+\[{}={1\over2}+{1\over5}+{1\over22}\]
+And the denominator sum is \(2+5+22=29\).
+</p>
+
 <h3 id="nov30">Nov 30</h3>
+
+\[{2^5\times3^5\times5^5\over810000}
+={2^5\times3^5\times5^5\over2^4\times3^4\times5^4}
+=2\cdot3\cdot5=30\]
 
 </div>
 </body>
