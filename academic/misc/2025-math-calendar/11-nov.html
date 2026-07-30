@@ -457,15 +457,168 @@ Finally we can find
 
 <h3 id="nov18">Nov 18</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 20" width="225" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.15" fill="none">
+        <line x1="14" x2="5" y1="3.34" y2="18.928" />
+        <line x1="4" x2="13" y1="3.34" y2="18.928" />
+        <line x1="11.588" x2="6.929" y1="2.341" y2="19.727" />
+        <circle cx="9" cy="6" r="3" />
+        <circle cx="9" cy="16" r="2" />
+        <polyline points="6.402 7.5 9 6 9 16 10.732 15" />
+        <g fill="black">
+            <circle cx="9" cy="16" r="0.2" />
+            <circle cx="9" cy="6" r="0.2" />
+            <circle cx="9" cy="12" r="0.2" />
+            <circle cx="7.557" cy="17.385" r="0.2" />
+            <circle cx="9.836" cy="8.881" r="0.2" />
+            <circle cx="10.732" cy="15" r="0.2" />
+            <circle cx="6.402" cy="7.5" r="0.2" />
+            <circle cx="9" cy="9" r="0.2" />
+            <line x1="12" x2="10.436" y1="10" y2="9.181" />
+            <polygon points="10.436 9.181 10.728 9.247 10.635 9.286 10.656 9.384" />
+            <line x1="5" x2="7.057" y1="17" y2="17.385" />
+            <polygon points="7.057 17.385 6.758 17.408 6.836 17.344 6.787 17.255" />
+        </g>
+        <path d="M 9 13.5 A 1.5 1.5 0 0 1 8.25 13.299" />
+        <g stroke-width="0.1">
+            <line x1="7.631" x2="8.031" y1="6.329" y2="7.021" />
+            <line x1="7.371" x2="7.771" y1="6.479" y2="7.171" />
+            <line x1="8.6" x2="9.4" y1="7.35" y2="7.35" />
+            <line x1="8.6" x2="9.4" y1="7.65" y2="7.65" />
+            <line x1="9.4" x2="8.6" y1="9.75" y2="9.75" />
+            <line x1="9.4" x2="8.6" y1="9.45" y2="9.45" />
+            <line x1="8.837" x2="8.772" y1="13.239" y2="13.735" />
+            <line x1="8.522" x2="8.33" y1="13.155" y2="13.617" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.07em">
+        <text x="4" y="17.5">A</text>
+        <text x="12" y="10.5">B</text>
+        <text x="7.5" y="12.5">O</text>
+        <text x="9.5" y="17">2</text>
+        <text x="7" y="6">3</text>
+        <text x="2" y="10">Find</text>
+        <text x="0.5" y="11.5">|OA||OB|</text>
+    </g>
+</svg>
+
+<p>
+First focus on line \(AB\). Let \(D\) be the other point where it intersects
+the radius \(2\) circle, so \(D\) lies somewhere on segment \(OA\). Also let
+\(C_2\) and \(C_3\) be the centers of the circles of radius \(2\) and \(3\)
+respectively.
+</p>
+
+<p>
+By the power of a point and related theorems, we have \(|OD|\cdot|OA|=\Pi(O)\)
+where \(\Pi(O)\) is the power of a point for \(O\) and the radius \(2\) circle.
+We can see that \(|OC_3|=6\) and by similar triangles, \(|OC_2|=4\). So
+\[|OD|\cdot|OA|=|OC_2|^2-2^2=4^2=2^2=12\]
+Next we use homothety scaling. Since \(OD\) points to the radius \(2\) circle,
+a scaling by \(-3/2\) maps it to \(OB\) pointing to the radius \(3\) circle. The
+negative is because it switches to the other side of the homothety center. So
+\[|OB|={3\over2}|OD|\]
+Now substitute this into what we found with power of a point
+\[{2\over3}|OB|\cdot|OA|=12\Rightarrow|OA|\cdot|OB|=18\]
+</p>
+
 <h3 id="nov19">Nov 19</h3>
+
+\[y=\pi-\sqrt{{40\over3}-2\sqrt{3}},\quad x=\text{Round}(321000y)\]
+
+<p>
+This problem does not really appear to be suitable for pencil and paper. Using
+a calculator,
+\[\sqrt{{40\over3}-2\sqrt{3}}\approx3.1415333387050945\]
+\[y\approx0.00005931488469856916\]
+\[321000y\approx19.0400779882407\]
+So \(x=19\).
+</p>
 
 <h3 id="nov20">Nov 20</h3>
 
+<p>
+Find the length of the interval defined by \(\left|{2x+1\over5}\right|&lt;4\).
+</p>
+
+<p>
+First multiply each side by \(5\) so we have \(|2x+1|&lt;20\). Then for the
+positive case \(2x+1&lt;20\Rightarrow x&lt;19/2\). For the negative case
+\(-2x-1&lt;20\Rightarrow x&gt;-21/2\). The interval length is
+\[{19\over2}-{-21\over2}={40\over2}=20\]
+</p>
+
 <h3 id="nov21">Nov 21</h3>
+
+<p>
+If 4 students take 3 hours to solve 20 problems, how many hours will it take 3
+students to solve 105 problems (at the same rate)?
+</p>
+
+<p>
+The rate is
+\[{20\ \text{problems}\over4\ \text{students}\cdot3\ \text{hours}}
+={5\over3}\ \text{problems/student/hour}\]
+If there are \(3\) students, then the rate is \(5\ \text{problems/hour}\). So
+divide the 105 problems by this
+\[105\ \text{problems}\cdot{1\ \text{hour}\over5\ \text{problems}}
+=21\ \text{hours}\]
+</p>
 
 <h3 id="nov22">Nov 22</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="250" height="250" class="img_center">
+    <polygon points="1 18 23 18 16.556 2.444" stroke="black" stroke-width="0.2" fill="#7cf" />
+    <g stroke="black" stroke-width="0.4" fill="none">
+        <path d="M 23 18 L 21.852 15.228 A 3 3 0 0 0 20 18 Z M 20.921 16.611 L 20.09 16.056" />
+        <path d="M 16.556 2.444 L 14.435 4.565 A 3 3 0 0 0 17.704 5.215 Z M 16.069 4.896 L 15.874 5.876" />
+        <path d="M 1 18 L 4 18 A 3 3 0 0 0 3.121 15.879 Z" />
+    </g>
+    <g fill="black" font-size="0.2em">
+        <text x="13" y="13">x</text>
+        <text x="5" y="17">45&deg;</text>
+        <text x="7" y="22">&radic;3872</text>
+    </g>
+    <line x1="9" x2="16" y1="19" y2="19" stroke="black" stroke-width="0.2" fill="none" />
+    <text x="7" y="20" fill="black" font-size="0.1em">4</text>
+</svg>
+
+<p>
+We have an isosceles triangle so both of the sides adjacent to the \(45^\circ\)
+angle have length \(\sqrt[4]{3872}\). We can use the side-angle-side area
+formula. Also use \(3872=2^5\cdot11^2\)
+\[{1\over2}ab\sin(45^\circ)={1\over2}\sqrt{3872}{\sqrt{2}\over2}
+={1\over4}\sqrt{2^6\cdot11^2}={1\over4}\cdot2^3\cdot11=2\cdot11=22\]
+</p>
+
 <h3 id="nov23">Nov 23</h3>
+
+\[\begin{align}
+&r^2=24+s\\
+&s^2=24+r\\
+&r\neq s\\
+&x=-rs\\
+\end{align}\]
+
+<p>
+First subtract the 2 equations, so we can factor a difference of squares.
+Division by \(r-s\) is justified since \(r\neq s\).
+\[r^2-s^2=s-r \Rightarrow (r+s)(r-s)=-(r-s) \Rightarrow r+s=-1\]
+Now make \(rs\) appear by multiplying the first equation by \(r\) and the second
+by \(s\) on each side.
+\[r^3=24r+rs,\quad s^3=24s+rs\]
+However, we will not use this \(rs\) to find the solution directly. Instead it
+appears from the difference of cubes obtained by subtracting these equations.
+\[r^3-s^2=24(r-s) \Rightarrow (r-s)(r^2+rs+s^2)=24(r-s)
+\Rightarrow r^2+s^2+rs=24\]
+Now from adding the 2 given equations, \(r^2+s^2=48+r+s\). Substitute this in
+\[48+r+s+rs=24\Rightarrow rs+(r+s)=-24\]
+But we had \(r+s=-1\) from before so we can substitute that too.
+\[rs-1=-24\Rightarrow rs=-23\]
+And finally \(x=-rs=-(-23)=23\). If we were to try to solve for \(r,s\), we
+would find 4 solutions at the intersections of the 2 parabolas described by
+the two given equations.
+</p>
 
 <h3 id="nov24">Nov 24</h3>
 
