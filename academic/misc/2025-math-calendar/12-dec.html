@@ -81,21 +81,219 @@
 
 <h3 id="dec01">Dec 01</h3>
 
+\[\ln\left(\lim_{n\to\infty}\sqrt[n]{n^n\over n!}\right)\]
+
+<p>
+A relevant theorem to use for this problem is the limit root theorem. If
+\(\lim_{n\to\infty}{a_{n+1}\over a_n}=L\) exists for a sequence \(a_n\), then
+\[\lim_{n\to\infty}\sqrt[n]{a_n}=\lim_{n\to\infty}{a_{n+1}\over a_n}\]
+For this problem, let \(a_n={n^n\over n!}\). Now evaluate the limit
+\[\lim_{n\to\infty}{a_{n+1}\over a_n}
+=\lim_{n\to\infty}{(n+1)^{n+1}\over(n+1)!}{n!\over n^n}
+=\lim_{n\to\infty}{(n+1)(n+1)^n n!\over(n+1)n!n^n}\]
+\[=\lim_{n\to\infty}{(n+1)^n\over n^n}
+=\lim_{n\to\infty}\left(1+{1\over n}\right)^n=e\]
+So this limit exists, which means
+\[\lim_{n\to\infty}\sqrt[n]{n^n\over n!}=e\]
+The problem asks for the log of this so the solution is \(1\).
+</p>
+
 <h3 id="dec02">Dec 02</h3>
+
+<p>
+Find the integer \(x\) where \(t^2-t+x\) divides \(t^{13}+t+90\).
+</p>
+
+<p>
+Let \(f(t)=t^{13}+t+90\) and \(g(t)=t^2-t+x\). Then the quotient \(f(t)/g(t)\)
+will be a polynomial with integer coefficients because \(g(t)\) is a monic
+polynomial (leading coefficient is \(1\)). For some polynomial \(h(t)\) with
+integer coefficients, we would find \(f(t)=g(t)h(t)\). Now evaluate the
+polynomials at some easy values to find divisibility properties since \(h(t)\)
+will be an integer.
+\[\begin{align}
+t=0&:90=x\cdot h(0)\\
+t=1&:92=x\cdot h(1)\\
+t=-1&:88=(2+x)\cdot h(-1)\\
+\end{align}\]
+Since \(x\mid90\) and \(x\mid92\), \(x\mid\gcd(90,92)\) so \(x\mid2\). This
+leaves possible values \(x=\pm1,\pm2\). Now check with the last condition that
+\((2+x)\mid88\) which narrows down the possibilities to \(x=-1\) and \(x=2\).
+We could choose more \(t\) values to find further divisibility properties or
+test the result with polynomial division, but here is another interesting thing
+we can do with properties of polynomial roots. Since
+\({d\over dt}f(t)=13t^{12}+1\), \(f(t)\) is strictly increasing so it must have
+exactly 1 real zero. But with \(x=-1\), the discriminant of \(g(t)\) is
+\(1-4(1)(-1)=5\) so there would be 2 real zeroes. Since \(g(t)\mid f(t)\),
+zeroes of \(g(t)\) are also zeroes of \(f(t)\), so we can eliminate \(x=-1\),
+leaving the only possibility of \(x=2\).
+</p>
+
+<p>
+Finally, we can verify by polynomial division that
+\[\begin{align}t^{13}+t+90
+=&(t^2-t+2)(t^{11}+t^{10}-t^9-3t^8-t^7+5t^6\\
+&+7t^5-3t^4-17t^3-11t^2+23t+45)\\\end{align}\]
+</p>
 
 <h3 id="dec03">Dec 03</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 5" width="250" height="250" class="img_center">
+    <polygon points="4.5 0.3 2.5 0.3 1.5 1.3 2.5 2.3" stroke="none" fill="#7cf" />
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <rect x="0.5" y="0.3" width="4" height="4" />
+        <rect x="4.1" y="3.9" width="0.4" height="0.4" />
+        <line x1="0.5" x2="4.5" y1="0.3" y2="4.3" />
+        <line x1="4.5" x2="0.5" y1="0.3" y2="4.3" />
+        <line x1="2.5" x2="0.5" y1="0.3" y2="2.3" />
+        <line x1="1.5" x2="1.5" y1="0.1" y2="0.5" />
+        <line x1="3.5" x2="3.5" y1="0.1" y2="0.5" />
+        <line x1="4.7" x2="4.3" y1="2.22" y2="2.22" />
+        <line x1="4.7" x2="4.3" y1="2.38" y2="2.38" />
+        <line x1="2.58" x2="2.58" y1="4.5" y2="4.1" />
+        <line x1="2.42" x2="2.42" y1="4.5" y2="4.1" />
+    </g>
+    <g fill="black" font-size="0.04em">
+        <text x="2.5" y="1.5">x</text>
+        <text x="1.9" y="4.9">4</text>
+    </g>
+</svg>
+
+<p>
+We have a square of area \(16\). The diagonal going from the lower left to
+upper right splits the square in half so the big upper left triangle has an
+area of \(8\). The smaller upper left triangle is similar and has a side of
+half the length so its area is \(1/4\) of \(8\), which is \(2\). This means the
+strip containing \(x\) (subtracting the area \(2\) triangle from the area \(8\)
+triangle) has area \(6\). Since \(x\) is half of this strip, \(x=3\).
+</p>
+
 <h3 id="dec04">Dec 04</h3>
+
+\[\sum_{n=-1}^\infty2^{-n}
+=2^1+\sum_{n=0}^\infty\left({1\over2}\right)^n
+=2+{1\over1-{1\over2}}=2+2=4\]
 
 <h3 id="dec05">Dec 05</h3>
 
+\[\sqrt{21+\sqrt{13+\sqrt{4+x}}}=5\]
+
+<p>
+Solve this by repeatedly squaring and subtracting.
+\[21+\sqrt{13+\sqrt{4+x}}=25\]
+\[\sqrt{13+\sqrt{4+x}}=4\]
+\[13+\sqrt{4+x}=16\]
+\[\sqrt{4+x}=3\]
+\[4+x=9\]
+\[x=5\]
+</p>
+
 <h3 id="dec06">Dec 06</h3>
+
+<p>
+What is the smallest perfect number?
+</p>
+
+<p>
+A number \(n\) is a perfect number when its proper divisors sum to \(n\). We
+can try small numbers and find \(6=1+2+3\) is the smallest. They are also
+related to mersenne primes, the smallest which is \(2^2-1=3\). So the associated
+perfect number is \(2^1\cdot(2^2-1)=2\cdot3=6\).
+</p>
 
 <h3 id="dec07">Dec 07</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 25" width="200" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <rect x="0.757" y="5" width="18.485" height="18.485" />
+        <line x1="12.243" x2="7.293" y1="16.485" y2="11.536" stroke="#7cf" />
+        <g stroke="red">
+            <line x1="10" x2="19.243" y1="5" y2="5" stroke="red" />
+            <line x1="14.252" x2="14.252" y1="4" y2="6" />
+            <line x1="14.991" x2="14.991" y1="4" y2="6" />
+        </g>
+        <line x1="5.009" x2="5.009" y1="4" y2="6" />
+        <line x1="5.748" x2="5.748" y1="4" y2="6" />
+        <line x1="20.243" x2="18.243" y1="14.243" y2="14.243" />
+        <line x1="10" x2="10" y1="24.485" y2="22.485" />
+        <rect x="0.757" y="5" width="2" height="2" />
+        <rect x="17.243" y="21.485" width="2" height="2" />
+        <rect x="17.243" y="5" width="2" height="2" />
+        <rect x="0.757" y="21.485" width="2" height="2" />
+        <circle cx="12.243" cy="16.485" r="7" />
+        <path d="M 0.757 14.243 A 9.243 9.243 0 0 0 10 5" />
+        <g fill="black">
+            <circle cx="0.757" cy="5" r="0.5" />
+            <circle cx="10" cy="5" r="0.5" />
+            <circle cx="12.243" cy="16.485" r="0.5" />
+            <circle cx="7.293" cy="11.536" r="0.5" />
+        </g>
+    </g>
+    <text x="10.757" y="3" fill="red" font-size="0.15em">5+3&radic;2</text>
+    <text x="10.757" y="14" fill="black" font-size="0.15em">x</text>
+</svg>
+
+<p>
+On the top left there is a quarter circle of radius \(5+3\sqrt{2}\). On the
+bottom right, is a circle of radius \(x\). From the center of the full circle
+to the bottom right, we have a square of length \(x\). From that circle center
+to the top left, we have a square diagonal of length \(5+3\sqrt{2}+x\) on a
+square of length \(10+6\sqrt{2}-x\). So
+\[\left(10+6\sqrt{2}-x\right)\sqrt{2}=5+3\sqrt{2}+x\]
+\[10\sqrt{2}+12-x\sqrt{2}=5+3\sqrt{2}+x\]
+\[7\sqrt{2}+7=x+x\sqrt{2}\]
+\[7\left(1+\sqrt{2}\right)=x\left(1+\sqrt{2}\right)\]
+\[x=7\]
+</p>
+
 <h3 id="dec08">Dec 08</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 6" width="250" height="300" class="img_center">
+    <g stroke="none" stroke-width="0.05" fill="#7cf">
+        <polygon points="4.75 5.5 0.75 5.5 2.75 3.5" />
+        <rect x="2.75" y="1.5" width="2" height="2" />
+    </g>
+    <g stroke="black" stroke-width="0.05" fill="none">
+        <rect x="0.75" y="1.5" width="4" height="4" />
+        <line x1="0.75" x2="4.75" y1="1.5" y2="5.5" />
+        <line x1="0.75" x2="2.75" y1="5.5" y2="3.5" />
+        <polyline points="2.75 1.5 2.75 3.5 4.75 3.5" />
+        <polyline points="4.35 5.5 4.35 5.1 4.75 5.1" />
+        <line x1="1.75" x2="1.75" y1="1.3" y2="1.7" />
+        <line x1="3.75" x2="3.75" y1="1.3" y2="1.7" />
+        <line x1="4.95" x2="4.55" y1="2.5" y2="2.5" />
+        <line x1="2.95" x2="2.55" y1="2.5" y2="2.5" />
+        <line x1="3.75" x2="3.75" y1="3.3" y2="3.7" />
+        <line x1="2.83" x2="2.83" y1="5.7" y2="5.3" />
+        <line x1="2.67" x2="2.67" y1="5.7" y2="5.3" />
+        <line x1="0.95" x2="0.55" y1="3.42" y2="3.42" />
+        <line x1="0.95" x2="0.55" y1="3.58" y2="3.58" />
+    </g>
+    <g fill="black" font-size="0.03em">
+        <text x="0.15" y="3.5">4</text>
+        <text x="0.45" y="1">Find the blue area</text>
+    </g>
+</svg>
+
+<p>
+The total area of the square is \(4^2=16\). The quarter blue square is a \(1/2\)
+scaling so its area is \(16/4=4\). The blue triangle is formed by cutting the
+big square along the diagonal, and then cutting one of those triangle in half,
+so its area is also \(16/4=4\). The blue area is \(4+4=8\).
+</p>
+
 <h3 id="dec09">Dec 09</h3>
+
+<p>
+Find the net percentage loss of an investment that increases by 30% an then
+decreases by 30%.
+</p>
+
+<p>
+This would be found from looking at the multiplications
+\[(1+0.3)(1-0.3)=1-0.3^2=1-0.09\]
+So we can see a 9% loss.
+</p>
 
 <h3 id="dec10">Dec 10</h3>
 
