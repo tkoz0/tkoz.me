@@ -441,13 +441,138 @@ unimodality of the distribution.
 
 <h3 id="dec15">Dec 15</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="250" height="250" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <rect x="16" y="22" width="6" height="6" />
+        <line x1="19" x2="19" y1="22.5" y2="21.5" />
+        <line x1="15.5" x2="16.5" y1="25" y2="25" />
+        <line x1="21.5" x2="22.5" y1="25" y2="25" />
+        <line x1="19" x2="19" y1="28.5" y2="27.5" />
+        <polyline points="22 27 21 27 21 28" />
+        <rect x="7" y="19" width="9" height="9" />
+        <line x1="11.77" x2="11.77" y1="18.5" y2="19.5" />
+        <line x1="11.23" x2="11.23" y1="18.5" y2="19.5" />
+        <line x1="6.5" x2="7.5" y1="23.23" y2="23.23" />
+        <line x1="6.5" x2="7.5" y1="23.77" y2="23.77" />
+        <line x1="11.77" x2="11.77" y1="27.5" y2="28.5" />
+        <line x1="11.23" x2="11.23" y1="27.5" y2="28.5" />
+        <polyline points="16 27 15 27 15 28" />
+        <polygon points="16 22 10 13 1 19 7 28" />
+        <line x1="5.673" x2="6.227" y1="15.284" y2="16.116" />
+        <line x1="5.223" x2="5.777" y1="15.584" y2="16.416" />
+        <line x1="4.773" x2="5.327" y1="15.884" y2="16.716" />
+        <line x1="11.673" x2="12.227" y1="24.284" y2="25.116" />
+        <line x1="11.223" x2="11.777" y1="24.584" y2="25.416" />
+        <line x1="10.773" x2="11.327" y1="24.884" y2="25.716" />
+        <line x1="3.284" x2="4.116" y1="23.327" y2="22.773" />
+        <line x1="3.584" x2="4.416" y1="23.777" y2="23.223" />
+        <line x1="3.884" x2="4.716" y1="24.227" y2="23.673" />
+        <polyline points="1.555 19.832 2.387 19.277 1.832 18.445" />
+        <polyline points="10 13 22 22 31 10 19 1" />
+        <polyline points="15.01 17.641 16 17.5 15.859 16.51" />
+        <polyline points="26.641 16.99 26.5 16 25.51 16.141" />
+        <polyline points="25.99 5.359 25 5.5 25.141 6.49" />
+        <polyline points="30.2 9.4 29.6 10.2 30.4 10.8" />
+        <g stroke="#7cf">
+            <line x1="19" x2="10" y1="1" y2="13" />
+            <polyline points="14.359 6.01 14.5 7 15.49 6.859" />
+        </g>
+        <g stroke="red" fill="red">
+            <circle cx="10" cy="13" r="0.5" />
+            <circle cx="22" cy="22" r="0.5" />
+            <circle cx="16" cy="22" r="0.5" />
+            <circle cx="16" cy="19" r="0.5" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.15em">
+        <text x="12" y="7" fill="#7cf">x</text>
+        <text x="23" y="26">6</text>
+        <text x="1" y="31">D is the centroid of &#9651;ABC</text>
+        <text x="7.5" y="13">A</text>
+        <text x="21" y="20.5">B</text>
+        <text x="13.5" y="22.5">C</text>
+        <text x="16.5" y="21">D</text>
+    </g>
+</svg>
+
+<p>
+Form a coordinate system for the centroid calculation. Let \(C=(0,0)\). Then
+\(B\) is \(6\) units to the right so \(B=(6,0)\). We can see \(D\) is directly
+above \(C\) but we don't know by exactly how far so let \(D=(0,a)\). Finally,
+\(A\) is to the up and left from \(C\), so let \(A=(b,c)\). Now we will try to
+solve for these missing coordinates. From the centroid equation, we have
+\[D=(0,a)=\left({b+6+0\over3},{c+0+0\over3}\right)\]
+This allows us to find \(b=-6\) and \(c=3a\). Now focus on the square sharing
+an edge with the \(6\) square. Its side length is \(6+a\). We can also see that
+the square with \(AC\) has side length \(\sqrt{b^2+c^2}\). By applying the
+pythagorean theorem to the right triangle inside our \(6+a\) square, we have
+\[6^2+(6+a)^2=b^2+c^2=6^2+9a^2\]
+This simplifies to a quadratic equation we can factor and solve.
+\[36+12a+a^2=9a^2\Rightarrow2a^2-3a-9=0\Rightarrow(2a+3)(a-3)=0\]
+So \(a=-3/2\) or \(a=3\), but clearly we should take the positive solution
+\(a=3\) which also means \(c=9\). This tells us that the square next to the
+\(6\) square has side length \(9\) and the \(AC\) square has side length
+\[\sqrt{b^2+c^2}=\sqrt{(-6)^2+9^2}=12\]
+Next we use our coordinate system to find the length of \(AB\) which is the same
+as \(x\).
+\[x=\sqrt{(6-b)^2+(c-0)^2}=\sqrt{12^2+9^2}=15\]
+</p>
+
 <h3 id="dec16">Dec 16</h3>
+
+<p>
+Find the smallest whole number that has exactly five divisors.
+</p>
+
+<p>
+If \(n=p_1^{a_1}p_2^{a_2}\ldots p_k^{a_k}\) is a prime factorization, then the
+number of divisors is \((a_1+1)(a_2+1)\ldots(a_k+1)\). So the only way we can
+factor \(5\) is just itself since it is prime. This means we must have a
+\(a_1+1=5\), so a 4th power in the prime factorization. We pick the smallest
+prime so we get the smallest possible \(n=2^4=16\).
+</p>
 
 <h3 id="dec17">Dec 17</h3>
 
+<p>
+Find the discriminant of \(x^2-3x-2\).
+</p>
+
+<p>
+This is that quantity that tells us about the roots of a quadratic equation.
+Here, we have \(a=1,b=-3,c=-2\) so the discriminant is
+\[D=b^2-4ac=(-3)^2-4(1)(-2)=9+8=17\]
+</p>
+
 <h3 id="dec18">Dec 18</h3>
 
+<p>
+Find the maximum \(x\) such that \(20!\) is divisible by \(2^x\).
+</p>
+
+<p>
+We have to count factors of \(2\) in \(20!\). We can do this by summing
+\(\lfloor20/2^k\rfloor\) for all positive integers \(k\). For \(k=1\), we count
+even numbers. Then multiples of \(4\) add another \(2\) to the factorization of
+\(20!\), so \(k=2\) counts those. \(k=3\) counts for multiples of \(8\), and so
+on. We stop once \(k\) is large enough to make that expression zero.
+\[\left\lfloor{20\over2}\right\rfloor+\left\lfloor{20\over4}\right\rfloor
++\left\lfloor{20\over8}\right\rfloor+\left\lfloor{20\over16}\right\rfloor
++\left\lfloor{20\over32}\right\rfloor=10+5+2+1+0=18\]
+</p>
+
 <h3 id="dec19">Dec 19</h3>
+
+\[\sum_{t=-19}^{18}{1\over1+37^{2t+1}}\]
+
+<p>
+Notice how \(2t+1\) takes values \(-37,-35,\ldots,35,37\), so we have a
+symmetry. We can write the summation by pairing \(t\) and \(-t\) terms.
+\[\sum_{t=0}^{18}\left({1\over1+37^{2t+1}}+{1\over1+37^{-(2t+1)}}\right)\]
+Now multiply the 2nd fraction by \(37^{2t+1}/37^{2t+1}\) and simplify
+\[=\sum_{t=0}^{18}\left({1\over1+37^{2t+1}}+{37^{2t+1}\over37^{2t+1}+1}\right)
+=\sum_{t=0}^{18}{1+37^{2t+1}\over1+37^{2t+1}}=\sum_{t=0}^{18}1=19\]
+</p>
 
 <h3 id="dec20">Dec 20</h3>
 
