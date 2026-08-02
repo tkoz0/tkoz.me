@@ -235,10 +235,11 @@ perfect number is \(2^1\cdot(2^2-1)=2\cdot3=6\).
 
 <p>
 On the top left there is a quarter circle of radius \(5+3\sqrt{2}\). On the
-bottom right, is a circle of radius \(x\). From the center of the full circle
-to the bottom right, we have a square of length \(x\). From that circle center
-to the top left, we have a square diagonal of length \(5+3\sqrt{2}+x\) on a
-square of length \(10+6\sqrt{2}-x\). So
+bottom right, is a circle of radius \(x\). From the center of the full circle,
+we can draw radii to the right and down to form a square of length \(x\). From
+that circle center, we can also draw lines going left and up to the big square
+sides, forming a square of side length \(10+6\sqrt{2}-x\). A diagonal of that
+square has length \(5+3\sqrt{2}+x\) from adding the radii. So
 \[\left(10+6\sqrt{2}-x\right)\sqrt{2}=5+3\sqrt{2}+x\]
 \[10\sqrt{2}+12-x\sqrt{2}=5+3\sqrt{2}+x\]
 \[7\sqrt{2}+7=x+x\sqrt{2}\]
@@ -297,13 +298,146 @@ So we can see a 9% loss.
 
 <h3 id="dec10">Dec 10</h3>
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 30" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <polyline points="23 26 15 3 3 26 13 26" />
+        <line x1="13" x2="23" y1="26" y2="26" stroke="#7cf" />
+        <line x1="12.293" x2="16.536" y1="30.95" y2="1.251" />
+        <line x1="20.787" x2="7.323" y1="19.637" y2="17.714" />
+        <line x1="3" x2="20.841" y1="26" y2="19.794" />
+        <line x1="23" x2="7.279" y1="26" y2="17.798" />
+        <line x1="17.346" x2="17.487" y1="19.651" y2="18.661" />
+        <line x1="10.614" x2="10.756" y1="18.689" y2="17.699" />
+        <polyline points="12.562 18.462 12.349 19.947 13.834 20.159" />
+        <polyline points="6.629 19.044 7.959 19.738 8.653 18.408" />
+        <polyline points="21.28 21.054 19.863 21.547 19.37 20.13" />
+        <g fill="black">
+            <circle cx="3" cy="26" r="0.4" />
+            <circle cx="23" cy="26" r="0.4" />
+            <circle cx="13" cy="26" r="0.4" />
+            <circle cx="14.047" cy="18.674" r="0.4" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.2em">
+        <text x="6" y="29">10</text>
+        <text x="17" y="29">x</text>
+    </g>
+</svg>
+
+<p>
+Notice how we have 2 right angles formed by triangle altitudes which share a
+hypotenuse. Right angles can subtend a circle diameter so if we make that
+hypotenuse the diameter, we can draw a circle. Also draw radii to the right
+angles.
+</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 30" width="250" height="300" class="img_center">
+    <g stroke="black" stroke-width="0.25" fill="none">
+        <polyline points="23 26 15 3 3 26 13 26" />
+        <line x1="13" x2="23" y1="26" y2="26" stroke="#7cf" />
+        <line x1="12.293" x2="16.536" y1="30.95" y2="1.251" />
+        <line x1="20.787" x2="7.323" y1="19.637" y2="17.714" />
+        <line x1="3" x2="20.841" y1="26" y2="19.794" />
+        <line x1="23" x2="7.279" y1="26" y2="17.798" />
+        <line x1="17.346" x2="17.487" y1="19.651" y2="18.661" />
+        <line x1="10.614" x2="10.756" y1="18.689" y2="17.699" />
+        <polyline points="12.562 18.462 12.349 19.947 13.834 20.159" />
+        <polyline points="6.629 19.044 7.959 19.738 8.653 18.408" />
+        <polyline points="21.28 21.054 19.863 21.547 19.37 20.13" />
+        <g fill="black">
+            <circle cx="3" cy="26" r="0.4" />
+            <circle cx="23" cy="26" r="0.4" />
+            <circle cx="13" cy="26" r="0.4" />
+            <circle cx="14.047" cy="18.674" r="0.4" />
+        </g>
+        <g stroke="red">
+            <path d="M 23 26 A 10 10 0 0 0 3 26" />
+            <polyline points="7.323 17.714 13 26 20.787 19.637" />
+        </g>
+    </g>
+    <g fill="black" font-size="0.2em">
+        <text x="6" y="29">10</text>
+        <text x="17" y="29">x</text>
+    </g>
+</svg>
+
+<p>
+Let \(AB\) be the line connecting the 2 right angles which is bisected. If we
+draw lines from \(A\) and \(B\) to another point on the line, both of the new
+segments must have the same length. So we can do this with circle radii. This
+shows us that \(x\) is another radius of the circle so \(x=10\).
+</p>
+
 <h3 id="dec11">Dec 11</h3>
+
+\[\log\left(\log\left(\left(10^{10}\right)^{10^{10}}\right)\right)
+=\log\left(10^{10}\cdot\log\left(10^{10}\right)\right)\]
+\[=\log\left(10^{10}\right)+\log\left(\log\left(10^{10}\right)\right)
+=10\log(10)+\log(10\log(10))\]
+\[=10\cdot1+\log(10\cdot1)=10+\log(10)=10+1=11\]
 
 <h3 id="dec12">Dec 12</h3>
 
+\[x&gt;0,\quad\sqrt{(400-x^2)}+\sqrt{225-x^2}=25\]
+
+<p>
+First square both sides.
+\[(400-x^2)+(225-x^2)+2\sqrt{(400-x^2)(225-x^2)}=25^2\]
+Then since \(400+225=25^2\) we can rearrange and simplify to
+\[x^2=\sqrt{(400-x^2)(225-x^2)}\]
+Square both sides again and simplify
+\[x^4=(400-x^2)(225-x^2)=20^2\cdot15^2-25^2\cdot x^2+x^4\]
+\[5^4x^2=(5\cdot4)^2(5\cdot3)^2\Rightarrow x^2=4^2\cdot3^2\]
+We are told \(x&gt;0\) so we take the positive solution \(x=12\).
+</p>
+
 <h3 id="dec13">Dec 13</h3>
 
+\[729^x-702^x=676^x,\quad\text{Round x up}\]
+
+<p>
+If we notice a few things about the factors of the numbers given, \(27^2=729\),
+\(26\cdot27=702\), \(26^2=676\). So we can write this with the smaller numbers.
+\[27^{2x}-26^x\cdot27^x=26^{2x}\]
+Now divide by \(26^x\cdot27^x\) which gives us a way to turn the equation into
+1 variable we can more easily solve for.
+\[{27^x\over26^x}-1={26^x\over27^x}\]
+Let \(y=(27/26)^x\). Then the equation becomes
+\[y-1={1\over y}\Rightarrow y^2-y-1=0\Rightarrow y={1\pm\sqrt{5}\over2}\]
+Clearly \(y&gt;0\) so we take the positive root. Then we can find with some
+calculator help
+\[x={\ln(y)\over\ln(27/26)}
+={\ln\left({1+\sqrt{5}\over2}\right)\over\ln(27)-\ln(26)}\approx12.7506\]
+Rounding this up gives us a solution of \(13\).
+</p>
+
 <h3 id="dec14">Dec 14</h3>
+
+<p>
+What is the most likely result for the total of the roll of four standard dice?
+</p>
+
+<p>
+For one die, we have a uniform distribution across 1-6. The distribution remains
+symmetric and unimodal as we add more dice. So the most likely is the average,
+\(3.5\times4=14\). If we had an odd number of dice, the 2 closest to the middle
+would be equally likely. By the central limit theorem, the distribution looks
+normal as the number of dice approaches infinity.
+</p>
+
+<p>
+Another way we can see this observation more rigorously is by counting outcomes
+with a generating function. For one die, the coefficients of this polynomial
+represent the number of outcomes where the exponents are the dice sums.
+\[p(x)=x^1+x^2+x^3+x^4+x^5+x^6=x\left(1+x+x^2+x^3+x^4+x^5\right)\]
+For four dice, we would have a generating function
+\[(p(x))^4=x^4(1+x+x^2+x^3+x^4+x^5)^4\]
+By a similar symmetry argument, we can see that the largest coefficient must
+come from the middle term of \((1+x+x^2+x^3+x^4+x^5)^4\), the \(x^{10}\) term.
+This forms the \(x^{14}\) coefficient so the most likely outcome is a sum of
+\(14\). We can prove this symmetry argument with induction by assuming
+unimodality of the distribution.
+</p>
 
 <h3 id="dec15">Dec 15</h3>
 
