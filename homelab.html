@@ -1,212 +1,259 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>tkoz.me homelab</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body><div id="root">
-        <header id="header">
-            <span class="title_text">Homelab</span>
-        </header>
-        <div id="content">
-        <p>This page describes my janky homelab setup. Someone has to
-            pay the power bill for this thing... (over 100$/month)</p>
-        <p>Some of my servers are on a wooden rack that I designed and built
-            myself. The rack has a cheap 8 port gigabit switch which is
-            connected to a router. I also have a APC Smart UPS SUA1500RM2U on
-            the bottom of the rack to power the most important equipment.</p>
-        <p>My primary interest with homelabbing is high performance computing
-            (HPC). I also like learning how to configure and run my own
-            services.</p>
-        <p>Starting in 2025, I moved to New Mexico for a new job, and have my
-            homelab split across two locations, identified by ABQ (Albuquerque,
-            New Mexico) and NJ (my previous location).</p>
-        <p>I give all my servers character names to identify them.</p>
-        <h3>Tohka (NJ, main server, June 2024 &ndash; present)</h3>
-        <p>Named after a character in the anime
-            <a href="https://anilist.co/anime/15583/Date-A-Live/" target="_blank">Date A Live</a>.
-            This server is a central location for data storage and self-hosted
-            services.
-        </p>
-        <ul>
-            <li>Dell PowerEdge R730xd LFF</li>
-            <li>1x Intel Xeon E5-2667 v4 (8C/16T 3.2GHz)</li>
-            <li>64GB (4x 16GB) PC4-2400T-R memory</li>
-            <li>12x 14TB SAS HDD in ZFS RAIDZ2</li>
-            <li>2x 1.6TB SAS SSD for OS</li>
-            <li>Dell PERC H730p Mini</li>
-            <li>2x 1100W power supplies</li>
-            <li>Ubuntu Server 24.04</li>
-        </ul>
-        <h3>Yuuka (ABQ, compute server, June 2024 &ndash; present)</h3>
-        <p>Named after Yuuka from the mobile game <a href="https://bluearchive.nexon.com/home" target="_blank">Blue Archive</a>
-            which also has an <a href="https://anilist.co/anime/160589/Blue-Archive-The-Animation/" target="_blank">anime</a> adaptation.
-            This server is a playground for various interests in computing and running services.
-            Its uses include large language models, parallel CPU computing, and parallel GPU computing.
-            Several disks are available for larger amounts of fast space, primarily intended for
-            y-cruncher computations, but are left out to save power while not in use.
-        </p>
-        <ul>
-            <li>Dell PowerEdge R730xd SFF</li>
-            <li>2x Intel Xeon E5-2697A v4 (32C/64T 2.6GHz)</li>
-            <li>256GB (16x 16GB) PC4-2400T-R memory</li>
-            <li>NVidia Tesla V100 32GB GPU (PG500-216)</li>
-            <li>Dell PERC H730 mini</li>
-            <li>26x 1.2TB 10KRPM SAS HDD</li>
-            <li>1TB PCIe NVMe SSD</li>
-            <li>2x 1100W Power Supplies</li>
-            <li>Ubuntu Server 24.04</li>
-        </ul>
-        <h3>Riri (ABQ, compute server, Oct 2025 &ndash; present)</h3>
-        <p>Named after Riri Hitotsuyanagi, a character from Assault Lily, which is a mixed media franchise
-            that has an <a href="https://anilist.co/anime/112479/Assault-Lily-BOUQUET/" target="_blank">anime</a>
-            that aired in 2020 and a game which has since ended service for its global version.</p>
-        <ul>
-            <li>Dell PowerEdge R630</li>
-            <li>2x Intel Xeon E5-2673 v4 (20C/40T 2.3GHz)</li>
-            <li>128GB (8x 16GB) PC4-2133P-R memory</li>
-            <li>1x 160GB Intel SATA SSD</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Arch Linux</li>
-        </ul>
-        <h3>Yuyu (ABQ, compute server, Oct 2025 &ndash; present)</h3>
-        <p>
-            Named after Yuyu Shirai, a character from Assault Lily, which is a mixed media franchise
-            that has an <a href="https://anilist.co/anime/112479/Assault-Lily-BOUQUET/" target="_blank">anime</a>
-            that aired in 2020 and a game which has since ended service for its global version.</p>
-        <ul>
-            <li>Dell PowerEdge R630</li>
-            <li>2x Intel Xeon E5-2673 v4 (20C/40T 2.3GHz)</li>
-            <li>256GB (16x 16GB) PC4-2133P-R memory</li>
-            <li>1x 160GB Intel SATA SSD</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Arch Linux</li>
-        </ul>
-        <h3>Laptop &quot;cluster&quot; (ABQ, Oct 2025 &ndash; present)</h3>
-        <p>
-            This is a grouping of three laptops named after characters in the anime movie
-            <a href="https://anilist.co/anime/201903/Chou-Kaguyahime/" target="_blank">Cosmic Princess Kaguya</a>.
-        </p>
-        <p>
-            There were supposed to be five laptops, but one has a fatal graphics issue preventing
-            its use and the other has a forgotten BIOS password preventing the installation of
-            Linux. I obtained four Dell Precision laptops from an old laptop giveaway. Two of them
-            are in this cluster, one of them was given to a family member, and the remaining one
-            became my new main laptop.</p>
-        <ul>
-            <li>Lenovo ThinkPad E490 (yachiyo)<ul>
-                <li>Intel i5-8265U, 1x 16GB DDR4, 160GB SSD, Arch Linux</li>
-                <li>Repurposed from my previous main laptop which was named after Yue, a character in the anime
-                    <a href="https://anilist.co/anime/100668/Arifureta-Shokugyou-de-Sekai-Saikyou/" target="_blank">
-                        Arifureta Shokugyou de Sekai Saikyou (Arifureta: From Commonplace to World's Strongest)</a></li>
-            </ul></li>
-            <li>Dell Precision 7520 (kaguya)<ul>
-                <li>Intel i7-7820HQ, 2x 16GB DDR4, 160GB SSD, Arch Linux</li>
-            </ul></li>
-            <li>Dell Precision 7510 (iroha)<ul>
-                <li>Intel i7-6820HQ, 2x 16GB DDR4, 160GB SSD, Arch Linux</li>
-            </ul></li>
-        </ul>
-        <h3>Setsuna (NJ, compute server, Aug 2024 &ndash; present)</h3>
-        <p>Named after Setsuna Yuuki from the anime
-            <a href="https://anilist.co/anime/113970/Love-Live-Nijigasaki-Gakuen-School-Idol-Doukoukai/" target="_blank">
-                Love Live Nijigasaki Gakuen School Idol Doukoukai</a>.
-            This server was obtained from a very good deal.</p>
-        <ul>
-            <li>HP Proliant DL580 G9</li>
-            <li>4x Intel Xeon E7-8890 v4 (96C/192T 2.2GHz)</li>
-            <li>1TB (32x 32GB) PC4-2400T-R memory (runs at 1600MHz)</li>
-            <li>500GB NVMe SSD for OS</li>
-            <!-- (removed to use elsewhere) -->
-            <!--<li>1x 3.84TB SAS SSD</li>-->
-            <li>4x 1200W Power Supplies</li>
-            <li>Ubuntu Server 24.04</li>
-        </ul>
-        <h3>Kurumi (NJ, compute server, July 2023 to present)</h3>
-        <p>Primarily named after Kurumi, the hacker character in the anime
-            <a href="https://anilist.co/anime/143270/Lycoris-Recoil/" target="_blank">Lycoris Recoil</a>.
-            Also happens to be the same name as Kurumi from the anime
-            <a href="https://anilist.co/anime/15583/Date-A-Live/" target="_blank">Date A Live</a>.
-            This is a server I use for heavy computing with low memory requirements.</p>
-        <ul>
-            <li>Dell PowerEdge R630</li>
-            <li>2x Intel Xeon E5-2698 v4 (40C/80T 2.2GHz)</li>
-            <li>128GB (8x 16GB) PC4-2400T-R memory</li>
-            <li>500GB SATA SSD for OS</li>
-            <li>Dell PERC H330</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Ubuntu Server 24.04</li>
-        </ul>
-        <h3>Komari (NJ, compute server, Jan 2024 to present)</h3>
-        <p>Named after Terakomari Gandesblood from the anime
-            <a href="https://anilist.co/anime/159808/Hikikomari-Kyuuketsuki-no-Monmon/" target="_blank">
-            Hikikomari Kyuuketsuki no Monmon (The Vexations of a Shut-In Vampire Princess)</a>.
-            This is a server I use for heavy computing with high memory requirements.</p>
-        <ul>
-            <li>Dell PowerEdge R630</li>
-            <li>2x Intel Xeon E5-2698 v4 (40C/80T 2.2GHz)</li>
-            <li>256GB (8x 32GB) PC4-2400T-R memory</li>
-            <li>3.84TB SAS SSD for OS</li>
-            <li>Dell PERC H730</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Ubuntu Server 24.04</li>
-        </ul>
-        <hr />
-        <h3>Rimuru (NJ, storage server, decommissioned, July 2022 &ndash; July 2024)</h3>
-        <p>Named after the main character in the anime
-            <a href="https://anilist.co/anime/101280/Tensei-Shitara-Slime-Datta-Ken/" target="_blank">
-                Tensei Shitara Slime Datta Ken (Tensura)</a>.
-            Previously a central location for data and self-hosted services.
-            Has since been decommissioned and replaced with a Dell R730xd LFF</p>
-        <ul>
-            <li>Dell PowerEdge R720xd LFF</li>
-            <li>1x Intel Xeon E5-2643 v2 (6C/12T 3.5GHz)</li>
-            <li>64GB (2x 32GB) PC3-10600R memory</li>
-            <li>12x 8TB SAS HDD in ZFS RAIDZ2</li>
-            <li>Dell PERC H310 (flashed to IT mode)</li>
-            <li>1TB PCIe NVMe SSD for OS</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Ubuntu Server 22.04</li>
-        </ul>
-        <h3>Lacia (NJ, compute server, decommissioned, July 2020 - June 2024)</h3>
-        <p>Named after the character Lacia in the anime
-            <a href="https://anilist.co/anime/100245/BEATLESS/" target="_blank">Beatless</a>.
-            This used to be the central server for my data and services, then
-            became a place for some heavy computing. Considering its age, I have
-            decided to decommission this server from my homelab in favor of
-            better performance on newer hardware.</p>
-        <ul>
-            <li>Dell PowerEdge R720 LFF</li>
-            <li>2x Intel Xeon E5-2697 v2 (24C/48T 2.7GHz)</li>
-            <li>NVidia Tesla P100 16GB GPU</li>
-            <li>512GB (16x 32GB) PC3L-10600R memory</li>
-            <li>8x 4TB SATA HDD</li>
-            <li>Dell PERC H710 (flashed to IT mode)</li>
-            <li>1TB PCIe NVMe SSD for OS</li>
-            <li>2x 750W Power Supplies</li>
-            <li>Ubuntu Server 22.04</li>
-        </ul>
-        <h3>Shirase (NJ, test server, decommissioned, 2020 to 2022)</h3>
-        <p>Named after the main character from the anime
-            <a href="https://anilist.co/anime/579/Battle-Programmer-Shirase/" target="_blank">
-                Battle Programmer Shirase (BPS)</a>.
-            This is one of the servers I used to begin my homelabbing with
-            enterprise hardware. I found this one in recycling while I was
-            working on my Bachelor's degree at RPI.</p>
-        <ul>
-            <li>IBM System x3530 M4</li>
-            <li>250GB SATA SSD</li>
-            <li>12GB (2x2GB + 2x4GB) PC3-10600E memory</li>
-            <li>Intel Core i3-4170 (2C/4T 3.7GHz)</li>
-            <li>2x460W Power Supplies</li>
-        </ul>
-        <hr />
-        <h3>Pictures</h3>
-        <img src="images/hl_front3.jpg" class="img_fw" />
-        <img src="images/hl_back3.jpg" class="img_fw" />
-        <img src="images/hl_side3.jpg" class="img_fw" />
-        <hr />
-        <p>Page last updated: 2026-07-09</p>
-        <a href="index.html">Back to the home page</a>
-    </div></div></body>
+
+<head>
+    <title>TKoz Homelab</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tkoz.me/" />
+    <meta property="og:site_name" content="tkoz.me" />
+    <meta property="og:title" content="TKoz Homelab" />
+    <meta property="og:description" content="Hardware composition of a homelab for heavy computing." />
+    <meta property="description" content="Hardware composition of a homelab for heavy computing." />
+</head>
+
+<body><div id="root">
+
+<header id="header">
+    <span class="title_text">Homelab</span>
+</header>
+
+<div id="content">
+
+<h2>Introduction</h2>
+
+<p>This page describes my janky homelab setup. Someone has to
+    pay the power bill for this thing... (over 100$/month)</p>
+<p>Some of my servers are on a wooden rack that I designed and built
+    myself. The rack has a cheap 8 port gigabit switch which is
+    connected to a router. I also have a APC Smart UPS SUA1500RM2U on
+    the bottom of the rack to power the most important equipment.</p>
+<p>My primary interest with homelabbing is high performance computing
+    (HPC). I also like learning how to configure and run my own
+    services.</p>
+<p>Starting in 2025, I moved to New Mexico for a new job, and have my
+    homelab split across two locations, identified by ABQ (Albuquerque,
+    New Mexico) and NJ (my previous location).</p>
+<p>I give all my servers character names to identify them.</p>
+
+<h2>Servers in ABQ</h2>
+
+<!-- yuuka -->
+<h3>Yuuka (compute server, June 2024 &ndash; present)</h3>
+<p>Named after Yuuka from the mobile game <a href="https://bluearchive.nexon.com/home" target="_blank" rel="noopener noreferrer">Blue Archive</a>
+    which also has an <a href="https://anilist.co/anime/160589/Blue-Archive-The-Animation/" target="_blank" rel="noopener noreferrer">anime</a> adaptation.
+    This server is a playground for various interests in computing and running services.
+    Its uses include large language models, parallel CPU computing, and parallel GPU computing.
+    Several disks are available for larger amounts of fast space, primarily intended for
+    y-cruncher computations, but are left out to save power while not in use.
+</p>
+<ul>
+    <li>Dell PowerEdge R730xd SFF</li>
+    <li>2x Intel Xeon E5-2697A v4 (32C/64T 2.6GHz)</li>
+    <li>256GB (16x 16GB) PC4-2400T-R memory</li>
+    <li>Nvidia Tesla V100 32GB GPU (PG500-216)</li>
+    <li>Dell PERC H730 mini</li>
+    <li>26x 1.2TB 10KRPM SAS HDD</li>
+    <li>1TB PCIe NVMe SSD</li>
+    <li>2x 1100W Power Supplies</li>
+    <li>Ubuntu Server 24.04</li>
+</ul>
+
+<!-- riri -->
+<h3>Riri (compute server, Oct 2025 &ndash; present)</h3>
+<p>Named after Riri Hitotsuyanagi, a character from Assault Lily, which is a mixed media franchise
+    that has an <a href="https://anilist.co/anime/112479/Assault-Lily-BOUQUET/" target="_blank" rel="noopener noreferrer">anime</a>
+    that aired in 2020 and a game which has since ended service for its global version.</p>
+<ul>
+    <li>Dell PowerEdge R630</li>
+    <li>2x Intel Xeon E5-2673 v4 (20C/40T 2.3GHz)</li>
+    <li>128GB (8x 16GB) PC4-2133P-R memory</li>
+    <li>1x 160GB Intel SATA SSD</li>
+    <li>2x 750W Power Supplies</li>
+    <li>Arch Linux</li>
+</ul>
+
+<!-- yuyu -->
+<h3>Yuyu (compute server, Oct 2025 &ndash; present)</h3>
+<p>
+    Named after Yuyu Shirai, a character from Assault Lily, which is a mixed media franchise
+    that has an <a href="https://anilist.co/anime/112479/Assault-Lily-BOUQUET/" target="_blank" rel="noopener noreferrer">anime</a>
+    that aired in 2020 and a game which has since ended service for its global version.</p>
+<ul>
+    <li>Dell PowerEdge R630</li>
+    <li>2x Intel Xeon E5-2673 v4 (20C/40T 2.3GHz)</li>
+    <li>256GB (16x 16GB) PC4-2133P-R memory</li>
+    <li>1x 160GB Intel SATA SSD</li>
+    <li>2x 750W Power Supplies</li>
+    <li>Arch Linux</li>
+</ul>
+
+<!-- cpk -->
+<h3>Laptop &quot;cluster&quot; (Oct 2025 &ndash; present)</h3>
+<p>
+    This is a grouping of three laptops named after characters in the anime movie
+    <a href="https://anilist.co/anime/201903/Chou-Kaguyahime/" target="_blank" rel="noopener noreferrer">Cosmic Princess Kaguya</a>.
+</p>
+<p>
+    There were supposed to be five laptops, but one has a fatal graphics issue preventing
+    its use and the other has a forgotten BIOS password preventing the installation of
+    Linux. I obtained four Dell Precision laptops from an old laptop giveaway. Two of them
+    are in this cluster, one of them was given to a family member, and the remaining one
+    became my new main laptop.</p>
+<ul>
+    <li>Lenovo ThinkPad E490 (yachiyo)<ul>
+        <li>Intel i5-8265U, 1x 16GB DDR4, 160GB SSD, Arch Linux</li>
+        <li>Repurposed from my previous main laptop which was named after Yue, a character in the anime
+            <a href="https://anilist.co/anime/100668/Arifureta-Shokugyou-de-Sekai-Saikyou/" target="_blank" rel="noopener noreferrer">
+                Arifureta Shokugyou de Sekai Saikyou (Arifureta: From Commonplace to World's Strongest)</a></li>
+    </ul></li>
+    <li>Dell Precision 7520 (kaguya)<ul>
+        <li>Intel i7-7820HQ, 2x 16GB DDR4, 160GB SSD, Arch Linux</li>
+    </ul></li>
+    <li>Dell Precision 7510 (iroha)<ul>
+        <li>Intel i7-6820HQ, 2x 16GB DDR4, 160GB SSD, Arch Linux</li>
+    </ul></li>
+</ul>
+
+<h2>Servers in NJ</h2>
+
+<!-- tohka -->
+<h3>Tohka (main server, June 2024 &ndash; present)</h3>
+<p>Named after a character in the anime
+    <a href="https://anilist.co/anime/15583/Date-A-Live/" target="_blank" rel="noopener noreferrer">Date A Live</a>.
+    This server is a central location for data storage and self-hosted
+    services.
+</p>
+<ul>
+    <li>Dell PowerEdge R730xd LFF</li>
+    <li>1x Intel Xeon E5-2667 v4 (8C/16T 3.2GHz)</li>
+    <li>64GB (4x 16GB) PC4-2400T-R memory</li>
+    <li>12x 14TB SAS HDD in ZFS RAIDZ2</li>
+    <li>2x 1.6TB SAS SSD for OS</li>
+    <li>Dell PERC H730p Mini</li>
+    <li>2x 1100W power supplies</li>
+    <li>Ubuntu Server 24.04</li>
+</ul>
+
+<!-- setsuna -->
+<h3>Setsuna (compute server, Aug 2024 &ndash; present)</h3>
+<p>Named after Setsuna Yuuki from the anime
+    <a href="https://anilist.co/anime/113970/Love-Live-Nijigasaki-Gakuen-School-Idol-Doukoukai/" target="_blank" rel="noopener noreferrer">
+        Love Live Nijigasaki Gakuen School Idol Doukoukai</a>.
+    This server was obtained from a very good deal.</p>
+<ul>
+    <li>HP Proliant DL580 G9</li>
+    <li>4x Intel Xeon E7-8890 v4 (96C/192T 2.2GHz)</li>
+    <li>1TB (32x 32GB) PC4-2400T-R memory (runs at 1600MHz)</li>
+    <li>500GB NVMe SSD for OS</li>
+    <!-- (removed to use elsewhere) -->
+    <!--<li>1x 3.84TB SAS SSD</li>-->
+    <li>4x 1200W Power Supplies</li>
+    <li>Ubuntu Server 24.04</li>
+</ul>
+
+<!-- kurumi -->
+<h3>Kurumi (compute server, July 2023 to present)</h3>
+<p>Primarily named after Kurumi, the hacker character in the anime
+    <a href="https://anilist.co/anime/143270/Lycoris-Recoil/" target="_blank" rel="noopener noreferrer">Lycoris Recoil</a>.
+    Also happens to be the same name as Kurumi from the anime
+    <a href="https://anilist.co/anime/15583/Date-A-Live/" target="_blank" rel="noopener noreferrer">Date A Live</a>.
+    This is a server I use for heavy computing with low memory requirements.</p>
+<ul>
+    <li>Dell PowerEdge R630</li>
+    <li>2x Intel Xeon E5-2698 v4 (40C/80T 2.2GHz)</li>
+    <li>128GB (8x 16GB) PC4-2400T-R memory</li>
+    <li>500GB SATA SSD for OS</li>
+    <li>Dell PERC H330</li>
+    <li>2x 750W Power Supplies</li>
+    <li>Ubuntu Server 24.04</li>
+</ul>
+
+<!-- komari -->
+<h3>Komari (compute server, Jan 2024 to present)</h3>
+<p>Named after Terakomari Gandesblood from the anime
+    <a href="https://anilist.co/anime/159808/Hikikomari-Kyuuketsuki-no-Monmon/" target="_blank" rel="noopener noreferrer">
+    Hikikomari Kyuuketsuki no Monmon (The Vexations of a Shut-In Vampire Princess)</a>.
+    This is a server I use for heavy computing with high memory requirements.</p>
+<ul>
+    <li>Dell PowerEdge R630</li>
+    <li>2x Intel Xeon E5-2698 v4 (40C/80T 2.2GHz)</li>
+    <li>256GB (8x 32GB) PC4-2400T-R memory</li>
+    <li>3.84TB SAS SSD for OS</li>
+    <li>Dell PERC H730</li>
+    <li>2x 750W Power Supplies</li>
+    <li>Ubuntu Server 24.04</li>
+</ul>
+
+<h2>Decommissioned Servers</h2>
+
+<!-- rimuru -->
+<h3>Rimuru (storage server, July 2022 &ndash; July 2024)</h3>
+<p>Named after the main character in the anime
+    <a href="https://anilist.co/anime/101280/Tensei-Shitara-Slime-Datta-Ken/" target="_blank" rel="noopener noreferrer">
+        Tensei Shitara Slime Datta Ken (Tensura)</a>.
+    Previously a central location for data and self-hosted services.
+    Has since been decommissioned and replaced with a Dell R730xd LFF</p>
+<ul>
+    <li>Dell PowerEdge R720xd LFF</li>
+    <li>1x Intel Xeon E5-2643 v2 (6C/12T 3.5GHz)</li>
+    <li>64GB (2x 32GB) PC3-10600R memory</li>
+    <li>12x 8TB SAS HDD in ZFS RAIDZ2</li>
+    <li>Dell PERC H310 (flashed to IT mode)</li>
+    <li>1TB PCIe NVMe SSD for OS</li>
+    <li>2x 750W Power Supplies</li>
+    <li>Ubuntu Server 22.04</li>
+</ul>
+
+<!-- lacia -->
+<h3>Lacia (compute server, July 2020 - June 2024)</h3>
+<p>Named after the character Lacia in the anime
+    <a href="https://anilist.co/anime/100245/BEATLESS/" target="_blank" rel="noopener noreferrer">Beatless</a>.
+    This used to be the central server for my data and services, then
+    became a place for some heavy computing. Considering its age, I have
+    decided to decommission this server from my homelab in favor of
+    better performance on newer hardware.</p>
+<ul>
+    <li>Dell PowerEdge R720 LFF</li>
+    <li>2x Intel Xeon E5-2697 v2 (24C/48T 2.7GHz)</li>
+    <li>NVidia Tesla P100 16GB GPU</li>
+    <li>512GB (16x 32GB) PC3L-10600R memory</li>
+    <li>8x 4TB SATA HDD</li>
+    <li>Dell PERC H710 (flashed to IT mode)</li>
+    <li>1TB PCIe NVMe SSD for OS</li>
+    <li>2x 750W Power Supplies</li>
+    <li>Ubuntu Server 22.04</li>
+</ul>
+
+<!-- shirase -->
+<h3>Shirase (test server, 2020 to 2022)</h3>
+<p>Named after the main character from the anime
+    <a href="https://anilist.co/anime/579/Battle-Programmer-Shirase/" target="_blank" rel="noopener noreferrer">
+        Battle Programmer Shirase (BPS)</a>.
+    This is one of the servers I used to begin my homelabbing with
+    enterprise hardware. I found this one in recycling while I was
+    working on my Bachelor's degree at RPI.</p>
+<ul>
+    <li>IBM System x3530 M4</li>
+    <li>250GB SATA SSD</li>
+    <li>12GB (2x2GB + 2x4GB) PC3-10600E memory</li>
+    <li>Intel Core i3-4170 (2C/4T 3.7GHz)</li>
+    <li>2x460W Power Supplies</li>
+</ul>
+
+<h2>Pictures</h2>
+
+<img src="images/hl_front3.jpg" class="img_fw" alt="rack front" />
+<img src="images/hl_back3.jpg" class="img_fw" alt="rack back" />
+<img src="images/hl_side3.jpg" class="img_fw" alt="rack side" />
+
+<hr />
+
+<p>Page last updated: 2026-10-10</p>
+<a href="index.html">Back to the home page</a>
+
+</div><!-- end content -->
+
+</div></body><!-- end root -->
+
 </html>

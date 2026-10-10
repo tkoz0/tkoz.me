@@ -1,176 +1,156 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>tkoz.me</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body><div id="root">
-        <header id="header">
-            <span class="title_text">TKoz</span>
-            <div id="header_links">
-                <div class="dropdown_container">
-                    <a href="https://blog.tkoz.me/">Blog</a>
-                </div><!-- no newline = remove whitespace between inline blocks --><div class="dropdown_container">
-                    <a href="https://wiki.tkoz.me/">Wiki</a>
-                </div><!-- --><div class="dropdown_container">
-                    <a href="https://git.tkoz.me/">Git</a>
-                </div><!-- --><div class="dropdown_container">
-                    <a class="dropdown_button">Pages</a>
-                    <div class="dropdown_menu">
-                        <a href="academic">Academic</a>
-                        <a href="faq.html">FAQ</a>
-                        <a href="homelab.html">Homelab</a>
-                        <a href="cv.html">Resume/CV</a>
-                    </div>
-                </div><!-- --><div class="dropdown_container">
-                    <a class="dropdown_button">Tools</a>
-                    <div class="dropdown_menu">
-                        <a href="/speedtest">Speed Test</a>
-                        <a href="/myip.php">My IP</a>
-                    </div>
-                </div><!-- --><div class="dropdown_container">
-                    <a class="dropdown_button">Links</a>
-                    <div class="dropdown_menu">
-                        <a href="https://github.com/tkoz0/" target="_blank">My GitHub</a>
-                        <a href="https://tkoz0.github.io/" target="_blank">My GitHub.io</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div id="content">
-        <p>Welcome. I'm a person who likes math, computers, and many other things.
-            I am from New Jersey. I am currently working at
-            <a href="https://www.stellarscience.com/" target="_blank">Stellar Science</a>,
-            a software company, specifically their office in Albuquerque, New Mexico.</p>
-        <p>I went to college for math and computer science at
-            <a href="https://rpi.edu/" target="_blank">RPI</a>.
-            I am interested in exploring a wide range of topics and solving challenging problems.
-            I am most interested in math, algorithms, and high performance computing.</p>
-        <p>I am always looking for more interesting things to do. If you have
-            interesting ideas for a math or programming project, comments about
-            this website, or professional/work/research opportunities, please
-            see the <a href="#contact">contact</a> section.</p>
-        <h1>Projects</h1>
-        <div class="proj_container">
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_math.png" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="academic">Academic Pages</a>
-                    <div class="proj_text">Pages for my own writing about math proofs, algorithms, and more.</div>
-                </div>
-            </div>
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_fdb.png" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="https://fdb.tkoz.me" target="_blank">
-                        Factor Database</a>
-                    <div class="proj_text">
-                        Website for storing and tracking progress of integer factorization.</div>
-                </div>
-            </div>
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_ffr.png" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="https://github.com/tkoz0/flame-fractal-renderer" target="_blank">
-                        Flame Fractal Renderer</a>
-                    <div class="proj_text">Flame fractal renderer inspired by
-                        <a href="https://flam3.com/" target="_blank">flam3</a>
-                        with plans to support 3D, color, and more.</div>
-                </div>
-            </div>
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_fitch.png" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="https://github.com/tkoz0/sequent-proof-interface-name" target="_blank">
-                        Sequent Proof Interface Name (SPIN)</a>
-                    <div class="proj_text">Web app for creating logic proofs using the Fitch Sequent System.
-                        A project for intermediate logic at RPI.</div>
-                </div>
-            </div>
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_hl.png" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="homelab.html">My Homelab</a>
-                    <div class="proj_text">I like to run my own servers at home for
-                        running various services and computing projects.</div>
-                </div>
-            </div>
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_svgpp.svg" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="https://github.com/tkoz0/svg-plus-python" target="_blank">SVG Plus Python</a>
-                    <div class="proj_text">Python library for creating 2D drawings with SVG.
-                        Intended for creating 2D diagrams for math problems.</div>
-                </div>
-            </div>
-            <!--
-            <div class="proj_item">
-                <img class="proj_image" src="images/proj_h1.png" />
-                <div class="proj_desc">
-                    <a class="proj_name" href="homelab.html">sample project</a>
-                    <div class="proj_text">sample project sample project
-                        sample project sample project sample project
-                        sample project sample project sample project
-                        sample project sample project sample project
-                        sample project sample project sample project
-                    </div>
-                </div>
-            </div>
-            -->
+
+<head>
+    <title>TKoz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tkoz.me/" />
+    <meta property="og:site_name" content="tkoz.me" />
+    <meta property="og:title" content="TKoz" />
+    <meta property="og:description" content="Personal website of a person who like math, algorithms, computing, and high performance." />
+    <meta property="description" content="Personal website of a person who like math, algorithms, computing, and high performance." />
+</head>
+
+<body><div id="root">
+
+<header id="header">
+    <span class="title_text">TKoz</span>
+    <div id="header_links">
+        <a href="https://github.com/tkoz0/" target="_blank">My GitHub</a>
+        <!--| <a href="https://tkoz0.github.io/" target="_blank">My GitHub.io</a>-->
+        | <a href="cv.html">Resume/CV</a>
+        | <a href="faq.html">FAQ</a>
+        | <a href="tools.html">Tools</a>
+    </div>
+</header>
+
+<div id="content">
+
+<p>Welcome. I'm a person who likes math, computers, and more.
+    I regularly work on various ideas involving math and code and always try to
+    keep learning more to keep myself busy. My strongest interests are in
+    math proofs, algorithms, and high performance computing.</p>
+<p>
+    I am currently in Albuquerque, New Mexico, and working at
+    <a href="https://www.stellarscience.com/" target="_blank" rel="noopener noreferrer">Stellar Science</a>,
+    a software company. I work on C++ desktop applications for various
+    physics/simulation tasks.</p>
+<p>I am always looking for more interesting things to do. If you have
+    interesting ideas for a math or programming project, comments about
+    this website, or professional/work/research opportunities, please
+    see the <a href="#contact">contact</a> section.</p>
+
+<h2 id="projects">Projects</h2>
+
+<div class="proj_container">
+    <div class="proj_item">
+        <a class="proj_name" href="academic">Academic Pages</a>
+        <div class="proj_info">
+            <img class="proj_image" src="images/proj_math.png" alt="sigma symbol" />
+            <div class="proj_text">Pages for my own writing about math proofs, algorithms, and more.</div>
         </div>
-        <h1>Professional Experience</h1>
-        <h2>Education</h2>
-        <ul>
-            <li>M.S. in Applied Mathematics from Rensselaer Polytechnic Institute (Aug 2022 &ndash; May 2023)</li>
-            <li>B.S. in Computer Science and Mathematics from Rensselaer Polytechnic Institute (Aug 2017 &ndash; May 2022)</li>
-        </ul>
-        <h2>Work</h2>
-        <ul>
-            <li>C++ Software Engineer at <a href="https://www.stellarscience.com/" target="_blank">Stellar Science</a> (March 2025 &ndash; Present)
-                <ul>
-                    <li>Contributed to large scale desktop applications written with C++20 and utilizing Qt, boost, etc.</li>
-                    <li>Implemented UI improvements, customer requested features, and reusable code / maintainable design.</li>
-                    <li>Worked on projects involving physics, light, 3D simulation, imaging, raytracing, and GPU/CUDA code.</li>
-                </ul>
-            </li>
-            <li>Graduate Research Assistant at Rensselaer Polytechnic Institute (May 2022 &ndash; May 2023)
-                <ul>
-                    <li>Contributed to <a href="https://github.com/Submitty" target="_blank">Submitty</a>, mainly the back end.</li>
-                    <li>Implemented features and fixed bugs in various components such as the UI, autograder, and database.</li>
-                </ul>
-            </li>
-            <li>Undergraduate Teaching Assistant at Rensselaer Polytechnic Institute (Aug 2018 &ndash; May 2022)
-                <ul>
-                    <li>Graded assignments and tutored during office hours for Discrete Math and Programming Languages classes.</li>
-                </ul>
-            </li>
-            <li>Undergraduate Research Assistant at Rensselaer Polytechnic Institute (Jan 2020 &ndash; Aug 2020)
-                <ul>
-                    <li>Explored tools for natural language processing and analyzed datasets from Reddit and Twitter.</li>
-                    <li>Worked with a professor and Ph.D. students in the <a href="https://lacailab.cogsci.rpi.edu/" target="_blank">LACAI Lab</a>.</li>
-                </ul>
-            </li>
-        </ul>
-        <h1>FAQ</h1>
-        Have a question? Look at my <a href="faq.html">FAQ</a> page first,
-        otherwise I'm happy to respond on any of the platforms listed below.
-        <h1 id="contact">Contact</h1>
-        <p>Email: <a href="mailto:tkoz@tkoz.me">tkoz@tkoz.me</a><br />
-            Please try to keep messages clear and concise. I get a lot of email
-            and I would like to be able to respond to everything.</p>
-        <p>Discord: tkoz (formerly TKoz#9039).<br />
-            Feel free to send me a message or friend request.
-            This is the platform I will respond the fastest on.</p>
-        <p>Reddit: <a href="https://reddit.com/u/tkoz0" target="_blank">u/tkoz0</a>
-            (open to chats or direct messages)</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kozlot/" target="_blank">in/kozlot</a>
-            (for professional inquiries only please)</p>
-        <p>GPG Keys: Here are my public <a href="gpg/tkoz-rsa.asc">rsa</a> and
-            <a href="gpg/tkoz-curve25519.asc">curve25519</a> keys. Curve25519 is preferred.</p>
-        <p>If you like my work and want to support me, here is my
-            <a href="https://paypal.me/tkoz0" target="_blank">Paypal link</a>.</p>
-        <hr />
-        <p>Page last updated: 2025-11-30</p>
+    </div>
+    <div class="proj_item">
+        <a class="proj_name" href="https://fdb.tkoz.me" target="_blank">
+            Factor Database</a>
+        <div class="proj_info">
+            <img class="proj_image" src="images/proj_fdb.png" alt="database" />
+            <div class="proj_text">
+                Website for storing and tracking progress of integer factorization.</div>
         </div>
-    </div></body>
+    </div>
+    <div class="proj_item">
+        <a class="proj_name" href="https://github.com/tkoz0/flame-fractal-renderer" target="_blank" rel="noopener noreferrer">
+            Flame Fractal Renderer</a>
+        <div class="proj_info">
+            <img class="proj_image" src="images/proj_ffr.png" alt="fractal" />
+            <div class="proj_text">Flame fractal renderer inspired by
+                <a href="https://flam3.com/" target="_blank">flam3</a>
+                with plans to support 3D, color, and more.</div>
+        </div>
+    </div>
+    <div class="proj_item">
+        <a class="proj_name" href="https://github.com/tkoz0/sequent-proof-interface-name" target="_blank" rel="noopener noreferrer">
+            Sequent Proof Interface</a>
+        <div class="proj_info">
+            <img class="proj_image" src="images/proj_fitch.png" alt="letter F" />
+            <div class="proj_text">Web app for creating logic proofs using the Fitch Sequent System.
+                A project for intermediate logic at RPI.</div>
+        </div>
+    </div>
+    <div class="proj_item">
+        <a class="proj_name" href="homelab.html">My Homelab</a>
+        <div class="proj_info">
+            <img class="proj_image" src="images/proj_hl.png" alt="servers" />
+            <div class="proj_text">I like to run my own servers at home for
+                running various services and computing projects.</div>
+        </div>
+    </div>
+    <div class="proj_item">
+        <a class="proj_name" href="https://github.com/tkoz0/svg-plus-python" target="_blank" rel="noopener noreferrer">SVG Plus Python</a>
+        <div class="proj_info">
+            <img class="proj_image" src="images/proj_svgpp.svg" alt="svg image" />
+            <div class="proj_text">Python library for creating 2D drawings with SVG.
+                Intended for creating 2D diagrams for math problems.</div>
+        </div>
+    </div>
+    <!--
+    <div class="proj_item">
+        <a class="proj_name" href="homelab.html">sample project</a>
+        <div class="proj_desc">
+            <img class="proj_image" src="images/proj_h1.png" />
+            <div class="proj_text">sample project sample project
+                sample project sample project sample project
+                sample project sample project sample project
+                sample project sample project sample project
+                sample project sample project sample project
+            </div>
+        </div>
+    </div>
+    -->
+</div>
+
+<h2 id="professional">Professional Experience</h2>
+
+<h3 id="education">Education</h3>
+
+<ul>
+    <li>M.S. in Applied Mathematics from Rensselaer Polytechnic Institute (Aug 2022 &ndash; May 2023)</li>
+    <li>B.S. in Computer Science and Mathematics from Rensselaer Polytechnic Institute (Aug 2017 &ndash; May 2022)</li>
+</ul>
+
+<h3 id="work">Work</h3>
+
+<ul>
+    <li>C++ Software Engineer at <a href="https://www.stellarscience.com/" target="_blank" rel="noopener noreferrer">Stellar Science</a> (March 2025 &ndash; Present)
+    </li>
+    <li>Graduate Research Assistant at Rensselaer Polytechnic Institute (May 2022 &ndash; May 2023)
+    </li>
+    <li>Undergraduate Teaching Assistant at Rensselaer Polytechnic Institute (Aug 2018 &ndash; May 2022)
+    </li>
+    <li>Undergraduate Research Assistant at Rensselaer Polytechnic Institute (Jan 2020 &ndash; Aug 2020)
+    </li>
+</ul>
+
+<p>See my <a href="cv.html">Resume/CV page</a> for more details.</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>Email: <a href="mailto:tkoz@tkoz.me">tkoz@tkoz.me</a></p>
+<p>Discord: tkoz (formerly TKoz#9039).</p>
+<p>Reddit: <a href="https://reddit.com/u/tkoz0" target="_blank" rel="noopener noreferrer">u/tkoz0</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/kozlot/" target="_blank" rel="noopener noreferrer">in/kozlot</a></p>
+<p>GPG Keys: For secure email, here are my public <a href="gpg/tkoz-rsa.asc">rsa</a> and
+    <a href="gpg/tkoz-curve25519.asc">curve25519</a> (preferred) keys.</p>
+<p>If you like my work and want to support me, here is my
+    <a href="https://paypal.me/tkoz0" target="_blank" rel="noopener noreferrer">Paypal link</a>.</p>
+<hr />
+
+<p>Page last updated: 2026-10-10</p>
+
+</div><!-- end content -->
+
+</div></body><!-- end root -->
+
 </html>

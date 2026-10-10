@@ -1,29 +1,29 @@
-
 /*
+CSS styles for a simple website design
+- Prefer a fairly minimal look
 
-CSS styles for the simple website design
-
-Last updated: 2023-12-23
-
+Last updated: 2026-10-10
 */
 
 body {
     font-family: sans-serif;
-    background: black;
+    background: #fff;
     margin: 0;
 }
 
 #root {
     width: 900px;
+    max-width: 100%;
     margin: auto;
-    background: white;
+    background: #fff;
     min-height: 100vh;
-    max-width: 100vw;
 }
 
 #header {
     display: flex;
-    background: gray;
+    flex-direction: row;
+    align-items: center;
+    background: #999;
 }
 
 #content {
@@ -31,74 +31,28 @@ body {
 }
 
 .title_text {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
     margin: auto;
-    padding: 10px;
+    padding: 20px;
 }
 
 .hide {
     display: none;
 }
 
+a {
+    color: #00f;
+}
+
+a:visited {
+    color: #808;
+}
+
 /* links on homepage header */
 
 #header_links {
     padding: 20px;
-}
-
-#header_links > * {
-    font-size: 1.5em;
-    padding: 5px;
-    background: white;
-    border: 2px solid black;
-    border-left: none;
-}
-
-#header_links > div:first-of-type {
-    border-left: 2px solid black;
-}
-
-#header_links > *:hover {
-    background: lightblue;
-}
-
-.dropdown_container {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown_button {
-    cursor: pointer;
-}
-
-.dropdown_menu {
-    display: none;
-    position: absolute;
-    text-align: right;
-    right: -2px;
-    min-width: 180px;
-}
-
-.dropdown_container:hover .dropdown_menu {
-    display: block;
-}
-
-.dropdown_menu a {
-    background: white;
-    padding: 5px;
-    display: block;
-    border: 2px solid black;
-    border-top: none;
-}
-
-.dropdown_menu a:first-of-type {
-    margin-top: 5px;
-    border-top: 2px solid black;
-}
-
-.dropdown_menu a:hover {
-    background: lightgreen;
 }
 
 /* project listing on home page */
@@ -110,34 +64,38 @@ body {
 }
 
 .proj_item {
-    width: 270px;
-    border: 2px solid black;
-    background: lightblue;
-    margin: 2px;
+    width: 250px;
+    border: 2px solid #000;
+    background: #ccc;
+    margin: 5px;
     padding: 2px;
 }
 
 .proj_image {
-    width: 80px;
-    height: 80px;
-    text-align: center;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
 }
 
-.proj_desc {
-    width: 185px;
-    float: right;
+.proj_info {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
     margin-left: 5px;
 }
 
 .proj_name {
     display: block;
+    width: 100%;
     text-align: center;
     font-size: 1em;
+    margin-bottom: 6px;
 }
 
 .proj_text {
     font-size: 0.8em;
-    padding: 2px;
+    padding: 0px 2px;
+    margin: 0px;
 }
 
 /* images */
@@ -153,7 +111,7 @@ body {
 .cv_head {
     width: 100%;
     font-size: 1.8em;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #000;
     font-weight: bold;
     margin-top: 16px;
     margin-bottom: 8px;
@@ -189,3 +147,35 @@ body {
 .cv_list {
     margin: 0;
 }
+
+/*
+Dark mode
+- Considering but this color selection needs some work
+*/
+
+/*
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #000;
+    }
+    #root {
+        background: #222;
+        color: #fff;
+    }
+    #header {
+        background: #444;
+    }
+    #header_links > * {
+        background: #666;
+    }
+    .proj_item {
+        background: #444;
+    }
+    a {
+        color: #7cf;
+    }
+    a:visited {
+        color: #97f;
+    }
+}
+*/
