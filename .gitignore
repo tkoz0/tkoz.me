@@ -1,13 +1,13 @@
 # copy over mathjax and prismjs to reduce repo bloat
-mathjax/
-prismjs/
-.vscode
+/mathjax/
+/prismjs/
+/.vscode
 
 # this file is created by the speedtest thing
-speedtest/backend/getIP_serverLocation.php
+/speedtest/backend/getIP_serverLocation.php
 
 # certbot stuff
-.well-known
+/.well-known
 
 # random stuff
-_test
+/_test
