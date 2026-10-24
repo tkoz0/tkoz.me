@@ -1,34 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Math Calendar {{year}} {{month_full}}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Math Calendar {{year}} {{month_full}}" />
+    <meta property="og:description" content="Daily Epsilon calendar problems and solutions for {{year}} {{month_full}}." />
+
     <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
+
     <script type="text/javascript">
-        window.MathJax = { tex: { macros: {
-        {% raw %}        }}};
-        {% endraw %}
+        // Safely setup window.MathJax to avoid replacing existing object
+        window.MathJax = window.MathJax || { tex: { macros: {} } };
+        window.MathJax.tex = window.MathJax.tex || { macros: {} };
+        window.MathJax.tex.macros = window.MathJax.tex.macros || {};
+{% raw %}
+        // Custom MathJax commands
+        // Example with no arguments (real numbers):
+        //     R: '\\mathbb{R}''
+        // Example with arguments (quadratic formula):
+        //     qf: ['\\frac{-{#2}\\pm\\sqrt{{#2}^2-4{#1}{#3}}}{2{#1}}'',3]
+{% endraw %}
+        Object.assign(window.MathJax.tex.macros, {
+            // MARK_BEG_{{year}}_{{month_short.upper()}}_CUSTOM_LATEX
+
+            // Put custom LaTeX here
+
+            // MARK_END_{{year}}_{{month_short.upper()}}_CUSTOM_LATEX
+        });
     </script>
-    <script type="text/javascript" src="/mathscripts.js"></script>
+
+    <script type="text/javascript" src="/mathscripts.js" defer></script>
+
     <style type="text/css">
         #cal {
             width: 250px;
             text-align: center;
+            margin-bottom: 20px;
         }
+        /* MARK_BEG_{{year}}_{{month_short.upper()}}_CUSTOM_CSS */
+
+        /* Put custom CSS here */
+
+        /* MARK_END_{{year}}_{{month_short.upper()}}_CUSTOM_CSS */
     </style>
 </head>
 <body>
-<div id="root">
+<div id="root" class="mathjax_enable">
 
 <h1>Math Calendar {{year}} {{month_full}}</h1>
 
-<table id="cal" class="table_normal">
+<p><a href="{{main_link}}">Back To Full Calendar</a>
+<span id="mathcal_main_button_box" hidden>
+| <button type="button" id="mathcal_show_all">Show All Solutions</button>
+| <button type="button" id="mathcal_hide_all">Hide All Solutions</button>
+</span></p>
+
+<table id="cal" class="mathcal_month_table">
     <tr><th colspan="7">{{month_full}}</th></tr>
-    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    <tr>
+        <th scope="col">Mo</th>
+        <th scope="col">Tu</th>
+        <th scope="col">We</th>
+        <th scope="col">Th</th>
+        <th scope="col">Fr</th>
+        <th scope="col">Sa</th>
+        <th scope="col">Su</th>
+    </tr>
     {% for week_row in month_table %}
     <tr>
         {% for text,link in week_row %}
         {% if link %}
-        <td><a href="{{link}}">{{text}}</a></td>
+        <td><a href="{{link}}" aria-label="{{month_full}} {{text}}">{{text}}</a></td>
         {% else %}
         <td>{{text}}</td>
         {% endif %}
@@ -37,10 +83,94 @@
     {% endfor %}
 </table>
 
-{% for h3id,h3text in day_data %}
-<h3 id="{{h3id}}">{{h3text}}</h3>
+<!-- MARK_BEG_{{year}}_{{month_short.upper()}}_COMMENTS -->
+
+<!--
+{% for day_id,day_text,marker_date in day_data %}
+{{day_id}}:
+{% endfor %}
+-->
+
+<!-- MARK_END_{{year}}_{{month_short.upper()}}_COMMENTS -->
+
+{% for day_id,day_text,marker_date in day_data %}
+<hr />
+
+<section class="mathcal_day" id="{{day_id}}">
+<h2>{{day_text}}</h2>
+
+<div class="mathcal_prob" id="{{day_id}}_prob">
+<h3>Problem</h3>
+
+<!-- MARK_BEG_{{marker_date}}_PROBLEM -->
+
+<p>Not posted yet.</p>
+
+<!-- MARK_END_{{marker_date}}_PROBLEM -->
+
+</div>
+
+<div class="mathcal_sol" id="{{day_id}}_sol">
+<h3>Solution</h3>
+
+<!-- MARK_BEG_{{marker_date}}_SOLUTION -->
+
+<p>Not posted yet.</p>
+
+<!-- MARK_END_{{marker_date}}_SOLUTION -->
+
+</div>
+
+</section>
 
 {% endfor %}
-</div>
+
+<hr />
+
+<p>Page last updated: {{today}}</p>
+<p><a href="{{main_link}}">Back To Full Calendar</a></p>
+
+</div><!-- end root -->
+
+<script type="text/javascript">
+// By default, solutions are shown and the show/hide buttons are hidden.
+// This ensures things work when javascript is disabled. In dev mode, we
+// skip this so solutions are always visible. For end users, the buttons
+// are displayed and given the show/hide functionality on click.
+(function() {
+    if (/[?&]dev\b/.test(location.search)) {
+        document.body.classList.add('mathcal_dev');
+        return; // Dev mode (add ?dev to url) always shows solutions
+    }
+    // Hide all solutions and add a toggle button for each
+    document.querySelectorAll('.mathcal_sol').forEach(solution => {
+        solution.hidden = true;
+        let button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = 'Show Solution';
+        button.classList.add('mathcal_show_hide');
+        button.addEventListener('click', () => {
+            solution.hidden = !solution.hidden;
+            button.textContent = solution.hidden ? 'Show Solution' : 'Hide Solution';
+        });
+        solution.parentNode.insertBefore(button,solution);
+    });
+    // Buttons to show/hide all solutions
+    document.querySelector('#mathcal_main_button_box').hidden = false;
+    document.querySelector('#mathcal_show_all').addEventListener('click',() => {
+        document.querySelectorAll('.mathcal_sol').forEach(solution => {
+            solution.previousElementSibling.textContent = 'Hide Solution';
+            solution.hidden = false;
+        });
+    });
+    document.querySelector('#mathcal_hide_all').addEventListener('click',() => {
+        document.querySelectorAll('.mathcal_sol').forEach(solution => {
+            solution.previousElementSibling.textContent = 'Show Solution';
+            solution.hidden = true;
+        });
+    });
+})();
+</script>
+
 </body>
 </html>

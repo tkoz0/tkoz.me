@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Math Calendar {{year}}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Math Calendar {{year}}" />
+    <meta property="og:description" content="Daily Epsilon calendar problems and solutions for {{year}}." />
+
     <link rel="stylesheet" type="text/css" href="/mathstyles.css" />
-    <script type="text/javascript">
-        window.MathJax = { tex: { macros: {
-        {% raw %}        }}};
-        {% endraw %}
-    </script>
-    <script type="text/javascript" src="/mathscripts.js"></script>
+    <script type="text/javascript" src="/mathscripts.js" defer></script>
+
     <style type="text/css">
         #cal {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 10px;
         }
         #cal table {
-            flex-basis: 33%;
+            width: 100%;
             max-width: 250px;
+            margin: 0 auto;
             text-align: center;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -28,21 +33,40 @@
 <h1>Math Calendar {{year}}</h1>
 
 <p>
-    These problems are from <a href="https://dailyepsilon.com/" target="_blank">
-        <em>Your Daily Epsilon of Math</em></a>.
+These problems are from <a href="https://dailyepsilon.com/" target="_blank" rel="noopener noreferrer">
+<em>Your Daily Epsilon of Math</em></a>.
+</p>
+
+<p>
+Problems are organized into monthly pages. Click on the month name to see the
+page for that month, or a specific date to go right to a particular problem.
+</p>
+
+<p>
+There are various ways in which the problem can ask for a solution. If they do
+not state what to solve for in words, it may be the value of x, the value of a
+mathematical expression, or the area of a shaded region for geometry problems.
 </p>
 
 <div id="cal">
 
 {% for month_table,month_full,month_link in data %}
-<table class="table_normal">
+<table class="mathcal_month_table">
     <tr><th colspan="7"><a href="{{month_link}}">{{month_full}}</a></th></tr>
-    <tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr>
+    <tr>
+        <th scope="col">Mo</th>
+        <th scope="col">Tu</th>
+        <th scope="col">We</th>
+        <th scope="col">Th</th>
+        <th scope="col">Fr</th>
+        <th scope="col">Sa</th>
+        <th scope="col">Su</th>
+    </tr>
     {% for week_row in month_table %}
     <tr>
         {% for text,link in week_row %}
         {% if link %}
-        <td><a href="{{link}}">{{text}}</a></td>
+        <td><a href="{{link}}" aria-label="{{month_full}} {{text}}">{{text}}</a></td>
         {% else %}
         <td>{{text}}</td>
         {% endif %}
@@ -52,8 +76,8 @@
 </table>
 
 {% endfor %}
-</div>
+</div><!-- end cal -->
 
-</div>
+</div><!-- end root -->
 </body>
 </html>
